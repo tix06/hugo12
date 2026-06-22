@@ -1,5 +1,6 @@
 ---
 Title : algorithme de Boyer Moore 
+description: algorithme de Boyer Moore de recherche d'un motif dans une sequence
 weight: 13
 ---
 

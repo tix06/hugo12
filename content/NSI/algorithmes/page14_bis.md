@@ -1,6 +1,6 @@
 ---
 Title: algoritmes de recherche
-escription: TP, dictionnaire de mots en francais, chronometrage time du module time
+description: TP, dictionnaire de mots en francais, chronometrage time du module time
 hidden: true
 weight: 8
 ---

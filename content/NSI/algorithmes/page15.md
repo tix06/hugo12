@@ -1,6 +1,6 @@
 ---
 Title: etude comparée algos de tri
-escription: TP,  chronometrage time du module time, copie par valeur, melange avec shuffle du module random
+description: TP,  chronometrage time du module time, copie par valeur, melange avec shuffle du module random
 hidden: true
 weight: 9
 ---

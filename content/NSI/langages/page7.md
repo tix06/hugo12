@@ -1,5 +1,6 @@
 ---
 Title: langages mathematiques
+description: langages mathematique, chiffres, operateurs, logique
 weight: 10
 ---
 # Langages mathematiques

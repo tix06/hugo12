@@ -1,5 +1,6 @@
 ---
 Title : recursivité
+description: cours recursivite
 weight: 11
 ---
 

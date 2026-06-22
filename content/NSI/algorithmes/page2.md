@@ -1,5 +1,6 @@
 ---
 Title : calculer sur un algorithme
+description: calculabilite, decision, preuves
 weight: 18
 ---
 

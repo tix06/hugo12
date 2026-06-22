@@ -1,5 +1,6 @@
 ---
 Title: exercices sur la recursivité
+description: exercices recursivite
 hidden: true
 weight: 23
 ---
