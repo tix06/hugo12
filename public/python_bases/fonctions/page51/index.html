@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="TP sur les fonctions python, et les boucles">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TP fonctions python :: allopizza">
+    <meta name="twitter:description" content="TP sur les fonctions python, et les boucles">
+    <meta property="og:url" content="//localhost:1313/python_bases/fonctions/page51/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="TP fonctions python :: allopizza">
+    <meta property="og:description" content="TP sur les fonctions python, et les boucles">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python - les bases">
+    <meta itemprop="name" content="TP fonctions python :: allopizza">
+    <meta itemprop="description" content="TP sur les fonctions python, et les boucles">
+    <meta itemprop="wordCount" content="1084">
+    <title>TP fonctions python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_bases\/fonctions\/page51\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_bases/fonctions/page51/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#système-def--return">système def + return</a></li>
+    <li><a href="#appeler-la-fonction">appeler la fonction</a></li>
+    <li><a href="#placer-la-valeur-retournée-dans-une-variable">placer la valeur retournée dans une variable</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#fonction-sans-paramètre">fonction sans paramètre</a></li>
+    <li><a href="#fonction-avec-paramètres">Fonction avec paramètres</a>
+      <ul>
+        <li><a href="#principe">Principe</a></li>
+        <li><a href="#traitement-automatisé-avec-une-boucle-for">traitement automatisé avec une boucle <code>for</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#tp-ascii-art">TP: ASCII-art</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#lecture---eciture-dans-un-fichier-lien">Lecture - eciture dans un fichier: Lien</a></li>
+        <li><a href="#projet-transformer-image---ascii-lien">Projet transformer image -&gt; ASCII: Lien</a></li>
+        <li><a href="#utiliser-des-fonctions-pour-calculer-lien">Utiliser des fonctions pour calculer: Lien</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_bases/index.html"><span itemprop="name">Bases en python</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP fonctions python</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_bases/fonctions/page51.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/es/page54/index.html" title="lecture - ecriture fichier (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/generalites/page4/index.html" title="installation python (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_bases" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tp-fonctions-python">TP fonctions python</h1>
+
+<h1 id="fonctions-programmées">Fonctions programmées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du <em>remaniement</em> de son code : C&rsquo;est à dire ré-écrire les parties du programme qui <em>fonctionnent</em> et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
+<blockquote>
+<p><em>Définition :</em> Une fonction est un bloc de code auquel on donne un nom en vue de le reutiliser. L&rsquo;appel de son nom exécute tout le bloc de code que cette fonction contient.</p>
+</blockquote>
+<h2 id="système-def--return">système def + return<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour créer une fonction, il faut la definir avec le mot clé <strong><code>def</code></strong>, suivi du nom de la fonction, d&rsquo;une paire de parenthèses suivies de <code>:</code>.</p>
+<p>La fonction peut retourner une valeur. Celle-ci est alors mise après le mot clé <code>return</code>.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir tout le monde&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
+<h2 id="appeler-la-fonction">appeler la fonction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On appelle cette fonction à l&rsquo;aide de son nom, suivi des parenthèses :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne (et affiche) </span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
+<p>APPELLER = EXECUTER LA FONCTION</p>
+<h2 id="placer-la-valeur-retournée-dans-une-variable">placer la valeur retournée dans une variable<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Souvent, cette donnée retournée doit être <em>affectée à une variable</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">salut</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche: </span>
+</span></span><span class="line"><span class="cl"><span class="n">bonjour</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span></span></span></code></pre></div>
+<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="fonction-sans-paramètre">fonction sans paramètre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un cours sur les fonctions se trouve à la page suivante: <a href="/docs/python/pages/fonctions/page2/">Lien</a></p>
+<ul>
+<li><em>Question a</em>: Ecrire une fonction appelée <code>etoiles</code> en python qui écrit une série de 5 symboles <code>*</code>, séparés chacun par un espace:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* * * * * </span></span></code></pre></div>
+<blockquote>
+<p>Appeler (exécuter) la fonction: faire suivre le nom de la fonction par des parenthèses <code>()</code>:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; etoiles()</span></span></code></pre></div>
+<p>Pour afficher la ligne, on peut placer l&rsquo;instruction suivante dans le programme:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">etoiles</span><span class="p">())</span></span></span></code></pre></div>
+<blockquote>
+<p>Solution (ne pas regarder trop vite)</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">etoiles</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;* * * * *&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">etoiles</span><span class="p">())</span></span></span></code></pre></div>
+<blockquote>
+<p>utiliser une <strong>boucle bornée</strong> pour répéter 5 fois l&rsquo;appel de la fonction et afficher l&rsquo;image suivante:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">* * * * * 
+</span></span><span class="line"><span class="cl">* * * * * 
+</span></span><span class="line"><span class="cl">* * * * * 
+</span></span><span class="line"><span class="cl">* * * * * 
+</span></span><span class="line"><span class="cl">* * * * * </span></span></code></pre></div>
+<blockquote>
+<p>Solution (ne pas regarder trop vite)</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">   <span class="nb">print</span><span class="p">(</span><span class="n">etoiles</span><span class="p">())</span> </span></span></code></pre></div>
+<ul>
+<li><em>Question b</em>:  Recopier le script utilisé.</li>
+</ul>
+<h2 id="fonction-avec-paramètres">Fonction avec paramètres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Souvent, la fonction traite ou calcule sur un ou plusieurs paramètres qui lui sont passés lors de l&rsquo;appel de la fonction.</p>
+<p>Pour prévoir ceci, il faudra définir un ou plusieurs paramètres lors de la constuction de la fonction.</p>
+<p>Par exemple, si l&rsquo;on souhaite améliorer la fonction <code>salut</code> et personnaliser le message:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir chacun par son nom&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span><span class="o">+</span> <span class="n">nom</span></span></span></code></pre></div>
+<blockquote>
+<p>Appeler cette fonction en plaçant le prenom &lsquo;John&rsquo; entre les parenthèses:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span><span class="o">+</span> <span class="n">nom</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">salut</span><span class="p">(</span><span class="s2">&#34;John&#34;</span><span class="p">))</span></span></span></code></pre></div>
+<p>Vous devriez obtenir: <em>bonjour John</em></p>
+<h3 id="traitement-automatisé-avec-une-boucle-for">traitement automatisé avec une boucle <code>for</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<blockquote>
+<p>Utiliser cette fonction avec les prenoms de la liste <code>Beatles = ['John', 'Paul', 'Ringo', 'George']</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Beatles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Beatles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<p>Vous devriez obtenir l&rsquo;affichage:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bonjour John
+</span></span><span class="line"><span class="cl">bonjour Paul
+</span></span><span class="line"><span class="cl">bonjour Ringo
+</span></span><span class="line"><span class="cl">bonjour George</span></span></code></pre></div>
+<p><em>question c.</em> Recopier le script sur votre <em>feuille réponse</em>.</p>
+<blockquote>
+<p>Solution (ne pas regarder trop vite)</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Beatles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Beatles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">salut</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></span></span></code></pre></div>
+<h2 id="tp-ascii-art">TP: ASCII-art<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;Ascii art consiste à représenter un dessin ou une image uniquement en utilisant des caractères ascii. La page suivante montre des créations artistiques par rubrique: <a href="https://www.asciiart.eu/" rel="external">asciiart.eu</a></p>
+<p>On cherche à realiser des figures à partir de caractères <code>*</code> ou <code>@</code>.</p>
+<p><strong>ex1:</strong> Ecrire le script d&rsquo;une fonction que vous appelerez <code>ligne</code>, qui prend comme paramètre un entier <code>n</code>, et retourne une ligne de <code>n</code> caractères <code>@</code>.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ligne</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;@&#39;</span> <span class="o">*</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">ligne</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span></span></span></code></pre></div>
+<p><strong>ex2:</strong> Utilisez votre fonction <code>ligne</code>, et appelez celle-ci dans une boucle bornée pour créer l&rsquo;image suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span></span></span></code></pre></div>
+<p><strong>ex3:</strong> Créez une fonction <code>carre</code> à partir du script précédent. Cette fonction devra créer un carré de <code>@</code> de la dimension <code>n</code> (paramètre). Cette fonction n&rsquo;aura pas de valeur de <em>retour</em> (pas de return), les affichage seront produits par la fonction <code>print</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="o">...</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">ligne</span><span class="p">(</span><span class="o">...</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">carre</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@@</span></span></span></code></pre></div>
+<p><strong>ex4:</strong> Utiliser la fonction <code>carre</code> pour créer l&rsquo;affichage suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">carre</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="o">@</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@</span>
+</span></span><span class="line"><span class="cl"><span class="o">@@@@</span></span></span></code></pre></div>
+<p><strong>ex5:</strong> Modifiez la fonction <code>etoiles</code> (ci-dessous) pour que celle-ci utilise un paramètre <strong>(nb)</strong>. Ce paramètre definit le nombre d&rsquo;espaces entre les 2 symboles <code>*</code> de la ligne. La ligne n&rsquo;affiche que 2 symboles <code>*</code>.</p>
+<p>Par exemple, <code>etoiles(5)</code> retourne <code>*     *</code> avec 5 espaces:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">etoiles</span><span class="p">(</span><span class="n">nb</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">etoiles</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span>     <span class="o">*</span></span></span></code></pre></div>
+<p><strong>ex6:</strong> afficher la figure suivante (un seul espace à chaque ligne entre 2 etoiles)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">..</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">etoile</span><span class="p">(</span><span class="o">..</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># resultat</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span></span></span></code></pre></div>
+<p><strong>ex7:</strong> Vous appelerez ensuite cette fonction avec des arguments judicieusement choisis, afin de dessiner les figures suivantes:</p>
+<p>figure 1:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">..</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">etoile</span><span class="p">(</span><span class="o">..</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># resultat</span>
+</span></span><span class="line"><span class="cl"><span class="o">**</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span>  <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span>   <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span>    <span class="o">*</span></span></span></code></pre></div>
+<p>figure 2:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">*    *
+</span></span><span class="line"><span class="cl">*   *
+</span></span><span class="line"><span class="cl">*  *
+</span></span><span class="line"><span class="cl">* *
+</span></span><span class="line"><span class="cl">**</span></span></code></pre></div>
+<p>figure 3:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">**
+</span></span><span class="line"><span class="cl">* *
+</span></span><span class="line"><span class="cl">*  *
+</span></span><span class="line"><span class="cl">*   *
+</span></span><span class="line"><span class="cl">*    *
+</span></span><span class="line"><span class="cl">*    *
+</span></span><span class="line"><span class="cl">*   *
+</span></span><span class="line"><span class="cl">*  *
+</span></span><span class="line"><span class="cl">* *
+</span></span><span class="line"><span class="cl">**</span></span></code></pre></div>
+<p><em>Astuce: avez vous fait en sorte d&rsquo;utiliser au maximum des boucles bornées avec un variant de boucle?</em></p>
+<p><strong>ex8:</strong> modifier la fonction ainsi que le programme pour afficher maintenant un sapin de Noel:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">      **
+</span></span><span class="line"><span class="cl">     *  *
+</span></span><span class="line"><span class="cl">    *    *
+</span></span><span class="line"><span class="cl">   *      *
+</span></span><span class="line"><span class="cl">  *        *
+</span></span><span class="line"><span class="cl">      **
+</span></span><span class="line"><span class="cl">      **</span></span></code></pre></div>
+<p><strong>ex 9:</strong> (a) Afficher une image à partir d&rsquo;une Liste. Compléter le script:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39; ^___^&#39;</span><span class="p">,</span><span class="s1">&#39;&#34; o o &#34;&#39;</span><span class="p">,</span> <span class="s1">&#39;===X===&#39;</span><span class="p">,</span><span class="s1">&#39;   &#34;  &#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">L1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">...</span></span></span></code></pre></div>
+<p>(b) Afficher une image à partir d&rsquo;une liste de listes de caractères.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L2</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;&#34;&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">L2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">+=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">...</span></span></span></code></pre></div>
+<p><strong>ex 10:</strong> Quelle est l&rsquo;image cachée dans cette matrice?</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;2F&#39;</span><span class="p">,</span> <span class="s1">&#39;5C&#39;</span><span class="p">,</span> <span class="s1">&#39;5F&#39;</span><span class="p">,</span> <span class="s1">&#39;2F&#39;</span><span class="p">,</span> <span class="s1">&#39;5C&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="s1">&#39;28&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;2E&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;2E&#39;</span><span class="p">,</span> <span class="s1">&#39;20&#39;</span><span class="p">,</span> <span class="s1">&#39;29&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="s1">&#39;3D&#39;</span><span class="p">,</span> <span class="s1">&#39;5C&#39;</span><span class="p">,</span> <span class="s1">&#39;5F&#39;</span><span class="p">,</span> <span class="s1">&#39;76&#39;</span><span class="p">,</span> <span class="s1">&#39;5F&#39;</span><span class="p">,</span> <span class="s1">&#39;2F&#39;</span><span class="p">,</span> <span class="s1">&#39;3D&#39;</span><span class="p">]]</span></span></span></code></pre></div>
+<p><em>Solution partielle:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">M</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">+=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">...</span></span></span></code></pre></div>
+<p><em>Rappels:</em></p>
+<ul>
+<li><em>Conversion valeur hexa -&gt; decimal: utiliser <code>int(valeur,16)</code></em></li>
+<li><em>Conversion decimal -&gt; ascii: utiliser <code>chr</code></em></li>
+</ul>
+<h1 id="liens-et-sources">Liens et sources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>notebook du site <a href="https://clogique.fr/nsi/notebook/?from=/nsi/premiere/td_tp/TP_Art_Ascii.ipynb#Exercice-7" rel="external">clogique</a></li>
+</ul>
+<h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h3 id="lecture---eciture-dans-un-fichier-lien">Lecture - eciture dans un fichier: <a href="../page54">Lien</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="projet-transformer-image---ascii-lien">Projet transformer image -&gt; ASCII: <a href="../page53">Lien</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="utiliser-des-fonctions-pour-calculer-lien">Utiliser des fonctions pour calculer: <a href="../page52">Lien</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b" checked><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_bases/fonctions/page51/index.html"><a class="padding" href="/python_bases/fonctions/page51/index.html">TP fonctions python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

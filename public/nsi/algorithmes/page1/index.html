@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Complexité, notation de landau, algorithmes de recherche et de tri">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Complexité :: allopizza">
+    <meta name="twitter:description" content="Complexité, notation de landau, algorithmes de recherche et de tri">
+    <meta property="og:url" content="//localhost:1313/nsi/algorithmes/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Complexité :: allopizza">
+    <meta property="og:description" content="Complexité, notation de landau, algorithmes de recherche et de tri">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="Complexité :: allopizza">
+    <meta itemprop="description" content="Complexité, notation de landau, algorithmes de recherche et de tri">
+    <meta itemprop="wordCount" content="3819">
+    <title>Complexité :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782144142" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782144142" defer></script>
+    <script src="/js/search-lunr.js?1782144142" defer></script>
+    <script src="/js/search.js?1782144142" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782144142";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782144142" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782144142" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782144142" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782144142" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782144142" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782144142" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782144142" rel="stylesheet">
+    <link href="/css/theme.css?1782144142" rel="stylesheet">
+    <link href="/css/format-html.css?1782144142" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/algorithmes\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/algorithmes/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#complexité-temporelle">Complexité temporelle</a></li>
+    <li><a href="#complexité-spatiale">Complexité spatiale</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#instructions-élémentaires-tn">Instructions élémentaires T(n)</a>
+      <ul>
+        <li><a href="#exemple-avec-une-boucle-bornée">Exemple avec une boucle bornée</a></li>
+        <li><a href="#boucle-non-bornée--variant-de-boucle">Boucle non bornée : variant de boucle</a></li>
+      </ul>
+    </li>
+    <li><a href="#gn-limite-asymptotique-en-n">g(n): Limite asymptotique en n</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#règles">Règles</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#enoncé-du-problème">Enoncé du problème</a></li>
+    <li><a href="#algorithme-de-lecture-exhaustif-recherche-linéaire">Algorithme de lecture exhaustif (recherche linéaire)</a>
+      <ul>
+        <li><a href="#evaluer-la-taille-des-paramètres-n">evaluer la taille des paramètres n</a></li>
+        <li><a href="#faire-le-détail-des-opérations-réalisées-et-calculer-tn">faire le détail des opérations réalisées et calculer T(n)</a></li>
+        <li><a href="#calcul-de-la-complexité">Calcul de la complexité</a></li>
+      </ul>
+    </li>
+    <li><a href="#algorithme-de-recherche-dichotomique">Algorithme de recherche dichotomique</a>
+      <ul>
+        <li><a href="#programme-python-itératif">Programme python itératif</a></li>
+        <li><a href="#programme-python-recursif">Programme python recursif</a></li>
+        <li><a href="#complexité">Complexité</a></li>
+      </ul>
+    </li>
+    <li><a href="#le-tri-par-insertion">Le tri par insertion</a>
+      <ul>
+        <li><a href="#principe-1">Principe</a></li>
+        <li><a href="#description-boucle-externe-et-boucle-interne">Description: boucle externe et boucle interne</a></li>
+        <li><a href="#permutations">Permutations</a></li>
+        <li><a href="#complexité-du-tri-par-sélection">Complexité du tri par sélection</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercice-1">Exercice 1</a></li>
+    <li><a href="#exercice-2-tp-sur-la-recherche-dans-une-liste-de-mots">Exercice 2: TP sur la recherche dans une liste de mots</a></li>
+    <li><a href="#exercice-3">Exercice 3:</a></li>
+    <li><a href="#exercice-4-">Exercice 4 :</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#boucles">Boucles</a></li>
+    <li><a href="#instructions-conditionnelles">Instructions conditionnelles</a>
+      <ul>
+        <li><a href="#conditionnel-simple">conditionnel simple</a></li>
+        <li><a href="#conditionnel-avec-alternative">Conditionnel avec alternative</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Complexité</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/algorithmes/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/index.html" title="algorithmes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page8/index.html" title="algorithmes de tri (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="complexité">Complexité</h1>
+
+<p><strong>Travaux pratiques:</strong></p>
+<ul>
+<li>étude comparée des algorithmes de recherche:
+<ul>
+<li>version 1 utilisant <code>time.time()</code> (chronométrage) et <code>numpy</code> (courbe des fonctions): <a href="../page14_bis/">Lien</a></li>
+<li>version 2 utilisant <code>%%timer</code>: <a href="../page14/">Lien</a></li>
+</ul>
+</li>
+<li>étude comparée des algorithmes de tri: <a href="../page15">Lien</a></li>
+<li>algorithmes de recherche des nombres premiers: <a href="../page11/">Lien</a>
+<strong>Feuille d&rsquo;exercices</strong> en version <a href="/pdf/NSI/algo1_complex_cours.pdf">pdf</a></li>
+</ul>
+<h1 id="cout-spatial-et-temporel">Cout spatial et temporel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>L&rsquo;execution d&rsquo;un algorithme nécessite l&rsquo;utilisation des ressources de l&rsquo;ordinateur:</p>
+<ul>
+<li>complexité en temps : temps de calcul pour executer les operations. On supposera qu&rsquo;il correspond au nombre d&rsquo;opérations effectuées par le programme.</li>
+<li>complexité spatiale : occupation de la mémoire pour contenir et manipuler le programme et ses données. Peut s&rsquo;exprimer en nombre de mots mémoires.</li>
+</ul>
+<h2 id="complexité-temporelle">Complexité temporelle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C&rsquo;est une estimation du temps d&rsquo;execution d&rsquo;un programme, independamment de la machine.
+En pratique, cela correspond au nombre d&rsquo;opérations effectuées par le programme.</p>
+<p>Pour evaluer la complexité temporelle, on peut mettre en evidence plusieurs opérations fondamentales. Le temps d&rsquo;éxecution d&rsquo;un algorithme resolvant ce genre de problème est toujours proportionnel au nombre de ces opérations :</p>
+<p>Pour le tri, par exemple : ces opérations fondamentales sont le nombre de comparaisons entre 2 élements et le nombre de deplacements de ces élements.</p>
+<h2 id="complexité-spatiale">Complexité spatiale<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Il faut souvent définir une mesure sur les données qui réflète la quantité d&rsquo;informations contenues. Exemple : nombre de chiffre des nombres, le nombre d&rsquo;éléments manipulés, dimension d&rsquo;une matrice, nombre de noeuds d&rsquo;un graphe&hellip;
+C&rsquo;est la complexité spatiale.</p>
+<h1 id="evaluer-la-complexité-temporelle">Evaluer la complexité (temporelle)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Étant donnée que la durée d&rsquo;exécution d&rsquo;un algorithme peut varier entre différentes entrées, on considère généralement la complexité temporelle dans le cas le plus défavorable, qui correspond à la durée maximale.</p>
+<p>Par exemple, avec l&rsquo;algorithme de recherche séquentielle, ce temps correspondrait à trouver l&rsquo;élément dans la liste comme s&rsquo;il occupait la dernière position (voir <a href="/nsi/algorithmes/page1/index.html#algorithme-de-lecture-exhaustif-recherche-linéaire">plus loin</a>).</p>
+<p>La complexité d’un algorithme sera alors (sauf mention contraire) exprimée sous la forme : <em>O</em>(<em>g</em>(<em>n</em>)). Ce qui correspond à la complexité asymptotique, <em>dans le pire des cas</em> (sa borne supérieure).</p>
+<p>En pratique, on ne comptera que les opérations estimées <strong>importantes</strong> : <strong>T(n)</strong>. Les opérations qui ne changent pas selon les nuances du langage utilisées lors de la programmation (boucle while et boucle for&hellip;) mais qui changent selon le problème. Ce nombre d&rsquo;opérations sera appelé T(n).</p>
+<p>On en déduira alors la <strong>classe de complexité asymtotique g(n)</strong> (voir <a href="/nsi/algorithmes/page1/index.html#principales-classes-de-la-complexité">tableau plus loin</a>). Puis la complexité dans le pire des cas <strong>O(g(n))</strong>.</p>
+<h2 id="instructions-élémentaires-tn">Instructions élémentaires T(n)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>T(n) est la somme des unités de mesure, comptée pour chaque instruction.</p>
+<p><strong>Une unité de mesure</strong> peut-être :</p>
+<ul>
+<li>une addition</li>
+<li>une soustraction</li>
+<li>une multiplication, une division, Mod (%), Div</li>
+<li>une opération arithmétique simple (sans appel de fonctions)</li>
+<li>une comparaison, les opérations booléennes (et,ou,non)</li>
+<li>une affectation</li>
+<li>des opérations de lectures et écritures simples</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<p>Le programme <code>multiplie</code> devra écrire dans une liste la série de nombres correspondants à la table de multiplication de b. Pour les <code>n</code> premiers termes.</p>
+<h3 id="exemple-avec-une-boucle-bornée">Exemple avec une boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Supposons pour cet exemple que seules les opérations multiplier et additionner sont significatives. On compte le nombre de ces opérations pour les fonctions suivantes.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplie1</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L</span><span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span></span></span></code></pre></div>
+<p>La première étape est d’identifier les séquences dans un algorithme. Si votre algorithme est composé des séquences :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  I1
+</span></span><span class="line"><span class="cl">  I2
+</span></span><span class="line"><span class="cl">  I3
+</span></span><span class="line"><span class="cl">  ...</span></span></code></pre></div>
+$$T(n) = T(I_1) + T(I_2) + T(I_3) + ...$$<p>il y a 3 séquences I<!-- raw HTML omitted -->1<!-- raw HTML omitted -->, I<!-- raw HTML omitted -->2<!-- raw HTML omitted -->, I<!-- raw HTML omitted -->3<!-- raw HTML omitted --> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I1</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L</span><span class="o">=</span><span class="p">[]</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I2</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I3</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span></span></span></code></pre></div>
+<p>La séquence I<!-- raw HTML omitted -->1<!-- raw HTML omitted --> contient une seule instruction élémentaires (affectation = ). I<!-- raw HTML omitted -->3<!-- raw HTML omitted --> ne contient pas d&rsquo;instruction significative. I<!-- raw HTML omitted -->2<!-- raw HTML omitted --> est une séquence comprenant 3 operations :</p>
+<ul>
+<li>opération * pour b * i</li>
+<li>affectation =</li>
+<li>affectation <code>append</code></li>
+</ul>
+<p>De ce fait : </p>
+$$T(n) = 1 + 3\times n$$<h3 id="boucle-non-bornée--variant-de-boucle">Boucle non bornée : variant de boucle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le principe est le même pour une boucle non bornée (non conditionnelle), mais il est moins facile de déterminer le nombre d’itérations de la boucle. Pour ce faire, la méthode classique est d’étudier plus en détails le <strong>variant de boucle</strong>. On détermine :</p>
+<ul>
+<li>La valeur initiale du variant de boucle ;</li>
+<li>Sa valeur finale ;</li>
+<li>De combien il diminue strictement à chaque étape.</li>
+</ul>
+<p>On peut alors en déduire le nombre d’itérations de la boucle.</p>
+<p><em>Exemple :</em> Avec <code>multiplie2</code>, le variant de boucle, c&rsquo;est <code>i</code>. Sa valeur passe de n - 1 à 0. La boucle est executée n fois. Et le nombre d&rsquo;instructions significatives dans la boucle est de 2 : </p>
+$$T(n) = 2 \times n$$<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplie2</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span></span></span></code></pre></div>
+<p>La fonction semble réaliser plus d&rsquo;opérations que la première implémentation, d&rsquo;où la petite différence pour la valeur de T(n) avec les deux fonctions precedentes.</p>
+<p>Ici, on peut évaluer T(n) = 2 + 5n</p>
+<p>Cette différence ne vient que d&rsquo;une différence des <strong>details d&rsquo;implémentation</strong> du même algorithme, et ne doit pas être considérée pour le calcul de la complexité.</p>
+<h2 id="gn-limite-asymptotique-en-n">g(n): Limite asymptotique en n<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Lorsque l&rsquo;on étudie la complexité d&rsquo;une fonction ou d&rsquo;un algorithme, on s&rsquo;intéressera souvent à son comportement pour de grandes taille du paramètre d&rsquo;entrée n. Car si pour des données de petite dimension, la qualité de l&rsquo;algorithme importe peu, pour de grandes tailles de données, la différence de performance peut être énorme. On dit que l&rsquo;on observe le <em>comportement asymtotique de T(n)</em>, c&rsquo;est à dire pour n qui tend vers de grandes valeurs.</p>
+<p>On aura besoin de définir plusieurs niveaux de description:</p>
+<ul>
+<li>T(n), qui représente le nombre d&rsquo;opérations significatives réalisées par cette fonction : par exemple $T(n) = 2\times n$.</li>
+<li>g(n) est une approximation de T(n). Ici, $g(n) = n$</li>
+<li>La complexité O(g(n)) détermine la classe de complexité de la fonction, dans le pire des cas. Dans le cas de nos 3 fonctions <code>multiplie</code>, ce sera à chaque fois <strong>O(n)</strong>. La complexité est <strong>linéaire</strong>.</li>
+</ul>
+<p>La petite différence d&rsquo;implementation de ces 2 fonctions est visible en calculant T(n), mais pas en déterminant g(n) ni O(g(n)).</p>
+<h1 id="règles-pour-estimer-la-complexité-ogn">Règles pour estimer la complexité O(g(n))<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="règles">Règles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Poser n = “la taille des paramètres”.</li>
+<li>Enoncer les instructions que vous compterez comme significatives<!-- raw HTML omitted --></li>
+<li>définir des blocs d&rsquo;instructions dans le script</li>
+<li>Ne compter que les instructions essentielles, à partir d&rsquo;une unité de mesure: noter la somme des instructions élémentaires T(n).</li>
+<li>Pour chacune des boucles du programme, repérer le <strong>variant de boucle</strong> et calculer le nombre d’itérations : combien de fois on passe dans la boucle.</li>
+<li>Si T(n) contient une somme de termes, conserver uniquement le plus divergent.</li>
+<li>Prendre pour g(n) une fonction approchée de T(n). Ne pas considérer les multiplicateurs C : si T(n) = C.f(n), alors g(n) = f(n). Par exemple, si $T(n) = 3\times n$, prendre g(n) = n</li>
+<li>Sauf précision contraire, la complexité demandée est la complexité au pire en temps.</li>
+</ul>
+<p><strong>Remarques :</strong></p>
+<ul>
+<li>C&rsquo;est souvent le genre du problème qui va décider de ce qui constitue une <em>instruction significative</em>: Pour un algorithme de tri, ce sera : le nombre de comparaison de deux éléments, et le déplacement de deux éléments.</li>
+<li>En faisant varier le degré de précision dans la mesure du nombre d&rsquo;instruction élémentaires, on fait varier aussi le degré d&rsquo;abstraction, c&rsquo;est à dire l&rsquo;independance par rapport à l&rsquo;implementation de cet algorithme.</li>
+</ul>
+<h1 id="principales-classes-de-la-complexité">Principales classes de la complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Ces complexités sont classées par temps d&rsquo;execution croissant de l&rsquo;agorithme correspondant.</p>
+<table>
+	<thead>
+			<tr>
+					<th>complexité</th>
+					<th>classe</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Θ(1)</td>
+					<td>temps constant</td>
+			</tr>
+			<tr>
+					<td>Θ(log n)</td>
+					<td>logarithmique en base 2 : log<!-- raw HTML omitted -->2<!-- raw HTML omitted -->(n)</td>
+			</tr>
+			<tr>
+					<td>Θ(n)</td>
+					<td>linéaire</td>
+			</tr>
+			<tr>
+					<td>Θ(n*log n)</td>
+					<td>quasi linéaire</td>
+			</tr>
+			<tr>
+					<td>Θ($n^2$)</td>
+					<td>quadratique, polynômial</td>
+			</tr>
+			<tr>
+					<td>Θ($n^3$)</td>
+					<td>cubique, polynômial</td>
+			</tr>
+			<tr>
+					<td>Θ($2^n$)</td>
+					<td>exponentiel (problème très difficiles)</td>
+			</tr>
+	</tbody>
+</table>
+<p>On peut observer l&rsquo;evolution des courbes t(n) en fonction de n (nombre de données). t(n) sera le <em>temps linéaire</em>:</p>
+<p>
+<figure >
+    
+        <img src="../images/graphique1.png" alt="1 et log(n) : log(n) a une croissance faible" />
+    
+    
+    <figcaption>
+        <p>
+        1 et log(n) : log(n) a une croissance faible
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/graphique2.png" alt="n*log(n) et n ont une croissance comparable" />
+    
+    
+    <figcaption>
+        <p>
+        n*log(n) et n ont une croissance comparable
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/graphique3.png" alt="n**2" />
+    
+    
+    <figcaption>
+        <p>
+        n**2
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/graphique4.png" alt="n**3" />
+    
+    
+    <figcaption>
+        <p>
+        n**3
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/graphique5.png" alt="2**n" />
+    
+    
+    <figcaption>
+        <p>
+        2**n
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Les problèmes à résoudre ont le plus souvent un nombre n de données bien supérieur à 15, comme présenté sur le dernier graphique. Les effets de convergence sont donc encore plus marqués.</p>
+<p>Approfondir la notion de complexité : voir annexe<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<h1 id="exemple-la-recherche-dans-une-liste-triée">Exemple: la recherche dans une liste triée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="enoncé-du-problème">Enoncé du problème<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Supposons que le problème posé soit de trouver un nom X dans un annuaire téléphonique qui consiste en une liste triée alphabétiquement. On peut s&rsquo;y prendre de plusieurs façons différentes. En voici deux :</p>
+<ol>
+<li>Recherche linéaire : parcourir les pages dans l&rsquo;ordre (alphabétique) jusqu&rsquo;à trouver le nom X cherché. C&rsquo;est l&rsquo;algorithme de lecture exhaustif, aussi appelé algorithme de recherche linéaire.</li>
+<li>Recherche dichotomique : ouvrir l&rsquo;annuaire au milieu, si le nom qui s&rsquo;y trouve est plus loin alphabétiquement que le nom cherché, regarder avant, sinon, regarder après. Refaire l&rsquo;opération qui consiste à couper les demi-annuaires (puis les quarts d&rsquo;annuaires, puis les huitièmes d&rsquo;annuaires, etc.) jusqu&rsquo;à trouver le nom cherché.</li>
+</ol>
+<h2 id="algorithme-de-lecture-exhaustif-recherche-linéaire">Algorithme de lecture exhaustif (recherche linéaire)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cet algorithme pourrait fonctionner même si les éléments (mots, cartes, valeurs&hellip;) sont rangés dans le désordre : il s&rsquo;agit de parcourir tous les mots, du premier au dernier, jusqu&rsquo;à tomber sur le mot recherché dans cet liste ou annuaire.</p>
+<p><em>Illustration avec un jeu de cartes non trié:</em> Cherchons la dame de coeur dans la main d&rsquo;un joueur.</p>
+<p>
+<figure >
+    
+        <img src="../images/cartes_coeur.png" alt="main du joueur" />
+    
+    
+    <figcaption>
+        <p>
+        main du joueur
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On suppose que la seule manière de parcourir le jeu du joueur est de retourner les cartes une à une. On s&rsquo;arrête si on trouve la carte. Ou bien si on arrive à la fin sans avoir trouvé la bonne carte.</p>
+<p>La fonction suivante réalise une <em>recherche linéaire</em> de la valeur X sur une liste L de valeurs numériques. Pour la recherche d&rsquo;une carte dans un jeu de cartes, ou d&rsquo;un nom X dans un dictionnaire, il faudra adpater légèrement le script, mais la structure est la même.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    recherche une valeur dans une liste et renvoie l&#39;indice si la valeur est trouvée, -1 sinon
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Params :
+</span></span></span><span class="line"><span class="cl"><span class="s2">    -------------------
+</span></span></span><span class="line"><span class="cl"><span class="s2">    X : int, valeur à trouver
+</span></span></span><span class="line"><span class="cl"><span class="s2">    L : list, une liste de valeurs entieres, dans un ordre quelconque.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Sortie : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ------
+</span></span></span><span class="line"><span class="cl"><span class="s2">    j : int, indice de la position de la valeur dans la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Principe :
+</span></span></span><span class="line"><span class="cl"><span class="s2">    --------
+</span></span></span><span class="line"><span class="cl"><span class="s2">    on parcourt la liste avec une boucle non bornée, tant que X n&#39;est pas trouvé dans la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">    on augmente la valeur de j à chaque nouvelle itération
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">n</span> <span class="ow">and</span> <span class="n">X</span><span class="o">!=</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">j</span><span class="o">==</span><span class="n">n</span> <span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">j</span></span></span></code></pre></div>
+<p>Pour evaluer la complexité de cette fonction, on suivra la méthode suivante:</p>
+<h3 id="evaluer-la-taille-des-paramètres-n">evaluer la taille des paramètres n<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Pour chacune de ces méthodes il existe un <strong>pire</strong> des cas et un <strong>meilleur</strong> des cas.</p>
+<ul>
+<li>Dans le meilleur des cas, le nom X est trouvé dès l&rsquo;ouverture de l&rsquo;annuaire: il n&rsquo;y aura alors qu&rsquo;<strong>une seule étape</strong>.</li>
+<li>Supposons que l&rsquo;annuaire contienne N = 30 000 noms, si le mot recherché est le dernier du dictionnaire, le pire cas, cela demandera 30 000 étapes. La complexité  est proportionnelle au nombre <strong>n</strong>. On la note <strong>O(n)</strong>, ça veut dire que dans le pire des cas, le temps de calcul est de l&rsquo;ordre de grandeur de n.</li>
+</ul>
+<h3 id="faire-le-détail-des-opérations-réalisées-et-calculer-tn">faire le détail des opérations réalisées et calculer T(n)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>L&rsquo;algorithme est constitué de 3 blocs d&rsquo;instruction :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># bloc I1
+</span></span><span class="line"><span class="cl">j = 0
+</span></span><span class="line"><span class="cl">n = len(L)</span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># bloc I2</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">n</span> <span class="ow">and</span> <span class="n">X</span><span class="o">!=</span><span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># bloc I3</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">j</span><span class="o">==</span><span class="n">n</span> <span class="p">:</span> <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">j</span></span></span></code></pre></div>
+<p>Les <strong>éléments significatifs</strong> pour analyser le nombre d&rsquo;opérations sont :</p>
+<ul>
+<li>le nombre d&rsquo;itérations</li>
+<li>le nombre d&rsquo;opérations par itération</li>
+</ul>
+<blockquote>
+<p>I1 contient 2 instructions.</p>
+</blockquote>
+<blockquote>
+<p>I3 contient 2 instructions (une comparaison et une instruction return)</p>
+</blockquote>
+<blockquote>
+<p>Pour le bloc I2 : La variant de boucle, c&rsquo;est n-j qui doit être &gt;0 pour que la boucle continue.</p>
+</blockquote>
+<p>Si la condition <code>X!=L[j]</code> n&rsquo;est jamais realisée, cette boucle est alors executée n fois, avec j qui varie de 0 à n-1.</p>
+<p>L&rsquo;instruction <code>j+=1</code> peut compter pour une instruction</p>
+<p>Chacune des conditions d&rsquo;arrêt <code>j&lt;n</code> et <code>X!=L[j]</code> peuvent être considérées comme significatives. Il y aura alors 3 instructions par itération.</p>
+<p>On aura, dans ce que l&rsquo;on appelle le PIRE des cas (l&rsquo;élément n&rsquo;est pas trouvé): $T_2 (n) = 3\times n$</p>
+<blockquote>
+<p>On fait alors la somme des 3 termes : $T(n) = T_1 (n) + T_2 (n) + T_3 (n)$</p>
+</blockquote>
+$$T(n) = 2 + 3\times n + 2$$<h3 id="calcul-de-la-complexité">Calcul de la complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>
+<p><strong>Complexité dans le meilleur et le pire des cas:</strong> Le nombre d&rsquo;opérations T(n) se situe entre Min(n) et Max(n)</p>
+<ul>
+<li>Min(n) = 7 : meilleur des cas (l&rsquo;élément cherché occupe la premiere position dans la liste)</li>
+<li>et Max(n) = n : pire des cas (l&rsquo;élément cherché n&rsquo;est pas dans la liste)</li>
+</ul>
+</li>
+</ul>
+<p>En notation de Landau, on écrit que la complexité (dans le pire des cas) est: <strong>O(n)</strong></p>
+<h2 id="algorithme-de-recherche-dichotomique">Algorithme de recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="programme-python-itératif">Programme python itératif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<blockquote>
+<p>Principe</p>
+</blockquote>
+<p>L&rsquo;algorithme de recherche dichotomique a été traité en classe de math pour rechercher la position sur l&rsquo;axe des x qui donne une image nulle par la fonction f : <a href="https://www.maths-et-tiques.fr/telech/Algo_SolEqua.pdf" rel="external">Lien vers l&rsquo;activité de Y Monka sur maths-et-tiques.fr</a></p>
+<p>L&rsquo;idée est de réduire l&rsquo;intervale des abscisses de moitié à chaque itération, jusqu&rsquo;à ce que l&rsquo;encadrement [a,b] de la valeur x soit inférieur à l&rsquo;intervale de confiance voulu (valeur ε) : jusqu&rsquo;à ce que : $b-a < \epsilon$</p>
+<p>On va adapter le raisonnement réalisé avec la recherche du zero de la manière suivante :</p>
+<p>Soit une liste L d&rsquo;objets triés dans l&rsquo;ordre croissant (une liste de mots, ou de cartes à jouer&hellip;), et un objet X à trouver dans cette liste : On recherche la position (l&rsquo;indice) de X dans la liste L en procédant par dichotomie si :</p>
+<ul>
+<li>On part d&rsquo;un intervale [a,b] sur les indices de la liste.</li>
+<li>On calcule le milieu (ou du moins la valeur proche) <code>m = (b-a) // 2</code></li>
+<li>si X se trouve dans la partie inférieur, c&rsquo;est à dire si <code>X &lt; L[m]</code> : on prend l&rsquo;intervale [a,m]</li>
+<li>sinon on prend l&rsquo;intervale [m,b]</li>
+</ul>
+<p>A chaque itération, l&rsquo;intervale est réduit de moitié. Le programme s&rsquo;arrête lorsque l&rsquo;intervale ne contient qu&rsquo;un seul indice (a et b son égaux).</p>
+<p><em>Illustration avec un jeu de cartes trié : rechercher la Dame de coeur</em></p>
+
+<figure >
+    
+        <img src="../images/cartes_rechercheD.png" alt="recherche dans un jeu de cartes triées" />
+    
+    
+    <figcaption>
+        <p>
+        recherche dans un jeu de cartes triées
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>Le script python complet</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rechDico</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">droite</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">trouve</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;=</span> <span class="n">droite</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">trouve</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># On se place au milieu de la liste</span>
+</span></span><span class="line"><span class="cl">        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span> <span class="o">+</span> <span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1"># il, s&#39;agit d&#39;une division entière</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">X</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="c1">#print(élément, &#34;trouvé à l&#39;indice:&#34;, milieu , liste[milieu]) </span>
+</span></span><span class="line"><span class="cl">          <span class="n">trouve</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># on arrête la boucle</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">L</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">X</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">          <span class="n">gauche</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#print(élément, &#34;non trouvé&#34;)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">trouve</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">milieu</span></span></span></code></pre></div>
+<blockquote>
+<p>Complexité</p>
+</blockquote>
+<ul>
+<li>La dimension des données sera prise comme egale à <code>len(L)</code>. Appelons cette valeur n.</li>
+<li>Le variant de boucle, c&rsquo;est $droite-gauche$, qui vaut au départ n, et 0 à la fin de la boucle, si la valeur n&rsquo;a pas été trouvée (pire des cas).</li>
+<li>Les instructions essentielles de la boucle, ce seront les comparaisons
+<ul>
+<li><code>L[milieu] == X</code></li>
+<li>et <code>L[milieu] &gt; X</code></li>
+</ul>
+</li>
+</ul>
+<p>Pour simplifier le raisonnement, disons qu&rsquo;il n&rsquo;y a qu&rsquo;une seule instruction essentielle par itération.</p>
+<p>A la fin de la première itération, le variant de boucle vaut n/2.</p>
+<p>On peut alors exprimer le nombre d&rsquo;opérations T(n) pour cet algorithme comme égal à : </p>
+$$T(n) = 1 + T(n/2)$$<p>On aura, avec le même raisonnement, </p>
+$$T(n/2) = 1 + T(n/4)$$<p>Et ainsi de suite jusqu&rsquo;à ce que n//2, et le variant de boucle, soient egaux à 0.</p>
+<p>On a alors $T(n) = 1 + 1 + ...$ un nombre de fois égal au nombre de divisions par 2 de n, nécessaires pour amener n à 0. Cette valeur est egale à $log_2(n)$.</p>
+<p>La complexité est alors <strong>O(log(n))</strong>.</p>
+<h3 id="programme-python-recursif">Programme python recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rechDichoAux</span><span class="p">(</span><span class="n">tabTrie</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">debut</span><span class="p">,</span><span class="n">fin</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">debut</span> <span class="o">==</span> <span class="n">fin</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">tabTrie</span><span class="p">[</span><span class="n">debut</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">debut</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">milieu</span><span class="o">=</span> <span class="p">(</span><span class="n">fin</span><span class="o">-</span><span class="n">debut</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">tabTrie</span><span class="p">[</span><span class="n">debut</span><span class="o">+</span><span class="n">milieu</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">rechDichoAux</span><span class="p">(</span><span class="n">tabTrie</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">debut</span><span class="p">,</span><span class="n">debut</span><span class="o">+</span><span class="n">milieu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">:</span> <span class="k">return</span> <span class="n">rechDichoAux</span><span class="p">(</span><span class="n">tabTrie</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">debut</span><span class="o">+</span><span class="n">milieu</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">fin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rechDich</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">rechDichoAux</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></span></span></code></pre></div>
+<p>On peut alors tester le programme (jupyter notebook):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tab = [23, 34, 45, 56, 67, 104]
+</span></span><span class="line"><span class="cl">rechDich(tab,67)
+</span></span><span class="line"><span class="cl">4</span></span></code></pre></div>
+<h3 id="complexité">Complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le second algorithme demandera dans le pire des cas de séparer en deux l&rsquo;annuaire, puis de séparer à nouveau cette sous-partie en deux, ainsi de suite jusqu&rsquo;à n&rsquo;avoir qu&rsquo;un seul nom. Le nombre d&rsquo;étapes nécessaire sera le nombre entier qui est immédiatement plus grand que $log_2 (N)$, qui vaut 15 lorsque N=30 000.</p>
+<p>La complexité est alors O(log2(N))</p>
+<h2 id="le-tri-par-insertion">Le tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="principe-1">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On recherche le plus petit élément et on le met à sa place (en l’échangeant  avec le premier). On recherche le second plus petit et on le met à sa place, etc.</p>
+
+<figure >
+    
+        <img src="../images/triSelection.png"  />
+    
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_selection</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>  
+</span></span><span class="line"><span class="cl">  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#recherche le plus petit élément de i à la fin</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mini</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">[</span><span class="n">mini</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mini</span> <span class="o">=</span> <span class="n">j</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#échanger les cases i et mini</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tmp</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">mini</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="p">[</span><span class="n">mini</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span> </span></span></code></pre></div>
+<h3 id="description-boucle-externe-et-boucle-interne">Description: boucle externe et boucle interne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Dans la boucle <strong>externe</strong>: On pose <code>i</code> comme position droite du tableau déjà trié. La valeur L[i] sera permutée avec la plus petite valeur trouvée dans la partie droite du tableau, celle non triée.</p>
+<p>Dans la boucle <strong>interne</strong>. Le variant <code>j</code> représente l&rsquo;index dans la partie droite, non triée du tableau. Le tableau non trié commençant au rang <code>i+1</code>, <code>j</code> va varier de <code>i+1</code> à len(L). On recherche le rang de la plus petite valeur, rang que l&rsquo;on appelle <em>mini</em>. La plus petite valeur est alors L[mini].</p>
+<h3 id="permutations">Permutations<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une fois identifié la valeur <code>mini</code>: On permute L[i] avec L[mini]. Pour permuter 2 valeurs, il faut utiliser une 3e variable, appelée <code>tmp</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="n">tmp</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">mini</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="p">[</span><span class="n">mini</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span></span></span></code></pre></div>
+<h3 id="complexité-du-tri-par-sélection">Complexité du tri par sélection<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La boucle interne est executée <code>n-1</code> fois, vu qu&rsquo;elle est appelée à chaque itération de la boucle externe: <code>for i in range(0, n - 1)</code>.</p>
+<p>Dans la boucle interne, supposons que les opérations significatives sont celles de comparaison: <code>if L[j] &lt; L[mini]</code>. On compte alors 1 seule opération à chaque itération de la boucle interne.</p>
+<p>Pour la première itération de la boucle externe, <code>i=0</code>. Donc, pour la boucle interne, la boucle <code>for</code> s&rsquo;écrit <code>for j in range(1, n)</code>. Il y a alors <code>n-1</code> itérations.</p>
+<p>Pour la deuxième itération de la boucle externe, <code>i=1</code>. Pour la boucle interne, on a alors <code>for j in range(2, n)</code>. Il y a alors <code>n-2</code> itérations.</p>
+<p>Le nombre d&rsquo;itérations de la boucle interne vaut <code>n-1</code>. On a alors <code>n-1</code> termes pour le calcul de T(n), dont les valeurs iront de <code>n-1</code> à 1:</p>
+$$T(n) = (n-1) + (n-2) + ... + 1$$<p>Il s&rsquo;agit d&rsquo;une somme de <code>n-1</code> termes d&rsquo;une suite arithmétique, tels que $u_0 = 1$ et $u_{n-1} = n-1$</p>
+<p>La complexité, exprimée en notation de Landau est donc $O(n^2)$. La classe de complexité est donc quadratique.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Feuille d&rsquo;exercices en version <a href="http://localhost:1313/pdf/NSI/algo1_complex_cours.pdf" rel="external">pdf</a></p>
+<h2 id="exercice-1">Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Déterminer la complexité des fonctions suivantes en terme de nombre d’additions et de soustractions. On donnera d’abord la valeur exacte T(n) puis l’ordre de grandeur O(n).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">truc</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">res</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">machin</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">res</span><span class="o">=</span><span class="n">truc</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">-=</span><span class="mi">1</span> 
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chose</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">res</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="o">+=</span><span class="n">machin</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fonctionFinale</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">res</span> <span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chose</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span></span></span></code></pre></div>
+<h2 id="exercice-2-tp-sur-la-recherche-dans-une-liste-de-mots">Exercice 2: TP sur la recherche dans une liste de mots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On donne deux algorithmes de recherche dans une liste de mots.</p>
+<p>Vous aller comparer l&rsquo;efficacité de la recherche de ces 2 algorithmes lorsque l&rsquo;on cherche un mot dans une liste (dictionnaire français).</p>
+<p>L&rsquo;énonce du TP se trouve ici: <a href="/docs/NSI/algorithmes/page14_bis/">version 1</a> et ici: <a href="/docs/NSI/algorithmes/page14/">version 2</a></p>
+<h2 id="exercice-3">Exercice 3:<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans un groupe de n individus , une star est quelqu’un que tout le monde connait mais qui ne connait personne. Pour trouver une star, s’il en existe une, vous ne pouvez poser aux individus de ce groupe que des questions du type : « connaissez-vous x ? ».</p>
+<ol>
+<li>Combien de stars au maximum peut-il exister dans un groupe ?</li>
+<li>Donner un algorithme trouvant une star s’il en existe une (ou déterminant qu’il n’en existe pas) et de coût linéaire (en prenant comme mesure de la complexité le nombre de questions posées).</li>
+</ol>
+<h2 id="exercice-4-">Exercice 4 :<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le problème est de déterminer à partir de quel étage d’un immeuble sauter par une fenêtre est fatal. Vous êtes dans un immeuble à n étages (numérotés de 1 à n) et vous disposez de k étudiants. Il n’y a qu’une opération possible pour tester si la hauteur d’un étage est fatale : faire sauter un étudiant par la fenêtre. S’il survit, vous pouvez le réutiliser ensuite, sinon vous ne pouvez plus.</p>
+<blockquote>
+<p>Vous devez proposer un algorithme pour trouver la hauteur à partir de laquelle un saut est fatal en faisant le <strong>minimum de sauts</strong>.</p>
+</blockquote>
+<ul>
+<li>Donnée: on suppose k &gt; n</li>
+</ul>
+<h1 id="compléments-sur-le-calcul-de-tn">Compléments sur le Calcul de T(n)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Pour calculer la complexité d’une boucle bornée. Soit (deb,fin) ∈ Z<!-- raw HTML omitted -->2<!-- raw HTML omitted -->, considérons une boucle de type <code>for i in range(deb, fin):</code></p>
+<p>Alors la complexité de cette boucle est :
+</p>
+$$\sum_{i=deb}^{fin-1} C_i$$<p>
+où C représente la complexité de l’itération<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> i</p>
+<h2 id="boucles">Boucles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour faire un calcul exact du nombre d&rsquo;opération, il faut compter:</p>
+<ul>
+<li>l&rsquo;initialisation de la variable utilisée comme variant de boucle</li>
+<li>l&rsquo;incrémentation de cette variable</li>
+<li>la comparaison avec la valeur d&rsquo;arrêt</li>
+</ul>
+<p><em>Parfois, le calcul de la complexité ne doit pas dépendre du type de boucle, et donc du type d&rsquo;algorithme. Ces opérations ne sont alors pas comptées.</em></p>
+<h2 id="instructions-conditionnelles">Instructions conditionnelles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="conditionnel-simple">conditionnel simple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Si Condition Alors :
+</span></span><span class="line"><span class="cl">  I ;</span></span></code></pre></div>
+<p>Dans le cas défavorable, où l&rsquo;expression conditionnelle revoie <code>True</code>, le bloc d&rsquo;instruction I est exécuté. On a alors :</p>
+$$T (n) = Tcondition (n) + T_I (n)$$<ul>
+<li>T(n) représente le nombre total d’instructions</li>
+<li>Tcondition(n) représente le nombre d’instructions nécessaire pour tester la condition (qui peut-être 1 s’il s’agit par exemple d’une simple comparaison entre deux expressions arithmétiques).</li>
+<li>T<!-- raw HTML omitted -->I<!-- raw HTML omitted --> représente le nombre d’instructions dans I.</li>
+</ul>
+<h3 id="conditionnel-avec-alternative">Conditionnel avec alternative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Si Condition Alors :
+</span></span><span class="line"><span class="cl">  I1 ;
+</span></span><span class="line"><span class="cl">Sinon :
+</span></span><span class="line"><span class="cl">  I2;</span></span></code></pre></div>
+<p>Dans le cas défavorable, on comptera :</p>
+$$T (n) = Tcondition (n) + max (T_{I_1} (n), T_{I_2} (n))$$<h1 id="compléments-sur-la-notations-de-landau">Compléments sur la notations de <strong>Landau</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><strong>Notation O : la borne superieure :</strong> g domine f
+on note f = O(g) s&rsquo;il existe un nombre réel positif a et un rang n de f<!-- raw HTML omitted -->n<!-- raw HTML omitted --> tels que f(n) ≤ a.g(n) :</li>
+</ul>
+$$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N},  |f(n_o)|\leq c.|g(n)| $$<p>En pratique, la recherche de la complexité revient à déterminer cette fonction (ou cette suite) g. On note la complexité <strong>O(g)</strong>. On ignore l&rsquo;eventuel coefficient multiplicateur c et on ne conserve que le terme le plus divergent dans le cas où g contienne plusieurs termes. <strong>T(n) = O(g(n))</strong>.</p>
+<p>Pour l&rsquo;exemple précédent, la complexité est notée <strong>O(n)</strong> en notation de Landau.</p>
+<ul>
+<li>
+<p><strong>Notation Θ :</strong> Lorsqu&rsquo;il est possible de déterminer une valeur exacte de la complexité, la notation devient Θ(g).</p>
+</li>
+<li>
+<p><strong>Complexité en moyenne Θ(g(n)):</strong></p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>où p(d) est la probabilité que l&rsquo;on ait la donnée d en entrée de l&rsquo;algorithme.</p>
+<p>et coût_A(d) représente la complexité en temps de l&rsquo;algorithme A sur la donnée d.</p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>wikipedia : analyse de la complexité : <a href="https://fr.wikipedia.org/wiki/Analyse_de_la_complexit%C3%A9_des_algorithmes" rel="external">wikipedia.org/wiki/Analyse_de_la_complexité_des_algorithmes</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>recherche linéaire et dichotomique : <a href="https://cache.media.eduscol.education.fr/file/NSI/76/3/RA_Lycee_G_NSI_algo-dichoto_1170763.pdf" rel="external">document eduscol 1ere NSI</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Exercice issu de ENS Lyon, Marc De Visme &amp; Laureline Pinault: <a href="http://perso.ens-lyon.fr/laureline.pinault/Algo1/TD01-correction.pdf" rel="external">Algorithmique, exos corrigés</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>itération : succession d&rsquo;états dans un processus&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="parent " data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286" checked><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="active " data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782144142"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782144142" defer></script>
+    <script src="/js/theme.js?1782144142" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

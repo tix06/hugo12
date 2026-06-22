@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="TP3: Structures conditionnelles Editeur Python Au choix, utilisez:
+un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
+l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TP conditions :: allopizza">
+    <meta name="twitter:description" content="TP3: Structures conditionnelles Editeur Python Au choix, utilisez:
+un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
+l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta property="og:url" content="//localhost:1313/python_avance/pages/conditions/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="TP conditions :: allopizza">
+    <meta property="og:description" content="TP3: Structures conditionnelles Editeur Python Au choix, utilisez:
+un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
+l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="TP conditions :: allopizza">
+    <meta itemprop="description" content="TP3: Structures conditionnelles Editeur Python Au choix, utilisez:
+un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
+l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta itemprop="wordCount" content="983">
+    <title>TP conditions :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781974426" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781974426" defer></script>
+    <script src="/js/search-lunr.js?1781974426" defer></script>
+    <script src="/js/search.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781974426";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781974426" rel="stylesheet">
+    <link href="/css/theme.css?1781974426" rel="stylesheet">
+    <link href="/css/format-html.css?1781974426" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/pages\/conditions\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/pages/conditions/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#editeur-python">Editeur Python</a></li>
+    <li><a href="#exemple">Exemple</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ex-1-test-sur-un-nombre-divisible">Ex 1: test sur un nombre divisible</a></li>
+    <li><a href="#ex-2-comparer-2-nombres">Ex 2: Comparer 2 nombres</a></li>
+    <li><a href="#ex-3-comparer-3-nombres">Ex 3: Comparer 3 nombres</a>
+      <ul>
+        <li><a href="#version-1">version 1</a></li>
+        <li><a href="#version-2">version 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#ex-4-imc">Ex 4: IMC</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP conditions</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/pages/conditions/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/conditions/page4/index.html" title="TP boucles non bornées (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/traitement/page31/index.html" title="TP exoplanets.db (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tp-conditions">TP conditions</h1>
+
+<h1 id="tp3-structures-conditionnelles">TP3: Structures conditionnelles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="editeur-python">Editeur Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Au choix, utilisez:</p>
+<ul>
+<li>un <strong>notebook</strong>.</li>
+</ul>
+
+<figure >
+    
+        <img src="/images/notebook.png"  />
+    
+    
+</figure>
+
+<p>Dans une même <strong>cellule</strong>: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur <em>Majuscule(Shift)</em> + <em>Entrée</em> pour <strong>executer le code</strong>.</p>
+<ul>
+<li>l&rsquo;editeur <strong>Pyzo</strong>:</li>
+</ul>
+<p>Mettre <strong><code>##</code></strong> avant chaque script pour créer une <em>cellule</em>. Executer la cellule et passer à la suivante avec <em>MAJ+CTRL+ENTREE</em>.</p>
+<ul>
+<li>l&rsquo;editeur <strong>Spyder</strong>:</li>
+</ul>
+<p>Mettre <strong><code>#%%</code></strong> avant chaque script pour créer une <em>cellule</em>. Executer la cellule et passer à la suivante avec <em>MAJ+ENTREE</em>.</p>
+
+<figure >
+    
+        <img src="../images/cell.png"  />
+    
+    
+</figure>
+
+<h2 id="exemple">Exemple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le programme suivant demande de renseigner votre age (à la premiere ligne), et vous laisse entrer en discothèque, seulement si vous avez plus de 18 ans:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel age avez-vous? &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span><span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vous pouvez entrer&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">age</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Montrez moi votre carte d identite SVP&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Desole, ca ne va pas etre possible&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<p>Cette structure servira pour les prochains scripts.</p>
+<h1 id="enoncé-des-exercices">Enoncé des exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="ex-1-test-sur-un-nombre-divisible">Ex 1: test sur un nombre divisible<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le script suivant permet de tester la parité d&rsquo;un nombre <code>n</code>. Saisir dans l&rsquo;editeur Python le script suivant.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">33</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;n est pair&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;n est impair&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>Tester puis adapter ce script, pour demander à l’utilisateur un entier, puis afficher si cet entier est divisible par 11.</p>
+</blockquote>
+<ul>
+<li><strong>Question a:</strong> Recopier ce nouveau programme.</li>
+</ul>
+<h2 id="ex-2-comparer-2-nombres">Ex 2: Comparer 2 nombres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Completer (et tester avec plusieurs valeurs de a et de b) le programme suivant qui compare a et b et retourne un message selon leur ordre ou leur egalité.</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">a</span> <span class="o">...</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;a est plus grand que b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">...</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;a et b sont égaux&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question b:</strong> Qui a la plus grande valeur parmi <code>a</code> et <code>b</code> après le <code>else</code>?</li>
+</ul>
+<h2 id="ex-3-comparer-3-nombres">Ex 3: Comparer 3 nombres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="version-1">version 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<blockquote>
+<p>Completer (et tester avec plusieurs valeurs de a de b et de c) le programme suivant qui compare a, b et c, et retourne un message précisant le plus grand des 3.</p>
+</blockquote>
+<p>On suppose que les 3 nombres a, b et c ne sont jamais égaux. On utilisera l&rsquo;opérateur <code>and</code> qui retourne <code>True</code> si les 2 conditions (à gauche et à droite de <code>and</code>) sont toutes les 2 évaluées à <code>True</code>, <code>False</code> sinon.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;a est le plus grand&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="o">...</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question c:</strong> Combien de <code>elif</code> faut-il utiliser au minimum?</li>
+</ul>
+<h3 id="version-2">version 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<blockquote>
+<p>Completer (et tester avec plusieurs valeurs de a de b et de c) le programme suivant (version 2) qui compare a et b et retourne un message selon leur ordre.</p>
+</blockquote>
+<p>Cette fois, on <strong>n&rsquo;utilisera pas</strong> l&rsquo;opérateur <code>and</code>, ce qui oblige à utiliser 2 structures conditionnelles imbriquées.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;a est le plus grand&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question d:</strong> Traduire en langage naturel la double condition pour laquelle <code>a</code> est le plus grand: <em>si a est supérieur à b alors si &hellip; &hellip; &hellip; alors &hellip;</em></li>
+</ul>
+<h2 id="ex-4-imc">Ex 4: IMC<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;Indice de Masse Corporelle (IMC) est un indicateur chiffré utilisé en médecine. L&rsquo;IMC d&rsquo;une personne est donné par la formule:</p>
+$$IMC = \tfrac{masse}{taille^2}$$<p>où la masse est en kilos et la taille en mètres.</p>
+<p>Proposez un algorithme qui demande à l&rsquo;utilisateur sa taille et sa masse puis qui affiche l&rsquo;IMC de la personne.</p>
+<p><em>Pensez à écrire un texte clair à destination de l&rsquo;utilisateur pour qu&rsquo;il sache quoi saisir.</em></p>
+<p>Utilisez le tableau suivant pour fournir une information à la personne en fonction de son IMC:</p>
+
+<figure >
+    
+        <img src="../images/imc.png" alt="classification de l&#39;IMC" />
+    
+    
+    <figcaption>
+        <p>
+        classification de l&#39;IMC - source: has-sante.fr
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li><strong>Question e:</strong> Recopier la série d&rsquo;instructions conditionnelles qui affichent une information sur l&rsquo;IMC.</li>
+</ul>
+<h1 id="utiliser-des-fonctions">Utiliser des fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Définition : Une fonction est un bloc de code auquel on donne un nom en vue de le reutiliser. L’appel de son nom exécute tout le bloc de code que cette fonction contient.</em></p>
+<p>Voir le cours: <a href="/docs/python/pages/fonctions/page1/">Lien</a></p>
+<p>Une fonction possède des paramètres, mis entre parenthèses et séparés chacun par une virgule. Une fonction retourne une valeur ou un objet, mis après le mot-clé <code>return</code></p>
+<p>Avec le programme en exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel age avez-vous? &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span><span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vous pouvez entrer&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Desole, ca ne va pas etre possible&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>les entrées et variables sont mises en paramètre: il s&rsquo;agit de <code>age</code></li>
+<li>Les <code>print</code> sont remplacés par <code>return</code></li>
+<li>Il faut choisir un nom à la fonction, écrit après <code>def</code></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">entrer_en_discotheque</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span><span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="s1">&#39;Vous pouvez entrer&#39;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="s1">&#39;Desole, ca ne va pas etre possible&#39;</span></span></span></code></pre></div>
+<p>Lorsque vous executez le programme, &hellip; il ne se passe rien. Vous avez seulement <em>chargé</em> la fonction.</p>
+<p>Il faut appeler la fonction pour que celle-ci soit executée, par exemple avec:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">entrer_en_discotheque</span><span class="p">(</span><span class="mi">18</span><span class="p">)</span></span></span></code></pre></div>
+<p>Voici un exemple d&rsquo;execution d&rsquo;une fonction à partir du shell.</p>
+
+<figure >
+    
+        <img src="../images/spyder_fct.png" alt="1:charger la fonction (executer cellule), 2: appel, 3: sortie" />
+    
+    
+    <figcaption>
+        <p>
+        1:charger la fonction (executer cellule), 2: appel, 3: sortie
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Son execution cesse lorsqu&rsquo;elle arrive à l&rsquo;instruction <code>return</code>. Le programme reprend alors son cours.</p>
+<ul>
+<li><strong>Question f:</strong> IMC à l&rsquo;aide d&rsquo;une fonction:
+Créer une fonction que vous nommerez <code>IMC</code> à partir de votre script de l&rsquo;exercice 4. Testez la dans le shell de votre editeur.</li>
+</ul>
+<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Rappeler comment s&rsquo;écrit une structure conditionnelle avec alternative (if &hellip; elif &hellip; else). Placer les conditions, indentations, et les <code>:</code></li>
+<li>Dans une structure conditionnelle avec alternative, tous les cas sont-ils toujours examinés par le programme? Expliquez.</li>
+<li>Expliquer la différence entre une variable (déclarée dans le <em>main</em>), et un paramètre (déclaré avec une fonction). Définir leur <em>portée</em></li>
+<li>Dans une fonction, quel est le rôle du mot-clé <code>return</code>?</li>
+<li>Ecrire ou recopier les fonctions pour les scripts: <code>parite</code>, <code>est_divisible</code>, <code>compare_2_nombres</code>, <code>IMC</code>.</li>
+<li>Compléter le tableau suivant avec le nom et les paramètres que vous avez choisis pour les fonctions précédentes.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>nom de la fonction</th>
+					<th>paramètre-s</th>
+					<th>valeur de retour</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>entrer_en_discotheque</code></td>
+					<td><code>age</code></td>
+					<td>&lsquo;vous entrez&rsquo; si <code>age</code>&gt;=18, &lsquo;desole&rsquo; sinon</td>
+			</tr>
+			<tr>
+					<td><code>parite</code></td>
+					<td><code>N</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>&hellip;</td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><a href="../../generalites/page2">TP1 sur les opérations et types de base</a></li>
+<li><a href="../../variables/page4/">TP2 sur les variables</a></li>
+<li><a href="../../conditions/page2/">cours: structures conditionnelles</a></li>
+<li><a href="../../conditions/page3/">TP3 conditions et fonctions</a></li>
+<li><a href="../../conditions/page4/">TP4 Boucles non bornées - while</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page2/index.html"><a class="padding" href="/python_bases/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/pages/traitement/page5/index.html"><a class="padding" href="/python_avance/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/es/page1/index.html"><a class="padding" href="/python_avance/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/es/ex1/index.html"><a class="padding" href="/python_avance/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/fonctions/page1/index.html"><a class="padding" href="/python_avance/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page1/index.html"><a class="padding" href="/python_avance/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python5_formes/index.html"><a class="padding" href="/python_avance/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page4/index.html"><a class="padding" href="/python_avance/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page6/index.html"><a class="padding" href="/python_avance/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/index_listes1/index.html"><a class="padding" href="/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python2_algos/index.html"><a class="padding" href="/python_avance/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page2/index.html"><a class="padding" href="/python_avance/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python6_codes/index.html"><a class="padding" href="/python_avance/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page3/index.html"><a class="padding" href="/python_avance/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page5/index.html"><a class="padding" href="/python_avance/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/conditions/page4/index.html"><a class="padding" href="/python_avance/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/python_avance/pages/conditions/page3/index.html"><a class="padding" href="/python_avance/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page31/index.html"><a class="padding" href="/python_avance/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python4_poo/index.html"><a class="padding" href="/python_avance/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page3/index.html"><a class="padding" href="/python_avance/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page4/index.html"><a class="padding" href="/python_avance/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page2/index.html"><a class="padding" href="/python_avance/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page1/index.html"><a class="padding" href="/python_avance/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781974426"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781974426" defer></script>
+    <script src="/js/theme.js?1781974426" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

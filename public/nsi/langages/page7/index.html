@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Langages mathematiques Pourquoi 1 &#43; 1 = 2 ? Pour comprendre cette opération, il faut déjà comprendre la signification de chacun des symboles utilisés, les chiffres 1 et 2, et les opérateurs &#43; et =
+1 &#43; = 2 Ainsi, pour apprendre à compter à une machine, il faudra lui expliquer comment les nombres se succèdent, et quel rôle jouent chaque opérateur sur ces nombres.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="langages mathematiques :: allopizza">
+    <meta name="twitter:description" content="Langages mathematiques Pourquoi 1 &#43; 1 = 2 ? Pour comprendre cette opération, il faut déjà comprendre la signification de chacun des symboles utilisés, les chiffres 1 et 2, et les opérateurs &#43; et =
+1 &#43; = 2 Ainsi, pour apprendre à compter à une machine, il faudra lui expliquer comment les nombres se succèdent, et quel rôle jouent chaque opérateur sur ces nombres.">
+    <meta property="og:url" content="//localhost:1313/nsi/langages/page7/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="langages mathematiques :: allopizza">
+    <meta property="og:description" content="Langages mathematiques Pourquoi 1 &#43; 1 = 2 ? Pour comprendre cette opération, il faut déjà comprendre la signification de chacun des symboles utilisés, les chiffres 1 et 2, et les opérateurs &#43; et =
+1 &#43; = 2 Ainsi, pour apprendre à compter à une machine, il faudra lui expliquer comment les nombres se succèdent, et quel rôle jouent chaque opérateur sur ces nombres.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="langages mathematiques :: allopizza">
+    <meta itemprop="description" content="Langages mathematiques Pourquoi 1 &#43; 1 = 2 ? Pour comprendre cette opération, il faut déjà comprendre la signification de chacun des symboles utilisés, les chiffres 1 et 2, et les opérateurs &#43; et =
+1 &#43; = 2 Ainsi, pour apprendre à compter à une machine, il faudra lui expliquer comment les nombres se succèdent, et quel rôle jouent chaque opérateur sur ces nombres.">
+    <meta itemprop="wordCount" content="2260">
+    <title>langages mathematiques :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782147074" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782147074" defer></script>
+    <script src="/js/search-lunr.js?1782147074" defer></script>
+    <script src="/js/search.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782147074";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782147074" rel="stylesheet">
+    <link href="/css/theme.css?1782147074" rel="stylesheet">
+    <link href="/css/format-html.css?1782147074" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/langages\/page7\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/langages/page7/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#pourquoi-1--1--2-">Pourquoi 1 + 1 = 2 ?</a></li>
+    <li><a href="#les-chiffres">Les chiffres</a></li>
+    <li><a href="#légalité-ou-lidentité-">l&rsquo;égalité, ou l&rsquo;identité =</a></li>
+    <li><a href="#laddition-">l&rsquo;addition +</a></li>
+    <li><a href="#questions"><strong>Questions</strong></a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#equivalence-logique">Equivalence logique</a>
+      <ul>
+        <li><a href="#definition">Définition</a></li>
+      </ul>
+    </li>
+    <li><a href="#implication">Implication</a>
+      <ul>
+        <li><a href="#definition-1">Definition</a></li>
+      </ul>
+    </li>
+    <li><a href="#negation-dune-proposition">Négation d’une proposition</a></li>
+    <li><a href="#les-connecteurs-logiques--et--et--ou-">Les connecteurs logiques « ET » et « OU »</a></li>
+    <li><a href="#combinaisons-de-propositions">Combinaisons de propositions</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercices-sur-les-procédures-de-calcul">Exercices sur les procédures de calcul</a>
+      <ul>
+        <li><a href="#ex-1-trouver-une-procédure-pour-calculer-2--3">Ex 1: Trouver une procédure pour calculer 2 + 3</a></li>
+        <li><a href="#ex-2-trouver-une-procédure-pour-calculer-3---2">Ex 2: Trouver une procédure pour calculer 3 - 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#exercices-sur-le-calcul-propositionnel">Exercices sur le calcul propositionnel</a>
+      <ul>
+        <li><a href="#exercice-1-le-soleil-brille">Exercice 1: Le Soleil brille</a></li>
+        <li><a href="#exercice-2">Exercice 2:</a></li>
+        <li><a href="#exercice-3">Exercice 3:</a></li>
+        <li><a href="#enoncé-dorigine-issu-du-site-emsefr">Enoncé d’origine (issu du site emse.fr</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">langages mathematiques</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/langages/page7.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/index.html" title="langages (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/page2/index.html" title="recursivité (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="langages-mathematiques">langages mathematiques</h1>
+
+<h1 id="langages-mathematiques">Langages mathematiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="pourquoi-1--1--2-">Pourquoi 1 + 1 = 2 ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour comprendre cette opération, il faut déjà comprendre la signification de chacun des symboles utilisés, les chiffres 1 et 2, et les opérateurs + et =</p>
+<ul>
+<li>1</li>
+<li><code>+</code></li>
+<li><code>=</code></li>
+<li>2</li>
+</ul>
+<p><em>Ainsi, pour apprendre à compter à une machine, il faudra lui expliquer comment les nombres se succèdent, et quel rôle jouent chaque opérateur sur ces nombres.</em></p>
+<h2 id="les-chiffres">Les chiffres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les symboles des chiffres nous sont ainsi intuitifs, mais, dans l&rsquo;idée d&rsquo;une construction du langage mathématique, il doit exister une règle qui nous dit:</p>
+<ul>
+<li>que le successeur immédiat de 1, dans l&rsquo;ensemble des entiers naturels, est le 2 et non le 3. (et qu&rsquo;il existe aussi la notion de predecesseur)</li>
+<li>que le plus petit des entiers naturels est le 0</li>
+</ul>
+<p>Cet <a href="https://automathssite.wordpress.com/2017/08/18/savez-vous-compter-les-choux-a-la-mode-de-peano/" rel="external">article du site automaths</a> détaille ainsi la construction de l&rsquo;ensemble des entiers naturels par des axiomes.</p>
+<p>
+<figure >
+    
+        <img src="../images/page7/naturels.png" alt="Comment sont placés les successeurs pour " />
+    
+    
+    <figcaption>
+        <p>
+        Comment sont placés les successeurs pour 
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<a href="https://fr.wikipedia.org/wiki/Giuseppe_Peano" rel="external">Giuseppe Peano</a> (1858-1932) est un mathématicien et linguiste italien. Il a repertorié les caractéristiques structurelles des nombres naturels dans une liste d&rsquo;<strong>axiomes</strong> énoncés dans la symbolique logique. Aujourd&rsquo;hui, ces axiomes constituant le langage mathématique traitent tous les signes mathématiques et logiques, et jouent un rôle analogue à celui de la grammatisation dans les langues naturelles.</p>
+<p>
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Giuseppe_Peano">
+        <img src="../images/page7/peano.jpeg" alt="Giuseppe Peano (1858-1932) " />
+    </a>
+    
+    <figcaption>
+        <p>
+        Giuseppe Peano (1858-1932) 
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Une fois établie la construction de l’ensemble des entiers naturels selon Peano, nous allons nous intéresser aux axiomes définissant les symboles + et =.</p>
+<h2 id="légalité-ou-lidentité-">l&rsquo;égalité, ou l&rsquo;identité =<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;identité est définie par 2 propriétés:</p>
+<ul>
+<li>a = b, b = c → a = c</li>
+<li>a<!-- raw HTML omitted -->1<!-- raw HTML omitted --> = a<!-- raw HTML omitted -->2<!-- raw HTML omitted --> → f(a<!-- raw HTML omitted -->1<!-- raw HTML omitted -->) = f(a<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)</li>
+</ul>
+<h2 id="laddition-">l&rsquo;addition +<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Voir l&rsquo;article <a href="https://automathssite.wordpress.com/2017/10/13/quest-ce-que-ca-veut-dire-additionner/" rel="external">Qu’est-ce que ça veut dire additionner ?</a>  du site automaths.</p>
+<p>On y lira que <strong>0 + 1 = 1</strong> est l&rsquo;un des axiomes définissant l&rsquo;addition, et s&rsquo;écrit en langage axiomatique:</p>
+$$0 + S_0 = S_0$$
+<figure >
+    <a href="https://automathssite.wordpress.com/2017/10/13/quest-ce-que-ca-veut-dire-additionner/">
+        <img src="../images/page7/addition.png" alt="L&#39;addition: la réunion de 2 ensembles" />
+    </a>
+    
+    <figcaption>
+        <p>
+        L&#39;addition: la réunion de 2 ensembles
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="questions"><strong>Questions</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Q1</strong>: Qui était Giuseppe Peano et qu&rsquo;a-t-il cherché à montrer à propos des entiers naturels?</li>
+<li><strong>Q2</strong>: Qui était le mathématicien Kurt Gödel, et qu&rsquo;a-t-il apporté à la théorie sur le langage mathématique initiée par Giuseppe Peano? En particulier, ce que l&rsquo;on appelle la <a href="https://www.pourlascience.fr/sd/histoire-sciences/vrai-ou-demontrable-5560.php" rel="external">complétude d’un système d’axiomes</a> ?</li>
+<li><strong>Q3</strong>: A quoi peut-on comparer un axiome mathématique? Y-a-t-il quelque chose d&rsquo;équivalent dans les langues naturelles?</li>
+<li><strong>Q4</strong>: Qu&rsquo;est ce que l&rsquo;addition +?</li>
+<li><strong>Q5</strong>: Qu&rsquo;est ce que l&rsquo;égalité =? Commenter les 2 propriétés qui la définissent.</li>
+</ul>
+<h2 id="conclusion">Conclusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les mathématiques sont formées:</p>
+<ul>
+<li>d&rsquo;un ensemble de valeurs, comme par exemple l&rsquo;ensemble des entiers naturels $\mathbb{N}$</li>
+<li>de relations entre les éléments de cet ensemble. Comme par exemple la relation de <em>successeur</em> vue plus haut.</li>
+<li>de règles sur ces valeurs. Ces règles définissent les opérateurs sur ces valeurs.</li>
+</ul>
+<p>Dans le chapitre suivant, on verra que l&rsquo;on peut créer un <strong>langage mathématique pour le traitement de l&rsquo;information</strong>.</p>
+<h1 id="calcul-propositionnel">Calcul propositionnel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On va avoir besoin d&rsquo;ajouter aux ensembles de nombres un nouvel ensemble particulier: un ensemble contenant 2 éléments contenant les valeurs de verité <em>vrai / faux</em>. Cela nous permettra d&rsquo;utiliser des machines pour automatiser le raisonnement. C&rsquo;est à dire pour produire des démonstrations, et ainsi de prouver des propositions.</p>
+<p>Le <strong>calcul propositionnel</strong> est un ensemble de règles permettant un nombre fini d&rsquo;étapes pour démonter si une proposition est VRAIE ou FAUSSE.</p>
+<p>Les <strong>Propositions</strong> contiennent des <strong>affirmations</strong> telles que:</p>
+<ul>
+<li>le moteur est en marche</li>
+<li>la vanne de sécurité est ouverte</li>
+<li>la cuve fuit, etc&hellip;</li>
+</ul>
+<p>On remplace ces <em>affirmations</em> par des <strong>symboles neutres</strong>, qui prennent l&rsquo;un des 2 états: VRAI ou FAUX. Cet état est choisi pour établir une certaine cohérence avec l&rsquo;information à traduire du monde exterieur (moteur en marche = VRAI, &hellip;)</p>
+<p>Les propositions vont combiner ces affirmations à l&rsquo;aide d&rsquo;opérateurs logiques. Cela va constituer une <strong>formule</strong>.</p>
+<p>Une propriété faisant intervenir n éléments offre $2^n$ interprétations envisageables.</p>
+<p>La formule doit prendre les valeurs VRAI pour toutes les <strong>interprétations</strong> de l&rsquo;énoncé.</p>
+<p>Dans ce paragraphe, on étudie les propositions en tant que telles, et les liens qui peuvent exister entre elles, sans se préoccuper du contenu de ces propositions.</p>
+<p>On rappelle qu’une proposition est un énoncé pouvant être Vrai ou Faux. On dit alors que les deux valeurs de vérité d’une proposition sont « vrai » et « faux ».</p>
+<h2 id="equivalence-logique">Equivalence logique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="definition">Définition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Deux propositions équivalentes P et Q sont deux propositions ayant les mêmes valeurs de vérité.</p>
+<p>Cette phrase peut se visualiser dans un tableau appelé table de vérité dans lequel on fait apparaître les différentes valeurs de vérité possibles pour le couple (P, Q) (Vrai et Vrai, Vrai et Faux, &hellip;) et, en correspondance, les valeurs de vérité de la proposition P ⇔ Q. Ainsi, la table de vérité de l’équivalence logique P ⇔ Q est :</p>
+<table>
+	<thead>
+			<tr>
+					<th>P</th>
+					<th>Q</th>
+					<th>P &lt;=&gt; Q</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>F</td>
+					<td>F</td>
+					<td>V</td>
+			</tr>
+			<tr>
+					<td>F</td>
+					<td>V</td>
+					<td>F</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>F</td>
+					<td>F</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>V</td>
+					<td>V</td>
+			</tr>
+	</tbody>
+</table>
+<p>On peut ainsi lire, deuxième ligne, que si P est vraie et Q est fausse, P ⇔ Q est fausse.
+L’équivalence logique joue pour les propositions, le rôle que joue l’égalité pour les nombres. Les expressions 3 + 2 et 5 ne sont pas identiques et pourtant on écrit 3+2 = 5. De même, les propositions (x<sup>2 = 1) et (x = 1 ou x = −1) ne sont pas identiques et pourtant on écrit (x</sup>2 = 1) ⇔ (x = 1 ou x = −1).</p>
+<h2 id="implication">Implication<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="definition-1">Definition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Si P et Q sont deux propositions, on définit l’implication logique : P ⇒ Q par sa table de vérité.</p>
+<table>
+	<thead>
+			<tr>
+					<th>P</th>
+					<th>Q</th>
+					<th>P =&gt; Q</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>F</td>
+					<td>F</td>
+					<td>V</td>
+			</tr>
+			<tr>
+					<td>F</td>
+					<td>V</td>
+					<td>V</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>F</td>
+					<td>F</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>V</td>
+					<td>V</td>
+			</tr>
+	</tbody>
+</table>
+<p>P et Q deux propositions. (P ⇒ Q) ⇔ (nonP ∨ Q).
+P ⇒ Q est fausse dans l’unique cas où P est vraie et Q est fausse: si P (est vraie) alors forcément Q (est vraie aussi). Mais pas réciproquement.</p>
+<p><em>Exemple:</em> Lorsque le facteur dépose une lettre, le chien aboie. Parmi les interprétations envisageables pour cet énoncé, il se peut que le chien aboie alors que le facteur n&rsquo;a PAS deposé de lettre.</p>
+<h2 id="negation-dune-proposition">Négation d’une proposition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soit P une proposition. On définit sa négation, notée nonP (ou ⌉P), à partir de sa table de vérité.</p>
+<table>
+	<thead>
+			<tr>
+					<th>P</th>
+					<th>nonP</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>V</td>
+					<td>F</td>
+			</tr>
+			<tr>
+					<td>F</td>
+					<td>V</td>
+			</tr>
+	</tbody>
+</table>
+<p><em>Exemple:</em> Je ne lave pas mon linge (nonL ou -L) s&rsquo;il pleut (P)</p>
+<p>On peut exprimer cette proposition à partir des affirmation L (je lave mon linge) et P (il pleut), à l&rsquo;aide de l&rsquo;opérateur implication =&gt; :</p>
+$$P \Rightarrow -~L$$<h2 id="les-connecteurs-logiques--et--et--ou-">Les connecteurs logiques « ET » et « OU »<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soient P et Q deux propositions. On peut définir les propositions « P ou Q », notée P ∨ Q, et « P et Q », notée P ∧ Q par les tables de vérité ci-dessous.</p>
+<table>
+	<thead>
+			<tr>
+					<th>P</th>
+					<th>Q</th>
+					<th>P ∧ Q</th>
+					<th>P ∨ Q</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>F</td>
+					<td>F</td>
+					<td>F</td>
+					<td>F</td>
+			</tr>
+			<tr>
+					<td>F</td>
+					<td>V</td>
+					<td>F</td>
+					<td>V</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>F</td>
+					<td>F</td>
+					<td>V</td>
+			</tr>
+			<tr>
+					<td>V</td>
+					<td>V</td>
+					<td>V</td>
+					<td>V</td>
+			</tr>
+	</tbody>
+</table>
+<p><em>Remarque:</em> Le connecteur logique OU n&rsquo;a pas le sens du OU exclusif. En effet, on peut voir que lorsque P est vraie et Q est vrai, alors P∨Q est vraie</p>
+<h2 id="combinaisons-de-propositions">Combinaisons de propositions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Tout énoncé peut s’écrire en utilisant uniquement la conjonction ∧ et la négation (par exemple, P ⇔ Q est la proposition non(P ∧ nonQ) ∧ non(Q ∧ nonP)). Ce résultat a une importance en électronique et en informatique.</p>
+<h1 id="un-problème-mathématique">Un problème mathématique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>En classe de mathématiques, <strong>un problème mathématique</strong> comprend un énoncé (la description d&rsquo;un situation) suivi d&rsquo;une ou plusieurs questions. Il est généralement demandé pour répondre aux questions posées d&rsquo;effectuer des calculs avec les données contenues dans l&rsquo;énoncé.</p>
+<p>Toute question ne peut pas forcément s&rsquo;énoncer dans un langage mathématique.</p>
+<p>En informatique, pour un problème donné, on cherche à trouver une procédure pour le résoudre. On doit pouvoir traiter cette procédure à l&rsquo;aide d&rsquo;une machine. Si cette procedure existe, et si le nombre d&rsquo;actions réalisées par la machine n&rsquo;est pas infini, alors le problème peut être résolu. (fonction calculable selon les données de l&rsquo;énoncé).</p>
+<h2 id="exercices-sur-les-procédures-de-calcul">Exercices sur les procédures de calcul<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="ex-1-trouver-une-procédure-pour-calculer-2--3">Ex 1: Trouver une procédure pour calculer 2 + 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On utilisera uniquemement les propositions suivantes:</p>
+<ul>
+<li>les entiers naturels s&rsquo;expriment selon la théorie axiomatique vue en classe: SS<!-- raw HTML omitted -->0<!-- raw HTML omitted --> succede à S<!-- raw HTML omitted -->0<!-- raw HTML omitted --> qui succede à 0&hellip;</li>
+<li>définitions axiomatique de l&rsquo;addition</li>
+<li>variables</li>
+</ul>
+<p>On considère qu&rsquo;il existe une fonction d&rsquo;affichage</p>
+<h3 id="ex-2-trouver-une-procédure-pour-calculer-3---2">Ex 2: Trouver une procédure pour calculer 3 - 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Mêmes outils que pour l&rsquo;exercice 1. La relation de prédecesseur est également connue.</p>
+<h2 id="exercices-sur-le-calcul-propositionnel">Exercices sur le calcul propositionnel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="exercice-1-le-soleil-brille">Exercice 1: Le Soleil brille<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>En utilisant les affirmations S (le soleil brille), P (il pleut), B (il bruine), A (il y a un arc en ciel), O (il a un vent d’Ouest), E (il y a du vent d’Est), traduire dans la logique des propositions suivantes:</p>
+<ol>
+<li>La bruine est une forme de pluie.</li>
+<li>S’il pleut et que le soleil brille en même temps, alors il y a un arc en ciel.</li>
+<li>Si le vent d’ouest amène la pluie, on n’a jamais vu qu’un vent d’est soit porteur de pluie.</li>
+</ol>
+<h3 id="exercice-2">Exercice 2:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Représenter dans le formalisme de la logique des propositions les théorèmes de géométrie suivants:</p>
+<ol>
+<li>Si un triangle est équilatéral alors il est isocèle.</li>
+<li>Un triangle rectangle n’est jamais équilatéral.
+Un carré est à la fois un parallélogramme et un rectangle.</li>
+<li>Un losange n’est ni un quadrilatère rectangle ni un triangle.</li>
+</ol>
+<h3 id="exercice-3">Exercice 3:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Lors de ses aventures au pays des merveilles rapportées par Lewis Carroll, Alice est souvent accompagnée par le chat de Cheshire. Ce félin énigmatique s’exprime sous la forme d’affirmations logiques qui sont toujours vraies. Alice se trouve dans un corridor dont toutes les portes à sa taille sont fermées. La seule porte ouverte est nettement trop petite pour qu’elle puisse l’emprunter. Une étagère est fixée au-dessus de cette porte. Le chat dit alors à Alice: «L’un des flacons posés sur cette étagère contient un liquide qui te permettra de prendre une taille plus adéquate. Mais attention, les autres flacons peuvent contenir un poison fatal.»</p>
+<p>Trois flacons sont effectivement posés sur l’étagère. Le premier est rouge, le second jaune, le troisième bleu. Une étiquette est collée sur chaque flacon. Alice lit l’inscription figurant sur chaque étiquette:</p>
+<ul>
+<li>Flacon rouge: le flacon jaune contient un poison; le bleu n’en contient pas;</li>
+<li>Flacon jaune: si le flacon rouge contient un poison, alors le bleu aussi;</li>
+<li>Flacon bleu: je ne contiens pas de poison.</li>
+</ul>
+<p>Nous noterons R, J et B les variables propositionnelles correspondant au fait que les flacons rouge, jaune et bleu contiennent un poison.</p>
+<p>Nous noterons $I_R$, $I_J$ et $I_B$ les propositions correspondant aux inscriptions sur les flacons rouge, jaune et bleu.</p>
+<p>On résoudra les questions suivantes en utilisant une table de vérité.</p>
+<p>Exprimez les formules $I_R$, $I_J$ et $I_B$ sous la forme de formules dépendant de R, J et B.</p>
+<ol>
+<li>Les inscriptions sur les trois flacons sont-elles compatibles?</li>
+<li>Si les trois inscriptions sont vraies, est-ce qu’un ou plusieurs flacons contiennent un poison?</li>
+<li>Dans le cas où aucun des trois flacons ne contient un poison, est-ce qu’une ou plusieurs inscriptions sont fausses?</li>
+</ol>
+<h3 id="enoncé-dorigine-issu-du-site-emsefr">Enoncé d&rsquo;origine (issu du site <a href="https://www.emse.fr/~zimmermann/Teaching/Logique/Livret/corrections/" rel="external">emse.fr</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>Flacon rouge: le flacon jaune contient un poison; le bleu n’en contient pas;</li>
+<li>Flacon jaune: si le flacon rouge contient un poison, alors le bleu aussi;</li>
+<li>Flacon bleu: je ne contiens pas de poison, mais au moins l’un des deux autres si.</li>
+</ul>
+<h1 id="compléments-sur-les-mathematiques">Compléments sur les Mathématiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>notes issues d&rsquo;un cours d&rsquo;Université math.<a href="https://math.unice.fr/~frapetti/analyse/Logique.pdf" rel="external">UNICE</a></li>
+</ul>
+<p>Les mathématiques actuelles sont bâties de la façon suivante :</p>
+<ul>
+<li>on part d’un petit nombre d’affirmations, appelées axiomes, supposées vraies à priori (et que l’on ne cherche donc pas à démontrer) ;</li>
+<li>on définit ensuite la notion de démonstration (en décidant par exemple de ce qu’est une implication, une équivalence&hellip;) ;</li>
+<li>on décide enfin de qualifier de vraie toute affirmation obtenue en fin de démonstration et on appelle « théorème » une telle affirmation (vraie).
+A partir des axiomes, on obtient donc des théorèmes qui viennent petit à petit enrichir la théorie mathématique. En raison des bases (les axiomes) non démontrées, la notion de « vérité » des mathématiques est sujette à débat.</li>
+</ul>
+<p><strong>Axiome</strong>. Un axiome est un énoncé supposé vrai à priori et que l’on ne cherche pas à démontrer.
+Ainsi, par exemple, Euclide a énoncé cinq axiomes (« les cinq postulats d’Euclide »), qu’il a renoncé à démontrer et qui devaient être la base de la géométrie (euclidienne). Le cinquième de ces axiomes a pour énoncé : « par un point extérieur à une droite, il passe une et une seule droite parallèle à cette droite ».</p>
+<p>Aujourd&rsquo;hui, ces axiomes constituant le langage mathématique traitent tous les signes mathématiques et logiques, et jouent un rôle analogue à celui de la grammatisation dans les langues naturelles.</p>
+<p><strong>Proposition</strong> (ou assertion ou affirmation). Une proposition est un énoncé énoncé auquel on peut attribuer une valeur de vérité <em>vrai</em> ou <em>faux</em>. Par exemple, « tout nombre premier est impair » et « tout carré de réel est un réel positif » sont deux propositions. Il est facile de démontrer que la première est fausse et la deuxième est vraie. Le mot proposition est clair : on propose quelque chose, mais cela reste à démontrer. Une proposition est construite à partir des axiomes du langage.</p>
+<p><strong>Théorème</strong>. Un théorème est une proposition vraie (et en tout cas démontrée comme telle). On utilise aussi en informatique le terme d&rsquo;<strong>assertion</strong> pour une proposition vraie.</p>
+<p><strong>Définition</strong>: souvent équivalent à axiome</p>
+<p><strong>Conjecture</strong>:  proposition que l’on suppose vraie sans parvenir à la démontrer. (et qu&rsquo;il est peut être impossible de démontrer).</p>
+<p>Voici la liste des<a href="https://fr.wikipedia.org/wiki/Probl%C3%A8mes_non_r%C3%A9solus_en_math%C3%A9matiques"> 
+            plus célèbres conjectures
+        </a> 
+Pour exemple, la<a href="https://fr.wikipedia.org/wiki/Conjecture_de_Goldbach"> 
+            conjecture de Goldbach
+        </a> </p>
+<blockquote>
+<p>Tout nombre entier pair supérieur à 3 peut s’écrire comme la somme de deux nombres premiers.</p>
+</blockquote>
+
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Conjecture_de_Goldbach">
+        <img src="../images/page7/goldbach.png" alt="Illustration de la" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Illustration de la
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Article <a href="https://automathssite.wordpress.com/2017/08/18/savez-vous-compter-les-choux-a-la-mode-de-peano/" rel="external">sur la construction des ensembles, site automaths</a></li>
+<li>Cours math <a href="https://math.unice.fr/~frapetti/analyse/Logique.pdf" rel="external">UNICE</a></li>
+<li>Raisonnement et logique propositionnelle <a href="http://zanotti.univ-tln.fr/MD/MD-Logique.html" rel="external">cours et article de Zanotti</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="active " data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782147074"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782147074" defer></script>
+    <script src="/js/theme.js?1782147074" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

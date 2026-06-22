@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Les bases en Python Le parcours d&#39;apprentissage qui est proposé ici s&#39;articule sur 5 chapitres: C1 Calculer avec le langage Python C2 Variables et opérations sur ces variables C3 Boucles (bornées) et listes C4 Structures conditionnelles et boucles non bornées C5 Fonctions Ces chapitres seront être approfondis dans la section Python avancé. pensée algorithmiqueutiliser des variables pour mémoriser des état, pensée algorithmiquetypes de baseLes types de base: numériques, string, booléens En python, les objets natifs de base ont pour type: nombre entier: integer ou int en Python nombre réel décimal: float chaine de caractères: str les valeurs logiques: booléen bool Lorsque l’on présente une valeur dans le programme, le langage s’adapte selon le type, comme on le verra plus loin.variables, opérationstypes de base et opérations sur les variablesstructures conditionnellescours sur les structures conditionnellesbouclescours sur les boucles, bornées et non bornées, notion d’itérable, fonctions nativeslistescours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphiquefonctionscours et exercices sur les fonctions, paramètreslecture - ecriture fichierlire et ecrire dans un fichier python, fonctions ord et chr, bouclesinstallation pythonInstaller un IDE python Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d’un ordinateur, PC, Linux ou mac. Vous allez faire vos premiers pas dans l’apprentissage du langage. L’IDE le plus simple et complet à utiliser sera Thonny: Rendez vous à la page de telechargement Suivre les instructions d’installation Suivre un tuto python courspython.comdessiner avec TurtleLe module Turtle permet d’avoir un environnement simple muni d’une interface graphique. La page suivante présente un aide-mémoire avec les principales instructions. Il est conseillé d’avoir bien lu et traité les exemples des pages: TP boucles et fonctions Cours sur les fonctions Premiers tracés Script initial Ces exemples utilisent une boucle bornée pour répéter des consignes (for .. in range)Travaux pratiquesTravaux pratiques et mini-projets">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Python - les bases :: allopizza">
+    <meta name="twitter:description" content="Les bases en Python Le parcours d&#39;apprentissage qui est proposé ici s&#39;articule sur 5 chapitres: C1 Calculer avec le langage Python C2 Variables et opérations sur ces variables C3 Boucles (bornées) et listes C4 Structures conditionnelles et boucles non bornées C5 Fonctions Ces chapitres seront être approfondis dans la section Python avancé. pensée algorithmiqueutiliser des variables pour mémoriser des état, pensée algorithmiquetypes de baseLes types de base: numériques, string, booléens En python, les objets natifs de base ont pour type: nombre entier: integer ou int en Python nombre réel décimal: float chaine de caractères: str les valeurs logiques: booléen bool Lorsque l’on présente une valeur dans le programme, le langage s’adapte selon le type, comme on le verra plus loin.variables, opérationstypes de base et opérations sur les variablesstructures conditionnellescours sur les structures conditionnellesbouclescours sur les boucles, bornées et non bornées, notion d’itérable, fonctions nativeslistescours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphiquefonctionscours et exercices sur les fonctions, paramètreslecture - ecriture fichierlire et ecrire dans un fichier python, fonctions ord et chr, bouclesinstallation pythonInstaller un IDE python Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d’un ordinateur, PC, Linux ou mac. Vous allez faire vos premiers pas dans l’apprentissage du langage. L’IDE le plus simple et complet à utiliser sera Thonny: Rendez vous à la page de telechargement Suivre les instructions d’installation Suivre un tuto python courspython.comdessiner avec TurtleLe module Turtle permet d’avoir un environnement simple muni d’une interface graphique. La page suivante présente un aide-mémoire avec les principales instructions. Il est conseillé d’avoir bien lu et traité les exemples des pages: TP boucles et fonctions Cours sur les fonctions Premiers tracés Script initial Ces exemples utilisent une boucle bornée pour répéter des consignes (for .. in range)Travaux pratiquesTravaux pratiques et mini-projets">
+    <meta property="og:url" content="//localhost:1313/python_bases/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Python - les bases :: allopizza">
+    <meta property="og:description" content="Les bases en Python Le parcours d&#39;apprentissage qui est proposé ici s&#39;articule sur 5 chapitres: C1 Calculer avec le langage Python C2 Variables et opérations sur ces variables C3 Boucles (bornées) et listes C4 Structures conditionnelles et boucles non bornées C5 Fonctions Ces chapitres seront être approfondis dans la section Python avancé. pensée algorithmiqueutiliser des variables pour mémoriser des état, pensée algorithmiquetypes de baseLes types de base: numériques, string, booléens En python, les objets natifs de base ont pour type: nombre entier: integer ou int en Python nombre réel décimal: float chaine de caractères: str les valeurs logiques: booléen bool Lorsque l’on présente une valeur dans le programme, le langage s’adapte selon le type, comme on le verra plus loin.variables, opérationstypes de base et opérations sur les variablesstructures conditionnellescours sur les structures conditionnellesbouclescours sur les boucles, bornées et non bornées, notion d’itérable, fonctions nativeslistescours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphiquefonctionscours et exercices sur les fonctions, paramètreslecture - ecriture fichierlire et ecrire dans un fichier python, fonctions ord et chr, bouclesinstallation pythonInstaller un IDE python Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d’un ordinateur, PC, Linux ou mac. Vous allez faire vos premiers pas dans l’apprentissage du langage. L’IDE le plus simple et complet à utiliser sera Thonny: Rendez vous à la page de telechargement Suivre les instructions d’installation Suivre un tuto python courspython.comdessiner avec TurtleLe module Turtle permet d’avoir un environnement simple muni d’une interface graphique. La page suivante présente un aide-mémoire avec les principales instructions. Il est conseillé d’avoir bien lu et traité les exemples des pages: TP boucles et fonctions Cours sur les fonctions Premiers tracés Script initial Ces exemples utilisent une boucle bornée pour répéter des consignes (for .. in range)Travaux pratiquesTravaux pratiques et mini-projets">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Python - les bases :: allopizza">
+    <meta itemprop="description" content="Les bases en Python Le parcours d&#39;apprentissage qui est proposé ici s&#39;articule sur 5 chapitres: C1 Calculer avec le langage Python C2 Variables et opérations sur ces variables C3 Boucles (bornées) et listes C4 Structures conditionnelles et boucles non bornées C5 Fonctions Ces chapitres seront être approfondis dans la section Python avancé. pensée algorithmiqueutiliser des variables pour mémoriser des état, pensée algorithmiquetypes de baseLes types de base: numériques, string, booléens En python, les objets natifs de base ont pour type: nombre entier: integer ou int en Python nombre réel décimal: float chaine de caractères: str les valeurs logiques: booléen bool Lorsque l’on présente une valeur dans le programme, le langage s’adapte selon le type, comme on le verra plus loin.variables, opérationstypes de base et opérations sur les variablesstructures conditionnellescours sur les structures conditionnellesbouclescours sur les boucles, bornées et non bornées, notion d’itérable, fonctions nativeslistescours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphiquefonctionscours et exercices sur les fonctions, paramètreslecture - ecriture fichierlire et ecrire dans un fichier python, fonctions ord et chr, bouclesinstallation pythonInstaller un IDE python Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d’un ordinateur, PC, Linux ou mac. Vous allez faire vos premiers pas dans l’apprentissage du langage. L’IDE le plus simple et complet à utiliser sera Thonny: Rendez vous à la page de telechargement Suivre les instructions d’installation Suivre un tuto python courspython.comdessiner avec TurtleLe module Turtle permet d’avoir un environnement simple muni d’une interface graphique. La page suivante présente un aide-mémoire avec les principales instructions. Il est conseillé d’avoir bien lu et traité les exemples des pages: TP boucles et fonctions Cours sur les fonctions Premiers tracés Script initial Ces exemples utilisent une boucle bornée pour répéter des consignes (for .. in range)Travaux pratiquesTravaux pratiques et mini-projets">
+    <meta itemprop="wordCount" content="324">
+    <title>Python - les bases :: allopizza</title>
+    <link href="/python_bases/index.xml" rel="alternate" type="application/rss+xml" title="Python - les bases :: allopizza">
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_bases\/index.html';
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_bases/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Bases en python</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_bases/_index.html" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/index.html" title="Page principale (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/variables/page5_d/index.html" title="introduction aux variables (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable menu" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="python---les-bases">Python - les bases</h1>
+
+
+
+<h1>Les bases en Python</h1>
+<p>Le parcours d'apprentissage qui est proposé ici s'articule sur 5 chapitres: 
+  <ul>
+    <li>C1 Calculer avec le langage Python</li>
+    <li>C2 Variables et opérations sur ces variables</li>
+    <li>C3 Boucles (bornées) et listes</li>
+    <li>C4 Structures conditionnelles et boucles non bornées</li>
+    <li>C5 Fonctions</li>
+  </ul>
+  Ces chapitres seront être approfondis dans la section <a href="../index_python">Python avancé</a>.
+</p>
+
+
+
+<ul class="card-container">
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-a96b4632386e544a5c6112d6625bb449">
+    <div class="card-content">
+      <div class="card-title" id="R-card-a96b4632386e544a5c6112d6625bb449">
+        <a href="/python_bases/variables/page5_d/index.html">
+        pensée algorithmique
+        </a>
+      </div>
+      <div class="card-content-text">
+          utiliser des variables pour mémoriser des état, pensée algorithmique
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-ddd93bd5f2d874efd167ee8a5848a93b">
+    <div class="card-content">
+      <div class="card-title" id="R-card-ddd93bd5f2d874efd167ee8a5848a93b">
+        <a href="/python_bases/generalites/page2/index.html">
+        types de base
+        </a>
+      </div>
+      <div class="card-content-text">
+          Les types de base: numériques, string, booléens En python, les objets natifs de base ont pour type:
+nombre entier: integer ou int en Python nombre réel décimal: float chaine de caractères: str les valeurs logiques: booléen bool Lorsque l’on présente une valeur dans le programme, le langage s’adapte selon le type, comme on le verra plus loin.
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-8dd0c22508657aaf1e827e11874717f6">
+    <div class="card-content">
+      <div class="card-title" id="R-card-8dd0c22508657aaf1e827e11874717f6">
+        <a href="/python_bases/variables/page4/index.html">
+        variables, opérations
+        </a>
+      </div>
+      <div class="card-content-text">
+          types de base et opérations sur les variables
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-66cc9aef99c84f781f8c387f02abcc99">
+    <div class="card-content">
+      <div class="card-title" id="R-card-66cc9aef99c84f781f8c387f02abcc99">
+        <a href="/python_bases/conditions/page1/index.html">
+        structures conditionnelles
+        </a>
+      </div>
+      <div class="card-content-text">
+          cours sur les structures conditionnelles
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-6f6f1565142479ee9ff4b27782223db6">
+    <div class="card-content">
+      <div class="card-title" id="R-card-6f6f1565142479ee9ff4b27782223db6">
+        <a href="/python_bases/boucles/page5/index.html">
+        boucles
+        </a>
+      </div>
+      <div class="card-content-text">
+          cours sur les boucles, bornées et non bornées, notion d&rsquo;itérable, fonctions natives
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-e2ebfa610129101e52abcbf8808d7182">
+    <div class="card-content">
+      <div class="card-title" id="R-card-e2ebfa610129101e52abcbf8808d7182">
+        <a href="/python_bases/boucles/page2/index.html">
+        listes
+        </a>
+      </div>
+      <div class="card-content-text">
+          cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-c94c1c372f59ba016667b1b588a128ee">
+    <div class="card-content">
+      <div class="card-title" id="R-card-c94c1c372f59ba016667b1b588a128ee">
+        <a href="/python_bases/fonctions/page2/index.html">
+        fonctions
+        </a>
+      </div>
+      <div class="card-content-text">
+          cours et exercices sur les fonctions, paramètres
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-3b7c23f1371d5b1ce03157fee98705e9">
+    <div class="card-content">
+      <div class="card-title" id="R-card-3b7c23f1371d5b1ce03157fee98705e9">
+        <a href="/python_bases/es/page54/index.html">
+        lecture - ecriture fichier
+        </a>
+      </div>
+      <div class="card-content-text">
+          lire et ecrire dans un fichier python, fonctions ord et chr, boucles
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-59376e8b1f4bb86b536f00542f5f85fe">
+    <div class="card-content">
+      <div class="card-title" id="R-card-59376e8b1f4bb86b536f00542f5f85fe">
+        <a href="/python_bases/generalites/page4/index.html">
+        installation python
+        </a>
+      </div>
+      <div class="card-content-text">
+          Installer un IDE python Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d’un ordinateur, PC, Linux ou mac.
+Vous allez faire vos premiers pas dans l’apprentissage du langage.
+L’IDE le plus simple et complet à utiliser sera Thonny:
+Rendez vous à la page de telechargement Suivre les instructions d’installation Suivre un tuto python courspython.com
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-a679dfb16d005fa707e0dfd4486ec249">
+    <div class="card-content">
+      <div class="card-title" id="R-card-a679dfb16d005fa707e0dfd4486ec249">
+        <a href="/python_bases/dessiner/page3/index.html">
+        dessiner avec Turtle
+        </a>
+      </div>
+      <div class="card-content-text">
+          Le module Turtle permet d’avoir un environnement simple muni d’une interface graphique.
+La page suivante présente un aide-mémoire avec les principales instructions.
+Il est conseillé d’avoir bien lu et traité les exemples des pages:
+TP boucles et fonctions Cours sur les fonctions Premiers tracés Script initial Ces exemples utilisent une boucle bornée pour répéter des consignes (for .. in range)
+      </div>
+    </div>
+  </article>
+</li>
+<li>
+  <article class="card card-popout" aria-labelledby="R-card-38c01ec63a91d0b342301ac526645dad">
+    <div class="card-content">
+      <div class="card-title" id="R-card-38c01ec63a91d0b342301ac526645dad">
+        <a href="/python_bases/tp/index.html">
+        Travaux pratiques
+        </a>
+      </div>
+      <div class="card-content-text">
+          Travaux pratiques et mini-projets
+      </div>
+    </div>
+  </article>
+</li>
+</ul>
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="active parent " data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b" checked><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

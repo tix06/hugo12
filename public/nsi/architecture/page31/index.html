@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="routage statique et dynamique, ospf etat de liens, rip vecteur de distance">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="protocoles de routage :: allopizza">
+    <meta name="twitter:description" content="routage statique et dynamique, ospf etat de liens, rip vecteur de distance">
+    <meta property="og:url" content="//localhost:1313/nsi/architecture/page31/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="protocoles de routage :: allopizza">
+    <meta property="og:description" content="routage statique et dynamique, ospf etat de liens, rip vecteur de distance">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="protocoles de routage :: allopizza">
+    <meta itemprop="description" content="routage statique et dynamique, ospf etat de liens, rip vecteur de distance">
+    <meta itemprop="wordCount" content="1300">
+    <title>protocoles de routage :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782143495" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782143495" defer></script>
+    <script src="/js/search-lunr.js?1782143495" defer></script>
+    <script src="/js/search.js?1782143495" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782143495";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782143495" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782143495" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782143495" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782143495" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782143495" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782143495" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782143495" rel="stylesheet">
+    <link href="/css/theme.css?1782143495" rel="stylesheet">
+    <link href="/css/format-html.css?1782143495" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/architecture\/page31\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/architecture/page31/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#activité">Activité</a></li>
+    <li><a href="#routage-à-vecteur-de-distance">Routage à vecteur de distance</a></li>
+    <li><a href="#routage-à-états-de-liens">Routage à états de liens</a></li>
+    <li><a href="#débit">Débit</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#videos-présentées-dans-cette-page">Videos présentées dans cette page</a></li>
+    <li><a href="#autres-documents">Autres documents</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/architecture/index.html"><span itemprop="name">architecture</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">protocoles de routage</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/architecture/page31.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page3/index.html" title="graphes et internet (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page6/index.html" title="chiffrement symetrique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="protocoles-de-routage">protocoles de routage</h1>
+
+<p>Ce cours comporte plusieurs pages:</p>
+<ul>
+<li><a href="../../structure/page5/">cours sur les graphes. Term NSI</a></li>
+<li><a href="/NSI_1/architecture/modele_OSI/">modele OSI et TCP/IP. 1ere Nsi</a></li>
+<li><a href="../page3/">graphes et internet</a></li>
+<li><a href="../page31/">Protocoles de routage</a></li>
+<li><a href="/docs/SNT_2nde/pages/pages_algo/graphes/page2/">algorithmes de parcours des graphes</a></li>
+<li><a href="/docs/SNT_2nde/pages/pages_algo/graphes/page4/">algorithme de Dijkstra</a></li>
+<li><a href="../../structure/page41/">Activite sur les arbres couvrants</a></li>
+<li><a href="../../structure/page4/">Arbres</a></li>
+</ul>
+<h1 id="routage-statique-et-dynamique">Routage statique et dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Pour un reseau de petite dimension, on peut envisager d&rsquo;utiliser une table de routage <em>statique</em>, comme vue dans le cours <a href="/docs/NSI/architecture/page3/">graphes et internet</a>.</p>
+<p>Par contre, pour des reseaux de grande taille, il faudra une méthode permettant de construire et mettre à jour cette table de manière <em>dynamique</em>. Il existe 2 protocoles pour réaliser cela, RIP et OSPF.</p>
+<p>Ces protocoles vont permettre aux routeurs d&rsquo;échanger des informations entre eux, afin d&rsquo;avoir un aperçu des réseaux autour d&rsquo;eux. Ils vont déterminer le meilleur chemin en fonction de l&rsquo;état du réseau. Ils se basent sur un critère, ou plutôt un coût associé à chaque chemin: il s&rsquo;agira du nombre de sauts (routeurs traversés) ou bien de l&rsquo;estimation de la durée d&rsquo;acheminement (loi sur le débit).</p>
+<p>Ces protocoles doivent eviter les boucles de routage, et corriger les données de routage selon l&rsquo;evolution du reseau (nouvelles machines, ou pannes, engorgement).</p>
+<p>Chaque modification du reseau va entrainer un temps d&rsquo;echange entre les routeurs, jusqu&rsquo;à ce que ceux-ci finissent par établir une nouvelle table de routage.</p>
+<ul>
+<li>Voir le cours en detail sur <a href="https://dlatreyte.github.io/terminales-nsi/chap-11/5-routage/" rel="external">dlatreyte.github.io</a></li>
+</ul>
+<h1 id="protocoles-de-routages-dynamiques">protocoles de routages dynamiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les routeurs vont s’adapter à un réseau qui évolue au cours du temps (ajout ou suppression de routes, panne d’un routeur, etc..). Pour cela les routeurs se transmettent des informations pour qu’ils puissent mettre à jour leur table de routage.</p>
+<h2 id="activité">Activité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour chacune des videos, au cours de leur visionnage, prendre en notes pour repondre aux questions suivantes:</p>
+<p><strong>Le routage à vecteurs de distance</strong></p>
+
+<figure >
+    <a href="https://www.youtube.com/watch?v=kzablGaqUXM">
+        <img src="/images/video.png" alt="Video (Youtube): Mooc de l&#39;INT (institut des Mines Télécom)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Video (Youtube): Mooc de l&#39;INT (institut des Mines Télécom)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>Les routage à états de liens</strong></p>
+
+<figure >
+    <a href="https://www.youtube.com/watch?v=-utHPKREZV8">
+        <img src="/images/video.png" alt="Video (Youtube): Mooc de l&#39;INT (institut des Mines Télécom)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Video (Youtube): Mooc de l&#39;INT (institut des Mines Télécom)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ol>
+<li>Pour le routage étudié, un routeur connait-il la carte globale du reseau (quel routeur est connecté à tel autre)?</li>
+<li>Pour le routage étudié, s&rsquo;agit-il des protocoles RIP ou OSPF?</li>
+<li>communique t-il avec ses voisins directs, ou avec l&rsquo;ensemble du reseau?</li>
+<li>communique t-il aux autres routeurs de gros ou petits volumes d&rsquo;informations pour établir sa table de routage?</li>
+<li>un routeur, connait-il le chemin exact pour atteindre n&rsquo;importe quel routeur du reseau?</li>
+<li>connait-il le nombre de sauts pour atteindre n&rsquo;importe quel routeur du reseau?</li>
+<li>selectionne t-il le routeur voisin qui va donner le plus court chemin en nombre de saut / en durée d&rsquo;acheminement? (Question de l&rsquo;exercice n°4 du <a href="https://eduscol.education.fr/document/32770/download" rel="external">sujet de baccalaureat 2021, Polynesie</a>)</li>
+<li>Comment met-il à jour sa table de routage lorsqu&rsquo;il y a une modification du reseau?</li>
+</ol>
+<h2 id="routage-à-vecteur-de-distance">Routage à vecteur de distance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/routage_RIP.png" alt="exemple de table de routage à vecteur de distance" />
+    
+    
+    <figcaption>
+        <p>
+        exemple de table de routage à vecteur de distance
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Un <em>vecteur de distance</em> est une donnée constituée de <em>(adresse du reseau, nombre de sauts, gateway)</em></p>
+<p><strong>Coût associé au chemin:</strong> Le nombre de sauts (routeurs traversés)</p>
+<p><strong>Exemple de protocole:</strong> Routing Information Protocol, RIP (basé sur l&rsquo;algorithme de Bellman et Ford)</p>
+<p><strong>Mise à jour de la table de routage:</strong> Les routeurs <em>envoient leur table de routage</em> (complète ou non), aux routeurs voisins de façon <em>périodique</em>. Lorsque le routeur reçoit la table de routage du voisin, il met à jour sa table à partir de ces informations: pour chaque vecteur de distance donné par le routeur voisin, il incrémente la valeur du nombre de sauts d&rsquo;une unité, et compare avec sa table:</p>
+<ul>
+<li>Si le coût est inférieur à celui de sa propre table, ou s&rsquo;il s&rsquo;agit d&rsquo;une nouvelle adresse, il remet celle-ci à jour en considérant ce nouveau chemin.</li>
+<li>Si le coût de l&rsquo;une de ses entrées dans la table semble augmenter, il peut aussi s&rsquo;agir d&rsquo;une modification du reseau (panne, route coupée&hellip;). Il met à jour le nouveau coût pour son vecteur de distance.</li>
+</ul>
+<p>Ainsi, les informations vont circuler de proche en proche, très rapidement. Le routeur ne connait pas la route précise pour atteindre une adresse dans le reseau, mais la passerelle à prendre pour optimiser le coût du chemin (distance, ou métrique la plus petite).</p>
+<p><strong>Inconvenients</strong> de cette méthode:</p>
+<ul>
+<li>il peut survenir des <em>problèmes de convergence</em> des données en cas de coupure d&rsquo;une route sur le reseau (boucles, voir video). Le <em>temps</em> de convergence, même sans ce problème de boucle est relativement <em>long</em>. D&rsquo;autant plus que le reseau est grand.</li>
+<li>Il peut y avoir des itinéraires qui <strong>bouclent</strong> (voir video plus haut).</li>
+</ul>
+<p><strong>Protocole RIP</strong>: (Routing Information Protocol). Issu des travaux de Bellman-Ford (publiés en 1956 et 1958), il a été développé par l’université de Californie. Il est utilisé initialement pour ARPAnet, ce qui en fait son grand succès.</p>
+<ul>
+<li>RIP utilise une métrique à nombre de sauts (hop en anglais, correspond au nombre de routeurs à traverser pour arriver à destination). Le nombre de sauts est limité à 15.</li>
+<li>Chaque routeur envoie sa table de routage à ses voisins toutes les 30 secondes.</li>
+<li>Si une route n’est pas actualisée pendant 180s, elle est supprimée de la table</li>
+</ul>
+<h2 id="routage-à-états-de-liens">Routage à états de liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/routage_OSPF.png" alt="exemple de table de routage à états de liens" />
+    
+    
+    <figcaption>
+        <p>
+        exemple de table de routage à états de liens
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>Coût associé au chemin:</strong> homogène à une durée d&rsquo;acheminement, calculé sur le débit des différentes sections du chemin. Dépend de l&rsquo;encombrement, état du réseau, &hellip;</p>
+<p><strong>Exemple de protocole:</strong> Open Shortest Path First, OSPF: algorithme à état de liaison, basé sur la recherche du plus court chemin (<a href="/docs/SNT_2nde/pages/pages_algo/graphes/page4/">Dijkstra</a>).</p>
+<p><strong>Mise à jour de la table de routage:</strong> Le routeur envoie des petits messages, de type <em>bonjour</em> dans le reseau, et mesure la durée de reponse. Il construit un paquet spécial contenant les informations qu’il vient de découvrir, avant de la diffuser à tous les autres routeurs. Il établit ainsi une table avec, pour chaque adresse la mention d&rsquo;une métrique qui depend du debit de chaque liaison, et déduit le plus court chemin vers chaque destination à partir de l&rsquo;algorithme de Dijkstra. La <strong>métrique</strong> est obtenue en <strong>additionnant les coûts de chaque liaison</strong>.</p>
+<p><strong>Avantages:</strong></p>
+<ul>
+<li>Plus de problème de boucle puisque la mise à jour des routeurs se fait simultanément.</li>
+<li>En théorie, pas de limitation de la taille du réseau.</li>
+</ul>
+<p><strong>Inconvénient</strong> : Les tables de routage croissent avec le nombre de routeurs dans un réseau. Ce qui nécessite plus de mémoire au sein des routeurs et plus de temps pour explorer les tables.</p>
+<blockquote>
+<p>Exercice n°3 du <a href="/docs/NSI/bac/page6/#bac-2022-metropole1-exercice-3">sujet de baccalaureat Metropole-2 2022</a>: représentations binaires et protocoles de routage. (RIP, OSPF), minimiser le nombre de routeurs à traverser pour une requête.</p>
+</blockquote>
+<blockquote>
+<p>Exercice n°3 du <a href="https://eduscol.education.fr/document/47927/download" rel="external">sujet de baccalaureat Metropole-2 2023</a>: réseau Arpanet</p>
+</blockquote>
+<blockquote>
+<p>Exercice n°2 du <a href="https://pixees.fr/informatiquelycee/term/suj_bac/2024/sujet_05.pdf" rel="external">Centres etrangers J1 2024</a>: reseaux, adresses IP, &hellip;</p>
+</blockquote>
+<h2 id="débit">Débit<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le debit est la vitesse à laquelle sont échangées les données, expimée en bits/s (ou kb/s, Mb/s&hellip;). Le débit se définit par le rapport du nombre de données circulant (en bits), par la durée (s).</p>
+$$D = \tfrac{N}{s}$$<p>Pour assurer une navigation correcte sur Internet ou regarder la télé ou des vidéos en streaming, le debit minimum doit être de 8Mb/s.</p>
+<p>En 2022, l&rsquo;objectif est de fournir en france, à tous les foyers, le THD (très haut débit), soit 30Mb/s.</p>
+<p>Avec la fibre, ce débit est encore dépassé (quelques centaines de Mb/s).</p>
+
+<figure >
+    
+        <img src="../images/debit.png" alt="de nombreux sites proposent un test de debit pour votre connexion internet" />
+    
+    
+    <figcaption>
+        <p>
+        de nombreux sites proposent un test de debit pour votre connexion internet
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>La notion de coût d&rsquo;une liaison (OSPF)</strong></p>
+$$cout = \tfrac{10^8}{debit}$$<table>
+	<thead>
+			<tr>
+					<th>Type de réseau</th>
+					<th>Coût par défaut</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>FDDI, FastEthernet</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>Ethernet 10 Mbps</td>
+					<td>10</td>
+			</tr>
+			<tr>
+					<td>E1 (2,048 Mbps)</td>
+					<td>48</td>
+			</tr>
+			<tr>
+					<td>T1 (1,544 Mbps)</td>
+					<td>65</td>
+			</tr>
+			<tr>
+					<td>64 Kbps</td>
+					<td>1562</td>
+			</tr>
+			<tr>
+					<td>56 Kbps</td>
+					<td>1758</td>
+			</tr>
+			<tr>
+					<td>19.2 Kbps</td>
+					<td>5208</td>
+			</tr>
+	</tbody>
+</table>
+<p>voir complements sur <a href="https://inetdoc.developpez.com/tutoriels/routage-dynamique-protocole-ospf/" rel="external">developpez.com</a></p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="videos-présentées-dans-cette-page">Videos présentées dans cette page<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Video (Youtube): <a href="https://www.youtube.com/watch?v=RnpSaDSSjR4" rel="external">reseaux, adresses IP et masques de sous-reseaux</a></li>
+<li>Video (Youtube): <a href="https://www.youtube.com/watch?v=kzablGaqUXM" rel="external">Mooc de l&rsquo;INT (institut des Mines Télécom)</a></li>
+<li>Video (Youtube): <a href="https://www.youtube.com/watch?v=-utHPKREZV8" rel="external">Mooc de l&rsquo;INT (institut des Mines Télécom)</a></li>
+</ul>
+<h2 id="autres-documents">Autres documents<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Page inspirée du cours de <a href="https://dlatreyte.github.io/terminales-nsi/chap-11/5-routage/" rel="external">dlatreyte.github.io</a></li>
+<li>cours complet de niveau term NSI sur les reseaux autonomes: <a href="https://www.infoforall.fr/act/archi/procole-de-routage-dynamique-rip/" rel="external">infoforall</a></li>
+<li>Comparatif RIP/OSPF: <a href="https://cisco.goffinet.org/ccna/ospf/introduction-au-protocole-routage-dynamique-ospf/" rel="external">cisco</a></li>
+<li>autres exercices sur les algo de routage <a href="http://www.netlab.tkk.fi/opetus/s38121/s01/Exercises/solution3.pdf" rel="external">http://www.netlab.tkk.fi/opetus/s38121/s01/Exercises/solution3.pdf</a> et <a href="https://www.netlab.tkk.fi/opetus/s38122/s00/Exercises/Exercise-3.pdf" rel="external">https://www.netlab.tkk.fi/opetus/s38122/s00/Exercises/Exercise-3.pdf</a></li>
+<li>Très bon document illustré sur l&rsquo;algorithme de Bellman Ford: <a href="http://ressources.aunege.fr/nuxeo/site/esupversions/2b1c56b6-109d-488a-94a3-3ea525f8beef/cours/l4/l4.pdf" rel="external">ressources.aunege.fr</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4" checked><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782143495"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782143495" defer></script>
+    <script src="/js/theme.js?1782143495" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

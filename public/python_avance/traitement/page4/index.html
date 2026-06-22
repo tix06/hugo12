@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Etape 5: Indice de similarité avec la Terre Creation d’une table unique Import librairies import numpy as np import pandas as pd import matplotlib.pyplot as plt from matplotlib.widgets import Cursor Import BDD La base de données doit être téléchargée ici : exoplanetes.db">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="indice de similarité avec la Terre :: allopizza">
+    <meta name="twitter:description" content="Etape 5: Indice de similarité avec la Terre Creation d’une table unique Import librairies import numpy as np import pandas as pd import matplotlib.pyplot as plt from matplotlib.widgets import Cursor Import BDD La base de données doit être téléchargée ici : exoplanetes.db">
+    <meta property="og:url" content="//localhost:1313/python_avance/traitement/page4/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="indice de similarité avec la Terre :: allopizza">
+    <meta property="og:description" content="Etape 5: Indice de similarité avec la Terre Creation d’une table unique Import librairies import numpy as np import pandas as pd import matplotlib.pyplot as plt from matplotlib.widgets import Cursor Import BDD La base de données doit être téléchargée ici : exoplanetes.db">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="indice de similarité avec la Terre :: allopizza">
+    <meta itemprop="description" content="Etape 5: Indice de similarité avec la Terre Creation d’une table unique Import librairies import numpy as np import pandas as pd import matplotlib.pyplot as plt from matplotlib.widgets import Cursor Import BDD La base de données doit être téléchargée ici : exoplanetes.db">
+    <meta itemprop="wordCount" content="660">
+    <title>indice de similarité avec la Terre :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/traitement\/page4\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/traitement/page4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#creation-dune-table-unique">Creation d&rsquo;une table unique</a>
+      <ul>
+        <li><a href="#import-librairies">Import librairies</a></li>
+        <li><a href="#import-bdd">Import BDD</a></li>
+        <li><a href="#créer-un-dataframe-avec-les-données-de-la-terre">Créer un dataframe avec les données de la Terre</a></li>
+        <li><a href="#créer-un-dataframe-avec-les-exoplanètes-du-systeme-toi">Créer un dataframe avec les exoplanètes du systeme TOI</a></li>
+      </ul>
+    </li>
+    <li><a href="#concatenation-des-3-tableaux">Concatenation des 3 tableaux</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/traitement/index.html"><span itemprop="name">traitement</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">indice de similarité avec la Terre</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/traitement/page4.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/traitement/page31/index.html" title="TP exoplanets.db (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/traitement/page5/index.html" title="recherche de correlations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="indice-de-similarité-avec-la-terre">indice de similarité avec la Terre</h1>
+
+<h1 id="etape-5-indice-de-similarité-avec-la-terre">Etape 5: Indice de similarité avec la Terre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="creation-dune-table-unique">Creation d&rsquo;une table unique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="import-librairies">Import librairies<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">import numpy as np
+</span></span><span class="line"><span class="cl">import pandas as pd
+</span></span><span class="line"><span class="cl">import matplotlib.pyplot as plt
+</span></span><span class="line"><span class="cl">from matplotlib.widgets import Cursor</span></span></code></pre></div>
+<h3 id="import-bdd">Import BDD<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La base de données doit être téléchargée ici : <a href="/scripts/BDD/exoplanetes.db">exoplanetes.db</a></p>
+<p>On prépare un <a href="/docs/NSI/projet/page10/">dataframe</a> avec les données d&rsquo;exoplanètes issues d&rsquo;une BDD (TOUTES les exoplanètes):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Toutes exoplanetes / BDD</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sqlite3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;exoplanetes.db&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Base de données crée et correctement connectée à SQLite&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT sqlite_version();&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La version de SQLite est: &#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Erreur lors de la connexion à SQLite&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;PRAGMA table_info(planetes_es);&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">ligne</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;select * from planetes_es&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/exoplanetes_bdd.png" alt="table des exoplanetes" />
+    
+    
+    <figcaption>
+        <p>
+        table des exoplanetes
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h3 id="créer-un-dataframe-avec-les-données-de-la-terre">Créer un dataframe avec les données de la Terre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">R_Jup</span> <span class="o">=</span> <span class="mf">71e6</span>  <span class="c1"># m</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_Jup</span> <span class="o">=</span> <span class="mf">1.898e27</span> <span class="c1"># kg</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_earth</span> <span class="o">=</span> <span class="mf">5.9724e24</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_earth</span> <span class="o">=</span> <span class="mf">6378.137e3</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_sun</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_sun</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">planete1</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;_name&#39;</span><span class="p">:</span><span class="s1">&#39;earth&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;star&#39;</span><span class="p">:</span><span class="s1">&#39;Sun&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;mass&#39;</span><span class="p">:</span> <span class="n">M_earth</span><span class="o">/</span><span class="n">M_Jup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;radius&#39;</span><span class="p">:</span> <span class="n">R_earth</span><span class="o">/</span><span class="n">R_Jup</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;eccentricity&#39;</span><span class="p">:</span> <span class="mf">0.0167</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;orbital_period&#39;</span><span class="p">:</span> <span class="mf">365.25</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;semi_major_axis&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;M_star&#39;</span><span class="p">:</span><span class="n">M_sun</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;R_star&#39;</span><span class="p">:</span><span class="n">R_sun</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">planete1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">df2</span></span></span></code></pre></div>
+<h3 id="créer-un-dataframe-avec-les-exoplanètes-du-systeme-toi">Créer un dataframe avec les exoplanètes du systeme TOI<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Préparer un fichier <em>csv</em> ou <em>txt</em> avec tous les résultats de vos recherches sur les planètes <em>observées</em>. Ou <a href="/scripts/BDD/donnees_transit_planetes.txt"> 
+            Telecharger
+        </a>  un exemple de fichier. Nommez le <strong><code>donnees_transit_planetes.txt</code></strong> pour la suite.</p>
+<p><strong>Importer les données du fichier:</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;donnees_transit_planetes.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+<p><em>Les données du fichier sont importées avec la fonction <code>read_csv</code>:</em></p>
+<ul>
+<li><em>Le paramètre <code>sep</code> doit correspondre au caractère de séparation: <code>\t</code> pour un espace tabulation, sinon <code>,</code> ou <code>;</code> selon le logiciel tableur utilisé.</em></li>
+<li><em><code>header</code> est un autre paramètre optionel, pour préciser le numero de ligne qui contient les en-tête de colonne</em>.</li>
+</ul>
+<p>Les données des masses ont été ajoutées à partir du document suivant, converties en <code>M_J</code>:</p>
+
+<figure >
+    
+        <img src="../images/donnees_TOI.png" alt="données des masses pour les planetes de TOI" />
+    
+    
+    <figcaption>
+        <p>
+        données des masses pour les planetes de TOI
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>Rappel: les masses des exoplanetes sont souvent exprimées en <code>M_J</code>, (en masses de Jupiter). Pour exprimer directement ces masses en <code>M_J</code>, cela va necessiter de realiser une conversion:</em></p>
+$$mass = m \times M_{Terre} / M_J$$<p><em>m: masse de l&rsquo;exoplanete <code>TOI_x</code> dans le tableau precedent, exprimée en masses Terre</em>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># creation dataframe a partir du fichier</span>
+</span></span><span class="line"><span class="cl"><span class="n">G</span> <span class="o">=</span> <span class="mf">6.67e-11</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_Jup</span> <span class="o">=</span> <span class="mf">71e6</span> <span class="c1"># m</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_Jup</span> <span class="o">=</span> <span class="mf">6.9911e7</span> <span class="c1"># kg</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_sol</span> <span class="o">=</span> <span class="mf">1.9885e30</span> <span class="c1"># kg</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_sol</span> <span class="o">=</span> <span class="mf">696.342e6</span> <span class="c1"># m</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;star_radius&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">R_sol</span> <span class="c1"># m</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M_star&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;star_mass&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">M_sol</span> <span class="c1"># kg</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tau&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fin_transit&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;debut_transit&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span> <span class="c1"># s</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;lum_min&#39;</span><span class="p">]</span> <span class="c1"># sans dim</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_p&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span> <span class="c1"># m</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_p&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">R_Jup</span> <span class="c1"># en R_J</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># vitesse planete : V_p = 2*R_star/tau</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span><span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tau&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># rayon orbital : r = G*M_star/V_p**2</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;r_orb&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M_star&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># periode revolution: T = 2*np.pi*r/V_p</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;r_orb&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span><span class="p">)</span> <span class="c1"># en jours de 24h</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;_name&#39;</span><span class="p">,</span><span class="s1">&#39;radius&#39;</span><span class="p">,</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">,</span><span class="s1">&#39;star_name&#39;</span><span class="p">,</span><span class="s1">&#39;star_mass&#39;</span><span class="p">,</span><span class="s1">&#39;star_radius&#39;</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df_TOI.png" alt="table des exoplanetes du systeme TOI" />
+    
+    
+    <figcaption>
+        <p>
+        table des exoplanetes du systeme TOI
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="concatenation-des-3-tableaux">Concatenation des 3 tableaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">dataset</span><span class="p">,</span><span class="n">df2</span><span class="p">,</span><span class="n">df</span><span class="p">],</span><span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/exo_concat.png" alt="table toutes exoplenetes &#43; earth" />
+    
+    
+    <figcaption>
+        <p>
+        table toutes exoplenetes &#43; earth
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h1 id="calcul-du-coefficient-ist">Calcul du coefficient IST<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Ajout d&rsquo;une colonne IST, indice de similarité avec la Terre: voir methode de calcul <a href="https://www.wikiwand.com/fr/articles/Indice_de_similarit%C3%A9_avec_la_Terre" rel="external">ici</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">M_earth</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;earth&#39;</span><span class="p">][</span><span class="s1">&#39;mass&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_earth</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;earth&#39;</span><span class="p">][</span><span class="s1">&#39;radius&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># definir un coefficient adimentionné pour l&#39;IST</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># et calculer pour toutes les planetes du tableau</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;IST&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">R_earth</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">R_earth</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># trier</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;IST&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[[</span><span class="s1">&#39;_name&#39;</span><span class="p">,</span><span class="s1">&#39;planet_status&#39;</span><span class="p">,</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span><span class="s1">&#39;radius&#39;</span><span class="p">,</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">,</span><span class="s1">&#39;semi_major_axis&#39;</span><span class="p">,</span><span class="s1">&#39;eccentricity&#39;</span><span class="p">,</span><span class="s1">&#39;IST&#39;</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;IST&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span></span></span></code></pre></div>
+<p><em>L&rsquo;IST a été calculé sur la seule valeur du rayon de la planete</em></p>
+
+<figure >
+    
+        <img src="../images/tab_IST.png" alt="liste ordonnée par IST decroissant" />
+    
+    
+    <figcaption>
+        <p>
+        liste ordonnée par IST decroissant
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Le tri se fait avec l&rsquo;instruction <code>dataset.sort_values('IST', ascending=False, inplace=True)</code>. On choisit de numéroter les lignes de dataset après le tri.</p>
+<p>Puis rechercher dans cette table nos exoplanètes de TOI:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span><span class="p">[</span><span class="n">dataset</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;TOI-270&#39;</span><span class="p">)]</span></span></span></code></pre></div>
+<p>Les extensions a-b-c sont celles des exoplanetes de la base de données. Celles avec 1-2-3 sont celles de notre étude. Ces 2 séries d&rsquo;information se referent aux 3 mêmes exoplanètes.</p>
+
+<figure >
+    
+        <img src="../images/tab_TOI_IST.png" alt="Place des TOI dans la table" />
+    
+    
+    <figcaption>
+        <p>
+        Place des TOI dans la table
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>On peut bien sûr ajouter d&rsquo;autres caractéristiques des planetes pour le calcul de l&rsquo;IST et les comparer à la Terre.</em></p>
+<blockquote>
+<p>Sauvegardez votre dataframe dans un fichier .csv</p>
+</blockquote>
+<p>Vous pourrez alors poursuivre vos traitements, sans avoir à executer tout le notebook.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;dataset.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Lien vers l&rsquo;<a href="../page5">étape 6</a>: Etude graphique</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc" checked><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_avance/traitement/page4/index.html"><a class="padding" href="/python_avance/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

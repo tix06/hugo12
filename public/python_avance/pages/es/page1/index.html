@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Entrées/Sorties en console Sortie en console La fonction print permet l’affichage d’une valeur en console, quel qu’en soit le type.
+On peut afficher un texte simple, ou composé de plusieurs parties, par concaténation de chaine :
+clan = &#39;Vikings&#39; message = &#39;Fight Invaders&#39; print(&#39;We are the &#39; &#43; clan &#43; &#39; who say&#39; &#43; &#39; &#34;&#39;&#43; message &#43; &#39;!&#34;&#39;) # affiche # We are the Vikings who say &#34;Fight Invaders!&#34; Le problème de cette méthode de concaténation est que chaque partie composant la chaine doit être de type str. Cela est possible avec la fonction str(variable, mais il existe une méthode plus efficace : formater la chaine.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Entrées Sorties :: allopizza">
+    <meta name="twitter:description" content="Entrées/Sorties en console Sortie en console La fonction print permet l’affichage d’une valeur en console, quel qu’en soit le type.
+On peut afficher un texte simple, ou composé de plusieurs parties, par concaténation de chaine :
+clan = &#39;Vikings&#39; message = &#39;Fight Invaders&#39; print(&#39;We are the &#39; &#43; clan &#43; &#39; who say&#39; &#43; &#39; &#34;&#39;&#43; message &#43; &#39;!&#34;&#39;) # affiche # We are the Vikings who say &#34;Fight Invaders!&#34; Le problème de cette méthode de concaténation est que chaque partie composant la chaine doit être de type str. Cela est possible avec la fonction str(variable, mais il existe une méthode plus efficace : formater la chaine.">
+    <meta property="og:url" content="//localhost:1313/python_avance/pages/es/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Entrées Sorties :: allopizza">
+    <meta property="og:description" content="Entrées/Sorties en console Sortie en console La fonction print permet l’affichage d’une valeur en console, quel qu’en soit le type.
+On peut afficher un texte simple, ou composé de plusieurs parties, par concaténation de chaine :
+clan = &#39;Vikings&#39; message = &#39;Fight Invaders&#39; print(&#39;We are the &#39; &#43; clan &#43; &#39; who say&#39; &#43; &#39; &#34;&#39;&#43; message &#43; &#39;!&#34;&#39;) # affiche # We are the Vikings who say &#34;Fight Invaders!&#34; Le problème de cette méthode de concaténation est que chaque partie composant la chaine doit être de type str. Cela est possible avec la fonction str(variable, mais il existe une méthode plus efficace : formater la chaine.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="Entrées Sorties :: allopizza">
+    <meta itemprop="description" content="Entrées/Sorties en console Sortie en console La fonction print permet l’affichage d’une valeur en console, quel qu’en soit le type.
+On peut afficher un texte simple, ou composé de plusieurs parties, par concaténation de chaine :
+clan = &#39;Vikings&#39; message = &#39;Fight Invaders&#39; print(&#39;We are the &#39; &#43; clan &#43; &#39; who say&#39; &#43; &#39; &#34;&#39;&#43; message &#43; &#39;!&#34;&#39;) # affiche # We are the Vikings who say &#34;Fight Invaders!&#34; Le problème de cette méthode de concaténation est que chaque partie composant la chaine doit être de type str. Cela est possible avec la fonction str(variable, mais il existe une méthode plus efficace : formater la chaine.">
+    <meta itemprop="wordCount" content="1520">
+    <title>Entrées Sorties :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781974426" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781974426" defer></script>
+    <script src="/js/search-lunr.js?1781974426" defer></script>
+    <script src="/js/search.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781974426";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781974426" rel="stylesheet">
+    <link href="/css/theme.css?1781974426" rel="stylesheet">
+    <link href="/css/format-html.css?1781974426" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/pages\/es\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/pages/es/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#sortie-en-console">Sortie en console</a></li>
+    <li><a href="#entrées-au-clavier--input">Entrées au clavier : <code>input</code></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#repertoire-courant">Repertoire courant</a></li>
+    <li><a href="#fichier-txt">Fichier txt</a></li>
+    <li><a href="#caractères-speciaux">Caractères speciaux</a></li>
+    <li><a href="#fichier-csv">Fichier csv</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#tableau-de-données">Tableau de données</a></li>
+    <li><a href="#exporter-des-données-sauvegarde">Exporter des données (sauvegarde)</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Entrées Sorties</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/pages/ES/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/traitement/page5/index.html" title="analyse graphique (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/es/ex1/index.html" title="Exercices Entrées Sorties (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="entrées-sorties">Entrées Sorties</h1>
+
+<h1 id="entréessorties-en-console">Entrées/Sorties en console<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="sortie-en-console">Sortie en console<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction <code>print</code> permet l&rsquo;affichage d&rsquo;une valeur en console, quel qu&rsquo;en soit le type.</p>
+<p>On peut afficher un texte simple, ou composé de plusieurs parties, par concaténation de chaine :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">clan = &#39;Vikings&#39;
+</span></span><span class="line"><span class="cl">message = &#39;Fight Invaders&#39;
+</span></span><span class="line"><span class="cl">print(&#39;We are the &#39; + clan + &#39; who say&#39; + &#39; &#34;&#39;+ message + &#39;!&#34;&#39;)
+</span></span><span class="line"><span class="cl"># affiche 
+</span></span><span class="line"><span class="cl"># We are the Vikings who say &#34;Fight Invaders!&#34;</span></span></code></pre></div>
+<p>Le problème de cette méthode de concaténation est que chaque partie composant la chaine doit être de type <code>str</code>. Cela est possible avec la fonction <code>str(variable</code>, mais il existe une méthode plus efficace : <strong>formater la chaine</strong>.</p>
+<p>La méthode <code>str.format()</code> sur les chaines de caractères :</p>
+<p>La methode de base :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">clan = &#39;Vikings&#39;
+</span></span><span class="line"><span class="cl">message = &#39;Fight Invaders&#39;
+</span></span><span class="line"><span class="cl">print(&#39;We are the {} who say &#34;{}!&#34;&#39;.format(clan, message))
+</span></span><span class="line"><span class="cl"># affiche 
+</span></span><span class="line"><span class="cl"># We are the Vikings who say &#34;Fight Invaders!&#34;</span></span></code></pre></div>
+<p>On peut aussi préciser le nombre de caractères ou de chiffres attendus, le type de données, etc.</p>
+<p><em>Exemple : affichage d&rsquo;une table</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:2d}</span><span class="s1"> </span><span class="si">{:3d}</span><span class="s1"> </span><span class="si">{:4d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affichage : </span>
+</span></span><span class="line"><span class="cl"> <span class="mi">1</span>   <span class="mi">1</span>    <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">2</span>   <span class="mi">4</span>    <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">3</span>   <span class="mi">9</span>   <span class="mi">27</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">4</span>  <span class="mi">16</span>   <span class="mi">64</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">5</span>  <span class="mi">25</span>  <span class="mi">125</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">6</span>  <span class="mi">36</span>  <span class="mi">216</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">7</span>  <span class="mi">49</span>  <span class="mi">343</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">8</span>  <span class="mi">64</span>  <span class="mi">512</span>
+</span></span><span class="line"><span class="cl"> <span class="mi">9</span>  <span class="mi">81</span>  <span class="mi">729</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span> <span class="mi">100</span> <span class="mi">1000</span></span></span></code></pre></div>
+<p>Cela permet d&rsquo;aligner des chaînes dans une largeur de taille fixe.</p>
+<h2 id="entrées-au-clavier--input">Entrées au clavier : <code>input</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction <code>input</code> met le programme en pause et attend que l&rsquo;utilisateur entre une donnée.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel est votre nom ? &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">))</span></span></span></code></pre></div>
+<p>Toutes les données saisies sont converties en chaîne. Il est donc necessaire de convertir les données numériques dans le type approprié avant de les utiliser :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">prix</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Combien coute ce camion ?&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">prix</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">prix</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ok, je le prends.&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<h1 id="lire-le-contenu-dun-fichier">Lire le contenu d&rsquo;un fichier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="repertoire-courant">Repertoire courant<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Selon l&rsquo;IDE python choisi, vous pouvez avoir des difficultés pour ouvrir un fichier. L&rsquo;interpreteur peut considérer que le repertoire courant n&rsquo;est pas celui du fichier en cours d&rsquo;execution, et ne trouve pas votre fichier data, qui se trouve dans le même dossier.</p>
+<p>Pour resoudre ce problème, vous pouvez ajouter les lignes suivantes:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dir_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;init:&#39;</span><span class="p">,</span><span class="n">dir_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">dir_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#sys.path.append(dir_path)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;after:&#39;</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;conten:t&#39;</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span></span></span></code></pre></div>
+<p>Le module <code>os</code> apporte les fonctions:</p>
+<ul>
+<li><code>chdir</code>: changer de repertoire courant pour le chemin utilisé par l&rsquo;interpreteur</li>
+<li><code>getcwd</code>: chemin du repertoire courant</li>
+<li><code>listdir</code>: contenu du repertoire courant</li>
+</ul>
+<h2 id="fichier-txt">Fichier txt<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On utilise la fonction <code>open</code> de la librairie standart en python:</p>
+<p>La fonction <code>open</code> crée donc un fichier. Elle renvoie un objet de la classeTextIoWrapper. Par la suite, nous allons utiliser des méthodes de cette classe pour interagir avec le fichier. Il existe 2 méthode pour utiliser <code>open</code>:</p>
+<ul>
+<li>méthode 1: fonctions <code>open</code> et  <code>close</code>. On créé un objet qui sert à importer le fichier. Choisir un nom quelconque, pour l&rsquo;exemple qui suit ce sera <code>file</code>. On utilise la fonction <code>open</code> avec pour paramètres, le nom du fichier (son chemin), suivi du caractère &lsquo;r&rsquo; (pour <code>read</code>, ouverture du fichier en <em>lecture</em>).</li>
+</ul>
+<p>On peut alors récuperer le contenu textuel du fichier à l&rsquo;aide de la méthode <code>read</code>. Dans l&rsquo;exemple ci-dessous, on place le texte du fichier dans la variable <code>texte</code>.</p>
+<p>On peut traiter cette variable comme on le souhaite, l&rsquo;afficher en entier (<code>print(texte)</code>), ou parcourir et traiter les caractères les uns après les autres (<code>for c in texte: ...</code>)</p>
+<p>Penser alors à fermer le fichier de lecture: <code>file.close()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemple.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">texte</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>méthode 2: système d&rsquo;instructions <code>with</code> + <code>open</code></li>
+</ul>
+<p>Le programme suivant est équivalent à celui de la méthode 1. Avec le mot clé <code>with</code>, les instructions de lecture du fichier sont mis dans un bloc, et donc indentées. A la sortie de ce bloc, le fichier est automatiquement <em>fermé</em>, ce qui fait l&rsquo;economie de l&rsquo;instruction <code>close</code>, et evite les oublis&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemple.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">texte</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span></span></span></code></pre></div>
+<p><em>Exemple de programme : lire un fichier .txt avec un seul mot par ligne, et créer une liste mots</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># initialisation de la liste vide</span>
+</span></span><span class="line"><span class="cl"><span class="n">mots</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lecture du fichier txt et remplissage de la liste</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;liste_francais.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>open : renvoyer un objet TextIOWrapper</li>
+<li>as : « en tant que »</li>
+</ul>
+<p>Le mot-clé <code>with</code> permet de créer un &ldquo;context manager&rdquo; (gestionnaire de contexte) qui vérifie que le fichier est ouvert et fermé, même si des erreurs se produisent pendant le bloc.</p>
+<p>Plus d&rsquo;informations : <a href="https://python.sdv.univ-paris-diderot.fr/07_fichiers/" rel="external">https://python.sdv.univ-paris-diderot.fr/07_fichiers/</a></p>
+<h2 id="caractères-speciaux">Caractères speciaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Certains caractères sont fort utiles lors de l’écriture de fichiers texte afin d’organiser les données. Le symbole ; est très utilisé comme séparateur de colonnes pour une matrice, on utilise également le passage à la ligne ou la tabulation. Comme ce ne sont pas des caractères « visibles », ils ont des codes :</p>
+<ul>
+<li><code>\</code> caractère d&rsquo;echappement (par exemple pour écrire des guillemets dans une chaine)</li>
+<li><code>\n</code> : passage à la ligne</li>
+<li><code>\t</code> : tabulation, indique un passage à la colonne suivante dans le format tsv (Tabulation-separated values).</li>
+</ul>
+<p>Lors de la <strong>lecture d&rsquo;un fichier</strong>, on peut avoir besoin de supprimer ces caractères spéciaux:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Lecture du fichier</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datas/rne-cm.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">table</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;32</span><span class="se">\t</span><span class="s1">Gers</span><span class="se">\t\t\t</span><span class="s1">32249</span><span class="se">\t</span><span class="s1">Mauvezin</span><span class="se">\t</span><span class="s1">PASCOLINI</span><span class="se">\t</span><span class="s1">Jean-Marc</span><span class="se">\t</span><span class="s1">M</span><span class="se">\t</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="mi">32</span> <span class="n">Gers</span>   <span class="mi">32249</span> <span class="n">Mauvezin</span> <span class="n">PASCOLINI</span> <span class="n">Jean</span><span class="o">-</span><span class="n">Marc</span> <span class="n">M</span>
+</span></span><span class="line"><span class="cl"><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche </span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span></span></span></code></pre></div>
+<p>L&rsquo;import des données n&rsquo;a pas placé les valeurs comme des éléments de liste. Il faudrait découper la chaine de caractères au niveau des espaces:</p>
+<p>On peut alors remplacer l&rsquo;instruction <code>table.append(line)</code> par <code>table.append(line.split('\t'))</code>, ce qui découpe la chaine au niveau des <code>\t</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datas/rne-cm.csv&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">table</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;32&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;Gers&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;32249&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;Mauvezin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;PASCOLINI&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;Jean-Marc&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"> <span class="s1">&#39;M&#39;</span><span class="p">,</span><span class="o">...</span><span class="p">]</span></span></span></code></pre></div>
+<p>Bien entendu, il faudra adapter l&rsquo;argument de la fonction <code>split</code> en fonction du caractère de séparation utilisé dans le fichier:</p>
+<p>Pour le contenu suivant, il faudra utiliser <code>line.split(';')</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">;2020;2021;2022;2023;2024;total
+</span></span><span class="line"><span class="cl">seconde;480;495;420;465;465;
+</span></span><span class="line"><span class="cl">premiere;420;525;420;510;465;
+</span></span><span class="line"><span class="cl">terminale;495;480;420;435;435;
+</span></span><span class="line"><span class="cl">;;;;;;</span></span></code></pre></div>
+<h2 id="fichier-csv">Fichier csv<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le module csv permet de reduire d&rsquo;une ligne l&rsquo;import des données (choisir le bon <em>delimiter</em>):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl"><span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ficher.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Souvent, la première ligne ne concerne que l&rsquo;en-tête (descripteurs).</li>
+<li>Le reste des données, numériques doivent être converties en <em>float</em></li>
+<li>Supposons que les données contiennent les valeur de x pour la première colonne, et y la deuxième colonne:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">:])):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span></span></span></code></pre></div>
+<h1 id="ecrire-dans-un-fichier">Ecrire dans un fichier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>méthode 1: fonctions <code>open</code> et  <code>close</code>. On créé un objet qui sert à désigner le fichier. Choisir un nom quelconque, pour l&rsquo;exemple qui suit ce sera <code>fileout</code>. On utilise la fonction <code>open</code> avec pour paramètres, le nom du fichier (son chemin), suivi du caractère &lsquo;w&rsquo; (pour <code>write</code>, ouverture du fichier en <em>écriture</em>).</li>
+</ul>
+<p>On peut alors placer du texte dans le fichier à l&rsquo;aide de la méthode <code>write</code>: <code>fileout.write(&quot;...&quot;)</code></p>
+<p>Penser alors à fermer le fichier de lecture: <code>fileout.close()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fileout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemple.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fileout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Je sais ta passion, et suis ravi de voir</span><span class="se">\n</span><span class="s2">Que tous ses mouvements cèdent à ton devoir ;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">fileout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></span></span></code></pre></div>
+<p><em>On peut alors vérifier le fichier et son contenu en parcourant le dossier avec l&rsquo;explorateur windows</em>.</p>
+<ul>
+<li>méthode 2: système d&rsquo;instructions <code>with</code> + <code>open</code></li>
+</ul>
+<p>Le programme suivant est équivalent à celui de la méthode 1. Avec le mot clé <code>with</code>, les instructions de d&rsquo;écriture dans le fichier sont mis dans un bloc, et donc indentées. A la sortie de ce bloc, le fichier est automatiquement <em>fermé</em>, ce qui fait l&rsquo;economie de l&rsquo;instruction <code>close</code>, et evite les oublis&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;exemple.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fileout</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fileout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Je sais ta passion, et suis ravi de voir</span><span class="se">\n</span><span class="s2">Que tous ses mouvements cèdent à ton devoir ;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   </span></span></code></pre></div>
+<p><em>Exemple avec une liste =&gt; fichier</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">animaux2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;poisson&#34;</span><span class="p">,</span> <span class="s2">&#34;abeille&#34;</span><span class="p">,</span> <span class="s2">&#34;chat&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;zoo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">filout</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">animaux2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="n">filout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">animal</span><span class="p">)</span></span></span></code></pre></div>
+<p>à la ligne 2 : ouverture du fichier <code>zoo2.txt</code> en mode écriture, avec le caractère <code>w pour write.</code></p>
+<p>Si nous ouvrons le fichier zoo2.txt avec un éditeur de texte, voici ce que nous obtenons :</p>
+<p><code>poissonabeillechat</code></p>
+<p>Ce n&rsquo;est pas exactement le résultat attendu. Le script peut être amélioré en utilisant une écriture formatée, comme vu plus haut, à la dernière ligne du script :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">         <span class="n">filout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">animal</span><span class="p">))</span></span></span></code></pre></div>
+<p>Ce qui donne maintenant, à l&rsquo;ouverture du fichier :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">poisson
+</span></span><span class="line"><span class="cl">abeille
+</span></span><span class="line"><span class="cl">chat</span></span></code></pre></div>
+<p>Exemple issu de la page <a href="https://python.sdv.univ-paris-diderot.fr/07_fichiers/#72-ecriture-dans-un-fichier" rel="external">python.sdv.univ-paris-diderot.fr/07_fichiers</a></p>
+<h2 id="tableau-de-données">Tableau de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>convertir les données en chaine de caractère formatée:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">descripteurs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;courant&#39;</span><span class="p">,</span><span class="s1">&#39;tension&#39;</span><span class="p">,</span><span class="s1">&#39;puissance&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">datas</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.100</span><span class="p">,</span><span class="mf">2.00</span><span class="p">,</span><span class="mf">0.200</span><span class="p">],[</span><span class="mf">0.200</span><span class="p">,</span><span class="mf">4.00</span><span class="p">,</span><span class="mf">0.400</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">tab</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">title</span> <span class="ow">in</span> <span class="n">descripteurs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ajout des descripteurs en tete du tableau</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tab</span> <span class="o">=</span> <span class="n">tab</span> <span class="o">+</span> <span class="n">title</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># saut de ligne</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tab</span> <span class="o">=</span> <span class="n">tab</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tab</span> <span class="o">=</span> <span class="n">tab</span> <span class="o">+</span> <span class="n">datas</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;,&#39;</span></span></span></code></pre></div>
+<ul>
+<li>exporter avec une extension <em>csv</em></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;fichier_datas.csv&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">filout</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">filout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="exporter-des-données-sauvegarde">Exporter des données (sauvegarde)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Il peut être utile de sauvegarder des données en cours de travail, comportant des paramètres que l&rsquo;on veut retrouver lors d&rsquo;une prochaine session de travail.</p>
+<p>Utiliser le module <code>pickle</code> pour écrire, puis lire une structure de donnée python, comme un dictionnaire ou une liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span></span></span></code></pre></div>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dico</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;b10&#39;</span> <span class="p">:</span> <span class="mf">479.01</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;b11&#39;</span> <span class="p">:</span> <span class="mf">479.19</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;b20&#39;</span> <span class="p">:</span> <span class="mf">479.89</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;b21&#39;</span> <span class="p">:</span> <span class="mf">479.91</span><span class="p">}</span></span></span></code></pre></div>
+<ul>
+<li>Ecriture:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fichier_export</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dico</span><span class="p">,</span><span class="n">f1</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Lecture:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sauvegarde&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dico</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span></span></span></code></pre></div>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Voir cours sur le formatage des sorties : <a href="https://docs.python.org/fr/3/tutorial/inputoutput.html" rel="external">Lien python.org</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page2/index.html"><a class="padding" href="/python_bases/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/pages/traitement/page5/index.html"><a class="padding" href="/python_avance/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/python_avance/pages/es/page1/index.html"><a class="padding" href="/python_avance/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/es/ex1/index.html"><a class="padding" href="/python_avance/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/fonctions/page1/index.html"><a class="padding" href="/python_avance/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page1/index.html"><a class="padding" href="/python_avance/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python5_formes/index.html"><a class="padding" href="/python_avance/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page4/index.html"><a class="padding" href="/python_avance/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page6/index.html"><a class="padding" href="/python_avance/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/index_listes1/index.html"><a class="padding" href="/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python2_algos/index.html"><a class="padding" href="/python_avance/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page2/index.html"><a class="padding" href="/python_avance/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python6_codes/index.html"><a class="padding" href="/python_avance/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page3/index.html"><a class="padding" href="/python_avance/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page5/index.html"><a class="padding" href="/python_avance/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/conditions/page4/index.html"><a class="padding" href="/python_avance/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/conditions/page3/index.html"><a class="padding" href="/python_avance/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page31/index.html"><a class="padding" href="/python_avance/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python4_poo/index.html"><a class="padding" href="/python_avance/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page3/index.html"><a class="padding" href="/python_avance/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page4/index.html"><a class="padding" href="/python_avance/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page2/index.html"><a class="padding" href="/python_avance/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page1/index.html"><a class="padding" href="/python_avance/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781974426"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781974426" defer></script>
+    <script src="/js/theme.js?1781974426" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

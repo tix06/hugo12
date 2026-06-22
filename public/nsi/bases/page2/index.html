@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="structuration des donnees, cles primaires et etrangeres, schema d&#39;une relation">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="bases de donnees relationnelles :: allopizza">
+    <meta name="twitter:description" content="structuration des donnees, cles primaires et etrangeres, schema d&#39;une relation">
+    <meta property="og:url" content="//localhost:1313/nsi/bases/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="bases de donnees relationnelles :: allopizza">
+    <meta property="og:description" content="structuration des donnees, cles primaires et etrangeres, schema d&#39;une relation">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="bases de donnees relationnelles :: allopizza">
+    <meta itemprop="description" content="structuration des donnees, cles primaires et etrangeres, schema d&#39;une relation">
+    <meta itemprop="wordCount" content="1646">
+    <title>bases de donnees relationnelles :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782146474" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782146474" defer></script>
+    <script src="/js/search-lunr.js?1782146474" defer></script>
+    <script src="/js/search.js?1782146474" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782146474";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782146474" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782146474" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146474" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146474" rel="stylesheet">
+    <link href="/css/theme.css?1782146474" rel="stylesheet">
+    <link href="/css/format-html.css?1782146474" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/bases\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/bases/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#le-modèle-entité-association">Le modèle entité-association</a>
+      <ul>
+        <li><a href="#entité">Entité</a></li>
+        <li><a href="#attributs">Attributs</a></li>
+        <li><a href="#domaines">Domaines</a></li>
+        <li><a href="#association">Association</a></li>
+        <li><a href="#vocabulaire-employé-dans-le-domaine-des-bases-de-données">Vocabulaire employé dans le domaine des bases de données</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#clé-ou-identifiant">Clé (ou identifiant)</a></li>
+    <li><a href="#contraintes-dintégrité">Contraintes d&rsquo;intégrité</a></li>
+    <li><a href="#schéma-dune-relation">Schéma d&rsquo;une relation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#définitions">Définitions</a></li>
+    <li><a href="#règles-de-conception-dune-base-de-données">Règles de conception d&rsquo;une base de données</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/bases/index.html"><span itemprop="name">bases de donnees</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">bases de donnees relationnelles</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/bases/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/bases/index.html" title="bases de donnees (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/bases/page7/index.html" title="langage SQL (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="bases-de-donnees-relationnelles">bases de donnees relationnelles</h1>
+
+<p><em>Plan du cours</em>:</p>
+<p><strong>Le langage de requêtes:</strong></p>
+<ul>
+<li>illustration des actions sur une table avec un tableur: les prix Nobels. Opérations de recherche, filtre et tri sur une table: <a href="/competences/calc/page3">Lien</a></li>
+<li>Cours langage SQL et TD sur une base de données de prenoms: <a href="../page7/">Lien</a>, exercices: <a href="/pdf/NSI/BDD2_exercices_sql_nsi.pdf">pdf</a></li>
+</ul>
+<p><strong>La structuration des données:</strong></p>
+<ul>
+<li>Bases de données, règles pour construire une BDD en plusieurs tables, TP sur la creation d&rsquo;une BDD cinéma (Base de Libre Office): <a href="../page2/">Lien</a></li>
+<li>Problèmes d&rsquo;intégrité, modele entité-relation (2): <a href="../page1/">Lien</a>, cours <a href="/pdf/NSI/bdd1_prof.pdf">pdf</a> et <a href="/pdf/NSI/bdd1_eleve.pdf">exercices</a></li>
+<li>SGBD, gestion de l&rsquo;accès concurentiel, <a href="../page3/">Lien</a></li>
+</ul>
+<p><strong>Travaux pratiques</strong></p>
+<ul>
+<li>TP requêtes sur une table de prenoms: <a href="../page8">Lien</a></li>
+<li>TP sur la gestion d&rsquo;une base de données de romans de sciences fiction, utilisant <a href="../page6">SQLite Browser</a></li>
+<li>TP sur le langage SQL avec des requetes sur une base de données. Différents thèmes sont proposés : <a href="../page4">Lien</a>
+<ul>
+<li>enquete de police</li>
+<li>villes du monde</li>
+<li>séries Netflix</li>
+<li>exoplanètes</li>
+</ul>
+</li>
+<li>TP sur la creation d&rsquo;un serveur avec gestion d&rsquo;un formulaire <a href="../page5/">en python/SQL: page 6</a></li>
+</ul>
+<h1 id="bases-de-données-relationnelles">Bases de données relationnelles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une <strong>base de données</strong> est une <em>collection de données</em> qui vont être partagées entre plusieurs services, serveurs, utilisateurs.</p>
+<h2 id="le-modèle-entité-association">Le modèle entité-association<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La première étape pour aboutir à un modèle permettant de stocker les données dans une base consiste à <em>identifier les objets</em> et définir leurs <em>liens</em>.</p>
+<p>Cette modélisation repose sur des principes mathématiques mis en avant par <a href="https://fr.wikipedia.org/wiki/Edgar_Frank_Codd" rel="external">E.F. Codd</a> (1923 - 2003, un informaticien britannique), et c&rsquo;est cette modélisation qui est implémentée dans les bases de données.</p>
+<h3 id="entité">Entité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>on désigne par <strong>entité</strong> tout objet identifiable et pertinent pour l’application. Par exemple, pour la base de donnée précédente, les entités sont:</p>
+<ul>
+<li><em>Films</em>: les films</li>
+<li><em>Réalisateurs</em>: les réalisateurs</li>
+</ul>
+<p>Pour chacune des entités, les individus ou objets ont en commun les même propriétés. Ce sont des <strong>tables</strong>, aussi appelées <strong>relations</strong>.</p>
+<h3 id="attributs">Attributs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les entités sont caractérisées par des propriétés appelées attributs. Un attribut est désigné par un <strong>nom</strong> et prend ses valeurs dans un <strong>domaine</strong> énumérable. (notion à rapprocher du <em>type</em> en Python).</p>
+<p>On exprime ici chaque attribut par son couple <em>nom: domaine</em> (<em>domaine = type</em>). Ces attributs doivent être <em>insécables</em>, ce qui empêche d&rsquo;en choisir un du genre <em>adresse</em> (qui se decomposerait alors en n° + rue + ville).</p>
+<p>Pour l&rsquo;entité <em>Films</em>, ces attributs sont <em>Titre</em> et <em>Annee</em>.</p>
+<h3 id="domaines">Domaines<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les valeurs mises dans une cellule sont <em>élémentaires</em>. Il ne peut s&rsquo;agir de types construits comme des listes.</p>
+<ul>
+<li>INT ou INTEGER : un entier</li>
+<li>FLOAT(x) : un nombre décimal avec x définissant la précision (nombre de bits de codage de la mantisse)</li>
+<li>REAL est un synonyme standard de FLOAT(24)</li>
+<li>CHAR(n) : chaine d&rsquo;au plus n caractères</li>
+<li>VARCHAR(n)</li>
+<li>DATE une date</li>
+</ul>
+<h3 id="association">Association<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une association représente un <strong>lien</strong> entre les entités.</p>
+<p>Il y a un lien représenté par le <strong>verbe</strong> <em>a réalisé</em> entre les entités <em>Réalisateurs</em> et <em>Films</em>.</p>
+<p>On distingue:</p>
+<ul>
+<li><strong>L&rsquo;association binaire fonctionnelle</strong>: chaque occurence de l&rsquo;entité A est liée à au plus une occurence de l&rsquo;entité B. C&rsquo;est équivalent à dire <strong>A=&gt;B</strong> (la connaissance de A détermine celle de B). Dans ce cas, c&rsquo;est la table A qui possède un attribut FOREIGN KEY qui pointe vers un attribut clé primaire de la table B.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/a_implique_b.png" alt="association binaire fonctionnelle" />
+    
+    
+    <figcaption>
+        <p>
+        association binaire fonctionnelle
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li><strong>L&rsquo;association non fonctionnelle</strong>: Une occurence de A peut être liée à plus d&rsquo;une occurence de B.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/b_implique_a.png" alt="association binaire non fonctionnelle" />
+    
+    
+    <figcaption>
+        <p>
+        association binaire NON fonctionnelle
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h3 id="vocabulaire-employé-dans-le-domaine-des-bases-de-données">Vocabulaire employé dans le domaine des bases de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>Voici l&rsquo;ensemble des mots utilisés, avec leur correspondance</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>Terme du modèle</th>
+					<th>Terme de la représentation par table</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Relation</td>
+					<td>Table</td>
+			</tr>
+			<tr>
+					<td>n-uplet</td>
+					<td>ligne</td>
+			</tr>
+			<tr>
+					<td>Nom d’attribut</td>
+					<td>Nom de colonne</td>
+			</tr>
+			<tr>
+					<td>Valeur d’attribut</td>
+					<td>Cellule</td>
+			</tr>
+			<tr>
+					<td>Domaine</td>
+					<td>Type</td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="la-structuration-des-données">La structuration des données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="clé-ou-identifiant">Clé (ou identifiant)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Une clé</strong> est un attribut d&rsquo;une relation.</p>
+<p><strong>clé primaire</strong> : une clé conçue pour identifier de manière unique les éléments d&rsquo;une table.  Si un attribut est considéré comme clef primaire, on ne doit pas trouver dans toute la relation 2 fois la même valeur pour cet attribut.</p>
+<p>Dans la situation fréquente où on a du mal à déterminer quelle est la clé d’un type d’entité ; on crée un identifiant abstrait appelé id (un numéro séquentiel) indépendant de tous les autres attributs.</p>
+<p>Dans une table, l&rsquo;un des attributs peut être la clé primaire d&rsquo;une autre table. Il s&rsquo;agit alors d&rsquo;une <strong>clé étrangère</strong>. Cet attribut permet de faire reference à un enregistrement dans une autre table, et caractérise parfaitement cette autre entité.</p>
+<p><em>Exemple:</em> <strong>idMES</strong> est la clé étrangère dans la relation <em>Films</em>:</p>
+<table>
+	<thead>
+			<tr>
+					<th><strong>Titre</strong></th>
+					<th>Annee</th>
+					<th><strong>idMES</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Hana-bi</td>
+					<td>1997</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>Big fish</td>
+					<td>2003</td>
+					<td>2</td>
+			</tr>
+			<tr>
+					<td>Edward aux mains d&rsquo;argent</td>
+					<td>1990</td>
+					<td>2</td>
+			</tr>
+	</tbody>
+</table>
+<p>La relation <em>Réalisateur:</em></p>
+<table>
+	<thead>
+			<tr>
+					<th><strong>idMES</strong></th>
+					<th>NomMES</th>
+					<th>PrenomMES</th>
+					<th>AnneeNaiss</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Kitano</td>
+					<td>Takeshi</td>
+					<td>1947</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>Burton</td>
+					<td>Tim</td>
+					<td>1958</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>Tarantino</td>
+					<td>Quentin</td>
+					<td>1963</td>
+			</tr>
+	</tbody>
+</table>
+<p>La base de données doit se conformer aux <strong>contraintes d&rsquo;intégrité référentielles</strong>:</p>
+<h2 id="contraintes-dintégrité">Contraintes d&rsquo;intégrité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une contrainte d&rsquo;intégrité est une règle qui définit la cohérence d&rsquo;une donnée ou d&rsquo;un ensemble de données de la BD.</p>
+<p>Les contraintes d&rsquo;intégrité liées aux <em>clés primaires et étrangères</em> sont:</p>
+<ol>
+<li>Contrainte <strong>de relation</strong>: chaque relation doit comporter une clé primaire.</li>
+<li>Clé <strong>etrangère</strong>: traduit une <strong>association</strong>. Elle doit être la clé primaire de l&rsquo;autre relation à laquelle elle se réfère. Cette autre relation doit contenir l&rsquo;élément auquel on veut se référencer AVANT de faire référence.</li>
+<li>Modification: on ne doit pas faire de modification de la clé primaire d&rsquo;une occurence si celle-ci est liée.</li>
+</ol>
+<p><em>En pratique</em>, ces contraintes sont définies <strong>au moment de la création</strong> d&rsquo;une table.</p>
+<p>PRIMARY KEY : contrainte <strong>de clé primaire</strong>. Définit l&rsquo;attribut comme la clé primaire</p>
+<p>FOREIGN KEY : contrainte de <strong>clef étrangère</strong>. Assure l&rsquo;intégrité de référence. Cette clé étrangère n’est pas primaire pour la relation étudiée mais elle est la clé primaire d’une autre relation.</p>
+<p><em>En option</em>, on peut ajouter des contraintes d&rsquo;unicité ou de validité avec UNIQUE ou CHECK, ou autres:</p>
+<p>NOT NULL: contrainte <strong>d&rsquo;obligation de valeur</strong>. Les éléments de la colonne doivent forcément être renseignés</p>
+<p>UNIQUE : la contrainte <strong>d&rsquo;unicité</strong>, permet de s&rsquo;assurer qu&rsquo;une autre clef
+pourrait remplacer la clef primaire: interdit que deux tuples de la relation aient la même valeur pour l&rsquo;attribut.</p>
+<p>REFERENCES <code>nom table</code> (`nom colonne) : contrôle l&rsquo;intégrité référentielle entre l&rsquo;attribut de la table et ses colonnes spécifiées</p>
+<p>CHECK (<code>condition</code>) :  contrainte de <strong>validation</strong>. Il s&rsquo;agit d&rsquo;une <em>assertion</em>, qui contrôle la validité de la valeur de l&rsquo;attribut spécifié dans la condition. Permet de restreindre les valeurs de la-les colonnes qui la-les composent.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="n">AUTEURS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"> </span><span class="n">prenom</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"> </span><span class="n">ann_naissance</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">langue_ecriture</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">));</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/table_brows.png" alt="creation de la table AUTEURS sous sqldbrowser" />
+    
+    
+    <figcaption>
+        <p>
+        creation de la table AUTEURS sous sqldbrowser
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>D&rsquo;après la règle énoncée sur la contrainte de clé étrangère, la table LIVRES doit être créée APRES celle AUTEURS (à cause de la contrainte REFERENCES):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"> </span><span class="n">id_auteur</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">ann_publi</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id_auteur</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">(</span><span class="n">id</span><span class="p">))</span></span></span></code></pre></div>
+<h2 id="schéma-dune-relation">Schéma d&rsquo;une relation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une relation possède un nom, et se compose de colonnes désignées par un nom d’attribut avec des valeurs d’un certain domaine.</p>
+<p>Le <strong>schéma d&rsquo;une relation</strong>: peut être représenté par un diagramme (une table), donnant les noms des relations, les attributs, leur domaine, et la mention de la clé primaire. Mais on préfère donner ce schéma sous forme d&rsquo;un ensemble de tuples: $S = ((A_1,domaine_1, (A_2,domaine_2) ...(A_n,domaine_n))$ où les $A_i$ sont les attributs.</p>
+<p><em>Exemple: le schéma de la relation Films est:</em></p>
+<p><code>films((id_film,int),(titre,str),(date,int),(id_rea,int))</code></p>
+<p>Lorsqu&rsquo;une base de données comporte <strong>plusieurs tables</strong>, l&rsquo;ensemble des schémas de ces relations s&rsquo;appelle le <strong>schéma relationnel</strong> de la base de données.</p>
+<p><strong>Donner le schéma relationnel</strong>: Un schéma relationnel est un diagramme. On y représente les noms des relations, les attributs, leur domaine, les <strong>clés primaires soulignées</strong> et les clés <strong>étrangères</strong> précédées d’un <code>#</code> dans des tableaux, puis faire une flèche pour indiquer de quelle table la clé étrangère est la clé primaire.</p>
+<blockquote>
+<p>schéma relationnel de la base de données définie plus haut sur les Films et Réalisateurs de cinéma:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/base1.png" alt="schéma relationnel de la base de données films-realisateurs, base de libreoffice" />
+    
+    
+    <figcaption>
+        <p>
+        schéma relationnel de la base de données films-realisateurs, base de libreoffice
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h1 id="tp-browser-sql-base-sqlite-browser-access">TP Browser SQL: Base, SQLite Browser, Access<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Base de données sur FILMS et REALISATEURS</strong></p>
+<p>voir TP à la <a href="../page9">page suivante</a></p>
+<h1 id="compléments">Compléments<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le <strong>degré</strong> d’une relation est le nombre d’attributs (ou de colonnes) et le <strong>cardinal</strong> d’une relation est le nombre de tuples (ou de lignes).</p>
+<p>Le <strong>schéma d&rsquo;une relation</strong>: peut être représenté par un diagramme (une table), donnant les noms des relations, les attributs, leur domaine, et la mention de la clé primaire. Mais on peut aussi donner ce schéma sous forme d&rsquo;un ensemble de tuples: $S = ((A_1,domaine_1, (A_2,domaine_2) ...(A_n,domaine_n))$ où les $A_i$ sont les attributs.</p>
+<p><em>Exemple: le schéma de la relation Films est: $$Film((Titre,str),(Annee,int))$$</em></p>
+<p>Une <strong>table</strong> R, ou <strong>relation</strong> est un ensemble fini de n-uplets $(x_1, x_2, ... x_n)$ où les x<!-- raw HTML omitted -->i<!-- raw HTML omitted --> prennent leurs valeurs dans A<!-- raw HTML omitted -->i<!-- raw HTML omitted -->.</p>
+<p>Une <strong>occurence</strong> (ou élément d&rsquo;une table R) est une <em>ligne</em> dans un tableau. On l&rsquo;appelle aussi un <em>enregistrement</em>, ou un <em>n-uplet</em>.</p>
+<p>Lorsqu&rsquo;une base de données comporte <strong>plusieurs tables</strong>, l&rsquo;ensemble des schémas de ces relations s&rsquo;appelle le <strong>schéma relationnel</strong> de la base de données.</p>
+<p><strong>Donner le schéma relationnel</strong>: Une relation est un objet abstrait, on peut la représenter de différentes manières. Une représentation naturelle est le graphe entre les entités, représentant les relations et les associations.</p>
+<p>Une <strong>association binaire</strong> entre les entités $E_1$ et $E_2$ est un <em>ensemble de couples</em> ($e_1$, $e_2$) avec $e_1$∈$E_1$ et $e_2$∈$E_2$.</p>
+<p>Cette association peut être représentée à l&rsquo;aide d&rsquo;une <strong>clé etrangère</strong>, ou peut necessiter la création d&rsquo;une nouvelle relation (et donc d&rsquo;un nouveau tableau) pour répondre aux <strong>contraintes d&rsquo;intégrité</strong>.</p>
+<h2 id="règles-de-conception-dune-base-de-données">Règles de conception d&rsquo;une base de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Unicité:</strong> Toute entité donne lieu à une table dont la clé primaire est l&rsquo;identifiant de l&rsquo;entité.</li>
+<li>Toute <strong>association binaire fonctionnelle</strong> est implémentée par la presence d&rsquo;une <strong>clé étrangère</strong> dans la table, qui représente l&rsquo;entité origine de la dépendance fonctionnelle.</li>
+<li><strong>Normalisation:</strong> Toute <strong>association non fonctionnelle</strong> génère une <strong>nouvelle table</strong> dont la clé primaire est l&rsquo;ensemble des clés primaires des tables qu&rsquo;elle relie. Un exemple d&rsquo;association non fonctionnelle, c&rsquo;est lorsqu&rsquo;une information apparait plusieurs fois, et necessiterait de modifier plusieurs lignes s&rsquo;il fallait effectuer un changement.</li>
+</ul>
+<p><em>Remarque:</em> <em>la clé d’une association</em> (binaire) entre une entité E1 et une entité E2 est le couple constitué de la clé e1 de E1 et de la clé e2 de E2.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17" checked><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="active " data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146474"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146474" defer></script>
+    <script src="/js/theme.js?1782146474" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

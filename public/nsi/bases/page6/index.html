@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="TP avec SGBD sqlitebrowser, livres, bibliotheque">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TP romans sql :: allopizza">
+    <meta name="twitter:description" content="TP avec SGBD sqlitebrowser, livres, bibliotheque">
+    <meta property="og:url" content="//localhost:1313/nsi/bases/page6/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="TP romans sql :: allopizza">
+    <meta property="og:description" content="TP avec SGBD sqlitebrowser, livres, bibliotheque">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="TP romans sql :: allopizza">
+    <meta itemprop="description" content="TP avec SGBD sqlitebrowser, livres, bibliotheque">
+    <meta itemprop="wordCount" content="797">
+    <title>TP romans sql :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782146734" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782146734" defer></script>
+    <script src="/js/search-lunr.js?1782146734" defer></script>
+    <script src="/js/search.js?1782146734" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782146734";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782146734" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146734" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782146734" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782146734" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782146734" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146734" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146734" rel="stylesheet">
+    <link href="/css/theme.css?1782146734" rel="stylesheet">
+    <link href="/css/format-html.css?1782146734" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/bases\/page6\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/bases/page6/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#utiliser-sqlite-browser">Utiliser SQLite Browser</a></li>
+    <li><a href="#utiliser-lapplication-sqlite-non-installée-sur-pc-du-lycée">Utiliser l&rsquo;application SQLite (non installée sur PC du lycée)</a></li>
+    <li><a href="#utiliser-une-application-en-ligne">Utiliser une application en ligne</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#insert--values">INSERT &hellip; VALUES</a></li>
+    <li><a href="#update--where">UPDATE &hellip; WHERE</a></li>
+    <li><a href="#delete--where">DELETE &hellip; WHERE</a></li>
+    <li><a href="#select--where">SELECT &hellip; WHERE</a></li>
+    <li><a href="#jointure">JOINTURE</a></li>
+    <li><a href="#a-vous-de-jouer">A vous de jouer</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/bases/index.html"><span itemprop="name">bases de donnees</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP romans sql</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/bases/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/bases/page8/index.html" title="TP prenoms sql (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/bases/page5/index.html" title="SQL - python (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tp-romans-sql">TP romans sql</h1>
+
+<h1 id="tp-sql">TP SQL<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Nous allons créer (ou télécharger) une petite base de données à deux tables pour nous exercer aux requêtes SQL.</p>
+<h2 id="utiliser-sqlite-browser">Utiliser SQLite Browser<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Créer une <em>Nouvelle Base de données</em>: <code>bibliotheque.sqlite</code> (ajouter <code>.sqlite</code>)</li>
+<li>Editer la definition de la table selon l&rsquo;image suivante</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/table_brows.png" alt="table AUTEURS" />
+    
+    
+    <figcaption>
+        <p>
+        table AUTEURS
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li>Fichier &gt; Exporter &gt; Exporter la base de données sous format SQL. Enregistrer le fichier avec le nom <code>bibliotheque.sql</code> (ajouter l&rsquo;extension <code>.sql</code>)</li>
+<li>Ouvrir le fichier <code>bibliotheque.sql</code> avec un editeur de texte (<em>Notepad++</em> ou autre)</li>
+<li>Ajouter les instructions de creation d&rsquo;une nouvelle table LIVRES de schéma:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="p">(</span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">titre</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span><span class="w"> </span><span class="n">id_auteur</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">ann_publi</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="nb">INT</span><span class="p">,</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="n">id_auteur</span><span class="p">)</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">(</span><span class="n">id</span><span class="p">));</span></span></span></code></pre></div>
+<ul>
+<li>Ajouter les entrées suivantes à chacune des tables:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">AUTEURS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">prenom</span><span class="p">,</span><span class="n">ann_naissance</span><span class="p">,</span><span class="n">langue_ecriture</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;Orwell&#39;</span><span class="p">,</span><span class="s1">&#39;George&#39;</span><span class="p">,</span><span class="mi">1903</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Herbert&#39;</span><span class="p">,</span><span class="s1">&#39;Frank&#39;</span><span class="p">,</span><span class="mi">1920</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Asimov&#39;</span><span class="p">,</span><span class="s1">&#39;Isaac&#39;</span><span class="p">,</span><span class="mi">1920</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Huxley&#39;</span><span class="p">,</span><span class="s1">&#39;Aldous&#39;</span><span class="p">,</span><span class="mi">1894</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Bradbury&#39;</span><span class="p">,</span><span class="s1">&#39;Ray&#39;</span><span class="p">,</span><span class="mi">1920</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;K.Dick&#39;</span><span class="p">,</span><span class="s1">&#39;Philip&#39;</span><span class="p">,</span><span class="mi">1928</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Barjavel&#39;</span><span class="p">,</span><span class="s1">&#39;René&#39;</span><span class="p">,</span><span class="mi">1911</span><span class="p">,</span><span class="s1">&#39;français&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;Boulle&#39;</span><span class="p">,</span><span class="s1">&#39;Pierre&#39;</span><span class="p">,</span><span class="mi">1912</span><span class="p">,</span><span class="s1">&#39;français&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Van Vogt&#39;</span><span class="p">,</span><span class="s1">&#39;Alfred Elton&#39;</span><span class="p">,</span><span class="mi">1912</span><span class="p">,</span><span class="s1">&#39;anglais&#39;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Verne&#39;</span><span class="p">,</span><span class="s1">&#39;Jules&#39;</span><span class="p">,</span><span class="mi">1828</span><span class="p">,</span><span class="s1">&#39;français&#39;</span><span class="p">);</span></span></span></code></pre></div>
+<p>et</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-SQL" data-lang="SQL"><span class="line"><span class="cl"><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">titre</span><span class="p">,</span><span class="n">id_auteur</span><span class="p">,</span><span class="n">ann_publi</span><span class="p">,</span><span class="n">note</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;1984&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1949</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;Dune&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1965</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;Fondation&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1951</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Le meilleur des mondes&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1931</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;Fahrenheit 451&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1953</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Ubik&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1969</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;Chroniques martiennes&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1950</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;La nuit des temps&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1968</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="s1">&#39;Blade Runner&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1968</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;Les Robots&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1950</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;La Planète des singes&#39;</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1963</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="s1">&#39;Ravage&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1943</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="s1">&#39;Le Maître du Haut Château&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1962</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;Le monde des Ā&#39;</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1945</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;La Fin de l’éternité&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1955</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="s1">&#39;De la Terre à la Lune&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1865</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span></span></span></code></pre></div>
+<ul>
+<li>sauvegarder ;-)</li>
+</ul>
+<h2 id="utiliser-lapplication-sqlite-non-installée-sur-pc-du-lycée">Utiliser l&rsquo;application SQLite (non installée sur PC du lycée)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La ligne de commande SQLite permet d&rsquo;entrer deux types de commandes :</p>
+<ul>
+<li>Les commandes spéciales pour la ligne de commande. Elles débutent toutes par un point (il ne faut pas qu&rsquo;il y ait d&rsquo;espace avant ni après le point pour que la commande fonctionne). Par exemple, .open, .show, .backup, .exit et toutes les autres commandes listées par .help. (voir la <a href="https://sqlite.org/cli.html" rel="external">documentation SQLite</a> ainsi que <a href="https://tool.oschina.net/uploads/apidocs/sqlite/sqlite.html" rel="external">Command Line Shell For SQLite</a>). Et la version <a href="https://apical.xyz/fiches/la_ligne_de_commande_sqlite_002/La_ligne_de_commande_SQLite" rel="external">windows</a></li>
+<li>Les requêtes SQL, par exemple CREATE, SELECT, INSERT, UPDATE, DELETE. Chacune doit se terminer par un point-virgule.</li>
+</ul>
+<p>Voici comment combiner ces deux types de commandes afin de vérifier la liste des tables de la base de données sélectionnée puis créer et afficher les enregistrements :</p>
+<p>Pour démarrer <em>sqlite</em>, sous Windows, rechercher le fichier <code>sqlite.exe</code></p>
+<p>Dans la console: l&rsquo;invite de commande commence alors par <code>sqlite&gt;</code></p>
+<ul>
+<li>Les instructions suivantes permettent d&rsquo;ouvrir et executer le fichier <code>bibliotheque.sql</code>, afficher les tables, puis fermer (si besoin) l&rsquo;application sqlite:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">read</span><span class="w"> </span><span class="n">bibliotheque</span><span class="p">.</span><span class="k">sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="n">tables</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">AUTEURS</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="n">exit</span></span></span></code></pre></div>
+<ul>
+<li>Pour représenter la table en <em>mode markdown</em>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">read</span><span class="w"> </span><span class="n">bibliotheque_auteurs</span><span class="p">.</span><span class="k">sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="p">.</span><span class="k">mode</span><span class="w"> </span><span class="n">markdown</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">;</span></span></span></code></pre></div>
+<p>Ce qui devrait afficher:</p>
+<p>
+<figure >
+    
+        <img src="../images/table_cons.png" alt="table en format markdown" />
+    
+    
+    <figcaption>
+        <p>
+        table en format markdown
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+*<em>Comme vous l&rsquo;avez remarqué</em>:</p>
+<ul>
+<li>lorsque vous écrivez <code>select *</code>, le retour à la ligne n&rsquo;execute pas le script, mais attend la fin de l&rsquo;instruction, jusqu&rsquo;au point virgule <code>;</code> final.</li>
+<li>les requêtes et instructions SQL peuvent être écrites directement dans l&rsquo;application <em>sqlite</em>, comme dans le fichier d&rsquo;extension <code>.sql</code>. Il faudra alors le lire dans la console avec <code>.read &lt;nom_du_fichier&gt;</code>.</li>
+</ul>
+<h2 id="utiliser-une-application-en-ligne">Utiliser une application en ligne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Aller sur la page<a href="https://sqliteonline.com/"> 
+            sqlonline.com
+        </a> 
+
+<figure >
+    
+        <img src="../images/sqlonline.png" alt="sqlonline.com" />
+    
+    
+    <figcaption>
+        <p>
+        sqlonline.com
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</li>
+<li>Cliquer sur <em>Import</em>, puis choisir un fichier d&rsquo;extension <code>.sql</code>, comme par exemple <a href="/pdf/NSI/bibliotheque.sql">bibliotheque.sql</a></li>
+<li>Utiliser alors la fenêtre <em>SQLite</em> pour tester les instructions suivantes.</li>
+</ul>
+<h1 id="tester-quelques-requêtes-sql">Tester quelques requêtes SQL<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="insert--values">INSERT &hellip; VALUES<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Ajoute une entrée</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">insert</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">titre</span><span class="p">,</span><span class="n">id_auteur</span><span class="p">,</span><span class="n">ann_publi</span><span class="p">,</span><span class="n">note</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">VALUES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="p">(</span><span class="mi">17</span><span class="p">,</span><span class="s1">&#39;Cinq semaines en ballon&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1862</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span></span></span></code></pre></div>
+<p><em>Vérifier alors la modification en faisant: <code>SELECT * FROM LIVRES</code></em></p>
+<h2 id="update--where">UPDATE &hellip; WHERE<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Mise à jour d&rsquo;une valeur</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sqlite&gt; UPDATE LIVRES
+</span></span><span class="line"><span class="cl">   ...&gt; SET note=6 
+</span></span><span class="line"><span class="cl">   ...&gt; WHERE id=17;</span></span></code></pre></div>
+<h2 id="delete--where">DELETE &hellip; WHERE<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Supprimer une ou plusieurs occurences:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">titre</span><span class="o">=</span><span class="s1">&#39;Cinq semaines en ballon&#39;</span><span class="p">;</span></span></span></code></pre></div>
+<ul>
+<li>supprimer la derniere occurence:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="p">(</span><span class="k">SELECT</span><span class="w"> </span><span class="k">Max</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">);</span></span></span></code></pre></div>
+<p><strong>Remarques</strong></p>
+<ul>
+<li>La dernière requête utilise une instruction imbriquée, mise entre parenthèses de la clause <code>WHERE id=(SELECT ...)</code></li>
+<li>l’instruction DELETE FROM LIVRES permet de supprimer tous les n-uplets de la table, mais pas de remettre à zero le compteur. Pour une remise à zero du compteur, il faut aussi effacer le seul élément de la table <code>sqlite_sequence</code>, créée dans la base de donnée en même temps que la première table.</li>
+</ul>
+<h2 id="select--where">SELECT &hellip; WHERE<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Selectionner une partie de la table, en nommant les attributs:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="w"> </span><span class="n">ann_publi</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">note</span><span class="o">=</span><span class="mi">10</span><span class="p">;</span></span></span></code></pre></div>
+<h2 id="jointure">JOINTURE<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Tester le script suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="n">id_auteur</span><span class="p">,</span><span class="n">ann_publi</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">prenom</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">AUTEURS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">id_auteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">id</span><span class="p">;</span></span></span></code></pre></div>
+<p><em>Vous remarquerez que les attributs peuvent être issus des 2 tables.</em></p>
+<p>On pourra aussi ajouter une condition sur l&rsquo;année de publication du livre:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">sqlite</span><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">titre</span><span class="p">,</span><span class="n">id_auteur</span><span class="p">,</span><span class="n">ann_publi</span><span class="p">,</span><span class="n">nom</span><span class="p">,</span><span class="n">prenom</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">LIVRES</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">AUTEURS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">LIVRES</span><span class="p">.</span><span class="n">id_auteur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AUTEURS</span><span class="p">.</span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="p">...</span><span class="o">&gt;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">ann_publi</span><span class="o">&gt;</span><span class="mi">1950</span></span></span></code></pre></div>
+<h2 id="a-vous-de-jouer">A vous de jouer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ol>
+<li>Afficher tous les livres, avec titre, année de parution et note, dont la note est supérieure ou égal à 8.</li>
+<li>Afficher tous les livres, avec leur titre et leur année de parution, écrits par Phillip K.Dick.</li>
+<li>Ajouter à la clause précédente l&rsquo;instruction de classement par année de publication: <code>ORDER BY ann_publi</code></li>
+</ol>
+<h1 id="ressources">Ressources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<p>Ce TP est inspiré de celui de <a href="https://pixees.fr/informatiquelycee/n_site/nsi_term_bd_sql.html" rel="external">David Roche, du très bon site pixees.fr</a>. Merci à lui pour le partage&hellip;</p>
+</li>
+<li>
+<p>Cours complet en SQL, avec référencement des différentes instructions: <a href="https://sql.sh/cours" rel="external">https://sql.sh/cours</a></p>
+</li>
+<li>
+<p>fichier de secours <a href="/pdf/NSI/bibliotheque.sql">bibliotheque.sql</a></p>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page6/index.html"><a class="padding" href="/nsi/langages/page6/index.html">exercices sur la recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page5/index.html"><a class="padding" href="/nsi/langages/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page4/index.html"><a class="padding" href="/nsi/langages/page4/index.html">paradigmes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page8/index.html"><a class="padding" href="/nsi/langages/page8/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17" checked><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146734"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146734" defer></script>
+    <script src="/js/theme.js?1782146734" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

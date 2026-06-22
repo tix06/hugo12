@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Calculabilité Dans le chapitre précédent, sur la complexité, l’objet d’étude principal etait l’algorithme. On en a fait une mesure de son efficacité: un algorithme est plus efficace s’il est plus rapide (donc de classe de complexité plus faible).
+En calculabilité, le problème devient l’objet central.
+Voir le cours d’algorithmique de Pierre Antoine Champin, CNRS: definition très claire de la notion de Problème comme une classe.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="calculer sur un algorithme :: allopizza">
+    <meta name="twitter:description" content="Calculabilité Dans le chapitre précédent, sur la complexité, l’objet d’étude principal etait l’algorithme. On en a fait une mesure de son efficacité: un algorithme est plus efficace s’il est plus rapide (donc de classe de complexité plus faible).
+En calculabilité, le problème devient l’objet central.
+Voir le cours d’algorithmique de Pierre Antoine Champin, CNRS: definition très claire de la notion de Problème comme une classe.">
+    <meta property="og:url" content="//localhost:1313/nsi/algorithmes/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="calculer sur un algorithme :: allopizza">
+    <meta property="og:description" content="Calculabilité Dans le chapitre précédent, sur la complexité, l’objet d’étude principal etait l’algorithme. On en a fait une mesure de son efficacité: un algorithme est plus efficace s’il est plus rapide (donc de classe de complexité plus faible).
+En calculabilité, le problème devient l’objet central.
+Voir le cours d’algorithmique de Pierre Antoine Champin, CNRS: definition très claire de la notion de Problème comme une classe.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="calculer sur un algorithme :: allopizza">
+    <meta itemprop="description" content="Calculabilité Dans le chapitre précédent, sur la complexité, l’objet d’étude principal etait l’algorithme. On en a fait une mesure de son efficacité: un algorithme est plus efficace s’il est plus rapide (donc de classe de complexité plus faible).
+En calculabilité, le problème devient l’objet central.
+Voir le cours d’algorithmique de Pierre Antoine Champin, CNRS: definition très claire de la notion de Problème comme une classe.">
+    <meta itemprop="wordCount" content="2526">
+    <title>calculer sur un algorithme :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782146698" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782146698" defer></script>
+    <script src="/js/search-lunr.js?1782146698" defer></script>
+    <script src="/js/search.js?1782146698" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782146698";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782146698" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146698" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782146698" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782146698" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782146698" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146698" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146698" rel="stylesheet">
+    <link href="/css/theme.css?1782146698" rel="stylesheet">
+    <link href="/css/format-html.css?1782146698" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/algorithmes\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/algorithmes/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#quest-ce-quun-problème">Qu&rsquo;est ce qu&rsquo;un problème?</a></li>
+    <li><a href="#calculabilité-1">Calculabilité</a></li>
+    <li><a href="#problèmes-de-décision-décidables">Problèmes de décision décidables</a>
+      <ul>
+        <li><a href="#problèmes-de-décision">Problèmes de décision</a></li>
+        <li><a href="#décidables-ou-indécidables">décidables ou indécidables?</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#terminaison-et-correction">terminaison et correction</a></li>
+    <li><a href="#méthodes-pour-les-algorithmes-itératifs">méthodes pour les algorithmes itératifs</a></li>
+    <li><a href="#algorithme-recursif">Algorithme recursif</a>
+      <ul>
+        <li><a href="#terminaison">terminaison</a></li>
+        <li><a href="#correction-partielle">correction partielle</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#exemple-1-fonction-somme">Exemple 1: fonction somme</a>
+      <ul>
+        <li><a href="#script">Script</a></li>
+        <li><a href="#terminaison-1">terminaison</a></li>
+        <li><a href="#correction">correction</a></li>
+      </ul>
+    </li>
+    <li><a href="#exemple-2-recherche-dichotomique">Exemple 2: Recherche dichotomique</a>
+      <ul>
+        <li><a href="#definition">Definition</a></li>
+        <li><a href="#terminaison-de-la-fonction-de-recherche-dichotomique">Terminaison de la fonction de recherche dichotomique</a></li>
+        <li><a href="#efficacité-de-la-recherche-dichotomique">Efficacité de la recherche dichotomique</a></li>
+        <li><a href="#preuve-de-correction">Preuve de correction</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">calculer sur un algorithme</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/algorithmes/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page7/index.html" title="algorithme de Boyer Moore (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/index.html" title="langages (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="calculer-sur-un-algorithme">calculer sur un algorithme</h1>
+
+<h1 id="calculabilité">Calculabilité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Dans le chapitre précédent, sur la complexité, l’objet d’étude principal etait l’algorithme. On en a fait une mesure de son efficacité: un algorithme est plus efficace s&rsquo;il est plus rapide (donc de classe de complexité plus faible).</p>
+<p>En calculabilité, le <strong>problème</strong> devient l’<strong>objet central</strong>.</p>
+<p><em>Voir le cours d&rsquo;algorithmique de <a href="https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/algo/cours/algo/probleme.html" rel="external">Pierre Antoine Champin, CNRS</a></em>: <em>definition très claire de la notion de <strong>Problème</strong> comme une classe.</em></p>
+
+<figure >
+    <a href="https://www.youtube.com/watch?v=Zci9m08HQws">
+        <img src="../images/Entscheidungsproblem.png" alt="Le Problème de Décision - Voyages au pays des maths | ARTE" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Le Problème de Décision - Voyages au pays des maths | ARTE
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>On a souvent l&rsquo;impression que pour chaque problème on peut trouver un algorithme de solution. Ce n&rsquo;est pas le cas : pour des nombreux probèmes naturels et intéressants il n’existe pas d’algorithme. Ces problèmes sont non calculables. Cette notion a évolué dans l&rsquo;histoire de l&rsquo;informatique au cours des étapes suivantes:</p>
+<p><strong>Charles Babbage</strong> (1791 – 1871), professeur à Cambridge, construit la machine différentielle et la machine analytique. La dernière peut être considérée comme précurseur des ordinateurs modernes, consistant d’une unité de contrôle, une unité de calcul, une mémoire, ainsi que l’entrée-sortie.</p>
+<p>
+<figure >
+    
+        <img src="../images/Charles_Babbage.jpg" alt="Charles Babbage (1791 – 1871) - wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Charles Babbage (1791 – 1871) - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<strong>Ada Lovelace</strong> (1815 – 1852) travaille avec Babbage et préconise l’utilisation de la machine analytique pour la résolution de problèmes mathématiques. C&rsquo;est le premier langage informatique, énoncé avant même l&rsquo;existance d&rsquo;une machine. Elle est considérée comme premier programmeur du monde.</p>
+<p>
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Ada_Lovelace">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Ada_lovelace.jpg" alt="Ada Lovelace (1815 – 1852)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Ada Lovelace (1815 – 1852)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<strong>David Hilbert</strong> (1862 – 1943), professeur à Göttingen, présente en 1920 un programme de recherche visant à clarifier les fondaments des mathématiques : “tout enoncé mathématique peut être soit prouvé soit refuté”. Plus tard il enonce le “Entscheidungsproblem” : On doit pouvoir montrer de façon “mécanique” si un enoncé mathématique est vrai ou faux.</p>
+<p>Pour cela, on s&rsquo;appuie sur un systèmes d&rsquo;axiomes censés fonder les mathématiques. A partir de ce système d&rsquo;axiomes, on n&rsquo;aura jamais des démonstrations contradictoires d&rsquo;une <em>proposition</em> (<em>d&rsquo;un problème, d&rsquo;un énoncé de mathématique</em>).</p>
+<p>Selon lui, tout est <em>décidable</em>, selon le terme qui sera employé plus tard.</p>
+<p>
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/David_Hilbert">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Hilbert.jpg" alt="David Hilbert (1862 – 1943)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        David Hilbert (1862 – 1943)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<strong>Kurt Gödel</strong> (1906 – 1978), un des logiciens les plus fameux de l’histoire, répond en 1931 négativement quand au programme proposé par Hilbert. Il affirme qu&rsquo;un systeme logique, aussi puissant soit-il, admet des propositions (des problèmes) ne pouvant être ni infirmées ni confirmées à partir des axiomes de la théorie. Ces propositions sont qualifiées d&rsquo;<em>indécidables</em>.</p>
+<p>Il s&rsquo;agit du théorème d&rsquo;<em>incomplétude</em>.</p>
+<p>Paradoxalement, on sait que certaines de ces propositions <em>indécidables</em> sont <em>vraies</em>, mais on ne peut le démontrer.</p>
+<p>
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Kurt_G%c3%b6del">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/1925_kurt_g%c3%b6del.png" alt="Kurt Gödel (1906 – 1978)" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Kurt Gödel (1906 – 1978)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<strong>Alan Turing</strong> (1912 – 1954) et<a href="https://fr.wikipedia.org/wiki/Alonzo_Church"> 
+            
+        </a> 
+Turing cherche s&rsquo;il n&rsquo;y aurait pas au moins une procédure mécanique pour trouver quelles sont les propositions que l&rsquo;on peut effectivement déduire d&rsquo;un système d&rsquo;axiomes, c&rsquo;est à dire de décider de leur vérité (équivalent du problème de décision). Il part du principe que ce qu&rsquo;un humain peut déduire est équivalent à ce qu&rsquo;une machine peut déduire. Ainsi, il suffit de décrire convenablement une machine idéale pour préciser ce qu&rsquo;est une procédure systématique. Cette machine idéale sera la <em>machine de Turing</em>. Il montre, par un raisonnement logique que cette machine ne peut pas démontrer toutes les propositions d&rsquo;un système d&rsquo;axiomes (<em>indécidabilité</em>).</p>
+
+<figure >
+    
+        <img src="../images/Alan_Turing.jpg" alt="Alan Turing (1912 – 1954) - wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Alan Turing (1912 – 1954) - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h1 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="quest-ce-quun-problème">Qu&rsquo;est ce qu&rsquo;un problème?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Informatiquement, <em>problème</em> sera synonyme de <em>fonction</em>. Un problème est caractérisé par:</p>
+<ul>
+<li>Le nom du problème</li>
+<li>des données d&rsquo;entrée, que l&rsquo;on appelle instance du problème.</li>
+<li>une question mathématique posée sur ces données d&rsquo;entrée.</li>
+</ul>
+<p>Rq : Ne pas confondre problème et algorithme le résolvant. Il peut y avoir plusieurs algorithmes qui resolvent le même problème (calculent la même fonction).</p>
+<p>Les problèmes s&rsquo;énoncent de la manière la plus <em>générale possible</em>. On peut les désigner comme des <em>classes</em>, possédant de multiples <em>instances</em> (celles pour lesquelles on place des valeurs à la place des varaibles).</p>
+<blockquote>
+<p>Problème 1</p>
+</blockquote>
+<ul>
+<li>Donnée : Un ensemble N d&rsquo;entiers naturels<!-- raw HTML omitted --></li>
+<li>Question : Déterminer les nombres pairs dans cet ensemble.</li>
+</ul>
+<p><em>Instance 1: Quels sont les nombres pairs dans l&rsquo;ensemble <code>[1,2,3,4]</code>?</em></p>
+<blockquote>
+<p>Problème 2</p>
+</blockquote>
+<ul>
+<li>Donnée : Un ensemble N d&rsquo;entiers naturels<!-- raw HTML omitted --></li>
+<li>Question : Déterminer les nombres premiers de cet ensemble.</li>
+</ul>
+<p><em>Instance 2: Le nombre 137 est-il premier?</em></p>
+<blockquote>
+<p>Problème 3</p>
+</blockquote>
+<ul>
+<li>Donnée : Un programme C.</li>
+<li>Question : Le programme est-il syntaxiquement correct ?</li>
+</ul>
+<p>Ce dernier exemple de problème suggère qu&rsquo;un <strong>algorithme</strong> est une
+<strong>donnée</strong> comme une autre. En effet, le <strong>script</strong> qui traduit l&rsquo;algorithme est écrit dans un <strong>langage</strong>. Et la machine va le lire et l&rsquo;interpréter à l&rsquo;aide d&rsquo;un autre programme. Pour ce programme, le script est une donnée (<strong>interpréteurs, compilateurs</strong>).</p>
+<h2 id="calculabilité-1">Calculabilité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Qu’est-ce que c’est “calculable”?</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>En mathématique : Une fonction f : ℕ
+→ ℕ est calculable s’il existe un programme/algorithme qui calcule f: si la fonction f est définie sur une entrée x, alors l’algorithme doit renvoyer la valeur f(x), et si f n’est pas définie, l’algorithme doit boucler sur l’entrée x.</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>En algorithmique: on dira qu’une fonction est calculable si elle peut être programmée dans l’un ou l’autre des langages de programmation usuels.</li>
+</ul>
+</blockquote>
+<p>La première fonction explicite non calculable a été décrite par Turing en 1936. Il s’agit du problème de l’arrêt : étant donné un algorithme A et une entrée x, il s’agit de déterminer si A s’arrête ou non sur l’entrée x (i.e A ne boucle pas sur l’entrée x).</p>
+<p><strong>Théorème :</strong> Le problème de l’arrêt est incalculable.</p>
+<blockquote>
+<p>Qu&rsquo;est ce que la &ldquo;terminaison&rdquo;? On dit qu’un programme termine s’il ne boucle pas, c’est-à-dire qu’il renvoie bien un résultat.</p>
+</blockquote>
+<h2 id="problèmes-de-décision-décidables">Problèmes de décision décidables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="problèmes-de-décision">Problèmes de décision<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Il existe une catégorie de problèmes que l&rsquo;on appelle : <em>problèmes de décision</em>. Dire que le problème est <strong>decidable</strong>, c’est dire qu’il existe un programme Python permettant de calculer f(n) pour tout entier n, en un temps fini.
+<!-- raw HTML omitted -->
+Ou bien : P est décidable s’il existe un algorithme qui pour chaque x dit “OUI” ou “NON” à la question : “Est-ce que P(x) est vrai ?”.
+<!-- raw HTML omitted -->
+Tous les problèmes mathématiques (voir plus haut) peuvent être énoncés comme des problèmes de décision: <a href="https://fr.wikipedia.org/wiki/Th%C3%A9orie_de_la_complexit%C3%A9_(informatique_th%C3%A9orique)" rel="external">voir page wikipedia.</a>, avec le Passage de problème d&rsquo;optimisation à problème de décision.</p>
+<p>Pour les problèmes 1 et 2 vus auparavent, on peut les énoncer sous la forme:</p>
+<ul>
+<li><strong>instance du Problème 1</strong></li>
+<li>Donnée : Un nombre entier positif n en base 2.</li>
+<li>Question : n est-il pair?</li>
+</ul>
+<p><em>autre exemple:</em></p>
+<ul>
+<li><strong>instance du Problème 2</strong></li>
+<li>Donnée : Un nombre entier positif n en base 10.</li>
+<li>Question : n est-il premier?</li>
+</ul>
+<p>Les problèmes 1 et 2 sont énoncés comme un problème de décision.</p>
+<p>En conséquence, le problème de la décision, c’est-à-dire la recherche d’une procédure qui indique dans chaque contexte, et au bout d’un temps fini, si une propriété est vraie ou fausse, est équivalent à la construction d’un algorithme qui calcule pour chaque fonction f et pour chaque argument x de f, la valeur y telle que y = f(x). Autrement dit, le problème de la <strong>décision est équivalent au problème du calcul</strong>.</p>
+<h3 id="décidables-ou-indécidables">décidables ou indécidables?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les fonctions, ou propriétés bien énoncées<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> en langages mathématique sont-elles toutes décidables? La reponse est : Non, il n&rsquo;existe pas de telle méthode, comme cela a été démontré en 1931 par <strong>Kurt Gödel</strong> (voir plus haut).</p>
+<p><strong>L&rsquo;indecidabilité</strong> c&rsquo;est l&rsquo;impossibilité absolue et définitivement démontrée de résoudre par un procédé général de calcul un problème donné.</p>
+<p>Imaginons qu&rsquo;il  existe des programmes qui calculent si un programme <em>termine</em>. Ces programmes prendraient une fonction A comme paramètre, et une donnée x d&rsquo;entrée de cette fonction.</p>
+<p>Si A s’arrête sur l’entrée x, le programme <em>termine</em> peut renvoyer <code>True</code>. Mais si ce n’est pas le cas, le programme ne répondra jamais. À quel moment décide-t-on qu&rsquo;il n’a pas encore répondu, c’est qu’il ne répondra jamais ? On n’a aucun moyen de le faire, et c’est ce que prouve le théorème de Turing.</p>
+
+<figure >
+    <a href="https://www.youtube.com/watch?v=PsTcL7KlGBg">
+        <img src="../images/video_decidable.png" alt="decidabilité youtube" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Décidabilité et indécidabilité : Problème de l&#39;arrêt | Rachid Guerraoui
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>Exemple de problème non décidable :</p>
+</blockquote>
+<ul>
+<li>Problème</li>
+<li>Donnée : Un programme C.</li>
+<li>Question : Le programme s’arrête-t-il toujours ?</li>
+</ul>
+<h1 id="preuve-dun-algorithme">Preuve d&rsquo;un algorithme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="terminaison-et-correction">terminaison et correction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Prouver le bon fonctionnement d&rsquo;un algorithme nécessite de vérifier deux propriétés :</p>
+<ol>
+<li>premièrement : la <strong>terminaison</strong> : prouver que l&rsquo;algorithme se termine.</li>
+<li>deuxièmement : la <strong>correction</strong> : si l&rsquo;algorithme se termine, il fait bien ce qu&rsquo;on attend de lui (correction partielle).</li>
+</ol>
+<p>D&rsquo;après ce qui a été vu auparavent, il n&rsquo;EXISTE PAS d&rsquo;algorithme capable de calculer la terminaison ou la correction d&rsquo;un programme. Ce sera à vous de PROUVER un algorithme, à partir de méthodes exposées ici.</p>
+<h2 id="méthodes-pour-les-algorithmes-itératifs">méthodes pour les algorithmes itératifs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Pour la <strong>terminaison</strong> : étude du VARIANT de boucle</p>
+</blockquote>
+<blockquote>
+<p>Il faudra exhiber, pour chaque boucle <code>while</code>, un VARIANT de boucle.</p>
+</blockquote>
+<blockquote>
+<p>Pour la <strong>correction</strong> :</p>
+</blockquote>
+<blockquote>
+<p>Exhiber un INVARIANT de boucle qui permet de montrer le résultat voulu.</p>
+</blockquote>
+<p><strong>Invariant de boucle :</strong>
+on appelle <em>invariant</em> d&rsquo;une itération toute propriété, vraie à l&rsquo;initialisation, et qui demeure conservée quand on passe d&rsquo;un état quelconque à son successeur.</p>
+<h2 id="algorithme-recursif">Algorithme recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans le cas des algorithmes récursifs, ces méthodes sont spécifiques.</p>
+<h3 id="terminaison">terminaison<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le (ou l&rsquo;un des) paramètre(s) appelé(s) par la fonction recursive doit avoir une relation d&rsquo;ordre descendante. C&rsquo;est à dire que ce paramètre doit être de plus en plus petit à chaque appel de la fonction dans le corps de la fonction récurente.</p>
+<h3 id="correction-partielle">correction partielle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Il faut montrer que si les appels internes à l&rsquo;algorithme font ce qu&rsquo;on attend d&rsquo;eux, alors l&rsquo;algorithme entier fait ce qu&rsquo;on attend de lui. La preuve de correction se fait à partir d&rsquo;une demonstration par recurrence :</p>
+<ul>
+<li>On commence à établir la preuve pour le rang n = 0, puis n = 1.</li>
+<li>il faut montrer que si on peut prouver la correction pour une suite de rang n-1, on aboutira à la preuve de correction pour une suite de rang n.</li>
+</ul>
+<h1 id="exemples">Exemples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="exemple-1-fonction-somme">Exemple 1: fonction somme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="script">Script<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La fonction suivante réalise la somme des termes d&rsquo;une liste.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span></span></span></code></pre></div>
+<h3 id="terminaison-1">terminaison<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le script contient une boucle bornée. La variable k augmente d&rsquo;une unité à chaque itération. De k=0 jusqu&rsquo;à len(L)-1. La boucle s&rsquo;arrêtera lorsque k atteindra len(L) -1, ce qui arrivera forcement.</p>
+<h3 id="correction">correction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On considère l&rsquo;invariant de boucle énoncé ainsi : &ldquo;pour un indice k, s est égal à la somme de L[:k]&rdquo;. C&rsquo;est à dire à:</p>
+<p>L[0] + L[1] + L[2] + &hellip; + L[k-1]<!-- raw HTML omitted --></p>
+<ul>
+<li>A l&rsquo;entrée dans la boucle : s = 0. Ce qui est attendu puisque l&rsquo;on n&rsquo;a pas encore additionné le premier terme L[0].</li>
+<li>Pour une valeur k. On suppose que s est egal à la somme des termes de L[:k-1]. Alors, à la ligne 4, on ajoute L[k] à s. Donc s est bien égal à la somme de L[:k].</li>
+<li>A la fin de la boucle, k vaut len(L)-1, et c&rsquo;est justement l&rsquo;indice du dernier élément de la liste. s sort alors avec pour valeur la somme de TOUS les termes de la liste L. CQFD</li>
+</ul>
+<h2 id="exemple-2-recherche-dichotomique">Exemple 2: Recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="definition">Definition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La recherche dichotomique consiste à diviser par 2 l’ensemble de recherche. Pour cela, on définit le milieu de l’intervalle de recherche, puis on conserve:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T[borne_inf : milieu] si T[milieu] &gt; x
+</span></span><span class="line"><span class="cl">T[milieu : borne_sup] si T[milieu] &lt; x</span></span></code></pre></div>
+<p><em>Exemple:</em> On recherche un mot commençant par la lettre c dans le dictionnaire. Les lettres du dictionnaire sont dans l’ensemble [a .. z]. Il s’agit d’une liste [&lsquo;a&rsquo;,&lsquo;b&rsquo;,&lsquo;c&rsquo;,&rsquo;d&rsquo;, ..&rsquo;m&rsquo;, ..,&lsquo;x&rsquo;,&lsquo;y&rsquo;,&lsquo;z&rsquo;].
+ Comme il s’agit d’une liste dont les indices vont de 0 à 25: Le milieu, c’est 25//2 soit 12. la lettre c a un rang inférieur à 12 (lettre m). Donc, dans une première étape de recherche, on prendra la liste entre les rangs 0 et 12 pour rechercher c.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_dicho</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param T: sorted list of elements
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param x: element
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return: int, index of x in the list
+</span></span></span><span class="line"><span class="cl"><span class="s2">           else -1
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i_min</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i_max</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">i_max</span> <span class="o">&gt;=</span> <span class="n">i_min</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_min</span> <span class="o">+</span> <span class="n">i_max</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">mid</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">T</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i_min</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i_max</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></span></span></code></pre></div>
+<h3 id="terminaison-de-la-fonction-de-recherche-dichotomique">Terminaison de la fonction de recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Dans le pire des cas, l’intervalle va se réduire jusqu’à se limiter à un seul élément. Celui dont l’index est mid. Avec <code>i_min</code> == <code>i_max</code></p>
+<p>Si l’élément recherché est dans la liste: Cet élément est alors la valeur recherchée <code>x</code>, et la fonction se termine en retournant la valeur de l’index de <code>x</code> dans la liste, <code>mid</code>.</p>
+<p>Si l’élément recherché n’est pas dans la liste: alors, soit <code>i_min</code> prend la valeur de <code>mid+1</code>, soit <code>i_max</code> prend la valeur de <code>mid-1</code>. On a alors <code>i_min</code> &gt; <code>i_max</code>, qui est la condition d’arrêt de la boucle.</p>
+<h3 id="efficacité-de-la-recherche-dichotomique">Efficacité de la recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le nombre d’opérations de comparaison, dans le pire des cas, est proportionnel à <code>log(N)</code>. <code>N</code> étant égal à la taille de la liste. Et <code>log(N)</code> étant egal au nombre de divisions par 2 qu’il faut effectuer pour que N arrive à 1:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">100 -&gt; 50 -&gt; 25 -&gt; 13 -&gt; 7 -&gt; 4 -&gt; 2 -&gt; 1 (6 à 7 divisions)</span></span></code></pre></div>
+<p>On dit que la complexité est logarithmique.</p>
+<h3 id="preuve-de-correction">Preuve de correction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>voir le document sur eduscol.education.fr, pages 4 et 5: [eduscol.education.fr/document/30064/download]((<a href="https://eduscol.education.fr/document/30064/download" rel="external">https://eduscol.education.fr/document/30064/download</a>)</p>
+<h1 id="résumé">Résumé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Un Problème: Ensemble <em>Nom + Données d&rsquo;entrée + Question</em></li>
+<li>Pour la suite: Problème = Fonction</li>
+<li>L’ensemble des algorithmes, donc des fonctions calculables, est dénombrable. Un algorithme est une approche étape par étape pour résoudre un problème.</li>
+<li>L’ensemble des fonctions est indénombrable, donc il existe des fonctions incalculables.</li>
+<li>Calculable: il existe une fonction f programmable dans un langage courant (python)</li>
+<li>Calculable = Décidable: un problème <em>calculable</em> peut être traduit en un problème équivalent <em>décidable</em>. La différence est que, pour un problème <em>calculable</em>, on doit calculer une image f(x), alors que pour un problème <em>décidable</em>, la fonction retourne une valeur booléenne (True,False). Le problème est exprimé différemment.</li>
+<li>Indécidable (ou incalculable): c&rsquo;est l&rsquo;impossibilité définitivement démontré de résoudre par un algorithme un problème donné.</li>
+<li>Le problème de l’arrêt est un exemple de fonction incalculable.</li>
+<li>L&rsquo;étude de la terminaison d&rsquo;une fonction est liée à l&rsquo;étude de sa complexité. Il faut pouvoir évaluer si un problème décidable, l&rsquo;est en un temps raisonnable.</li>
+<li>Il n&rsquo;existe pas de programme permettant de savoir si une fonction <em>termine</em>, et si elle <em>fait bien</em> ce qui est attendu d&rsquo;elle. C&rsquo;est pour cela qu&rsquo;il faudra savoir <em>prouver</em> une fonction. Pour cela, il faudra:
+<ul>
+<li>démontrer que la fonction <em>termine</em>. On s&rsquo;aide souvent d&rsquo;un VARIANT de boucle.</li>
+<li>démontrer la <em>correction</em> de cette fonction, c&rsquo;est à dire qu&rsquo;elle fait bien ce que l&rsquo;on attend d&rsquo;elle. On s&rsquo;aide souvent d&rsquo;un INVARIANT de boucle.</li>
+</ul>
+</li>
+</ul>
+<h1 id="liens--généralités">Liens : généralités<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Interstice : <a href="https://interstices.info/alan-turing-du-calculable-a-lindecidable/" rel="external">décidabilité calculabilité</a></li>
+</ul>
+<h1 id="liens-pour-approfondir">Liens pour approfondir<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Université de Nice : <a href="http://www.i3s.unice.fr/~nlt/cours/licence/it/s6_itdut_poly.pdf" rel="external">introduction au cours décidabilité et complexité</a></li>
+<li>cours en pdf université de Grenoble : <a href="https://www.irif.fr/~asarin//calc2k3/calcul_cours.pdf" rel="external">calculabilité</a></li>
+<li><a href="http://www.lirmm.fr/%7Egrenet/DIUBloc5/AlgoAvancee.pdf" rel="external">cours sur l&rsquo;algorithmique Bruno Grenet</a></li>
+<li>cas des algorithmes recursifs : <a href="https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif" rel="external">https://fr.wikipedia.org/wiki/Algorithme_récursif</a></li>
+<li>théorie des modèles, axiomes, théorèmes: <a href="https://www.techno-science.net/glossaire-definition/Theorie-des-modeles.html" rel="external">théorie des modèles: Techno-sciences</a> et <a href="https://www.techno-science.net/definition/6178.html" rel="external">Axiome logique - Définition et Explications: Techno-sciences</a> et <a href="https://www.techno-science.net/definition/6193.html" rel="external">Déductions naturelles: Techno-sciences</a> et <a href="https://fr.wikipedia.org/wiki/D%C3%A9duction_naturelle" rel="external">Déductions naturelles: Wikipedia</a></li>
+<li>Cours algorithmique de <a href="https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/algo/cours/algo/probleme.html" rel="external">Pierre Antoine Champin, CNRS</a>: definition très claire de la notion de <em>Problème</em>.</li>
+</ul>
+<h1 id="notes">Notes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>ceci fait reference au theoreme de completude énoncé par Gödel. Une théorie mathématique pour laquelle tout énoncé est décidable est dite complète, sinon elle est dite incomplète. D&rsquo;où le Premier Théorème d’incomplétude de Gödel
+&ldquo;Dans n&rsquo;importe quelle théorie récursivement axiomatisable, cohérente et capable de
+« formaliser l&rsquo;arithmétique », on peut construire un énoncé arithmétique qui ne peut être ni prouvé ni réfuté dans cette théorie. Il n&rsquo;existe donc aucune théorie mathématique complète.&rdquo; (Premier Théorème d’incomplétude de Gödel)&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="parent " data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286" checked><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146698"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146698" defer></script>
+    <script src="/js/theme.js?1782146698" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

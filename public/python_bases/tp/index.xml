@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Travaux pratiques :: allopizza</title>
+    <link>//localhost:1313/python_bases/tp/index.html</link>
+    <description>Travaux pratiques et mini-projets</description>
+    <generator>Hugo</generator>
+    <language>fr</language>
+    <atom:link href="//localhost:1313/python_bases/tp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>balle rebondissante</title>
+      <link>//localhost:1313/python_bases/tp/pygame_pong_balle/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/pygame_pong_balle/index.html</guid>
+      <description>Suite du jeu PONG (pygame) Dessiner la balle, prevoir les variables Nous allons nous interesser au dessin et au deplacement de la balle. Celle-ci doit normalement rebondir sur les murs gauche, haut et bas. Par contre, vous devrez l’empêcher d’atteindre le bord droit à l’aide de votre raquette. Sinon, vous perdrez la partie (ou vous perdrez 1 point).</description>
+    </item>
+    <item>
+      <title>balle rebondissante</title>
+      <link>//localhost:1313/python_bases/tp/pyxelstudio2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/pyxelstudio2/index.html</guid>
+      <description>Pong: la balle rebondissante</description>
+    </item>
+    <item>
+      <title>correction ascii-art</title>
+      <link>//localhost:1313/python_bases/tp/ascii_art_c/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/ascii_art_c/index.html</guid>
+      <description>correction ascii-art&#xA;from PIL import Image from display_image import * ascii_char = &#39; .:-=+*#%@&#39; with Image.open(&#34;Marylin-original.jpg&#34;) as image: image = image.resize((500,500)) #image.show() fileout = open(&#34;ascii_art.txt&#34;,&#34;w&#34;) for y in range(500): line = &#34;&#34; for x in range(500): rgb=image.getpixel((x,y)) # rgb est une liste (R,G,B) du pixel grey = (rgb[0]+rgb[1]+rgb[2])//3 index = grey * 9 // 255 line += ascii_char[index] + &#39; &#39; #print(line) line += &#39;\n&#39; fileout.write(line) fileout.close() image = textfile_to_image(&#39;ascii_art.txt&#39;) image.show() image.save(&#39;ascii_art.png&#39;)</description>
+    </item>
+    <item>
+      <title>jeu de rôle en console</title>
+      <link>//localhost:1313/python_bases/tp/python1_variables/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/python1_variables/index.html</guid>
+      <description>TP python: Jeu de Rôle Le but de ce TP est de créer un jeu avec une interface TEXTUELLE&#xA;Rappels de classe de 1ere NSI Les entrées et sorties voir le cours à la page https://lyceum.fr/1g/nsi/7-langages-et-programmation/3-entrees-et-sorties</description>
+    </item>
+    <item>
+      <title>mastermind</title>
+      <link>//localhost:1313/python_bases/tp/tp_mastermind/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/tp_mastermind/index.html</guid>
+      <description>Jeu du mastermind - 1ere NSI Précisions Pour la présentation du jeu, on pourra consulter la page: wikihow.com&#xA;Ce TP demande une bonne maitrise des concepts python de base:&#xA;variables cours sur les conditions et TP boucle non bornée while Cette version du programme n’utilise pas les sequences comme les listes python. L’interface se passe dans la console python.</description>
+    </item>
+    <item>
+      <title>PONG final</title>
+      <link>//localhost:1313/python_bases/tp/pygame_pong_final/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/pygame_pong_final/index.html</guid>
+      <description>Programme final import pygame from pygame.locals import * from random import randint pygame.init() pygame.key.set_repeat(1,20) fenetre = pygame.display.set_mode((512,512)) fenetre.fill([0, 0, 0]) r1_y = 232 largeur = 16 hauteur = 128 r_balle = 16 xb = 50 yb = 256 + randint(0,100)-50 vx = 2 + randint(0,2) vy = 2 couleur = (45, 170, 250) continuer = True def rebond(xb,yb,vx,vy): if xb+vx &gt; 512 or xb+vx&lt;0: vx = -vx if yb+vy &gt; 512 or yb+vy&lt;0: vy = -vy xb+=vx yb+=vy return xb,yb,vx,vy while continuer : for event in pygame.event.get(): if event.type == QUIT: continuer = False if event.type == KEYDOWN: if event.key == K_UP: r1_y = r1_y - 8 else: r1_y += 8 xb,yb,vx,vy = rebond(xb,yb,vx,vy) fenetre.fill([0,0,0]) pygame.draw.rect(fenetre,(255,255,255),(450,r1_y,largeur,hauteur)) pygame.draw.circle(fenetre, couleur, (xb, yb), r_balle) pygame.display.update() pygame.time.wait(10) pygame.quit()</description>
+    </item>
+    <item>
+      <title>pygame les bases</title>
+      <link>//localhost:1313/python_bases/tp/pygame_pong/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/pygame_pong/index.html</guid>
+      <description>Pygame Pygame est un module python qui offre des outils permettant de créer des jeux. C’est un programme libre, et opensource.&#xA;Le jeu Pong SOLO Dans cette première partie, nous allons nous familiariser avec l’environnement de developpement et la programmation de type evenementielle, en temps réel. Dans ce type de programmation, il faudra afficher et mettre à jour l’image en fonction des actions du joueur, et lire régulièrement les états des touches du clavier pour detecter les appuis par le joueur.</description>
+    </item>
+    <item>
+      <title>pyxelstudio les bases</title>
+      <link>//localhost:1313/python_bases/tp/pyxelstudio1/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/pyxelstudio1/index.html</guid>
+      <description>Pyxel studio Le site pyxelstudio.net permet de créer un jeu de type retro-gaming, en python. Il s’agit de jeux que l’on trouvait sur console 8 bits (16 couleurs, 4 pistes audio utilisant 64 sons différents).&#xA;console Gameboy, Nitendo, 1990 Le projet est soutenu activement, on peut consulter les démos et les télécharger depuis la page github.com/kitao/pyxel.</description>
+    </item>
+    <item>
+      <title>shifumi</title>
+      <link>//localhost:1313/python_bases/tp/tp_shifumi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/tp_shifumi/index.html</guid>
+      <description>Jeu du Shifumi Le pierre-feuille-ciseaux, chifoumi, pierre-papier-ciseaux ou encore roche-papier-ciseaux est un jeu dans lequel chaque joueur forme simultanément une parmi plusieurs armes symbolisées par la forme de la main et dont les rapports d’efficacité suivent un cycle : la pierre (aussi appelée « caillou » ou « roche ») battant les ciseaux, qui battent la feuille (ou « papier »), qui elle-même bat la pierre. Si les armes choisies sont les mêmes, il y a égalité. wikipedia</description>
+    </item>
+    <item>
+      <title>solution mastermind</title>
+      <link>//localhost:1313/python_bases/tp/tp_mastermind_soluce/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/tp_mastermind_soluce/index.html</guid>
+      <description>solution&#xA;#%% methode utilisant des listes from random import choice ordi = &#34;&#34; for i in range(4): ordi += choice((&#39;J&#39;,&#39;O&#39;,&#39;C&#39;,&#39;R&#39;,&#39;V&#39;)) ordi = list(ordi) print(ordi) joueur = [] essais = 0 while joueur!= ordi and essais &lt; 12: joueur = list(input(&#34;entrer une combinaison de 4 couleurs (JOCRV)&#34;)) correspond = ordi.copy() essais += 1 B = 0 N = 0 for i in range(4): if joueur[i] == ordi[i]: N += 1 correspond[i] = &#39;X&#39; print(&#39;trouve {} à la position {} dans {}&#39;.format(joueur[i],i,ordi)) for i in range(4): if joueur[i] in correspond: j = correspond.index(joueur[i]) print(&#39;joueur[{}] dans {} , index={}&#39;.format(i,correspond,j)) correspond[j] = &#39;X&#39; B += 1 print(ordi,correspond) print(&#34;B:{}, N: {}&#34;.format(B,N)) if joueur == ordi: print(&#39;c est gagné!&#39;) else: print(&#34;perdu&#34;) Exemple d’utilisation:&#xA;[&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] entrer une combinaison de 4 couleurs (JOCRV)JJJJ trouve J à la position 1 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] trouve J à la position 3 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] [&#39;R&#39;, &#39;X&#39;, &#39;V&#39;, &#39;X&#39;] B:0, N: 2 entrer une combinaison de 4 couleurs (JOCRV)RJJV trouve R à la position 0 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] trouve J à la position 1 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] joueur[1] dans [&#39;X&#39;, &#39;X&#39;, &#39;V&#39;, &#39;J&#39;] , index=3 joueur[3] dans [&#39;X&#39;, &#39;X&#39;, &#39;V&#39;, &#39;X&#39;] , index=2 [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] [&#39;X&#39;, &#39;X&#39;, &#39;X&#39;, &#39;X&#39;] B:2, N: 2 entrer une combinaison de 4 couleurs (JOCRV)RJVJ trouve R à la position 0 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] trouve J à la position 1 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] trouve V à la position 2 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] trouve J à la position 3 dans [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] [&#39;R&#39;, &#39;J&#39;, &#39;V&#39;, &#39;J&#39;] [&#39;X&#39;, &#39;X&#39;, &#39;X&#39;, &#39;X&#39;] B:0, N: 4 c est gagné!</description>
+    </item>
+    <item>
+      <title>TP python index</title>
+      <link>//localhost:1313/python_bases/tp/tp_index/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/tp_index/index.html</guid>
+      <description>Liste des TP Python Python 1 : variables Opérations simples, listes et dictionnaires : Lien Python 2 : algorithmes simples sur les listes Bac NSI Recherche du maximum, minimum, d&#39;un mot dans une liste : Lien Apprendre python en créant un jeu: PYXELSTUDIO: Lien Liste des mini-projets en Term NSI Algorithmes fondamentaux pour le Bac NSI 1ere NSI manipulation de listes: parcours, insertion, modification Écrire un algorithme de recherche d’une occurrence sur des valeurs de type quelconque.(simple ou dichotomique) voir Python 2 Écrire un algorithme de recherche d’un extremum, de calcul d’une moyenne. voir Python 2 Écrire un algorithme de tri (insertion, selection) Écrire un algorithme qui prédit la classe d’un élément en fonction de la classe majoritaire de ses k plus proches voisins. Algorithme de recherche par dichotomie Résoudre un problème grâce à un algorithme glouton. Term NSI manipulation de dictionnaire: parcours, insertion, modification manipulation de type abstraits: pile, file, tableau tri fusion Programmation objet Arbre binaire</description>
+    </item>
+    <item>
+      <title>transformer image ascii</title>
+      <link>//localhost:1313/python_bases/tp/ascii_art/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_bases/tp/ascii_art/index.html</guid>
+      <description>Prérequis:&#xA;TP1 Ascii art: utiliser des symboles pour dessiner des formes: Lien TP2 Lecture/ Ecriture dans un fichier: Lien TP3 Projet ascii art: des pixels aux symboles ascii On va remplacer dans une image la couleur d’un pixel par un caractère ascii dont le remplissage permettra de faire varier la clarté d’un zone de l’image.&#xA;Video explicative:</description>
+    </item>
+  </channel>
+</rss>

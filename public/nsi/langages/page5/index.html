@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
+La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
+Programmer en Grand L’infographie ci-contre montre une mesure des lignes de code dans certains programmes conséquents. Les mesures sont en millions de ligne de code:">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="mise au point :: allopizza">
+    <meta name="twitter:description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
+La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
+Programmer en Grand L’infographie ci-contre montre une mesure des lignes de code dans certains programmes conséquents. Les mesures sont en millions de ligne de code:">
+    <meta property="og:url" content="//localhost:1313/nsi/langages/page5/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="mise au point :: allopizza">
+    <meta property="og:description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
+La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
+Programmer en Grand L’infographie ci-contre montre une mesure des lignes de code dans certains programmes conséquents. Les mesures sont en millions de ligne de code:">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="mise au point :: allopizza">
+    <meta itemprop="description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
+La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
+Programmer en Grand L’infographie ci-contre montre une mesure des lignes de code dans certains programmes conséquents. Les mesures sont en millions de ligne de code:">
+    <meta itemprop="wordCount" content="2874">
+    <title>mise au point :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782146760" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782146760" defer></script>
+    <script src="/js/search-lunr.js?1782146760" defer></script>
+    <script src="/js/search.js?1782146760" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782146760";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782146760" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146760" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782146760" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782146760" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782146760" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146760" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146760" rel="stylesheet">
+    <link href="/css/theme.css?1782146760" rel="stylesheet">
+    <link href="/css/format-html.css?1782146760" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/langages\/page5\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/langages/page5/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#documentation-externe-à-laide-dun-pseudo-code">Documentation externe à l&rsquo;aide d&rsquo;un pseudo-code</a></li>
+    <li><a href="#documentation-interne">Documentation interne</a>
+      <ul>
+        <li><a href="#dans-la-déclaration-de-la-fonction-prototype">Dans la <strong>déclaration</strong> de la fonction (prototype)</a></li>
+        <li><a href="#docstring-dune-fonction"><strong>Docstring</strong> d’une fonction</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#gérer-les-erreurs-lire-le-traceback">Gérer les erreurs: lire le Traceback</a></li>
+    <li><a href="#connaitre-les-messages-dexception">Connaitre les messages d&rsquo;exception</a></li>
+    <li><a href="#anticiper-les-erreurs-les-tests-structurels">Anticiper les erreurs: Les tests STRUCTURELS</a>
+      <ul>
+        <li><a href="#assertions"><strong>Assertions: <code>assert</code></strong></a></li>
+        <li><a href="#déclencher-des-exceptions-raise">Déclencher des exceptions <strong><code>Raise</code></strong></a></li>
+        <li><a href="#gestion-des-exceptions-try-except">Gestion des exceptions: <strong><code>try-except</code></strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#programmer-des-tests-fonctionnels">Programmer des tests FONCTIONNELS</a>
+      <ul>
+        <li><a href="#fonctionnel-avec-un-doctest">Fonctionnel: avec un Doctest</a></li>
+        <li><a href="#fonctionnel-avec-un-module-de-test-unitaires-unittest">Fonctionnel: avec un module de test unitaires: <strong><code>unittest</code></strong></a></li>
+        <li><a href="#autres-tests">Autres tests</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">mise au point</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/langages/page5.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/page7/index.html" title="langages mathematiques (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/page8/index.html" title="tableaux python (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="mise-au-point">mise au point</h1>
+
+<p>Ce chapitre comprend 2 pages de cours et une page exercices:</p>
+<ul>
+<li>La mise au point d&rsquo;un programme: <a href="../page5">Lien 1</a></li>
+<li>Création et utilisation de modules: <a href="../page3">Lien 2</a></li>
+<li><a href="/docs/NSI/langages/ex1/">Lien vers les flash cards</a></li>
+</ul>
+<p>La liste des projets se trouve <a href="/docs/NSI/NSI_TP_algo/">ici</a></p>
+<h1 id="programmer-en-grand">Programmer en Grand<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>L&rsquo;infographie ci-contre montre une mesure des lignes de code dans certains programmes conséquents. Les mesures sont en millions de ligne de code:</p>
+
+<figure >
+    <a href="https://informationisbeautiful.net/visualizations/million-lines-of-code/">
+        <img src="../images/page5/codebase.png" alt="codebase - millions lines of code visualized" />
+    </a>
+    
+    <figcaption>
+        <p>
+        codebase - millions lines of code visualized
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>On peut ajouter qu&rsquo;il y a omniprésence de programmes longs dans des systèmes critiques : finance, transports, économie, santé&hellip; La moindre erreur peut coûter « cher » : on aimerait qu’un programme s’exécute correctement dans toutes les situations…</p>
+<p>Maintenir le code, travailler en équipe demande également une certaine méthodologie.</p>
+<p>Pour programmer <em>en grand</em>, c&rsquo;est à dire programmer avec plusieurs fichiers, il faudra adopter les bonnes pratiques, c&rsquo;est à dire:</p>
+<ul>
+<li>documenter ses fonctions</li>
+<li>procéder par étapes, en ajoutant des tests structurels pour aider au developpement</li>
+<li>utiliser des modules pour ses fonctions et classes</li>
+<li>tester ses fonctions, vérifier qu&rsquo;elles <em>fonctionnent</em> correctement.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/page5/script-au-module.png" alt="du script aux tests unitaires, une démarche de projet" />
+    
+    
+    <figcaption>
+        <p>
+        du script aux tests unitaires, une démarche de projet
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>En Python, pour créer une cohérence dans le code, il est recommandé d&rsquo;utiliser un <em>guide de style</em>. Il s&rsquo;agit de PEP8, présenté par exemple sur <a href="https://python.sdv.univ-paris-diderot.fr/15_bonnes_pratiques/" rel="external">python.sdv.univ-paris-diderot</a>.</p>
+<h1 id="spécification-dun-algorithme-ou-dune-fonction">Spécification d&rsquo;un algorithme ou d&rsquo;une fonction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Spécifier un algorithme signifie qu&rsquo;on le décrit avec précision. On spécifie chacun des composants, structures de données et fonctions.</p>
+<ul>
+<li>La documentation peut-être en consultation dans un <em>document externe</em> au programme (un fichier <code>readme.md</code>, une page sur <code>wikipedia</code>, &hellip;). Cette <em>documentation</em> peut alors fournir un <em>pseudo-code</em>, c&rsquo;est à dire une série d&rsquo;instruction avec des conventions de langages empruntées aux principaux langages existants, sans toutefois être rédigée dans un langage particulier.</li>
+<li>Mais cela peut-être réalisé aussi <em>au sein même du code</em> du programme ou de la fonction. On y ajoute alors des informations facultatives lors de la <em>déclaration</em> de la fonction ou dans le <em>docstring</em>.</li>
+</ul>
+<p>De manière générale, la spécification va comprendre :</p>
+<ul>
+<li>Le nom donné à cet algorithme. Ce nom doit être explicite, en rapport avec la tâche effectuée par l&rsquo;algorithme</li>
+<li>Une description du résultat de cet algorithme, ainsi que la manière avec laquelle on va s&rsquo;y prendre</li>
+<li>Le type et la nature des données en <em>entrée</em></li>
+<li>Le type et la nature des données en <em>sortie</em></li>
+<li>eventuellement, le type et la nature des variables internes.</li>
+</ul>
+<h2 id="documentation-externe-à-laide-dun-pseudo-code">Documentation externe à l&rsquo;aide d&rsquo;un pseudo-code<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le <em>pseudo langage</em> adopté est celui utilisé dans wikipedia : <a href="https://fr.wikipedia.org/wiki/Tri_fusion" rel="external">exemple</a></p>
+<p><em>Exemple de pseudo langage:</em> <code>recherche_du_maximum</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">L&#39;algorithme recherche la valeur maximale dans la liste.
+</span></span></span><span class="line"><span class="cl"><span class="s2">variables en entrée : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">------------------
+</span></span></span><span class="line"><span class="cl"><span class="s2">:ma_liste : list, une liste de valeurs entieres, uniques, mises dans un ordre aléatoires.
+</span></span></span><span class="line"><span class="cl"><span class="s2">:max : int, stocke la valeur maximale actuelle. Initialisé à 0.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Sortie :
+</span></span></span><span class="line"><span class="cl"><span class="s2">------
+</span></span></span><span class="line"><span class="cl"><span class="s2">:max : int, prend la valeur de l&#39;élément le plus grand de la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">Principe : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">on parcourt la liste avec une boucle bornée.
+</span></span></span><span class="line"><span class="cl"><span class="s2">si la valeur la valeur de max est inferieure à la valeur courante, max est actualisée avec cette valeur courante
+</span></span></span><span class="line"><span class="cl"><span class="s2">Exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">&gt; recherche_maximum([0,2,3,1])
+</span></span></span><span class="line"><span class="cl"><span class="s2">3
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">max</span> <span class="p">:</span><span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">pour</span> <span class="n">i</span> <span class="n">allant</span> <span class="n">du</span> <span class="n">premier</span> <span class="n">au</span> <span class="n">dernier</span> <span class="n">element</span> <span class="n">de</span> <span class="n">ma_liste</span> <span class="n">faire</span>
+</span></span><span class="line"><span class="cl">    <span class="n">si</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="nb">max</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">max</span> <span class="p">:</span><span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fin</span>
+</span></span><span class="line"><span class="cl"><span class="n">fin</span>
+</span></span><span class="line"><span class="cl"><span class="n">afficher</span> <span class="nb">max</span></span></span></code></pre></div>
+<p>Nous allons adapter cette spécification, prévue pour expliquer des algorithmes, à nos fonctions écrites en python.</p>
+<h2 id="documentation-interne">Documentation interne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La spécification au sein même de la fonction se fait en 2 temps:</p>
+<ul>
+<li>lors de la déclaration</li>
+<li>juste après la déclaration, dans le <em>prototype</em> (<em>docstring</em>) de la fonction.</li>
+</ul>
+<h3 id="dans-la-déclaration-de-la-fonction-prototype">Dans la <strong>déclaration</strong> de la fonction (prototype)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une fonction doit être déclarée avant son utilisation. Cette déclaration est le <strong>prototype</strong> de la fonction. Le prototype doit indiquer à l&rsquo;utilisateur le <strong>nom</strong> de la fonction, le <strong>type</strong> de la <strong>valeur de retour</strong> et le type des <strong>paramètres</strong>.</p>
+<p>Pour de nombreux langages, ce prototypage est explicite, et cela provoque une erreur de compilation si ce prototypage n&rsquo;est pas correct.</p>
+<p><em>Exemple de déclaration d&rsquo;une fonction en langage ADA :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-ada" data-lang="ada"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nf">A_Rect</span><span class="p">(</span><span class="nv">larg</span> <span class="p">: </span><span class="nv">natural</span> <span class="p">;</span> <span class="nv">long</span> <span class="p">: </span><span class="nv">natural</span><span class="p">)</span> <span class="kr">return</span> <span class="kt">natural</span> <span class="kr">is</span>
+</span></span><span class="line"><span class="cl">  <span class="n">A</span> <span class="p">:</span> <span class="kt">natural</span> <span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="kr">begin</span>
+</span></span><span class="line"><span class="cl">  <span class="n">A</span><span class="p">:=</span> <span class="n">larg</span> <span class="o">*</span> <span class="n">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">return</span> <span class="n">A</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">end</span> <span class="nf">A_Rect</span> <span class="p">;</span></span></span></code></pre></div>
+<p><strong>En pratique:</strong> en Python, ces déclarations sont <em>facultatives</em>, mais on pourra les ajouter dans la première ligne, de la manière suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">a_rect</span><span class="p">(</span><span class="n">larg</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">longueur</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">larg</span> <span class="o">*</span> <span class="n">longueur</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span></span></span></code></pre></div>
+<p><em>Remarquez la difference avec la déclaration minimale suivante, qui n&rsquo;apporte pas d&rsquo;information sur les types:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">a_rect</span><span class="p">(</span><span class="n">larg</span><span class="p">,</span> <span class="n">longueur</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<h3 id="docstring-dune-fonction"><strong>Docstring</strong> d&rsquo;une fonction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>En python, on pourra construire le <em>docstring</em> dans le commentaire, mis tout de suite après la déclaration de la fonction :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">a_rect</span><span class="p">(</span><span class="n">larg</span><span class="p">,</span><span class="n">long</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Le produit de 2 nombres.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Renvoie le produit des 2 nombres passés en argument
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param larg : int ou float
+</span></span></span><span class="line"><span class="cl"><span class="s2">           la largeur du rectangle
+</span></span></span><span class="line"><span class="cl"><span class="s2">           
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param long : int ou float
+</span></span></span><span class="line"><span class="cl"><span class="s2">           la longueur du rectangle
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return a: int ou float
+</span></span></span><span class="line"><span class="cl"><span class="s2">            larg * long
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Exemple
+</span></span></span><span class="line"><span class="cl"><span class="s2">    -------
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; a_rect(2,3)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    6
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">larg</span> <span class="o">*</span> <span class="n">long</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span></span></span></code></pre></div>
+<p>Pour accéder au contenu du <em>docstring</em> depuis le shell python, il faudra charger le fichier: <code>&gt; from fichier import *</code>, puis utiliser <code>help</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">a_rect</span><span class="p">)</span></span></span></code></pre></div>
+<p>Pour sortir de la fenêtre de l&rsquo;aide, appuyer sur la touche <code>q</code>.</p>
+<p>On pourra consulter la page du site <a href="https://lyceum.fr/1g/nsi/7-langages-et-programmation/6-fonctions" rel="external">Lyceum</a> pour plus d&rsquo;informations.</p>
+<h1 id="prévoir-et-gérer-les-erreurs">Prévoir et gérer les erreurs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="gérer-les-erreurs-lire-le-traceback">Gérer les erreurs: lire le Traceback<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;exécution d&rsquo;un programme peut provoquer une erreur, une <em>exception</em>. Lorsque c&rsquo;est le cas, l&rsquo;exécution s&rsquo;arrête immédiatement et l&rsquo;interpréteur Python affiche une trace d&rsquo;erreur.</p>
+<p>Cette dernière fournit des informations quant au chemin d&rsquo;exécution qui a mené jusqu&rsquo;à l&rsquo;erreur et sur la cause de cette dernière.</p>
+<p>La console affiche <code>Traceback</code>, qui marque le début de la trace d&rsquo;erreur.</p>
+<p>On peut distinguer 3 types d&rsquo;erreurs :</p>
+<ul>
+<li>erreur de syntaxe</li>
+<li>erreur d&rsquo;execution</li>
+<li>erreur de logique</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span></span></span></code></pre></div>
+<p>L’interpréteur Python affiche ce qu’on appelle la pile d’appels ou pile d’exécution. La pile d’appel permet d’obtenir la liste de toutes les fonctions pour remonter jusqu’à celle où l’erreur s’est produite.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ne">ZeroDivisionError</span>                         <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">bdb719052d31</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">5</span> <span class="n">a</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">----&gt;</span> <span class="mi">7</span> <span class="n">b</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">8</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">24</span><span class="o">-</span><span class="n">bdb719052d31</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">1</span> <span class="k">def</span> <span class="nf">inverse</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="o">----&gt;</span> <span class="mi">2</span>     <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">3</span>     <span class="k">return</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">4</span> 
+</span></span><span class="line"><span class="cl">      <span class="mi">5</span> <span class="n">a</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="nb">float</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span></span></span></code></pre></div>
+<h2 id="connaitre-les-messages-dexception">Connaitre les messages d&rsquo;exception<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les messages d&rsquo;exception affichés par le Traceback.</p>
+<table>
+	<thead>
+			<tr>
+					<th>message</th>
+					<th>type erreur</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>SyntaxError</td>
+					<td>parenthèse, crochet ou guillemet mal fermé</td>
+			</tr>
+			<tr>
+					<td>IndentationError</td>
+					<td>mauvaise indentation</td>
+			</tr>
+			<tr>
+					<td>ZeroDivisionError</td>
+					<td>division par zero</td>
+			</tr>
+			<tr>
+					<td>NameError</td>
+					<td>nom de fonction ou de variable mal orthographié</td>
+			</tr>
+			<tr>
+					<td>IndexError</td>
+					<td>accès à une position en dehors d’une liste</td>
+			</tr>
+			<tr>
+					<td>AttributeError</td>
+					<td>accès à une méthode ou à un attribut inconnu.  <em>Exemple: &rsquo;list&rsquo; object has no attribute &lsquo;appand&rsquo;</em></td>
+			</tr>
+			<tr>
+					<td>TypeError</td>
+					<td>types incompatibles pour l’opération demandée.  <em>Exemple: unsupported operand type(s) for &lsquo;-&rsquo;: &lsquo;range&rsquo; and &lsquo;int&rsquo;</em></td>
+			</tr>
+			<tr>
+					<td>ValueError</td>
+					<td>une valeur est inappropriée pour une certaine opération</td>
+			</tr>
+			<tr>
+					<td>KeyError</td>
+					<td>Une clé est utilisée pour accéder à un élément d’un dictionnaire dont elle ne fait pas partie</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="anticiper-les-erreurs-les-tests-structurels">Anticiper les erreurs: Les tests STRUCTURELS<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>les <strong>tests structurels</strong>, vont verifier le fonctionnement interne du programme. Leur rôle est par exemple de couvrir les différentes branches conditionnelles, les limites d&rsquo;une boucle, les types de données possibles pour une opération, &hellip;</p>
+<p>Ces tests vont aider à <em>programmer en grand</em>, car ils vont fournir des moyens de <em>contrôle</em> à différentes étapes. Ils vont aussi <em>guider</em> l&rsquo;utilisateur de vos fonctions grâce aux <em>messages d&rsquo;erreurs</em> et <em>arrêts</em> du programme.</p>
+<p>Attention, il s&rsquo;agit de <em>trouver</em> des erreurs, plutôt que de <em>prouver</em> que ça marche. C&rsquo;est une <em>validation</em> expérimentale du programme.</p>
+<p>On placera des <strong>pré-conditions</strong> et <strong>post-conditions</strong> autour de la fonction à tester. Ce sont des tests structurels, qui vont arrêter le programme et spécifier le type d&rsquo;erreur, pour aider à debugger.</p>
+<h3 id="assertions"><strong>Assertions: <code>assert</code></strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Les assertions sont les hypothèses avec vérification</strong>.</p>
+<p>Le rajout <em>provisoire</em> d&rsquo;assertions dans le script va permettre d&rsquo;anticiper sur les erreurs possibles de logique.</p>
+<p>Le mécanisme d&rsquo;assertion est là pour empêcher des erreurs qui ne devraient pas se produire, en arrêtant prématurément le programme. C&rsquo;est un mode de programmation <em>défensif</em>, dans lequel on vérifie les <em>préconditions</em>.</p>
+<p><em>Méthode :</em>  <code>assert &lt;expression logique&gt;, 'commentaire facultatif'</code></p>
+<p>L&rsquo;expression logique doit être egale à <code>True</code> pour que le programme se poursuive.</p>
+<p><em>Exemple avec une erreur d&rsquo;execution :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;argument nul&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span></span></span></code></pre></div>
+<p>Lorsque l&rsquo;on execute la fonction <code>inverse</code> avec zero comme argument, le programme s&rsquo;arrête et renvoie le message suivant dans le <code>Traceback</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="ne">AssertionError</span> <span class="p">:</span> <span class="n">argument</span> <span class="n">nul</span></span></span></code></pre></div>
+<p>Mais l&rsquo;interêt réside surtout dans l&rsquo;utilisation d&rsquo;<em>assertion</em> pour prévenir une possible erreur logique:</p>
+<p>On souhaite maintenant obtenir le même comportement (arrêt pour une valeur sortant de l&rsquo;ensemble de définition d&rsquo;une fonction) pour la fonction de conversion de degré Celsius en degré Kelvin. En effet, il n’y aurait aucun sens de convertir une température inférieure à la température correspondant au zéro absolu. (exemple issu de <a href="https://www.fil.univ-lille1.fr/~wegrzyno/portail/Info/Doc/HTML/seq2_booleens_conditionnelles.html" rel="external">univ.lille</a>)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">en_kelvin</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">      conversion en kelvin d&#39;une température donnée en Celsius
+</span></span></span><span class="line"><span class="cl"><span class="s2">      C.U. c doit être supérieure au zéro absolu.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">c</span><span class="o">&gt;-</span><span class="mf">273.15</span><span class="p">,</span> <span class="s2">&#34;valeur inferieure au zero absolu&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">9</span><span class="o">*</span><span class="n">c</span><span class="o">/</span><span class="mi">5</span><span class="o">+</span><span class="mi">32</span></span></span></code></pre></div>
+<p>Alors :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">en_kelvin</span><span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Affichage</span>
+</span></span><span class="line"><span class="cl"><span class="ne">AssertionError</span> <span class="n">valeur</span> <span class="n">inferieure</span> <span class="n">au</span> <span class="n">zero</span> <span class="n">absolu</span></span></span></code></pre></div>
+<h3 id="déclencher-des-exceptions-raise">Déclencher des exceptions <strong><code>Raise</code></strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>L’instruction <code>raise</code> permet au programmeur de déclencher une exception spécifique. Son utilisation diffère un peu de <code>assert</code>, car la condition qui déclenche l&rsquo;arrêt du programme devra être ajoutée:</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse</span> <span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></span></span></code></pre></div>
+<p>Puis:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="cl"><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">File</span> <span class="s2">&#34;&lt;input&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">7</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">File</span> <span class="s2">&#34;&lt;input&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="n">inverse</span>
+</span></span><span class="line"><span class="cl"><span class="ne">ValueError</span></span></span></code></pre></div>
+<p>Notez que le type d&rsquo;erreur exprimé après l&rsquo;instruction <code>raise</code> est librement choisie par le programmeur, mais elle doit exister dans le langage Python. (<code>IndexError, SyntaxError, ValueError</code>, &hellip;)</p>
+<h3 id="gestion-des-exceptions-try-except">Gestion des exceptions: <strong><code>try-except</code></strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le mécanisme <strong><code>try-except</code></strong> va combiner des pré-conditions et post-conditions.</p>
+<p>On pourra consulter les compléments sur la gestion des exceptions:</p>
+<ul>
+<li><a href="https://docs.python.org/fr/3.5/tutorial/errors.html#handling-exceptions" rel="external">docs.python.org</a></li>
+<li><a href="https://www.pierre-giraud.com/python-apprendre-programmer-cours/gestion-exception-try-except-else/" rel="external">pierre-giraud.com</a></li>
+</ul>
+<p>Le mécanisme des exceptions permet au programme de « rattraper » les erreurs, de détecter qu’une erreur s’est produite et d’agir en conséquence afin que le programme ne s’arrête pas.</p>
+<p>Afin de rattraper l’erreur, on insère le code susceptible de produire une erreur entre les mots clés <code>try</code> et <code>except</code>.</p>
+<p><em>Méthode :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... instructions à protéger</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... que faire en cas d&#39;erreur</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... que faire lorsque aucune erreur n&#39;est apparue</span>
+</span></span><span class="line"><span class="cl"><span class="k">finally</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... ce que l’on réalise quel que soit le fonctionnement precedent</span></span></span></code></pre></div>
+<p>L’instruction try fonctionne comme ceci.</p>
+<ul>
+<li>Premièrement, la clause try (instruction(s) placée(s) entre les mots-clés try et except) est exécutée.</li>
+<li>Si aucune exception n’intervient, la clause except est sautée et l’exécution de l’instruction try est terminée.</li>
+<li>Si une exception intervient pendant l’exécution de la clause “try”, le reste de cette clause est sauté. Si son type correspond à un nom d’exception indiqué après le mot-clé except, la clause “except” correspondante est exécutée, puis l’exécution continue après l’instruction try.</li>
+</ul>
+<p><em>Exemple 1:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># déclenche une exception</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;le programme a déclenché une erreur&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche : </span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.5</span>
+</span></span><span class="line"><span class="cl"><span class="n">le</span> <span class="n">programme</span> <span class="n">a</span> <span class="n">déclenché</span> <span class="n">une</span> <span class="n">erreur</span></span></span></code></pre></div>
+<blockquote>
+<p>Testez le vous-même: créez une liste d&rsquo;entiers pour x. Et essayez (<code>try</code>) de mettre dans une nouvelle liste les valeurs retournées par <code>inverse</code>, à moins (<code>except</code>) que la valeur de x soit nulle.</p>
+</blockquote>
+<p><em>Exemple 2:</em>
+Si on veut convertir un caractère en entier, cela génère une erreur de type <em>ValueError</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Please enter a number: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">Please</span> <span class="n">enter</span> <span class="n">a</span> <span class="n">number</span><span class="p">:</span> <span class="n">q</span>
+</span></span><span class="line"><span class="cl"><span class="ne">ValueError</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">literal</span> <span class="k">for</span> <span class="nb">int</span><span class="p">()</span> <span class="k">with</span> <span class="n">base</span> <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;q&#39;</span></span></span></code></pre></div>
+<p>On peut utiliser un mecanisme d&rsquo;exception pour rattraper cette erreur possible:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">     <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Please enter a number: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">         <span class="k">break</span>
+</span></span><span class="line"><span class="cl">     <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">typ</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">         <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Oops!  That was no valid number.  Try again...: </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">typ</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&gt; vous avez entré le nombre </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></span></span></code></pre></div>
+<p>Executons ce script:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Please enter a number: d
+</span></span><span class="line"><span class="cl">Oops!  That was no valid number.  Try again...: invalid literal for int() with base 10: &#39;d&#39;
+</span></span><span class="line"><span class="cl">Please enter a number: Z
+</span></span><span class="line"><span class="cl">Oops!  That was no valid number.  Try again...: invalid literal for int() with base 10: &#39;Z&#39;
+</span></span><span class="line"><span class="cl">Please enter a number: 2
+</span></span><span class="line"><span class="cl">=&gt; vous avez entré le nombre 2</span></span></code></pre></div>
+<h2 id="programmer-des-tests-fonctionnels">Programmer des tests FONCTIONNELS<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>tests fonctionnels</strong>: ils verifient qu&rsquo;un programme ou une partie du programme se comportent correctement, et se conforment à leur specification.</p>
+<h3 id="fonctionnel-avec-un-doctest">Fonctionnel: avec un Doctest<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le doctest est un module qui recherche dans le prototypage (docstring) de la fonction ce qui pourrait s&rsquo;apparenter à des tests sur la fonction.</p>
+<p>On écrit alors <strong>une simulation d&rsquo;un essai</strong> directement dans le docstring, en écrivant de manière explicite les 3 chevrons. Ainsi que la valeur attendue pour des arguments choisis. (voir le paragraphe précédent)</p>
+<p>Comme par exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; a_rect(2,3)
+</span></span><span class="line"><span class="cl">6</span></span></code></pre></div>
+<p>Cette information sera placée dans le docstring de la fonction, et servira à anticiper des erreurs commises lors de la programmation.</p>
+<p>Pour <strong>déclencher les tests</strong> sur la fonction, on ajoutera alors à la suite du script les lignes suivantes:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></span></span></code></pre></div>
+<p>Supposons que l&rsquo;on ait fait une erreur dans la fonction <code>a_rect</code> sur la valeur calculée, et que l&rsquo;on ait écrit:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="c1"># a = long * larg</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">long</span> <span class="o">*</span> <span class="n">long</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span></span></span></code></pre></div>
+<p><em>Exemple complet</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">aire</span><span class="p">(</span><span class="n">larg</span><span class="p">,</span><span class="n">long</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; a_rect(2,3)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    6
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># a = long * larg</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="n">long</span> <span class="o">*</span> <span class="n">long</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span></span></span></code></pre></div>
+<p>Lorsque l&rsquo;on execute le fichier, la console affichera:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Failed example:
+</span></span><span class="line"><span class="cl">    a_rect(2,3)
+</span></span><span class="line"><span class="cl">Expected:
+</span></span><span class="line"><span class="cl">    6
+</span></span><span class="line"><span class="cl">Got:
+</span></span><span class="line"><span class="cl">    9</span></span></code></pre></div>
+<p>Documentation officielle :<a href="https://docs.python.org/fr/3/library/doctest.html#module-doctest" rel="external">Lien</a></p>
+<h3 id="fonctionnel-avec-un-module-de-test-unitaires-unittest">Fonctionnel: avec un module de test unitaires: <strong><code>unittest</code></strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Définition:</strong> Un test unitaire est un test réalisé sur une portion du programme, typiquement sur une fonction.</p>
+<p>Le module <code>unittest</code> offre des outils de test de code, comme la classe TestCase. Le but est de vérifier que votre code génère des résultats corrects, conformes au attentes.</p>
+<blockquote>
+<p>Exemple</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">unittest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span></span></span></code></pre></div>
+<blockquote>
+<p>Explications</p>
+</blockquote>
+<p>On commence par importer le module <code>unittest</code>.</p>
+<p>Les noms des classes de test se terminent généralement par <code>TestCase</code> (scenario de test). La classe créée pour le test, <code>MyTest</code> doit être une classe enfant de <code>unittest.TestCase</code>, d&rsquo;où l&rsquo;instruction <code>class MyTest(unittest.TestCase):</code></p>
+<p>Chaque test à créer est une méthode. Toute méthode dont le nom commence par <code>test_</code> est exécutée lors du test. La méthode <code>test_add</code> appelle donc la fonction <code>add</code>  avec les arguments 3 et 4, puis vérifie que son résultat est conforme, grâce à un test d&rsquo;assertion <code>assertEqual</code>.</p>
+<p>Ici, le test reussit:</p>
+<p>En console:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Ran 1 tests, passed: 1 failed: 0</span></span></code></pre></div>
+<p>On ajoute maintenant un deuxième test:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">unittest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">test_add1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">test_add2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span></span></span></code></pre></div>
+<p>Le deuxième test échoue. On peut remonter jusqu&rsquo;à l&rsquo;erreur dans le Traceback qui est affiché en console:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># Traceback
+</span></span><span class="line"><span class="cl">Fail: Expected 7 to equal 8
+</span></span><span class="line"><span class="cl">Tests failed in  MyTest.test_add2  
+</span></span><span class="line"><span class="cl">Ran 2 tests, passed: 1 failed: 1</span></span></code></pre></div>
+<p>Le module <code>unittest</code> fournit d&rsquo;autres fonctions comme par exemple <code>assertRaises</code>. La liste complète est <a href="/nsi/langages/page5/index.html#autres-tests-d-assertion">ici</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">test_split</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># check that s.split fails when the separator is not a string</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span></span></span></code></pre></div>
+<p>Console: Test reussi</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Ran 1 tests, passed: 1 failed: 0</span></span></code></pre></div>
+<blockquote>
+<p>Explications</p>
+</blockquote>
+<p>La fonction <code>split</code> prend en argument un caractère et decoupe la chaine de caractères au niveau de ce caractère. (et retourne une liste).</p>
+<p>Par exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span><span class="s1">&#39;world&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<p>L&rsquo;argument DOIT être un caractère et non un nombre entier ou autre type. Sinon, l&rsquo;execution génère un <em>TypeError</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="ne">TypeError</span>          <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="mi">6</span><span class="n">acfb0b512b4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">----&gt;</span> <span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="ne">TypeError</span><span class="p">:</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">str</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">int</span></span></span></code></pre></div>
+<p>Or, ici, on fait le test d&rsquo;assertion suivant: on vérifie si lorsque l&rsquo;on appelle la fonction <code>s.split</code> avec l&rsquo;argument <strong>1</strong>, cela génère un <em>TypeError</em>, ce qui est VRAI. Donc le test REUSSI!</p>
+<p>Par contre, avec <code>self.assertRaises(TypeError,s.split,' ')</code>, cela echoue&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Fail: 
+</span></span><span class="line"><span class="cl">Tests failed in  MyTest.test_split  
+</span></span><span class="line"><span class="cl">Ran 1 tests, passed: 0 failed: 1</span></span></code></pre></div>
+<blockquote>
+<p>Testez ces exemples</p>
+</blockquote>
+<p>Ces exemples peuvent être testés dans l&rsquo;éditeur en ligne <em><a href="https://trinket.io/embed/python/b55ced5652" rel="external">Trinket</a></em>.</p>
+<blockquote>
+<p>Modifiez le programme deposé sur Trinket pour separer dans 2 fichiers: le fichier de test et le fichier contenant la fonction à tester.</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="autres-tests">Autres tests<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>En fait, <code>unittest.TestCase</code> propose plusieurs méthodes d&rsquo;assertion que nous utiliserons dans nos tests unitaires.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Méthode</th>
+					<th>Explications</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>assertEqual(a, b)</td>
+					<td>a == b</td>
+			</tr>
+			<tr>
+					<td>assertNotEqual(a, b)</td>
+					<td>a != b</td>
+			</tr>
+			<tr>
+					<td>assertTrue(x)</td>
+					<td>x is True</td>
+			</tr>
+			<tr>
+					<td>assertFalse(x)</td>
+					<td>x is False</td>
+			</tr>
+			<tr>
+					<td>assertIs(a, b)</td>
+					<td>a is b</td>
+			</tr>
+			<tr>
+					<td>assertIsNot(a, b)</td>
+					<td>a is not b</td>
+			</tr>
+			<tr>
+					<td>assertIsNone(x)</td>
+					<td>x is None</td>
+			</tr>
+			<tr>
+					<td>assertIsNotNone(x)</td>
+					<td>x is not None</td>
+			</tr>
+			<tr>
+					<td>assertIn(a, b)</td>
+					<td>a in b</td>
+			</tr>
+			<tr>
+					<td>assertNotIn(a, b)</td>
+					<td>a not in b</td>
+			</tr>
+			<tr>
+					<td>assertIsInstance(a, b)</td>
+					<td>isinstance(a, b)</td>
+			</tr>
+			<tr>
+					<td>assertNotIsInstance(a, b)</td>
+					<td>not isinstance(a, b)</td>
+			</tr>
+			<tr>
+					<td>assertRaises(exception, fonction, *args, **kwargs)</td>
+					<td>Vérifie que la fonction lève l&rsquo;exception attendue.</td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="exercice">Exercice<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On souhaite traiter un ensemble de données issues d&rsquo;un capteur (robot). Les données sont mises dans 2 listes:</p>
+<ul>
+<li>une liste pour les positions: <code>x = [0, 1.0, 1.2, 1.4, ...]</code></li>
+<li>une liste pour le temps: <code>t = [0.0, 0.0123, 0.0247, 0.0247, 0.0320, ...]</code></li>
+</ul>
+<p>On cherche à définir la vitesse du robot au cours du temps dans une 3e liste. Les valeurs sont calculées à partir de la loi:</p>
+$$v[i] = \tfrac{x[i+1] - x[i]}{t[i+1]-t[i]}$$<p>Les valeurs du temps peuvent générer des erreurs mathématiques (temps égaux pour $t_{i+1}$ et $t_i$).</p>
+<blockquote>
+<p>Utiliser un mécanisme de prevention des erreurs et testez votre programme.</p>
+</blockquote>
+<h1 id="sources">Sources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><a href="https://python.developpez.com/tutoriels/apprendre-programmation-python/notions-avancees/?page=gestion-d-erreurs" rel="external">python.developpez.com</a></li>
+<li>Pour aller plus loin sur la gestion des Exceptions : <a href="http://www.xavierdupre.fr/app/teachpyx/helpsphinx/c_exception/exception.html" rel="external">xavierdupre.fr les bases en python</a></li>
+<li>Documentation officielle : <a href="https://docs.python.org/3/library/unittest.html" rel="external">unittest</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page6/index.html"><a class="padding" href="/nsi/langages/page6/index.html">exercices sur la recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/langages/page5/index.html"><a class="padding" href="/nsi/langages/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page8/index.html"><a class="padding" href="/nsi/langages/page8/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146760"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146760" defer></script>
+    <script src="/js/theme.js?1782146760" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

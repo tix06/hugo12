@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="utiliser le module python os puis les instructions du terminal pour la gestion des fichiers et dossiers">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="explorateur en ligne de commande :: allopizza">
+    <meta name="twitter:description" content="utiliser le module python os puis les instructions du terminal pour la gestion des fichiers et dossiers">
+    <meta property="og:url" content="//localhost:1313/nsi/architecture/page11/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="explorateur en ligne de commande :: allopizza">
+    <meta property="og:description" content="utiliser le module python os puis les instructions du terminal pour la gestion des fichiers et dossiers">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="explorateur en ligne de commande :: allopizza">
+    <meta itemprop="description" content="utiliser le module python os puis les instructions du terminal pour la gestion des fichiers et dossiers">
+    <meta itemprop="wordCount" content="1831">
+    <title>explorateur en ligne de commande :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782142167" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782142167" defer></script>
+    <script src="/js/search-lunr.js?1782142167" defer></script>
+    <script src="/js/search.js?1782142167" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782142167";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782142167" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782142167" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782142167" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782142167" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782142167" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782142167" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782142167" rel="stylesheet">
+    <link href="/css/theme.css?1782142167" rel="stylesheet">
+    <link href="/css/format-html.css?1782142167" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/architecture\/page11\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/architecture/page11/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#chemins">Chemins</a></li>
+    <li><a href="#lister-et-afficher-le-contenu-du-dossier-courant">Lister et afficher le contenu du dossier courant</a></li>
+    <li><a href="#naviguer-dans-les-dossiers">Naviguer dans les dossiers</a></li>
+    <li><a href="#programmer-un-explorateur-avec-une-interface-utilisateur">Programmer un explorateur avec une interface utilisateur</a></li>
+    <li><a href="#programmer-une-fonction-recursive-de-recherche-dun-fichier">Programmer une fonction recursive de recherche d&rsquo;un fichier</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#les-bases-du-langage-en-console-linux">Les bases du langage en console LINUX</a></li>
+    <li><a href="#les-commandes-dexploration">Les commandes d&rsquo;exploration</a></li>
+    <li><a href="#la-commande-cat">La commande <code>cat</code></a></li>
+    <li><a href="#afficher-un-contenu-trop-long">afficher un contenu trop long</a></li>
+    <li><a href="#la-commande-ps-ou-ps--l">La commande <code>ps</code> ou ‘ps -l’</a></li>
+    <li><a href="#la-commande-top-">La commande <code>top</code> :</a></li>
+    <li><a href="#edition-de-fichiers-ou-dossiers">Edition de fichiers ou dossiers</a>
+      <ul>
+        <li><a href="#créer-un-nouveau-fichier-vide">Créer un nouveau fichier vide</a></li>
+        <li><a href="#copie">Copie</a></li>
+        <li><a href="#deplacer">deplacer</a></li>
+      </ul>
+    </li>
+    <li><a href="#gestion-des-droits">Gestion des droits</a>
+      <ul>
+        <li><a href="#consulter-les-droits">Consulter les droits</a></li>
+        <li><a href="#changer-les-droits">Changer les droits</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#terminal">Terminal</a></li>
+    <li><a href="#editeur-de-texte-et-ide">Editeur de texte et IDE</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/architecture/index.html"><span itemprop="name">architecture</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">explorateur en ligne de commande</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/architecture/page11.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page10/index.html" title="fichiers (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page2/index.html" title="systeme d'exploitation (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="explorateur-en-ligne-de-commande">explorateur en ligne de commande</h1>
+
+<h1 id="utiliser-une-console-python">Utiliser une console python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Dans votre IDE python, ouvrir un nouveau fichier. Placer l&rsquo;instruction:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span></span></span></code></pre></div>
+<p>Sauvegarder ce fichier dans votre repertoire de travail. Executer celui-ci. Pour l&rsquo;IDE, le repertoire courant est alors celui où se trouve votre fichier.</p>
+<p>Les fonctions python qui permettent de naviguer entre dossiers et fichiers font partie du module <code>os.path</code>, dont la documentation officielle est ici: <a href="https://docs.python.org/3/library/os.path.html" rel="external">doc python</a></p>
+<p>On utilisera principalement:</p>
+<ul>
+<li><code>os.getcwd()</code>: str, le dossier courant</li>
+<li><code>os.path.abspath(d)</code>: retourne le chemin absolu du dossier d</li>
+<li><code>os.chdir(d)</code>: change de dossier pour aller au dossier d</li>
+<li><code>os.chdir('..')</code>: remonte d&rsquo;un niveau</li>
+<li><code>os.listdir()</code> ou <code>os.listdir(d)</code> : retourne la liste des fichiers et dossiers du dossier courant ou bien du dossier d</li>
+<li><code>os.path.isdir(f)</code>: booléen True si <code>f</code> est un dossier</li>
+<li><code>os.path.isfile(f)</code>: True si f est un fichier</li>
+<li><code>f.endswith('.csv')</code>: True si l&rsquo;extension de f est .csv</li>
+</ul>
+<h2 id="chemins">Chemins<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/path.png" alt="Absolu: &#39;/home/eleve/exos/info/&#39;  Relatif: &#39;exos/info/&#39;" />
+    
+    
+    <figcaption>
+        <p>
+        Absolu: &#39;/home/eleve/exos/info/&#39;  Relatif: &#39;exos/info/&#39;
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Un chemin est une chaîne de caractères permettant de désigner un Dossier ou un Fichier.</p>
+<p>Un chemin peut être absolu ou relatif:</p>
+<ul>
+<li>Absolu ( = relatif au dossier racine )</li>
+<li>Relatif (au répertoire courant)</li>
+</ul>
+<p>Sous <em>Windows</em> le séparateur est le caractère <code>\</code> alors que sous Linux, il s’agit du caractère <code>/</code>.</p>
+<p>En Python les deux notations sont possibles, mais étant donné la signification particulière du caractère <code>\</code>, il faudra en écrire deux : <code>\\</code> (ce qui correspond en fait à un seul <code>\</code> dans la chaîne):</p>
+<p><strong>Linux</strong>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/Users/alice/Library/Applications</span></span></code></pre></div>
+<p><strong>Windows</strong>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">C:\\Users\alice\Library\Applications</span></span></code></pre></div>
+<h2 id="lister-et-afficher-le-contenu-du-dossier-courant">Lister et afficher le contenu du dossier courant<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Exemple 1: chemin du repertoire courant avec <code>os.getcwd()</code></strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;/Users/alice/Library/Applications/python/astro/donnees-astep2025&#39;</span></span></span></code></pre></div>
+<p><em>Dans cet exemple:</em></p>
+<ul>
+<li><em>le repertoire courant est <code>donnees-astep2025</code></em></li>
+<li><em>le chemin est donné à l&rsquo;aide d&rsquo;une chaine de caractères, entre guillemets</em></li>
+</ul>
+<p>On peut placer ce <em>chemin</em> dans une variable.</p>
+<p><strong>Exemple 2: chemin absolu du repertoire <code>d</code> avec <code>os.path.abspath(d)</code></strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;/Users/Alice/Library/Applications/python/astro/donnees-astep2025&#39;</span></span></span></code></pre></div>
+<h2 id="naviguer-dans-les-dossiers">Naviguer dans les dossiers<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Télécharger le dossier <a href="/scripts/home.zip">home</a>, décompressez le dans votre dossier courant.</p>
+<p>Depuis votre console python, ouverte dans le repertoire racine, qui doit contenir le dossier decompressé <code>home</code>, utiliser les instructions suivantes pour explorer les dossiers et fichiers <code>home</code>: (les noms des dossiers ci-dessous sont des exemples, et peuvent varier selon votre machine)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;/Users/Alice/Documents&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;home&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;home&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;/Users/Alice/Documents/home&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;SNT&#39;</span><span class="p">,</span> <span class="s1">&#39;randos&#39;</span><span class="p">,</span> <span class="s1">&#39;videos&#39;</span><span class="p">,</span> <span class="s1">&#39;scripts&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<blockquote>
+<p>Poursuivez alors votre exploration jusqu&rsquo;à trouver le repertoire contenant le fichier <code>fibo.py</code></p>
+<ul>
+<li>importer la fonction python de ce fichier: <code>&gt;&gt;&gt; from fibo import fibonacci</code></li>
+<li>utiliser cette fonction depuis votre console python: <code>&gt;&gt;&gt; fibonacci(30)</code></li>
+<li>revenir ensuite au repertoire racine, celui contenant <code>['home']</code>: il faudra utiliser plusieurs fois la commande: <code>&gt;&gt;&gt; os.chdir('..')</code></li>
+</ul>
+</blockquote>
+<h2 id="programmer-un-explorateur-avec-une-interface-utilisateur">Programmer un explorateur avec une interface utilisateur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;interface sera en console (textuelle)</p>
+<p>On pourra s&rsquo;inspirer de la sequence d&rsquo;instruction suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">choix</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;choisir un fichier (0 pour remonter, -1 pour FIN) : &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">choix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="k">elif</span> <span class="n">choix</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">break</span></span></span></code></pre></div>
+<p>On souhaite afficher le contenu du repertoire courant de la manière suivante:</p>
+<p>Si c&rsquo;est un repertoire contenant d&rsquo;autres repertoires, afficher ceux-ci, avec un numero croissant commençant à <code>1</code></p>
+
+<figure >
+    
+        <img src="../images/dossier_num.png"  />
+    
+    
+</figure>
+
+<p>Si c&rsquo;est un repertoire de fichiers, afficher les fichiers avec un numero croissant, commençant par <code>1</code></p>
+<p>Demander alors à l&rsquo;utilisateur s&rsquo;il veut poursuivre son exploration (dossier de repertoires), ou s&rsquo;il veut traiter l&rsquo;un des fichiers. Il devra repondre:</p>
+<ul>
+<li><code>0</code> pour remonter d&rsquo;un niveau (mais pas plus haut que le repertoire racine)</li>
+<li><code>1</code> pour aller dans le dossier <code>1</code>, ou bien <code>1</code> pour traiter le fichier <code>1</code></li>
+<li><code>2</code> s&rsquo;il y a un dossier/fichier <code>2</code></li>
+<li>etc&hellip;</li>
+<li>autre s&rsquo;il veut arrêter le programme (-1 par exemple)</li>
+</ul>
+<blockquote>
+<p>Conseils:</p>
+<ul>
+<li>Conserver un script le plus lisible possible: utiliser des fonctions pour <code>lister_le_contenu</code> ou <code>changer_de_dossier</code>.</li>
+<li>Utiliser un mécanisme <code>try ... except</code> pour eviter les saisies non conforme par l&rsquo;utilisateur (<code>input</code>)</li>
+</ul>
+</blockquote>
+<p><em>Votre programme fonctionne? Aller alors à l&rsquo;étape 1 du <a href="/docs/NSI/projet/page9/">projet</a> de recherche d&rsquo;exoplanètes.</em></p>
+<h2 id="programmer-une-fonction-recursive-de-recherche-dun-fichier">Programmer une fonction recursive de recherche d&rsquo;un fichier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les instructions de recherche dans un sous-dossier sont identiques à celles de recherche dans un dossier. On doit pouvoir écrire le script sous forme <em>recursive</em>. Le debut pourrait être comme ceci:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">courant</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">courant</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">courant</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fichier trouvé au chemin: &#39;</span><span class="p">,</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">courant</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">courant</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">		<span class="o">...</span></span></span></code></pre></div>
+<p>Ainsi, pour chaque élément <code>d</code> du dossier <code>courant</code>:</p>
+<ul>
+<li>si celui-ci est un repertoire:
+<ul>
+<li>afficher que l&rsquo;on va chercher le fichier <code>f</code> dans le sous dossier de chemin <code>courant+'/'+d</code></li>
+<li>appel recursif pour rechercher le fichier <code>f</code> dans le dossier <code>courant+'/'+d</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>A vous de jouer:</p>
+<ul>
+<li>Programmer cette fonction recursive.</li>
+<li>utiliser cette fonction pour trouver le chemin vers le fichier <code>fibo.py</code></li>
+</ul>
+</blockquote>
+<h1 id="utiliser-la-console-linux">Utiliser la console Linux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="les-bases-du-langage-en-console-linux">Les bases du langage en console LINUX<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><a href="/pdf/NSI/archi6_Linux.pdf">Fiche résumé</a></li>
+<li><a href="https://mcoilhac.forge.apps.education.fr/site-nsi/Linux/4_TD_commandes_linux/" rel="external">TP utilisant la console UNIX</a>
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<h2 id="les-commandes-dexploration">Les commandes d&rsquo;exploration<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><code>PWD</code>: nom du repertoire courant</li>
+<li><code>cd ..</code>: remonter au repertoire parent</li>
+<li><code>ls</code>: lister le contenu du repertoire courant. Nombreuses options possibles comme <code>l</code> (affiche le contenu et les droits), <code>-r</code> (parcours et affichage recursif), &hellip;</li>
+</ul>
+<h2 id="la-commande-cat">La commande <code>cat</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette commande permet à la fois:</p>
+<ul>
+<li>de consulter le contenu d&rsquo;un fichier: <code>cat nom_du_fichier</code></li>
+<li>de créer et editer le contenu d&rsquo;un fichier: <code>cat &gt; nom_du_fichier</code>. Le curseur (carré) permet d&rsquo;editer le contenu. Pour sortir de l&rsquo;editeur, faire CTRL + D.</li>
+</ul>
+<h2 id="afficher-un-contenu-trop-long">afficher un contenu trop long<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Si vous utilisez <code>ls -R</code>, qui affiche de manière recursive le contenu de tous les repertoires et fichiers à partir du repertoire courant, l&rsquo;affichage est trop rapide pour en voir le detail.</p>
+<p>On peut alors utiliser l&rsquo;option <code>| more</code>, qui attend un appui sur le clavier pour passer à la suite de l&rsquo;affichage: <code>ls -R | more</code>.</p>
+<p>Une autre possibilité est de rediriger le contenu dans un fichier, nouveau ou existant: <code>ls -R &gt; fichier1.txt</code></p>
+<p>Le symbole <code>&gt;</code> va <em>mettre</em> le contenu dans le fichier, alors que <code>&gt;&gt;</code> va <em>ajouter</em> le contenu au fichier.</p>
+<h2 id="la-commande-ps-ou-ps--l">La commande <code>ps</code> ou &lsquo;ps -l&rsquo;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour la liste des processus obtenue par <code>ps</code></p>
+<ul>
+<li>PID : numéro du processus (processus identifier)</li>
+<li>PPID : identifiant du parent qui a engendré le processus</li>
+<li>PRI : numero pour indiquer la priorité</li>
+<li>TTY : le terminal utilisé</li>
+<li>TIME : temps d&rsquo;occupation du processeur</li>
+<li>CMD : commande qui a lancé le processus</li>
+<li>STAT : statut</li>
+</ul>
+<p>Les status possibles</p>
+<ul>
+<li>R (Running et Runnable) : en cours d&rsquo;exécution. Nous verrons que cela correspond aux états PRET (Runnable) ou ELU (Running) de la partie 2.</li>
+<li>S (Sleeping) : endormi. Cela correspond à l&rsquo;état BLOQUE de la partie 2.</li>
+<li>D (Device) : en attente d&rsquo;une ressource (généralement d&rsquo;entrée/sortie) (le processus ne peut pas être interrompu). Cela correspond à l&rsquo;état BLOQUE de la partie 2.</li>
+</ul>
+<p>Les trois états terminaux FINI :</p>
+<ul>
+<li>
+<p>T (sTopped) : terminé et va transmettre sa réponse à son parent. On libère une partie de la mémoire mais on garde encore des informations sur son état final.</p>
+</li>
+<li>
+<p>Z (Zombie) : processus terminé ayant répondu mais dont le parent n&rsquo;a pas encore eu le temps de totalement finir la destruction.</p>
+</li>
+<li>
+<p>X (Dead) : processus terminé et détruit (vous ne devriez jamais voir de X dans votre liste).
+On peut trouver une deuxième lettre derrière l&rsquo;état : il s&rsquo;agit de la priorité du processus :</p>
+</li>
+<li>
+<p><code>&lt;</code> : Priorité haute</p>
+</li>
+<li>
+<p><code>+</code> : Processus au premier plan</p>
+</li>
+<li>
+<p><code>s</code> : Leader de session</p>
+</li>
+<li>
+<p><code>l</code> : multi-theads</p>
+</li>
+<li>
+<p><code>N</code> : Priorité basse</p>
+</li>
+<li>
+<p><code>L</code> : ressources verrouillées en mémoire</p>
+</li>
+</ul>
+<blockquote>
+<p>Voir aussi le TP au paragraphe 3 LINUX de la page <a href="https://www.levavasseur.xyz/NSI_T/Archi/Archi_Processus.html#partie_3" rel="external">Levasseur.xyz: NSI</a></p>
+</blockquote>
+<blockquote>
+<p>Et l&rsquo;exercice 3 sujet 1 metropole 2021 sur la fiche d&rsquo;<a href="/pdf/NSI/archi3_processus.pdf">exercices</a></p>
+</blockquote>
+<h2 id="la-commande-top-">La commande <code>top</code> :<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette commande est l&rsquo;équivalent du gestionnaire de tâches de Windows. Elle apporte donc des renseignements sur la consommation mémoire, CPU, buffer et tous les processus en cours. Son intérêt est qu&rsquo;elle apporte des statistiques de consommation en temps réel.</p>
+<ul>
+<li>PID : numéro du processus</li>
+<li>USER : utilisateur qui fait tourner le process</li>
+<li>%CPU: la consomation du CPU</li>
+<li>%MEM: la consomation de la RAM</li>
+<li>TIME+: le temps d&rsquo;utilisation CPU depuis que le process est lancé</li>
+<li>COMMAND: le processus en lui-même</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>unix</th>
+					<th>windows</th>
+					<th>commande</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>ps</code></td>
+					<td><code>tasklist / svc</code>, <code>tasklist /?</code> (processus)</td>
+					<td>liste des processus</td>
+			</tr>
+			<tr>
+					<td><code>ps -aef</code></td>
+					<td><code>tasklist / svc</code>, <code>sc /?</code> (services)</td>
+					<td>liste des services</td>
+			</tr>
+			<tr>
+					<td><code>kill &lt;PID&gt;</code> ou <code>kill &lt;PPID&gt;</code></td>
+					<td><code>taskkill &lt;nom&gt;</code></td>
+					<td>fermer un processus, directement ou avec le PID du parent</td>
+			</tr>
+			<tr>
+					<td><code>top</code></td>
+					<td></td>
+					<td>suivi en temps réel des processus (sortir avec la touche <code>q</code>)</td>
+			</tr>
+	</tbody>
+</table>
+<p>Sous windows, on peut aussi utiliser le Task manager</p>
+<h2 id="edition-de-fichiers-ou-dossiers">Edition de fichiers ou dossiers<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="créer-un-nouveau-fichier-vide">Créer un nouveau fichier vide<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>touch &lt;nom fichier&gt;</code></p>
+<p>On rappelle que la commande <code>cat</code> permet aussi de créer ET editer un fichier.</p>
+<h3 id="copie">Copie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>cp &lt;chemin du fichier a copier&gt; &lt;dossier destination&gt;</code></p>
+<p><code>cp -r &lt;chemin dossier a copier&gt; &lt;destination&gt;</code></p>
+<p><em>Rappel:</em> Le chemin est:</p>
+<ul>
+<li>absolu s&rsquo;il commence par <code>/</code></li>
+<li>relatif sinon</li>
+</ul>
+<h3 id="deplacer">deplacer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>mv &lt;chemin du fichier a copier&gt; &lt;dossier destination&gt;</code></p>
+<p><em>Remarque</em>: cette commande sert aussi à <em>renommer</em> un fichier.</p>
+<p><code>mv &lt;ancien nom&gt; &lt;nouveau nom&gt;</code></p>
+<h2 id="gestion-des-droits">Gestion des droits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les utilisateurs et les groupes sont utilisés sous Linux pour le contrôle d&rsquo;accès c&rsquo;est-à-dire pour contrôler l&rsquo;accès aux fichiers, répertoires et périphériques du système.</p>
+<h3 id="consulter-les-droits">Consulter les droits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un utilisateur est toute personne qui utilise un ordinateur. Il doit porter un nom, vrai ou faux (alice, pirate, votre prenomnom, &hellip;). Tout ce qui compte, c&rsquo;est que l&rsquo;ordinateur ait un nom pour chaque compte qu&rsquo;il crée.</p>
+<p>Les utilisateurs peuvent être regroupés dans un &ldquo;groupe&rdquo;, regroupant les contrôles d&rsquo;accès prévus pour chaque fichier.</p>
+<p>L&rsquo;utilisateur peut avoir le <em>statut</em>:</p>
+<ul>
+<li><code>u</code> (user) propriétaire de la ressource</li>
+<li><code>g</code> (group) fait partie du groupe d&rsquo;utilisateurs propriétaires de ce fichier</li>
+<li><code>o</code> (other) autres (ceux qui ne sont pas propriétaires)</li>
+</ul>
+<p>Ce statut est indiqué dans la 3e colonne sur l&rsquo;image suivante:</p>
+
+<figure >
+    
+        <img src="../images/term_usr.png" alt="image de linux-console.net" />
+    
+    
+    <figcaption>
+        <p>
+        image de linux-console.net
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>La 4e colonne indique le groupe d&rsquo;utilisateurs propriétaires. (Souvent, c&rsquo;est le même que le propriétaire). Le numero dans la 2e colonne est le nombre de lien pointant vers la ressource.</em></p>
+<p>L&rsquo;utilisateur est repéré dans le systeme par son numero <em>user id</em> (uid) et <em>group id</em> (gid).</p>
+<p>Chaque fichier sur un système GNU/Linux appartient à un utilisateur et à un groupe.</p>
+<p>Différentes autorisations d&rsquo;accès peuvent être appliquées à l&rsquo;utilisateur propriétaire d&rsquo;un fichier, au groupe propriétaire et aux <em>autres</em>.</p>
+<p>L&rsquo;utilisateur possède selon son statut les <em>droits</em>:</p>
+<ul>
+<li><code>r</code> en lecture</li>
+<li><code>w</code> en écriture</li>
+<li><code>x</code> en execution ou ouverture (dossier)</li>
+</ul>
+<p>avec la commande <code>ls -l</code> on affiche le contenu du repertoire ainsi que les droits, dans l&rsquo;ordre <em>user group other</em></p>
+<p><em>Exemple</em>:</p>
+<p><code>drwx r-x --x</code> signifie que <em>user</em> possède les droits <em>rwx</em>, que <em>group</em> possède les droits <em>rx</em> et <em>other</em> uniquement <em>x</em>. Le <em>d</em> initial signifie <em>directory</em>, le type d&rsquo;élément (dossier, fichier). Le tiret signifie que le droit est <em>desactivé</em>.</p>
+<h3 id="changer-les-droits">Changer les droits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li><code>chmod &lt;ressource&gt; g-x</code>  va <em>retirer</em> le droit en execution à <em>g</em></li>
+<li><code>chmod &lt;ressource&gt; g+x</code>  va <em>ajouter</em> le droit en execution à <em>g</em></li>
+</ul>
+<h1 id="vocabulaire">Vocabulaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="terminal">Terminal<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un terminal est un programme qui permet d&rsquo;interagir avec le systeme d&rsquo;exploitation. On peut utiliser le terminal au lieu de passer par une interface utilisateur graphique pour donner des commandes.</p>
+<h2 id="editeur-de-texte-et-ide">Editeur de texte et IDE<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Editeur de texte : C&rsquo;est un programme conçu pour ecrire et modifier du code. La plupart des editeurs offrent des fonctions pour faciliter l&rsquo;edition (coloration syntaxique) : notepad++, sublime text, Vim, Atom, Geany&hellip;</li>
+<li>IDE : c&rsquo;est un editeur de texte doté de fonctionnalités de gestion de projet. Pour developper en python, c&rsquo;est par exemple PyCharm, Spyder, Visual studio&hellip;</li>
+</ul>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>TP-cours sur les systemes de fichiers et python: <a href="https://info.blaisepascal.fr/nsi-python-les-fichiers/" rel="external">info-blaisepascal</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page10_bis/index.html"><a class="padding" href="/nsi/langages/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4" checked><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi/architecture/page11/index.html"><a class="padding" href="/nsi/architecture/page11/index.html">explorateur en ligne de commande<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782142167"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782142167" defer></script>
+    <script src="/js/theme.js?1782142167" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

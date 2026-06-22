@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Langage informatique Langage humain et langage machine Dans la vidéo suivante, on voit que le langage utilisé pour les machines est un langage structuré, non ambigü, comme on l’utiliserait pour commander un robot. Ces instructions passent alors par un interpréteur, qui traduit celui-ci en langage machine et en binaire.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="langage informatique :: allopizza">
+    <meta name="twitter:description" content="Langage informatique Langage humain et langage machine Dans la vidéo suivante, on voit que le langage utilisé pour les machines est un langage structuré, non ambigü, comme on l’utiliserait pour commander un robot. Ces instructions passent alors par un interpréteur, qui traduit celui-ci en langage machine et en binaire.">
+    <meta property="og:url" content="//localhost:1313/docs/python/pages/generalites/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="langage informatique :: allopizza">
+    <meta property="og:description" content="Langage informatique Langage humain et langage machine Dans la vidéo suivante, on voit que le langage utilisé pour les machines est un langage structuré, non ambigü, comme on l’utiliserait pour commander un robot. Ces instructions passent alors par un interpréteur, qui traduit celui-ci en langage machine et en binaire.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python">
+    <meta itemprop="name" content="langage informatique :: allopizza">
+    <meta itemprop="description" content="Langage informatique Langage humain et langage machine Dans la vidéo suivante, on voit que le langage utilisé pour les machines est un langage structuré, non ambigü, comme on l’utiliserait pour commander un robot. Ces instructions passent alors par un interpréteur, qui traduit celui-ci en langage machine et en binaire.">
+    <meta itemprop="wordCount" content="2405">
+    <title>langage informatique :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781884481" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781884481" defer></script>
+    <script src="/js/search-lunr.js?1781884481" defer></script>
+    <script src="/js/search.js?1781884481" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781884481";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781884481" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781884481" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781884481" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781884481" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781884481" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781884481" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781884481" rel="stylesheet">
+    <link href="/css/theme.css?1781884481" rel="stylesheet">
+    <link href="/css/format-html.css?1781884481" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/docs\/python\/pages\/generalites\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/docs/python/pages/generalites/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#langage-humain-et-langage-machine">Langage humain et langage machine</a></li>
+    <li><a href="#langage-algorithmique">Langage algorithmique</a>
+      <ul>
+        <li><a href="#mémoire-de-lordinateur">Mémoire de l&rsquo;ordinateur</a></li>
+        <li><a href="#types-de-variables">Types de variables</a></li>
+        <li><a href="#affichage-avec-des-types-multiples">Affichage avec des types multiples</a></li>
+        <li><a href="#les-opérations-de-base-types-numériques">Les opérations de base (types numériques)</a></li>
+        <li><a href="#structure-du-langage">Structure du langage</a></li>
+        <li><a href="#fonctions">Fonctions</a></li>
+      </ul>
+    </li>
+    <li><a href="#exemples">Exemples</a></li>
+    <li><a href="#résolution-dns">Résolution DNS</a></li>
+    <li><a href="#exemple-du-routage-sur-internet">Exemple du routage sur internet</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#définitions">Définitions</a></li>
+    <li><a href="#caractéristiques-dun-algorithme">Caractéristiques d’un algorithme</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allopizza</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/docs/index.html"><span itemprop="name">Python</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">langage informatique</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/docs/python/pages/generalites/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python/pages/traitement/page6/index.html" title="kmean et exoplanetes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python/pages/boucles/page2/index.html" title="listes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable docs" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="langage-informatique">langage informatique</h1>
+
+<h1 id="langage-informatique">Langage informatique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="langage-humain-et-langage-machine">Langage humain et langage machine<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans la vidéo suivante, on voit que le langage utilisé pour les machines est un <em>langage structuré</em>, <em>non ambigü</em>, comme on l&rsquo;utiliserait pour <em>commander un robot</em>. Ces instructions passent alors par un <em>interpréteur</em>, qui traduit celui-ci en langage machine et en <em>binaire</em>.</p>
+
+<figure >
+    <a href="https://youtu.be/2UqIJlVQE7o?feature=shared">
+        <img src="../images/langage1.png" alt="francetv.fr" />
+    </a>
+    
+    <figcaption>
+        <p>
+        francetv.fr
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Le langage permet de communiquer avec les machines, mais d&rsquo;une <em>manière différente</em> du langage utilisé par les <em>humains</em>.</p>
+<p>Les langages créés par l’homme pour communiquer avec les ordinateurs sont des langages <em>artificiels</em>. Ils doivent être <em>formalisés et non ambigus</em> pour pouvoir être interprétés par une machine.</p>
+<p>Les langages informatiques sont tous équivalents: si un problème est susceptible d&rsquo;être résolu par un langage, alors tous les langages informatiques le peuvent.</p>
+<p>Pour des raisons de commodité, nous aborderons les langages par le <em>langage naturel</em>, en essayant de le formuler de la manière la plus proche d&rsquo;un langage informatique, tout en rendant sa lecture facile. Nous verrons aussi une manière de l&rsquo;écrire sous forme d&rsquo;<em>algorigramme</em> (un langage visuel), mettant en evidence la structure. Puis plus tard, nous aborderons le <em>langage Python</em>, afin de réaliser des <em>programmes</em>.</p>
+<h2 id="langage-algorithmique">Langage algorithmique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;<em>interpreteur</em> va comprendre un petit nombre d&rsquo;<em>instructions</em> et <em>symboles</em>, et un petit nombre de <em>combinaisons</em> entre ces symboles.</p>
+<h3 id="mémoire-de-lordinateur">Mémoire de l&rsquo;ordinateur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Pour enregistrer un programme en mémoire, l&rsquo;interpréteur va repérer les <em>identificateurs de valeur</em>, les <em>opérateurs</em>, les <em>instructions</em>. Tout cela va être traduit en binaire, mis dans la même mémoire, mais avec des statuts différents:</p>
+<p>Comme les identificateurs de valeur pointent vers des <em>données qui peuvent varier</em>, on les appelera des <em>variables</em>. Ce sont par exemple les données de vente de différents commerçants, les points de vie, la position sur une grille, &hellip; Tout ce qui peut <em>évoluer pendant l&rsquo;execution</em> du programme, et que l&rsquo;on appelle généralement des données.</p>
+
+<figure >
+    
+        <img src="../images/cadre_tab.png" alt="TP Excel sur les ventes de fruits" />
+    
+    
+    <figcaption>
+        <p>
+        TP Excel sur les ventes de fruits
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>Dans une feuille du tableur Excel, les cellules contiennent des étiquettes (données textuelles), des données numériques, ou des instructions de calcul sur ces données. Tout ceci est dans une CASE, un peu comme le rangement des éléments d&rsquo;un programme dans la mémoire de la machine.</em></p>
+<p><em>Dans un programme, les données sont repérées par un nom plutôt que par des coordonnées de classeur.</em></p>
+<p><em>exemple 1: <code>r = 12/2</code></em></p>
+<p>l&rsquo;instruction contient: une variable valeur <code>r</code>, un OPERATEUR de valeur <code>=</code> (affectation), un OPERATEUR de valeur <code>/</code> (division), un entier de valeur <code>12</code>, un entier de valeur <code>2</code>.</p>
+<p><em>Execution:</em> <code>12/2 -&gt; 6 -&gt; r</code></p>
+<ul>
+<li>lors de l&rsquo;execution, la machine va d&rsquo;abord évaluer 12/2, qui vaudra 6, puis affecter cette valeur à la variable <code>r</code>.</li>
+</ul>
+<p><em>exemple 2: <code>l = 2 * 3.14 * r</code></em></p>
+<ul>
+<li>
+<p>l&rsquo;instruction contient: une variable valeur <code>l</code>, un OPERATEUR de valeur <code>=</code> (affectation), une variable de valeur <code>r</code>, un OPERATEUR de valeur <code>*</code> (multiplication), un entier de valeur <code>2</code>, un REEL de valeur <code>3.14</code>.</p>
+</li>
+<li>
+<p>si cette instruction est executée après la première, on aura:</p>
+</li>
+</ul>
+<p><code>r -&gt; 6 -&gt; 2 * 3.14 * r -&gt; 37.68 -&gt; l</code></p>
+<p>Donc <code>l</code> vaudra 37.68</p>
+<h3 id="types-de-variables">Types de variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Maintenant que nous connaissons les variables, interessons nous à leur type. On peut mémoriser plusieurs genre d&rsquo;informations dans un programme. En python, ces types sont:</p>
+<ul>
+<li>Les types simples: numériques, booléens, chaines</li>
+<li>Les types construits: listes, dictionnaires (liste associative)</li>
+</ul>
+<p>Les types numériques se déclinent en types entiers (int) et flottants (float). Les chaines de caractères (str) sont mises entre guillemets doubles &ldquo;&rdquo;, ou simples &lsquo;&rsquo;.</p>
+<p><em>Résumé</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>type</th>
+					<th>python</th>
+					<th>exemples</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>integer</td>
+					<td>int</td>
+					<td>12</td>
+			</tr>
+			<tr>
+					<td>float</td>
+					<td>float</td>
+					<td>3.14</td>
+			</tr>
+			<tr>
+					<td>string</td>
+					<td>str</td>
+					<td>&ldquo;rappel&rdquo;, &lsquo;hello&rsquo;</td>
+			</tr>
+			<tr>
+					<td>liste</td>
+					<td>list</td>
+					<td>[1,2,3]</td>
+			</tr>
+			<tr>
+					<td>dictionnaire</td>
+					<td>dict</td>
+					<td>{&rsquo;nom&rsquo;:&lsquo;John&rsquo;,&lsquo;age&rsquo;:32}</td>
+			</tr>
+	</tbody>
+</table>
+<p>Les opérations donnent des résultats différents selon le type de variable.</p>
+<p><em>Exemple</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="mi">24</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="s1">&#39;bon&#39;</span> <span class="o">+</span> <span class="s1">&#39;jour&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="s2">&#34;12&#34;</span> <span class="o">+</span> <span class="s2">&#34;12&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;1212&#34;</span></span></span></code></pre></div>
+<p>Par contre, il n&rsquo;est pas possible d&rsquo;ajouter des valeurs de type numerique et chaine avec un <code>+</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">12</span> <span class="o">+</span> <span class="s1">&#39;12&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">File</span> <span class="s2">&#34;&lt;stdin&gt;&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="s1">&#39;int&#39;</span> <span class="ow">and</span> <span class="s1">&#39;str&#39;</span></span></span></code></pre></div>
+<h3 id="affichage-avec-des-types-multiples">Affichage avec des types multiples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les <em>f-strings</em> sont l&rsquo;une des fonctionnalités les plus élégantes de Python moderne. Plutôt que de jongler avec des + et des str() à répétition, on écrit directement ce qu&rsquo;on veut dire — le code devient aussi lisible qu&rsquo;une phrase. Un simple f&quot; au début, des accolades autour de tes variables, et Python s&rsquo;occupe du reste. C&rsquo;est le genre de détail qui fait qu&rsquo;on aime écrire du code.</p>
+<p>Les f-strings rendent le code bien plus lisible. Compare ces deux façons d&rsquo;afficher la même chose :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Avec str() et +</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;L&#39;album &#34;</span> <span class="o">+</span> <span class="n">titre</span> <span class="o">+</span> <span class="s2">&#34; dure &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">duree</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34; minutes.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Avec un f-string</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;L&#39;album </span><span class="si">{</span><span class="n">titre</span><span class="si">}</span><span class="s2"> dure </span><span class="si">{</span><span class="n">duree</span><span class="si">}</span><span class="s2"> minutes.&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p>Le résultat est identique, mais la deuxième version se lit presque comme du français. Il suffit de faire précéder la chaîne d&rsquo;un f, puis de placer chaque variable entre accolades {} —&gt; Python la remplace automatiquement par sa valeur, quel que soit son type.</p>
+<h3 id="les-opérations-de-base-types-numériques">Les opérations de base (types numériques)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un langage informatique permet de réaliser des opérations sur des valeurs. L&rsquo;écriture de ces opétations peut différer de ce que l&rsquo;on écrit avec la calculatrice. Voici la liste de quelques opérateurs en <em>Python</em>:</p>
+<table>
+	<thead>
+			<tr>
+					<th>opérateur</th>
+					<th>rôle</th>
+					<th>équivalent  sur une calculatrice</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>+</td>
+					<td>addition</td>
+					<td>$1 + 99$</td>
+			</tr>
+			<tr>
+					<td>-</td>
+					<td>soustraction</td>
+					<td>$99 - 1$</td>
+			</tr>
+			<tr>
+					<td>*</td>
+					<td>multiplication</td>
+					<td>$10 \times 10$</td>
+			</tr>
+			<tr>
+					<td>/</td>
+					<td>division</td>
+					<td>$\tfrac{1}{3}$</td>
+			</tr>
+			<tr>
+					<td>//</td>
+					<td>division entière</td>
+					<td>pas d&rsquo;équivalent</td>
+			</tr>
+			<tr>
+					<td>%</td>
+					<td>reste de la division</td>
+					<td>pas d&rsquo;équivalent</td>
+			</tr>
+			<tr>
+					<td>**</td>
+					<td>exposant</td>
+					<td>$2^{4}$</td>
+			</tr>
+			<tr>
+					<td>e</td>
+					<td>puissance de 10 (pour l&rsquo;écriture en notation scientifique)</td>
+					<td>$1.2E-3$ ou $1.2\times 10^{-3}$</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>variables:</strong> Les opérations portent aussi sur des variables: ce sont des valeurs associées à une etiquette (un nom), qui peuvent varier au cours du programme. On utilise le symbole <code>=</code> pour affectation.</p>
+<p><em>Exemple 1: séquence d&rsquo;instructions</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">12</span> <span class="o">+</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># x vaut 12</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># y vaut 8</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># z vaut 30</span></span></span></code></pre></div>
+<p>Lors de l&rsquo;execution, l&rsquo;interpreteur <em>commence</em> par <em>evaluer</em> le résultat de l&rsquo;opération, <em>puis</em> affecte le resultat à la variable:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pv</span> <span class="o">=</span> <span class="mi">22</span>
+</span></span><span class="line"><span class="cl"><span class="n">pv</span> <span class="o">=</span> <span class="n">pv</span> <span class="o">-</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pv vaut 19</span></span></span></code></pre></div>
+<h3 id="structure-du-langage">Structure du langage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Tout langage informatique doit être structuré autour de séquences d&rsquo;instructions, de branchements conditionnels et de boucles, permettant les répétitions. En utilisant un langage visuel, un algorigramme, cela donne:</p>
+
+<figure >
+    
+        <img src="../images/langage4.png" alt="séquence d&#39;instructions" />
+    
+    
+    <figcaption>
+        <p>
+        séquence d&#39;instructions
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>En langage python:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">instruction1
+</span></span><span class="line"><span class="cl">instruction2
+</span></span><span class="line"><span class="cl">instruction3</span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/langage2.png" alt="branchement conditionnel" />
+    
+    
+    <figcaption>
+        <p>
+        branchement conditionnel
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>En langage python:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">test</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">instruction1</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">instruction2</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/langage3.png" alt="boucle, répétition" />
+    
+    
+    <figcaption>
+        <p>
+        boucle, répétition
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>En langage python:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">test</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">instruction1</span>
+</span></span><span class="line"><span class="cl"><span class="n">instruction2</span></span></span></code></pre></div>
+<blockquote>
+<p><em>Questions:</em></p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Pour établir une recette de cuisine, quelle est la structure à privilégier: séquence d&rsquo;instructions, branchement, boucle?</li>
+<li>Pour décider si je dois prendre un parapluie avant de sortir, quelle structure algorithmique vais-je privilégier?</li>
+<li>Pour faire des crêpes à partir de la pâte liquide dans le bol (il faut verser une louche de liquide dans la poele), quelle structure privilégier?</li>
+</ul>
+</blockquote>
+<h3 id="fonctions">Fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Soit le programme qui dicte les ordres pour préparer de la pâte à crêpes (liquide). On peut supposer que la structure de base est un ensemble d&rsquo;instructions qui definissent la méthode de préparation générale. Puis que l&rsquo;on repètera ce bout de code chaque fois que l&rsquo;on a des crêpes à réaliser.</p>
+<p>Appelons cette fonction: <code>preparer_pate_a_crepe()</code></p>
+<p>Dans cette fonction, il y aura plusieurs instructions, comme:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FONCTION preparer_pate_a_crepe(ingredient)
+</span></span><span class="line"><span class="cl">prendre un bol
+</span></span><span class="line"><span class="cl">casser un oeuf
+</span></span><span class="line"><span class="cl">verser du lait
+</span></span><span class="line"><span class="cl">ajouter ingrédient
+</span></span><span class="line"><span class="cl">mélanger
+</span></span><span class="line"><span class="cl">laisser reposer
+</span></span><span class="line"><span class="cl">FIN</span></span></code></pre></div>
+<p>Cette fonction pourrait avoir un argument: <code>sucre</code> ou <code>sel</code>, selon si l&rsquo;on veut réaliser des crêpes sucrées ou salées.</p>
+<p>La fonction prendra alors un <em>paramètre</em>, c&rsquo;est une variable d&rsquo;entrée qui permet de personnaliser l&rsquo;execution de la fonction. Appelons ce <em>paramètre</em> <code>ingrédient</code>.</p>
+<p>La fonction est alors spécifiée (écrite de manière générale) par: <code>preparer_pate_a_crepe(ingrédient)</code></p>
+<p>On peut supposer qu&rsquo;il existe egalement une fonction <code>preparer_une_crepe()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FONCTION preparer_une_crepe()
+</span></span><span class="line"><span class="cl">faire chauffer la poele
+</span></span><span class="line"><span class="cl">verser une louche de pate à crepe dans une poele
+</span></span><span class="line"><span class="cl">faire cuire la pate sur les 2 faces
+</span></span><span class="line"><span class="cl">retirer la crepe de la poele
+</span></span><span class="line"><span class="cl">FIN</span></span></code></pre></div>
+<p>Le programme complet est alors:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">preparer_pate_a_crepe(sucre)
+</span></span><span class="line"><span class="cl">tant qu&#39;il reste de la pate à crepe:
+</span></span><span class="line"><span class="cl">  preparer_une_crepe()</span></span></code></pre></div>
+<p><a href="/pdf/SNT/algo_structures_langage.pdf">exercices sur les structures</a></p>
+<h2 id="exemples">Exemples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>à travers quelques exemples, nous allons définir le <em>problème</em>, puis étudier la <em>réponse</em> à ce problème à l&rsquo;aide d&rsquo;un <em>langage naturel algorithmique</em>.</p>
+<p>On précise qu&rsquo;un <em>problème</em> doit s&rsquo;énoncer de la manière suivante:</p>
+<p><strong>étant donné [les données] on demande [l’objectif]</strong></p>
+<h2 id="résolution-dns">Résolution DNS<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Nous étudierons un premier exemple issu de l&rsquo;<a href="/pdf/SNT/fonctionnement_internet.pdf">activité - automatiser le fonctionnement d&rsquo;internet</a></p>
+<p>Le fonctionnement de la résolution DNS par l&rsquo;ordinateur client peut s&rsquo;écrire de manière algorithmique:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ENTREE : un nom de domaine
+</span></span><span class="line"><span class="cl">SORTIE : une adresse IP
+</span></span><span class="line"><span class="cl">DEBUT
+</span></span><span class="line"><span class="cl">si le nom de domaine est dans la table du fichier host alors:
+</span></span><span class="line"><span class="cl">	retourner l&#39;adresse IP au navigateur
+</span></span><span class="line"><span class="cl">sinon:
+</span></span><span class="line"><span class="cl">	envoyer le nom de domaine au serveur DNS
+</span></span><span class="line"><span class="cl">	lire la réponse du DNS
+</span></span><span class="line"><span class="cl">	retourner l&#39;adresse IP au navigateur
+</span></span><span class="line"><span class="cl">FIN</span></span></code></pre></div>
+<p>Ici, le données seront:</p>
+<ul>
+<li>le fichier host qui contient les informations suivantes :</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>domaine</th>
+					<th>adresse ipV4</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>musee-orsay.fr</td>
+					<td>141.61.122.100</td>
+			</tr>
+	</tbody>
+</table>
+<ul>
+<li>Et le DNS qui contient :</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>domaine</th>
+					<th>adresse ipV4</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>musee-orsay.fr</td>
+					<td>141.95.121.163</td>
+			</tr>
+			<tr>
+					<td>google.fr</td>
+					<td>142.250.201.3</td>
+			</tr>
+			<tr>
+					<td>facebook.fr</td>
+					<td>157.240.196.17</td>
+			</tr>
+	</tbody>
+</table>
+<p>Et ce que l&rsquo;on attend du programme, c&rsquo;est qu&rsquo;il fournisse l&rsquo;adresse IP correspondant au nom de domaine.</p>
+<blockquote>
+<p>Question 2a: Pour acceder à la page musee-orsay.fr depuis notre machine M01. Quelle sera l’adresse IP
+utilisée par le navigateur ? Pourquoi ?</p>
+</blockquote>
+<p><em>Réponse: 141.61.122.100</em></p>
+
+<figure >
+    
+        <img src="../images/langage6.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p>Question 2b: On souhaite accéder maintenant à la page google.fr sur notre machine M01. Quelle sera
+l’adresse IP utilisée par le navigateur ? Pourquoi ?</p>
+</blockquote>
+<h2 id="exemple-du-routage-sur-internet">Exemple du routage sur internet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le routeur 1 possède 3 interfaces, que l’on nommera pour simplifier 1, 2 et 3.</p>
+<p>Les messages (ou datagramme) circulant sur internet contiennent de nombreuses informations utiles à leur
+routage, comme les <em>adresses IP</em> source et destination, ou la valeur du temps de vie restant (<em>TTL</em>).</p>
+<p>Lorsqu’un message passe par un routeur, celui-ci lit sa valeur de TTL et diminue ce temps de vie d’une unité.</p>
+<p>Si le temps arrive à zero, le message est supprimé par le routeur. Sinon, la valeur du TTL est modifiée dans le
+datagramme.</p>
+<blockquote>
+<p><strong>Programme 1:</strong> Exprimer cet algorithme en langage naturel en vous inspirant du script précédent. (compléter ci-dessous):</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ENTREE : un datagramme
+</span></span><span class="line"><span class="cl">SORTIE : un datagramme
+</span></span><span class="line"><span class="cl">DEBUT :
+</span></span><span class="line"><span class="cl">Lire le TTL du datagramme
+</span></span><span class="line"><span class="cl">…
+</span></span><span class="line"><span class="cl">si … …. alors :
+</span></span><span class="line"><span class="cl">	…
+</span></span><span class="line"><span class="cl">sinon :
+</span></span><span class="line"><span class="cl">	…
+</span></span><span class="line"><span class="cl">FIN</span></span></code></pre></div>
+<p>On utilisera les fonctions <code>diminuer_TTL</code>, <code>supprimer_datagramme</code> et <code>faire_circuler_datagramme</code></p>
+
+<figure >
+    
+        <img src="../images/langage5.png" alt="reseaux connectés au routeur 1" />
+    
+    
+    <figcaption>
+        <p>
+        reseaux connectés au routeur 1
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p><strong>Programme 2:</strong> L’administrateur réseau va paramétrer les routeurs pour que ceux-ci assurent la circulation des données. Ecrire le programme de la fonction <code>faire_circuler_datagramme</code>. Cette fonction devra lire l&rsquo;adresse IP du reseau de destination. Cette information est ecrite dans le datagramme. Puis choisir l&rsquo;interface Y correspondant à cette adresse IP. Et enfin, envoyer le datagramme par l&rsquo;interface Y.</p>
+</blockquote>
+<p>On utilisera les fonctions <code>lire_IP</code>, <code>choisir_interface</code>, et <code>envoyer</code>.</p>
+<p>La fonction <code>choisir_interface(IP)</code> a besoin d&rsquo;un paramètre en entrée: Pour une adresse IP du reseau à atteindre, la fonction choisira la bonne interface Y par laquelle envoyer le datagramme.</p>
+<p><em>Exemples d&rsquo;instructions</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">IP = lire_IP(datagramme)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Y = choisir_interface(IP)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">envoyer(datagramme,Y)</span></span></code></pre></div>
+<blockquote>
+<p>Question 5a: Un datagramme passe par le routeur 1 et contient les informations suivantes: <code>TTL = 2, IP_destination = 10.0.0.0</code>. Que fait le routeur? Que valent les 2 informations après le passage du routeur?</p>
+</blockquote>
+<p>La fonction <code>choisir_interface</code> se rapportera à la table suivante:</p>
+<table>
+	<thead>
+			<tr>
+					<th>interface</th>
+					<th>reseau</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>192.168.0.0</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>141.95.121.0</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>10.0.0.0</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>Question 5b: Le datagramme parviendra t-il à destination, pourquoi?</p>
+</blockquote>
+<blockquote>
+<p>Question 5c: Que vaut le TTL lorsque le datagramme arrive à destination ?</p>
+</blockquote>
+<h1 id="compléments">Compléments<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les langages sont les supports de communication.</p>
+<p>Ils permettent aux hommes d’échanger des informations et des idées. Ils sont généralement informels et ambigus et demandent toute la subtilité d’un cerveau humain pour être interprétés correctement.</p>
+<p>Ils leur permettent également de communiquer avec les machines. Les langages créés par l’homme pour communiquer avec les ordinateurs sont des langages artificiels. Ils doivent être formalisés et non ambigus pour pouvoir être interprétés par une machine.</p>
+<p>Au départ, un ordinateur ne comprend qu’un seul langage, pour lequel il a été conçu : son langage
+machine. Pour communiquer avec des langages plus évolués, il est nécessaire d’utiliser un interprête:</p>
+<ol>
+<li>Une première phase d’analyse lexicale permet de décomposer le texte en entités élémentaires</li>
+<li>Une deuxième phase d’analyse syntaxique permet de reconnaître des combinaisons entre ces entités</li>
+<li>Une troisième phase d’analyse sémantique permet de générer le code objet directement compréhensible par la machine.</li>
+</ol>
+<p><em>exemple: <code>l = 2 * 3.14 * r</code></em></p>
+<p>Lors de la première phase d&rsquo;analyse, la machine va repérer:
+un IDENTIFICATEUR de valeur, une VARIABLE.
+un OPERATEUR de valeur <code>=</code>, un IDENTIFICATEUR de valeur <code>r</code>, un OPERATEUR de valeur <code>*</code>, un entier de valeur <code>2</code>, un REEL de valeur <code>3.14</code>.</p>
+<p>D&rsquo;après la thèse de Church-Türing, tout langage informatique doit être structuré autour de séquences d&rsquo;instructions, de branchements conditionnels et de boucles, permettant les répétitions.</p>
+<p>On verra à travers plusieurs exemples, que la machine ne peut comprendre qu&rsquo;un nombre limité d&rsquo;entités élémentaires, classées en plusieurs familles:</p>
+<ul>
+<li>Les variables, constantes et opérateurs</li>
+<li>les intructions d&rsquo;entrée-sortie</li>
+<li>les instructions de branchement conditionnel</li>
+<li>les boucles</li>
+<li>les fonctions</li>
+</ul>
+<p>« <strong>Coder</strong> » est le fait d’écrire une <strong>suite d’instructions</strong> dont l’ensemble constitue un <strong>programme</strong>.</p>
+<h1 id="résoudre-des-problèmes-à-laide-dun-langage">Résoudre des problèmes à l&rsquo;aide d&rsquo;un langage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Résoudre un problème à l&rsquo;aide d&rsquo;une machine consiste d&rsquo;abord à comprendre le comportement humain (1), à concevoir des systèmes (2), puis les utiliser(3).</p>
+<p>(1 et 2) Il faudra développer une pensée informatique, que l&rsquo;on exprimera à l&rsquo;aide d&rsquo;un algorithme, et qui sera traduite en un langage informatique.</p>
+<p>(2 et 3) il faudra implémenter le <em>code</em> et prévoir l’interaction entre ordinateurs et personnes (interface homme-machine).</p>
+<h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>algorithme</strong>: processus systématiques de résolution
+d&rsquo;un problème permettant de décrire précisément des étapes pour résoudre un problème.</p>
+<p>Un <strong>problème</strong> ne sera véritablement bien spécifié que s’il s’inscrit dans le schéma suivant :</p>
+<p><strong>étant donné [les données] on demande [l’objectif]</strong></p>
+<p>Parfois, la premiere étape dans la résolution d’un probleme est de préciser ce probleme à partir d’un énoncé flou : il ne s’agit pas nécessairement d’un travail facile !</p>
+<h2 id="caractéristiques-dun-algorithme">Caractéristiques d’un algorithme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Tout algorithme possède :</p>
+<ul>
+<li>Un nom et s’exprime dans un langage (français, anglais, dessins&hellip;).</li>
+<li>Des données (farine, oeuf, sucre et fruits pour la recette ; les deux nombres à
+multiplier pour la multiplication).</li>
+<li>Un ou des résultats (la tarte pour la recette ; le résultat pour la multiplication).</li>
+<li>Une série chronologique d’étapes (parfois num´erot´ees) ou sous-algorithmes
+lesquels agissent sur les données (faire la pâte, garnir la pâte, faire cuire la tarte pour
+la recette ; multiplier le nombre du haut par chacun des chiffres du bas, additionner
+tous les résultats pour la multiplication).</li>
+<li>Certaines phrases justifient ou expliquent ce qui se passe : ce sont des commentaires.</li>
+</ul>
+<p>Un <strong>programme</strong> est la représentation d’un algorithme dans un langage plus technique compris par un ordinateur.</p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<p><a href="https://perso.liris.cnrs.fr/christine.solnon/langages.pdf" rel="external">Théorie des langages - Christine Solnon</a></p>
+</li>
+<li>
+<p><a href="https://ressources.unisciel.fr/algoprog/s01alprg/emodules/al00macours1/res/al00cours-texte-xxx.pdf" rel="external">Algorithmique, structures fondamentales, algorigrammes</a></p>
+</li>
+<li>
+<p><a href="https://downloads.ctfassets.net/myqv2p4gx62v/6FXKyBCKSwSxQVs53t2O7s/1be4adee2fb866c928f6411ad4ece283/Cahier-animateur-ASBL-Hypothese.pdf" rel="external">INFORMATIQUE, QUELLES
+COMPÉTENCES ? De 8 à 15 ans</a></p>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/first-day/index.html"><a class="padding" href="/log/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" checked><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python</span></label><a class="padding default-animation" href="/docs/index.html">Python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python/pages/traitement/page5/index.html"><a class="padding" href="/docs/python/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/pygame_pong_balle/index.html"><a class="padding" href="/docs/python/pages/tp/pygame_pong_balle/index.html">balle rebondissante<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/pyxelstudio2/index.html"><a class="padding" href="/docs/python/pages/tp/pyxelstudio2/index.html">balle rebondissante<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page1/index.html"><a class="padding" href="/docs/python/pages/boucles/page1/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/generalites/page2/index.html"><a class="padding" href="/docs/python/pages/generalites/page2/index.html">calculer en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/generalites/page2_d/index.html"><a class="padding" href="/docs/python/pages/generalites/page2_d/index.html">calculer en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page2/index.html"><a class="padding" href="/docs/python/pages/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page2_d/index.html"><a class="padding" href="/docs/python/pages/conditions/page2_d/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/es/page1/index.html"><a class="padding" href="/docs/python/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/ex1/index.html"><a class="padding" href="/docs/python/pages/boucles/ex1/index.html">Exercices boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/ex2/index.html"><a class="padding" href="/docs/python/pages/boucles/ex2/index.html">Exercices boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/ex1/index.html"><a class="padding" href="/docs/python/pages/conditions/ex1/index.html">Exercices conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/ex2/index.html"><a class="padding" href="/docs/python/pages/conditions/ex2/index.html">Exercices conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/es/ex1/index.html"><a class="padding" href="/docs/python/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/fonctions/ex1/index.html"><a class="padding" href="/docs/python/pages/fonctions/ex1/index.html">Exercices fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/fonctions/ex2/index.html"><a class="padding" href="/docs/python/pages/fonctions/ex2/index.html">Exercices fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/ex2/index.html"><a class="padding" href="/docs/python/pages/variables/ex2/index.html">Exercices séquences<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/ex3/index.html"><a class="padding" href="/docs/python/pages/variables/ex3/index.html">Exercices séquences<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/ex1/index.html"><a class="padding" href="/docs/python/pages/variables/ex1/index.html">Exercices variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/fonctions/page2/index.html"><a class="padding" href="/docs/python/pages/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/fonctions/page1/index.html"><a class="padding" href="/docs/python/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/fonctions/page3/index.html"><a class="padding" href="/docs/python/pages/fonctions/page3/index.html">fonctions et Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page1/index.html"><a class="padding" href="/docs/python/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/python5_formes/index.html"><a class="padding" href="/docs/python/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page4/index.html"><a class="padding" href="/docs/python/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/generalites/page4/index.html"><a class="padding" href="/docs/python/pages/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page5_d/index.html"><a class="padding" href="/docs/python/pages/variables/page5_d/index.html">introduction aux variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page6/index.html"><a class="padding" href="/docs/python/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/docs/python/pages/generalites/page3/index.html"><a class="padding" href="/docs/python/pages/generalites/page3/index.html">langage informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page2/index.html"><a class="padding" href="/docs/python/pages/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/index_listes1/index.html"><a class="padding" href="/docs/python/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/tp_mastermind/index.html"><a class="padding" href="/docs/python/pages/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/pygame_pong_final/index.html"><a class="padding" href="/docs/python/pages/tp/pygame_pong_final/index.html">PONG final<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/pygame_pong/index.html"><a class="padding" href="/docs/python/pages/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/generalites/page1/index.html"><a class="padding" href="/docs/python/pages/generalites/page1/index.html">python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/python2_algos/index.html"><a class="padding" href="/docs/python/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/index_python_d/index.html"><a class="padding" href="/docs/python/index_python_d/index.html">python debutant<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/pyxelstudio1/index.html"><a class="padding" href="/docs/python/pages/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page2/index.html"><a class="padding" href="/docs/python/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/python6_codes/index.html"><a class="padding" href="/docs/python/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/tp_shifumi/index.html"><a class="padding" href="/docs/python/pages/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/tp_mastermind_soluce/index.html"><a class="padding" href="/docs/python/pages/tp/tp_mastermind_soluce/index.html">solution mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page3/index.html"><a class="padding" href="/docs/python/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page1/index.html"><a class="padding" href="/docs/python/pages/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page5/index.html"><a class="padding" href="/docs/python/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page4/index.html"><a class="padding" href="/docs/python/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page3/index.html"><a class="padding" href="/docs/python/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/conditions/page3_d/index.html"><a class="padding" href="/docs/python/pages/conditions/page3_d/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/traitement/page31/index.html"><a class="padding" href="/docs/python/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/tp_index/index.html"><a class="padding" href="/docs/python/pages/tp/tp_index/index.html">TP python index<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/python1_variables/index.html"><a class="padding" href="/docs/python/pages/tp/python1_variables/index.html">TP Python1 variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/tp/python4_poo/index.html"><a class="padding" href="/docs/python/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page3/index.html"><a class="padding" href="/docs/python/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page3/index.html"><a class="padding" href="/docs/python/pages/boucles/page3/index.html">TP1 listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page3_d/index.html"><a class="padding" href="/docs/python/pages/boucles/page3_d/index.html">TP1 listes NSI_1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/boucles/page4/index.html"><a class="padding" href="/docs/python/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page2/index.html"><a class="padding" href="/docs/python/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page1/index.html"><a class="padding" href="/docs/python/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page4/index.html"><a class="padding" href="/docs/python/pages/variables/page4/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python/pages/variables/page4_d/index.html"><a class="padding" href="/docs/python/pages/variables/page4_d/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781884481"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781884481" defer></script>
+    <script src="/js/theme.js?1781884481" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

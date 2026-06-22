@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="securisation des communications, chiffrement symetrique, code cesar, analyse frequentielle">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="chiffrement symetrique :: allopizza">
+    <meta name="twitter:description" content="securisation des communications, chiffrement symetrique, code cesar, analyse frequentielle">
+    <meta property="og:url" content="//localhost:1313/nsi/architecture/page6/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="chiffrement symetrique :: allopizza">
+    <meta property="og:description" content="securisation des communications, chiffrement symetrique, code cesar, analyse frequentielle">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="chiffrement symetrique :: allopizza">
+    <meta itemprop="description" content="securisation des communications, chiffrement symetrique, code cesar, analyse frequentielle">
+    <meta itemprop="wordCount" content="1936">
+    <title>chiffrement symetrique :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782144953" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782144953" defer></script>
+    <script src="/js/search-lunr.js?1782144953" defer></script>
+    <script src="/js/search.js?1782144953" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782144953";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782144953" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782144953" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782144953" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782144953" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782144953" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782144953" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782144953" rel="stylesheet">
+    <link href="/css/theme.css?1782144953" rel="stylesheet">
+    <link href="/css/format-html.css?1782144953" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/architecture\/page6\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/architecture/page6/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#vocabulaire">Vocabulaire</a></li>
+    <li><a href="#à-quoi-sert-le-chiffrement">à quoi sert le chiffrement?</a></li>
+    <li><a href="#chiffrement-symétrique---definition">Chiffrement symétrique - definition</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#facilité-du-décryptage">Facilité du décryptage</a></li>
+    <li><a href="#substitution-monoalphabetique-utilisant-une-table">Substitution monoalphabetique utilisant une table</a></li>
+    <li><a href="#decryptage-par-analyse-fréquentielle">Decryptage par analyse fréquentielle</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe-1">Principe</a></li>
+    <li><a href="#décryptage">Décryptage</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#substitution-monoalphabétique-code-de-césar">Substitution monoalphabétique: Code de César</a></li>
+    <li><a href="#substitution-polyalphabétique-chiffrement-de-playfair">Substitution polyalphabétique: Chiffrement de Playfair</a></li>
+    <li><a href="#frequences-des-lettres-dans-un-texte">Frequences des lettres dans un texte</a></li>
+    <li><a href="#chiffrement-symétrique-par-la-fonction-xor">Chiffrement symétrique par la fonction XOR</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/architecture/index.html"><span itemprop="name">architecture</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">chiffrement symetrique</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/architecture/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page31/index.html" title="protocoles de routage (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/page7/index.html" title="chiffrement asymetrique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="chiffrement-symetrique">chiffrement symetrique</h1>
+
+<p>Ce chapitre contient plusieurs pages:</p>
+<ul>
+<li>sécuriser les communications: <a href="../page6/">Lien 1</a></li>
+<li>chiffrement asymetrique: <a href="../page7/">Lien 2</a></li>
+<li>TP sur les nombres premiers: <a href="../../algorithmes/page11/">Lien 3</a></li>
+<li>Projet sur le <em>hack</em> ethique et le chiffrement RSA: <a href="/python_avance/tp/python6_codes/index.html">Lien 4</a></li>
+</ul>
+<h1 id="chiffrements-symétriques">Chiffrements symétriques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>du chiffrement de <em>Cesar</em> à celui de la <em>machine Enigma</em>&hellip;</p>
+<h2 id="vocabulaire">Vocabulaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Chiffrer:</strong> transformer les caractères d&rsquo;un texte pour le rendre incompréhensible, sauf pour celui qui possède la clé de chiffrement.</li>
+<li><strong>Déchiffrer:</strong> transformer le texte chiffré en texte clair à l&rsquo;aide de la clé de chiffrement</li>
+<li><strong>Décrypter:</strong> transformer le texte chiffré en texte clair sans posséder la clé.</li>
+<li><strong>Cryptologie:</strong> science du secret: possède deux branches
+<ul>
+<li><strong>cryptographie:</strong> étude de l&rsquo;art du chiffrement</li>
+<li><strong>cryptanalyse:</strong> analyse des méthodes de chiffrement pour les casser (décrypter)</li>
+</ul>
+</li>
+</ul>
+<h2 id="à-quoi-sert-le-chiffrement">à quoi sert le chiffrement?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le chiffrement a pour but de protéger nos données, nos communications, mais aussi de signer nos messages et de s&rsquo;assurer que l&rsquo;on communique bien avec la bonne personne:</p>
+<ul>
+<li><strong>Authentification</strong>: L&rsquo;authentification est la procédure qui consiste, pour un système informatique, à vérifier l&rsquo;identité d&rsquo;une entité (personne, programme, machine).</li>
+<li><strong>L&rsquo;intégrité</strong> des données désigne le fait que les données ne soient pas modifiées au cours d&rsquo;une communication ou de leur stockage. <!-- raw HTML omitted -->
+Ainsi, si vous envoyez un texte chiffré sur un canal non sécurisé, le texte chiffré pourra être intercepté et altéré par un attaquant avant d&rsquo;atteindre son destinataire. Pour contrôler cette intégrité, on associe au message une valeur de contrôle.</li>
+<li><strong>La confidentialité:</strong> Le chiffrement permet de protéger la confidentialité de vos données à l&rsquo;aide d&rsquo;une clé secrète.</li>
+</ul>
+<h2 id="chiffrement-symétrique---definition">Chiffrement symétrique - definition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le chiffrement symétrique utilise la même clé (ou la même table) pour chiffrer et déchiffrer le message. L&rsquo;algorithme peut être connu par l&rsquo;adversaire. Mais le secret repose sur celui de la <em>clé</em>.</p>
+<h1 id="le-chiffrement-par-décalage-ou-chiffre-de-caesar">Le chiffrement par décalage, ou chiffre de Caesar<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le chiffre de César fonctionne par décalage des lettres de l&rsquo;alphabet.</p>
+<p>
+<figure >
+    
+        <img src="../images/Caesar3.png" alt="Chiffrement par décalage - wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Chiffrement par décalage - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Cet algorithme de chiffrement utilise une fonction périodique pour transformer les rangs de chaque lettre:</p>
+<table>
+	<thead>
+			<tr>
+					<th>a</th>
+					<th>b</th>
+					<th>c</th>
+					<th>d</th>
+					<th>e</th>
+					<th>f</th>
+					<th>g</th>
+					<th>h</th>
+					<th>i</th>
+					<th>j</th>
+					<th>k</th>
+					<th>l</th>
+					<th>m</th>
+					<th>n</th>
+					<th>o</th>
+					<th>p</th>
+					<th>q</th>
+					<th>r</th>
+					<th>s</th>
+					<th>t</th>
+					<th>u</th>
+					<th>v</th>
+					<th>w</th>
+					<th>x</th>
+					<th>y</th>
+					<th>z</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+					<td>14</td>
+					<td>15</td>
+					<td>16</td>
+					<td>17</td>
+					<td>18</td>
+					<td>19</td>
+					<td>20</td>
+					<td>21</td>
+					<td>22</td>
+					<td>23</td>
+					<td>24</td>
+					<td>25</td>
+			</tr>
+	</tbody>
+</table>
+<p>Le chiffrement par <a href="https://fr.wikipedia.org/wiki/Chiffrement_par_substitution"> 
+            substitution monoalphabetique
+        </a>  utilise une fonction avec <em>modulo</em>:</p>
+$$x \rightarrow x + cle ~[26]$$<p>La fonction utilisée est une fonction <em>périodique</em>, issue de l&rsquo;arithmétique modulaire.</p>
+<blockquote>
+<p>Compléter l&rsquo;algorithme du chiffrement de César. On suppose qu&rsquo;il existe une clé <code>c</code> correspondant au décalage utilisé. Le message clair est <code>m</code> et le message chiffré est <code>m_chiffre</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">m_chiffre</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Pour</span> <span class="n">chaque</span> <span class="n">lettre</span> <span class="n">l</span> <span class="n">du</span> <span class="n">message</span> <span class="n">m</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">l_chiffre</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">  <span class="n">m_chiffre</span> <span class="o">=</span> <span class="o">...</span></span></span></code></pre></div>
+<p><em>On peut utiliser les fonctions <code>numero(l:str)-&gt;int</code> et <code>caractere(n:int)-&gt;str</code></em></p>
+<blockquote>
+<p><strong>monosubstitution par décalage ou par substitution:</strong> Une lettre du message clair va t-elle donner différentes lettres chiffrées, ou une seule?</p>
+</blockquote>
+<h2 id="facilité-du-décryptage">Facilité du décryptage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour decrypter le message, on peut tester une à une toutes les clés, jusqu&rsquo;à découvrir un message intelligible:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">m_dechiffre = &#34;&#34;
+</span></span><span class="line"><span class="cl">pour chaque valeur i dans {0,25}:
+</span></span><span class="line"><span class="cl">    pour chaque lettre l de m_chiffre:
+</span></span><span class="line"><span class="cl">        l_dechiffre = ...
+</span></span><span class="line"><span class="cl">        m_dechiffre = ...</span></span></code></pre></div>
+<blockquote>
+<p><strong>Décryptage par FORCE BRUTE</strong>: Combien y-a-t-il de clés possibles à essayer pour celui qui réalise le décryptage? Conclure.</p>
+</blockquote>
+<h2 id="substitution-monoalphabetique-utilisant-une-table">Substitution monoalphabetique utilisant une table<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le chiffrement par monosubstitution a été également utilisé par différentes méthodes utilisant une table.</p>
+
+<figure >
+    
+        <img src="../images/polybe.png" alt="Carré de Polybe - le mot « bonjour » est ainsi chiffré par le carré de Polybe :12 34 33 24 34 45 42 - wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Carré de Polybe - le mot « bonjour » est ainsi chiffré par le carré de Polybe :12 34 33 24 34 45 42 - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Le code issu du carré de Polybe a été utilisé par les prisonniers, qui transmettaient leur message en tapant sur les murs <a href="https://fr.wikipedia.org/wiki/Tap_code"> 
+            Tap code
+        </a> </p>
+<p>Vous trouvez ces méthodes de chiffrement trop simpliste? Regardez alors sa déclinaison avec le<a href="https://fr.wikipedia.org/wiki/Chiffre_de_Playfair"> 
+            chiffrement de Playfair
+        </a> </p>
+
+<figure >
+    <a href="https://www.youtube.com/watch?v=JMkGYoT3-Rw">
+        <img src="../images/playfair.png" alt="VIDEO: chiffrement de Playfair - youtube - Astuces et tutoriels" />
+    </a>
+    
+    <figcaption>
+        <p>
+        VIDEO: chiffrement de Playfair - youtube - Astuces et tutoriels
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="decryptage-par-analyse-fréquentielle">Decryptage par analyse fréquentielle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le <strong>problème</strong> avec ce type de chiffrement monoalphabetique, est qu&rsquo;il est possible de repérer comment sont transformées certaines lettres à partir de l&rsquo;<strong>analyse fréquentielle</strong> du message chiffré.</p>
+<p>On peut alors utiliser la frequence des lettres pour dechiffrer et comparer avec la frequence moyenne dans une langue. (200 caracteres suffisent). Il y a aussi tout un tas de statistique, comme les lettres uniques, doubles lettres, finales, etc&hellip; C&rsquo;est un marqueur suffisant pour savoir comment le code est fait.</p>
+
+<figure >
+    
+        <img src="../images/frequenceA_Z.gif" alt="frequence des lettres en français, calculée sur la lecture de plusieurs ouvrages classiques (10 millions de caracteres)" />
+    
+    
+    <figcaption>
+        <p>
+        frequence des lettres en français, calculée sur la lecture de plusieurs ouvrages classiques (10 millions de caracteres)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Cette analyse frequentielle est plus difficile <em>(mais pas impossible)</em> dans le cas du chiffrement de Playfair, car celui-ci utilise une methode de substitution d&rsquo;un groupe de 2 lettres: c&rsquo;est une substitution <em>polyalphabetique</em>. Le nombre de combinaisons possibles avec 2 lettres est alors de $26^2 = 676$.</p>
+<h1 id="substitution-polyalphabétique">Substitution polyalphabétique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe-1">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Polyalphabetique:</strong> Se dit d&rsquo;un chiffre où un groupe de n lettres est codé par un groupe de n symboles. Le chiffrement <em>Playfair</em>, vu plus haut s&rsquo;apparente à une substitution polyalphabetique, puisqu&rsquo;il substitue des digrammes (groupes de 2 lettres) dans le texte d&rsquo;origine.</p>
+<p>Contrairement aux chiffrements monoalphabetiques, qui sont des chiffrements par <strong>flot</strong> (caractères transformés un à un), les chiffrements polyalphabetiques réalisent un chiffrement par <strong>blocs</strong> (plusieurs caractères transformés en une fois).</p>
+<p>L&rsquo;exemple suivant montre une polysubstitution simple avec une <strong>clé de longueur 3</strong> qui va décaler les lettres de l&rsquo;alphabet :</p>
+<p>On définit la clé &lsquo;123&rsquo; qui indique que le premier caractère sera décalé d&rsquo;une position, le second de 2 et le troisième de 3 positions, etc.</p>
+<p>Le mot : WIKIPEDIA donne donc dans ce cas XKNJRHEKD.</p>
+<p>Mais si on chiffre le mot : AAAAAAAAA cela donnera BCDBCDBCD. La lettre A ne donne pas toujours la même correspondance chiffrée.</p>
+<p><strong>Chiffrement de Vigenère</strong>:</p>
+<p>Le <a href="https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re#Dans_la_culture" rel="external">chiffrement de Vigenère</a> utilise ce principe de décalage à partir d&rsquo;une clé exprimée par un mot.</p>
+
+<figure >
+    
+        <img src="../images/vigenere2.jpg" alt="image issue du site books.openedition.org" />
+    
+    
+    <figcaption>
+        <p>
+        image issue du site books.openedition.org
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>C&rsquo;est souvent ce type de codage qui est proposé dans la litterature et le cinema.</p>
+
+<figure >
+    
+        <img src="../images/benj_gates.png" alt="affiche du film Benjamin Gates et le Tresor des Templiers" />
+    
+    
+    <figcaption>
+        <p>
+        affiche du film Benjamin Gates et le Tresor des Templiers
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="décryptage">Décryptage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;analyse des fréquences est moins pertinente lorsque le message a été chiffré avec un chiffrement polyalphabétique (qui tend à rendre aléatoire la fréquence des lettres).</p>
+<p>Si on parvient à découvrir la périodicité, on peut en déduire la longueur de la clé. La connaissance de la longueur de la clé est essentielle pour pouvoir pratiquer l&rsquo;analyse frequentielle: Une même lettre ne donne pas toujours le même caractère chiffré.</p>
+<p>Le decryptage par force brute repose sur l&rsquo;essai de toutes les clés possibles, par combinaison sur tous les caractères de la clé. Si celle-ci a une longueur n, cela va faire $X^n$, où X est la longueur de l&rsquo;alphabet. C&rsquo;est une fonction <em>exponentielle</em>.</p>
+<p>La fonction de dechiffrage est alors executée un nombre de fois correspondant à $X^n$, dans le pire des cas.</p>
+<h1 id="la-machinehahahugoshortcode383s9hbhb">La machine<a href="https://fr.wikipedia.org/wiki/Enigma_%28machine%29"> 
+            Enigma
+        </a> <span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>
+<figure >
+    
+        <img src="../images/enigma.jpg" alt="Enigma: machine électromécanique portative servant au chiffrement et au déchiffrement - wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Enigma: machine électromécanique portative servant au chiffrement et au déchiffrement - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+La machine utilise des <strong>rotors</strong> qui sont mis en position selon une <strong>clé</strong>. L&rsquo;alphabet est chiffré selon la position initiale de ces rotors. Ceux-ci se <strong>décalent</strong> lors de l&rsquo;utilisation.</p>
+<p>Des branchements permettent d&rsquo;ajouter des <strong>permutations</strong> des caractères.</p>
+<p>Tout ceci modifie l&rsquo;alphabet chiffré et augmente sérieusement la complexité.</p>
+<p>Comme tout <em>chiffrement symétrique</em>, <em>déchiffrer</em> se fait avec la même machine, à condition d&rsquo;utiliser la <em>même clé</em>.</p>
+<p>Son utilisation la plus célèbre fut celle faite par l&rsquo;Allemagne nazie, avant et pendant la Seconde Guerre mondiale, la machine étant réputée inviolable selon ses concepteurs.</p>
+<p>Le <strong>principe de la machine Enigma était connu</strong>. Le concepteur savait à l&rsquo;avance que certains modèles pourraient être volés par les alliés. Ce qui fit son efficacité, c&rsquo;est le nombre immense de combinaisons possibles pour les réglages initiaux de la machine et le choix de la clef brute du message.</p>
+<p>Les cryptanalystes britanniques, dont<a href="https://fr.wikipedia.org/wiki/Alan_Turing"> 
+            Alan Turing
+        </a> </p>
+<h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="substitution-monoalphabétique-code-de-césar">Substitution monoalphabétique: Code de César<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Question 1:</strong> Quelle clé a  été utilisée pour chiffer ce texte (avec l’algorithme de César)?</li>
+</ul>
+$$jyfwavnyhwopl hwwspxbll$$<ul>
+<li>
+<p><strong>Question 2:</strong> Décrypter ce message.</p>
+</li>
+<li>
+<p><strong>Question 3:</strong> Proposer un programme en python qui chiffre un message clair <code>m</code> en un message codé selon la clé numérique <code>c</code>.</p>
+</li>
+</ul>
+<p><em>Aide:</em></p>
+<ul>
+<li>
+<p>La fonction <code>ord('x')</code> retourne un entier correspondant à la position d&rsquo;un caractère dans la table ascii.<!-- raw HTML omitted -->
+Par exemple, <code>ord('A')</code> retourne 65, <code>ord('B')</code> retourne 66,&hellip;</p>
+</li>
+<li>
+<p>La fonction <code>chr(N)</code> retourne le caractère de rang N: <code>chr(65)</code> retourne &lsquo;A&rsquo;.</p>
+</li>
+</ul>
+<h2 id="substitution-polyalphabétique-chiffrement-de-playfair">Substitution polyalphabétique: Chiffrement de Playfair<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A partir des explications données dans la video:</p>
+<ul>
+<li><strong>Question 1:</strong> Construisez la matrice pour l’algorithme de Playfair avec la clé <em>estienne</em>.</li>
+<li><strong>Question 2:</strong> Chiffrer le message: <em>ACTIONREACTION</em></li>
+<li><strong>Question 3:</strong> S&rsquo;agit-il d&rsquo;une méthode utilisant la substitution monoalphabetique, ou polyalphabetique?</li>
+<li><strong>Question 4:</strong> Avec cette méthode, le decryptage est-il possible par analyse fréquentielle?</li>
+</ul>
+<h2 id="frequences-des-lettres-dans-un-texte">Frequences des lettres dans un texte<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction suivante retourne une liste de 26 valeurs de type <em>float</em>, donnant dans l&rsquo;ordre de l&rsquo;alphabet, la frequence pour chaque lettre dans un texte:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">freq</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">frequences</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">26</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question 1:</strong> Compléter le script de la fonction <code>freq</code>.</li>
+</ul>
+<p>Soient les deux textes chiffrés suivants:</p>
+<p>a.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DGFHTMOMEIAMTLMFGOKFGOKEGDDTRWEIAKZGFGFSTEKGOMLASTTIFGFOSTLMFTFGOKMGWMFGOKRTSAJWTWTAWDTFMGFDAOLTWMOSSAFGOKETWKRWFDTEIAFMROAZSGMOFKOTFFTXAWMLARGWETWKJWAFROSDOAWSTAWDAMOFHGWKDTSTEITKSADAOF</span></span></code></pre></div>
+<p>b.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">YOHGMVMFCBRBGWFNIZZPSURWFUOIPUWYITFANIETGGDOCKACPQEBEWPMXEMKVGRAILKWWXZOCILGPMQOVCGEGMYEBQRYACJMWXULFRVQMDCYLZFYZMYTPCRFDCRJNSFIHIQGRZEPRCVWMDILKGYDQORVFMXMCRCNIMUGRBKRBOOIUGPQCBVZNEYACE</span></span></code></pre></div>
+<ul>
+<li>
+<p><strong>Question 2:</strong> L&rsquo;un des 2 a été chiffré avec un algorithme de substitution mon-alphabetique, et l&rsquo;autre, poly-alphabétique. Lequel est mono-alphabétique?</p>
+</li>
+<li>
+<p><strong>Question 3:</strong> Tracer un histogramme à partir du texte chiffré en mono-substitution. On donne un exemple de script ci-dessous pour réaliser le graphique:</p>
+</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">etiquettes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">valeurs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Affichage des données</span>
+</span></span><span class="line"><span class="cl"><span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">etiquettes</span><span class="p">,</span> <span class="n">valeurs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Histogramme&#34;</span><span class="p">)</span>  <span class="c1"># Titre du graphique</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Nombre&#39;</span><span class="p">)</span>  <span class="c1"># Titre de l&#39;axe y</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;alphabet&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Affichage d&#39;une courbe</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/histoabc.png"  />
+    
+    
+</figure>
+
+<h2 id="chiffrement-symétrique-par-la-fonction-xor">Chiffrement symétrique par la fonction XOR<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>exercice inspiré de la page sur le chiffrement de <a href="https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.4_Cryptographie/cours/" rel="external">glassus.github.io</a></p>
+<ul>
+<li><strong>Question 1:</strong> La fonction XOR est la fonction du OU EXCLUSIF.</li>
+</ul>
+<p>Donner la table de vérité de la fonction XOR</p>
+<ul>
+<li><strong>Question 2:</strong> A partir des lignes suivantes, vérifier que l&rsquo;opérateur <code>^</code> en python réalise la fonction XOR sur 2 nombres écrits en valeur décimale:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">3</span> <span class="o">^</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">4</span> <span class="o">^</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question 3:</strong> Programmer la fonction <code>xor</code> en python qui retourne le resultat de XOR appliqué aux 2 paramètres a et b.</li>
+</ul>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; xor(0,1)
+</span></span><span class="line"><span class="cl">1
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; xor(53,23)
+</span></span><span class="line"><span class="cl">34
+</span></span><span class="line"><span class="cl">&gt;&gt;&gt; xor(34,23)
+</span></span><span class="line"><span class="cl">53</span></span></code></pre></div>
+<ul>
+<li>
+<p><strong>Question 4:</strong> Peut-on utiliser la fonction XOR pour chiffrer PUIS dechiffrer un message, avec la MEME clé de chiffrement? Expliquer à partir de l&rsquo;exemple ci-dessus.</p>
+</li>
+<li>
+<p><strong>Question 5:</strong> On s&rsquo;interresse maintenant à la programmation de la fonction XOR pour chiffrer un message à partir d&rsquo;un masque:</p>
+</li>
+</ul>
+$$message = "CETTEPHRASEESTVRAIMENTTRESTRESLONGUEMAISCESTFAITEXPRES"$$<p>Le masque (correspond à la clé) aura une longueur inférieur au message. On utilise le masque selon la méthode de chiffrement polyalphabetique vue en cours.</p>
+<p>Le chiffrement demande de faire correspondre les caractères avec des nombres entiers. On utilisera pour cela un alphabet de 32 caractères ($2^5$). Chaque lettre de l&rsquo;alphabet correspondra alors à un nombre compris entre 0 et 31.</p>
+<ul>
+<li>
+<p><strong>Question 6:</strong> Lorsque l&rsquo;on place 2 entiers inférieurs à 32 dans la fonction XOR, celle-ci retourne un entier également inférieur à 32. Pourquoi? (<em>Representer ces nombres en binaire, sur un octet, et verifier cette affirmation</em>)</p>
+</li>
+<li>
+<p><strong>Question 7:</strong> Compléter la fonction <code>chiffre(message, masque)</code> qui chiffre message en le XORant avec masque.</p>
+</li>
+</ul>
+<p>Cette fonction doit pouvoir aussi servir à déchiffrer le message chiffré.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">alphabet</span><span class="o">=</span><span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">)]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">,</span><span class="s1">&#39;@&#39;</span><span class="p">,</span><span class="s1">&#39;&amp;&#39;</span><span class="p">,</span><span class="s1">&#39;!&#39;</span><span class="p">,</span><span class="s1">&#39;à&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chiffre</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">masque</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">&gt;=</span><span class="nb">len</span><span class="p">(</span><span class="n">masque</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">message_chiffre</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indice_lettre</span> <span class="o">=</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indice_masque</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">        <span class="n">val</span> <span class="o">=</span> <span class="n">xor</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message_chiffre</span><span class="o">+=</span><span class="n">alphabet</span><span class="p">[</span><span class="n">val</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<ul>
+<li>
+<p><strong>Question 8:</strong> Utiliser la fonction <code>chiffre</code> pour effectuer le chiffrement puis le dechiffrement du <em>message</em>.</p>
+</li>
+<li>
+<p><strong>Question 9:</strong> Pensez vous que cette méthode de chiffrement est assez resistante face à une attaque de cryptoanalyse? Si oui, pourquoi?</p>
+</li>
+</ul>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Suite du cours: <a href="../page7">chiffrement asymétrique</a></li>
+</ul>
+<h1 id="documentation-sitographie">Documentation, sitographie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Chiffrement : notre antisèche pour l&rsquo;expliquer à vos parents <a href="https://www.nextinpact.com/article/24930/99777-chiffrement-notre-antiseche-pour-expliquer-a-vos-parents" rel="external">article de NextImpact</a></li>
+<li>chiffrement de Vigenère: <a href="https://fr.wikipedia.org/wiki/Chiffre_de_Vigen%C3%A8re" rel="external">wikipedia</a></li>
+<li>Interstices : <a href="https://interstices.info/turing-a-lassaut-denigma/" rel="external">coder et decoder. La machine Enigma</a></li>
+<li>sécurisez vos données avec la cryptographie <a href="https://openclassrooms.com/fr/courses/1757741-securisez-vos-donnees-avec-la-cryptographie/6031870-controlez-lintegrite-de-vos-messages#:~:text=L'int%C3%A9grit%C3%A9%20des%20donn%C3%A9es%20d%C3%A9signe,prot%C3%A9ger%20la%20confidentialit%C3%A9%20des%20donn%C3%A9es." rel="external">openclassroom</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4" checked><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page1/index.html"><a class="padding" href="/nsi/bases/page1/index.html">modele entite relation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">BDR<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">exercice prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">projet SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page3/index.html"><a class="padding" href="/nsi/bases/page3/index.html">SGBD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page4/index.html"><a class="padding" href="/nsi/bases/page4/index.html">SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP SQL<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782144953"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782144953" defer></script>
+    <script src="/js/theme.js?1782144953" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

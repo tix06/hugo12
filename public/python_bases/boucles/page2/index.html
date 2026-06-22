@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="listes :: allopizza">
+    <meta name="twitter:description" content="cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique">
+    <meta property="og:url" content="//localhost:1313/python_bases/boucles/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="listes :: allopizza">
+    <meta property="og:description" content="cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python - les bases">
+    <meta itemprop="name" content="listes :: allopizza">
+    <meta itemprop="description" content="cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique">
+    <meta itemprop="wordCount" content="1286">
+    <title>listes :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_bases\/boucles\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_bases/boucles/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#chaines-de-caractères">Chaines de caractères</a></li>
+    <li><a href="#listes">Listes</a></li>
+    <li><a href="#boucles-bornées">Boucles bornées</a>
+      <ul>
+        <li><a href="#conclusion-itérable-et-variant-de-boucle-bornée">Conclusion: Itérable et variant de boucle bornée</a></li>
+      </ul>
+    </li>
+    <li><a href="#tracer-un-graphique-y--fx">Tracer un graphique y = f(x)</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_bases/index.html"><span itemprop="name">Bases en python</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">listes</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_bases/boucles/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/boucles/page5/index.html" title="boucles (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/fonctions/page2/index.html" title="fonctions (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_bases" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="listes">listes</h1>
+
+<h1 id="chaines-de-caractères-listes-et-boucles-bornées">Chaines de caractères, Listes et Boucles bornées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="chaines-de-caractères">Chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1. Definition:</strong> Une chaine de caractère est une séquence ordonnée de caractères, mis entre guillements  (simples <code>'</code> ou doubles <code>&quot;</code>). C&rsquo;est le type <code>str</code> en python. Pour en savoir plus sur les chaines, on pourra consulter la page: <a href="https://developers.google.com/edu/python/strings?hl=fr" rel="external">google dev: chaines</a></p>
+<p>On accède à un élément d&rsquo;une chaine grace à sa position, appelée <em>indice</em>. Le premier élément a pour indice zero.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span> <span class="o">=</span> <span class="s1">&#39;eio&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">e</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelle</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">o</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">o</span> <span class="c1"># le dernier element de la liste</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;eio&#39;</span></span></span></code></pre></div>
+<p>Un indice négatif permet d&rsquo;identifier les éléments à partir de la fin: -1 pour le dernier caractère, -2 pour l&rsquo;avant dernier, &hellip;</p>
+<p>Illustration avec la chaine de caractères <em>Hello</em>:</p>
+
+<figure >
+    <a href="https://developers.google.com/edu/python/strings?hl=fr">
+        <img src="../images/hello.png" alt="exemple avec les rangs des caractères du mot Hello" />
+    </a>
+    
+    <figcaption>
+        <p>
+        exemple avec les rangs des caractères du mot Hello
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>2. Modifier une chaine</strong>
+Contrairement aux listes, il n&rsquo;est pas possible de modifier un caractère dans une chaine:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span> <span class="o">=</span> <span class="s1">&#39;eio&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">voyelles</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span></span></span></code></pre></div>
+<p><strong>3. Une fonction utile aux chaines: <code>len</code></strong>
+La fonction <code>len</code> va retourner la longueur de la chaine de caractères.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">chaine</span> <span class="o">=</span> <span class="s1">&#39;abc&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">chaine</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span></span></span></code></pre></div>
+<h2 id="listes">Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1. Definition:</strong> Une <strong>liste</strong> est une collection ordonnée d&rsquo;objets.
+Une <strong>liste</strong> est entourée de <strong>crochets</strong> <code>[ ]</code>. C&rsquo;est le type <code>list</code> en python. Pour en savoir plus sur les listes, on pourra consulter la page: <a href="https://developers.google.com/edu/python/lists?hl=fr" rel="external">google dev: listes</a></p>
+<p>On accède à un élément d&rsquo;une liste grace à sa position, appelée <em>indice</em>. Le premier élément a pour indice zero.</p>
+<p>
+<figure >
+    
+        <img src="../images/liste.png" alt="La liste `voyelles` est une collection contenant les caractères" />
+    
+    
+    <figcaption>
+        <p>
+        La liste `voyelles` est une collection contenant les caractères
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Un indice négatif donne accès à la liste à partir du dernier élément.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche e</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche i</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelle</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche o</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche o</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;e&#39;,&#39;i&#39;,&#39;o&#39;]</span></span></span></code></pre></div>
+<p><strong>2. Modifier les éléments d&rsquo;une liste</strong>
+On ne peut modifier un élément d&rsquo;une liste que si celui-ci existe. Par exemple, si l&rsquo;on veut modifier l&rsquo;élément &ldquo;e&rdquo; au rang zero de la liste <code>voyelles</code> par un &ldquo;a&rdquo;, il faut faire:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;a&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#34;a&#34;,&#34;i&#34;,&#34;o&#34;]</span></span></span></code></pre></div>
+<p>Par contre, la liste ne contenant que 3 éléments, du rang 0 au rang 2, on ne peut pas ajouter l&rsquo;élément &ldquo;u&rdquo; de la manière suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;u&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="ne">IndexError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">assignment</span> <span class="n">index</span> <span class="n">out</span> <span class="n">of</span> <span class="nb">range</span></span></span></code></pre></div>
+<blockquote>
+<p>Mais alors, quelle est la bonne méthode pour ajouter un élément à une liste?</p>
+</blockquote>
+<p><strong>Il faut utiliser une méthode de liste: la méthode</strong> <code>append</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;u&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#34;e&#34;,&#34;i&#34;,&#34;o&#34;,&#34;u&#34;]</span></span></span></code></pre></div>
+<p>L&rsquo;écriture de la méthode <code>append</code> se fait avec une notation pointée: <code>liste.append(x)</code>, où <code>x</code> est la valeur à ajouter à la fin de <code>liste</code>.</p>
+<p><strong>3. Une fonction utile aux listes: <code>len</code></strong>
+La fonction <code>len</code> va retourner la longueur de la liste.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span></span></span></code></pre></div>
+<p><strong>4. Autres méthodes de liste TRES utiles</strong></p>
+<blockquote>
+<p>Retirer un élément de liste: méthode <code>pop</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;e&#34;</span><span class="p">,</span><span class="s2">&#34;i&#34;</span><span class="p">,</span><span class="s2">&#34;o&#34;</span><span class="p">,</span><span class="s2">&#34;u&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#34;e&#34;,&#34;i&#34;,&#34;o&#34;]</span></span></span></code></pre></div>
+<blockquote>
+<p>Longueur d&rsquo;une liste: fonction <code>len</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;e&#34;</span><span class="p">,</span><span class="s2">&#34;i&#34;</span><span class="p">,</span><span class="s2">&#34;o&#34;</span><span class="p">,</span><span class="s2">&#34;u&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">len</span><span class="p">(</span><span class="n">voyelles</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 4 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># car la liste contient 4 éléments</span></span></span></code></pre></div>
+<p><strong>5. Liste de listes</strong>
+Les éléments contenus peuvent aussi être une liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">positions</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span></span></span></code></pre></div>
+<p>C&rsquo;est la représentation d&rsquo;un tableau, qui sur un tableur peut être représenté sous la forme suivante:</p>
+<p>
+<figure >
+    
+        <img src="../images/tableau.png"  />
+    
+    
+</figure>
+
+Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <code>[1,2]</code>, et <code>[2,4]</code></p>
+<p>Pour accéder au premier élément <code>[0,0]</code>, on fait:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">positions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span></span></span></code></pre></div>
+<p>Pour accéder au deuxieme élément <code>[1,2]</code>, on fait:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">positions</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span></span></span></code></pre></div>
+<p>Et pour acceder au premier élément du 2e élément de <code>positions</code>, c&rsquo;est à dire à la valeur 1, on fait:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">positions</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span></span></span></code></pre></div>
+<p>Cela permet d&rsquo;afficher ou modifier la valeur 1.</p>
+<h2 id="boucles-bornées">Boucles bornées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1. Definition:</strong> Une <strong>boucle bornée</strong>  est un système d’instructions qui permet de répéter un certain nombre de fois toute une série d’opérations.</p>
+<p>La syntaxe d&rsquo;une boucle bornée, en langage algorithmique peut s&rsquo;écrire:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Pour</span> <span class="n">i</span> <span class="n">allant</span> <span class="n">de</span> <span class="mi">0</span> <span class="n">a</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Faire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="n">instruction</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">   <span class="n">instruction</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="n">FinPour</span></span></span></code></pre></div>
+<p>En python, la syntaxe correspondante est:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction</span> <span class="mi">2</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/cb_boucle1.png" alt="demonstration avec python_puzzle. La boucle realise 4 itérations." />
+    
+    
+    <figcaption>
+        <p>
+        demonstration avec python_puzzle. La boucle realise 4 itérations.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li>
+<p><strong>Remarques:</strong></p>
+<ul>
+<li>Le bloc d&rsquo;instruction sera executé n fois. Celui-ci peut contenir une ou plusieurs instructions, du moment qu&rsquo;elles sont bien positionnées dans le bloc.</li>
+<li>En <em>Python</em>, le <strong>bloc</strong> est identifié par une <strong>indentation</strong>: un retrait par rapport au bord gauche, comprenant 2 espaces (ou 4).</li>
+<li>Pour sortir du bloc, on élimine l&rsquo;indentation (on revient sur le bord gauche)</li>
+<li>La fonction <code>range(n)</code> renvoie la liste des entiers de 0 à n-1. C’est un principe général en informatique, on commence toujours à compter à partir de 0, et il faut donc s’arrêter à n-1 pour effectuer n fois la boucle.</li>
+<li>Pour chaque itération, le variant <code>i</code> prend une nouvelle valeur de l&rsquo;ensemble <code>{0,1,2,... n-1}</code>, et peut être utilisé dans le bloc d&rsquo;instructions.</li>
+<li>On peut choisir n&rsquo;importe quel nom pour le variant, pas seulement <code>i</code>.</li>
+</ul>
+</li>
+<li>
+<p><em>Exemple</em></p>
+</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
+<p><em>Remarque:</em> <code>range(3)</code> va créer une liste itérable constituée des valeurs 0, 1, 2. Ce sont les valeurs prises successivement par le variant <code>c</code> dans <code>for c in range(3)</code></p>
+<p><strong>2. Parcourir les éléments d&rsquo;une liste L avec <code>range(len(L))</code></strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;a&#34;</span><span class="p">,</span><span class="s2">&#34;b&#34;</span><span class="p">,</span><span class="s2">&#34;c&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="n">c</span></span></span></code></pre></div>
+<p><em>Remarque:</em> Rappelez-vous que <code>len(L)</code> est une fonction qui retourne la longueur de la liste <code>L</code>. Si <code>L</code> contient 3 éléments, alors <code>len(L)</code> vaut 3.</p>
+<p><strong>3. Parcourir les éléments d&rsquo;une liste L avec <code>in L</code></strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;a&#34;</span><span class="p">,</span><span class="s2">&#34;b&#34;</span><span class="p">,</span><span class="s2">&#34;c&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span></span></span></code></pre></div>
+<p><em>Ramarque:</em> Cette fois-ci, le variant <code>c</code> prend successivement toutes les valeurs de la liste <code>L</code>.</p>
+<h3 id="conclusion-itérable-et-variant-de-boucle-bornée">Conclusion: Itérable et variant de boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les instructions <code>for i in range(len(L))</code> et <code>for c in L</code> ont à peu près le même objectif: celui de parcourir TOUS les éléments de la liste L.</p>
+<ul>
+<li>
+<p>Ce qui est COMMUN: c&rsquo;est l&rsquo;utilisation du mot clé <code>IN</code>, qui va créer ce que l&rsquo;on appelle un <em>itérable</em>, c&rsquo;est-à-dire une liste de valeurs qui seront proposées l&rsquo;une après l&rsquo;autre pour le variant de boucle.</p>
+</li>
+<li>
+<p>Ce qui est DIFFERENT: Dans le premier cas, on utilise la fonction <code>range</code>, qui créé un itérable entre 0 et la valeur mise en paramètre (valeur -1 pour être exact). Ce sont par exemple <strong>les indices</strong> de la liste <code>L</code>.</p>
+</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># exemple 1
+</span></span><span class="line"><span class="cl">for i in range(5):
+</span></span><span class="line"><span class="cl">  # instruction</span></span></code></pre></div>
+<p>La boucle va s&rsquo;executer 5 fois. Mais à chaque fois, le variant i prend successivement l&rsquo;une des valeurs dans <code>[0,1,2,3,4]</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># exemple 2
+</span></span><span class="line"><span class="cl">L = [0, 10, 20, 30]
+</span></span><span class="line"><span class="cl">for c in L:
+</span></span><span class="line"><span class="cl">  # instruction</span></span></code></pre></div>
+<p>L&rsquo;instruction <code>for c in L</code> va, elle, créer un itérable constitué des <strong>valeurs</strong> de la liste <code>L</code></p>
+<p>Le nombre d&rsquo;itération sera égal au nombre <code>len(L)</code>, soit 4. Au cours des itérations, le variant <code>c</code> va prendre successivement chaque valeur de <code>L</code>, soit <code>[0, 10, 20, 30]</code></p>
+<h2 id="tracer-un-graphique-y--fx">Tracer un graphique y = f(x)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour tracer un graphique <code>y=f(x)</code>, il faut disposer de 2 listes de mêmes dimensions <code>x</code> et <code>y</code>. Les coordonnées des points sont alors:</p>
+<ul>
+<li>(x[0],y[0]) pour le point M0</li>
+<li>(x[1],y[1]) pour le point M1</li>
+<li>&hellip;</li>
+</ul>
+<p>On utilise la fonction <code>plt.scatter</code> (nuage de points) ou bien <code>plt.plot</code> (courbe) du module <code>matplotlib.pyplot</code> qui est importé à la premiere ligne du script de la manière suivante: <code>import matplotlib.pyplot as plt</code></p>
+<p>Les 2 listes sont positionnées entre parenthèses, dans l&rsquo;ordre (liste des X, liste des Y). Ce sont les arguments de la fonction <code>plt.scatter</code> (ou de <code>plt.plot</code>).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></span><span class="line"><span class="cl"><span class="n">temps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">60</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">temps</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;temps(min)&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Temperature(°C)&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/graphique.png"  />
+    
+    
+</figure>
+
+<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<p>Lien vers l&rsquo;énoncé du <a href="../page3"> 
+            TP5: Listes
+        </a> </p>
+</li>
+<li>
+<p>Lien vers l&rsquo;énoncé du <a href="../../../python_avance/pages/boucles/page4"> 
+            TP6: boucles et parcours de listes
+        </a> </p>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b" checked><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

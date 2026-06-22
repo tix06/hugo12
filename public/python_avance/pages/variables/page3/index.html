@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Travaux pratiques Les types mutables et non mutables en python Vous traiterez chacun des exemples suivants en utilisant l’editeur de pythontutor
+Saisir les 2 lignes de code suivantes :
+Cliquer sur Visualize execution.
+Dérouler alors le script ligne par ligne avec next.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="TP variables :: allopizza">
+    <meta name="twitter:description" content="Travaux pratiques Les types mutables et non mutables en python Vous traiterez chacun des exemples suivants en utilisant l’editeur de pythontutor
+Saisir les 2 lignes de code suivantes :
+Cliquer sur Visualize execution.
+Dérouler alors le script ligne par ligne avec next.">
+    <meta property="og:url" content="//localhost:1313/python_avance/pages/variables/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="TP variables :: allopizza">
+    <meta property="og:description" content="Travaux pratiques Les types mutables et non mutables en python Vous traiterez chacun des exemples suivants en utilisant l’editeur de pythontutor
+Saisir les 2 lignes de code suivantes :
+Cliquer sur Visualize execution.
+Dérouler alors le script ligne par ligne avec next.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="TP variables :: allopizza">
+    <meta itemprop="description" content="Travaux pratiques Les types mutables et non mutables en python Vous traiterez chacun des exemples suivants en utilisant l’editeur de pythontutor
+Saisir les 2 lignes de code suivantes :
+Cliquer sur Visualize execution.
+Dérouler alors le script ligne par ligne avec next.">
+    <meta itemprop="wordCount" content="997">
+    <title>TP variables :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781974426" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781974426" defer></script>
+    <script src="/js/search-lunr.js?1781974426" defer></script>
+    <script src="/js/search.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781974426";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781974426" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781974426" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781974426" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781974426" rel="stylesheet">
+    <link href="/css/theme.css?1781974426" rel="stylesheet">
+    <link href="/css/format-html.css?1781974426" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/pages\/variables\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/pages/variables/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#les-types-mutables-et-non-mutables-en-python">Les types mutables et non mutables en python</a></li>
+    <li><a href="#créer-des-tests-sur-lidentité-des-variables">créer des tests sur l&rsquo;identité des variables</a></li>
+    <li><a href="#types-mutables">types mutables</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#objets-non-mutables--copie-par-valeur">Objets non mutables : copie par valeur</a></li>
+    <li><a href="#objets-mutables--copie-par-référence">Objets mutables : copie par référence</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#objets-non-mutables-en-python">Objets non mutables en python</a></li>
+    <li><a href="#objets-mutables-en-python">Objets mutables en python</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP variables</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/pages/variables/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/tp/python4_poo/index.html" title="TP Python4 POO (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/pages/boucles/page4/index.html" title="TP2 listes, indices, méthodes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tp-variables">TP variables</h1>
+
+<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="les-types-mutables-et-non-mutables-en-python">Les types mutables et non mutables en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Vous traiterez chacun des exemples suivants en utilisant l&rsquo;editeur de  <a href="http://www.pythontutor.com/visualize.html#mode=edit" rel="external">pythontutor</a></p>
+<blockquote>
+<p>Saisir les 2 lignes de code suivantes :</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/pythontutor1.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p>Cliquer sur <strong>Visualize execution</strong>.</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/pythontutor2.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p>Dérouler alors le script ligne par ligne avec <strong>next</strong>.</p>
+</blockquote>
+<h2 id="créer-des-tests-sur-lidentité-des-variables">créer des tests sur l&rsquo;identité des variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Revenir à la page d&rsquo;edition et ajouter à la suite du script les 3 tests suivants :</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/pythontutor3.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p>Executer le programme</p>
+</blockquote>
+<p>Chaque test ajouté est une assertion, qui arrête le programme lorsque l&rsquo;un des tests retourne <code>False</code>. Sinon, le programme poursuit normalement, sans rien signaler.</p>
+<p>L&rsquo;interêt est plus grand si on ajoute un commentaire explicite. C&rsquo;est le message qui serait normalement affiché dans le <code>Traceback</code> de la console. (trace d&rsquo;erreur).</p>
+<p>
+<figure >
+    
+        <img src="../images/pythontutor4.png"  />
+    
+    
+</figure>
+
+Si le programme s&rsquo;arrête sur un test renvoyant <code>False</code>, mais que l&rsquo;on veut poursuivre les autres tests, il faudra mettre la ligne du test en commentaire:</p>
+
+<figure >
+    
+        <img src="../images/pythontutor5.png"  />
+    
+    
+</figure>
+
+<p><strong>Question a:</strong> Quelles expressions donnent <code>True</code>.</p>
+<blockquote>
+<p>Revenir dans la fenêtre d&rsquo;edition et ajouter maintenant la ligne :<code>b = b + 1</code> après la ligne <code>b = a</code></p>
+</blockquote>
+<p><strong>Question b:</strong> Refaire les tests et préciser quelles sont les expressions qui donnent <code>True</code>.</p>
+<h2 id="types-mutables">types mutables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Remplacer le script précédent par celui-ci :</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># a et b pointent-ils vers la même reference?</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># puis modifier b</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># afficher b puis a</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = </span><span class="si">{}</span><span class="s1">, a = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">))</span></span></span></code></pre></div>
+<blockquote>
+<p>Puis réaliser les mêmes opérations : <em>Visualiser pas à pas</em>, tester l&rsquo;identité des variables avec les assertions.</p>
+</blockquote>
+<p><strong>Question c:</strong> Que valent <code>a</code> et <code>b</code> après l&rsquo;execution du programme?</p>
+<p><strong>Question d:</strong> La copie <code>b = a</code>, est-elle une copie par <em>valeur</em> (2 objets différents) ou par <em>reference</em> (2 objet identiques)?</p>
+<h1 id="fonctions-et-objets-mutablesnon-mutables">Fonctions et objets mutables/non mutables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les objets mutables passés en argument d&rsquo;une fonction sont copiés par <strong>référence</strong>. Les autres sont copiés par <strong>valeur</strong>.</p>
+<h2 id="objets-non-mutables--copie-par-valeur">Objets non mutables : copie par valeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># définition d&#39;une fonction carre()</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># programme principal</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">resultat</span> <span class="o">=</span> <span class="n">carre</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>Tester ce script avec l&rsquo;editeur de Pythontutor.</p>
+</blockquote>
+<p><strong>Question e:</strong> <code>x</code> et <code>z</code>, sont-ils 2 objets identiques?</p>
+<h2 id="objets-mutables--copie-par-référence">Objets mutables : copie par référence<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette fois, c&rsquo;est une liste (objet mutable) qui est passée en argument :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mafonction</span><span class="p">(</span><span class="n">L2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">L1</span> <span class="ow">is</span> <span class="n">L2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">L2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mafonction</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>tester le script avec pythontutor</p>
+</blockquote>
+<p><strong>Question f:</strong> <code>L1</code> et <code>L2</code>, sont-ils 2 objets identiques? La copie est-elle réalisée par valeur ou bien par <em>référence</em>?</p>
+<h1 id="conclusion--objets-mutables-et-non-mutables">Conclusion : objets mutables et non mutables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="objets-non-mutables-en-python">Objets non mutables en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les variables simples sont non mutables. On peut réaliser des affectations, ce qui a pour effet de mettre à jour la valeur stockée dans la mémoire réservée.</p>
+<h2 id="objets-mutables-en-python">Objets mutables en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La copie d&rsquo;un objet <em>mutable</em> se fait par <em>référence</em>. Cela peut entrainer des erreurs lors de la manipulation de ces objets, puisque la modification de l&rsquo;un va aussi modifier toutes les variables mutables possédant la même référence.</p>
+<p>De même, un objet mutable passé en argument d&rsquo;une fonction est modifié par ce que l&rsquo;on appelle : un <em>effet de bord</em> dans la fonction.</p>
+<p>Imaginons un script qui prend les coordonnées de depart d&rsquo;un point, <code>coordonnees_init</code>, et realise une translation (ajoute 1 à x et 2 à y).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fonction1</span><span class="p">(</span><span class="n">deplacement</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">deplacement</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coordonnees_init</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">fonction1</span><span class="p">(</span><span class="n">coordonnees_init</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">coordonnees_init</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>Tester le script de la fonction1</p>
+</blockquote>
+<p><strong>Question g:</strong> Les nouvelles coordonnées sont stockées dans la Liste <code>deplacement</code>. Comment évoluent les coordonnées dans les 2 listes? La liste de coordonnées d&rsquo;origine est-elle modifiée par le script?</p>
+<blockquote>
+<p>Tester maintenant le script de la fonction2</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fonction2</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span> <span class="o">=</span> <span class="n">coordonnees_init</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">deplacement</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coordonnees_init</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">fonction2</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">coordonnees_init</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>Question h:</strong> Comment évoluent les coordonnées dans chacune des listes? <code>deplacement</code> et <code>coordonnees_init</code> pointent-ils vers la même reference?</p>
+<p>Pour faire une copie de la liste a par <em>valeur</em>, il faudra la découper sans mentionner les 2 indices avec <code>b = a[:]</code>, ou bien utiliser la fonction <code>list</code> , avec <code>b = list(a)</code>, ou bien utiliser la méthode <code>copy()</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fonction3</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span> <span class="o">=</span> <span class="n">coordonnees_init</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">deplacement</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">deplacement</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coordonnees_init</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">fonction3</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">coordonnees_init</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>Question i:</strong> Cette fois, <code>deplacement</code> est-il une copie par <em>valeur</em> ou par <em>reference</em> de <code>coordonnees_init</code>? Précisez ce qu&rsquo;est une copie par <em>valeur</em>.</p>
+<h1 id="dictionnaires">Dictionnaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un dictionnaire est un tableau associatif qui stocke des couples: <code>clé: valeur</code>. Un dictionnaire est entouré d&rsquo;accolades <code>{}</code>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mondico</span> <span class="o">=</span> <span class="p">{}</span><span class="c1"># un dictionnaire vide</span>
+</span></span><span class="line"><span class="cl"><span class="n">mon_autre_dico</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span><span class="c1"># une autre façon de créer un dictionnaire vide</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">personne</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Nastic&#39;</span><span class="p">,</span> <span class="s1">&#39;Prénom&#39;</span><span class="p">:</span> <span class="s1">&#39;Jim&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">personne</span><span class="p">)</span></span></span></code></pre></div>
+<p>Dans l&rsquo;exemple précédent, le dictionnaire <em>personne</em> contient trois couples clé: valeur, à savoir :</p>
+<table>
+	<thead>
+			<tr>
+					<th>clé</th>
+					<th></th>
+					<th>valeur</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>&lsquo;Nom&rsquo;</td>
+					<td>→</td>
+					<td>&lsquo;Nastic&rsquo;</td>
+			</tr>
+			<tr>
+					<td>&lsquo;Prénom&rsquo;</td>
+					<td>→</td>
+					<td>&lsquo;Jim&rsquo;</td>
+			</tr>
+			<tr>
+					<td>&lsquo;Age&rsquo;</td>
+					<td>→</td>
+					<td>42</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>à tester:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Jim</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Nastic&#39;</span><span class="p">,</span> <span class="s1">&#39;Prénom&#39;</span><span class="p">:</span> <span class="s1">&#39;Jim&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Dan</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Nastic&#39;</span><span class="p">,</span> <span class="s1">&#39;Prénom&#39;</span><span class="p">:</span> <span class="s1">&#39;Dan&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">famille</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="n">famille</span><span class="p">[</span><span class="s1">&#39;aine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Jim</span>
+</span></span><span class="line"><span class="cl"><span class="n">famille</span><span class="p">[</span><span class="s1">&#39;cadet&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dan</span> </span></span></code></pre></div>
+<p>Puis modifier l&rsquo;age de Jim:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Jim</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">43</span></span></span></code></pre></div>
+<p><strong>Question j</strong>: Cela a-t-il modifié la valeur de l&rsquo;age de Dan? Cela a-t-il modifié l&rsquo;une des valeurs de <code>famille</code>?</p>
+<p>Conclure (<code>famille</code> pointe t-il vers la reference de <code>Jim</code> ou bien s&rsquo;agit-il d&rsquo;une copie par valeur?).</p>
+<h1 id="classe-et-objets">Classe et objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Pour les objets, c&rsquo;est le même principe: toute variable de classe pointe pour toute la durée du programme sur la même réference. La référence va être partagée entre toutes les instances de la classe. C’est donc le même objet !</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">glace</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">supplements</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chantilly&#39;</span><span class="p">,</span> <span class="s1">&#39;praline&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">g1</span> <span class="o">=</span> <span class="n">glace</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">g2</span> <span class="o">=</span> <span class="n">glace</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">g1</span><span class="o">.</span><span class="n">supplements</span><span class="p">,</span><span class="n">g2</span><span class="o">.</span><span class="n">supplements</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>Question k1</strong>: Executer le script. Que valent <code>g1.supplements</code> et <code>g2.supplements</code>? Quel est leur type?</p>
+<p><strong>Question k2</strong>: Ajouter l&rsquo;instruction <code>g1.supplements.pop()</code> avant la dernière ligne. Que valent maintenant . <code>g1.supplements</code> et <code>g2.supplements</code>? Conclure.</p>
+<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Pour le script suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L2</span> <span class="o">=</span> <span class="n">L1</span>
+</span></span><span class="line"><span class="cl"><span class="n">L3</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">L</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ma_fonction</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span></span></span></code></pre></div>
+<p>Reproduire sommairement le schéma de la structure de données telle qu&rsquo;elle serait représentée dans Pythontutor, à la fin de ce script.</p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>TP5 <a href="/docs/python/pages/boucles/page3/">listes, indices, méthodes</a></li>
+<li>TP6 <a href="../../boucles/page4">boucles et parcours de liste</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page2/index.html"><a class="padding" href="/python_bases/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/pages/traitement/page5/index.html"><a class="padding" href="/python_avance/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/es/page1/index.html"><a class="padding" href="/python_avance/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/es/ex1/index.html"><a class="padding" href="/python_avance/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/fonctions/page1/index.html"><a class="padding" href="/python_avance/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page1/index.html"><a class="padding" href="/python_avance/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python5_formes/index.html"><a class="padding" href="/python_avance/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page4/index.html"><a class="padding" href="/python_avance/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page6/index.html"><a class="padding" href="/python_avance/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/index_listes1/index.html"><a class="padding" href="/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python2_algos/index.html"><a class="padding" href="/python_avance/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page2/index.html"><a class="padding" href="/python_avance/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python6_codes/index.html"><a class="padding" href="/python_avance/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page3/index.html"><a class="padding" href="/python_avance/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page5/index.html"><a class="padding" href="/python_avance/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/conditions/page4/index.html"><a class="padding" href="/python_avance/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/conditions/page3/index.html"><a class="padding" href="/python_avance/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/traitement/page31/index.html"><a class="padding" href="/python_avance/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/tp/python4_poo/index.html"><a class="padding" href="/python_avance/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/python_avance/pages/variables/page3/index.html"><a class="padding" href="/python_avance/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/boucles/page4/index.html"><a class="padding" href="/python_avance/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page2/index.html"><a class="padding" href="/python_avance/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/pages/variables/page1/index.html"><a class="padding" href="/python_avance/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781974426"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781974426" defer></script>
+    <script src="/js/theme.js?1781974426" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

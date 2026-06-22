@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Prérequis:
+Cours sur les tableaux et listes Python: page du site Partie 1: Tableaux et traitement sur Excel Commencer par remplir les notes de l’élève comme sur l’image ci-dessous (cellules $C2$ à $K2$)
+tableau de données Ajouter une fonction pour calculer la moyenne de ces notes. Dans la cellule $B2$, ecrire le signe = puis le nom de la fonction $= moyenne($">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="tableaux Excel et python :: allopizza">
+    <meta name="twitter:description" content="Prérequis:
+Cours sur les tableaux et listes Python: page du site Partie 1: Tableaux et traitement sur Excel Commencer par remplir les notes de l’élève comme sur l’image ci-dessous (cellules $C2$ à $K2$)
+tableau de données Ajouter une fonction pour calculer la moyenne de ces notes. Dans la cellule $B2$, ecrire le signe = puis le nom de la fonction $= moyenne($">
+    <meta property="og:url" content="//localhost:1313/docs/python_avance/pages/boucles/page5/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="tableaux Excel et python :: allopizza">
+    <meta property="og:description" content="Prérequis:
+Cours sur les tableaux et listes Python: page du site Partie 1: Tableaux et traitement sur Excel Commencer par remplir les notes de l’élève comme sur l’image ci-dessous (cellules $C2$ à $K2$)
+tableau de données Ajouter une fonction pour calculer la moyenne de ces notes. Dans la cellule $B2$, ecrire le signe = puis le nom de la fonction $= moyenne($">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Docs">
+    <meta itemprop="name" content="tableaux Excel et python :: allopizza">
+    <meta itemprop="description" content="Prérequis:
+Cours sur les tableaux et listes Python: page du site Partie 1: Tableaux et traitement sur Excel Commencer par remplir les notes de l’élève comme sur l’image ci-dessous (cellules $C2$ à $K2$)
+tableau de données Ajouter une fonction pour calculer la moyenne de ces notes. Dans la cellule $B2$, ecrire le signe = puis le nom de la fonction $= moyenne($">
+    <meta itemprop="wordCount" content="700">
+    <title>tableaux Excel et python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781974367" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781974367" defer></script>
+    <script src="/js/search-lunr.js?1781974367" defer></script>
+    <script src="/js/search.js?1781974367" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781974367";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781974367" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781974367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781974367" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781974367" rel="stylesheet">
+    <link href="/css/theme.css?1781974367" rel="stylesheet">
+    <link href="/css/format-html.css?1781974367" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/docs\/python_avance\/pages\/boucles\/page5\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/docs/python_avance/pages/boucles/page5/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#traitement-sur-une-liste">Traitement sur une liste</a></li>
+    <li><a href="#traitement-sur-une-table-liste-de-listes">Traitement sur une table (liste de listes)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#traitements-sur-le-fichier-csv-importé-du-tableur">Traitements sur le fichier csv importé du tableur</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/docs/index.html"><span itemprop="name">Docs</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/docs/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tableaux Excel et python</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/docs/python_avance/pages/boucles/page5.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python_avance/pages/traitement/page3/index.html" title="sql et python (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python_avance/pages/conditions/page4/index.html" title="TP boucles non bornées (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable docs" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tableaux-excel-et-python">tableaux Excel et python</h1>
+
+
+<figure >
+    
+        <img src="../images/exc17.png"  />
+    
+    
+</figure>
+
+<p>Prérequis:</p>
+<ul>
+<li>Cours sur les tableaux et listes Python: <a href="/docs/python/pages/boucles/page2/">page du site</a></li>
+</ul>
+<h1 id="partie-1-tableaux-et-traitement-sur-excel">Partie 1: Tableaux et traitement sur Excel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Commencer par remplir les notes de l&rsquo;élève comme sur l&rsquo;image ci-dessous (cellules $C2$ à $K2$)</p>
+
+<figure >
+    
+        <img src="../images/exc1.png" alt="tableau de données" />
+    
+    
+    <figcaption>
+        <p>
+        tableau de données
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Ajouter une fonction pour calculer la moyenne de ces notes. Dans la cellule $B2$, ecrire le signe <code>=</code> puis le nom de la fonction $= moyenne($</p>
+
+<figure >
+    
+        <img src="../images/exc2.png" alt="saisie de la fonction moyenne" />
+    
+    
+    <figcaption>
+        <p>
+        saisie de la fonction moyenne
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Compléter avec la plage de cellule contenant les valeurs:</p>
+$$= moyenne(C2:K2)$$
+<figure >
+    
+        <img src="../images/exc3.png" alt="plage de valeurs de C2 à K2" />
+    
+    
+    <figcaption>
+        <p>
+        plage de valeurs de C2 à K2
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>La valeur moyenne comprend trop de décimales&hellip;</p>
+
+<figure >
+    
+        <img src="../images/exc4.png"  />
+    
+    
+</figure>
+
+<p>Ajouter une fonction d&rsquo;arrondi:</p>
+$$= arrondi(moyenne(C2:K2);1)$$
+<figure >
+    
+        <img src="../images/exc5.png" alt="arrondir à 1 ou 2 décimale-s" />
+    
+    
+    <figcaption>
+        <p>
+        arrondir à 1 ou 2 décimale-s
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Ajouter des etiquettes aux colonnes. Commencer par ecrire $note1$ dans la cellule $C1$.</p>
+
+<figure >
+    
+        <img src="../images/exc6.png" alt="etiquette note1" />
+    
+    
+    <figcaption>
+        <p>
+        etiquette note1
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Puis positionner le curseur en bas à droite dans la cellule. Et cliquer-glisser vers la droite pour <em>reproduire la mise en forme</em>.</p>
+
+<figure >
+    
+        <img src="../images/exc7.png" alt="remplissage automatique des noms des colonnes" />
+    
+    
+    <figcaption>
+        <p>
+        remplissage automatique des noms des colonnes
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Faire la même manipulation pour obtenir des etiquettes aux lignes (eleve1, eleve2,&hellip;)</p>
+
+<figure >
+    
+        <img src="../images/exc9.png"  />
+    
+    
+</figure>
+
+<p>Dans la cellule $C3$, mettre une note aleatoire entre 0 et 20 avec:</p>
+$$= alea() * 20$$
+<figure >
+    
+        <img src="../images/exc8.png" alt="ajout d&#39;une valeur aleatoire" />
+    
+    
+    <figcaption>
+        <p>
+        ajout d&#39;une valeur aleatoire
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>La valeur contient trop de décimales.</p>
+
+<figure >
+    
+        <img src="../images/exc10.png"  />
+    
+    
+</figure>
+
+<p>Ajouter la fonction $arrondi$ pour limiter à une seule décimale.</p>
+
+<figure >
+    
+        <img src="../images/exc11.png" alt="=arrondi(alea..." />
+    
+    
+    <figcaption>
+        <p>
+        =arrondi(alea...
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Cliquer-glisser avec le curseur vers la droite et vers le bas pour obtenir un tableau de valeurs aleatoires:</p>
+
+<figure >
+    
+        <img src="../images/exc12.png"  />
+    
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/exc13.png" alt="tableau de valeurs aleatoires" />
+    
+    
+    <figcaption>
+        <p>
+        tableau de valeurs aleatoires
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Puis sauvegarder le tableau avec l&rsquo;extension $.csv$</p>
+
+<figure >
+    
+        <img src="../images/exc14.png" alt="classe.csv" />
+    
+    
+    <figcaption>
+        <p>
+        classe.csv
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Ce format est echangeable entre logiciels et peut être traité en langage python (Partie 2).</p>
+<p>Si vous l&rsquo;ouvrez avec un editeur textuel (notepad++, &hellip;), vous devriez obtenir à peu près ceci:</p>
+
+<figure >
+    
+        <img src="../images/exc15.png" alt="contenu du fichier classe.csv" />
+    
+    
+    <figcaption>
+        <p>
+        contenu du fichier classe.csv
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Un fichier dans lequel les lignes représentent les $eleves$. Les valeurs sont separées par des points virgules &ldquo;;&rdquo;</p>
+<h1 id="partie-2-tableaux-python">Partie 2: Tableaux python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="traitement-sur-une-liste">Traitement sur une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le script suivant calcule la moyenne sur une liste de notes. La première valeur de la liste est reservée pour y placer une valeur, à la fin du programme. Les notes commencent donc à partir de l&rsquo;indice 1 de cette liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;&#34;</span><span class="p">,</span><span class="mf">12.0</span><span class="p">,</span><span class="mf">14.5</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">18.5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span><span class="o">+=</span><span class="n">x</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="n">moyenne</span><span class="p">(</span><span class="n">list1</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<ol>
+<li>Voir l&rsquo;animation sur Pythontutor: visualiser le parcours et traitement sur une liste de notes <code>list1</code>:</li>
+</ol>
+</blockquote>
+<p>Lien: <a href="https://pythontutor.com/render.html#code=list1%20%3D%20%5B%22%22,12.0,14.5,10.0,18.5%5D%0A%0Adef%20moyenne%28L%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20x%20in%20L%3A%0A%20%20%20%20%20%20%20%20s%2B%3Dx%0A%20%20%20%20return%20s/len%28L%29%0A%20%20%20%20%0Am%20%3D%20moyenne%28list1%5B1%3A%5D%29%0Aprint%28m%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" rel="external">pythontutor</a></p>
+
+<figure >
+    
+        <img src="../images/pythontutor_list.png" alt="nom et valeur des variables dans pythontutor - liste" />
+    
+    
+    <figcaption>
+        <p>
+        nom et valeur des variables dans pythontutor - liste
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>1a. Commenter le schéma ci-dessus: que signifient les flèches? Que signifient les cases bleues et jaunes?</p>
+</blockquote>
+<blockquote>
+<p>1b. Pourquoi écrit-on l&rsquo;instruction <code>m = moyenne(list1[1:])</code> et non <code>m = moyenne(list1)</code>?</p>
+</blockquote>
+<blockquote>
+<p>1c Modifier le script (faire <em>edit</em> dans pythontutor) pour que le programme place la
+valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
+</blockquote>
+<h2 id="traitement-sur-une-table-liste-de-listes">Traitement sur une table (liste de listes)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<ol start="2">
+<li>Animation sur Pythontutor: visualiser le parcours et traitement sur une liste</li>
+</ol>
+</blockquote>
+<p>Execution du script suivant sur <a href="https://pythontutor.com/render.html#code=classe%20%3D%20%5B%5B'%5Cufeff','moyenne','note1','note2','note3','note4','note5',%0A%20%20'note6','note7','note8','note9'%5D,%0A%20%5B'eleve1',%20'12,5',%2010.0,%208.9,%209.9,%2012.3,%2011.1,%2012.3,%2013.1,%2014.5,%2020.0%5D,%0A%20%5B'eleve2',%20'',%204.2,%202.1,%2016.5,%2015.0,%2019.6,%207.5,%2010.3,%2018.8,%2017.4%5D%5D%0A%0Adef%20moyenne%28tab%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20note%20in%20tab%3A%0A%20%20%20%20%20%20%20%20s%20%2B%3D%20note%0A%20%20%20%20return%20s%20/%20len%28tab%29%0A%0Aeleve%20%3D%20classe%5B2%5D%0Am%20%3D%20round%28moyenne%28eleve%5B2%3A%5D%29,2%29%0Aprint%28%22nom%20eleve%3A%20%7B%7D%20moyenne%3A%20%7B%7D%22.format%28eleve%5B0%5D,m%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" rel="external">Pythontutor</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">classe</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;moyenne&#39;</span><span class="p">,</span><span class="s1">&#39;note1&#39;</span><span class="p">,</span><span class="s1">&#39;note2&#39;</span><span class="p">,</span><span class="s1">&#39;note3&#39;</span><span class="p">,</span><span class="s1">&#39;note4&#39;</span><span class="p">,</span><span class="s1">&#39;note5&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;note6&#39;</span><span class="p">,</span><span class="s1">&#39;note7&#39;</span><span class="p">,</span><span class="s1">&#39;note8&#39;</span><span class="p">,</span><span class="s1">&#39;note9&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;eleve1&#39;</span><span class="p">,</span> <span class="s1">&#39;12,5&#39;</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">8.9</span><span class="p">,</span> <span class="mf">9.9</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">11.1</span><span class="p">,</span> <span class="mf">12.3</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;eleve2&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="mf">4.2</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">16.5</span><span class="p">,</span> <span class="mf">15.0</span><span class="p">,</span> <span class="mf">19.6</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">,</span> <span class="mf">18.8</span><span class="p">,</span> <span class="mf">17.4</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">s</span> <span class="o">+=</span> <span class="n">note</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">eleve</span> <span class="o">=</span> <span class="n">classe</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">moyenne</span><span class="p">(</span><span class="n">eleve</span><span class="p">[</span><span class="mi">2</span><span class="p">:]),</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/pythontutor_notes.png" alt="nom et valeur des variables dans pythontutor - tableau" />
+    
+    
+    <figcaption>
+        <p>
+        nom et valeur des variables dans pythontutor - tableau
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>2a. Commenter le schéma ci-dessus: que signifient les flèches? Que signifient les cases bleues et jaunes?</p>
+</blockquote>
+<blockquote>
+<p>2b. Que contient la liste <code>eleve</code>? Recopier ici son contenu.</p>
+</blockquote>
+<blockquote>
+<p>2c. Pourquoi écrit-on l&rsquo;instruction <code>m = moyenne(eleve[2:])</code> et non <code>m = moyenne(eleve))</code>?</p>
+</blockquote>
+<blockquote>
+<p>2d. Modifier le script pour que le programme place la valeur m dans la case <code>eleve[1]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
+</blockquote>
+<blockquote>
+<p>2e. Modifier maintenant le programme pour calculer la moyenne de l&rsquo;élève 1. Comment doit-on modifier le programme?</p>
+</blockquote>
+<h1 id="prolongement">Prolongement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="traitements-sur-le-fichier-csv-importé-du-tableur">Traitements sur le fichier csv importé du tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Telecharger et placer dans le même dossier:</p>
+<ul>
+<li><a href="/scripts/notebooks/tableur_vers_python.ipynb">tableur_vers_python.ipynb</a></li>
+<li>fichier <a href="/scripts/notebooks/classe.csv">classe.csv</a></li>
+<li>fichier <a href="/scripts/notebooks/utilitaire_notes.py">utilitaire_notes.py</a></li>
+</ul>
+<p>Deux options sont possibles pour organiser votre dossier et vos fichiers:</p>
+<ul>
+<li>Vous pouvez placer <em>classe.csv</em> dans le même dossier que le notebook: Depuis le script python, ouvrez le alors avec l&rsquo;instruction <code>with open('classe.csv', newline='') as csvfile:</code></li>
+<li>ou bien dans un sous dossier <code>datas</code>. Ouvrir alors avec <code>with open('datas/classe.csv', newline='') as csvfile:</code></li>
+</ul>
+
+<figure >
+    
+        <img src="../images/exc16.png"  />
+    
+    
+</figure>
+
+<p>Utiliser une distribution python (<em>jupyter notebook</em>) en <em>local</em>.</p>
+<blockquote>
+<ol>
+<li>Traiter la partie 1 du notebook</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>Traiter la partie 2 du notebook</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>Traiter la feuille d&rsquo;exercices sur les tableaux en python: <a href="/pdf/NSI_1/TP_excel_vers_python.pdf">lien vers le pdf</a></li>
+</ol>
+</blockquote>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" checked><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Docs</span></label><a class="padding default-animation" href="/docs/index.html">Docs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/index.html"><input type="checkbox" id="R-section-2bc8eb0299d2b77394b4f5f53e6282a2" aria-controls="R-subsections-2bc8eb0299d2b77394b4f5f53e6282a2"><label for="R-section-2bc8eb0299d2b77394b4f5f53e6282a2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/docs/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-2bc8eb0299d2b77394b4f5f53e6282a2" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/variables/page5_d/index.html"><a class="padding" href="/docs/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/generalites/page2/index.html"><a class="padding" href="/docs/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/variables/page4/index.html"><a class="padding" href="/docs/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/conditions/page2/index.html"><a class="padding" href="/docs/python_bases/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/boucles/page5/index.html"><a class="padding" href="/docs/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/boucles/page2/index.html"><a class="padding" href="/docs/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/fonctions/page2/index.html"><a class="padding" href="/docs/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/es/page54/index.html"><a class="padding" href="/docs/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/generalites/page4/index.html"><a class="padding" href="/docs/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/dessiner/page3/index.html"><a class="padding" href="/docs/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/index.html"><input type="checkbox" id="R-section-38ce63d3033aee5d6de79808b2387e88" aria-controls="R-subsections-38ce63d3033aee5d6de79808b2387e88"><label for="R-section-38ce63d3033aee5d6de79808b2387e88"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/docs/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-38ce63d3033aee5d6de79808b2387e88" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/tp/python1_variables/index.html"><a class="padding" href="/docs/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/docs/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/docs/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/docs/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/docs/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/ascii_art/index.html"><a class="padding" href="/docs/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/docs/python_avance/index.html"><input type="checkbox" id="R-section-54f53843a16bc81a08d289965d58a47c" aria-controls="R-subsections-54f53843a16bc81a08d289965d58a47c" checked><label for="R-section-54f53843a16bc81a08d289965d58a47c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/docs/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-54f53843a16bc81a08d289965d58a47c" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page5/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/es/page1/index.html"><a class="padding" href="/docs/python_avance/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/es/ex1/index.html"><a class="padding" href="/docs/python_avance/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/fonctions/page1/index.html"><a class="padding" href="/docs/python_avance/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page1/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python5_formes/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page4/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page6/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/index_listes1/index.html"><a class="padding" href="/docs/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python2_algos/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page2/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python6_codes/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page3/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/docs/python_avance/pages/boucles/page5/index.html"><a class="padding" href="/docs/python_avance/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/conditions/page4/index.html"><a class="padding" href="/docs/python_avance/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/conditions/page3/index.html"><a class="padding" href="/docs/python_avance/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page31/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python4_poo/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page3/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/boucles/page4/index.html"><a class="padding" href="/docs/python_avance/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page2/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page1/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781974367"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781974367" defer></script>
+    <script src="/js/theme.js?1781974367" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

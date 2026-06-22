@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Etape 4: Base de données exoplanetes.db Principe Nous allons utiliser un script Python pour nous connecter à la base de données exoplanetes.db et tester quelques requêtes en langage SQLite.
+Nous utiliserons la librairie sqlite3 de Python.
+Il est conseillé d’utiliser l’IDE Spyder, ou bien Jupyter Notebook pour editer et interpréter les scripts écrits en Python.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sql et python :: allopizza">
+    <meta name="twitter:description" content="Etape 4: Base de données exoplanetes.db Principe Nous allons utiliser un script Python pour nous connecter à la base de données exoplanetes.db et tester quelques requêtes en langage SQLite.
+Nous utiliserons la librairie sqlite3 de Python.
+Il est conseillé d’utiliser l’IDE Spyder, ou bien Jupyter Notebook pour editer et interpréter les scripts écrits en Python.">
+    <meta property="og:url" content="//localhost:1313/docs/python_avance/pages/traitement/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="sql et python :: allopizza">
+    <meta property="og:description" content="Etape 4: Base de données exoplanetes.db Principe Nous allons utiliser un script Python pour nous connecter à la base de données exoplanetes.db et tester quelques requêtes en langage SQLite.
+Nous utiliserons la librairie sqlite3 de Python.
+Il est conseillé d’utiliser l’IDE Spyder, ou bien Jupyter Notebook pour editer et interpréter les scripts écrits en Python.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Docs">
+    <meta itemprop="name" content="sql et python :: allopizza">
+    <meta itemprop="description" content="Etape 4: Base de données exoplanetes.db Principe Nous allons utiliser un script Python pour nous connecter à la base de données exoplanetes.db et tester quelques requêtes en langage SQLite.
+Nous utiliserons la librairie sqlite3 de Python.
+Il est conseillé d’utiliser l’IDE Spyder, ou bien Jupyter Notebook pour editer et interpréter les scripts écrits en Python.">
+    <meta itemprop="wordCount" content="1207">
+    <title>sql et python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1781974367" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1781974367" defer></script>
+    <script src="/js/search-lunr.js?1781974367" defer></script>
+    <script src="/js/search.js?1781974367" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1781974367";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1781974367" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1781974367" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1781974367" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1781974367" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1781974367" rel="stylesheet">
+    <link href="/css/theme.css?1781974367" rel="stylesheet">
+    <link href="/css/format-html.css?1781974367" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/docs\/python_avance\/pages\/traitement\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/docs/python_avance/pages/traitement/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#script-de-base">Script de base</a></li>
+    <li><a href="#explorer-la-base-de-données">Explorer la base de données</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#superposer-les-données-des-exoplanètes-découvertes-par-toi-270-avec-la-bdd">Superposer les données des exoplanètes découvertes par TOI-270 avec la BDD</a></li>
+    <li><a href="#partager-la-fenêtre-graphique-en-plusieurs-graphiques">Partager la fenêtre graphique en plusieurs graphiques</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/docs/index.html"><span itemprop="name">Docs</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/docs/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">sql et python</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/docs/python_avance/pages/traitement/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python_avance/pages/tp/python6_codes/index.html" title="Securité informatique (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/docs/python_avance/pages/boucles/page5/index.html" title="tableaux Excel et python (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable docs" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="sql-et-python">sql et python</h1>
+
+<h1 id="etape-4-base-de-données-exoplanetesdb">Etape 4: Base de données exoplanetes.db<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Nous allons utiliser un <strong>script Python</strong> pour nous connecter à la base de données <code>exoplanetes.db</code> et tester quelques requêtes en langage SQLite.</p>
+<p>Nous utiliserons la librairie <code>sqlite3</code> de Python.</p>
+<p>Il est conseillé d&rsquo;utiliser l&rsquo;IDE <em>Spyder</em>, ou bien <em>Jupyter Notebook</em> pour editer et interpréter les scripts écrits en Python.</p>
+<p>La base de données doit être téléchargée ici : <a href="/scripts/BDD/exoplanetes.db">exoplanetes.db</a></p>
+
+<figure >
+    
+        <img src="../images/exoplanets.png" alt="extrait de la base de données" />
+    
+    
+    <figcaption>
+        <p>
+        extrait de la base de données
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="script-de-base">Script de base<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sqlite3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;exoplanetes.db&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Base de données crée et correctement connectée à SQLite&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT sqlite_version();&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La version de SQLite est: &#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Erreur lors de la connexion à SQLite&#34;</span><span class="p">,</span> <span class="n">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La connexion SQLite est fermée&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p>Rappel: Le mécanisme <code>try ... except</code> est détaillé à la page <a href="/docs/NSI/langages/page5/#gestion-des-exceptions-try-except">mise au point d&rsquo;un programme Python</a></p>
+<p>Voici la traduction de ce script en langage naturel:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">essayer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">connexion</span> <span class="n">a</span> <span class="n">la</span> <span class="n">base</span> <span class="n">de</span> <span class="n">donnees</span> <span class="n">exoplanetes</span><span class="o">.</span><span class="n">db</span>
+</span></span><span class="line"><span class="cl">  <span class="n">creation</span> <span class="n">d</span> <span class="n">un</span> <span class="n">curseur</span> <span class="n">SQL</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Afficher</span> <span class="p">(</span><span class="s2">&#34;Base de données cree et correctement connectee à SQLite&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">executer</span> <span class="n">la</span> <span class="n">requete</span> <span class="n">SQL</span> <span class="s2">&#34;SELECT sqlite_version();&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">affecter</span> <span class="n">le</span> <span class="n">resultat</span> <span class="n">de</span> <span class="n">la</span> <span class="n">requête</span> <span class="n">dans</span> <span class="n">la</span> <span class="n">variable</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">si</span> <span class="n">une</span> <span class="n">erreur</span> <span class="n">survient</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Afficher</span> <span class="p">(</span><span class="s2">&#34;La version de SQLite est: &#34;</span><span class="p">,</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sinon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># autres requetes SQL</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fermeture</span> <span class="n">du</span> <span class="n">curseur</span>
+</span></span><span class="line"><span class="cl"><span class="n">fermeture</span> <span class="n">de</span> <span class="n">la</span> <span class="n">connexion</span>
+</span></span><span class="line"><span class="cl"><span class="n">Afficher</span> <span class="p">(</span><span class="s2">&#34;La connexion SQLite est fermée&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="explorer-la-base-de-données">Explorer la base de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>L&rsquo;instruction suivante permet d&rsquo;explorer la base de données:</li>
+</ul>
+<p><code>&quot;PRAGMA table_info(planetes_es);&quot;</code></p>
+<blockquote>
+<p><strong>Q1.</strong> Ajouter cette requête à votre script python pour afficher les attributs de la table <code>planetes_es</code> de la base de données <code>exoplanetes.db</code></p>
+</blockquote>
+<ul>
+<li>Voici un extrait de la reponse à cette requête:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[(0, &#39;_name&#39;, &#39;VARCHAR(38)&#39;, 1, None, 1), (1, &#39;planet_status&#39;, &#39;VARCHAR(9)&#39;, 1, None, 0), (2, &#39;mass&#39;, &#39;NUMERIC(19, 14)&#39;, 0, None, 0), (3, &#39;radius&#39;, &#39;NUMERIC(19, 14)&#39;, 0, None, 0), ...]</span></span></code></pre></div>
+<blockquote>
+<p><strong>Q2.</strong> Quel est l&rsquo;attribut du nom des planetes de cette table?</p>
+</blockquote>
+<blockquote>
+<p><strong>Q3.</strong> Ecrire une instruction en python qui affiche uniquement la liste des attributs. Mettre cette liste dans une liste nommée <code>L</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[&#39;_name&#39;,
+</span></span><span class="line"><span class="cl"> &#39;planet_status&#39;,
+</span></span><span class="line"><span class="cl"> &#39;mass&#39;,
+</span></span><span class="line"><span class="cl"> &#39;radius&#39;,
+</span></span><span class="line"><span class="cl"> &#39;orbital_period&#39;,
+</span></span><span class="line"><span class="cl"> &#39;semi_major_axis&#39;,
+</span></span><span class="line"><span class="cl"> &#39;eccentricity&#39;,
+</span></span><span class="line"><span class="cl"> &#39;discovered&#39;,
+</span></span><span class="line"><span class="cl"> &#39;detection_type&#39;,
+</span></span><span class="line"><span class="cl"> &#39;molecules&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_name&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_distance&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_mass&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_radius&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_sp_type&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_age&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_teff&#39;,
+</span></span><span class="line"><span class="cl"> &#39;star_magnetic_field&#39;]</span></span></code></pre></div>
+<p>On peut <strong>améliorer la présentation</strong> des résultats, et mettre la table retournée dans un <strong>dataframe</strong>. On utilise alors la liste <code>L</code> des attributs (question précédente). Voir tuto <a href="/docs/NSI/projet/page10/">dataframe</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Toutes les données relatives aux étoiles dont le nom commence par Kepler-89</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;select * from planetes_es where _name like &#39;Kepler-89%&#39;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/exop_kepler.png"  />
+    
+    
+</figure>
+
+<p>Et pour obtenir une <em>vue</em> avec certaines colonnes:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;select _name,mass,radius from planetes_es&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">,</span><span class="s1">&#39;mass&#39;</span><span class="p">,</span><span class="s1">&#39;radius&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df1.png"  />
+    
+    
+</figure>
+
+<p>On peut souhaiter éliminer les lignes pour lesquelles les renseignements ne sont pas complets (lignes avec <code>Nan</code>):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></span></span></code></pre></div>
+<p>Et ajouter des colonnes au <em>dataframe</em>, comme par exemple le calcul de la masse volumique de la planète: <em>(attention, les valeurs de la table sont referencées à celles de Jupiter)</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">R_Jup</span> <span class="o">=</span> <span class="mf">71e6</span> 
+</span></span><span class="line"><span class="cl"><span class="n">M_Jup</span> <span class="o">=</span> <span class="mf">1.898e27</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;rho&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mass&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">M_Jup</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">*</span><span class="n">R_Jup</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df2.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p><strong>Q4.</strong> Cette base est-elle bien modélisée, respecte t-elle bien les contraintes d&rsquo;intégrité vues en cours? Pq?</p>
+</blockquote>
+<blockquote>
+<p><strong>Q5.</strong> Tester quelques unes des requêtes sur cette base. Par exemple:</p>
+</blockquote>
+<ol>
+<li>Toutes les données relatives à l&rsquo;étoile <em>Kepler-89 b</em></li>
+<li>Tous les noms des planètes dont la masse est plus de 10 fois supérieure à celle de Jupiter (Indiquer quelles sont ces planètes dans l&rsquo;extrait de la table)</li>
+<li>Les planètes ainsi que le nom de l&rsquo;étoile hôte, dont l&rsquo;étoile est située à moins de 40 pc de la Terre.</li>
+<li>Les noms des 20 étoiles les plus proches de la Terre où des planètes ont été détectées.</li>
+<li>Nombre total de planètes dans la table <code>(utiliser COUNT(*))</code></li>
+<li>Nombre total d&rsquo;étoiles dans la table (utiliser <code>COUNT(DISTINCT ... )</code>)</li>
+<li>Table des planètes qui n&rsquo;ont été détectées ni par &ldquo;Radial Velocity&rdquo;, ni par &ldquo;Primary Transit&rdquo;</li>
+<li>Le nombre de planètes qui n&rsquo;ont été détectées ni par &ldquo;Radial Velocity&rdquo;, ni par &ldquo;Primary Transit&rdquo;</li>
+<li>Moyenne des distances entre le Soleil et les différentes étoiles de la table (utiliser <code>AVG</code>). <em>Attention à ne compter qu&rsquo;une seule fois chacune des étoiles.</em></li>
+<li>Table des planètes où le type de l&rsquo;étoile est G &hellip; (utiliser <code>LIKE &quot;G%&quot;</code>)</li>
+<li>Nom des planètes et distances au soleil, où de l&rsquo;eau a été détectée (utiliser <code>LIKE</code>)</li>
+</ol>
+<h1 id="etude-graphique">Etude graphique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>La recherche de dépendances entre grandeurs se fera en traçant un graphique, avec différents essais pour les axes x,y: On peut chercher par exemple la <em>dépendance</em> masse volumique &lt;-&gt; rayon:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">matplotlib</span> <span class="n">qt</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;rho&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rho&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># ajout d&#39;une etiquette</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">axes</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&#34;(</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cursor</span> <span class="o">=</span> <span class="n">Cursor</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">useblit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df3.png"  />
+    
+    
+</figure>
+
+<h2 id="superposer-les-données-des-exoplanètes-découvertes-par-toi-270-avec-la-bdd">Superposer les données des exoplanètes découvertes par TOI-270 avec la BDD<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Commencer par selectionner et nettoyer les données issues de la base de données:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># BDD - Toutes exoplanetes</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;PRAGMA table_info(planetes_es);&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">ligne</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">ligne</span> <span class="ow">in</span> <span class="n">res</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;select * from planetes_es&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">df0</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">L</span><span class="p">)</span> <span class="c1"># table entiere</span>
+</span></span><span class="line"><span class="cl"><span class="n">df0</span> <span class="o">=</span> <span class="n">df0</span><span class="p">[[</span><span class="s1">&#39;_name&#39;</span><span class="p">,</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">,</span><span class="s1">&#39;radius&#39;</span><span class="p">]]</span> <span class="c1"># projection sur les colonnes utiles</span>
+</span></span><span class="line"><span class="cl"><span class="n">df0</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># retirer les lignes avec datas non renseignées</span>
+</span></span><span class="line"><span class="cl"><span class="n">df0</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df14.png"  />
+    
+    
+</figure>
+
+<p><strong>importer et traiter les données issues des observations</strong>
+Cette partie est détaillée à la page <a href="/docs/NSI/projet/page10/">données en dataframe</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;donnees_planetes.txt&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">G</span> <span class="o">=</span> <span class="mf">6.67e-11</span>
+</span></span><span class="line"><span class="cl"><span class="n">R_Jup</span> <span class="o">=</span> <span class="mf">71e6</span> 
+</span></span><span class="line"><span class="cl"><span class="n">M_Jup</span> <span class="o">=</span> <span class="mf">6.9911e7</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tau&#39;</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;fin_transit&#39;</span><span class="p">]</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;debut_transit&#39;</span><span class="p">])</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="o">-</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;lum_min&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;M_star&#39;</span><span class="p">]</span><span class="o">=</span><span class="mf">7.158780e+29</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span><span class="o">=</span><span class="mf">257512600.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_p&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;delta&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_p&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">R_Jup</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># vitesse planete : V_p = 2*R_star/tau</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span><span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;R_star&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tau&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># rayon orbital : r = G*M_star/V_p**2</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;r_orb&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">G</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;M_star&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># periode revolution: T = 2*np.pi*r/V_p</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;r_orb&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;V_p&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;T_jours&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">24</span><span class="o">*</span><span class="mi">3600</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/df16.png"  />
+    
+    
+</figure>
+
+<p><strong>Tracer les 2 nuages de points</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">%</span><span class="n">matplotlib</span> <span class="n">qt</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;nuage de points df issu de la BDD
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;nuage de points df_p issu des observations
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">x_p</span> <span class="o">=</span> <span class="n">df_p</span><span class="p">[</span><span class="s1">&#39;radius&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y_p</span> <span class="o">=</span> <span class="n">df_p</span><span class="p">[</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">z_p</span> <span class="o">=</span> <span class="n">df_p</span><span class="p">[</span><span class="s1">&#39;_name&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_p</span><span class="p">,</span><span class="n">y_p</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rho&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">x_p</span><span class="p">,</span> <span class="n">y_p</span><span class="p">,</span> <span class="n">z_p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">axes</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&#34;(</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;radius&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;orbital_period&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cursor</span> <span class="o">=</span> <span class="n">Cursor</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">useblit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/exemple_graphique.png" alt="orbital_period vs radius en echelle log" />
+    
+    
+    <figcaption>
+        <p>
+        orbital_period vs radius en echelle log
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="partager-la-fenêtre-graphique-en-plusieurs-graphiques">Partager la fenêtre graphique en plusieurs graphiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Travail: le script ci-dessous permet de visualiser plusieurs graphiques sur la même sortie. Adapter le script pour sélectionner les grandeurs correlées.</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">221</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;semi_major_axis&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;orbital_period&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">dataset</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.xscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.yscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.legend(loc=&#34;best&#34;)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">224</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;semi_major_axis&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;orbital_period&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">dataset</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.xscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.yscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;semi_major_axis&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;orbital_period&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">dataset</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.xscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.yscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">223</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;semi_major_axis&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;orbital_period&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">x</span><span class="p">],</span><span class="n">dataset</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&#34;o&#34;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.xscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#plt.yscale(&#39;log&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/seaborn1.png"  />
+    
+    
+</figure>
+
+<h1 id="et-maintenant">Et maintenant&hellip;<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Vous savez placer les nouvelles exoplanètes sur un graphique en nuage de points, au milieu des autres planètes de la base de données.</li>
+<li>Vous savez sélectionner la représentation qui donnera le plus d&rsquo;informations:</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/seaborn3.png" alt="exemple de représentations à partir de différents choix d&#39;axes" />
+    
+    
+    <figcaption>
+        <p>
+        exemple de représentations à partir de différents choix d&#39;axes
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Une voie d&rsquo;étude serait de rechercher des <em>clusters</em> (regroupements) de planètes pour certains choix d&rsquo;axes, et d&rsquo;associer nos exoplanètes à celles-ci.</p>
+<p>Une autre voie possible serait d&rsquo;intégrer la Terre, avec toutes ses caractéristiques connues, dans la table de la base de données. On établirait alors un coefficient, appelé Indice de Similarité avec la Terre (IST), qui permettrait de trier ces planètes selon l&rsquo;IST décroissant: <a href="../page4">Lien vers l&rsquo;étape 5</a></p>
+<p><a href="/docs/NSI/projet/page9">RETOUR AU MENU</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/log/index.html"><input type="checkbox" id="R-section-23c22f75c84b98545748a65894702014" aria-controls="R-subsections-23c22f75c84b98545748a65894702014"><label for="R-section-23c22f75c84b98545748a65894702014"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Log</span></label><a class="padding default-animation" href="/log/index.html">Log<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-23c22f75c84b98545748a65894702014" class="collapsible-menu">
+            <li class="" data-nav-id="/log/third-day/index.html"><a class="padding" href="/log/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log/second-day/index.html"><a class="padding" href="/log/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/log-copy/index.html"><input type="checkbox" id="R-section-eb40c0554db4b059b98d2788ddc10595" aria-controls="R-subsections-eb40c0554db4b059b98d2788ddc10595"><label for="R-section-eb40c0554db4b059b98d2788ddc10595"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Loog</span></label><a class="padding default-animation" href="/log-copy/index.html">Loog<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-eb40c0554db4b059b98d2788ddc10595" class="collapsible-menu">
+            <li class="" data-nav-id="/log-copy/third-day/index.html"><a class="padding" href="/log-copy/third-day/index.html">Third Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/second-day/index.html"><a class="padding" href="/log-copy/second-day/index.html">Second Day<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/log-copy/first-day/index.html"><a class="padding" href="/log-copy/first-day/index.html">First Day<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" checked><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Docs</span></label><a class="padding default-animation" href="/docs/index.html">Docs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/index.html"><input type="checkbox" id="R-section-2bc8eb0299d2b77394b4f5f53e6282a2" aria-controls="R-subsections-2bc8eb0299d2b77394b4f5f53e6282a2"><label for="R-section-2bc8eb0299d2b77394b4f5f53e6282a2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/docs/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-2bc8eb0299d2b77394b4f5f53e6282a2" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/variables/page5_d/index.html"><a class="padding" href="/docs/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/generalites/page2/index.html"><a class="padding" href="/docs/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/variables/page4/index.html"><a class="padding" href="/docs/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/conditions/page2/index.html"><a class="padding" href="/docs/python_bases/conditions/page2/index.html">conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/boucles/page5/index.html"><a class="padding" href="/docs/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/boucles/page2/index.html"><a class="padding" href="/docs/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/fonctions/page2/index.html"><a class="padding" href="/docs/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/es/page54/index.html"><a class="padding" href="/docs/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/generalites/page4/index.html"><a class="padding" href="/docs/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/dessiner/page3/index.html"><a class="padding" href="/docs/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/index.html"><input type="checkbox" id="R-section-38ce63d3033aee5d6de79808b2387e88" aria-controls="R-subsections-38ce63d3033aee5d6de79808b2387e88"><label for="R-section-38ce63d3033aee5d6de79808b2387e88"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/docs/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-38ce63d3033aee5d6de79808b2387e88" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_bases/tp/python1_variables/index.html"><a class="padding" href="/docs/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/docs/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/docs/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/docs/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/docs/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_bases/tp/ascii_art/index.html"><a class="padding" href="/docs/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/docs/python_avance/index.html"><input type="checkbox" id="R-section-54f53843a16bc81a08d289965d58a47c" aria-controls="R-subsections-54f53843a16bc81a08d289965d58a47c" checked><label for="R-section-54f53843a16bc81a08d289965d58a47c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/docs/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-54f53843a16bc81a08d289965d58a47c" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page5/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/es/page1/index.html"><a class="padding" href="/docs/python_avance/pages/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/es/ex1/index.html"><a class="padding" href="/docs/python_avance/pages/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/fonctions/page1/index.html"><a class="padding" href="/docs/python_avance/pages/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page1/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python5_formes/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page4/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page6/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/index_listes1/index.html"><a class="padding" href="/docs/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python2_algos/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page2/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python6_codes/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/docs/python_avance/pages/traitement/page3/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/boucles/page5/index.html"><a class="padding" href="/docs/python_avance/pages/boucles/page5/index.html">tableaux Excel et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/conditions/page4/index.html"><a class="padding" href="/docs/python_avance/pages/conditions/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/conditions/page3/index.html"><a class="padding" href="/docs/python_avance/pages/conditions/page3/index.html">TP conditions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/traitement/page31/index.html"><a class="padding" href="/docs/python_avance/pages/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/tp/python4_poo/index.html"><a class="padding" href="/docs/python_avance/pages/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page3/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page3/index.html">TP variables<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/boucles/page4/index.html"><a class="padding" href="/docs/python_avance/pages/boucles/page4/index.html">TP2 listes, indices, méthodes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page2/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/python_avance/pages/variables/page1/index.html"><a class="padding" href="/docs/python_avance/pages/variables/page1/index.html">variables<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1781974367"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1781974367" defer></script>
+    <script src="/js/theme.js?1781974367" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

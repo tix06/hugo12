@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Les variables et les types natifs en Python Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie math, sur les références, et les méthodes de chaines.
+Cette rubrique contient 4 pages :
+page 1 : variables natives de base page 2 : types construits page 3 : TP sur les variables Les types natifs de base, ce sont les types numérique, int et float, les chaines de caractères str, mais aussi le type None">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="types simples :: allopizza">
+    <meta name="twitter:description" content="Les variables et les types natifs en Python Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie math, sur les références, et les méthodes de chaines.
+Cette rubrique contient 4 pages :
+page 1 : variables natives de base page 2 : types construits page 3 : TP sur les variables Les types natifs de base, ce sont les types numérique, int et float, les chaines de caractères str, mais aussi le type None">
+    <meta property="og:url" content="//localhost:1313/python_avance/boucles/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="types simples :: allopizza">
+    <meta property="og:description" content="Les variables et les types natifs en Python Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie math, sur les références, et les méthodes de chaines.
+Cette rubrique contient 4 pages :
+page 1 : variables natives de base page 2 : types construits page 3 : TP sur les variables Les types natifs de base, ce sont les types numérique, int et float, les chaines de caractères str, mais aussi le type None">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="types simples :: allopizza">
+    <meta itemprop="description" content="Les variables et les types natifs en Python Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie math, sur les références, et les méthodes de chaines.
+Cette rubrique contient 4 pages :
+page 1 : variables natives de base page 2 : types construits page 3 : TP sur les variables Les types natifs de base, ce sont les types numérique, int et float, les chaines de caractères str, mais aussi le type None">
+    <meta itemprop="wordCount" content="1594">
+    <title>types simples :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782058871" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782058871" defer></script>
+    <script src="/js/search-lunr.js?1782058871" defer></script>
+    <script src="/js/search.js?1782058871" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782058871";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782058871" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782058871" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782058871" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782058871" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782058871" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782058871" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782058871" rel="stylesheet">
+    <link href="/css/theme.css?1782058871" rel="stylesheet">
+    <link href="/css/format-html.css?1782058871" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/boucles\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/boucles/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#le-type-de--rien---none">le type de « rien » : <code>None</code></a></li>
+    <li><a href="#transformer-le-type-des-donnée">Transformer le type des donnée</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#méthodes-de-chaines">méthodes de chaines</a>
+      <ul>
+        <li><a href="#découpage---assemblage-split-et-join">Découpage - assemblage: <code>split</code> et <code>join</code></a></li>
+        <li><a href="#remplacement-replace">Remplacement: <code>replace</code></a></li>
+        <li><a href="#modifier-la-casse-dune-chaine">modifier la casse d&rsquo;une chaine</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#valeur-et-référence">Valeur et référence</a></li>
+    <li><a href="#typage-dynamique">Typage dynamique</a></li>
+    <li><a href="#affectation-simple-et-multiple">Affectation simple et multiple</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#strip-ou-split"><code>strip</code> ou <code>split</code></a></li>
+    <li><a href="#parser-une-chaine-de-caractères">PARSER une chaine de caractères</a>
+      <ul>
+        <li><a href="#méthode-utilisant-un-slide">méthode utilisant un slide</a></li>
+        <li><a href="#méthode-utilisant-une-boucle-non-bornée">méthode utilisant une boucle non bornée</a></li>
+        <li><a href="#méthode-split">méthode split</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/boucles/index.html"><span itemprop="name">Types natifs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">types simples</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/boucles/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/boucles/index.html" title="Types natifs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/boucles/page2/index.html" title="types construits (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="types-simples">types simples</h1>
+
+<h1 id="les-variables-et-les-types-natifs-en-python">Les variables et les types natifs en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie <code>math</code>, sur les références, et les méthodes de chaines.</em></p>
+<p>Cette rubrique contient 4 pages :</p>
+<ul>
+<li>page 1 : variables natives de base</li>
+<li>page 2 : <a href="../page2/">types construits</a></li>
+<li>page 3 : <a href="../page3/">TP sur les variables</a></li>
+</ul>
+<p>Les types natifs de base, ce sont les types numérique, <code>int</code> et <code>float</code>, les chaines de caractères <code>str</code>, mais aussi le type <code>None</code></p>
+<h2 id="le-type-de--rien---none">le type de « rien » : <code>None</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C&rsquo;est le type des instrutions. Valeur possible : None</p>
+<p><code>None</code> est utile par exemple lorsque l&rsquo;on veut terminer un fonction sans valeur de retour:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># instructions</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div>
+<h2 id="transformer-le-type-des-donnée">Transformer le type des donnée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour consulter le type d&rsquo;une donnée: fontion  <code>type</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Créé un objet de type int et lui associe le nom &#39;a&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche int</span></span></span></code></pre></div>
+<p>Pour transformer vers un autre type de base, on utilise les fonctions <code>int</code>, <code>float</code>, <code>str</code>:</p>
+<table>
+	<thead>
+			<tr>
+					<th>transformer x en &hellip;</th>
+					<th>fonction</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>integer</td>
+					<td><code>int(x)</code></td>
+			</tr>
+			<tr>
+					<td>float</td>
+					<td><code>float(x)</code></td>
+			</tr>
+			<tr>
+					<td>string</td>
+					<td><code>str(x)</code></td>
+			</tr>
+	</tbody>
+</table>
+<ul>
+<li>Exemple: tranformer en <code>float</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3.8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.0</span></span></span></code></pre></div>
+<ul>
+<li>transformer en <code>int</code>
+convertit par exemple un flottant en entier en éliminant la partie décimale du nombre :</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span></span></span></code></pre></div>
+<p>ou une chaine de caractères en un entier:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s2">&#34;3&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span></span></span></code></pre></div>
+<h1 id="opérations-sur-les-types-numériques">Opérations sur les types numériques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les opérateurs sur les nombres ont été vus dans le cours <a href="http://localhost:1313/docs/python/index_python_D/" rel="external">Python les bases</a>.</p>
+<ul>
+<li>Certaines fonctions natives vont enrichir les possibilités de calcul:</li>
+</ul>
+<p><em>Exemple:</em> <strong>arrondir</strong> : fonction <code>round(nombre,decimales)</code></p>
+<pre><code>`round(3.1415926,2)` donne `3.14`
+</code></pre>
+<ul>
+<li>La <a href="https://docs.python.org/fr/3.5/library/math.html" rel="external">bibliothèque <strong>math</strong></a> contient de nombreuses fonctions utiles au calcul scientifique:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">PI</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</span></span><span class="line"><span class="cl"><span class="n">PI</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.141592653589793</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 1.0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># le sinus de l&#39;angle en radians</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="o">-</span><span class="mi">101</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 101</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Renvoie la valeur absolue de (-101)</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Renvoie True si x est NaN (Not a Number)</span></span></span></code></pre></div>
+<h1 id="opérations-sur-les-booléens---rappels">Opérations sur les booléens - rappels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<table>
+	<thead>
+			<tr>
+					<th>operateur</th>
+					<th>symbole</th>
+					<th>exemple d&rsquo;expression</th>
+					<th>resultat</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>intersection</td>
+					<td>and</td>
+					<td>True and False</td>
+					<td>False</td>
+			</tr>
+			<tr>
+					<td>reunion</td>
+					<td>or</td>
+					<td>True or False</td>
+					<td>True</td>
+			</tr>
+			<tr>
+					<td>negation</td>
+					<td>not</td>
+					<td>not False</td>
+					<td>True</td>
+			</tr>
+			<tr>
+					<td>est égal à</td>
+					<td>==</td>
+					<td>True == False</td>
+					<td>False</td>
+			</tr>
+			<tr>
+					<td>est différent de</td>
+					<td>!=</td>
+					<td>True != False</td>
+					<td>True</td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="opérations-avec-les-chaines-de-caractères">Opérations avec les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les opérateurs <code>+</code> et <code>*</code> sont autorisés dans les expressions avec les chaines de caractère.</p>
+<p>Le <code>+</code> réalise un <em>concaténation</em> de 2 chaines. Le <code>*</code> répète et concatène la chaine :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;Turing&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche AlanTuring</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche AlanAlanAlan</span></span></span></code></pre></div>
+<p>Les caractères sont <em>placés</em> dans une chaine. On peut donc y accéder avec leur <em>index</em>, comme pour les Listes:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">chaine</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;H&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;ell&#39;</span></span></span></code></pre></div>
+<p>Mais, contrairement aux Listes, on ne pourra pas modifier un caractère par son index:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TypeError: &#39;str&#39; object does not support item assignment</span></span></span></code></pre></div>
+<p>Une chaine de caractères est <em>itérable</em>: On peut la parcourir avec une boucle bornée. Par exemple, le script suivant élimine tous les espaces dans la chaine:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;Il fait beau.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">carac</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">carac</span> <span class="o">!=</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">carac</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche Ilfaitbeau.</span></span></span></code></pre></div>
+<h2 id="méthodes-de-chaines">méthodes de chaines<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les chaines sont des objets qui possèdent leurs méthodes. il est difficile de se souvenir de toutes les méthodes travaillant sur les chaînes de caractères. Aussi il est toujours utile de recourir à la documentation embarquée</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span></span></span></code></pre></div>
+<p>Ce qui donne:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Help on class str in module builtins:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class str(object)
+</span></span><span class="line"><span class="cl"> |  str(object=&#39;&#39;) -&gt; str
+</span></span><span class="line"><span class="cl"> |  str(bytes_or_buffer[, encoding[, errors]]) -&gt; str
+</span></span><span class="line"><span class="cl"> |  
+</span></span><span class="line"><span class="cl"> |  Methods defined here:
+</span></span><span class="line"><span class="cl"> | ...
+</span></span><span class="line"><span class="cl"> |  format(...)
+</span></span><span class="line"><span class="cl"> |      S.format(*args, **kwargs) -&gt; str
+</span></span><span class="line"><span class="cl"> |      
+</span></span><span class="line"><span class="cl"> |      Return a formatted version of S, using substitutions from args and kwargs.
+</span></span><span class="line"><span class="cl"> |      The substitutions are identified by braces (&#39;{&#39; and &#39;}&#39;).
+</span></span><span class="line"><span class="cl"> |  ...
+</span></span><span class="line"><span class="cl"> |  join(self, iterable, /)
+</span></span><span class="line"><span class="cl"> |      Concatenate any number of strings.
+</span></span><span class="line"><span class="cl"> |      
+</span></span><span class="line"><span class="cl"> |      The string whose method is called is inserted in between each given string.
+</span></span><span class="line"><span class="cl"> |      The result is returned as a new string.
+</span></span><span class="line"><span class="cl"> |      
+</span></span><span class="line"><span class="cl"> |      Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;
+</span></span><span class="line"><span class="cl"> | ...</span></span></code></pre></div>
+<h3 id="découpage---assemblage-split-et-join">Découpage - assemblage: <code>split</code> et <code>join</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les méthodes <code>split</code> et <code>join</code> permettent de découper une chaîne selon un séparateur pour obtenir une liste, et à l&rsquo;inverse de reconstruire une chaîne à partir d&rsquo;une liste.</p>
+<p><code>split</code> permet donc de découper :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;abc=:=def=:=ghi=:=jkl&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=:=&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;jkl&#39;]</span></span></span></code></pre></div>
+<p>Et à l&rsquo;inverse :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;=:=&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="s1">&#39;jkl&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche abc=:=def=:=ghi=:=jkl</span></span></span></code></pre></div>
+<p><em>Remarque:</em> Si le séparateur est un terminateur, comme par exemple &lsquo;;&rsquo;, ou<code>&quot;\n&quot;</code>, il conviendra d&rsquo;utiliser d&rsquo;abord la méthode <code>strip</code>. Voir <em><a href="http://localhost:1313/docs/python/pages/variables/page2/#compl%C3%A9ments-sur-les-strings" rel="external">compléments</a></em> en bas de page.</p>
+<h3 id="remplacement-replace">Remplacement: <code>replace</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>replace</code> est très pratique pour remplacer une sous-chaîne par une autre, avec une limite éventuelle sur le nombre de remplacements :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;abcdefabcdefabcdef&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">,</span> <span class="s2">&#34;zoo&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="modifier-la-casse-dune-chaine">modifier la casse d&rsquo;une chaine<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>utiliser les méthodes <code>title()</code> (titre), <code>upper()</code> (mise en majuscule), <code>lower()</code> (minuscule).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;charles babbage&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nom</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche Charles Babbage</span>
+</span></span><span class="line"><span class="cl"><span class="n">nom</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche CHARLES BABBAGE</span></span></span></code></pre></div>
+<p>Les méthodes <code>lstrip()</code> (à gauche), <code>rstrip()</code> (droite), et <code>strip()</code> (à droite et à gauche) suppriment les espaces en trop dans les chaines.</p>
+<blockquote>
+<p>à tester vous-même :</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;charles babbage&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nom</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></span></span></code></pre></div>
+<h1 id="compléments-sur-les-variables-et-types">Compléments sur les variables et types<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="valeur-et-référence">Valeur et référence<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les <strong>variables</strong> en Python sont des <strong>références nommées</strong>.</p>
+<p>Une variable est une donc <strong>étiquette</strong> associée à une <strong>valeur</strong>. Ce nom est à peu près quelconque, mais pour l’ordinateur il s’agit d’une <strong>référence</strong> désignant une <strong>adresse mémoire</strong>, c’est-à-dire un emplacement précis dans la mémoire vive.</p>
+<p>À cet emplacement est stockée une <strong>valeur typée</strong> bien déterminée.</p>
+<p>
+<figure >
+    <a href="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html">
+        <img src="../images/var_normalesup1.png" alt="image issue du cours sur http://www.normalesup.org/" />
+    </a>
+    
+    <figcaption>
+        <p>
+        image issue du cours sur http://www.normalesup.org/
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Cette valeur peut être en fait à peu près n’importe quel « objet » susceptible d’être placé dans la mémoire d’un ordinateur, par exemple : un nombre entier, un nombre réel, un nombre complexe, un vecteur, une chaîne de caractères, un tableau, une fonction, etc.</p>
+<p>La programme suivant permet de consulter l&rsquo;adresse mémoire d&rsquo;une variable:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Créer un objet de type int et lui associe le nom &#39;a&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#=&gt; int</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Cet objet se trouve dans la mémoire de l&#39;ordinateur</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># à un endroit que l&#39;on peut obtenir avec `id`:</span>
+</span></span><span class="line"><span class="cl"><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#=&gt; La position de l&#39;objet nommé a dans la mémoire de l&#39;ordinateur.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AFfiche</span>
+</span></span><span class="line"><span class="cl"><span class="mi">94875962855936</span></span></span></code></pre></div>
+<h2 id="typage-dynamique">Typage dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Python est un langage à typage dynamique, ce qui signifie qu&rsquo;il n&rsquo;est pas necessaire de déclarer le type de donnée que représentera une variable (c&rsquo;est la différence avec le typage <em>statique</em>). C&rsquo;est l&rsquo;interpréteur qui examine la donnée tout au long de la vie du programme et choisit le type.</p>
+<h2 id="affectation-simple-et-multiple">Affectation simple et multiple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Affectation simple :</strong></p>
+<p>Les termes « affecter une valeur » ou « assigner une valeur » à une variable sont équivalents. Ils désignent l’opération par laquelle on établit un lien entre le nom de la variable et sa valeur (son contenu).</p>
+<p><em>Exemple :</em> <code>a = 2</code></p>
+<p>Lorsque l&rsquo;ordinateur execute cette instruction, il va :</p>
+<ul>
+<li>créer et mémoriser un nom de variable ;</li>
+<li>lui attribuer un type bien déterminé (ce point sera explicité à la page suivante);</li>
+<li>créer et mémoriser une valeur particulière;</li>
+<li>établir un lien (par un système interne de pointeurs) entre le nom de la variable et l’emplacement mémoire de la valeur correspondante.</li>
+</ul>
+<p>Le nom d&rsquo;une variable est une référence, mémorisée dans une zone particulière de la mémoire que l’on appelle espace de noms, alors que la valeur correspondante est située ailleurs.</p>
+<p><strong>Affectation multiple :</strong></p>
+<p>Il est possible de réaliser une affectation pour plusieurs variables d&rsquo;un seul coup :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche True</span></span></span></code></pre></div>
+<h1 id="compléments-sur-les-strings">Compléments sur les strings<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="strip-ou-split"><code>strip</code> ou <code>split</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Si le séparateur est un terminateur, comme par exemple &lsquo;;&rsquo;, ou<code>\n</code>, la liste résultat contient alors une dernière chaîne vide. En pratique, on utilisera la méthode <code>strip</code>, que nous allons voir ci-dessous, avant la méthode <code>split</code> pour éviter ce problème.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;abc;def;ghi;jkl;&#34;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne [&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;jkl&#39;, &#39;&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># le dernier element de la liste est &#39;&#39;</span></span></span></code></pre></div>
+<p>alors que:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;abc;def;ghi;jkl;&#34;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne abc;def;ghi;jkl</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># on a supprime le dernier &#39;;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># on peut alors utiliser la methode split:</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;abc;def;ghi;jkl;&#34;</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne [&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;jkl&#39;]</span></span></span></code></pre></div>
+<h2 id="parser-une-chaine-de-caractères">PARSER une chaine de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>&ldquo;Parser&rdquo; signifie analyser et convertir un script en un format interne que l&rsquo;environnement d&rsquo;exécution peut interpréter. Il s&rsquo;agit d&rsquo;une <a href="https://developer.mozilla.org/fr/docs/Glossary/Parse" rel="external">analyse syntaxique</a>.</p>
+<p>Soit la chaine de caractères suivante, issue d&rsquo;une requête HTTP:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#39;GET /search ville=nice UTC=12&#39;</span></span></code></pre></div>
+<p>On souhaite stocker dans 4 variables différentes les informations séparées chacune par des espaces &rsquo; &lsquo;.</p>
+<h3 id="méthode-utilisant-un-slide">méthode utilisant un slide<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;GET /search ville=nice UTC=12&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">C1</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">C1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># GET</span>
+</span></span><span class="line"><span class="cl"><span class="n">C2</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">C2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># /search</span>
+</span></span><span class="line"><span class="cl"><span class="n">C3</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">22</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">C3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ville=nice</span>
+</span></span><span class="line"><span class="cl"><span class="n">C4</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">23</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">C4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># UTC=12</span></span></span></code></pre></div>
+<h3 id="méthode-utilisant-une-boucle-non-bornée">méthode utilisant une boucle non bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On ne connait pas à priori les positions des séparateurs dans la chaine (les espaces &rsquo; &lsquo;). On peut faire une recherche en parcourant la chaine du premier au dernier caractère avec l&rsquo;instruction <code>while i &lt; len(c): caract = c[i] ...</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">caract</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># recherche des espaces dans la chaine c</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caract</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">caract</span> <span class="o">==</span> <span class="s1">&#39; &#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche les index tels que c[i] == &#39; &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 11</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 22</span></span></span></code></pre></div>
+<p>Les séparateurs se trouvent aux indices 3, 11, et 22. On sait alors que les 4 informations de la chaines sont:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">C1</span> <span class="o">=</span> <span class="n">c</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">C2</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">C3</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">22</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">C4</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">23</span><span class="p">:]</span></span></span></code></pre></div>
+<h3 id="méthode-split">méthode split<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La méthode la plus adaptée pour réaliser le <em>parsing</em> d&rsquo;une chaine, c&rsquo;est:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne les elements dans une liste</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [&#39;GET&#39;, &#39;/search&#39;, &#39;ville=nice&#39;, &#39;UTC=12&#39;]</span></span></span></code></pre></div>
+<h1 id="les-types-construits-séquences">Les types construits (séquences)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>voir la page suivante: <a href="../page2/">Types construits</a></p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Compléments: valeur, references, espace de nom: <a href="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html" rel="external">Lien vers le cours de normalesup</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="parent " data-nav-id="/python_avance/boucles/index.html"><input type="checkbox" id="R-section-b5d518b166f7e58b3a094f7e5d5e05c0" aria-controls="R-subsections-b5d518b166f7e58b3a094f7e5d5e05c0" checked><label for="R-section-b5d518b166f7e58b3a094f7e5d5e05c0"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/boucles/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5d518b166f7e58b3a094f7e5d5e05c0" class="collapsible-menu">
+            <li class="active " data-nav-id="/python_avance/boucles/page1/index.html"><a class="padding" href="/python_avance/boucles/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/boucles/page2/index.html"><a class="padding" href="/python_avance/boucles/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/boucles/page5/index.html"><a class="padding" href="/python_avance/boucles/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/conditions/index.html"><input type="checkbox" id="R-section-1cce09cbce8e0cdf98898abea492046b" aria-controls="R-subsections-1cce09cbce8e0cdf98898abea492046b"><label for="R-section-1cce09cbce8e0cdf98898abea492046b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/conditions/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1cce09cbce8e0cdf98898abea492046b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/conditions/page1/index.html"><a class="padding" href="/python_avance/conditions/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/conditions/page2/index.html"><a class="padding" href="/python_avance/conditions/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/conditions/page3/index.html"><a class="padding" href="/python_avance/conditions/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/es/ex1/index.html"><a class="padding" href="/python_avance/es/ex1/index.html">Exercices Entrées Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/tp/python5_formes/index.html"><a class="padding" href="/python_avance/tp/python5_formes/index.html">images et formes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page4/index.html"><a class="padding" href="/python_avance/traitement/page4/index.html">indice de similarité avec la Terre<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/index_listes1/index.html"><a class="padding" href="/python_avance/index_listes1/index.html">listes en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/tp/python2_algos/index.html"><a class="padding" href="/python_avance/tp/python2_algos/index.html">Python 2 Algos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/tp/python6_codes/index.html"><a class="padding" href="/python_avance/tp/python6_codes/index.html">Securité informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/tp/python4_poo/index.html"><a class="padding" href="/python_avance/tp/python4_poo/index.html">TP Python4 POO<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782058871"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782058871" defer></script>
+    <script src="/js/theme.js?1782058871" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

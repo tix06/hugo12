@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Naissance de Python Python, créé en 1991, est désormais le principal langage de programmation dans les domaines du Machine Learning, du Big Data et de la Data Science.
+Son créateur est un néerlandais nommé Guido van Rossum, qui a cherché à faire un langage très simple et lisible. Certains prétendent même que lire du code Python équivaut à lire de l’anglais.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="python :: allopizza">
+    <meta name="twitter:description" content="Naissance de Python Python, créé en 1991, est désormais le principal langage de programmation dans les domaines du Machine Learning, du Big Data et de la Data Science.
+Son créateur est un néerlandais nommé Guido van Rossum, qui a cherché à faire un langage très simple et lisible. Certains prétendent même que lire du code Python équivaut à lire de l’anglais.">
+    <meta property="og:url" content="//localhost:1313/python_bases/generalites/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="python :: allopizza">
+    <meta property="og:description" content="Naissance de Python Python, créé en 1991, est désormais le principal langage de programmation dans les domaines du Machine Learning, du Big Data et de la Data Science.
+Son créateur est un néerlandais nommé Guido van Rossum, qui a cherché à faire un langage très simple et lisible. Certains prétendent même que lire du code Python équivaut à lire de l’anglais.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python - les bases">
+    <meta itemprop="name" content="python :: allopizza">
+    <meta itemprop="description" content="Naissance de Python Python, créé en 1991, est désormais le principal langage de programmation dans les domaines du Machine Learning, du Big Data et de la Data Science.
+Son créateur est un néerlandais nommé Guido van Rossum, qui a cherché à faire un langage très simple et lisible. Certains prétendent même que lire du code Python équivaut à lire de l’anglais.">
+    <meta itemprop="wordCount" content="1590">
+    <title>python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_bases\/generalites\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_bases/generalites/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#variables-et-espace-de-nom">Variables et espace de nom</a></li>
+    <li><a href="#mutable-et-non-mutable">mutable et non mutable</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#definitions">Definitions</a></li>
+    <li><a href="#représentation-en-mémoire">Représentation en mémoire</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#reconstruction-dun-nombre-à-partir-de-son-complément-à-2">Reconstruction d&rsquo;un nombre à partir de son complément à 2</a>
+      <ul>
+        <li><a href="#à-vous-de-jouer">à vous de jouer</a></li>
+        <li><a href="#conversion-python---c">CONVERSION PYTHON -&gt; C</a></li>
+        <li><a href="#conversion-c---python">CONVERSION C -&gt; PYTHON</a></li>
+      </ul>
+    </li>
+    <li><a href="#programme-complet-python---c---python">Programme complet: python -&gt; C -&gt; python</a></li>
+    <li><a href="#reconstruction-dun-nombre-à-partir-de-la-représentation-en-ieee-754">Reconstruction d&rsquo;un nombre à partir de la représentation en ieee 754</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_bases/index.html"><span itemprop="name">Bases en python</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">python</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_bases/generalites/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/tp/ascii_art/index.html" title="transformer image ascii (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/index.html" title="Python avancé (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_bases" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="python">python</h1>
+
+<h1 id="naissance-de-python">Naissance de Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Python, créé en 1991, est désormais le principal langage de programmation dans les domaines du Machine Learning, du Big Data et de la Data Science.</p>
+<p>Son créateur est un néerlandais nommé Guido van Rossum, qui a cherché à faire un langage très simple et lisible. Certains prétendent même que lire du code Python équivaut à lire de l’anglais.</p>
+<p>
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Guido_van_Rossum">
+        <img src="../images/guido.jpeg" alt="Bio de Guido Van Rossum - wikipedia" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Bio de Guido Van Rossum - wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+le nom du langage vient de l’affection de Guido pour le « Monty Python Flying Circus », une comédie surréaliste créée par un groupe comique anglais « Monty Python ».</p>
+<p>Le site « <a href="http://www.rosettacode.org/wiki/Rosetta_Code" rel="external">Rosetta Code</a> » permet de comparer des programmes réalisant le même travail dans plusieurs centaines de langages informatique différents, confirme cette lisibilité.</p>
+<p>la licence Python appartient depuis 2001 à la Python Software Foundation, organisation sans but lucratif. La licence est donc FLOSS &ldquo;Free/Libre and Open Source Software&rdquo;, à l’instar de Linux, Ubuntu, LibreOffice, Mozilla Firefox, Mono (clone de la plateforme .NET de Microsoft), Apache Web Server et le VLC player.</p>
+
+<figure >
+    
+        <img src="../images/logoPython.jpeg"  />
+    
+    
+</figure>
+
+<h1 id="langage-de-haut-niveau">Langage de haut-niveau<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On appelle « haut niveau » les langages de forte abstraction, qui s’éloignent de l’électronique de l’appareil opérant le programme. Un langage orienté autour du problème à résoudre sans s’occuper des caractéristiques techniques du matériel utilisé.</p>
+<p>Python est généralement appelé un langage interprété, cependant, il combine la compilation et l&rsquo;interprétation:</p>
+<ul>
+<li>Lorsque nous exécutons un <strong>code source</strong> (un fichier avec une extension <strong><code>.py</code></strong> ), Python le compile d&rsquo;abord en un bytecode.</li>
+<li>Le <strong>bytecode</strong> est une représentation de bas niveau indépendante de la plate-forme de votre code source, cependant, il ne s&rsquo;agit pas du code machine binaire et ne peut pas être exécuté directement par la machine.</li>
+<li>Le bytecode est un ensemble d&rsquo;instructions pour une machine virtuelle qui s&rsquo;appelle la <strong>machine virtuelle Python (PVM)</strong>.</li>
+</ul>
+<p>
+<figure >
+    
+        <img src="../images/pvm.png" alt="du .py au PVM" />
+    
+    
+    <figcaption>
+        <p>
+        du .py au PVM
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Le PVM est un interpréteur qui exécute le bytecode et fait partie du système Python. Le bytecode est indépendant de la plate-forme, mais PVM est spécifique à la machine cible. L&rsquo;implémentation par défaut du langage de programmation Python est CPython qui est écrit dans le langage de programmation C. (il existe d&rsquo;autres implementations). CPython compile le code source python dans le bytecode, et ce bytecode est ensuite exécuté puis desassemblé par la machine virtuelle CPython.</p>
+<h1 id="objets-de-type-primitif-et-type-construit">Objets de type primitif et type construit<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><a href="https://www.f-legrand.fr/pynum/python/objets.html" rel="external">Objet et noms</a></p>
+<p>Il faut distinguer en programmation les variables et les valeurs (ou objet). <em>Une variable est un nom donné à une valeur</em>. Cette valeur a un type. En python, celui-ci est imposé lors de l&rsquo;affectation d&rsquo;une valeur (objet) à la variable créée. (typage dynamique)</p>
+<p>Un <em>objet désigne une entité stockée en mémoire</em>.</p>
+<p>Un objet est toujours d&rsquo;un certain <em>type</em>.</p>
+<ul>
+<li>Les types int, float, bool, list, str sont les types d’objet <em>primitifs</em>. Par exemple, un nombre entier est représenté par un objet de la classe int.</li>
+<li>Mais il existe aussi des types construits (tuple, list, dict, function&hellip;).</li>
+</ul>
+<p>Lorsqu’on créé un nom (c.a.d. une variable), on ajoute dans la <em>table de noms de l’espace de nom courant</em> ce nom associé à la référence de l’objet auquel ce nom permet d’accéder.</p>
+<p>On peut consulter l&rsquo;adresse mémoire associé à la valeur grâce à la fonction <code>id</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1611691328</span></span></span></code></pre></div>
+<h2 id="variables-et-espace-de-nom">Variables et espace de nom<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Une variable est un nom donné à une valeur, stockée en mémoire</em>. En python, une variable est créée lorsque l&rsquo;on réalise une affectation. Le nom pointe alors vers une adresse mémoire, dans la RAM:</p>
+
+<figure >
+    
+        <img src="../images/mem.png" alt="La mémoire: une énorme grille de valeurs et objets" />
+    
+    
+    <figcaption>
+        <p>
+        La mémoire: une énorme grille de valeurs et objets
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Cette représentation est toutefois incomplète: Au niveau machine, les informations associées au nom de la variable contiennent aussi le <em>type</em>. Au niveau logiciel (interpreteur python), les noms de variables sont stockés dans un espace virtuel du programme python: la <em>table des noms</em>.</p>
+<p>La figure suivante montre l’évolution de la table des noms et des objets lors des trois affectations. L’adresse est l’emplacement en mémoire de l’objet.</p>
+
+<figure >
+    
+        <img src="../images/valeurs.png" alt="valeur, adresse et affectation" />
+    
+    
+    <figcaption>
+        <p>
+        valeur, adresse et affectation
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Lorsque l&rsquo;on fait appel à une variable, le programme consulte l&rsquo;espace de noms et trouve la valeur en mémoire, puis retourne cette valeur.</p>
+<h2 id="mutable-et-non-mutable">mutable et non mutable<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><a href="https://paperman.name/enseignement/2023/AP2/reference.html" rel="external">mutable et non mutable</a></p>
+<p>Les types en Python se décompose en deux groupes:</p>
+<ul>
+<li>les types représentant des éléments non-mutable</li>
+<li>les types représentant des éléments mutable</li>
+</ul>
+<p>Si une variable est mutable alors on peut modifier son contenu sans créer une nouvelle valeur. Ce sont les <em>types primitifs</em> en python, auquels on ajoute les <em>tuple</em> et le <em>type de rien</em>, <code>None</code>. Chaque fois que l&rsquo;on modifie une variable par une nouvelle affectation, cela modifie son <code>id</code>&hellip; et créé une nouvelle variable avec le même nom.</p>
+<p>Pour les objets non mutables, c&rsquo;est différents. Ce sont les types <em>construits</em>, comme les list, dict, fonctions, classes, objets (issus de classes)&hellip;</p>
+<h1 id="fonctions">Fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="definitions">Definitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une fonction permet d’encapsuler un bloc d’instructions et de lui donnéer un nom:</p>
+<p><a href="/docs/python/pages/fonctions/page2/">cours sur allophysique.com</a></p>
+<h2 id="représentation-en-mémoire">Représentation en mémoire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Lorsqu’on fait appel à une fonction, les instructions de cette fonction opèrent dans un espace de noms propre à la fonction, c’est-à-dire que les noms créés dans la fonction sont créés dans une table particulière appelée espace de noms de la fonction. Ces noms internes à la fonction sont appelées variables locales. Cette table est détruite lorsque la fonction a terminé son exécution.</li>
+</ul>
+<p>Ainsi, les noms créés à l’intérieur d’une fonction ont une portée limitée à cette fonction. En revanche, l’espace des noms (c.a.d. la table des noms) utilisée par le code qui appelle la fonction est bien accessible à l’intérieur de la fonction et on parle alors de variables globales.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span><span class="o">=</span><span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></span></span></code></pre></div>
+<p><a href="https://pythontutor.com/render.html#code=x%3D10%0Adef%20f%28a%29%3A%0A%20%20%20%20b%20%3D%207%0A%20%20%20%20return%20a%20*%20b%0A%0Af%28x%29&cumulative=false&curInstr=6&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" rel="external">pythontutor</a></p>
+
+<figure >
+    
+        <img src="../images/valeurs2.png" alt="valeur, adresse et affectation" />
+    
+    
+    <figcaption>
+        <p>
+        valeur, adresse et affectation
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>Exercice: Résumer les opérations réalisées sur la mémoire lors de l&rsquo;appel de la fonction <code>f(x)</code></p>
+</blockquote>
+<h1 id="bytecode">Bytecode<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On peut verifier comment sont codés les nombres dans la machine en lisant le Bytecode.<!-- raw HTML omitted -->
+Le <strong>module struct</strong> permet la conversion entre valeurs typées de python, et données binaires du C, le bytecode. C&rsquo;est ce bytecode qui est passé à la machine après compilation lors de l&rsquo;execution.</p>
+<h2 id="reconstruction-dun-nombre-à-partir-de-son-complément-à-2">Reconstruction d&rsquo;un nombre à partir de son complément à 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On doit alors spécifier le format de ces valeurs, avant d&rsquo;en demander la conversion en bytecode.</p>
+<p>Pour faire cela, on importe la librairie <code>struct</code> avec <code>import struct</code>.</p>
+<p>La fonction <code>int_to_b</code> permet de convertir un entier signé en Bytecode, puis de retourner la sequence binaire correspondante.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">struct</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">int_to_b</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bits</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;!I&#39;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;!i&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span></span></span></code></pre></div>
+<p>Testons cette fonction avec le nombre -129:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">int_to_b</span><span class="p">(</span><span class="o">-</span><span class="mi">129</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;0b11111111111111111111111101111111&#39;</span></span></span></code></pre></div>
+<p>Rappelez vous: pour coder un entier signé, il faut:</p>
+<ul>
+<li>inverser tous les bits (chercher le complément à 1)</li>
+<li>ajouter 1 au nombre binaire pris en valeur absolue</li>
+</ul>
+<p>Donc pour retrouver la valeur absolue en binaire, il faudra :</p>
+<ul>
+<li>soustraire 1</li>
+<li>déterminer le complement à 1 (inverser tous les bits)</li>
+</ul>
+<p>&lsquo;0b11111111111111111111111101111111&rsquo; <!-- raw HTML omitted -->-&gt; (-1) <!-- raw HTML omitted -->&lsquo;0b11111111111111111111111101111110&rsquo;
+<!-- raw HTML omitted -->
+puis inversion de tous les bits:<!-- raw HTML omitted -->
+N = &lsquo;0b11111111111111111111111101111110&rsquo;
+<!-- raw HTML omitted -->
+<code>inverse_bits(N) = ?</code></p>
+<p>Il pourra être utile de programmer une fonction <code>inverse_bits</code> pour eviter de faire les 32 bits &ldquo;à la main&rdquo;.</p>
+<p>Le debut de cette fonction pourrait être:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse_bits</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inverse</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">bit</span> <span class="ow">in</span> <span class="n">N</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">bit</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span></span></span></code></pre></div>
+<p>Puis pour finir:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">N</span> <span class="o">=</span> <span class="s1">&#39;11111111111111111111111101111110&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">inverse_bits</span><span class="p">(</span><span class="n">N</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">129</span></span></span></code></pre></div>
+<h3 id="à-vous-de-jouer">à vous de jouer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Utiliser les fonctions <code>float_to_bin</code> puis <code>int_to_bin</code> pour obtenir les représentations de -126 dans les 2 représentations vues ici: selon la norme IEEE 754 puis selon le codage à complement à 2.</p>
+<p>Verifier alors que le nombre peut être reconstruit selon ces 2 normes, et que l&rsquo;on retrouve bien -126.</p>
+<h3 id="conversion-python---c">CONVERSION PYTHON -&gt; C<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>S&rsquo;il s&rsquo;agit d&rsquo;un flottant à convertir en bytecode, faire:</p>
+<p><code>struct.pack('!f', num)</code></p>
+<p>On précise ici que la variable <code>num</code> est de type float. <code>num</code> sera alors codé en C-bytes selon la norme IEEE 754.</p>
+<p><em>Exemple:</em> en console, on demande le bytecode qui code le flottant 500.0</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">struct</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;!f&#39;</span><span class="p">,</span> <span class="mf">129.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="sa">b</span><span class="s1">&#39;C</span><span class="se">\x01\x00\x00</span><span class="s1">&#39;</span></span></span></code></pre></div>
+<p>Les options sont:</p>
+<ul>
+<li>i : entier non signé</li>
+<li>I : entier signé</li>
+<li>f : float</li>
+</ul>
+<h3 id="conversion-c---python">CONVERSION C -&gt; PYTHON<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>L&rsquo;opération inverse s&rsquo;effectue ainsi :</p>
+<p><code>bits,=struct.unpack('!I', b'C\x01\x00\x00')</code></p>
+<p>La virgule après bits doit bien être écrite afin de que bits soit mis en format numerique. Cela permet de traduire le Bytecode <code>b'C\x01\x00\x00'</code> en une serie de bits.</p>
+<p>Si on veut afficher la série de bits:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">bin</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;0b1000011000000010000000000000000&#39;</span></span></span></code></pre></div>
+<h2 id="programme-complet-python---c---python">Programme complet: python -&gt; C -&gt; python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction <code>float_to_b</code> permet de convertir un flottant en Bytecode, puis de retourner la sequence binaire correspondante. Celle-ci suit la norme IEEE 754, en simple precision.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">struct</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">float_to_b</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">bits</span><span class="p">,</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;!I&#39;</span><span class="p">,</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;!f&#39;</span><span class="p">,</span> <span class="n">num</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">bin</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span></span></span></code></pre></div>
+<p>On peut alors tester avec le nombre -129:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">float_to_b</span><span class="p">(</span><span class="o">-</span><span class="mi">129</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;0b11000011000000010000000000000000&#39;</span></span></span></code></pre></div>
+<h2 id="reconstruction-dun-nombre-à-partir-de-la-représentation-en-ieee-754">Reconstruction d&rsquo;un nombre à partir de la représentation en ieee 754<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On peut alors vérifier si la reconstruction du nombre -129 est possible à partir de ce binaire: Le nombre s&rsquo;écrit:</p>
+$$-1^{bit~signe}\times 1,M \times 2^{E-127}$$<p>Le binaire est constitué de 3 parties</p>
+<table>
+	<thead>
+			<tr>
+					<th>bit de signe</th>
+					<th>E</th>
+					<th>M</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1 bit</td>
+					<td>8 bits</td>
+					<td>23 bits restants</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>10000110</td>
+					<td>00000010000000000000000</td>
+			</tr>
+	</tbody>
+</table>
+<p>E vaut donc 10000110. Or, pour obtenir la puissance de 2, il faut soustraire 127. Ceci permet de gérer les puissances négatives de 2 et donne une etendue [-127; 128] à l&rsquo;exposant.</p>
+<p>Cela peut se faire selon le calcul suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">127</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span></span></span></code></pre></div>
+<p>M est la partie après la virgule de 1,M. On rajoute le bit entier avant la virgule: (on n&rsquo;écrit pas les zeros à droite du dernier 1)</p>
+$$1,0000001$$<p>Le nombre s&rsquo;écrit :</p>
+$$-1 \times 1,0000001 \times 2^7$$<p>Mais l&rsquo;exposant 7 doit permettre alors de decaler la virgule de 7 rangs vers la droite, ce qui donne finalement:</p>
+$$-1 \times 10000001$$<p>Cette fois, on peut evaluer ce binaire, et il vaut: </p>
+$$-127$$<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><a href="https://www.ausy.fr/fr/actualites-techniques/que-se-cache-t-il-derriere-python" rel="external">https://www.ausy.fr/fr/actualites-techniques/que-se-cache-t-il-derriere-python</a></p>
+<p><a href="https://ichi.pro/fr/comprendre-le-bytecode-python-255007960625997" rel="external">https://ichi.pro/fr/comprendre-le-bytecode-python-255007960625997</a></p>
+<p><a href="https://opensource.com/article/18/4/introduction-python-bytecode" rel="external">https://opensource.com/article/18/4/introduction-python-bytecode</a></p>
+<p><a href="https://learning-python.com/class/Workbook/unit02.htm" rel="external">https://learning-python.com/class/Workbook/unit02.htm</a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b" checked><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active hidden " data-nav-id="/python_bases/generalites/page1/index.html"><a class="padding" href="/python_bases/generalites/page1/index.html">python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

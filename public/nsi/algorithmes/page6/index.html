@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="algorithme d&#39;optimisation, glouton, dynamique">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="algorithmes avancés :: allopizza">
+    <meta name="twitter:description" content="algorithme d&#39;optimisation, glouton, dynamique">
+    <meta property="og:url" content="//localhost:1313/nsi/algorithmes/page6/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="algorithmes avancés :: allopizza">
+    <meta property="og:description" content="algorithme d&#39;optimisation, glouton, dynamique">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="algorithmes avancés :: allopizza">
+    <meta itemprop="description" content="algorithme d&#39;optimisation, glouton, dynamique">
+    <meta itemprop="wordCount" content="6282">
+    <title>algorithmes avancés :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782145241" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782145241" defer></script>
+    <script src="/js/search-lunr.js?1782145241" defer></script>
+    <script src="/js/search.js?1782145241" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782145241";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782145241" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782145241" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782145241" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782145241" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782145241" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782145241" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782145241" rel="stylesheet">
+    <link href="/css/theme.css?1782145241" rel="stylesheet">
+    <link href="/css/format-html.css?1782145241" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/algorithmes\/page6\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/algorithmes/page6/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#principe-de-la-méthode">Principe de la méthode</a></li>
+    <li><a href="#comment-sy-prendre-pour-mémoriser-les-solutions">Comment s&rsquo;y prendre pour mémoriser les solutions?</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#algorithme-récursif-non-optimisé">Algorithme récursif non optimisé</a></li>
+    <li><a href="#algorithme-avec-mémoïzation">Algorithme avec mémoïzation</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#le-problème-du-rendu-de-monnaie">Le problème du rendu de monnaie</a>
+      <ul>
+        <li><a href="#algorithme-exhaustif">Algorithme exhaustif</a></li>
+        <li><a href="#heuristique-glouton">heuristique glouton</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#algorithme-de-programmation-dynamique--rendu-de-monnaie">Algorithme de programmation dynamique — rendu de monnaie</a></li>
+    <li><a href="#exemple--rendre-15-avec-des-pièces-de-1-7-9">Exemple : rendre 15 avec des pièces de {1, 7, 9}</a>
+      <ul>
+        <li><a href="#remplissage-du-tableau-ligne-par-ligne">Remplissage du tableau ligne par ligne</a></li>
+        <li><a href="#tableau-complet">Tableau complet</a></li>
+        <li><a href="#complexité">Complexité</a></li>
+      </ul>
+    </li>
+    <li><a href="#le-problème-du-sac-à-dos">Le problème du sac à dos</a>
+      <ul>
+        <li><a href="#adapter-la-stratégie-du-rendu-de-monnaie">Adapter la stratégie du rendu de monnaie</a></li>
+        <li><a href="#algorithme-de-type-programmation-dynamique">Algorithme de type programmation dynamique</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#énoncé-du-problème">énoncé du problème</a></li>
+    <li><a href="#exemple-solution-gloutonne">Exemple: solution gloutonne</a></li>
+    <li><a href="#méthode-itérative-damélioration-algorithme-de-recherche-locale-k-opt">Méthode itérative d&rsquo;amélioration: algorithme de recherche locale k-opt</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#rappels">Rappels</a></li>
+    <li><a href="#problèmes-p-probleme-faciles-à-trouver">Problèmes P: probleme faciles à trouver</a></li>
+    <li><a href="#problèmes-np-problèmes-faciles-à-vérifier">Problèmes NP: problèmes faciles à vérifier</a></li>
+    <li><a href="#problèmes-np-complets">Problèmes NP-complets</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#programmes-python-du-rendu-de-monnaie">Programmes python du rendu de monnaie</a>
+      <ul>
+        <li><a href="#algo-naîf-vu-en-classe-de-1ere">algo naîf vu en classe de 1ere</a></li>
+        <li><a href="#algo-glouton-recursif">algo glouton recursif</a></li>
+        <li><a href="#algorithme-en-programmation-dynamique">algorithme en programmation dynamique</a></li>
+        <li><a href="#algorithme-exhaustif-1">Algorithme exhaustif</a></li>
+      </ul>
+    </li>
+    <li><a href="#le-problème-du-sac-à-dos-1">Le problème du sac à dos</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">algorithmes avancés</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/algorithmes/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page9/index.html" title="rotation quart de tour (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page7/index.html" title="algorithme de Boyer Moore (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="algorithmes-avancés">algorithmes avancés</h1>
+
+<h1 id="pré-requis">Pré requis<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Complexité : <a href="../page1/">lien</a></li>
+<li>Récursivité : <a href="../../langages/page2/">lien</a></li>
+</ul>
+<p>On verra dans cette page:</p>
+<ul>
+<li>la programmation dynamique</li>
+<li>les algorithmes gloutons</li>
+<li>un exemple d&rsquo;algorithme avec recherche locale. Pour la résolution d&rsquo;un problème de TSP (Traveling salesman problem)</li>
+<li>Les classes de problèmes de decision, P, NP, NP-complet</li>
+</ul>
+<h1 id="programmation-dynamique">Programmation dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe-de-la-méthode">Principe de la méthode<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La programmation dynamique permet de résoudre plus <em>efficacement des problèmes d&rsquo;optimisation.</em></p>
+<p>La programmation dynamique consiste à résoudre un problème en le décomposant en sous-problèmes, puis à <strong>résoudre les sous-problèmes</strong>, des plus petits aux plus grands <strong>en stockant les résultats intermédiaires</strong>, et en suivant une règle d&rsquo;optimalité. La solution donnée par un algorithme glouton est optimale, mais n&rsquo;est pas forcement la solution <em>la plus optimale</em> au problème.</p>
+<p>Cela diffère des <em>algorithmes de type diviser pour régner</em> par le fait que les sous-problèmes considérés ne sont pas nécessairement indépendants. Pour les algorithmes de type <em>diviser pour régner</em>, on partitionne le problème en sous problèmes indépendants, qui seront résolus recursivement. Puis on combine leurs solutions pour résoudre le problème initial. Mais cela peut revenir à résoudre plusieurs fois le même sous-problème, et peut être parfois inefficace.</p>
+<p>Pour la <em>méthode de programmation dynamique</em>, on va se rappeler des sous-problèmes résolus (de leurs solutions), et eviter de les re-calculer.</p>
+<p>Cette méthode a été introduite au début des années 1950 par Richard Bellman.</p>
+<h2 id="comment-sy-prendre-pour-mémoriser-les-solutions">Comment s&rsquo;y prendre pour mémoriser les solutions?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La méthode demande alors de <em>mémoriser</em> ce résultat intermédiaire dans un dictionnaire ou un tableau afin de le réutiliser au besoin. Sans avoir besoin de les recalculer. La complexité spatiale augmente, mais celle temporelle diminue.</p>
+<p>Cette méthode s&rsquo;appelle : la <strong>mémoïzation</strong>.</p>
+<p>Elle va permettre d&rsquo;eviter la <em>répétition</em> des calculs que l&rsquo;on voit dans l&rsquo;exemple suivant, le triangle de Pascal. Sans cette <em>reduction</em>, la compléxité de l&rsquo;algorithme est exponentielle (voir l&rsquo;arbre des calculs, présenté plus bas).</p>
+<p>Ce problème de <em>répétitions</em> a été vu avec l&rsquo;exemple du calcul des termes de la suite de Fibonacci.</p>
+<h1 id="limites-de-la-méthode-diviser-pour-regner--le-triangle-de-pascal">Limites de la méthode <em>diviser pour regner</em> : le triangle de Pascal<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En mathématiques, le triangle de Pascal est une présentation des coefficients binomiaux dans un triangle. Il fut nommé ainsi en l&rsquo;honneur du mathématicien français Blaise Pascal. Il est connu sous l&rsquo;appellation « triangle de Pascal » en Occident, bien qu&rsquo;il fût étudié par d&rsquo;autres mathématiciens, parfois plusieurs siècles avant lui.</p>
+<p>
+<figure >
+    <a href="https://commons.wikimedia.org/w/index.php?curid=3105222">
+        <img src="../images/page6-Pascal_triangle.jpg" alt="triangle de Pascal" />
+    </a>
+    
+    <figcaption>
+        <p>
+        premières lignes du triangle de Pascal
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Cette figure permet de calculer les coefficients binomiaux d&rsquo;un polynôme (x+y) à la puissance n:</p>
+$$\begin{matrix}\begin{align}n=2, (x+y)^2 & = x^2+2xy+y^2\\\n=3, (x+y)^3 & = x^3+3x^2y+3xy^2+y^3\\\n=4, (x+y)^4 & = x^4+4x^3y+6x^2y^2+4xy^3+y^4\end{align}\end{matrix}$$<p>voir compléments sur la page wikipedia :<a href="https://fr.wikipedia.org/wiki/Triangle_de_Pascal"> 
+            Lien
+        </a> </p>
+<p>Un coefficient quelconque du triangle, situé à la ligne i et à la colonne j est calculé à partir de la formule de récurrence : (i et j superieurs à 1)</p>
+$$C\left(\begin{matrix}i\\\j\end{matrix}\right)=C\left(\begin{matrix}i-1\\\j-1\end{matrix}\right)+C\left(\begin{matrix}i-1\\\j\end{matrix}\right)$$<!-- raw HTML omitted -->
+
+<figure >
+    
+        <img src="../images/page6_calcul.png"  />
+    
+    
+</figure>
+
+<h2 id="algorithme-récursif-non-optimisé">Algorithme récursif non optimisé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les algorithmes de type <em>diviser pour regner</em> sont souvent exprimés de manière recursive.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pascal_recur</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># calcul d&#39;un coefficient par recursivité</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">p</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span><span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">p</span><span class="o">&gt;</span><span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pascal_recur</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="p">)</span> <span class="o">+</span> <span class="n">pascal_recur</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">pascal</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">T</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">pascal_recur</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">T</span></span></span></code></pre></div>
+<p>On peut alors tester le programme:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; pascal(9)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[[1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 2, 1, 0, 0, 0, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 3, 3, 1, 0, 0, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 4, 6, 4, 1, 0, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 5, 10, 10, 5, 1, 0, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 6, 15, 20, 15, 6, 1, 0, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 7, 21, 35, 35, 21, 7, 1, 0, 0],
+</span></span><span class="line"><span class="cl"> [1, 8, 28, 56, 70, 56, 28, 8, 1, 0],
+</span></span><span class="line"><span class="cl"> [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]]</span></span></code></pre></div>
+<p>On remarque que l&rsquo;on calcule souvent les mêmes coefficients binomiaux :</p>
+
+<figure >
+    
+        <img src="../images/page6_arbre_binomiaux.png" alt="arbre de calculs binomiaux" />
+    
+    
+    <figcaption>
+        <p>
+        arbre de calcul des coefficients pour n=4 p=2
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>On voit que certains termes, comme celui (n=2, p=1) est calculé plusieurs fois. Dans les branches (n=3, p=1) et (n=3, p=2). Cela est du au fait que les 2 branches de l&rsquo;arbre sont indépendantes.</em></p>
+<p>La mémoïzation consistera alors à stocker dans un tableau les solutions pour les sous-problèmes afin de ne pas les recalculer&hellip;</p>
+<h2 id="algorithme-avec-mémoïzation">Algorithme avec mémoïzation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Chaque valeur du triangle n&rsquo;est calculée qu&rsquo;une seule fois.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">trianglePascal</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">T</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">T</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">T</span></span></span></code></pre></div>
+<p>L&rsquo;algorithme non recursif, avec mémoïzation est plus efficace.</p>
+<h1 id="problèmes-de-décision-et-algorithmes-gloutons">Problèmes de décision et <em>algorithmes gloutons</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Un algorithme glouton</strong> est un algorithme qui suit le principe de réaliser, <em>étape par étape</em>, un <em>choix optimum local</em>, afin d&rsquo;obtenir un résultat <em>optimum global</em>.</p>
+<h2 id="le-problème-du-rendu-de-monnaie">Le problème du rendu de monnaie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le problème du rendu de monnaie est un problème d&rsquo;algorithmique. Il s&rsquo;énonce de la façon suivante : étant donné un système de monnaie (pièces et billets), comment <strong>rendre une somme donnée de façon optimale</strong>, c&rsquo;est-à-dire avec le <strong>nombre minimal</strong> de pièces et billets ?</p>
+<p>Par exemple, la meilleure façon de rendre 7 euros est de rendre un billet de cinq et une pièce de deux, même si d&rsquo;autres façons existent (rendre 7 pièces de un euro, par exemple).</p>
+
+<figure >
+    <a href="https://pixabay.com/users/conmongt-1226108/?utm_source=link-attribution&amp;amp;utm_medium=referral&amp;amp;utm_campaign=image&amp;amp;utm_content=2048569">
+        <img src="../images/caisse.png" alt="caisse rendu monnaie" />
+    </a>
+    
+    <figcaption>
+        <p>
+        Image by conmongt-pixabay
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>Voir l&rsquo;animation sur le site</strong> <a href="https://mpechaud.fr/scripts/recursivite/recursivite.html#:~:text=Rendu%20de%20Monnaie%20(diviser%20pour%20r%C3%A9gner),-On%20se%20donne&text=On%20peut%20utiliser%20la%20strat%C3%A9gie,utilis%C3%A9es%2C%20class%C3%A9e%20par%20valeurs%20d%C3%A9croissantes.&text=Si%20s%3D0%2C%20afficher%20l.&text=On%20appelle%20alors%20cet%20algorithme%20en%20partant%20de%20la%20liste%20l%20vide." rel="external">mpechaud.fr</a></p>
+<p>Sur l&rsquo;animation, l&rsquo;algorithme traite TOUTES les combinaisons de rendu de monnaie. L&rsquo;arbre des appels recursifs montre que la complexité de cette méthode croit exponentiellement avec la taille des paramètres d&rsquo;entrée.</p>
+<p>Contrairement aux problèmes étudiés précédement (tri d’un tableau, calcul de x<!-- raw HTML omitted -->n<!-- raw HTML omitted -->&hellip;), où il y avait toujours une unique solution, dans les problèmes d’optimisation, il peut y avoir des solutions valides (satisfaisant les contraintes) non optimales, une ou plusieurs solutions (valides), optimales (minimisant/maximisant une certaine mesure), voire pas du tout de solution valide.</p>
+<p>Si la taille du ou des paramètres en entrée est importante, il n&rsquo;y a pas d&rsquo;algorithme déterministe efficace. (on ne peut pas trouver LA solution au problème en parcourant toutes les solutions possibles car la complexité est trop grande). <em>Voir paragraphe suivant sur la recherche exhaustive</em>.</p>
+<p>On utilise alors d&rsquo;autres stratégies, qui donneront parfois une solution, parfois une solution optimale. C&rsquo;est ce que l&rsquo;on réalise avec l&rsquo;utilisation d&rsquo;un algorithme glouton.</p>
+<p>Le problème du rendu de monnaie est <em>NP-difficile</em> relativement au nombre de pièce et billet du système monétaire considéré. (voir annexe).</p>
+<h3 id="algorithme-exhaustif">Algorithme exhaustif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une première méthode, SANS stratégie, pourrait être d&rsquo;envisager TOUTES les combinaisons. On pourrait alors imaginer que l&rsquo;on commence par rendre la monnaie avec une des pieces de la caisse (pas forcément la plus haute), puis on choisit une autre piece possible (egale ou moins haute), &hellip; Jusqu&rsquo;à ce que la somme à rendre soit nulle. On envisage ainsi toutes les combinaisons possibles, ce qui, avec une valeur élevée de la somme à rendre, et un grand nombre de pieces dans la caisse, va donner un très grand nombre de combinaisons. On selectionne enfin la meilleure des solutions (celle optimale).</p>
+<p>Par exemple, pour rendre 7 euros, voici toutes les combinaisons possibles (la solution optimale étant la première):</p>
+<ul>
+<li>5 + 2</li>
+<li>5 + 1 + 1</li>
+<li>2 + 2 + 2 + 1</li>
+<li>2 + 2 + 1 + 1 + 1</li>
+<li>2 + 1 + 1 + 1 + 1 + 1</li>
+<li>1 + 1 + 1 + 1 + 1 + 1 + 1</li>
+</ul>
+<p>On peut représenter cette recherche de solutions à l&rsquo;aide d&rsquo;un arbre: La racine est la somme à rendre. On descend dans l&rsquo;arbre en faisant des choix, ce qui diminue la somme. Lorsque l&rsquo;on arrive sur une feuille avec 0, c&rsquo;est que l&rsquo;on a trouvé une solution. La solution otimale est donnée ici en rendant 4 pieces de 7 (trajectoire presque verticale de 28 à 0):</p>
+
+<figure >
+    
+        <img src="../images/Rendu_monnaie.svg" alt="wikipedia - Problème_du_rendu_de_monnaie" />
+    
+    
+    <figcaption>
+        <p>
+        wikipedia - Problème_du_rendu_de_monnaie
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<ol>
+<li>Représenter, comme sur l&rsquo;image ci-dessus, une partie de l&rsquo;arbre des combinaisons pour rendre un montant égal à 15, en choisissant une à une chaque piece de la caisse <code>[1, 7, 9]</code>. Quelle est la trajectoire dans cet arbre selon la méthode <em>gloutonne</em>? Quel est le choix optimal?</li>
+</ol>
+</blockquote>
+<p>Un programme python exprimerait le rendu sous forme de liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">rendu</span><span class="p">(</span><span class="mi">7</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 6 solutions</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">rendu</span><span class="p">(</span><span class="mi">14</span><span class="p">,[</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 19 solutions</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="n">rendu</span><span class="p">(</span><span class="mi">21</span><span class="p">,[</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 44 solutions</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span></span></span></code></pre></div>
+<h3 id="heuristique-glouton">heuristique glouton<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le problème est traité de cette manière en <a href="/docs/NSI_1/algo/page3/">1ere NSI</a>:</p>
+<p>Une caisse contient un nombre suffisant de pieces pour rendre la monnaie. Cette caisse est représentée par une liste triée en ordre croissant, et sera parcourue de la piece de valeur la plus élevée vers la moins élevée.</p>
+<p>Supposons que l&rsquo;on dispose d&rsquo;une fonction recursive, qui pour chaque piece de la caisse fait le choix suivant:</p>
+<ul>
+<li>soit la piece est inférieure à la monnaie à rendre: alors on soustrait la piece à la somme à rendre et on appelle la fonction de manière récursive avec cette même caisse, et la nouvelle somme à rendre.</li>
+<li>soit la piece est supérieure à la somme à rendre. on retire la piece de la caisse. Et on appelle de manière récursive la fonction avec la nouvelle caisse, et la même somme.</li>
+</ul>
+<p>La condition de base sera: la liste de pieces est vide.</p>
+<p>On utilisera une liste <code>rendu</code> pour placer les pieces rendues.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rendre_monnaie</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span><span class="n">pieces</span><span class="p">,</span><span class="n">rendu</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">pieces</span> <span class="o">==</span> <span class="p">[]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rendu</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">pieces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">somme</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rendu</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pieces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rendre_monnaie</span><span class="p">(</span><span class="n">somme</span><span class="o">-</span><span class="n">pieces</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">pieces</span><span class="p">,</span><span class="n">rendu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pieces</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">rendre_monnaie</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span><span class="n">pieces</span><span class="p">,</span><span class="n">rendu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rendre_monnaie</span><span class="p">(</span><span class="mi">49</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">],[])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [20, 20, 5, 2, 2]</span></span></span></code></pre></div>
+<p><strong>Un système monétaire non canonique:</strong></p>
+<blockquote>
+<ol>
+<li>Que renvoie la fonction pour rendre 53 pences avec le <a href="https://fr.wikipedia.org/wiki/Shilling_britannique" rel="external">système imperial</a> où <code>pieces = [240,60,30,24,12,6,3,1]</code> ?</li>
+<li>Le rendu est-il optimal avec cette méthode? Ou bien existe t-il une autre façon de rendre la monnaie, avec moins de pieces?</li>
+</ol>
+</blockquote>
+<p><em>Conclusion:</em> Suivant le système de pièces, l&rsquo;algorithme glouton est optimal ou pas. Dans le système de pièces européen (en centimes : 1, 2, 5, 10, 20, 50, 100, 200), où l&rsquo;algorithme glouton donne la somme suivante pour 37 : 20+10+5+2, on peut montrer que l&rsquo;algorithme glouton donne toujours une solution optimale. <a href="https://fr.wikipedia.org/wiki/Algorithme_glouton" rel="external">wikipedia</a></p>
+<h1 id="algorithme-glouton-vs-programmation-dynamique">Algorithme glouton vs programmation dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un algorithme <strong>glouton</strong> fait un choix local immédiat et irrévocable à chaque étape, sans revenir en arrière. Pour le rendu de monnaie, il prendrait systématiquement la plus grande pièce possible. C&rsquo;est simple et rapide, mais pas toujours optimal.</p>
+<blockquote>
+<p><strong>Exemple :</strong> rendre 15 avec {1, 7, 9} → le glouton prend 9, puis 6 × 1 = <strong>7 pièces</strong>.</p>
+</blockquote>
+<p>La <strong>programmation dynamique</strong> construit au contraire un tableau de solutions optimales pour tous les sous-problèmes, en s&rsquo;appuyant à chaque étape sur les résultats déjà calculés. Elle garantit l&rsquo;optimum.</p>
+<hr>
+<h2 id="algorithme-de-programmation-dynamique--rendu-de-monnaie">Algorithme de programmation dynamique — rendu de monnaie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On cherche à rendre un montant <code>x</code> avec un minimum de pièces, choisies parmi <code>n</code> valeurs possibles.</p>
+<p><strong>Approche ascendante :</strong> on construit une table de solutions optimales pour tous les montants de 0 à <code>x</code>. On commence par les petits montants, puis on monte progressivement. Chaque montant est rendu de manière optimale en s&rsquo;appuyant sur les résultats déjà calculés.</p>
+<p><strong>Principe :</strong> pour rendre le montant <code>w</code>, il faut au moins une pièce, à choisir parmi les <code>n</code> pièces disponibles. Une fois cette pièce choisie de valeur <code>p</code>, le montant restant <code>w - p</code> est strictement inférieur à <code>w</code> — on sait donc déjà le rendre de façon optimale (c&rsquo;est déjà dans le tableau). Il suffit d&rsquo;essayer les <code>n</code> possibilités et de retenir celle qui minimise le nombre total de pièces :</p>
+$$dp[w] = \min_{p \in \text{pièces},\ p \leq w} \left( dp[w - p] + 1 \right)$$<hr>
+<h2 id="exemple--rendre-15-avec-des-pièces-de-1-7-9">Exemple : rendre 15 avec des pièces de {1, 7, 9}<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="remplissage-du-tableau-ligne-par-ligne">Remplissage du tableau ligne par ligne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><code>dp[i][w]</code> = nombre minimum de pièces pour rendre exactement <code>w</code> avec les <code>i</code> premiers types de pièces. ∞ signifie &ldquo;impossible&rdquo;.</p>
+<p><strong>Ligne 0 — sans pièce :</strong></p>
+<ul>
+<li><code>dp[0][0]</code> = 0 : rendre 0€ ne nécessite aucune pièce</li>
+<li><code>dp[0][w]</code> = ∞ pour tout <code>w &gt; 0</code> : impossible de rendre quoi que ce soit sans pièce</li>
+</ul>
+<p><strong>Ligne 1 — pièces disponibles : {1} :</strong></p>
+<ul>
+<li><code>dp[1][w]</code> = <code>w</code> pour tout <code>w</code> : il faut exactement <code>w</code> pièces de 1€</li>
+</ul>
+<p><strong>Ligne 2 — pièces disponibles : {1, 7} :</strong></p>
+<ul>
+<li>Pour <code>w &lt; 7</code> : la pièce de 7€ est inutilisable → on recopie la ligne 1</li>
+<li>Pour <code>w ≥ 7</code> : on compare &ldquo;ne pas prendre la pièce de 7€&rdquo; (<code>dp[1][w]</code>) et &ldquo;la prendre&rdquo; (<code>dp[2][w-7] + 1</code>) :
+<ul>
+<li><code>w = 7</code> : min(7, dp[2][0]+1) = min(7, 1) = <strong>1</strong></li>
+<li><code>w = 8</code> : min(8, dp[2][1]+1) = min(8, 2) = <strong>2</strong></li>
+<li><code>w = 9</code> : min(9, dp[2][2]+1) = min(9, 3) = <strong>3</strong></li>
+<li><code>w = 10</code> : min(10, dp[2][3]+1) = min(10, 4) = <strong>4</strong></li>
+<li><code>w = 11</code> : min(11, dp[2][4]+1) = min(11, 5) = <strong>5</strong></li>
+<li><code>w = 12</code> : min(12, dp[2][5]+1) = min(12, 6) = <strong>6</strong></li>
+<li><code>w = 13</code> : min(13, dp[2][6]+1) = min(13, 7) = <strong>7</strong></li>
+<li><code>w = 14</code> : min(14, dp[2][7]+1) = min(14, 2) = <strong>2</strong></li>
+<li><code>w = 15</code> : min(15, dp[2][8]+1) = min(15, 3) = <strong>3</strong></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Note : quand on &ldquo;prend&rdquo; la pièce de 7€, on consulte <code>dp[2][w-7]</code> (et non <code>dp[1][w-7]</code>), car on peut réutiliser la même pièce autant de fois qu&rsquo;on veut.</p>
+</blockquote>
+<p><strong>Ligne 3 — pièces disponibles : {1, 7, 9} :</strong></p>
+<ul>
+<li>Pour <code>w &lt; 9</code> : la pièce de 9€ est inutilisable → on recopie la ligne 2</li>
+<li>Pour <code>w ≥ 9</code> : on compare &ldquo;ne pas prendre la pièce de 9€&rdquo; (<code>dp[2][w]</code>) et &ldquo;la prendre&rdquo; (<code>dp[3][w-9] + 1</code>) :
+<ul>
+<li><code>w = 9</code> : min(dp[2][9], dp[3][0]+1) = min(3, 1) = <strong>1</strong></li>
+<li><code>w = 10</code> : min(dp[2][10], dp[3][1]+1) = min(4, 2) = <strong>2</strong></li>
+<li><code>w = 11</code> : min(dp[2][11], dp[3][2]+1) = min(5, 3) = <strong>3</strong></li>
+<li><code>w = 12</code> : min(dp[2][12], dp[3][3]+1) = min(6, 4) = <strong>4</strong></li>
+<li><code>w = 13</code> : min(dp[2][13], dp[3][4]+1) = min(7, 5) = <strong>5</strong></li>
+<li><code>w = 14</code> : min(dp[2][14], dp[3][5]+1) = min(2, 6) = <strong>2</strong></li>
+<li><code>w = 15</code> : min(dp[2][15], dp[3][6]+1) = min(3, 7) = <strong>3</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="tableau-complet">Tableau complet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>w=0</th>
+					<th>w=1</th>
+					<th>w=2</th>
+					<th>w=3</th>
+					<th>w=4</th>
+					<th>w=5</th>
+					<th>w=6</th>
+					<th>w=7</th>
+					<th>w=8</th>
+					<th>w=9</th>
+					<th>w=10</th>
+					<th>w=11</th>
+					<th>w=12</th>
+					<th>w=13</th>
+					<th>w=14</th>
+					<th>w=15</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>sans pièce</td>
+					<td>0</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>∞</td>
+			</tr>
+			<tr>
+					<td>+ pièce 1€</td>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>10</td>
+					<td>11</td>
+					<td>12</td>
+					<td>13</td>
+					<td>14</td>
+					<td>15</td>
+			</tr>
+			<tr>
+					<td>+ pièce 7€</td>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>2</td>
+					<td>3</td>
+			</tr>
+			<tr>
+					<td>+ pièce 9€</td>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>1</td>
+					<td>2</td>
+					<td><strong>1</strong></td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td><strong>2</strong></td>
+					<td><strong>3</strong></td>
+			</tr>
+	</tbody>
+</table>
+<p>La réponse se lit dans la dernière case : <code>dp[3][15]</code> = <strong>3 pièces</strong> (7 + 7 + 1).</p>
+<hr>
+<h3 id="complexité">Complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<blockquote>
+<p>Comment cet algorithme parvient-il à reduire le nombre de combinaisons pour rendre la monnaie?</p>
+</blockquote>
+<p>Le tableau comporte <code>n × W</code> cases (ici 3 × 15 = 45), chacune calculée en temps constant. La complexité est donc <strong>O(n · W)</strong> — à comparer avec la méthode exhaustive en <strong>O(2ⁿ)</strong> :</p>
+<table>
+	<thead>
+			<tr>
+					<th>n</th>
+					<th>W</th>
+					<th>O(n · W)</th>
+					<th>O(2ⁿ)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>10</td>
+					<td>100</td>
+					<td>1 000</td>
+					<td>1 024</td>
+			</tr>
+			<tr>
+					<td>30</td>
+					<td>500</td>
+					<td>15 000</td>
+					<td>≈ 10⁹</td>
+			</tr>
+			<tr>
+					<td>100</td>
+					<td>500</td>
+					<td>50 000</td>
+					<td>≈ 10³⁰</td>
+			</tr>
+	</tbody>
+</table>
+<p>Pour des instances réalistes, la programmation dynamique est <strong>des milliards de fois plus rapide</strong> que la recherche exhaustive.</p>
+<p><strong>Remarques:</strong></p>
+<ul>
+<li>La subtilité importante : <code>O(n·W)</code> ressemble à du polynomial, mais W peut être très grand. Si les poids sont exprimés en grammes et que le sac fait 100 kg, W = 100 000. C&rsquo;est pour ça que le sac à dos reste un problème dit <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_NP-complet" rel="external">NP-complet</a> dans le cas général, c&rsquo;est-à-dire difficile à résoudre. Cependant pour certains systèmes de monnaie dits canoniques, l&rsquo;<a href="https://fr.wikipedia.org/wiki/Algorithme_glouton" rel="external">algorithme glouton</a> est optimal.</li>
+<li>Regarder aussi: le probleme de l&rsquo;allocation des ressources pour un systeme d&rsquo;exploitation: <a href="https://fr.wikipedia.org/wiki/Algorithme_du_banquier" rel="external">l&rsquo;algorithme du banquier</a></li>
+</ul>
+<h2 id="le-problème-du-sac-à-dos">Le problème du sac à dos<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un problème très similaire est celui du sac-à-dos. Supposons que vous découvriez la caverne d&rsquo;Ali Baba (et des 40 voleurs), il y a une infinité d&rsquo;objets de valeur <code>v1, v2, · · · , vn</code> mais chaque objet de valeur <code>vi</code> a un poids de <code>pi</code>. Comment remplir votre sac-à-dos avec le contenu qui rapportera le plus, sachant que votre sac ne supporte qu’un poids <code>W</code>?</p>
+
+<figure >
+    
+        <img src="../images/sacados.png" alt="probleme du sac a dos" />
+    
+    
+    <figcaption>
+        <p>
+        illustration du probleme du sac à dos
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Voir l&rsquo;article et l&rsquo;animation sur <a href="https://interstices.info/le-probleme-du-sac-a-dos/" rel="external">Interstices</a></p>
+<h3 id="adapter-la-stratégie-du-rendu-de-monnaie">Adapter la stratégie du rendu de monnaie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Heuristique gloutonne</strong></p>
+<p><em>Structure de données:</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>rendu de monnaie</th>
+					<th>sac à dos</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>[Nbre de piece, [pieces de 1, pieces de 2, pieces de 5, &hellip;]]</td>
+					<td>[Gains cumulés, [articles 1, articles 2, articles 3, &hellip;]]</td>
+			</tr>
+	</tbody>
+</table>
+<p><em>Exemple</em>:</p>
+<blockquote>
+<p>Déterminer le choix idéal pour un sac à dos de capacité 32kg, avec les objets suivants, proposés en nombre infini: `[{&ldquo;valeur&rdquo;: 7, &ldquo;poids&rdquo;:17},{&ldquo;valeur&rdquo;: 4, &ldquo;poids&rdquo;:11},{&ldquo;valeur&rdquo;: 3.1, &ldquo;poids&rdquo;:9},{&ldquo;valeur&rdquo;: 1, &ldquo;poids&rdquo;:3.5}]</p>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Objets</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>valeur</td>
+					<td>7</td>
+					<td>4</td>
+					<td>3.1</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>poids (kg)</td>
+					<td>17</td>
+					<td>11</td>
+					<td>9</td>
+					<td>3.5</td>
+			</tr>
+			<tr>
+					<td>ratio val/poids</td>
+					<td>0.41</td>
+					<td>0.36</td>
+					<td>0.34</td>
+					<td>0.29</td>
+			</tr>
+	</tbody>
+</table>
+<p>La <em>stratégie</em>, sur le modèle du rendu de monnaie sera la suivante:</p>
+<ul>
+<li>classer les objets dans l&rsquo;ordre décroissant de leur taux de valeur (taux de valeur = valeur / masse). Ainsi le premier élément de la liste sera celui ayant le meilleur rapport valeur/masse.</li>
+<li>on prend le premier élément de la liste, puis le deuxième, etc., tant que le sac peut encore les contenir.</li>
+</ul>
+<h3 id="algorithme-de-type-programmation-dynamique">Algorithme de type programmation dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Nous allons chercher à adapter ici aussi l&rsquo;algorithme vu pour le rendu de monnaie:</p>
+<p><em>Algorithme:</em></p>
+<table>
+	<thead>
+			<tr>
+					<th>rendu de monnaie</th>
+					<th>sac à dos</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Pour toute valeur de montant i jusqu&rsquo;à x</td>
+					<td>Pour tout poids i jusqu&rsquo;à W</td>
+			</tr>
+			<tr>
+					<td>Pour tout montant de piece de la caisse</td>
+					<td>Pour tout objet (vi, pi) du tresor</td>
+			</tr>
+			<tr>
+					<td><strong>Test 1</strong>: le montant de la piece est-il &lt; i?</td>
+					<td><strong>Test 1</strong>: Le poids de l&rsquo;objet est-il &lt; i?</td>
+			</tr>
+			<tr>
+					<td><strong>Test 2</strong>: Si j&rsquo;ajoute la piece pour rendre la monnaie, le nombre de pieces rendues sera-t-il inférieur à celui stocké pour i? (le reste de la somme à rendre a deja été calculé precedemment)</td>
+					<td><strong>Test 2</strong>: Si je prend l&rsquo;objet, le montant total rapporté est-il supérieur à la valeur stockée pour i?</td>
+			</tr>
+			<tr>
+					<td>Si oui: rendre la piece</td>
+					<td>Si oui: prendre l&rsquo;objet</td>
+			</tr>
+	</tbody>
+</table>
+<p>Cela reviendra à remplir le tableau suivant, de manière ascendante:</p>
+<ul>
+<li>Commencer par le sac de plus petite capacité.</li>
+<li>Pour chaque objet de poids &lt; capacité du sac:
+<ul>
+<li>prendre l&rsquo;objet.</li>
+<li>Compléter le sac avec la solution optimale déjà trouvée dans le tableau.</li>
+</ul>
+</li>
+<li>Choisir parmi les solutions trouvées, celle de gain optimal.</li>
+<li>Continuer avec un sac de capacité supérieure.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>capacité du sac (kg)</th>
+					<th>Liste des objets (valeur,poids)</th>
+					<th>coût cumulé <code>($)</code></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>4, 5, 6</td>
+					<td><code>[(1,3.5)]</code></td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>7,8</td>
+					<td><code>[(1,3.5), (1,3.5)]</code></td>
+					<td>2</td>
+			</tr>
+			<tr>
+					<td>9</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>10</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>11</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>12</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>13</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>14</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>15</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>16</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>17</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+			<tr>
+					<td>18</td>
+					<td>..</td>
+					<td>..</td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="le-problème-du-voyageur-du-commerce">Le problème du voyageur du commerce<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="énoncé-du-problème">énoncé du problème<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>le problème du voyageur de commerce, est un problème d&rsquo;optimisation qui, étant donné une liste de villes, et des distances entre toutes les paires de villes, détermine un plus court circuit qui visite chaque ville une et une seule fois.</p>
+<p>Malgré la simplicité de son énoncé, il s&rsquo;agit d&rsquo;un problème d&rsquo;optimisation pour lequel on ne connait pas d&rsquo;algorithme permettant de trouver une solution exacte rapidement dans tous les cas. Plus précisément, on ne connait pas d&rsquo;algorithme en temps polynomial, et sa version décisionnelle (pour une distance D, existe-t-il un chemin plus court que D passant par toutes les villes et qui termine dans la ville de départ ?) est un problème <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_NP-complet" rel="external">NP-complet</a>. Voir annexe pour précisions.</p>
+<p>Pour résoudre ce problème, une <strong>heuristique gloutonne</strong> construit une seule solution, par une suite de décisions définitives sans retour arrière, parmi ces méthodes on cite le plus proche voisin, la plus proche insertion, la plus lointaine insertion et la meilleure insertion. Il n&rsquo;est pas certain que la méthode donne la meilleure solution.</p>
+<p>La figure suivante aide à la resolution. La solution optimale est celle qui va joindre tous les noeuds du graphe, une seule fois. (Cycle hamiltonien)<!-- raw HTML omitted -->
+Des solutions possibles, mais non optimales sont celles qui permettent de visiter tous les noeuds une seule fois, mais dont la distance parcourue cumulée n&rsquo;est peut-être pas la plus courte.</p>
+<p>
+<figure >
+    
+        <img src="../images/hamilton.png" alt="cycle hamiltonien" />
+    
+    
+    <figcaption>
+        <p>
+        illustration de la recherche d&#39;un cycle hamiltonien dans un graphe.
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Mais une illustration plus concrête est celle par exemple du problème de la tournée du candidat pour les élections présidentielles aux état-unis:</p>
+<p>
+<figure >
+    
+        <img src="../images/tournee.png" alt="tournée du candidat à la presidentielle" />
+    
+    
+    <figcaption>
+        <p>
+        tournée du candidat à la presidentielle
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On voit que la recherche d&rsquo;une solution en comparant tous les tours qu&rsquo;il est mathématiquement possible de faire n&rsquo;est pas raisonnable. La complexité est trop importante.</p>
+<h2 id="exemple-solution-gloutonne">Exemple: solution gloutonne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un voyageur cherche un itinéraire passant par toutes les villes du tableau, et qui minimise la distance totale parcourue. Les villes peuvent être visitées dans n&rsquo;importe quel ordre mais aucune ne doit être négligée, et le visiteur doit revenir à la fin à sa ville de départ.</p>
+<p>Le voyageur part de Nancy et souhaite visiter Metz, Paris, Reims et Troyes, avant de retourner à Nancy.</p>
+<p>Voici un tableau donnant les distances kilométriques entre chacune des ces villes.</p>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>Nancy</th>
+					<th>Metz</th>
+					<th>Paris</th>
+					<th>Reims</th>
+					<th>Troyes</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Nancy</td>
+					<td></td>
+					<td>55</td>
+					<td>303</td>
+					<td>188</td>
+					<td>183</td>
+			</tr>
+			<tr>
+					<td>Metz</td>
+					<td>55</td>
+					<td></td>
+					<td>306</td>
+					<td>176</td>
+					<td>203</td>
+			</tr>
+			<tr>
+					<td>Paris</td>
+					<td>303</td>
+					<td>306</td>
+					<td></td>
+					<td>142</td>
+					<td>153</td>
+			</tr>
+			<tr>
+					<td>Reims</td>
+					<td>188</td>
+					<td>176</td>
+					<td>142</td>
+					<td></td>
+					<td>123</td>
+			</tr>
+			<tr>
+					<td>Troyes</td>
+					<td>183</td>
+					<td>203</td>
+					<td>153</td>
+					<td>123</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<ol>
+<li>Quelle est la stratégie gloutonne à mettre en oeuvre ?</li>
+<li>Mettez en oeuvre cette stratégie et donnez la solution.</li>
+<li>Calculez la distance totale pour le parcours Metz - Reims - Paris - Troyes (départ et arrivée à Nancy sous-entendus)</li>
+<li>Que dire de la solution gloutonne ?</li>
+</ol>
+<h2 id="méthode-itérative-damélioration-algorithme-de-recherche-locale-k-opt">Méthode itérative d&rsquo;amélioration: algorithme de recherche locale k-opt<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;algorithme k-opt est un algorithme de recherche locale proposé par Georges A. Croes en 19581 pour résoudre le problème du voyageur de commerce en améliorant une solution initiale. On représente le tour par un graphe connexe.</p>
+<p>à chaque étape, on supprime deux arêtes de la solution courante et on reconnecte les deux tours ainsi formés. Cette méthode permet, entre autres, d&rsquo;améliorer le coût des solutions en supprimant les arêtes sécantes lorsque l&rsquo;inégalité triangulaire est respectée (voir figure ci-contre). Sur le schéma de droite, la route {a, b, e, d, c, f, g} est changée en {a, b, c, d, e, f, g} en inversant l&rsquo;ordre de visite des villes e et c. Il n&rsquo;est toutefois pas certain que la solution trouvée soit également optimale lorsque l&rsquo;on additionne ces morceaux de tours.. <a href="https://fr.wikipedia.org/wiki/2-opt" rel="external">source: wikipedia: 2-opt</a>.</p>
+<p><em>Plus généralement, lorsqu&rsquo;on inverse l&rsquo;ordre de parcours de deux villes, il faut aussi inverser l&rsquo;ordre de parcours de toutes les villes entre ces deux villes.</em></p>
+
+<figure >
+    <a href="https://commons.wikimedia.org/w/index.php?curid=8044684">
+        <img src="../images/2-opt.png" alt="algorithme 2-opt TSP" />
+    </a>
+    
+</figure>
+
+<h1 id="résumé-lessentiel-à-retenir">Résumé. L&rsquo;essentiel à retenir<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Programmation dynamique</strong></p>
+<p>L&rsquo;idée de la <strong>programmation dynamique</strong>, c&rsquo;est de <strong>gagner en efficacité</strong>. On cherche à reduire la complexité temporelle et spatiale.</p>
+<p>Les problèmes à resoudre:</p>
+<ul>
+<li>peuvent être décomposés en sous-problèmes</li>
+<li>présentent un <em>chevauchement</em> des sous-problèmes.</li>
+</ul>
+<p>Par exemple, pour la suite de Fibonacci, ou le triangle de Pascal, les coefficients de la suite ou du triangle sont calculés à partir des précédents, ceux de rang inférieur(sous problèmes). En stockant ces valeurs dans une liste, on peut les réutiliser sans les calculer à nouveau.</p>
+<p><strong>Algorithmes gloutons</strong></p>
+<p>Un algorithme glouton dépend du problème que l&rsquo;on cherche à resoudre. Il n&rsquo;y a pas d&rsquo;algorithme glouton universel. Il permet de trouver une solution à un problème d&rsquo;optimalité. Il part du principe que l&rsquo;on peut trouver une solution approchante pour un problème NP-complet, en utilisant une stratégie et en faisant des choix. Chacun de ces choix semble être le <strong>meilleur sur le moment</strong>.</p>
+<p>Les choix realisés sont:</p>
+<ul>
+<li>rendre la piece de monnaie la plus grande possible, d&rsquo;abord.</li>
+<li>prendre l&rsquo;objet de plus grand ration prix/poids, d&rsquo;abord.</li>
+</ul>
+<p><strong>Programmation dynamique</strong></p>
+<p>Il s&rsquo;agit maintenant d&rsquo;une stratégie ascendante, utilisant des résultats optimum, établis pour de plus petit cas, afin de resoudre de plus gros.</p>
+<ul>
+<li>
+<p>pour le <em>rendu de monnaie</em>: commencer par résoudre le problème d&rsquo;optimalité pour rendre de plus petites sommes. Puis, on utilise cette solution pour rendre une partie des sommes plus importantes.</p>
+</li>
+<li>
+<p>pour le <em>problème du sac à dos</em>: de commencer par remplir un sac de plus petite contenance. Puis, on utilise ce résultat pour compléter de plus gros sacs.</p>
+</li>
+</ul>
+<p>On fait des choix à chaque étape, mais selon une stratégie bien définie, et qui <strong>ne change plus</strong>, en esperant que la somme des solutions intermédiaires va donner finalement une solution optimale. Mais on n&rsquo;en est pas sûr. Et on ne revient pas en arrière.</p>
+<p><strong>Algorithme avec recherche locale</strong></p>
+<p>Pour le problème du TSP (Traveling salesman problem, ou problème du voyageur du commerce), on peut utiliser un algorithme de recherche locale, comme le <em>k-opt</em>. Celui-ci va cette fois remettre en doute les choix précédents.</p>
+<p>Les étapes et leurs liens peuvent être représentés par un graphe connexe.</p>
+<p>L&rsquo;un des algorithmes existant pour la resolution, le 2-opt, va rechercher un minimum local pour un morceau de tour constitué de quelques noeuds. L&rsquo;algorithme procède par permutation des arêtes entre noeuds. Et il conserve le morceau de tour de plus courte distance.</p>
+<p>Il s&rsquo;agit d&rsquo;une succession de choix qui determine la solution.</p>
+<p>Le k-opt est une <em>méthode itérative d&rsquo;amélioration</em>. Elle est souvent utilisée après une phase constructive (qui peut être gloutonne) pour affiner le résultat. le k-opt s&rsquo;arrête quand il ne peut plus améliorer la solution immédiate, mais cela ne garantit pas que c&rsquo;est la meilleure solution absolue. (illustre la notion d&rsquo;<strong>optimum local</strong> vs <strong>optimum global</strong>)</p>
+<h1 id="complexité-1">Complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="rappels">Rappels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Complexité temporelle d’un algorithme</strong>. Il s’agit du nombre d’opérations élémentaires executées par l’algorithme dans un pire cas (une instance en entrée qui demande le plus de calculs). Cette complexité est exprimée en fonction de la “taille de l’entrée”. Par exemple, nous avons vu des algorithmes de tri avec des complexité en O(n2) ou en O(nlogn) avec n la longueur du tableau en entrée.</p>
+<p>Pour l&rsquo;exemple du voyageur du commerce: Le nombre de solutions possibles, où les villes sont toutes parcourues une fois, il y a un nombre TRES élevé d&rsquo;alternatives:</p>
+<p>Supposons un graphe à 50 sommets qui représente la carte de ces villes. Il y a 49! possibiltés. Ce qui fait 6,08.10<!-- raw HTML omitted -->62<!-- raw HTML omitted --> solutions.</p>
+<p>Si l&rsquo;ordinateur évalue une solution en 0,1 ms, cela fait 6,08.10<!-- raw HTML omitted -->58<!-- raw HTML omitted -->s, soit 1,9.10<!-- raw HTML omitted -->49<!-- raw HTML omitted --> siecles de calculs !! (L&rsquo;Univers a 14 milliards d&rsquo;années).</p>
+<p><strong>Les algorithmes des problèmes de décision sont classés selon leur complexité:</strong></p>
+<h2 id="problèmes-p-probleme-faciles-à-trouver">Problèmes P: probleme faciles à trouver<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un problème est dit <strong>polynomial</strong> si il existe un algorithme pour le résoudre dont la complexité peut s’exprimer comme un polynôme de la taille de l’entrée. L’ensemble des problèmes polynomiaux est noté P et est considéré comme un ensemble de problèmes “faciles” (ils peuvent être résolus relativement efficacement).</p>
+<p>Un <em>exemple de problème polynomial</em> est celui de la <em>connexité dans un graphe</em>. Étant donné un graphe à n sommets (on considère que la taille de la donnée, donc du graphe, est son nombre de sommets), il s&rsquo;agit de savoir si toutes les paires de sommets sont reliées par un chemin. Un algorithme de parcours en profondeur construit un arbre couvrant du graphe à partir d&rsquo;un sommet. Si cet arbre contient tous les sommets du graphe, alors le graphe est connexe.(<a href="https://fr.wikipedia.org/wiki/P_%28complexit%C3%A9%29" rel="external">wikipedia</a>)</p>
+<h2 id="problèmes-np-problèmes-faciles-à-vérifier">Problèmes NP: problèmes faciles à vérifier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une autre classe de problèmes importante est celle des problèmes dont on peut tester en temps polynomial si une solution est valide (par exemple, je vous donne un tableau et vous devez non pas le trier mais me dire si il est déjà trié ou non). Cette classe s’appelle NP pour <strong>Non déterministe Polynomial</strong>.</p>
+<p><em>Supposons que vous soyez chargé de loger un groupe de quatre cents étudiants. Le nombre de places est limité, seuls cent étudiants se verront attribuer une place dans la résidence universitaire. Pour compliquer les choses le doyen vous a fourni une liste de paires d&rsquo;étudiants incompatibles, et demande que deux étudiants d&rsquo;une même paire ne puissent jamais apparaître dans votre choix final.</em> <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_P_%E2%89%9F_NP" rel="external">wikipedia</a>.</p>
+<p><em>Produire une telle liste à partir de zéro paraît tellement difficile qu&rsquo;elle en est même impraticable, car le nombre de façons de regrouper cent étudiants parmi quatre cents dépasse le nombre d&rsquo;atomes de l&rsquo;univers !. Par contre, une fois que l&rsquo;on vous fournit une solution, il est facile de montrer que celle-ci est juste ou fausse.</em></p>
+<p>Si un problème est connu comme étant NP et si une solution au problème est connue, la démonstration de l’exactitude de la solution peut toujours être réduite à une vérification P (temps polynomial). Les algorithmes de cette classe sont non déterministes.</p>
+<p>Existe t-il pour les problèmes connus de la classe NP un algorithme susceptible de trouver une solution et de complexité polynomiale. On n&rsquo;en est pas sûr. Peut-être que cette apparente difficulté ne fait que refléter le manque d&rsquo;ingéniosité de nos programmeurs.</p>
+<p>Le problème de savoir si P = NP est un des problèmes du millénaire de l’institut de mathématiques Clay. Informellement, il s’agit de savoir si vérifier efficacement qu’une &ldquo;solution à un problème est bien une solution valide&rdquo; revient à &ldquo;pouvoir trouver efficacement une solution valide au problème.&rdquo;</p>
+<h2 id="problèmes-np-complets">Problèmes NP-complets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les problèmes dits NP-complets sont des problèmes au moins aussi difficiles que les plus difficiles de la classe NP.</p>
+
+<figure >
+    
+        <img src="../images/P=NP.png" alt="source: page P=NP wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        source: page P=NP wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>Exemples: le voyageur du commerce, le calcul de solutions optimales en économie (enoncé semblable mais à une echelle plus grande que celui du sac à dos), ou dans les processus de fabrication ou de transport&hellip;</em></p>
+<p>Tous les algorithmes connus pour résoudre des problèmes NP-complets ont un temps d&rsquo;exécution exponentiel en la taille des données d&rsquo;entrée dans le pire des cas, et sont donc inexploitables en pratique même pour des instances de taille modérée.</p>
+<p>Les classes P, NP, NP-complet ne concernent stricto sensus que <em><a href="https://scienceetonnante.com/2020/07/17/est-ce-que-p-np/" rel="external">les problèmes de décision</a></em>. Donc quand on dit que le problème du voyageur de commerce est NP-complet, il faut l’entendre : dans sa version « décisionnelle », qui est : est-il possible de trouver un chemin qui passe par toute les villes et qui soit de longueur inférieure à L? De manière générale, tous les problèmes d&rsquo;optimisation sous contrainte, comme ceux vus plus haut, sont aussi des problèmes de décision.</p>
+<p>Trouver un algorithme qui résout un problème NP-complet, comme le problème du voyageur de commerce, en temps polynomial, suffirait à démontrer que P = NP, ce serait alors toute une série de problèmes très importants qui se trouveraient résolus. Sans exhiber un algorithme, une preuve pourrait donner des indices précieux pour construire un tel algorithme. <a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_P_%E2%89%9F_NP" rel="external">wikipedia</a>.</p>
+<h1 id="annexes">Annexes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="programmes-python-du-rendu-de-monnaie">Programmes python du rendu de monnaie<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="algo-naîf-vu-en-classe-de-1ere">algo naîf vu en classe de 1ere<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">estvide</span><span class="p">(</span><span class="n">ensemble</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    fonction qui teste si un ensemble est vide
+</span></span></span><span class="line"><span class="cl"><span class="s2">    retourne True si vide
+</span></span></span><span class="line"><span class="cl"><span class="s2">    False sinon
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vide</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ensemble</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vide</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">vide</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rendre</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">caisse</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    fonction qui rend la monnaie sur une somme cost (int) selon le 
+</span></span></span><span class="line"><span class="cl"><span class="s2">    contenu de la caisse (une variable de type set)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    en commençant par la plus grande des pieces.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    caisse : la caisse du commerçant (set)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    rendu : ce que rend le commerçant (dict)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    à chaque itération de la boucle, on retire la piece de l&#39;ensemble caisse 
+</span></span></span><span class="line"><span class="cl"><span class="s2">    qui est utilisée jusqu&#39;à ce que caisse soit vide
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">### initialisation ###</span>
+</span></span><span class="line"><span class="cl">    <span class="n">rendu</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">caisse</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">rendu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="ow">not</span> <span class="n">estvide</span><span class="p">(</span><span class="n">caisse</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">piece</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">caisse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="n">cost</span><span class="o">//</span><span class="n">piece</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cost</span> <span class="o">=</span> <span class="n">cost</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">piece</span>
+</span></span><span class="line"><span class="cl">        <span class="n">rendu</span><span class="p">[</span><span class="n">piece</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">        <span class="n">caisse</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span>       
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">rendu</span></span></span></code></pre></div>
+<p>essais</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">caisse</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">rendre</span><span class="p">(</span><span class="mi">93</span><span class="p">,</span><span class="n">caisse</span><span class="p">)</span> <span class="c1"># OK optimal</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">caisse</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">rendre</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="n">caisse</span><span class="p">)</span> <span class="c1"># non optimal</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span></span></span></code></pre></div>
+<h3 id="algo-glouton-recursif">algo glouton recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>(non donné)</p>
+<h3 id="algorithme-en-programmation-dynamique">algorithme en programmation dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">renduMonnaieProgDyn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">c</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    c : caisse avec les genres de pieces à rendre par ex [1,2,5,10]
+</span></span></span><span class="line"><span class="cl"><span class="s2">    x : montant à rendre
+</span></span></span><span class="line"><span class="cl"><span class="s2">    res : tableau contenant : [nbe pieces rendues,[nb pieces de pieces de A, nb de B, nb de C]]
+</span></span></span><span class="line"><span class="cl"><span class="s2">    temp : nombre de pieces rendues
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="p">[[</span><span class="n">x</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span>  <span class="c1"># initialisation de la table avec des x </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># x pieces rendues correspond à la plus mauvaise des reponses (par ex que des pieces de 1)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>  <span class="c1"># valeur du montant à rendre : recherche pour TOUT montant</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">:</span> <span class="c1"># parcours de la caisse</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">:</span> <span class="c1"># rendre de la monnaie avec cette piece</span>
+</span></span><span class="line"><span class="cl">                <span class="n">temp</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">c</span><span class="p">[</span><span class="n">j</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># rend une piece du type de celle de rang j</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># le nbe de piece au total est egal à 1 + le nbe de piece pour rendre le reste (deja calc)</span>
+</span></span><span class="line"><span class="cl">                
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">temp</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>   <span class="c1"># nombre de pieces rendues</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="p">[</span><span class="n">j</span><span class="p">]][</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># copier le nb de pieces de A , de B, de C pour le rendu de monnaie</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># monnaie du montant i-c[j]</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># ici il faudra copy.deepcopy pour faire une copie par valeur</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># ajouter 1 au nombre de pieces de c[j] utilisées</span>
+</span></span><span class="line"><span class="cl">                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;i: </span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s1">2</span><span class="si">}</span><span class="s1">, j: </span><span class="si">{</span><span class="n">j</span><span class="si">:</span><span class="s1">2</span><span class="si">}</span><span class="s1">, res[</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">]: </span><span class="si">{</span><span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">, temp: </span><span class="si">{</span><span class="n">temp</span><span class="si">}</span><span class="s1">&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="n">x</span><span class="p">]</span></span></span></code></pre></div>
+<h3 id="algorithme-exhaustif-1">Algorithme exhaustif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Programme utilisé pour determiner toutes les combinaisons possibles de rendu de monnaie. Complexité exponentielle&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rendu_expo</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span><span class="n">caisse</span><span class="p">,</span><span class="n">rendu</span><span class="o">=</span><span class="p">[]):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">somme</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">solutions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">rendu</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">caisse</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">caisse</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">somme</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rendu_expo</span><span class="p">(</span><span class="n">somme</span><span class="o">-</span><span class="n">caisse</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">caisse</span><span class="p">[</span><span class="n">i</span><span class="p">:],</span><span class="n">rendu</span><span class="o">+</span><span class="p">[</span><span class="n">caisse</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">rendu_expo</span><span class="p">(</span><span class="n">somme</span><span class="p">,</span><span class="n">caisse</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span><span class="n">rendu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">unique</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># pour eliminer les doublons de la liste</span>
+</span></span><span class="line"><span class="cl">    <span class="n">T</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">T</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">sol</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">sol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">T</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">T</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sol</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">T</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">solutions</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">rendu_expo</span><span class="p">(</span><span class="mi">53</span><span class="p">,[</span><span class="mi">30</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">solution_min</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">solutions</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">solution_min</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">solution_min</span></span></span></code></pre></div>
+<h2 id="le-problème-du-sac-à-dos-1">Le problème du sac à dos<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Résolution</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">copy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sacADosRemise</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)]</span> <span class="c1"># format [valeur totale,[nb_o1, nb_o2, nb_o3, nb_o4]]]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">W</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">j</span><span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">1</span><span class="p">]][</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">[</span><span class="n">W</span><span class="p">]</span></span></span></code></pre></div>
+<p><em>essais:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">W</span> <span class="o">=</span> <span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">)]</span> <span class="c1"># ensemble de couples (valeur, poids)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">sacADosRemise</span><span class="p">(</span><span class="n">W</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span></span></span></code></pre></div>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>page de cours NSI sur les algorithmes de complexité exponentielle, et la programmation dynamique <a href="https://qkzk.xyz/docs/nsi/cours_terminale/algorithmique/prog_dynamique/td/" rel="external">cours de qkzk</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Programmation_dynamique" rel="external">wikipedia: la programmation dynamique</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_rendu_de_monnaie" rel="external">wikipedia: le problème du rendu de monnaie</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_sac_%C3%A0_dos" rel="external">wikipedia: le problème du sac à dos</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_voyageur_de_commerce" rel="external">wikipedia: le problème du voyageur du commerce</a></li>
+<li><a href="https://pixees.fr/informatiquelycee/n_site/nsi_term_algo_progdyn.html" rel="external">programmation dynamique: site Pixees.fr, David Roche</a></li>
+<li>calcul de complexité de Fibonacci recursif et definition de la programmation dynamique: <a href="http://igm.univ-mlv.fr/~nicaud/poly/IR2_progdyn.pdf" rel="external">univ-mlv.fr</a></li>
+<li>algorithme glouton pour la compression des fichiers: <a href="https://cermics.enpc.fr/polys/info1/main/node76.html" rel="external">code de Huffman</a></li>
+<li>les problèmes de décision: <a href="https://scienceetonnante.com/2020/07/17/est-ce-que-p-np/" rel="external">sciencesetonantes.com</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="parent " data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286" checked><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">BDR<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">exercice prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">projet SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page3/index.html"><a class="padding" href="/nsi/bases/page3/index.html">SGBD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page4/index.html"><a class="padding" href="/nsi/bases/page4/index.html">SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP SQL<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782145241"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782145241" defer></script>
+    <script src="/js/theme.js?1782145241" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

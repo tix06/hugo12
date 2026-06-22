@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="RETOUR au cours sur la recursivité
+Ex 1: Fonction impair La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s’appelle elle-même avec l’argument N-2.
+La condition de base est que N == 1 au bout d’un certain nombre d’appels. Completez le script de cette fonction.
+def impair(N): &#34;&#34;&#34;retourne True si N est impair Param: N: int positif Exemple: &gt;&gt;&gt; impair(5) True &gt;&gt;&gt; impair(4) False &gt;&gt;&gt; assert impair(4) == False &gt;&gt;&gt; assert impair(5) == True &#34;&#34;&#34; Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script. Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d’exercices.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="exercices sur la recursivité :: allopizza">
+    <meta name="twitter:description" content="RETOUR au cours sur la recursivité
+Ex 1: Fonction impair La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s’appelle elle-même avec l’argument N-2.
+La condition de base est que N == 1 au bout d’un certain nombre d’appels. Completez le script de cette fonction.
+def impair(N): &#34;&#34;&#34;retourne True si N est impair Param: N: int positif Exemple: &gt;&gt;&gt; impair(5) True &gt;&gt;&gt; impair(4) False &gt;&gt;&gt; assert impair(4) == False &gt;&gt;&gt; assert impair(5) == True &#34;&#34;&#34; Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script. Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d’exercices.">
+    <meta property="og:url" content="//localhost:1313/nsi/langages/page6/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="exercices sur la recursivité :: allopizza">
+    <meta property="og:description" content="RETOUR au cours sur la recursivité
+Ex 1: Fonction impair La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s’appelle elle-même avec l’argument N-2.
+La condition de base est que N == 1 au bout d’un certain nombre d’appels. Completez le script de cette fonction.
+def impair(N): &#34;&#34;&#34;retourne True si N est impair Param: N: int positif Exemple: &gt;&gt;&gt; impair(5) True &gt;&gt;&gt; impair(4) False &gt;&gt;&gt; assert impair(4) == False &gt;&gt;&gt; assert impair(5) == True &#34;&#34;&#34; Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script. Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d’exercices.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="exercices sur la recursivité :: allopizza">
+    <meta itemprop="description" content="RETOUR au cours sur la recursivité
+Ex 1: Fonction impair La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s’appelle elle-même avec l’argument N-2.
+La condition de base est que N == 1 au bout d’un certain nombre d’appels. Completez le script de cette fonction.
+def impair(N): &#34;&#34;&#34;retourne True si N est impair Param: N: int positif Exemple: &gt;&gt;&gt; impair(5) True &gt;&gt;&gt; impair(4) False &gt;&gt;&gt; assert impair(4) == False &gt;&gt;&gt; assert impair(5) == True &#34;&#34;&#34; Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script. Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d’exercices.">
+    <meta itemprop="wordCount" content="979">
+    <title>exercices sur la recursivité :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782147074" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782147074" defer></script>
+    <script src="/js/search-lunr.js?1782147074" defer></script>
+    <script src="/js/search.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782147074";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782147074" rel="stylesheet">
+    <link href="/css/theme.css?1782147074" rel="stylesheet">
+    <link href="/css/format-html.css?1782147074" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/langages\/page6\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/langages/page6/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">exercices sur la recursivité</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/langages/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/page2/index.html" title="recursivité (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/index.html" title="Structures de données (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="exercices-sur-la-recursivité">exercices sur la recursivité</h1>
+
+<p><a href="../page2/">RETOUR au cours sur la recursivité</a></p>
+<h1 id="ex-1-fonction-impair">Ex 1: Fonction <code>impair</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s&rsquo;appelle elle-même avec l&rsquo;argument N-2.</p>
+<ol>
+<li>La condition de base est que N == 1 au bout d&rsquo;un certain nombre d&rsquo;appels.</li>
+</ol>
+<blockquote>
+<p>Completez le script de cette fonction.</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">impair</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;retourne True si N est impair
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Param:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    N: int positif
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; impair(5)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    True
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; impair(4)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    False
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert impair(4) == False
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert impair(5) == True
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span></span></span></code></pre></div>
+<ol start="2">
+<li>Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script.</li>
+</ol>
+<blockquote>
+<p>Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d&rsquo;exercices.</p>
+</blockquote>
+<h1 id="ex-2-suite-de-fibonacci">Ex 2: Suite de Fibonacci<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On définit la suite (f<!-- raw HTML omitted -->n<!-- raw HTML omitted -->) des nombres de Fibonacci par :
+</p>
+$$\left\\{\begin{matrix}\begin{align}f\_0 & =0\\\f\_1 & =1\\\f\_{n+1} & =f\_{n}+f\_{n-1}, \forall n \in \mathbb{N}^+\end{align}\end{matrix}\right.$$<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fibo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    algo recursif
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert fibo(1) == 1
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert fibo(10) == 55
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fibo</span><span class="p">()</span> <span class="o">+</span> <span class="n">fibo</span><span class="p">()</span></span></span></code></pre></div>
+<ol>
+<li>Compléter la dernière ligne de la fonction <code>fibo</code> avec les bons arguments</li>
+<li>Ajouter quelques lignes au script pour placer dans une liste <code>L</code> tous les nombres de la suite de Fibonacci, du rang 0 au rang n=10 (inclus).</li>
+</ol>
+<blockquote>
+<p>Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d&rsquo;exercices.</p>
+</blockquote>
+<h1 id="ex-3-les-tours-de-hanoï">Ex 3: Les tours de Hanoï<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Le problème des tours de Hanoi est présenté en détails dans le cours sur la recursivité <a href="/docs/NSI/langages/page22/#application-les-tours-de-hano%C3%AF">ici</a></p>
+<ol>
+<li>Dans l&rsquo;editeur ci-dessous: Executer le script. Puis aller dans la console et tester l&rsquo;exemple proposé dans le prototypage de la fonction.</li>
+</ol>
+<blockquote>
+<p>Représenter dans votre cahier d&rsquo;exercice les différents déplacements. S&rsquo;aider du schéma:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/page2/hanoi_3p.png"  />
+    
+    
+</figure>
+
+<ol start="2">
+<li>Tester egalement avec 4 disques. Noter le nombre de deplacements effectués pour N=1 à 4.</li>
+</ol>
+<p><em>3.</em> Proposez une loi de recurence entre le nombre de déplacements T(N) pour N disques, et le nombre de déplacements T(N-1) pour N-1 disques.</p>
+<blockquote>
+<p>Cette loi, est-elle prévisible à partir de l&rsquo;énoncé de la solution (pour déplacer N disques du piquet 1 à 3, il faut deplacer N-1 disques de 1 à 2, puis &hellip;).</p>
+</blockquote>
+<p><em>Aide: on pourra consulter la page <a href="https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/" rel="external">accromath</a>.</em></p>
+<h1 id="ex-4-nombre-doccurences-dans-une-chaine-de-caractères">Ex 4: Nombre d&rsquo;occurences dans une chaine de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>il s&rsquo;agit d&rsquo;écrire une fonction recursive nombre_r(lettre, phrase) qui renvoit le nombre de fois où la lettre apparaît dans la phrase.</p>
+<ul>
+<li>
+<p>Dans le cas de base: on retourne 0 si la phrase est vide <code>&quot;&quot;</code>.</p>
+</li>
+<li>
+<p>Pour l&rsquo;heredité: On réduit la phrase en eliminant le premier caractère après chaque appel recursif: on met comme argument <code>phrase[1:]</code> à la place du paramètre <code>phrase</code>.</p>
+<ul>
+<li>
+<p>Si le caractère <code>phrase[0]</code> est identique à <code>lettre</code>: on applique la formule de recurence suivante: $u_n = 1 + u_{n-1}$ que l&rsquo;on adapte ici en: <code>return 1 + nombre_r(lettre,phrase[1:])</code></p>
+</li>
+<li>
+<p>sinon, on adapte la formule de recurence : $u_n = u_{n-1}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Compléter le script et testez votre fonction avec, par exemple les arguments: <code>u</code> et <code>lustucru</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">nombre_r</span><span class="p">(</span><span class="n">lettre</span><span class="p">,</span> <span class="n">phrase</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Exemples:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert nombre_r(&#39;a&#39;,&#39;lustucru&#39;) == 0
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert nombre_r(&#39;u&#39;,&#39;lustucru&#39;) == 3
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span> <span class="c1"># si la phrase est vide</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># SINON</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">phrase</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">lettre</span><span class="p">:</span></span></span></code></pre></div>
+<blockquote>
+<p>Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d&rsquo;exercices.</p>
+</blockquote>
+<h1 id="ex-5-retournement-dune-liste">Ex 5: Retournement d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>La fonction suivante realise un retournement d&rsquo;une chaine de caractères.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse_iterative</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span> 
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Return the reverse of a string 
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Example:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; reverse_iterative(&#39;abcd&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    dcba
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert reverse_iterative(&#39;abacab&#39;) = &#39;bacaba&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">reversed_seq</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reversed_seq</span> <span class="o">=</span> <span class="n">reversed_seq</span> <span class="o">+</span> <span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">reversed_seq</span></span></span></code></pre></div>
+<ol>
+<li>Programmer et tester la fonction itérative.</li>
+<li>Compléter le script de la fonction <code>reverse_recur</code>. S&rsquo;aider du schéma suivant:</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">f(&#39;abc&#39;) = f(&#39;bc&#39;) + &#39;a&#39;
+</span></span><span class="line"><span class="cl">         = f(&#39;c&#39;) + &#39;b&#39; + &#39;a&#39;
+</span></span><span class="line"><span class="cl">         = f(&#39;&#39;) + &#39;c&#39; + &#39;b&#39; + &#39;a&#39;
+</span></span><span class="line"><span class="cl">         = &#39;cba&#39;</span></span></code></pre></div>
+<p><em>Fonction recursive, script à compléter</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">reverse_recur</span><span class="p">(</span><span class="n">seq</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; assert reverse_iterative(&#39;abacab&#39;) = &#39;bacaba&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">seq</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<blockquote>
+<p>Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d&rsquo;exercices.</p>
+</blockquote>
+<h1 id="exercice-6-algorithme-deuclide">Exercice 6: algorithme d&rsquo;Euclide<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Euclide propose l’algorithme suivant:</p>
+<ol>
+<li>Calculez le reste r dans la division de a par b</li>
+<li>Si r est nul alors le pgcd est b</li>
+<li>Sinon recommencer l’étape 1 avec a = b et b = r</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/page2/euclide.png"  />
+    
+    
+</figure>
+
+<blockquote>
+<p>Exemple d’exécution : a = 32, b = 12 :</p>
+</blockquote>
+<p>– 32 = (2 x 12) + 8</p>
+<p>– 12 = (1 x 8) + 4</p>
+<p>– 8 = (2 x 4) + 0</p>
+<p>On a donc pgcd(32, 12) = 4</p>
+<p>La page dédiée sur <a href="https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide" rel="external">wikipedia</a> propose une illustration géométrique de cette méthode. <em>Un couple d&rsquo;entiers est vu comme un rectangle, dont le PGCD est la longueur du côté du plus grand carré permettant de carreler entièrement ce rectangle:</em></p>
+
+<figure >
+    
+        <img src="../images/page2/euclide2.png" alt="Explication géométrique de l&#39;algorithme d&#39;Euclide sur les entiers 21 et 15. - source wikipedia" />
+    
+    
+    <figcaption>
+        <p>
+        Explication géométrique de l&#39;algorithme d&#39;Euclide sur les entiers 21 et 15. - source wikipedia
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">euclide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    a et b sont des entiers, a &gt; b
+</span></span></span><span class="line"><span class="cl"><span class="s2">    euclide retourne un entier qui est le PGCD de a et b
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">r</span><span class="o">&gt;</span><span class="mi">0</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span></span></span></code></pre></div>
+<ol>
+<li>Tester l&rsquo;algorithme itératif avec un couple de valeurs de votre choix.</li>
+</ol>
+<p>Le PGCD d&rsquo;Euclide calcule une suite définie par une récurence à 2 termes:</p>
+<p>$r_0 = a$</p>
+<p>$r_1 = b$</p>
+<p>$r_2 = r_0 \\% ~r_1$</p>
+<p>$r_{n+1} = r_{n-1} \\% r_n$</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">PGCD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  PGCD : entier correspondant au plus grand diviseur commun de a par b
+</span></span></span><span class="line"><span class="cl"><span class="s2">  a et b : entiers tels que a &gt; b
+</span></span></span><span class="line"><span class="cl"><span class="s2">  b correspond à r_n, a correspond à r_{n-1}, r à r_{n+1}
+</span></span></span><span class="line"><span class="cl"><span class="s2">  return:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  -------
+</span></span></span><span class="line"><span class="cl"><span class="s2">  appel recursif avec b et r
+</span></span></span><span class="line"><span class="cl"><span class="s2">  -------
+</span></span></span><span class="line"><span class="cl"><span class="s2">  Exemples:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt;&gt;&gt; PGCD(28,12)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  4
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt;&gt;&gt; assert PGCD(24,18) == 6
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> <span class="k">return</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="o">..</span> <span class="o">%</span> <span class="o">..</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">PGCD</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
+<ol start="2">
+<li>Compléter la fonction recursive du calcul du PGCD</li>
+</ol>
+<blockquote>
+<p>vérifier son (bon) fonctionnement grâce aux tests proposés dans le docstring.</p>
+</blockquote>
+<p><a href="../page2/">RETOUR au cours sur la recursivité</a></p>
+<h1 id="ressources">Ressources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>L&rsquo;editeur en ligne est proposé par <a href="https://fr.vittascience.com/python/" rel="external">https://fr.vittascience.com/python/</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi/langages/page6/index.html"><a class="padding" href="/nsi/langages/page6/index.html">exercices sur la recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782147074"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782147074" defer></script>
+    <script src="/js/theme.js?1782147074" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

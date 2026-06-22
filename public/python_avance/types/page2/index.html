@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="listes, dictionnaires, méthodes">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="types construits :: allopizza">
+    <meta name="twitter:description" content="listes, dictionnaires, méthodes">
+    <meta property="og:url" content="//localhost:1313/python_avance/types/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="types construits :: allopizza">
+    <meta property="og:description" content="listes, dictionnaires, méthodes">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="types construits :: allopizza">
+    <meta itemprop="description" content="listes, dictionnaires, méthodes">
+    <meta itemprop="wordCount" content="1612">
+    <title>types construits :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782141222" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782141222" defer></script>
+    <script src="/js/search-lunr.js?1782141222" defer></script>
+    <script src="/js/search.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782141222";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782141222" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782141222" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782141222" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782141222" rel="stylesheet">
+    <link href="/css/theme.css?1782141222" rel="stylesheet">
+    <link href="/css/format-html.css?1782141222" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/python_avance\/types\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/python_avance/types/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#listes">Listes</a>
+      <ul>
+        <li><a href="#construire-une-liste-avec-une-boucle">Construire une liste avec une boucle</a></li>
+        <li><a href="#construire-une-liste-par-compréhension">Construire une liste par compréhension</a></li>
+      </ul>
+    </li>
+    <li><a href="#tuples">Tuples</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#append">append</a></li>
+    <li><a href="#pop">pop</a></li>
+    <li><a href="#index">index</a></li>
+    <li><a href="#insert">insert</a></li>
+    <li><a href="#remove-et-del">remove et del</a></li>
+    <li><a href="#découpe-dune-liste">découpe d&rsquo;une liste</a></li>
+    <li><a href="#copie-dune-liste">copie d&rsquo;une liste</a></li>
+    <li><a href="#trier-une-liste">Trier une liste</a></li>
+    <li><a href="#choix-dun-élément-aléatoire-dans-une-liste">Choix d&rsquo;un élément aléatoire dans une liste.</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#keys">keys</a></li>
+    <li><a href="#values">values</a></li>
+    <li><a href="#items">items</a></li>
+    <li><a href="#copier-un-dictionnaire">copier un dictionnaire</a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#portée-des-variables">Portée des variables</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/types/index.html"><span itemprop="name">Types natifs</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">types construits</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/types/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page1/index.html" title="types simples (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page5/index.html" title="tableaux python (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="types-construits">types construits</h1>
+
+<p>Cette page aborde les notions avancées sur les Listes. Il est nécessaire de consulter auparavant la page sur les Listes: <a href="/docs/python/pages/boucles/page2/">les notions de base</a>.</p>
+<p>On pourra également revenir sur la page 1 : <a href="../page1/">variables natives de base</a></p>
+<p>Après la lecture, on traitera le <a href="../page3/">TP sur les variables</a> utilisant <em>Pythontutor</em>.</p>
+<h1 id="les-structures-de-données-et-les-types-construits">Les structures de données et les types construits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les <em>structures de données</em> définissent la manière avec laquelle sont stockées les données dans un langage.</p>
+<p>Les types construits, comme les listes et les dictionnaires sont <em>contruits</em> à partir des types de bases que l&rsquo;on a déjà vus. Ce sont d&rsquo;autres moyens d&rsquo;organiser et d&rsquo;agencer les types de base dans d&rsquo;autres structures.</p>
+<h1 id="types-séquentiels--les-listes-et-les-tuples">Types séquentiels : les listes et les tuples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une séquence est une structure de données qui stocke une collection d&rsquo;éléments dans un ordre déterminé.</p>
+<h2 id="listes">Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Definition:</strong> Une <strong>liste</strong> est une <strong>collection ordonnée d&rsquo;objets</strong>. Au niveau de la mémoire de l&rsquo;odinateur, une liste <em>porte un nom</em>, et fait <em>référence à des espaces mémoire</em> pour chaque <em>élément</em> de liste. Ces éléments (espaces mémoires) font eux-même reference aux <em>emplacement mémoire</em> qui <em>stockent les valeurs</em> ou <em>objets</em>.</p>
+<p>En python: Une <strong>liste</strong> est entourée de <strong>crochets</strong> <code>[ ]</code></p>
+<p>Les éléments contenus peuvent être de tout type.</p>
+<p>On accède à un élément d&rsquo;une liste grace à sa position, appelée <em>indice</em>. Le premier élément a pour indice zero.</p>
+
+<figure >
+    
+        <img src="../images/liste.png" alt="La liste `voyelles` est une collection contenant les caractères" />
+    
+    
+    <figcaption>
+        <p>
+        La liste `voyelles` est une collection contenant les caractères
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Un indice négatif donne accès à la liste à partir du dernier élément.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche e</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche o</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;e&#39;,&#39;i&#39;,&#39;o&#39;]</span></span></span></code></pre></div>
+<p>Les listes sont <strong>mutables</strong> : On peut modifier un seul de ses éléments à partir de son indice :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">voyelles</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">voyelles</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;e&#39;,&#39;i&#39;,&#39;y&#39;]</span></span></span></code></pre></div>
+<p>Ceci n&rsquo;est pas possible avec le type natif <code>str</code>, qui, lui est un type <strong>non mutable</strong>.</p>
+<h3 id="construire-une-liste-avec-une-boucle">Construire une liste avec une boucle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les boucles <code>while</code> et<code>for</code> permettent d’itérer sur les éléments d’une séquence.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Boucle while</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">squares</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Boucle for</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">squares</span><span class="o">.</span><span class="n">append</span> <span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="construire-une-liste-par-compréhension">Construire une liste par compréhension<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Pour construire une liste par compréhension, on place une boucle bornée à l&rsquo;INTERIEUR les crochets. Cela créé un éléments dans la matrice pour chaque valeur de l&rsquo;itérable</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Définition par compréhension</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span></span></code></pre></div>
+<p>On peut combiner les expressions entre les crochets, en ajoutant par exemple une condition. Ainsi, si l&rsquo;on veut uniquement le carré des nombres pairs (<code>if i % 2 == 0</code>):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># carre des nombres pairs</span>
+</span></span><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">101</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span></span></span></code></pre></div>
+<p>Pour un tableau, on peut créer une liste par compréhension à l&rsquo;intérieur de la première liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [[0, 0, 0], [0, 0, 0], [0, 0, 0]]</span></span></span></code></pre></div>
+<h2 id="tuples">Tuples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un <em>tuple</em> est entouré de <strong>parenthèses</strong> <code>( )</code></p>
+<p>On accède à l&rsquo;un des éléments à l&rsquo;aide de son indice, comme pour les listes.</p>
+<p>Par contre, le tuple est <strong>non mutable</strong> : on ne peut pas en modifier l&rsquo;un de ses éléments. Il faut refaire, au besoin, une affectation complète de tout le tuple.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">elementaire</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span><span class="s1">&#39;CE1&#39;</span><span class="p">,</span><span class="s1">&#39;CE2&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elementaire</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche CE1</span>
+</span></span><span class="line"><span class="cl"><span class="n">elementaire</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;CM2&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche TypeError</span>
+</span></span><span class="line"><span class="cl"><span class="n">elementaire</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;CP&#39;</span><span class="p">,</span><span class="s1">&#39;CE1&#39;</span><span class="p">,</span><span class="s1">&#39;CM2&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">elementaire</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche (&#39;CP&#39;,&#39;CE1&#39;,&#39;CM2&#39;)</span></span></span></code></pre></div>
+<h1 id="mappages--les-dictionnaires">Mappages : les dictionnaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un <em>mappage</em> est une structure de données qui relie 2 informations ou plus, appelées <em>paires clé : valeur</em>. Aussi appelée <em>table de hashage</em>. En python, cette structure est le dictionnaire.</p>
+<p>Un dictionnaire est entouré d&rsquo;<em>accolades</em> <code>{ }</code>. Les paires sont séparées par une virgule.</p>
+<p>Par exemple, pour créer un dictionnaire non vide, on peut faire :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Italie&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span><span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span></span></span></code></pre></div>
+<p>Mais on peut aussi ajouter chaque paire en faisant :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">capitales</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># dictionnaire vide</span>
+</span></span><span class="line"><span class="cl"><span class="n">capitales</span><span class="p">[</span><span class="s1">&#39;France&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Paris&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">capitales</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche {&#39;France&#39;: &#39;Paris&#39;}</span></span></span></code></pre></div>
+<p>Dans cet exemple, les clés du dictionnaire <code>capitales</code> sont les pays (&ldquo;France&rdquo;, &ldquo;Italie&rdquo;&hellip;) et les valeurs sont les villes (&ldquo;Paris&rdquo;,&ldquo;Rome&rdquo;,&hellip;).</p>
+<p>On ne peut placer comme clé d&rsquo;un dictionnaire que des objets de type <strong>non mutable</strong>.</p>
+<p>Pour accéder à une <em>valeur</em>, on utilise la clé comme index: <code>capitales['France'] = 'Paris'</code></p>
+<p>Pour accéder <strong>aux clés</strong> d&rsquo;un dictionnaire: on utilisera les méthodes <code>keys</code> avec par exemple <code>capitales.keys()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">pays</span> <span class="ow">in</span> <span class="n">capitales</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">pays</span><span class="p">)</span></span></span></code></pre></div>
+<p>Pour accéder <strong>aux valeurs</strong>: on utilise la méthode <code>value</code>, avec par exemple <code>capitales.values()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">ville</span> <span class="ow">in</span> <span class="n">capitales</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">ville</span><span class="p">)</span></span></span></code></pre></div>
+<p>Pour accéder <strong>aux paires clé-valeurs</strong>: méthode <code>items</code>, avec par exemple <code>capitales.items()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">pays</span><span class="p">,</span><span class="n">ville</span> <span class="ow">in</span> <span class="n">capitales</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">pays</span><span class="p">,</span><span class="n">ville</span><span class="p">)</span></span></span></code></pre></div>
+<h1 id="méthodes-de-listes">méthodes de listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Pour commencer, rappelons comment retrouver la liste des méthodes définies sur le type <code>list</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="append">append<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>append(element)</strong> ajoute un élément en fin de liste</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;NY&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CDG&#39;,&#39;ORY&#39;,&#39;LIS&#39;,&#39;NY&#39;]</span></span></span></code></pre></div>
+<h2 id="pop">pop<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>pop()</strong> supprime le dernier élément et renvoie sa valeur.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">,</span><span class="s1">&#39;NY&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;NY&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CDG&#39;,&#39;ORY&#39;,&#39;LIS&#39;]</span></span></span></code></pre></div>
+<h2 id="index">index<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>index(element)</strong> retourne la position (index) de cet élément dans la liste (ou du moins la première occurence s&rsquo;il y en a plusieurs).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">,</span><span class="s1">&#39;NY&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s1">&#39;ORY&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne 1</span></span></span></code></pre></div>
+<h2 id="insert">insert<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>insert(index, element)</strong> insère l&rsquo;élément à l&rsquo;index précisé.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">,</span><span class="s1">&#39;NY&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;LCY&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># la liste aeroport est alors</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [&#39;CDG&#39;,&#39;ORY&#39;, &#39;LCY&#39;, LIS&#39;,&#39;NY&#39;]</span></span></span></code></pre></div>
+<h2 id="remove-et-del">remove et del<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>remove(element)</strong> supprime un élément d&rsquo;une liste. Si l&rsquo;élément apparait plusieurs fois dans la liste, seule la premiere occurence est supprimée.</p>
+<p><strong>del liste[indice]</strong> supprime l&rsquo;élément de la liste à partir de son indice.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">,</span><span class="s1">&#39;NY&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;LIS&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CDG&#39;,&#39;ORY&#39;,&#39;NY&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="k">del</span> <span class="n">aeroports</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;ORY&#39;,&#39;NY&#39;]</span></span></span></code></pre></div>
+<h2 id="découpe-dune-liste">découpe d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>une <em>découpe</em> est une partie de liste, spécifiée à partir des indices :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">,</span><span class="s1">&#39;RO&#39;</span><span class="p">,</span><span class="s1">&#39;SK&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">etats</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;NL&#39;,&#39;PL&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">etats</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># sans specifier le premier indice</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CH&#39;,&#39;GB&#39;] # commence au debut</span>
+</span></span><span class="line"><span class="cl"><span class="n">etats</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="c1"># sans specifier l&#39;indice de fin</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;PL&#39;,&#39;RO&#39;,&#39;SK&#39;] # jusqu&#39;à la fin</span></span></span></code></pre></div>
+<h2 id="copie-dune-liste">copie d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une <em>copie</em> d&rsquo;une liste permet d&rsquo;utiliser le contenu de la liste copiée sans affecter la liste d&rsquo;origine (voir <a href="../page3/">TP sur les variables</a>). C&rsquo;est une copie par <em>valeurs</em>.</p>
+<p>Pour copier une liste, on peut :</p>
+<ul>
+<li>la découper sans mentionner les 2 indices:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="n">etats</span><span class="p">[:]</span> <span class="c1"># liste copiée par valeur dans mes_etats</span></span></span></code></pre></div>
+<ul>
+<li>ou bien utiliser la fonction <code>list</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="n">etats</span><span class="p">[:]</span> <span class="c1"># liste copiée par valeur dans mes_etats</span>
+</span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">etats</span><span class="p">)</span></span></span></code></pre></div>
+<p>On peut alors vérifier qu&rsquo;il s&rsquo;agit maintenant d&rsquo;une copie par valeurs :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mes_etats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;DK&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mes_etats</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CH&#39;,&#39;GB&#39;,&#39;NL&#39;,&#39;PL&#39;,&#39;DK&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="n">etats</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CH&#39;,&#39;GB&#39;,&#39;NL&#39;,&#39;PL&#39;]</span></span></span></code></pre></div>
+<p>Sans cette <em>astuce</em>, la copie se ferait par <strong>référence</strong> (<em>rappelez-vous: Liste = mutable</em>)</p>
+<h2 id="trier-une-liste">Trier une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Il y a 2 fonctions de tri :</p>
+<ul>
+<li>La fonction <strong>sorted</strong> renvoie une copie de la liste triée dans l&rsquo;ordre naturel (alphanumerique) sans modifier la liste d&rsquo;origine.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">sorted</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [1, 3, 4, 5, 9]</span></span></span></code></pre></div>
+<p>Puis:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche [9, 5, 1, 3, 4]</span></span></span></code></pre></div>
+<ul>
+<li>La méthode <strong>sort</strong> permet de trier la liste en place.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># L est transformee en</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># [1, 3, 4, 5, 9]</span></span></span></code></pre></div>
+<h2 id="choix-dun-élément-aléatoire-dans-une-liste">Choix d&rsquo;un élément aléatoire dans une liste.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Il faut importer la fonction <code>choice</code> de la librairie <code>random</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">L</span><span class="p">))</span></span></span></code></pre></div>
+<p>Affiche un élément au hasard: 1, 10, 100 ou 1000.</p>
+<h1 id="méthodes-de-dictionnaires">méthodes de dictionnaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les dictionnaires sont présentés à la page sur les <a href="/docs/python/pages/variables/page1/#mappages-les-dictionnaires">variables</a></p>
+<h2 id="keys">keys<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>méthode qui permet d&rsquo;accéder aux clés d&rsquo;un dictionnaire (retourne une liste de clés) :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Italie&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span><span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">capitales</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche dict_keys([&#39;France&#39;, &#39;Italie&#39;, &#39;Allemagne&#39;])</span></span></span></code></pre></div>
+<h2 id="values">values<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>méthode pour accéder aux valeurs d&rsquo;un dictionnaire (retourne une liste de valeurs):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Italie&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span><span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">capitales</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche dict_values([&#39;Paris&#39;, &#39;Rome&#39;, &#39;Berlin&#39;])</span></span></span></code></pre></div>
+<h2 id="items">items<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>méthode pour accéder aux paires clé-valeurs d&rsquo;un dictionnaire (retourne une liste de tuples):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">capitales</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Italie&#39;</span><span class="p">:</span><span class="s1">&#39;Rome&#39;</span><span class="p">,</span><span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span><span class="s1">&#39;Berlin&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">capitales</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche dict_items([(&#39;France&#39;, &#39;Paris&#39;), (&#39;Italie&#39;, &#39;Rome&#39;), (&#39;Allemagne&#39;, &#39;Berlin&#39;)])</span></span></span></code></pre></div>
+<h2 id="copier-un-dictionnaire">copier un dictionnaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On peut utiliser la fonction <code>dict</code> pour faire une copie par <em>valeur</em> d&rsquo;un dictionnaire :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mes_capitales</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">capitales</span><span class="p">)</span></span></span></code></pre></div>
+<p>Sans cette <em>astuce</em>, la copie se ferait par <strong>référence</strong> (Dictionnaire = mutable)</p>
+<h1 id="dataframes">Dataframes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un Dataframe est un objet qui permet de mieux représenter et travailler sur les tables. C&rsquo;est un outil puissant, qui necessite un apprentissage supplémentaire, comme une extension du langage python. Voir ici : <a href="https://towardsdatascience.com/pandas-ground-zero-selection-and-projection-3827f74ae6c5" rel="external">towardsdatascience.com</a></p>
+<h1 id="objets-mutables-et-non-mutables">Objets mutables et non mutables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>En Python, il existe deux types d’objets: les <strong>mutables</strong> (listes, dictionnaires, sets, objets customisés, etc) et les <strong>non mutables</strong> (string, int, float, tuple, etc).</p>
+<p>Les <strong>mutables</strong> sont ceux qu’on peut modifier après leur création. Les non mutables sont ceux qu’on ne peut pas modifier après création.</p>
+<p>Lorsque 2 références <strong>pointent sur le même objet</strong>, ce qui est possible avec les mutables, il faut s&rsquo;attendre à ce que la modification de l&rsquo;un entraine celle de l&rsquo;autre (effet de bord).</p>
+<p>C&rsquo;est le mot-clé <code>IS</code> qui va permettre de tester si 2 noms pointent vers la même réference en mémoire:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;apple&#34;</span><span class="p">,</span> <span class="s2">&#34;banana&#34;</span><span class="p">,</span> <span class="s2">&#34;cherry&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;apple&#34;</span><span class="p">,</span> <span class="s2">&#34;banana&#34;</span><span class="p">,</span> <span class="s2">&#34;cherry&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche True</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche False</span></span></span></code></pre></div>
+<p>Pour plus de précisions sur ces différences, voir le <a href="../page3/">TP utilisant Pythontutor</a></p>
+<h3 id="portée-des-variables">Portée des variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un <strong>effet de bord</strong> est une modification d&rsquo;une variable qui affecte l&rsquo;état du programme en dehors de la fonction où elle a lieu. Cela peut arriver avec des variables globales, déclarées en dehors de toute fonction.</p>
+<p>Pour une variable <code>x</code> non mutable, déclarée dans le corps du programme, celle-ci peut être lue dans une fonction où elle n&rsquo;a pas été definie. Par contre, pour la modifier dans cette fonction, il faudra la déclarer avec <code>global x</code> dans cette fonction.</p>
+<h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<p>TP sur les types construits, les copies par valeur et reference sur <a href="../page3/">Pythontutor</a></p>
+</li>
+<li>
+<p>TP sur le parours de liste, compréhension de liste et tracé graphique: <a href="../page4/">Lien</a></p>
+</li>
+<li>
+<p>TP sur les tableaux: <a href="../page6/">Lien</a></p>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="parent " data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" checked><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14_bis/index.html"><a class="padding" href="/nsi/algorithmes/page14_bis/index.html">algoritmes de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page3/index.html"><a class="padding" href="/nsi/algorithmes/page3/index.html">arbres binaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page16/index.html"><a class="padding" href="/nsi/algorithmes/page16/index.html">banc de poissons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page15/index.html"><a class="padding" href="/nsi/algorithmes/page15/index.html">etude comparée algos de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page4/index.html"><a class="padding" href="/nsi/algorithmes/page4/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page11/index.html"><a class="padding" href="/nsi/algorithmes/page11/index.html">nombres premiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page14/index.html"><a class="padding" href="/nsi/algorithmes/page14/index.html">recherche dichotomique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page12/index.html"><a class="padding" href="/nsi/algorithmes/page12/index.html">spirale d&#39;Ulam<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page13/index.html"><a class="padding" href="/nsi/algorithmes/page13/index.html">Traitement csv<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page10_bis/index.html"><a class="padding" href="/nsi/algorithmes/page10_bis/index.html">turtle fractales<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><a class="padding" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782141222"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782141222" defer></script>
+    <script src="/js/theme.js?1782141222" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

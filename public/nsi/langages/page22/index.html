@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="preuve, complexite, applications">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="autres domaines recursivite :: allopizza">
+    <meta name="twitter:description" content="preuve, complexite, applications">
+    <meta property="og:url" content="//localhost:1313/nsi/langages/page22/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="autres domaines recursivite :: allopizza">
+    <meta property="og:description" content="preuve, complexite, applications">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="autres domaines recursivite :: allopizza">
+    <meta itemprop="description" content="preuve, complexite, applications">
+    <meta itemprop="wordCount" content="1848">
+    <title>autres domaines recursivite :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782147074" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782147074" defer></script>
+    <script src="/js/search-lunr.js?1782147074" defer></script>
+    <script src="/js/search.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782147074";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782147074" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782147074" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782147074" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782147074" rel="stylesheet">
+    <link href="/css/theme.css?1782147074" rel="stylesheet">
+    <link href="/css/format-html.css?1782147074" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/langages\/page22\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/langages/page22/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#définitions-autour-dun-algorithme-récursif">Définitions autour d&rsquo;un algorithme récursif</a>
+      <ul>
+        <li><a href="#base-et-hérédité">Base et hérédité</a></li>
+        <li><a href="#return-ou-pas-return">return ou pas return</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#cas-dun-algorithme-non-recursif">Cas d&rsquo;un algorithme non recursif</a>
+      <ul>
+        <li><a href="#terminaison">terminaison</a></li>
+        <li><a href="#preuve-de-correction--validité-">preuve de correction / validité :</a></li>
+      </ul>
+    </li>
+    <li><a href="#dans-le-cas-dun-algo-recursif">Dans le cas d&rsquo;un algo recursif</a>
+      <ul>
+        <li><a href="#terminaison-1">Terminaison</a></li>
+        <li><a href="#preuve-de-correction">Preuve de correction</a></li>
+        <li><a href="#complexité">Complexité</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#algorithme-récursif">algorithme récursif</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#le-problème-des-permutations">Le problème des permutations</a></li>
+    <li><a href="#script-de-la-partie-héredité-de-la-fonction-permut">Script de la partie héredité de la fonction <code>permut</code></a></li>
+    <li><a href="#arbre-des-appels-recursifs">Arbre des appels recursifs</a></li>
+    <li><a href="#exercice">Exercice</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#lautosimilarité">L&rsquo;autosimilarité</a></li>
+    <li><a href="#corécursivité">Corécursivité</a></li>
+    <li><a href="#mise-en-abyme">Mise en abyme</a></li>
+    <li><a href="#lintrigue-du-film-inception">L&rsquo;intrigue du film Inception</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">autres domaines recursivite</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/langages/page22.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/langages/page2/index.html" title="recursivité (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/index.html" title="Structures de données (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="autres-domaines-recursivite">autres domaines recursivite</h1>
+
+<p>Le cours comprend:</p>
+<ul>
+<li>une partie 1: Introduction à la recursivité <a href="../page2"> 
+            Recursivité et fonction récurente
+        </a> </li>
+<li>une partie 2:<a href="../page22"> 
+            Suite du cours sur la recursivité
+        </a> </li>
+<li>une<a href="/pdf/NSI/lang3_recur_exos.pdf"> 
+            page d&#39;exercices. pdf.
+        </a> </li>
+<li>Un TP1 avec les exercices classiques sur la recursivité: <a href="../page6">Lien</a></li>
+<li>Un TP2 avec le tracé de dessins recursifs (Turtle): <a href="../page10/">Lien</a></li>
+</ul>
+<p>Dans la 1ere partie, nous avons vu que la récursivité repose sur la capacité d&rsquo;une fonction à s&rsquo;appeler elle-même, de façon répétitive, jusqu&rsquo;à ce qu&rsquo;une certaine condition soit satisfaite. A chaque appel récursif, les paramètres de l&rsquo;appel sont modifiés.</p>
+<p>Cette méthode est utilisée surtout parce qu&rsquo;elle facilite la résolution de problème liés à des relations de récurence (partie 1).</p>
+<p>Dans cette <strong>deuxieme partie du cours sur la recursivité</strong>, nous allons étudier plus en detail la manière de definir la partie héredité d&rsquo;un problème.</p>
+<p>La question à laquelle on cherchera à repondre:</p>
+<ul>
+<li>supposons que le problème est/sera résolu pour <em>le rang (n-1)</em>, comment utiliser le resultat du rang (n-1) pour resoudre le <em>rang n</em>?</li>
+</ul>
+<p>La récursivité sert alors à imiter la manière dont l&rsquo;être humain résoudrait certains problèmes. L&rsquo;idée est d&rsquo;arriver à comprendre comment il est possible de créer un sous-programme récursif en prévoyant les paramètres.</p>
+<p>La fonction va exécuter une tâche, puis s&rsquo;appeler elle-même, de façon répétitive jusqu&rsquo;à la réalisation d&rsquo;une condition particulière. C&rsquo;est la condition d&rsquo;arrêt. Les appels succéssifs sont alors restés actifs. Ils débouclent l&rsquo;un après l&rsquo;autre jusqu&rsquo;à ce que le premier appel se termine finalement.</p>
+<p>La terminaison de cette série d&rsquo;appels récursifs repose donc sur la convergence des paramètres de la fonction vers cette condition d&rsquo;arrêt.</p>
+<h1 id="partie-2-recursivité-problèmes-avec-sous-problemes-interdependants">Partie 2: Recursivité, problèmes avec sous-problemes interdependants<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="définitions-autour-dun-algorithme-récursif">Définitions autour d&rsquo;un algorithme récursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="base-et-hérédité">Base et hérédité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>L&rsquo;algorithme récursif comprend 2 parties importantes:</p>
+<ul>
+<li>La <strong>Base</strong> : c&rsquo;est le cas pour lequel le problème se resoud immediatement. Par exemple: dans le script <code>ajoute2</code>: le problème se resoud immediatement pour N == 0.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">N</span><span class="o">==</span><span class="mi">0</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span></span></span></code></pre></div>
+<ul>
+<li><strong>L&rsquo;Hérédité</strong>  : Dans la partie <em>hérédité:</em> il doit forcement y avoir un appel recursif, c&rsquo;est à dire que la fonction s&rsquo;auto-appelle, avec un paramètre plus &ldquo;petit&rdquo;. Par exemple: <code>return 2 + ajoute2(N-1)</code>.</li>
+</ul>
+<p>Ainsi, dans le cas général, la fonction récursive s&rsquo;écrit:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fonction_recursive</span><span class="p">(</span><span class="n">param</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">&lt;</span><span class="n">cas</span> <span class="n">de</span> <span class="n">base</span><span class="o">&gt;</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">value</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># instructions</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fonction_recursive</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">param</span><span class="p">))</span></span></span></code></pre></div>
+<h3 id="return-ou-pas-return">return ou pas return<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>soit on calcule une valeur, alors il faut placer <code>return</code> dans la partie <em>hérédité</em></li>
+<li>soit la fonction ne sert pas à calculer, ou bien, à modifier une variable non mutable par effet de bord: pas de <code>return</code> dans la partie <em>hérédité</em></li>
+</ul>
+<p><em>Exemple: correction de l&rsquo;exercice sur les dessins recursifs</em></p>
+<p><em>Turtle</em> doit dessiner un carré puis pivoter, selon la série d&rsquo;instructions suivante. La condition d&rsquo;execution est: <code>largeur &gt;= 20</code>:</p>
+<ul>
+<li>dessiner un carré avec la fonction carre et le paramètre largeur.</li>
+<li>avancer de 1/3×largeur</li>
+<li>tourner de 26.565 degrés</li>
+<li>reduire la largeur d’un facteur 0.745: largeur = largeur * 0.745</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">spirale_carre</span><span class="p">(</span><span class="n">largeur</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">largeur</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">carre</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">largeur</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">t</span><span class="o">.</span><span class="n">left</span><span class="p">(</span><span class="mf">26.565</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">spirale_carre</span><span class="p">(</span><span class="n">largeur</span> <span class="o">*</span> <span class="mf">0.745</span><span class="p">)</span></span></span></code></pre></div>
+<p><em>Pas de <code>return</code> dans la partie hérédité.</em></p>
+<h1 id="analyse-mathématique-preuve-et-correction">Analyse mathématique: Preuve et correction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Généralités:</strong>
+Alan Turing  (1912 – 1954) énonce ainsi son principe d&rsquo;indéciablité de la terminaison d&rsquo;un algorithme(1936): <em>L’indecidabilite c’est l’impossibilité absolue et définitivement démontrée de résoudre par un procédé général de calcul un problème donné.</em></p>
+<p>La <strong>terminaison</strong>, ainsi que la <strong>preuve de correction</strong>,  ou bien la <strong>complexité</strong> doivent être prouvées par des arguments mathématiques.</p>
+<h2 id="cas-dun-algorithme-non-recursif">Cas d&rsquo;un algorithme non recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="terminaison">terminaison<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La preuve de correction consiste à rechercher un convergent. Et prouver que ce convergent finit par atteindre la condition d&rsquo;arrêt.</p>
+<h3 id="preuve-de-correction--validité-">preuve de correction / validité :<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La preuve de correction consiste à rechercher un invariant de boucle pour démontrer sa (non) variation selon un argument de recurence. Sinon, énoncer simplement, en langage mathematique, les instructions utilisées en langage informatique et finir en montrant que l&rsquo;invariant de boucle ou bien le resultat obtenu repond bien à la specification de l&rsquo;algorithme.</p>
+<ul>
+<li><em>Exemple 1 :</em> faire la preuve de correction pour l&rsquo;algo du calcul de la somme , de la moyenne.</li>
+<li><em>Exemple 2:</em> prouver la terminaison de l&rsquo;algo de recherche sequentielle (avec boucle while).</li>
+</ul>
+<h2 id="dans-le-cas-dun-algo-recursif">Dans le cas d&rsquo;un algo recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Preuve de correction et de terminaison pour un algo récursif</strong>.</p>
+<p>Le raisonnement consiste à vérifier qu’une propriété est vraie pour une valeur
+entière initiale puis à prouver que la propriété est héréditaire. Une propriété est héréditaire si la véracité pour un entier n quelconque entraîne la véracité pour l’entier suivant n+1. C’est le principe d’une échelle: si on peut atteindre le premier barreau et si on peut passer d’un barreau quelconque au barreau suivant, alors on peut monter jusqu’en haut de l’échelle.</p>
+<p>La demonstration utilise justement 2 parties, qui correspondent à la Base et à l&rsquo;Héredité:</p>
+<p>Prenons l&rsquo;exemple de la demonstration: preuve, terminaison, complexité pour la fonction recursive FACTORIELLE:</p>
+<h3 id="terminaison-1">Terminaison<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li><strong>cas de base</strong>: si n=0, fact(0) fait un test et renvoie 1, sans appel recursif.</li>
+</ul>
+<p><strong>Hypothèse de récurrence</strong>: supposons que fact(n) termine après <code>n</code> appels recursifs. Montrons que fact(n+1) termine après (n+1) appels recursifs.</p>
+<p>fact(n+1) fait un test <code>n+1&gt;0</code> donc on passe au <code>else</code> puis on retourne <code>(n+1)*fact(n)</code>. on appelle donc <code>fact(n)</code> qui termine apres <code>n</code> appels recursifs. Finallement <code>fact(n+1)</code> termine après <code>(n+1)</code> appels recursifs.</p>
+<h3 id="preuve-de-correction">Preuve de correction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>par un raisonnement par recurrence, montrons que fact(n) = n ! :</p>
+<ul>
+<li>
+<p><strong>Base</strong>: pour n = 0 : fact(n) = fact(0) = 1 = 0! (OK)</p>
+</li>
+<li>
+<p><strong>Heredité</strong>: si vrai pour n, alors $fact(n) = n!$.</p>
+</li>
+</ul>
+<p>Démontrons que $fact(n+1) = (n+1)!$: <code>fact(n+1)</code> retourne $(n+1)*fact(n)$.</p>
+<p>Donc $fact(n+1) = (n+1)*fact(n)$. Par hypothèse de récurence, $fact(n) = n!$ donc $fact(n+1) = (n+1)*n! = (n+1)!$. Ce qu&rsquo;il fallait démontrer.</p>
+<h3 id="complexité">Complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Calcul de la complexité : Soit T(n) le nombre d&rsquo;opérations fondamentales. Pour une fonction récurrente, c&rsquo;est le nombre de résolution de la fonction de récurence.
+On a T(n) = T(n-1) + 1 donc T(n) = n</p>
+<h1 id="application-de-la-recursivité-les-tours-de-hanoï">Application de la recursivité: les tours de Hanoï<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On considère trois tiges plantées dans une base. Au départ, sur la première tige sont enfilées N disques de plus en plus étroits. Le but du jeu est de transférer les N disques sur la troisième tige en conservant la configuration initiale.</p>
+<p><strong>On ne peut déplacer qu&rsquo;un seul disque à la fois et il est interdit de poser un disque sur un autre plus petit.</strong></p>
+<p>il faut à un moment ou à un autre faire la place pour pouvoir déplacer le gros disque du dessous, ce qui impose d’avoir déplacé préalablement les N–1 plus petits sur un seul et même piquet, c’est-à-dire, d’avoir résolu préalablement le problème des tours de Hanoï pour ces N–1 disques :</p>
+<p>
+<figure >
+    <a href="https://www.youtube.com/watch?v=r1Ujcw0UkrI">
+        <img src="../images/page2/hanoi2.png" alt="algorithme iteratif des tours de Hanoï" />
+    </a>
+    
+    <figcaption>
+        <p>
+        video - resolution itérative des tours de Hanoi
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Le problème initial (déplacer N disques de A à C en utilisant B) devient donc &ldquo;déplacer N-1 disques de A à B, déplacer le Nème disque de A à C, puis déplacer les N-1 disques de B à C&rdquo;. Dans les deux déplacements de N-1 disques, on dispose d&rsquo;un troisième pilier dont on peut se servir&hellip;</p>
+
+<figure >
+    <a href="https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/">
+        <img src="../images/page2/hanoi.png" alt="algorithme des tours de Hanoï" />
+    </a>
+    
+    <figcaption>
+        <p>
+        image issue du site : accromath
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="algorithme-récursif">algorithme récursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;algorithme récursif pour ce problème est étonnament réduit :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hanoi</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;N disques doivent être déplacés de d vers a
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Params:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    N : int
+</span></span></span><span class="line"><span class="cl"><span class="s2">        nombre de disques
+</span></span></span><span class="line"><span class="cl"><span class="s2">    d: int
+</span></span></span><span class="line"><span class="cl"><span class="s2">        depart (vaut 1 au debut)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    i: int
+</span></span></span><span class="line"><span class="cl"><span class="s2">        intermediaire (vaut 2 au debut)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    a: int
+</span></span></span><span class="line"><span class="cl"><span class="s2">        fin (vaut 3 au debut)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    lancer avec 
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; hanoi(3,1,2,3)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">N</span><span class="o">==</span><span class="mi">1</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;deplacement de </span><span class="si">{}</span><span class="s1"> vers </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">a</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hanoi</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hanoi</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hanoi</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">a</span><span class="p">)</span></span></span></code></pre></div>
+<p><em>Résultat</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; hanoi(3,1,2,3)
+</span></span><span class="line"><span class="cl">deplacement de 1 vers 3
+</span></span><span class="line"><span class="cl">deplacement de 1 vers 2
+</span></span><span class="line"><span class="cl">deplacement de 3 vers 2
+</span></span><span class="line"><span class="cl">deplacement de 1 vers 3
+</span></span><span class="line"><span class="cl">deplacement de 2 vers 1
+</span></span><span class="line"><span class="cl">deplacement de 2 vers 3
+</span></span><span class="line"><span class="cl">deplacement de 1 vers 3</span></span></code></pre></div>
+<h1 id="algorithme-recursif-de-permutation">Algorithme recursif de permutation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="le-problème-des-permutations">Le problème des permutations<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une permutation d&rsquo;objets distincts rangés dans un certain ordre correspond à un changement de l&rsquo;ordre de succession de ces objets. <a href="https://fr.wikipedia.org/wiki/Permutation" rel="external">https://fr.wikipedia.org/wiki/Permutation</a></p>
+<p><em>Comment construire les permutations de <code>abcd</code>?</em></p>
+<p>Il faut d&rsquo;abord reserver <code>a</code> en première position. Puis réaliser <strong>toutes</strong> les permutations sur la chaine <code>bcd</code>. Comment fait-on cela? Il faut d&rsquo;abord reserver <code>b</code> puis réaliser <strong>toutes</strong> les permutations sur la chaine <code>cd</code>&hellip; On voit clairement apparaitre l&rsquo;aspect recursif de cet algorithme.</p>
+<p>Soit la fonction <code>permut</code> qui realise ces permutations. La partie appelée <em>Base</em> sera:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">permut</span><span class="p">(</span><span class="n">mot</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="n">mot</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># partie heredite a completer</span></span></span></code></pre></div>
+<h2 id="script-de-la-partie-héredité-de-la-fonction-permut">Script de la partie héredité de la fonction <code>permut</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>au 1er appel de la fonction: il faut reserver chacune des lettres du mot comme premiere lettre. On commence par la premiere, &ldquo;a&rdquo;, correspondant au variant de boucle <code>i = 0</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mot</span><span class="p">)):</span></span></span></code></pre></div>
+<ul>
+<li>Il faut ensuite associer &ldquo;a&rdquo; avec TOUS les mots issus de la permutation de &ldquo;bcd&rdquo;. Cela peut être réalisé avec l&rsquo;appel recursif:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">permut</span><span class="p">(</span><span class="n">mot</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">mot</span><span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:])</span></span></span></code></pre></div>
+<ul>
+<li>Puis construire les chaines avec les mots mélangés retournés.</li>
+</ul>
+<h2 id="arbre-des-appels-recursifs">Arbre des appels recursifs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/page2/permut.png" alt="Arbre à compléter" />
+    
+    
+    <figcaption>
+        <p>
+        Arbre à compléter
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="exercice">Exercice<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1.</strong> Dans un <strong>editeur Python</strong>: Compléter et tester ce script de la fonction <code>permut</code> avec la chaine &lsquo;abcd&rsquo;.</p>
+<p><strong>2.</strong> Repondre sur <strong>cahier de labo</strong>: Représenter l&rsquo;arbre des appels recursifs, et compléter celui-ci.</p>
+<p><strong>3.</strong> <strong>cahier de labo</strong>: Quelle est la longueur de la liste retournée par cette fonction, pour &lsquo;abcd&rsquo;? Cette valeur est-elle prévisible?</p>
+<p><strong>4.</strong> <strong>cahier de labo</strong>: Quelle est la complexité de la fonction <code>permut</code>?</p>
+<p><strong>5.</strong> <strong>editeur Python</strong>: Créer une fonction <code>verif</code> qui vérifie si chaque mot permuté dans la liste est unique. Déterminer la complexité de cette nouvelle fonction. Indiquer la complexité dans le <strong>cahier de labo</strong>.</p>
+<p><strong>6.</strong> <strong>editeur Python</strong>: Créer une nouvelle fonction, que vous appelerez <code>permut_noms</code> qui donne toutes permutations de noms dans une liste. Par exemple, avec <code>['Riri', 'Fifi', 'Loulou']</code>, on aura: <code>[('Riri', 'Fifi', 'Loulou'), ('Riri', 'Loulou', 'Fifi'), ('Fifi', ...), ... ]</code></p>
+<h1 id="dautres-domaines-exploitant-la-récursivité">D&rsquo;autres domaines exploitant la récursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>La récursivité se retrouvent dans d&rsquo;autres situations, où elle prend parfois d&rsquo;autres noms.</p>
+<h2 id="lautosimilarité">L&rsquo;autosimilarité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;<strong>autosimilarité</strong> est le caractère d&rsquo;un objet dans laquelle on peut trouver des similarités en l&rsquo;observant à différentes échelles.
+<em>Exemple :</em> le Tapis de Sierpiński.</p>
+
+<figure >
+    
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Sierpinski_carpet_6%2C_white_on_black.svg/440px-Sierpinski_carpet_6%2C_white_on_black.svg.png" alt="le Tapis de Sierpiński" />
+    
+    
+    <figcaption>
+        <p>
+        le Tapis de Sierpiński et l&#39;autosimilarité
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="corécursivité">Corécursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les <strong>fractales</strong> ont cette propriété d&rsquo;autosimilarité, mais elles ont plutôt à voir avec un phénomène un peu différent qui s&rsquo;appel la corécurisivité (ou corécursion). Le tapis de Sierpiński, du nom de Wacław Sierpiński, est une fractale obtenue à partir d&rsquo;un carré. Le tapis se fabrique en découpant le carré en neuf carrés égaux avec une grille de trois par trois, et en supprimant la pièce centrale, et en appliquant cette procédure récursivement aux huit carrés restants.</p>
+<h2 id="mise-en-abyme">Mise en abyme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La <strong>mise en abyme</strong> est un procédé consistant à représenter une œuvre dans une œuvre similaire, par exemple en incrustant dans une image cette image elle-même.</p>
+
+<figure >
+    <a href="https://gifer.com/fr/gifs/escher">
+        <img src="../images/page2/g2Z2.gif"  />
+    </a>
+    
+</figure>
+
+<h2 id="lintrigue-du-film-inception">L&rsquo;intrigue du film Inception<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans «Inception», Nolan voulait explorer l’idée de personnes partageant un espace de rêve. Cela vous donne la possibilité d’accéder à l’inconscient de quelqu’un. La majorité de l’intrigue du film se déroule dans ces mondes oniriques interconnectés. Cette structure crée un cadre dans lequel <strong>les actions dans les mondes réels ou oniriques se répercutent sur les autres</strong>.</p>
+
+<figure >
+    
+        <img src="../images/page2/inception.jpeg"  />
+    
+    
+</figure>
+
+<h1 id="travail-pratique">Travail pratique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Lien vers le TP: <a href="/docs/NSI/algorithmes/page10/">dessins recursifs</a></p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<p>Cours de Serge Bayes <a href="https://mathematice.fr/fichiers/nsi2/chap01d.pdf" rel="external">lycee Eucalyptus</a></p>
+</li>
+<li>
+<p><em>Approfondir :</em> voir la page <a href="https://fr.wikipedia.org/wiki/Algorithme_r%C3%A9cursif" rel="external">https://fr.wikipedia.org/wiki/Algorithme_récursif</a></p>
+</li>
+<li>
+<p>un bon exemple de l&rsquo;exercice des permutations: les menus <a href="http://pascal.ortiz.free.fr/contents/python/recursivite/recursivite.html" rel="external">pascal.ortiz.free.fr</a></p>
+</li>
+<li>
+<p>Site de Gerard Vuillemin</p>
+<ul>
+<li>complements mathematiques sur le combinatoire: <a href="http://villemin.gerard.free.fr/Wwwgvmm/Compter/Factcomb.htm#Permut" rel="external">page</a></li>
+<li>article sur les algorithmes iteratifs et recursifs de permutations lexicographiques: <a href="http://villemin.gerard.free.fr/aNombre/MOTIF/PermutAl.htm#lexico" rel="external">page</a></li>
+</ul>
+</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi/langages/page22/index.html"><a class="padding" href="/nsi/langages/page22/index.html">autres domaines recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782147074"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782147074" defer></script>
+    <script src="/js/theme.js?1782147074" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

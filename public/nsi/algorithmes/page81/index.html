@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
+Mélanger un liste de mots (1) Reprendre pour cette première partie le dossier du TP de recherche dans un dictionnaire de mots. Ouvrir un nouveau fichier python dans ce même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes). (2) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (3) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. (4) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (5) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (6) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="tri à partir d&#39;une cle :: allopizza">
+    <meta name="twitter:description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
+Mélanger un liste de mots (1) Reprendre pour cette première partie le dossier du TP de recherche dans un dictionnaire de mots. Ouvrir un nouveau fichier python dans ce même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes). (2) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (3) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. (4) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (5) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (6) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta property="og:url" content="//localhost:1313/nsi/algorithmes/page81/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="tri à partir d&#39;une cle :: allopizza">
+    <meta property="og:description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
+Mélanger un liste de mots (1) Reprendre pour cette première partie le dossier du TP de recherche dans un dictionnaire de mots. Ouvrir un nouveau fichier python dans ce même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes). (2) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (3) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. (4) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (5) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (6) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="tri à partir d&#39;une cle :: allopizza">
+    <meta itemprop="description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
+Mélanger un liste de mots (1) Reprendre pour cette première partie le dossier du TP de recherche dans un dictionnaire de mots. Ouvrir un nouveau fichier python dans ce même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes). (2) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (3) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. (4) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (5) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (6) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta itemprop="wordCount" content="1119">
+    <title>tri à partir d&#39;une cle :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782146474" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782146474" defer></script>
+    <script src="/js/search-lunr.js?1782146474" defer></script>
+    <script src="/js/search.js?1782146474" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782146474";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782146474" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782146474" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782146474" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146474" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146474" rel="stylesheet">
+    <link href="/css/theme.css?1782146474" rel="stylesheet">
+    <link href="/css/format-html.css?1782146474" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/algorithmes\/page81\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/algorithmes/page81/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#mélanger-un-liste-de-mots">Mélanger un liste de mots</a></li>
+    <li><a href="#fonction-est_triee">Fonction <code>est_triee</code></a></li>
+    <li><a href="#trier-le-dictionnaire-de-mots">Trier le dictionnaire de mots</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#import-du-fichier-csv">import du fichier csv</a></li>
+    <li><a href="#nettoyer-les-données">Nettoyer les données</a></li>
+    <li><a href="#classement-par-indice-uefa-colonne-7">Classement par indice UEFA: colonne 7</a></li>
+    <li><a href="#classement-par-coefficient-des-associations-colonne-8">Classement par coefficient des associations: colonne 8</a></li>
+    <li><a href="#nettoyer-les-résultats">Nettoyer les résultats</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tri à partir d&#39;une cle</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/algorithmes/page81.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page8/index.html" title="algorithmes de tri (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/algorithmes/page5/index.html" title="diviser pour regner (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tri-à-partir-dune-cle">tri à partir d&#39;une cle</h1>
+
+<h1 id="partie-1-appliquer-un-algorithme-de-tri">Partie 1: Appliquer un algorithme de tri<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.</p>
+<h2 id="mélanger-un-liste-de-mots">Mélanger un liste de mots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>(1) Reprendre pour cette première partie le dossier du TP de <a href="/docs/NSI/algorithmes/page14_bis/">recherche dans un dictionnaire de mots</a>. Ouvrir un nouveau fichier python dans ce même dossier. Placer l&rsquo;import des librairies <code>random</code> et <code>time</code> à l&rsquo;ouverture de ce fichier (premières lignes).</li>
+<li>(2) Ajouter au script python les <strong>fonctions de tri</strong> vues dans le cours: <a href="/docs/NSI/algorithmes/page8/">Lien vers le cours</a></li>
+<li>(3) importer une liste de mots d&rsquo;un dictionnaire non accentué. Appeler cette liste <code>mots</code>.</li>
+<li>(4) mélanger la liste de mots avec la fonction <code>random.shuffle</code> (voir exemple plus bas)</li>
+<li>(5) réduire cette liste à seulement 10000 mots: <code>mots = mots[:10000]</code></li>
+<li>(6) copier cette liste de mots (faire une copie <strong>par valeur</strong>): <code>mots_melanges = mots.copy()</code></li>
+</ul>
+<p><em>Aide</em>:</p>
+<p>La fonction <code>shuffle</code> du module <code>random</code> permet de mélanger en place les éléments d&rsquo;une liste. <em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">L</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># exemple d&#39;affichage</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></span></span></code></pre></div>
+<h2 id="fonction-est_triee">Fonction <code>est_triee</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>(7) Programmer une fonction <code>est_triee</code> qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé, sans avoir à parcourir celle-ci après traitement.</li>
+</ul>
+<p>Utiliser la base suivante pour la fonction: (et compléter):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<ul>
+<li>(8) Utiliser cette fonction pour vérifier que la liste <code>mots</code> est mélangée:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">est_triee</span><span class="p">(</span><span class="n">mots</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
+<h2 id="trier-le-dictionnaire-de-mots">Trier le dictionnaire de mots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Votre script devrait avoir l&rsquo;allure suivante: (les fonctions dont à compléter)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri</span> <span class="n">selection</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mots</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Lecture du fichier txt et remplissage de la liste</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mots</span> <span class="o">=</span> <span class="n">mots</span><span class="p">[:</span><span class="mi">10000</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mots_melanges</span> <span class="o">=</span> <span class="o">...</span> <span class="o">.</span><span class="n">copy</span><span class="p">()</span></span></span></code></pre></div>
+<p>Vous allez tester maintenant vos fonctions de tri sur la liste <a href="/docs/NSI/algorithmes/page14_bis/">dictionnaire-de-mots</a>, une fois celle-ci mélangée.</p>
+<ul>
+<li><strong>Question 1:</strong> Mesurer le temps mis pour trier la liste de mots à l&rsquo;aide du tri par insertion. (faire plusieurs essais).</li>
+</ul>
+<p><strong>Remarque</strong>: Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra faire une copie par valeur de la liste mélangée. Le tri par insertion puis par selection doit être realisé sur la MEME liste si vous voulez comparer les durées de traitement.</p>
+<p>On <em>rappelle</em> que la mesure du temps peut être réalisée de la manière suivante:</p>
+<ul>
+<li>Pour le tri par insertion:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">tri_insertion</span><span class="p">(</span><span class="n">mots</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">stop_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">interval1</span> <span class="o">=</span> <span class="n">stop_time</span> <span class="o">-</span> <span class="n">start_time</span></span></span></code></pre></div>
+<ul>
+<li><strong>Question 2:</strong> Mesurer le temps mis pour trier la liste de mots à l&rsquo;aide du tri par selection. (faire plusieurs essais). Comparer le temps mis par les 2 algorithmes de tri</li>
+</ul>
+<h1 id="partie-2-tp-tri-à-partir-dune-clé">Partie 2: TP tri à partir d&rsquo;une clé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On peut réaliser un tri à l&rsquo;aide d&rsquo;une <strong>clé</strong>. Les objets (les lignes d&rsquo;un fichier <em>csv</em>) contiennent ainsi des valeurs sur plusieurs colonnes. On peut choisir l&rsquo;une de ces colonnes pour réaliser le tri.</p>
+<p>On prendra pour exemple le fichier du classement UEFA des équipes feminines sur plusieurs années. Le tableau est consultable à la page de l&rsquo;<a href="https://fr.uefa.com/nationalassociations/uefarankings/womensclub/#/yr/2022" rel="external">UEFA.com</a></p>
+<h2 id="import-du-fichier-csv">import du fichier csv<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>-&gt; fichier csv <em><a href="/pdf/NSI/classement_uefa.csv">classement_uefa.csv</a></em> à telecharger</li>
+</ul>
+<blockquote>
+<p>Ci-dessous, le programme minimal pour lire le fichier csv. Testez le à l&rsquo;aide d&rsquo;un IDE (Pyzo ou autre). Adaptez si necessaire le chemin vers le fichier:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;classement_uefa.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">spamreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="n">delimiter</span> <span class="o">=</span> <span class="s2">&#34;;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">teams</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">spamreader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">teams</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">teams</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;</span><span class="se">\ufeff</span><span class="s1">Club&#39;</span><span class="p">,</span> <span class="s1">&#39;Pays&#39;</span><span class="p">,</span> <span class="s1">&#39;16/17&#39;</span><span class="p">,</span> <span class="s1">&#39;17/18&#39;</span><span class="p">,</span> <span class="s1">&#39;18/19&#39;</span><span class="p">,</span> <span class="s1">&#39;19/20&#39;</span><span class="p">,</span> <span class="s1">&#39;20/21&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">pts</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\xa0</span><span class="s1">Ass</span><span class="se">\xa0</span><span class="s1">&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<p>La premiere ligne contient l&rsquo;en-tête du tableau. Il faudra supprimer cette premiere ligne:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span><span class="p">(</span><span class="n">teams</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">teams</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;AC Sparta Praha&#39;</span><span class="p">,</span> <span class="s1">&#39;CZE&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="s1">&#39;26&#39;</span><span class="p">,</span> <span class="s1">&#39;11,715&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<h2 id="nettoyer-les-données">Nettoyer les données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La valeur de la colonne d&rsquo;indice 8 contient la chaine de caractères (str) <code>'11,715'</code>. Il faudra transformer cette valeur en (float) <code>11.75</code></p>
+<p>Même traitement avec la colonne 7.</p>
+<p>On peut utiliser la méthode de chaine <code>replace</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">team</span> <span class="o">=</span> <span class="n">teams</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">team</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="n">team</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">team</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="n">team</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">team</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p><strong>Importer à nouveau</strong> le tableau source, puis faire ce <strong>traitement sur les 114 équipes</strong> du tableau <code>teams</code>. (Utiliser une boucle for)</p>
+</blockquote>
+<h2 id="classement-par-indice-uefa-colonne-7">Classement par indice UEFA: colonne 7<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Au depart les équipes sont classées par ordre alphabetique:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[&#39;AC Sparta Praha&#39;, &#39;CZE&#39;, &#39;3&#39;, &#39;9&#39;, &#39;3&#39;, &#39;3&#39;, &#39;8&#39;, &#39;26&#39;, &#39;11.715&#39;]
+</span></span><span class="line"><span class="cl">[&#39;AFC Ajax&#39;, &#39;NED&#39;, &#39;-&#39;, &#39;5&#39;, &#39;8&#39;, &#39;-&#39;, &#39;3&#39;, &#39;16&#39;, &#39;9.9&#39;]
+</span></span><span class="line"><span class="cl">[&#39;Akadimia Elpides Karditsas&#39;, &#39;GRE&#39;, &#39;-&#39;, &#39;-&#39;, &#39;2&#39;, &#39;-&#39;, &#39;-&#39;, &#39;2&#39;, &#39;2.145&#39;]
+</span></span><span class="line"><span class="cl">[&#39;ALG Spor Kulübü Derneği&#39;, &#39;TUR&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;-&#39;, &#39;0&#39;, &#39;0&#39;, &#39;2.145&#39;]
+</span></span><span class="line"><span class="cl">[&#39;Apollon Ladies FC&#39;, &#39;CYP&#39;, &#39;4&#39;, &#39;3&#39;, &#39;-&#39;, &#39;2&#39;, &#39;0&#39;, &#39;9&#39;, &#39;4.62&#39;]
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div>
+<p>On veut adapter l&rsquo;agorithme de tri par selection pour classer les equipes selon une <em>clé</em>, qui sera l&rsquo;indice de la colonne contenant les points UEFA de l&rsquo;équipe.</p>
+<blockquote>
+<p><strong>A vous de jouer</strong>: adapter le script des algorithmes de tri:</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>Ajouter un nouveau paramètre <code>cle</code> aux fonctions <code>tri_insertion</code> et <code>tri_selection</code>.</li>
+<li>Adapter les programmes des 2 fonctions pour trier par rapport à une clé. Modifier par exemple la condition dans la boucle <code>for</code> de la fonction de recherche du minimum (ttri par selection) avec <code>if T[k][cle]&lt;T[indiceDuMin][cle] :</code></li>
+<li>Trier maintenant la liste <code>teams</code> selon la colonne de rang 7.</li>
+</ol>
+</blockquote>
+<p>Si vous affichez cette liste, elle presente 2 inconvenients:</p>
+<ul>
+<li>elle est triée telle que l&rsquo;equipe la plus faible est au debut du tableau et la meilleure à la fin.</li>
+<li>l&rsquo;affichage ne facilite pas la lecture</li>
+</ul>
+<blockquote>
+<ol start="5">
+<li>Modifier la fonction de tri pour réaliser un tri par l&rsquo;<strong>élément le plus grand</strong> d&rsquo;abord.</li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>Question 1:</strong> Quel est le classement UEFA des équipes entre la $1^{ere}$ et la $5^e$ equipe?</li>
+</ul>
+<h2 id="classement-par-coefficient-des-associations-colonne-8">Classement par coefficient des associations: colonne 8<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le classement par <em>coefficient des associations</em> ou des pays prend en compte les résultats de tous les clubs d&rsquo;une association. Il est utilisé pour déterminer le nombre de clubs que pourra engager une association dans les compétitions de l&rsquo;UEFA les saisons suivantes. C&rsquo;est la valeur de la colonne 8.</p>
+<blockquote>
+<ol start="6">
+<li>Classer les équipes par coefficient des associations.</li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>Question 2:</strong> Quel est le nouveau classement des équipes entre la $1^{ere}$ et la $5^e$ equipe?</li>
+</ul>
+<h2 id="nettoyer-les-résultats">Nettoyer les résultats<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On souhaite obtenir l&rsquo;affichage suivant, avec seulement les colonnes <em>equipe, pays, indice uefa</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0 (&#39;Olympique Lyonnais&#39;, &#39;FRA&#39;, &#39;99&#39;)
+</span></span><span class="line"><span class="cl">1 (&#39;FC Barcelona&#39;, &#39;ESP&#39;, &#39;78&#39;)
+</span></span><span class="line"><span class="cl">2 (&#39;VfL Wolfsburg&#39;, &#39;GER&#39;, &#39;77&#39;)
+</span></span><span class="line"><span class="cl">3 (&#39;Paris Saint-Germain&#39;, &#39;FRA&#39;, &#39;60&#39;)
+</span></span><span class="line"><span class="cl">4 (&#39;Manchester City WFC&#39;, &#39;ENG&#39;, &#39;59&#39;)
+</span></span><span class="line"><span class="cl">5 (&#39;FC Bayern München&#39;, &#39;GER&#39;, &#39;57&#39;)
+</span></span><span class="line"><span class="cl">6 (&#39;Chelsea FC Women&#39;, &#39;ENG&#39;, &#39;45&#39;)
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div>
+<blockquote>
+<ol start="7">
+<li>Ajouter les instructions suivantes qui permettront d&rsquo;afficher les equipes :</li>
+</ol>
+</blockquote>
+<ul>
+<li>Créer un tableau vide T.</li>
+<li>faire une boucle bornée <code>for</code> sur la liste <code>teams</code> : <code>for t in range(...)</code></li>
+<li>Dans la boucle for, à chaque itération, ajouter dans T un tuple constitué des colonnes 0, 1 et 7 pour chacune des équipes.</li>
+<li>afficher classement et equipe avec :  <code>print(t,T[t])</code></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="parent " data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286" checked><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><a class="padding" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146474"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146474" defer></script>
+    <script src="/js/theme.js?1782146474" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
