@@ -1,11 +1,13 @@
 ---
-Title: Traitement csv
-description: traitement des donnees en table, open datas, module requests
-hidden: true
-weight: 31
+Title: traitement des donnees en table
+description: Open datas, csv, module requests, donnees en table
+weight: 21
 ---
 
-# Open Datas
+# Liste de dictionnaires
+Les epreuves pratiques proposent de nombreux exemples de traitement de données en liste de dictionnaires. Se référer aux sujets de 2026.
+
+# Open Datas, liste de listes
 ## Un exemple de données ouvertes
 {{< img src="../images/page13/data.gouv.png" link="https://www.data.gouv.fr/fr/" caption="Plateforme ouverte des données publiques françaises" >}}
 Le Répertoire National des Élus (RNE) a pour finalité le suivi des titulaires d’un mandat électoral. Il est renseigné et tenu à jour par les préfectures et hauts commissariats et par les services du ministère de l'intérieur, notamment sur la base des éléments fournis par les élus lors de la phase d’enregistrement des candidatures.
@@ -125,7 +127,7 @@ Rechercher si, pour l'un des departements, le ratio 'F'/'M' est supérieur à 1.
 
 **Faire un compte rendu avec les réponses, les scripts et graphiques**. *Utiliser un editeur de texte.*
 
-# Suggestion de projet
+## Suggestion de projet
 Utiliser une API en python avec le module `request`, et charger directement le fichier de données. Une API est une interface logicielle qui permet de se « connecter » à un service, ou un serveur.
 
 *Exemple* issu de [realpython.com](https://realpython.com/python-api/)

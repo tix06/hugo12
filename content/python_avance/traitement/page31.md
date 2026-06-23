@@ -1,7 +1,7 @@
 ---
 Title: TP exoplanets.db
 description: traitement sql et visualisation a partir des donnees d'exoplanetes
-weight: 24
+weight: 26
 ---
 
 # PARTIE 1: Base de données exoplanetes.db

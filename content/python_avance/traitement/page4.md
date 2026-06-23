@@ -1,7 +1,7 @@
 ---
 Title: indice de similarité avec la Terre
 hidden: true
-weight: 25
+weight: 27
 ---
 
 # Etape 5: Indice de similarité avec la Terre

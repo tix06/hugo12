@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Ce cours comporte plusieurs pages:
+introduction aux graphes cours sur les graphes. Term NSI algorithmes de parcours des graphes TP sur les algorithmes de parcours des graphes algorithme de Dijkstra Protocoles de routage Arbres Parcourir un graphe Principe Le parcours d’un graphe va donner une liste d’arcs ou de sommets visités, dans un certain ordre.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="algorithmes de parcours d&#39;un graphe :: allopizza">
+    <meta name="twitter:description" content="Ce cours comporte plusieurs pages:
+introduction aux graphes cours sur les graphes. Term NSI algorithmes de parcours des graphes TP sur les algorithmes de parcours des graphes algorithme de Dijkstra Protocoles de routage Arbres Parcourir un graphe Principe Le parcours d’un graphe va donner une liste d’arcs ou de sommets visités, dans un certain ordre.">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page2-2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="algorithmes de parcours d&#39;un graphe :: allopizza">
+    <meta property="og:description" content="Ce cours comporte plusieurs pages:
+introduction aux graphes cours sur les graphes. Term NSI algorithmes de parcours des graphes TP sur les algorithmes de parcours des graphes algorithme de Dijkstra Protocoles de routage Arbres Parcourir un graphe Principe Le parcours d’un graphe va donner une liste d’arcs ou de sommets visités, dans un certain ordre.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="algorithmes de parcours d&#39;un graphe :: allopizza">
+    <meta itemprop="description" content="Ce cours comporte plusieurs pages:
+introduction aux graphes cours sur les graphes. Term NSI algorithmes de parcours des graphes TP sur les algorithmes de parcours des graphes algorithme de Dijkstra Protocoles de routage Arbres Parcourir un graphe Principe Le parcours d’un graphe va donner une liste d’arcs ou de sommets visités, dans un certain ordre.">
+    <meta itemprop="wordCount" content="2095">
+    <title>algorithmes de parcours d&#39;un graphe :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782172242" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782172242" defer></script>
+    <script src="/js/search-lunr.js?1782172242" defer></script>
+    <script src="/js/search.js?1782172242" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782172242";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782172242" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782172242" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782172242" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782172242" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782172242" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782172242" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782172242" rel="stylesheet">
+    <link href="/css/theme.css?1782172242" rel="stylesheet">
+    <link href="/css/format-html.css?1782172242" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page2-2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page2-2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#parcours-dun-graphe-non-pondéré">Parcours d&rsquo;un graphe non pondéré</a>
+      <ul>
+        <li><a href="#pour-aller-plus-loin-term-nsi">Pour aller plus loin (term NSI)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe-1">Principe</a></li>
+    <li><a href="#applications">Applications</a></li>
+    <li><a href="#parcourir-un-graphe-pour-trouver-tous-les-chemins">Parcourir un graphe pour trouver TOUS les chemins</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">algorithmes de parcours d&#39;un graphe</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page2 2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page4/index.html" title="arbres (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page63/index.html" title="coloration d'un graphe (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="algorithmes-de-parcours-dun-graphe">algorithmes de parcours d&#39;un graphe</h1>
+
+<p>Ce cours comporte plusieurs pages:</p>
+<ul>
+<li><a href="/docs/SNT_2nde/pages/pages_algo/graphes/page1/">introduction aux graphes</a></li>
+<li><a href="/docs/NSI/structure/page5/">cours sur les graphes. Term NSI</a></li>
+<li><a href="/docs/SNT_2nde/pages/pages_algo/graphes/page2/">algorithmes de parcours des graphes</a></li>
+<li><a href="/docs/NSI/structure/page6/">TP sur les algorithmes de parcours des graphes</a></li>
+<li><a href="/docs/SNT_2nde/pages/pages_algo/graphes/page4/">algorithme de Dijkstra</a></li>
+<li><a href="/docs/NSI/architecture/page3/">Protocoles de routage</a></li>
+<li><a href="/docs/NSI/structure/page4/">Arbres</a></li>
+</ul>
+<h1 id="parcourir-un-graphe">Parcourir un graphe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le parcours d&rsquo;un graphe va donner une liste d&rsquo;arcs ou de sommets visités, dans un certain ordre.</p>
+<p>Cet ordre va dépendre de l&rsquo;algorithme employé: Pour des parcours de type <em>largeur</em> ou <em>profondeur</em>, on suppose que l&rsquo;on peut <em>revenir sur ses pas</em>. La liste de sommets ne représente pas un <em>chemin</em>.</p>
+<p>On appelera <em>chemin</em> une suite continue de sommets (ou d&rsquo;arcs) consécutifs dans le graphe, sans retour en arrière, c&rsquo;est à dire sans revenir vers un sommet déjà visité.</p>
+<h1 id="parcours-dun-graphe-en-largeur-bfs">Parcours d&rsquo;un graphe en largeur BFS<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><strong>Principe:</strong> BFS (Breadth-First Search): Il s&rsquo;agit d&rsquo;une exploration du graphe G, de proche en proche, en explorant tous les chemins, depuis la distance de longueur 1 du sommet, puis la distance 2, &hellip;</li>
+<li>Algorithme : voir définition en bas de page<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>Graphe : voir définitions à la page <a href="../page1/index.html">Graphes</a></li>
+</ul>
+<p>Voici le programme python de parcours en largeur d&rsquo;un graphe:</p>
+<ul>
+<li>Programme de type itératif:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">BFS</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">visited</span><span class="o">=</span><span class="p">[],</span> <span class="n">queue</span><span class="o">=</span><span class="n">deque</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">unvisited</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">queue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">unvisited</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">visited</span></span></span></code></pre></div>
+<h2 id="parcours-dun-graphe-non-pondéré">Parcours d&rsquo;un graphe non pondéré<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soit G(V,E) un graphe de sommets V = {A,B,C,D,E,F,G,H,I,J} et d&rsquo;arêtes E.</p>
+<p>On note la distance entre 2 sommets quelconques u et v dans le graphe G : </p>
+$$dist_G(u,v)$$<p>Pour le graphe exemple suivant (Graphe 1), la distance du sommet A au sommet J, vaut au minimum 4 (chemin A, B, E, I, J). Mais cela depend du chemin. Ainsi :
+</p>
+$$dist_G(A,J)=4$$<p>.</p>
+
+<figure >
+    
+        <img src="../images/fig20.png" alt="graphe illustratif" />
+    
+    
+    <figcaption>
+        <p>
+        Graphe 1 : exemple
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>Calculons toutes les distances dans ce graphe : <strong>L&rsquo;algorithme de parcours en largeur (Breadth-First Search BFS)</strong></p>
+</blockquote>
+<p><strong>Principe :</strong>
+Pour déterminer la longueur de tous les chemins du graphe, il va falloir le parcourir. Lors du parcours, certains sommets seront colorés, pour nous rappeler qu&rsquo;ils ont été parcouru (rouge), ou en cours de parcours (vert).</p>
+<p>On aura besoin de conserver une liste L des sommets à explorer.</p>
+<p>On commence l&rsquo;exploration en partant d&rsquo;un sommet <em>r</em>. Voici la méthode :</p>
+<blockquote>
+</blockquote>
+<ol>
+<li>Colorer en VERT le sommet <code>r</code> pour se rappeler qu&rsquo;il a déjà été partiellement traité.</li>
+<li>Parcourir le graphe depuis <code>r</code> jusqu&rsquo;à l&rsquo;un de ses voisins <code>u</code>, non coloré en vert ou rouge. Colorer <code>u</code> en VERT.</li>
+<li>Noter la distance du sommet de départ <code>r</code> vers le sommet <code>u</code> en cours d&rsquo;exploration : dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,u) = 1 si le sommet voisin <code>u</code> est adjacent.</li>
+<li>Ajouter le nom du sommet <code>u</code> à droite dans la liste <code>L</code>: <code>L = [r,u]</code></li>
+<li>Si <code>r</code> a d&rsquo;autres sommets adjacents, revenir au point 2 et explorer un autre de ces sommets (points 2, 3, 4).</li>
+<li>Si <code>r</code> n&rsquo;a plus de sommet adjacent non visité, colorer <code>r</code> en rouge. Retirer <code>r</code> de la liste (premier sommet, à gauche dans la liste L). <code>L</code> ayant une structure de FILE, on dit que l&rsquo;on <em>défile</em> <code>r</code>.</li>
+</ol>
+<p>On poursuit ensuite l&rsquo;exploration à partir du nouveau premier sommet <code>v</code> adjacent de <code>u</code>. La distance de r à v est alors : dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,v) = dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,u) + 1 (point 3).</p>
+<p>Lorsque la liste L est vide, l&rsquo;exploration est terminée et toutes les distances entre r et les autres sommets est connue.</p>
+<p><strong>Exemple :</strong></p>
+<p>A partir du graphe 1 défini plus haut, on démarre l&rsquo;exploration à partir du sommet r = E.</p>
+<p>Celui ci est coloré en VERT.</p>
+<p>La méthode vue plus haut permet de rapidement établir la liste L = [E,B,F,H,I] à partir des sommets adjacents à E. Les sommets B,F,H,I sont à une distance 1 du sommet E. On a par exemple dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,B) = 1. Ces sommets sont colorés en VERT.</p>
+<p>Une fois cette première partie de l&rsquo;exploration terminée, on retire E de la liste L, et on colore le sommet en rouge.</p>
+<p>
+<figure >
+    
+        <img src="../images/fig21.png" alt="premiere partie parcours BFS" />
+    
+    
+    <figcaption>
+        <p>
+        L = [B,F,H,I]
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On note la distance au sommet <code>E</code> pour chacun des sommets visités, le symbole ∞ pour ceux qui ne l&rsquo;ont pas encore été:</p>
+<table>
+	<thead>
+			<tr>
+					<th>exploration depuis le sommet&hellip;</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>D</th>
+					<th>F</th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>E</td>
+					<td>∞</td>
+					<td>1</td>
+					<td>∞</td>
+					<td>∞</td>
+					<td>1</td>
+					<td>∞</td>
+					<td>1</td>
+					<td>1</td>
+					<td>∞</td>
+			</tr>
+	</tbody>
+</table>
+<p>On se déplace maintenant sur le sommet B, qui est le premier de la liste.</p>
+<p>L&rsquo;exploration de ses sommets adjacents continue, à conditions que ceux-ci soient blancs, sinon, on passe à un autre sommet. Ici, on fait l&rsquo;exploration des sommets A,C,D. Ceux-ci sont colorés en VERT, et ajoutés à la liste L:
+</p>
+$$L = [F,H,I,A,C,D]$$<p>Les distances de E à chacun de ces nouveaux noeuds sont enregistrées :
+dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,A) = 2, tout comme dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,C) et dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,D). Le tableau suivant donne les distances depuis le sommet <code>E</code>:</p>
+<table>
+	<thead>
+			<tr>
+					<th>exploration depuis le sommet&hellip;</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>D</th>
+					<th>F</th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>B</td>
+					<td>2</td>
+					<td></td>
+					<td>2</td>
+					<td>2</td>
+					<td></td>
+					<td>∞</td>
+					<td></td>
+					<td></td>
+					<td>∞</td>
+			</tr>
+	</tbody>
+</table>
+<p>Les distances déjà connues ne sont pas modifiées. On laisse un blanc dans le tableau.</p>
+<p>On colore ensuite le sommet B en rouge et on le retire de la liste L.</p>
+<p>
+<figure >
+    
+        <img src="../images/fig22.png" alt="premiere partie parcours BFS" />
+    
+    
+    <figcaption>
+        <p>
+        L = [F,H,I,A,C,D]
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Ensuite, depuis le sommet F: on explore le graphe jusqu&rsquo;au sommet G, seul sommet adjacent encore blanc.</p>
+<p>On a alors dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,G) = 2, puis le sommet F est mis en rouge et retiré de la liste:</p>
+$$L = [H,I,A,C,D,G]$$<table>
+	<thead>
+			<tr>
+					<th>exploration depuis le sommet&hellip;</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>D</th>
+					<th>F</th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>F</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+					<td></td>
+					<td></td>
+					<td>∞</td>
+			</tr>
+	</tbody>
+</table>
+<p>On poursuivra l&rsquo;exploration par le sommet H, suivant dans la liste. Ce qui permettra de définir le dernier chemin jusqu&rsquo;à J, et noter dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,J) = 2:</p>
+<table>
+	<thead>
+			<tr>
+					<th>exploration depuis le sommet&hellip;</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>D</th>
+					<th>F</th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>H</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>2</td>
+			</tr>
+	</tbody>
+</table>
+<p>A la fin du traitement, on peut représenter à l&rsquo;aide d&rsquo;un <em>arbre</em> tous les chemins issus de l&rsquo;exploration du graphe :</p>
+
+<figure >
+    
+        <img src="../images/fig23.png" alt="arbre parcours BFS" />
+    
+    
+    <figcaption>
+        <p>
+        arbre du parcours BFS
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Pour réaliser cet arbre, il y aura 2 méthodes:</p>
+<ul>
+<li>Soit la construction d&rsquo;un tableau des sommets visités au fur et à mesure de l&rsquo;exploration (<em>vu plus haut</em>)</li>
+<li>Soit remonter chaque étape du parcours du graphe le parent du sommet visité. (voir <em><a href="/pdf/NSI/sd4_exercices.pdf">fiche d&rsquo;exercices</a></em>). Ainsi, il aura faudra se rappeler que le sommet D a pour parent le noeud B (D est marqué dans le tableau dont l&rsquo;entrée est B). Et le sommet B a lui même pour parent le sommet E. Ainsi, en remontant le chemin, on sait que le chemin de E à D passe par B : E =&gt; B =&gt; D.</li>
+</ul>
+<h3 id="pour-aller-plus-loin-term-nsi">Pour aller plus loin (term NSI)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>
+<p>Consulter la page du <em>parcours en largeur</em> sur <a href="https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur" rel="external">wikipedia</a></p>
+</li>
+<li>
+<p><a href="../page4/">Algorithme de Dijkstra</a> (plus court chemin dans un graphe pondéré)</p>
+</li>
+<li>
+<p>Application de l&rsquo;algorithme <strong>BFS</strong> au parcours dans un <strong>labyrinthe</strong>:</p>
+</li>
+</ul>
+
+<figure >
+    <a href="https://youtu.be/vf817b882Uw">
+        <img src="../images/maze1.png" alt="maze BFS" />
+    </a>
+    
+    <figcaption>
+        <p>
+        video: Maze Pathfinder - Breadth First Search (BFS)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h1 id="parcours-dun-graphe-en-profondeur-dfs">Parcours d&rsquo;un graphe en profondeur (DFS)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Principe:</strong> L&rsquo;exploration DFS (Depth-First Search) retourne une liste de sommets, parcourus en plongeant dans la profondeur du graphe. Le prochain sommet visité est un des successeurs du sommet courant, avec un retour en arrière lorsque&rsquo;il n&rsquo;y a pas de nouveau successeur, ou bien lorsque celui-ci a deja été visité.</p>
+<p>Voici les 2 programmes python de parcours en profondeur d&rsquo;un graphe:</p>
+<ul>
+<li>récursif:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">DFS</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">visited</span><span class="o">==</span><span class="kc">None</span><span class="p">:</span><span class="n">visited</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">DFS</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">visited</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">visited</span></span></span></code></pre></div>
+<ul>
+<li>Itératif:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">DFS_ite</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">visited</span><span class="o">=</span><span class="p">[],</span> <span class="n">stack</span><span class="o">=</span><span class="p">[]):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">v</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">unvisited</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">stack</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">inverse</span><span class="p">(</span><span class="n">unvisited</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">visited</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inverse</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># fonction utile pour avoir le meme ordre de parcours </span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># des sommets adjacents, pour les fonctions DFS et DFS_ite</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span></span></span></code></pre></div>
+<h2 id="principe-1">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soit un graphe G = (V,E) et r un sommet de G, point de départ de l&rsquo;exploration.
+Le parcours en profondeur du graphe va permettre de visiter tous les noeuds du graphe, mais selon un chemin où l&rsquo;on plonge dans la profondeur du graphe. Le prochain sommet visité sera un sommet fils non encore visité.</p>
+<p>A chaque étape, c&rsquo;est à dire à chaque arête suivie, il faudra <strong>mémoriser le parent</strong> du nouveau sommet visité. (une fois celui-ci placé dans la liste des sommets <em>parcourus</em>, pas <em>découverts</em>). Cela permettra de revenir en arrière. On utilisera pour cela une structure de PILE. On reviendra en arrière en <em>dépilant</em> le dernier sommet de la liste.</p>
+<p>Lorsque le chemin mène à une impasse, (il n&rsquo;y a plus de sommet fils non visité), lorsque l&rsquo;on est sur un bord du graphe, alors on <em>remonte</em> d&rsquo;un niveau, vers un sommet parent, <em>avant de poursuivre</em> l&rsquo;exploration.</p>
+<p>En pratique :</p>
+<ul>
+<li>tous les sommets ont d&rsquo;abord colorés en BLANC.</li>
+<li>On colore chaque noeud u visité en VERT.</li>
+<li>Lorsque tous les noeuds fils de u sont visités, on colore celui-ci en ROUGE.</li>
+</ul>
+<p><strong>Illustration :</strong>
+Avec le graphe suivant, on démarre l&rsquo;exploration du noeud G :</p>
+<p>
+<figure >
+    
+        <img src="../images/fig40.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        exemple de graphe pour le parcours en profondeur
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+La première étape est la phase de descente : On peut démarrer l&rsquo;exploration par le sommet voisin A ou B. Les deux sont possibles. Ils sont de couleur BLANCHE.</p>
+<p>Supposons que l&rsquo;on commence l&rsquo;exploration par B (on aurait tout aussi bien choisir le A). On colore alors B en VERT.</p>
+<p>On poursuit l&rsquo;exploration par les sommets suivants : D,C,A (il y a d&rsquo;autres possibiltés) :</p>
+<p>
+<figure >
+    
+        <img src="../images/fig41.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        étape 1
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Le sommet A est un bord du graphe : il n&rsquo;y a pas de noeud fils BLANC. On remonte alors d&rsquo;un niveau : jusqu&rsquo;au sommet C. Celui ci ne presente pas davantage de voisin BLANC. A et C sont colorés en ROUGE et on remonte à D.</p>
+<p>On peut alors poursuivre l&rsquo;exploration vers E :</p>
+<p>
+<figure >
+    
+        <img src="../images/fig42.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        étape 2
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Depuis le sommet E, on peut visiter F et I. Choisissons F (mais on pourrait choisir également I) :</p>
+<p>
+<figure >
+    
+        <img src="../images/fig43.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        étape 3
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On poursuit l&rsquo;exploration jusqu&rsquo;en I. Tous les sommets sont visités, et l&rsquo;exploration est terminée.</p>
+<p>
+<figure >
+    
+        <img src="../images/fig44.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        fin du parcours
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Le schéma suivant illustre le parcours réalisé à partir des arêtes empruntées. Il s&rsquo;agit d&rsquo;un arbre couvrant le graphe :</p>
+
+<figure >
+    
+        <img src="../images/fig45.png" alt="graphe parcours profondeur" />
+    
+    
+    <figcaption>
+        <p>
+        arbre couvrant
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="applications">Applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le parcours d&rsquo;un graphe en profondeur s&rsquo;apparente à un algorithme de type <em>retour sur trace</em>, ou <em>backtracking</em>. C&rsquo;est le comportement de joueur que l&rsquo;on a lorsque l&rsquo;on a droit à un nouvelle chance :</p>
+<ul>
+<li>Dans un jeu d&rsquo;echec, lorsque l&rsquo;on joue contre l&rsquo;ordinateur, une option permet de <em>revenir en arrière</em>. On peut revenir <em>un coup</em> en arrière et prendre une meilleure option. L&rsquo;ordinateur construit un graphe au fur et à mesure du jeu avec les coups joués ainsi que la configuration du jeu, afin de permettre ce backtracking.</li>
+<li>Lorsque l&rsquo;on joue à un jeu de labyrinthe <a href="https://zestedesavoir.com/tutoriels/681/a-la-decouverte-des-algorithmes-de-graphe/727_bases-de-la-theorie-des-graphes/3353_parcourir-un-graphe/" rel="external">(illustration site zestedesavoir)</a>: Si on arrive dans une impasse, on adopte là aussi un algorithme de type <em>retour sur trace</em>. On revient jusqu&rsquo;au noeud parent (le croisement précédent) afin d&rsquo;explorer une nouvelle voie. Et si toutes ces voies sont sans issues, on remonte encore d&rsquo;un niveau (le croisement précédent encore celui ci).</li>
+</ul>
+<h2 id="parcourir-un-graphe-pour-trouver-tous-les-chemins">Parcourir un graphe pour trouver TOUS les chemins<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Il s&rsquo;agit d&rsquo;une variante du parcours en profondeur.</em></p>
+<p>Pour un graphe <code>G</code>, le problème s&rsquo;énonce de la manière suivante:</p>
+<p>Pour un sommet de départ <code>A</code>, créer un nouveau <em>chemin</em> pour chaque sommet adjacent à <code>A</code> de la manière suivante:</p>
+<ul>
+<li>Commencer le chemin avec la liste de sommets <code>[A]</code></li>
+<li>Si le sommet adjacent est un nouveau sommet, n&rsquo;appartenant pas déjà un <code>chemin</code>.
+<ul>
+<li>ajouter le nouveau sommet adjacent au <code>chemin</code>, par exemple <code>[A,B]</code></li>
+<li>ajouter ce <code>chemin</code> à la liste des chemins</li>
+<li>continuer avec cette même méthode depuis le sommet adjacent (appel recursif avec le sommet adjacent comme nouveau départ, et placer <code>chemin</code> en paramètre)</li>
+</ul>
+</li>
+</ul>
+<p>A la fin, retourner la liste des chemins.</p>
+<p><em>Illustration</em>:</p>
+
+<figure >
+    
+        <img src="../images/chemin0.png" alt="départ du sommet A" />
+    
+    
+    <figcaption>
+        <p>
+        départ du sommet A
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/chemin1.png" alt="poursuite du chemin vers B" />
+    
+    
+    <figcaption>
+        <p>
+        poursuite du chemin vers B
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>Script</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parcours</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">depart</span><span class="p">,</span><span class="n">lst_chemins</span><span class="p">,</span> <span class="n">chemin</span> <span class="o">=</span> <span class="p">[]):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">chemin</span> <span class="o">==</span> <span class="p">[]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">chemin</span> <span class="o">=</span> <span class="p">[</span><span class="n">depart</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">sommet</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">depart</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">sommet</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">chemin</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lst_chemins</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chemin</span> <span class="o">+</span> <span class="p">[</span><span class="n">sommet</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parcours</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">lst_chemins</span><span class="p">,</span> <span class="n">chemin</span> <span class="o">+</span> <span class="p">[</span><span class="n">sommet</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">lst_chemins</span></span></span></code></pre></div>
+<p><em>Graphe: implémentation à l&rsquo;aide d&rsquo;un dictionnaire de listes d&rsquo;adjacence</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">G</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;B&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;D&#39;</span><span class="p">:[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;E&#39;</span><span class="p">:[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;F&#39;</span><span class="p">:[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;G&#39;</span><span class="p">:[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;H&#39;</span><span class="p">:[</span><span class="s1">&#39;F&#39;</span><span class="p">,</span><span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;I&#39;</span><span class="p">:[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="s1">&#39;G&#39;</span><span class="p">,</span><span class="s1">&#39;H&#39;</span><span class="p">]}</span></span></span></code></pre></div>
+<p><em>Exemple</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">lst_chemins</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">parcours</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">lst_chemins</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="o">...</span>
+</span></span><span class="line"><span class="cl"> <span class="o">...</span> <span class="p">]</span></span></span></code></pre></div>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Animation sur le parcours d&rsquo;un graphe <a href="http://mpechaud.fr/scripts/parcours/index.html" rel="external">http://mpechaud.fr/scripts/parcours/index.html</a></li>
+<li>Approfondir le sujet: les différents algorithmes de parcours des graphes (Term NSI): <a href="https://pixees.fr/informatiquelycee/n_site/nsi_term_algo_graphe.html" rel="external">site pixees de David Roche</a></li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>algorithmes : ce sont des méthodes qui, exécutées pas à pas, permettent d&rsquo;obtenir un résultat final à partir de données de départ.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/structure/page2-2/index.html"><a class="padding" href="/nsi/structure/page2-2/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page63/index.html"><a class="padding" href="/nsi/structure/page63/index.html">coloration d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page62/index.html"><a class="padding" href="/nsi/structure/page62/index.html">solution aux problèmes de transvasement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page61/index.html"><a class="padding" href="/nsi/structure/page61/index.html">TP algorithme parcours graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page64/index.html"><a class="padding" href="/nsi/structure/page64/index.html">TP algorithme parcours graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page6/index.html"><a class="padding" href="/nsi/structure/page6/index.html">TP implementation python graphes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782172242"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782172242" defer></script>
+    <script src="/js/theme.js?1782172242" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="pile, structures lineaires, expression correctement parenthesee">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pile :: allopizza">
+    <meta name="twitter:description" content="pile, structures lineaires, expression correctement parenthesee">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Pile :: allopizza">
+    <meta property="og:description" content="pile, structures lineaires, expression correctement parenthesee">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="Pile :: allopizza">
+    <meta itemprop="description" content="pile, structures lineaires, expression correctement parenthesee">
+    <meta itemprop="wordCount" content="1052">
+    <title>Pile :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782173194" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782173194" defer></script>
+    <script src="/js/search-lunr.js?1782173194" defer></script>
+    <script src="/js/search.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782173194";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782173194" rel="stylesheet">
+    <link href="/css/theme.css?1782173194" rel="stylesheet">
+    <link href="/css/format-html.css?1782173194" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#les-structures-de-données">Les structures de données</a></li>
+    <li><a href="#un-premier-exemple">Un premier exemple</a></li>
+    <li><a href="#deuxieme-exemple--une-expression-correctement-parenthésée">Deuxieme exemple : une expression correctement parenthésée</a></li>
+    <li><a href="#définitions">Définitions</a>
+      <ul>
+        <li><a href="#la-pile-interface">La pile: interface</a></li>
+        <li><a href="#implémenter-un-pile-en-python-en-langage-natif">Implémenter un pile en Python en langage natif</a></li>
+        <li><a href="#créer-une-nouvelle-interface">Créer une nouvelle Interface</a></li>
+        <li><a href="#implémentation-fonctionnelle">Implémentation fonctionnelle</a></li>
+        <li><a href="#implémentation-en-programmation-objet">Implémentation en Programmation Objet</a></li>
+      </ul>
+    </li>
+    <li><a href="#pile-et-recursivité">Pile et recursivité</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Pile</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page1/index.html" title="types abstraits (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page21/index.html" title="Files et Listes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="pile">Pile</h1>
+
+<p><em>Ce cours comporte:</em></p>
+<ul>
+<li>les types abstraits: <a href="../page1">Lien</a></li>
+<li>Cours sur les Piles: <a href="../page2">Lien</a></li>
+<li>Cours sur les Files et listes: <a href="../page21">Lien</a></li>
+<li>exercices en ligne (TP) sur les Piles: <a href="../page22">Lien</a></li>
+</ul>
+<h1 id="structure-linéaire--la-pile">Structure linéaire : La Pile<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="les-structures-de-données">Les structures de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Definition:</em> Une <em>structure de données</em> est une manière de stocker, d’accéder à, et de manipuler des données (comme les types list ou dict de Python).</p>
+<p><em>Definition:</em> Un <em>type abstrait</em> décrit essentiellement une interface, indépendamment du  langage de programmation.</p>
+<h2 id="un-premier-exemple">Un premier exemple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La pile est une manière de ranger les données.</p>
+<p>Elle correspond exactement à l’image traditionnelle d’une pile de cartes ou d’assiettes posée sur une table. En particulier, on ne peut accéder qu’au dernier élément ajouté, qu’on appelle le sommet de la pile.</p>
+<p>L&rsquo;illustration suivante montre que c&rsquo;est la structure de données à adopter si l&rsquo;on veut sortir d&rsquo;un labyrinthe&hellip;</p>
+<p>
+<figure >
+    
+        <img src="../images/turt.gif" alt="parcours utilisant une pile" />
+    
+    
+    <figcaption>
+        <p>
+        parcours pour sortir d&#39;un labyrinthe
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Le labyrinthe peut être modélisé par les coordonnées de ses noeuds, ainsi qu&rsquo;une liste de directions possibles (ouvertures) pour chacun de ses noeuds :</p>
+<p>
+<figure >
+    
+        <img src="../images/laby.png" alt="labyritnhe modelisation" />
+    
+    
+    <figcaption>
+        <p>
+        modelisation d&#39;un labyrinthe
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+En observant l&rsquo;animation de la tortue dans le labyrinthe, on peut supposer que la pile des sommets visités (les cases du labyrinthe) sont, dans l&rsquo;ordre :</p>
+<p>(4,0), (3,0), (3,1), (3,2), (4,2), (4,1) &hellip;</p>
+<p>puis le chemin inverse jusqu&rsquo;au sommet (3,0) :</p>
+<p>(4,2), (3,2), (3,1), (3,0), &hellip;</p>
+<p>Une fois revenu au sommet (3,0), on reprend l&rsquo;exploration vers (2,0), (2,1),&hellip;</p>
+<p>Il s&rsquo;agit d&rsquo;une méthode d&rsquo;exploration du labyrinthe de type <em>parcours en profondeur</em>. L&rsquo;algorithme est expliqué en détail à la page : <a href="/docs/SNT_2nde/pages/pages_algo/graphes/page2/#parcours-d-un-arbre-en-profondeur-dfs">SNT algorithmes graphe : parcours en profondeur</a></p>
+<p>
+<figure >
+    
+        <img src="../images/logott.png" alt="turtle" />
+    
+    
+    <figcaption>
+        <p>
+        fil d&#39;ariane
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+La tortue suit son chemin jusqu&rsquo;à arriver à une impasse (ou un sommet déjà visité). Alors, elle doit être capable de <em>revenir sur ses traces</em>. C&rsquo;est pour cela qu&rsquo;elle mémorise son parcours dans une <em>pile</em>, qu&rsquo;elle pourra remonter (c&rsquo;est à dire <em>dépiler</em>) au besoin. Cette pile de sommets visités correspond au fil d&rsquo;Ariane, rendu célèbre par la mythologie (Thésée et le Minautore).</p>
+<p>Lorsqu&rsquo;elle s&rsquo;avance plus en profondeur dans le labyrinthe, vers des sommets encore non explorés, elle <em>empile</em>.</p>
+<p>Lorsqu&rsquo;elle revient sur ses traces, elle <em>dépile</em> (elle retire des sommets de la pile).</p>
+<p>
+<figure >
+    
+        <img src="../images/empile.png" alt="empiler depiler" />
+    
+    
+    <figcaption>
+        <p>
+        pile de sommets du labyrinthe
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Lorsque la tortue arrive à la case (4,1), l&rsquo;impasse, la pile a alors la configuration <strong>pile a</strong> (voir schéma plus bas).</p>
+<p>Elle revient jusqu&rsquo;à (3,0).</p>
+<p>Après avoir <em>dépilé</em> (4,1),(4,2),(3,2),(3,1), la pile est alors la <strong>pile b</strong>.</p>
+<p>Puis, lorsqu&rsquo;elle est parvenu à une bifurcation vers une nouvelle direction, elle poursuit son exploration (et <em>empile</em> à nouveau) : <strong>pile c</strong>. Qu&rsquo;il faudra encore prolonger pour atteindre la sortie (en bas à droite).</p>
+
+<figure >
+    
+        <img src="../images/pileL.png" alt="pile DFS" />
+    
+    
+    <figcaption>
+        <p>
+        pile du parcours en profondeur
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="deuxieme-exemple--une-expression-correctement-parenthésée">Deuxieme exemple : une expression correctement parenthésée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Principe :</strong> On lit l&rsquo;expression de gauche à droite et on empile au fur et à mesure les caractères ouvrants : [, {, (. On dépile lorsqu&rsquo;on lit le caractère fermant correspondant. A la fin, la pile doit être vide.</p>
+<p>Dans l&rsquo;exemple suivant, on voit que l&rsquo;expression <code>[a+(b+c)]</code> est correctement parenthesée. Ce qui ne serait pas le cas pour <code>[a+(b+c])</code>.</p>
+
+<figure >
+    
+        <img src="../images/parentheses.png"  />
+    
+    
+</figure>
+
+<h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="la-pile-interface">La pile: interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La pile est une structure de données appropriée quand :</p>
+<ul>
+<li>On veut stocker des éléments dont le nombre est variable, et inconnu à l’avance.</li>
+<li>On peut ou on doit se contenter d’accéder au dernier élément stocké.</li>
+</ul>
+<p>Dans d&rsquo;autres cas, il faudra utiliser une autre structure de données, comme par exemple un tableau.</p>
+<p>Une <!-- raw HTML omitted -->Pile<!-- raw HTML omitted --> est une structure de données <!-- raw HTML omitted -->linéaire<!-- raw HTML omitted --> (les données sont rangées sur un ligne ou une colonne). Le dernier élément entré sera aussi le premier à sortir (<!-- raw HTML omitted -->L<!-- raw HTML omitted -->ast <!-- raw HTML omitted -->I<!-- raw HTML omitted -->n <!-- raw HTML omitted -->F<!-- raw HTML omitted -->irst <!-- raw HTML omitted -->O<!-- raw HTML omitted -->ut : LIFO).</p>
+<p>Les méthodes (= fonctions) disponibles pour cette structure sont :</p>
+<ul>
+<li>construction (d&rsquo;une pile vide)</li>
+<li>test d&rsquo;une pile vide (renvoie <code>True</code> si la pile est vide)</li>
+<li>ajout d&rsquo;un élément (empiler = <code>push</code>), mis au sommet de la pile</li>
+<li>retire le premier élément de la pile, celui au sommet (dépiler = pop) si la pile est non vide et renvoie cet élément.</li>
+<li>lire le sommet de la pile</li>
+</ul>
+<h3 id="implémenter-un-pile-en-python-en-langage-natif">Implémenter un pile en Python en langage natif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le type <em>List</em> en Python possède déjà toutes les méthodes d&rsquo;une pile :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pile</span> <span class="o">=</span> <span class="p">[]</span>           <span class="c1"># creation d&#39;une pile</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span> <span class="o">==</span> <span class="p">[]</span>          <span class="c1"># tester si la pile est vide</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span> <span class="c1"># empile valeur dans la pile</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>         <span class="c1"># depiler l&#39;element au sommet</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>            <span class="c1"># lire l&#39;element au sommet de la pile</span></span></span></code></pre></div>
+<p>Lorsque l&rsquo;on fait référence à une structure de données de type <em>pile</em> en traduisant un algorithme en Python, il faudra se contenter de ces 5 instructions.</p>
+<h3 id="créer-une-nouvelle-interface">Créer une nouvelle Interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les types abstraits, comme les piles, sont définis par leur <strong>interface</strong> (comment  on s’en sert) plutôt que par leur <strong>implémentation</strong> (comment ils fonctionnent). Ils permettent d’étudier des algorithmes indépendamment  du langage utilisé.</p>
+<p>Rappels:</p>
+<ul>
+<li>
+<p>L’<em>interface</em> de la structure de données décrit de quelle manière on peut la  manipuler, par exemple en utilisant <code>append</code> pour le type list ou <code>get</code> pour le type  dict.</p>
+</li>
+<li>
+<p>L’<em>implémentation</em> de la structure de données, contient le code de  ces méthodes (comment fait Python). Il n’est pas nécessaire de connaître l’implémentation pour manipuler la structure de données.</p>
+</li>
+</ul>
+<p>On verra ici deux manières d&rsquo;implémenter la <em>pile</em>.</p>
+<h3 id="implémentation-fonctionnelle">Implémentation fonctionnelle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Pour traduire un algorithme utilisant cette structure <em>pile</em>, il peut être préférable de définir des instructions portant les noms de ces 5 instructions:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">Pile</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;creation d&#39;une pile vide à l&#39;aide de l&#39;instruction : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">  pile = Pile()
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">pile</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># à compléter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">empile</span><span class="p">(</span><span class="n">valeur</span><span class="p">,</span><span class="n">pile</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># à compléter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">depile</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># à completer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sommet</span><span class="p">(</span><span class="n">pile</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># à completer</span></span></span></code></pre></div>
+<h3 id="implémentation-en-programmation-objet">Implémentation en Programmation Objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut créer un type (= une <strong>classe</strong>) <code>Pile</code> personnelle en Python.</p>
+<p>Les méthodes (fonctions) déclarées précédemment sont alors associées à l&rsquo;objet <code>Pile</code>. L&rsquo;appel d&rsquo;une méthode se fait à l&rsquo;aide de l&rsquo;instruction :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">empile</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">depile</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">pile</span><span class="o">.</span><span class="n">sommet</span><span class="p">()</span></span></span></code></pre></div>
+<p>Voir le cours sur la <a href="/docs/NSI/structure/page3/">programmation orientée objet</a>.</p>
+<p><strong>Rappel : Objet = type mutable</strong>. Quelle que soit la façon avec laquelle la pile est implémentée, il faudra se souvenir que celle-ci est un objet <em>mutable</em>. Cela a des conséquences sur la manière avec laquelle la pile est passée en argument d&rsquo;une fonction, et comment cette fonction modifie la pile.</p>
+<h2 id="pile-et-recursivité">Pile et recursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Tout algorithme récursif peut être mis sous forme d&rsquo;algorithme itératif avec une structure de données en pile.</p>
+<p>Voir le cours sur la <a href="/docs/NSI/langages/page2/">recursivité</a></p>
+<h1 id="exercices-sur-les-piles">Exercices sur les piles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>voir la page <a href="../page22">exercices</a></p>
+<h1 id="autres-structures-linéaires">Autres structures linéaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Lien vers la page<a href="../page21/"> 
+            Listes et Files
+        </a> </p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>cours sur <a href="https://info.blaisepascal.fr/nsi-pile-file/" rel="external">info.blaisepascal.fr</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782173194"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782173194" defer></script>
+    <script src="/js/theme.js?1782173194" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

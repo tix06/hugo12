@@ -8,7 +8,7 @@ weight: 6
 
 Prérequis:
 
-* Cours sur les tableaux et listes Python: [page du site](/docs/python/pages/boucles/page2/)
+* Cours sur les tableaux et listes Python
 
 # Partie 1: Tableaux et traitement sur Excel
 Commencer par remplir les notes de l'élève comme sur l'image ci-dessous (cellules $C2$ à $K2$)

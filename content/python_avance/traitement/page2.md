@@ -1,7 +1,7 @@
 ---
 Title: regression lineaire
 description: regression, modelisation avec scipy.optimize
-weight: 22
+weight: 24
 ---
 
 # Regression linéaire

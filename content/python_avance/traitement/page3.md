@@ -1,7 +1,7 @@
 ---
 Title: sql et python
 description: traitement sql et visualisation
-weight: 23
+weight: 25
 ---
 
 # Etape 4: Base de données exoplanetes.db

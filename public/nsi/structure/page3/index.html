@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="Cette séquence comprend:
+un cours sur la POO: Lien une fiche d’exercices: pdf des énoncés de bac: Lien TP Jeu des 7 familles: Lien (Sans interface graphique) TP sur trajectoires de projectiles: Lien TP sur la programmation d’un jeu de Dominos: Lien. (Sans interface graphique) Programmation objet Principe En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l’architecture d’objets physiques.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="programmation objet :: allopizza">
+    <meta name="twitter:description" content="Cette séquence comprend:
+un cours sur la POO: Lien une fiche d’exercices: pdf des énoncés de bac: Lien TP Jeu des 7 familles: Lien (Sans interface graphique) TP sur trajectoires de projectiles: Lien TP sur la programmation d’un jeu de Dominos: Lien. (Sans interface graphique) Programmation objet Principe En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l’architecture d’objets physiques.">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="programmation objet :: allopizza">
+    <meta property="og:description" content="Cette séquence comprend:
+un cours sur la POO: Lien une fiche d’exercices: pdf des énoncés de bac: Lien TP Jeu des 7 familles: Lien (Sans interface graphique) TP sur trajectoires de projectiles: Lien TP sur la programmation d’un jeu de Dominos: Lien. (Sans interface graphique) Programmation objet Principe En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l’architecture d’objets physiques.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="programmation objet :: allopizza">
+    <meta itemprop="description" content="Cette séquence comprend:
+un cours sur la POO: Lien une fiche d’exercices: pdf des énoncés de bac: Lien TP Jeu des 7 familles: Lien (Sans interface graphique) TP sur trajectoires de projectiles: Lien TP sur la programmation d’un jeu de Dominos: Lien. (Sans interface graphique) Programmation objet Principe En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l’architecture d’objets physiques.">
+    <meta itemprop="wordCount" content="1219">
+    <title>programmation objet :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782168841" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782168841" defer></script>
+    <script src="/js/search-lunr.js?1782168841" defer></script>
+    <script src="/js/search.js?1782168841" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782168841";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782168841" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782168841" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782168841" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782168841" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782168841" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782168841" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782168841" rel="stylesheet">
+    <link href="/css/theme.css?1782168841" rel="stylesheet">
+    <link href="/css/format-html.css?1782168841" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#classe-et-instance-de-classe">Classe et instance de classe</a></li>
+    <li><a href="#la-méthode-__repr__">La méthode <code>__repr__()</code></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em></a></li>
+    <li><a href="#modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em></a></li>
+    <li><a href="#docstrings">Docstrings</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">programmation objet</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page11/index.html" title="moyenne glissante (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page62/index.html" title="solution aux problèmes de transvasement (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="programmation-objet">programmation objet</h1>
+
+<p>Cette séquence comprend:</p>
+<ul>
+<li>un cours sur la POO: <a href="../page3">Lien</a></li>
+<li>une fiche d&rsquo;exercices: <a href="/pdf/NSI/POO_exercices.pdf">pdf</a></li>
+<li>des énoncés de bac: <a href="/docs/NSI/NSI_sujets/#exos5">Lien</a></li>
+<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
+<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
+<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
+</ul>
+<h1 id="programmation-objet">Programmation objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l&rsquo;architecture <em>d&rsquo;objets physiques</em>.</p>
+<p>Un <em>objet physique</em>, comme par exemple, une planche de skateboard, possède des caractéristiques propres.</p>
+<p>
+<figure >
+    <a href="https://urbanart-paris.fr/event/chalk-custom-board-lart-dhabiller-skate/">
+        <img src="https://urbanart-paris.fr/wp-content/uploads/2016/04/12963624_1877786249114590_5321151849406456199_n.jpg" alt="chalk custom board" />
+    </a>
+    
+    <figcaption>
+        <p>
+        image: CHALK CUSTOM BOARD : L’ART D’HABILLER UN SKATE (urban art)
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Une planche, malgré la diversité, est toujours constituée:</p>
+<ul>
+<li>d&rsquo;un deck (court, long)</li>
+<li>d&rsquo;un tail (plat, relevé)</li>
+<li>de trucks (hauts, bas)</li>
+<li>de roues (à gommes tendres, dures)</li>
+<li>d&rsquo;une décoration (image sous le deck)</li>
+</ul>
+<p>C&rsquo;est son <strong>état</strong>.</p>
+<p>Cette planche peut repondre egalement à un ensemble de messages, qui forment ce que l&rsquo;on appelle l&rsquo;<em>interface</em> de l&rsquo;objet. C&rsquo;est au travers de ces méthodes que l&rsquo;on peut interagir avec l&rsquo;objet, ou que les objets peuvent interagir entre eux.</p>
+<p>On peut lui associer une méthode <code>skateboard_pour_parc</code> qui renvoie <code>True</code> si la planche est de type <em>street</em> ou <code>False</code> si la planche est de type <em>cruising</em>, ou prevue pour la decoration.</p>
+<p>Un objet comprend donc :</p>
+<ul>
+<li>une partie <strong>figée</strong> qui représente son <strong>état</strong>, et qui est constituée de champs ou <strong>attributs</strong>.</li>
+<li>une partie <strong>dynamique</strong> qui décrit son <strong>comportement</strong>, à l&rsquo;aide de déclarations de <strong>méthodes</strong>, qui doivent répondre à des <strong>messages</strong>.</li>
+</ul>
+<h2 id="classe-et-instance-de-classe">Classe et instance de classe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La structure interne des objets et les messages auxquels ils repondent sont définis dans une <strong>classe</strong>. Une <em>classe</em> décrit les méthodes de création d&rsquo;objets de ce type (on parle d&rsquo;<em>instance</em> de classe), et les méthodes auxquelles répondront les objets de ce type dans la reception des messages.</p>
+<p>Avec l&rsquo;exemple précédent, la <strong>class</strong>e Skateboard pourrait contenir:</p>
+<ul>
+<li>les méthodes de création des instances des différents skateboards. On y définit les attributs pour chaque nouvelle planche de skateboard que l&rsquo;on créé. Chaque planche de skate constitue une <em>instance</em> de classe.</li>
+<li>les méthodes de la classe skateboard, qui repondent aux messages du genre: <code>skateboard_pour_parc</code>? Un <em>message</em> est constitué du nom de la méthode, et permet d&rsquo;interagir avec celui-ci. Ces méthodes sont accessibles à tous les skates qui sont des instances de la classe skateboard.</li>
+</ul>
+<p>En <strong>python</strong>, la création d&rsquo;une classe commence par le mot clé <strong>class</strong> suivi du nom de la classe, de deux points et d&rsquo;une indentation.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span></span></span></code></pre></div>
+<p>Toute la partie indentée contient les <em>méthodes de création</em> des <em>instances</em> de cette classe et les <em>méthodes</em> de cette classe.</p>
+<p>Lors de la programmation, on devra faire référence à l&rsquo;instance de l&rsquo;objet sur lequel on travaille: le mot clé <code>self</code> permet ceci en python.</p>
+<p>La méthode de création d&rsquo;un objet est définie par <code>def __init__</code> suivi au minimum de l&rsquo;argument <code>self</code>, et eventuellement d&rsquo;autres arguments.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span><span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span><span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span><span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span><span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
+<p>Les attributs des objets de cette classe sont définis dans cette méthode. Ils sont codés sous la forme <code>self.attribut</code>, et peuvent faire référence aux arguments passés lors de l&rsquo;instanciation.</p>
+<p>Enfin, chaque méthode de classe est définie à l&rsquo;aide de: <code>def nom_de_la_methode</code>. Celle-ci prend aussi au minimum, l&rsquo;argument <code>self</code>.</p>
+<p><em>Script complet:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span><span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span><span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span><span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span><span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">skateboard_pour_parc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">==</span> <span class="s1">&#39;court&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="s1">&#39;releve&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">==</span> <span class="s1">&#39;dures&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span></span></span></code></pre></div>
+<p>On instancie alors un premier skateboard de la manière suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">()</span></span></span></code></pre></div>
+<p>
+<figure >
+    
+        <img src="../images/sk8_classic.jpg" alt="skateboard classic" />
+    
+    
+    <figcaption>
+        <p>
+        un premier skateboard bien classique
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Et on envoie le message suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
+<p>Instanciation d&rsquo;un second skateboard:</p>
+
+<figure >
+    
+        <img src="../images/sk8_sector9.jpg" alt="skateboard cruiser" />
+    
+    
+    <figcaption>
+        <p>
+        un skateboard cruiser
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
+<h2 id="la-méthode-__repr__">La méthode <code>__repr__()</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette méthode <code>__repr__</code> s&rsquo;utilise pour donner une représentation plus lisible de l&rsquo;objet lorsqu&rsquo;on veut l&rsquo;afficher avec la fonction <code>print</code>.</p>
+<p><em>Exemple 1:</em> On essaie d&rsquo;afficher notre instance de classe <code>mon_sector_9</code> créée plus haut:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Skateboard</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc6b0847550</span><span class="o">&gt;</span></span></span></code></pre></div>
+<p>Ce n&rsquo;est pas très explicite pour un humain. On préfèrera souvent choisir un descriptif personnalisé. Nous allons programmer la chaine de caractères qui sera renvoyée lors du <code>print</code>.</p>
+<p>On ajoute maintenant à la classe <code>Skateboard</code> la méthode <code>__repr__()</code> qui sera appelée lorsque l&rsquo;on utilise <code>print(objet)</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui permet de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui ne permet pas de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span></span></span></code></pre></div>
+<p>On construit à nouveau l&rsquo;instance de classe <code>mon_sector_9</code>, et on fait <code>print(mon_sector_9)</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">skateboard</span> <span class="n">de</span> <span class="nb">type</span> <span class="n">long</span> <span class="n">qui</span> <span class="n">ne</span> <span class="n">permet</span> <span class="n">pas</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span></span></span></code></pre></div>
+<p><em>Remarquer</em> que l&rsquo;appel à la méthode <code>skateboard_pour_parc</code> se fait en identifiant l&rsquo;objet qui possède cette méthode: <code>self.skateboard_pour_parc()</code>. Et ici, on n&rsquo;ajoutera pas de nouvel argument. (On ne met pas <code>self</code> en argument lors du <em>message</em> envoyé à cet objet).</p>
+<p><em>Surcharge d&rsquo;une fonction de la librairie standard:</em> Ce que l&rsquo;on vient de réaliser est une surcharge de la fonction <code>print</code> de la librairie standard.</p>
+<p>Mais il existe d&rsquo;autres méthodes de surcharge, prévues pour les <strong>opérateurs</strong>, ainsi que pour certaines <strong>fonctions</strong>. On pourra se référer au <a href="https://riptutorial.com/fr/python/example/7334/surcharge-de-l-operateur" rel="external">lien suivant</a> pour approfondir le sujet.</p>
+<h1 id="encapsulation-getter-et-setter">Encapsulation: <em>getter</em> et <em>setter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;utilisateur du programme ne devrait pas utiliser la méthode <em>pointée</em> précédente <code>nom_objet.nom_attribut</code>, permettant d’accéder aux valeurs des attributs: on ne veut pas forcement que l’utilisateur ait accès à la représentation interne des classes.</p>
+<p>Pour utiliser ou modifier les attributs, on utilisera de préférence des <strong>méthodes dédiées</strong> dont le rôle est de faire l’<strong>interface</strong> entre l’utilisateur de l’objet et la représentation interne de l’objet (ses attributs).</p>
+<p>Les <strong>attributs</strong> sont alors en quelque sorte <strong>encapsulés</strong> dans l’objet, c’est à dire non accessibles directement. la liste des <strong>méthodes</strong> devient une sorte de mode d’emploi de la classe.</p>
+<p>Pour obtenir la valeur d’un attribut nous utiliserons la méthode des accesseurs (ou &ldquo;getters&rdquo;) dont le nom est généralement : <code>getNom_attribut()</code>.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span></span></span></code></pre></div>
+<p>En console, une fois l&rsquo;instance de classe <code>mon_sector_9</code> définie, on fait:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">mon_sector_9</span><span class="p">.</span><span class="nf">getTail</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">`</span><span class="k">long</span><span class="o">`</span></span></span></code></pre></div>
+<h2 id="modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>De la même manière, pour modifier la valeur d&rsquo;un attribut, on devrait utiliser une méthode dédiée. Le nom de cette méthode commence en principe par <code>set</code>:</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">setDeco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deco</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
+<p>En console:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; mon_sector_9.setDeco = &#39;repeinte&#39;</span></span></code></pre></div>
+<h2 id="docstrings">Docstrings<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Chaque classe définit ses propres manières de stocker, d&rsquo;acceder et de manipuler les données. C&rsquo;est le Docstring qui permettra de prendre connaissance des détails, comme par exemple celui de la classe <code>Sept_Familles</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sept_Familles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    NAME
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Sept_Familles
+</span></span></span><span class="line"><span class="cl"><span class="s2">    DESCRIPTION
+</span></span></span><span class="line"><span class="cl"><span class="s2">        constructeur pour les cartes du jeu
+</span></span></span><span class="line"><span class="cl"><span class="s2">    PARAMETERS
+</span></span></span><span class="line"><span class="cl"><span class="s2">        famille (str): nom de la famille
+</span></span></span><span class="line"><span class="cl"><span class="s2">        qui(str): membre de la famille 
+</span></span></span><span class="line"><span class="cl"><span class="s2">            choix parmi (&#39;Grand-père&#39;,&#39;Grand-mère&#39;,&#39;Pére&#39;,&#39;Mère&#39;,&#39;Fils&#39;,&#39;Fille&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    FUNCTIONS
+</span></span></span><span class="line"><span class="cl"><span class="s2">        get_Attributs
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span></span></span></code></pre></div>
+<p>On peut alors prendre connaissance du docstring en faisant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; help(Sept_Familles)</span></span></code></pre></div>
+<h1 id="interface">Interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>L&rsquo;interface d&rsquo;une classe est représentée par le diagramme suivant:</p>
+
+<figure >
+    
+        <img src="../images/UML.png" alt="Une représentation d&#39;une classe" />
+    
+    
+    <figcaption>
+        <p>
+        Une représentation d&#39;une classe
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>La suite en TP</strong></p>
+<ul>
+<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
+<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
+<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
+</ul>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>cours sur <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet" rel="external">python.developpez.com</a>: compléments sur les méthodes spéciales de <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4" rel="external">surcharge des opérateurs</a>, d&rsquo;<a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5" rel="external">héritage et polymorphisme</a></li>
+<li>références : <a href="https://docs.python.org/fr/3.6/tutorial/classes.html" rel="external">Classes sur docs.python.org</a></li>
+<li>prolongement sur les heritages et polymorphismes <a href="https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants" rel="external">python doctor POO - debutants</a></li>
+<li>Resumé de cours : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet" rel="external">Lyceum.fr &gt; POO</a></li>
+<li>Autres exercices : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet/exo" rel="external">Lyceum.fr &gt; POO &gt; Exercices</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page31/index.html"><a class="padding" href="/nsi/langages/page31/index.html">TP POO trajectoires<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page41/index.html"><a class="padding" href="/nsi/structure/page41/index.html">Activite arbre couvrant<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">autres structures lineaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page63/index.html"><a class="padding" href="/nsi/structure/page63/index.html">coloration d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page23/index.html"><a class="padding" href="/nsi/structure/page23/index.html">correction probleme reduction<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page11/index.html"><a class="padding" href="/nsi/structure/page11/index.html">moyenne glissante<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/structure/page3/index.html"><a class="padding" href="/nsi/structure/page3/index.html">programmation objet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page62/index.html"><a class="padding" href="/nsi/structure/page62/index.html">solution aux problèmes de transvasement<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">structures lineaires<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page22/index.html"><a class="padding" href="/nsi/structure/page22/index.html">TD reduction chaine<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page61/index.html"><a class="padding" href="/nsi/structure/page61/index.html">TP algorithme parcours graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page6/index.html"><a class="padding" href="/nsi/structure/page6/index.html">TP implementation python graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782168841"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782168841" defer></script>
+    <script src="/js/theme.js?1782168841" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="arbres, binaires, implementations">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="arbres :: allopizza">
+    <meta name="twitter:description" content="arbres, binaires, implementations">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page4/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="arbres :: allopizza">
+    <meta property="og:description" content="arbres, binaires, implementations">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="arbres :: allopizza">
+    <meta itemprop="description" content="arbres, binaires, implementations">
+    <meta itemprop="wordCount" content="1089">
+    <title>arbres :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782173194" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782173194" defer></script>
+    <script src="/js/search-lunr.js?1782173194" defer></script>
+    <script src="/js/search.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782173194";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782173194" rel="stylesheet">
+    <link href="/css/theme.css?1782173194" rel="stylesheet">
+    <link href="/css/format-html.css?1782173194" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page4\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#définitions">Définitions</a></li>
+    <li><a href="#caractéristiques-dun-arbre">Caractéristiques d&rsquo;un arbre</a></li>
+    <li><a href="#arbres-binaires">Arbres binaires</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#liste">Liste</a></li>
+    <li><a href="#classe">Classe</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#parcours-postfixe">Parcours postfixe</a></li>
+    <li><a href="#parcours-préfixe">Parcours préfixe</a></li>
+    <li><a href="#parcours-infixe">Parcours infixe</a></li>
+    <li><a href="#parcours-en-largeur">Parcours en largeur</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#sur-capytale">Sur Capytale</a></li>
+    <li><a href="#sur-google-colab">Sur Google Colab</a></li>
+    <li><a href="#notebook-avec-un-ide-local">Notebook avec un IDE local</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">arbres</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page4.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page65/index.html" title="algorithmes de parcours d'un graphe (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/architecture/index.html" title="architecture (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="arbres">arbres</h1>
+
+<p>Ce cours comporte plusieurs pages:</p>
+<ul>
+<li><a href="../page5/">cours sur les graphes. Term NSI</a></li>
+<li><a href="../page6/">TP sur l&rsquo;implementation en python des graphes</a></li>
+<li><a href="/docs/NSI/structure/page4/">Arbres</a></li>
+<li><a href="../page41">TP</a> sur la notion d&rsquo;arbre couvrant</li>
+</ul>
+<h1 id="arbres">Arbres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un arbre est constitué de <strong>noeuds</strong> organisés de manière <strong>hierarchique</strong>: c&rsquo;est un <strong>graphe non orienté, connexe, sans cycle</strong>, dans lequel on a choisi un noeud particulier appelé la <strong>racine</strong>.</p>
+<p>Chaque noeud peut être étiqueté  par une information.</p>
+<p>Un arbre est donc un cas particulier des graphes. Voir la <a href="/docs/NSI/structure/page5/">page suivante sur les graphes</a></p>
+<p>On parle de <em>descendants</em> pour les noeuds <em>fils</em>.</p>
+<p>Des <strong>exemples</strong> d&rsquo;arbres:</p>
+<ul>
+<li>l&rsquo;<em>arbre généalogique</em> est un bon exemple. Le vocabulaire sur la structure des arbres s&rsquo;inspire d&rsquo;ailleurs de la génélogie (père-fils).</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/family_tree.png" alt="family tree sur freepik.com/genealogie" />
+    
+    
+    <figcaption>
+        <p>
+        family tree sur freepik.com/genealogie
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><em>Les noeuds sont &hellip;les couples</em>.</p>
+<ul>
+<li>L&rsquo;arbre représentant les sytèmes de dossiers sur ordinateur (dossiers et sous-dossiers puis fichiers)Ci-dessous l&rsquo;arborescence de fichiers dans un <em>raspberry-Pi</em>:</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/arborescence_linux.jpg" alt="arborescence linux" />
+    
+    
+    <figcaption>
+        <p>
+        arborescence linux
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li>arbre représentant des expressions arithmétiques</li>
+</ul>
+<p>
+<figure >
+    
+        <img src="../images/arbre2.png" alt="expression arithmetique" />
+    
+    
+    <figcaption>
+        <p>
+        Retrouver l&#39;expression arithmetique correspondante
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Les arbres sont très utilisés en informatique, d&rsquo;abord parce que les données sont souvent hierarchisées, et se prêtent bien à cette structure. Mais aussi parce que l&rsquo;accès à ces données est alors plus efficace: la recherche d&rsquo;une valeur se fait en <em>O(log(n))</em> dans le cas moyen, où n est la <em>taille de l&rsquo;arbre</em>.</p>
+<h2 id="caractéristiques-dun-arbre">Caractéristiques d&rsquo;un arbre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/arbre3.png" alt="caracteristiques d" />
+    
+    
+    <figcaption>
+        <p>
+        exemple d&#39;arbre binaire et vocabulaire
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li>Dans un arbre, chaque <strong>valeur</strong> est stockée dans un nœud. On appelle parfois cette <em>valeur</em> une <strong>clé</strong>.</li>
+<li>Les <strong>nœuds</strong> sont connectés par des <strong>arêtes</strong>, ou <strong>branches</strong> qui représentent une relation de type &ldquo;<strong>parent</strong> (prédécesseur est le terme exact) – <strong>fils</strong>&rdquo;.</li>
+<li>Chaque noeud ne possède qu&rsquo;<strong>un seul noeud parent</strong> (sauf le noeud racine).</li>
+<li>La <strong>racine</strong> est le seul nœud qui n’a pas de prédécesseur.</li>
+<li>Les nœuds qui n’ont pas de fils sont appelés des <strong>feuilles</strong>.</li>
+<li>Des nœuds qui ont le même père sont appelés des <strong>frères</strong>.</li>
+<li>Un <strong>sous-arbre</strong> c’est une portion de l’arbre. C&rsquo;est une notion utile pour la recursivité.</li>
+<li>Le <strong>niveau d’un nœud</strong> est la distance qui le sépare de la racine&hellip; Sachant que le niveau de la racine est 0 et que le niveau d’un nœud quelconque c’est 1+ le niveau de son père.</li>
+<li>La <strong>hauteur</strong> d&rsquo;un arbre, ou sa <strong>profondeur</strong> est égale au <em>niveau</em> (à la profondeur) du noeud le plus profond. Selon la convention proposée ici (le niveau de la racine vaut 0), la hauteur correspond aussi au <strong>plus grand nombre de branches</strong> depuis la <em>racine</em> jusqu&rsquo;à l&rsquo;une de ses <em>feuilles</em>.</li>
+<li>Le <strong>degré</strong> d&rsquo;un arbre est egal au plus grand des degrés de ses noeuds.</li>
+<li>Un arbre de <strong>degré</strong> égal à 1 est &hellip; une <strong>liste</strong>.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/arbre7.png" alt="degré d" />
+    
+    
+    <figcaption>
+        <p>
+        Quel est le degré de cet arbre?
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ul>
+<li>La <strong>taille</strong> d&rsquo;un arbre est son nombre de noeuds.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/arbre5.png" alt="dimensions d" />
+    
+    
+    <figcaption>
+        <p>
+        dimensions d&#39;un arbre
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="arbres-binaires">Arbres binaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Arbre binaire:</strong> arbre de degré égal à 2. Chaque noeud a au plus 2 fils: le <strong>fils droit</strong> et le <strong>fils gauche</strong>.</li>
+<li><strong>Arbre binaire équilibré:</strong> pour chaque noeud interne, les sous-arbres gauche et droit ont une même hauteur (ou qui diffère d&rsquo;une unité).</li>
+<li><strong>Arbre binaire complet:</strong> tous les niveaux de l’arbre sont remplis.</li>
+</ul>
+<p>La <strong>taille</strong> d&rsquo;un arbre binaire peut alors se déduire de la formule, qui prend la profondeur <code>p</code> en paramètre:</p>
+$$T = \sum_{0}^{n-1} 2^p = 2^n-1$$<p>
+<figure >
+    
+        <img src="../images/arbre4.png" alt="sous arbres droit et gauche" />
+    
+    
+    <figcaption>
+        <p>
+        definition recursive des arbres binaires
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/arbre_complet.png" alt="arbre complet" />
+    
+    
+    <figcaption>
+        <p>
+        arbre complet
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</p>
+<h1 id="implémenter-en-python">Implémenter en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On utilisera l&rsquo;arbre suivant pour l&rsquo;implémentation en python:</p>
+<p>
+<figure >
+    
+        <img src="../images/arbre6.png" alt="exemple d" />
+    
+    
+    <figcaption>
+        <p>
+        exemple d&#39;arbre binaire de taille 9
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Comme vu pour les graphes, on pourra utiliser des listes imbriquées, un dictionnaire, ou une classe (programmation objet).</p>
+<h2 id="liste">Liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un noeud peut être représenté par une liste imbriquée <code>[clé,fils gauche,fils droit]</code>.</p>
+<p>Et comme les <em>fils gauche</em> ou <em>fils droit</em> sont des noeuds, on y mettra une nouvelle liste imbriquée <code>[clé,fils gauche,fils droit]</code>.</p>
+<p>Pour les feuilles, la liste s&rsquo;écrit: <code>[clé,None,None]</code>.</p>
+<p>Le petit arbre suivant peut être représenté par <code>['r'</code>,[&lsquo;a&rsquo;,None,None],[&lsquo;b&rsquo;,None,None]]`</p>
+<p>
+<figure >
+    
+        <img src="../images/arbre8.png" alt="petit arbre de taille 3" />
+    
+    
+    <figcaption>
+        <p>
+        petit arbre de taille 3
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Avec l&rsquo;arbre de taille 9 donné en exemple:</p>
+<p><code>arbre9 = [3,[...,..,..],[...,..,..]]</code></p>
+<blockquote>
+<p>Question: compléter cette liste.</p>
+</blockquote>
+<h2 id="classe">Classe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La classe suivante va permettre d&rsquo;implémenter les arbres binaires:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArbreBinaire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">valeur</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fils_gauche</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fils_droit</span> <span class="o">=</span> <span class="kc">None</span></span></span></code></pre></div>
+<p>On n&rsquo;a donné ici que le constructeur, mais il est possible d&rsquo;y ajouter les méthodes qui permettront de retourner une valeur (getter), ou d&rsquo;ajouter un noeud (setter); ou encore de déterminer les dimensions de l&rsquo;arbre.</p>
+<p>Avec l&rsquo;arbre de taille 9 vu plus haut, la classe peut s&rsquo;utiliser de la manière suivante (avec la notation pointée qui n&rsquo;est pas recommandée):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">racine</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud1</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud2</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud3</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">racine</span><span class="o">.</span><span class="n">fils_gauche</span> <span class="o">=</span> <span class="n">noeud1</span>
+</span></span><span class="line"><span class="cl"><span class="n">racine</span><span class="o">.</span><span class="n">fils_droit</span> <span class="o">=</span> <span class="n">noeud2</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud1</span><span class="o">.</span><span class="n">fils_gauche</span> <span class="o">=</span> <span class="n">noeud3</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></div>
+<p>Ou bien, en supposant que vous ayez ajouté deux méthodes de classe <code>ajoute_fils_gauche</code> et <code>ajoute_fils_droit</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">racine</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud1</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud2</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud3</span> <span class="o">=</span> <span class="n">ArbreBinaire</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">racine</span><span class="o">.</span><span class="n">ajoute_fils_gauche</span><span class="p">(</span><span class="n">noeud1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">racine</span><span class="o">.</span><span class="n">ajoute_fils_droit</span><span class="p">(</span><span class="n">noeud2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">noeud1</span><span class="o">.</span><span class="n">ajoute_fils_gauche</span><span class="p">(</span><span class="n">noeud3</span><span class="p">)</span></span></span></code></pre></div>
+<h1 id="parcours">Parcours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Definition:</strong> Un <strong>parcours</strong> est un algorithme qui appelle une fonction, ou un méthode sur tous les noeuds d&rsquo;un arbre.</p>
+<p>L&rsquo;<strong>ordre</strong> sur les noeuds dans lequel la méthode est appelée doit être fixé. Il y a plusieurs choix, qui diffèrent par la seule position de l&rsquo;instruction <code>Afficher clef [ r ]</code></p>
+<p>L&rsquo;algorithme opère alors un <strong>traitement</strong> sur chacune des clés de l&rsquo;arbre, dans un ordre choisi. Ici, on cherche à <em>Afficher la clef</em>.</p>
+<p>Mais on peut remplacer cette instruction par un traitement sur les valeurs: ajouter 1 pour compter les clés par exemple.</p>
+<h2 id="parcours-postfixe">Parcours postfixe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ParcoursPostfixe ( Arbre binaire T de racine r ) 
+</span></span><span class="line"><span class="cl">  ParcoursPostfixe(Arbre de racine fils_gauche[r]) 
+</span></span><span class="line"><span class="cl">  ParcoursPostfixe(Arbre de racine fils_droit[r])
+</span></span><span class="line"><span class="cl">  Afficher clef [ r ]</span></span></code></pre></div>
+<h2 id="parcours-préfixe">Parcours préfixe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ParcoursPréfixe ( Arbre binaire T de racine r ) 
+</span></span><span class="line"><span class="cl">  Afficher clef [ r ]
+</span></span><span class="line"><span class="cl">  ParcoursPréfixe(Arbre de racine fils_gauche[r]) 
+</span></span><span class="line"><span class="cl">  ParcoursPréfixe(Arbre de racine fils_droit[r])</span></span></code></pre></div>
+<h2 id="parcours-infixe">Parcours infixe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ParcoursInfixe ( Arbre binaire T de racine r ) 
+</span></span><span class="line"><span class="cl">  ParcoursInfixe(Arbre de racine fils_gauche[r]) 
+</span></span><span class="line"><span class="cl">  Afficher clef [ r ]
+</span></span><span class="line"><span class="cl">  ParcoursInfixe(Arbre de racine fils_droit[r])</span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/arbre10.png" alt="exemples de parcours" />
+    
+    
+    <figcaption>
+        <p>
+        exemples de parcours
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="parcours-en-largeur">Parcours en largeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les trois algorithmes vus plus haut s&rsquo;apparent à une exploration de type <em>parcours en profondeur</em>. C&rsquo;est la position de l&rsquo;instruction de <em>traitement</em> qui amène les différences entre ces 3 parcours.</p>
+<p>Un arbre est un <em>graphe</em>. On peut donc lui appliquer l&rsquo;algorithme de <strong>parcours en largeur</strong> vu dans une leçon précédente.</p>
+<p><em>Rappel:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">BFS_ite</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">visited</span><span class="o">=</span><span class="p">[],</span> <span class="n">queue</span><span class="o">=</span><span class="n">deque</span><span class="p">()):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">queue</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">v</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">visited</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">unvisited</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">queue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">unvisited</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">visited</span></span></span></code></pre></div>
+<p>t</p>
+<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="sur-capytale">Sur Capytale<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>=&gt; <a href="https://capytale2.ac-paris.fr/web/c/a443-5846248" rel="external">Lien vers le notebook</a></p>
+<h2 id="sur-google-colab">Sur Google Colab<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>telecharger le fichier module <a href="/pdf/NSI/hierarchyP.py">hierarchyP</a> (faire un clic droit et <em>enregistrer sous&hellip;</em>)</li>
+<li>utiliser le lien suivant pour acceder au<a href="https://colab.research.google.com/drive/1y3GF5m5UI2ilRLX7wYQsFNnw6gzdvvHV?usp=sharing"> 
+            notebook colab
+        </a> </li>
+</ul>
+<h2 id="notebook-avec-un-ide-local">Notebook avec un IDE local<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>lien alternatif: télécharger une <a href="/scripts/notebooks/sd5_notebook.ipynb">version locale</a> du notebook (clic droit et <em>enregistrer sous&hellip;</em>)</li>
+<li>correction du<a href="https://colab.research.google.com/drive/18VUCVjH9u9V3jF7JU2VRy0XZWQwyXtqO?usp=sharing"> 
+            notebook colab en ligne
+        </a> </li>
+</ul>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>cours de l&rsquo;Université Paris Sud: <a href="https://www.lri.fr/~hivert/COURS/CFA-L3/06-Arbres.pdf" rel="external">Lien</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782173194"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782173194" defer></script>
+    <script src="/js/theme.js?1782173194" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

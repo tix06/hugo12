@@ -5,50 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
-La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
-Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’extension .py) contenant des fonctions. En principe, il n’est pas prévu pour être executé. Pour faire référence aux fonctions de ce module, il faut l’importer depuis le script principal (ìmport module.py`).">
+    <meta name="description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="modularité :: allopizza">
-    <meta name="twitter:description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
-La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
-Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’extension .py) contenant des fonctions. En principe, il n’est pas prévu pour être executé. Pour faire référence aux fonctions de ce module, il faut l’importer depuis le script principal (ìmport module.py`).">
+    <meta name="twitter:title" content="programmation orientée objet :: allopizza">
+    <meta name="twitter:description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
     <meta property="og:url" content="//localhost:1313/nsi/langages/page3/index.html">
     <meta property="og:site_name" content="allopizza">
-    <meta property="og:title" content="modularité :: allopizza">
-    <meta property="og:description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
-La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
-Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’extension .py) contenant des fonctions. En principe, il n’est pas prévu pour être executé. Pour faire référence aux fonctions de ce module, il faut l’importer depuis le script principal (ìmport module.py`).">
+    <meta property="og:title" content="programmation orientée objet :: allopizza">
+    <meta property="og:description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI term">
-    <meta itemprop="name" content="modularité :: allopizza">
-    <meta itemprop="description" content="Ce chapitre comprend 2 pages de cours et une page exercices:
-La mise au point d’un programme: Lien 1 Création et utilisation de modules: Lien 2 Lien vers les flash cards La liste des projets se trouve ici
-Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’extension .py) contenant des fonctions. En principe, il n’est pas prévu pour être executé. Pour faire référence aux fonctions de ce module, il faut l’importer depuis le script principal (ìmport module.py`).">
-    <meta itemprop="wordCount" content="988">
-    <title>modularité :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1782146710" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1782146710" defer></script>
-    <script src="/js/search-lunr.js?1782146710" defer></script>
-    <script src="/js/search.js?1782146710" defer></script>
+    <meta itemprop="name" content="programmation orientée objet :: allopizza">
+    <meta itemprop="description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
+    <meta itemprop="wordCount" content="1244">
+    <title>programmation orientée objet :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782172948" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782172948" defer></script>
+    <script src="/js/search-lunr.js?1782172948" defer></script>
+    <script src="/js/search.js?1782172948" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1782146710";
+      window.relearn.index_js_url="/searchindex.en.js?1782172948";
     </script>
-    <script src="/js/lunr/lunr.min.js?1782146710" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1782146710" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1782146710" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1782146710" defer></script>
+    <script src="/js/lunr/lunr.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782172948" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1782146710" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782146710" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782146710" rel="stylesheet">
-    <link href="/css/theme.css?1782146710" rel="stylesheet">
-    <link href="/css/format-html.css?1782146710" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1782172948" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782172948" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782172948" rel="stylesheet">
+    <link href="/css/theme.css?1782172948" rel="stylesheet">
+    <link href="/css/format-html.css?1782172948" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -114,22 +106,22 @@ Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’ex
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#quest-ce-quun-module-">Qu&rsquo;est ce qu&rsquo;un module ?</a></li>
-    <li><a href="#quand-utiliser-un-module-">Quand utiliser un module ?</a></li>
-    <li><a href="#mettre-son-programme-sous-forme-de-modules">Mettre son programme sous forme de modules</a></li>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#classe-et-instance-de-classe">Classe et instance de classe</a></li>
+    <li><a href="#la-méthode-__repr__">La méthode <code>__repr__()</code></a></li>
   </ul>
 
   <ul>
-    <li><a href="#depuis-le-shell-python">depuis le shell python</a></li>
-    <li><a href="#afficher-le-contenu-et-laide-dun-module">Afficher le contenu et l&rsquo;aide d&rsquo;un module</a></li>
-    <li><a href="#créer-le-docstring-dun-module">Créer le Docstring d&rsquo;un module</a></li>
+    <li><a href="#lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em></a></li>
+    <li><a href="#modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em></a></li>
+    <li><a href="#docstrings">Docstrings</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">modularité</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">programmation orientée objet</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
@@ -160,203 +152,237 @@ Modularité Qu’est ce qu’un module ? Un module est un fichier python (d’ex
   <header class="headline">
   </header>
 
-<h1 id="modularité">modularité</h1>
+<h1 id="programmation-orientée-objet">programmation orientée objet</h1>
 
-<p>Ce chapitre comprend 2 pages de cours et une page exercices:</p>
+<p>Cette séquence comprend:</p>
 <ul>
-<li>La mise au point d&rsquo;un programme: <a href="../page5">Lien 1</a></li>
-<li>Création et utilisation de modules: <a href="../page3">Lien 2</a></li>
-<li><a href="../ex1/">Lien vers les flash cards</a></li>
+<li>un cours sur la POO: <a href="../page3">Lien</a></li>
+<li>une fiche d&rsquo;exercices: <a href="/pdf/NSI/POO_exercices.pdf">pdf</a></li>
+<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
+<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
+<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
 </ul>
-<p>La liste des projets se trouve <a href="/docs/NSI/NSI_TP_algo/">ici</a></p>
-<h1 id="modularité">Modularité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="quest-ce-quun-module-">Qu&rsquo;est ce qu&rsquo;un module ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Un module est un fichier python (d&rsquo;extension .py) contenant des fonctions.
-En principe, il n&rsquo;est pas prévu pour être executé. Pour faire référence aux fonctions de ce module, il faut l&rsquo;<em>importer</em> depuis le script principal (ìmport module.py`).</p>
-<h2 id="quand-utiliser-un-module-">Quand utiliser un module ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Lorsque vous réalisez un projet en python, votre script s&rsquo;agrandit, et vous aurez certainement le besoin de séparer votre code dans plusieurs fichiers.</p>
-<p>Ainsi, il vous est facile de réutiliser des fonctions écrites pour un programme dans un autre sans avoir à les copier.</p>
-<h2 id="mettre-son-programme-sous-forme-de-modules">Mettre son programme sous forme de modules<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>On a vu la différentes manières d&rsquo;importer un module dans le cours <a href="/docs/python/pages/fonctions/page1/#importer-des-fonctions">Python &gt; Fonctions</a></p>
-<p>On peut souhaiter, par exemple, créer une représentation graphique des nombres premiers dans une fenêtre <code>turtle</code>. On souhaite diviser les fonctions dans 2 fichiers:</p>
-<ul>
-<li>le fichier executable (appelé le fichier <em>main</em>): imaginons que vous lui donniez le nom <code>nombresPrem.py</code>. Ce fichier ne contiendra que les fonctions relatives au calcul des nombres premiers. On y mettre aussi l&rsquo;instruction qui appelera la fonction de dessin du module. C&rsquo;est elle qui construira et dessinera dans la fenêtre graphique.</li>
-<li>le fichier module de nom <code>fcts_turtle.py</code> qui contiendra toutes les fonctions utiles pour la représentation graphique. On supposera que ce fichier contient la fonction <code>ulam</code> qu&rsquo;il faudra appeler pour declencher le tracé.</li>
-</ul>
-<p>Le dossier contient alors:</p>
+<h1 id="programmation-objet">Programmation objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l&rsquo;architecture <em>d&rsquo;objets physiques</em>.</p>
+<p>Un <em>objet physique</em>, comme par exemple, une planche de skateboard, possède des caractéristiques propres.</p>
 <p>
 <figure >
+    <a href="https://urbanart-paris.fr/event/chalk-custom-board-lart-dhabiller-skate/">
+        <img src="https://urbanart-paris.fr/wp-content/uploads/2016/04/12963624_1877786249114590_5321151849406456199_n.jpg" alt="chalk custom board" />
+    </a>
     
-        <img src="../images/page3/modules.png"  />
-    
+    <figcaption>
+        <p>
+        image: CHALK CUSTOM BOARD : L’ART D’HABILLER UN SKATE (urban art)
+        
+            
+        
+        </p> 
+    </figcaption>
     
 </figure>
 
-Le fichier principal <code>nombresPrem.py</code> sera organisé comme ceci:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#####partie import des modules############</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fcts_turtle</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#####variables globales####################</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># declaration des variables globales</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#######definition des fonctions############</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># def des fonctions du fichier main</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># pour le calcul des nombres premiers</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">######corps du programme : ################</span>
-</span></span><span class="line"><span class="cl"><span class="c1">### à executer si fichier main ############</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># calcul d&#39;une liste de nombres premiers</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># appel de la fonction de dessin du module:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fcts_turtle</span><span class="o">.</span><span class="n">ulam</span><span class="p">(</span><span class="n">liste_premiers</span><span class="p">,</span><span class="n">N</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">###########################################</span></span></span></code></pre></div>
-<p>Il est recommandé de mettre les instructions du programme principal dans un bloc avec le test <code>if __name__=='__main__':</code></p>
-<p>Ceci permet d&rsquo;importer le contenu du fichier sans déclencher son execution; et permettre de realiser des tests sur les fonctions. Voir<a href="/docs/NSI/langages/page5/#cr%c3%a9er-un-module-de-test-avec-unittest"> 
-            tests sur les modules avec unittest
-        </a> </p>
-<p>Le module <code>fcts_turtle.py</code> :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="s2">    DOCSTRING
-</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#####partie import des modules externes###</span>
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">turtle</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#######definition des fonctions du module#</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># fonction de dessin de la fenêtre</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># fonction ulam(liste_premiers,N)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">##########################################</span></span></span></code></pre></div>
-<p><strong>Remarque :</strong> Il est essentiel que le module comprenne un docstring BIEN documenté.</p>
-<h1 id="gérer-les-modules">Gérer les modules<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="depuis-le-shell-python">depuis le shell python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Il est possible de parcourir les dossiers du disque dur, travailler sur les fichiers, etc, comme avec un shell Unix. Depuis le notebook ou bien depuis un shell python, il faut commencer par importer le module <code>os</code>. Les instructions utiles sont :</p>
+Une planche, malgré la diversité, est toujours constituée:</p>
 <ul>
-<li><code>listdir()</code> pour lister</li>
-<li><code>getcwd()</code> pour obtenir le chemin (CWD = « Current Working Directory »)</li>
-<li><code>chdir()</code> pour changer de dossier</li>
+<li>d&rsquo;un deck (court, long)</li>
+<li>d&rsquo;un tail (plat, relevé)</li>
+<li>de trucks (hauts, bas)</li>
+<li>de roues (à gommes tendres, dures)</li>
+<li>d&rsquo;une décoration (image sous le deck)</li>
 </ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span> 
-</span></span><span class="line"><span class="cl"><span class="c1"># renvoie la liste des fichiers et dossiers:</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;fenDestroy.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;fcts_turtle.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;tk_turtle.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;__pycache__&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;spirale_ulam.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;nombresPrem.py&#39;</span><span class="p">]</span></span></span></code></pre></div>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># donne le chemin du dossier courant</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;/Users/nom_user/Applications/python/dessins&#39;</span></span></span></code></pre></div>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span> <span class="c1"># permet de remonter au dossier parent</span>
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;/Users/nom_user/Applications/python`</span>
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="err">`</span><span class="n">dessin</span><span class="o">/</span><span class="n">turtle</span><span class="err">`</span><span class="p">)</span> <span class="c1"># se deplacer dans un sous dossier</span>
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;/Users/nom_user/Applications/python/dessins/turtle`</span></span></span></code></pre></div>
-<p>Une différence avec le shell Unix est le traitement des noms de fichiers et dossiers qui sont mis entre guillemets. Ce sont des chaines de caracteres pour python.</p>
-<h2 id="afficher-le-contenu-et-laide-dun-module">Afficher le contenu et l&rsquo;aide d&rsquo;un module<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>depuis le shell python, se placer dans le repertoire contenant le module ou adapter le chemin, puis:</p>
+<p>C&rsquo;est son <strong>état</strong>.</p>
+<p>Cette planche peut repondre egalement à un ensemble de messages, qui forment ce que l&rsquo;on appelle l&rsquo;<em>interface</em> de l&rsquo;objet. C&rsquo;est au travers de ces méthodes que l&rsquo;on peut interagir avec l&rsquo;objet, ou que les objets peuvent interagir entre eux.</p>
+<p>On peut lui associer une méthode <code>skateboard_pour_parc</code> qui renvoie <code>True</code> si la planche est de type <em>street</em> ou <code>False</code> si la planche est de type <em>cruising</em>, ou prevue pour la decoration.</p>
+<p>Un objet comprend donc :</p>
 <ul>
-<li>importer le module</li>
-<li>lister les fonctions contenues dans le module avec <code>dir(nom_du_module)</code></li>
+<li>une partie <strong>figée</strong> qui représente son <strong>état</strong>, et qui est constituée de champs ou <strong>attributs</strong>.</li>
+<li>une partie <strong>dynamique</strong> qui décrit son <strong>comportement</strong>, à l&rsquo;aide de déclarations de <strong>méthodes</strong>, qui doivent répondre à des <strong>messages</strong>.</li>
 </ul>
-<p><em>Exemple avec le module <code>fcts_python.py</code>:</em></p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fcts_turtle</span>
-</span></span><span class="line"><span class="cl"><span class="nb">dir</span><span class="p">(</span><span class="n">fcts_turtle</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;fenDestroy.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;fcts_turtle.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;tk_turtle.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;__pycache__&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;spirale_ulam.py&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"> <span class="s1">&#39;nombresPrem.py&#39;</span><span class="p">]</span></span></span></code></pre></div>
-<p>Afficher les fonctions et le <em>Docstring</em> du module et des fonctions: <code>help(nom_du_module)</code>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fcts_turtle</span>
-</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">fcts_turtle</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche :</span>
-</span></span><span class="line"><span class="cl"><span class="n">Help</span> <span class="n">on</span> <span class="n">module</span> <span class="n">fcts_turtle</span><span class="p">:</span>
+<h2 id="classe-et-instance-de-classe">Classe et instance de classe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La structure interne des objets et les messages auxquels ils repondent sont définis dans une <strong>classe</strong>. Une <em>classe</em> décrit les méthodes de création d&rsquo;objets de ce type (on parle d&rsquo;<em>instance</em> de classe), et les méthodes auxquelles répondront les objets de ce type dans la reception des messages.</p>
+<p>Avec l&rsquo;exemple précédent, la <strong>class</strong>e Skateboard pourrait contenir:</p>
+<ul>
+<li>les méthodes de création des instances des différents skateboards. On y définit les attributs pour chaque nouvelle planche de skateboard que l&rsquo;on créé. Chaque planche de skate constitue une <em>instance</em> de classe.</li>
+<li>les méthodes de la classe skateboard, qui repondent aux messages du genre: <code>skateboard_pour_parc</code>? Un <em>message</em> est constitué du nom de la méthode, et permet d&rsquo;interagir avec celui-ci. Ces méthodes sont accessibles à tous les skates qui sont des instances de la classe skateboard.</li>
+</ul>
+<p>En <strong>python</strong>, la création d&rsquo;une classe commence par le mot clé <strong>class</strong> suivi du nom de la classe, de deux points et d&rsquo;une indentation.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span></span></span></code></pre></div>
+<p>Toute la partie indentée contient les <em>méthodes de création</em> des <em>instances</em> de cette classe et les <em>méthodes</em> de cette classe.</p>
+<p>Lors de la programmation, on devra faire référence à l&rsquo;instance de l&rsquo;objet sur lequel on travaille: le mot clé <code>self</code> permet ceci en python.</p>
+<p>La méthode de création d&rsquo;un objet est définie par <code>def __init__</code> suivi au minimum de l&rsquo;argument <code>self</code>, et eventuellement d&rsquo;autres arguments.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
+<p>Les attributs des objets de cette classe sont définis dans cette méthode. Ils sont codés sous la forme <code>self.attribut</code>, et peuvent faire référence aux arguments passés lors de l&rsquo;instanciation.</p>
+<p>Enfin, chaque méthode de classe est définie à l&rsquo;aide de: <code>def nom_de_la_methode</code>. Celle-ci prend aussi au minimum, l&rsquo;argument <code>self</code>.</p>
+<p><em>Script complet:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span><span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span><span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span><span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span><span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">skateboard_pour_parc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">==</span> <span class="s1">&#39;court&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="s1">&#39;releve&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">==</span> <span class="s1">&#39;dures&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span></span></span></code></pre></div>
+<p>On instancie alors un premier skateboard de la manière suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">()</span></span></span></code></pre></div>
+<p>Le programme interprete alors l&rsquo;instruction: <code>Skateboard.__init__(mon_premier_skate)</code>, c&rsquo;est à dire qu&rsquo;il execute la méthode de classe <code>Skateboard.__init__</code>, avec le paramètre <code>self=mon_premier_skate</code>.</p>
+<p>
+<figure >
+    
+        <img src="../images/sk8_classic.jpg" alt="skateboard classic" />
+    
+    
+    <figcaption>
+        <p>
+        un premier skateboard bien classique
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Et on envoie le message suivant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
+<p>Le programme interprete alors l&rsquo;instruction: <code>Skateboard.skateboard_pour_parc(mon_premier_skate)</code>,</p>
+<p>Instanciation d&rsquo;un second skateboard:</p>
+
+<figure >
+    
+        <img src="../images/sk8_sector9.jpg" alt="skateboard cruiser" />
+    
+    
+    <figcaption>
+        <p>
+        un skateboard cruiser
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
+<h2 id="la-méthode-__repr__">La méthode <code>__repr__()</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette méthode <code>__repr__</code> s&rsquo;utilise pour donner une représentation plus lisible de l&rsquo;objet lorsqu&rsquo;on veut l&rsquo;afficher avec la fonction <code>print</code>.</p>
+<p><em>Exemple 1:</em> On essaie d&rsquo;afficher notre instance de classe <code>mon_sector_9</code> créée plus haut:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Skateboard</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc6b0847550</span><span class="o">&gt;</span></span></span></code></pre></div>
+<p>Ce n&rsquo;est pas très explicite pour un humain. On préfèrera souvent choisir un descriptif personnalisé. Nous allons programmer la chaine de caractères qui sera renvoyée lors du <code>print</code>.</p>
+<p>On ajoute maintenant à la classe <code>Skateboard</code> la méthode <code>__repr__()</code> qui sera appelée lorsque l&rsquo;on utilise <code>print(objet)</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">NAME</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fcts_turtle</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui permet de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">FUNCTIONS</span>
-</span></span><span class="line"><span class="cl">    <span class="n">close_window</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui ne permet pas de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span></span></span></code></pre></div>
+<p>On construit à nouveau l&rsquo;instance de classe <code>mon_sector_9</code>, et on fait <code>print(mon_sector_9)</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">skateboard</span> <span class="n">de</span> <span class="nb">type</span> <span class="n">long</span> <span class="n">qui</span> <span class="n">ne</span> <span class="n">permet</span> <span class="n">pas</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span></span></span></code></pre></div>
+<p><em>Remarquer</em> que l&rsquo;appel à la méthode <code>skateboard_pour_parc</code> se fait en identifiant l&rsquo;objet qui possède cette méthode: <code>self.skateboard_pour_parc()</code>. Et ici, on n&rsquo;ajoutera pas de nouvel argument. (On ne met pas <code>self</code> en argument lors du <em>message</em> envoyé à cet objet).</p>
+<p><em>Surcharge d&rsquo;une fonction de la librairie standard:</em> Ce que l&rsquo;on vient de réaliser est une surcharge de la fonction <code>print</code> de la librairie standard.</p>
+<p>Mais il existe d&rsquo;autres méthodes de surcharge, prévues pour les <strong>opérateurs</strong>, ainsi que pour certaines <strong>fonctions</strong>. On pourra se référer au <a href="https://riptutorial.com/fr/python/example/7334/surcharge-de-l-operateur" rel="external">lien suivant</a> pour approfondir le sujet.</p>
+<h1 id="encapsulation-getter-et-setter">Encapsulation: <em>getter</em> et <em>setter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;utilisateur du programme ne devrait pas utiliser la méthode <em>pointée</em> précédente <code>nom_objet.nom_attribut</code>, permettant d’accéder aux valeurs des attributs: on ne veut pas forcement que l’utilisateur ait accès à la représentation interne des classes.</p>
+<p>Pour utiliser ou modifier les attributs, on utilisera de préférence des <strong>méthodes dédiées</strong> dont le rôle est de faire l’<strong>interface</strong> entre l’utilisateur de l’objet et la représentation interne de l’objet (ses attributs).</p>
+<p>Les <strong>attributs</strong> sont alors en quelque sorte <strong>encapsulés</strong> dans l’objet, c’est à dire non accessibles directement. la liste des <strong>méthodes</strong> devient une sorte de mode d’emploi de la classe.</p>
+<p>Pour obtenir la valeur d’un attribut nous utiliserons la méthode des accesseurs (ou &ldquo;getters&rdquo;) dont le nom est généralement : <code>getNom_attribut()</code>.</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">ulam</span><span class="p">(</span><span class="n">premiers</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">220</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span></span></span></code></pre></div>
-<p><em>Rq:</em>  Notez que le fichier est bien enregistré avec une extension <code>.py</code> et pourtant on ne la précise pas lorsqu&rsquo;on importe le module.</p>
-<p>Et si le <em>Docstring</em> du module est présent:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">fcts_turtle</span>
-</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">fcts_turtle</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche:</span>
-</span></span><span class="line"><span class="cl"><span class="n">Help</span> <span class="n">on</span> <span class="n">module</span> <span class="n">fcts_turtle</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">Help</span> <span class="n">on</span> <span class="n">module</span> <span class="n">fcts_turtle</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">NAME</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fcts_turtle</span> <span class="o">-</span> <span class="n">module</span> <span class="n">pour</span> <span class="n">visualiser</span> <span class="n">les</span> <span class="n">nombres</span> <span class="n">premiers</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">DESCRIPTION</span>
-</span></span><span class="line"><span class="cl">    <span class="n">fonctions</span> <span class="n">utiles</span> <span class="n">pour</span> <span class="n">tracer</span> <span class="n">une</span> <span class="n">spirale</span> <span class="n">avec</span> <span class="n">turtle</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">FUNCTIONS</span>
-</span></span><span class="line"><span class="cl">    <span class="n">close_window</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span></span></span></code></pre></div>
+<p>En console, une fois l&rsquo;instance de classe <code>mon_sector_9</code> définie, on fait:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">mon_sector_9</span><span class="p">.</span><span class="nf">getTail</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="o">`</span><span class="k">long</span><span class="o">`</span></span></span></code></pre></div>
+<h2 id="modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>De la même manière, pour modifier la valeur d&rsquo;un attribut, on devrait utiliser une méthode dédiée. Le nom de cette méthode commence en principe par <code>set</code>:</p>
+<p><em>Exemple:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
 </span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="n">ulam</span><span class="p">(</span><span class="n">premiers</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">L</span><span class="o">=</span><span class="mi">220</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">represente</span> <span class="n">la</span> <span class="n">spirale</span> <span class="n">de</span> <span class="n">Ulam</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Params</span>
-</span></span><span class="line"><span class="cl">        <span class="o">------</span>
-</span></span><span class="line"><span class="cl">        <span class="n">premiers</span><span class="p">:</span> <span class="nb">list</span>
-</span></span><span class="line"><span class="cl">            <span class="n">les</span> <span class="n">nombres</span> <span class="n">premiers</span>
-</span></span><span class="line"><span class="cl">        <span class="n">N</span><span class="p">:</span> <span class="nb">int</span>
-</span></span><span class="line"><span class="cl">            <span class="n">derniere</span> <span class="n">valeur</span> <span class="n">de</span> <span class="n">la</span> <span class="n">spirale</span>
-</span></span><span class="line"><span class="cl">        <span class="n">L</span><span class="p">:</span> <span class="nb">int</span>
-</span></span><span class="line"><span class="cl">            <span class="n">dimension</span> <span class="n">du</span> <span class="n">rectangle</span> <span class="n">en</span> <span class="n">largeur</span><span class="o">.</span> <span class="mi">220</span><span class="n">px</span> <span class="n">par</span> <span class="n">defaut</span>
-</span></span><span class="line"><span class="cl">        <span class="n">h</span><span class="p">:</span> <span class="nb">int</span>
-</span></span><span class="line"><span class="cl">            <span class="n">dimension</span> <span class="n">du</span> <span class="n">rectangle</span> <span class="n">en</span> <span class="n">hauteur</span><span class="o">.</span> <span class="mi">220</span> <span class="n">px</span> <span class="n">par</span> <span class="n">defaut</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Principe</span>
-</span></span><span class="line"><span class="cl">        <span class="o">--------</span>
-</span></span><span class="line"><span class="cl">        <span class="n">Les</span> <span class="n">nombres</span> <span class="n">sont</span> <span class="n">ecrits</span> <span class="n">sur</span> <span class="n">la</span> <span class="n">spirale</span><span class="o">.</span> <span class="n">En</span> <span class="n">rouge</span> <span class="n">si</span> <span class="n">le</span> <span class="n">nombre</span> <span class="n">est</span> <span class="n">premier</span><span class="p">,</span> <span class="n">en</span> <span class="n">noir</span> <span class="n">sinon</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl">        
-</span></span><span class="line"><span class="cl">        <span class="n">Appel</span>
-</span></span><span class="line"><span class="cl">        <span class="o">-----</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ulam</span><span class="p">(</span><span class="n">premiers</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># tracé de la spirale avec la liste de nombres premiers mis en argument, jusqu&#39;à N=100.</span></span></span></code></pre></div>
-<h2 id="créer-le-docstring-dun-module">Créer le Docstring d&rsquo;un module<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Un <em>docstring</em> est un commentaire multi-lignes utilisé pour documenter des modules, des classes, des fonctions et des méthodes. Il doit s&rsquo;agir de la première déclaration du composant qu&rsquo;il décrit.</p>
-<p>Une bonne docstring de fonction doit contenir tout ce dont un utilisateur a besoin pour utiliser cette fonction. Une liste minimale et non exhaustive serait :</p>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">setDeco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deco</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
+<p>En console:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; mon_sector_9.setDeco = &#39;repeinte&#39;</span></span></code></pre></div>
+<h2 id="docstrings">Docstrings<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Chaque classe définit ses propres manières de stocker, d&rsquo;acceder et de manipuler les données. C&rsquo;est le Docstring qui permettra de prendre connaissance des détails, comme par exemple celui de la classe <code>Sept_Familles</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sept_Familles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    NAME
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Sept_Familles
+</span></span></span><span class="line"><span class="cl"><span class="s2">    DESCRIPTION
+</span></span></span><span class="line"><span class="cl"><span class="s2">        constructeur pour les cartes du jeu
+</span></span></span><span class="line"><span class="cl"><span class="s2">    PARAMETERS
+</span></span></span><span class="line"><span class="cl"><span class="s2">        famille (str): nom de la famille
+</span></span></span><span class="line"><span class="cl"><span class="s2">        qui(str): membre de la famille 
+</span></span></span><span class="line"><span class="cl"><span class="s2">            choix parmi (&#39;Grand-père&#39;,&#39;Grand-mère&#39;,&#39;Pére&#39;,&#39;Mère&#39;,&#39;Fils&#39;,&#39;Fille&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    FUNCTIONS
+</span></span></span><span class="line"><span class="cl"><span class="s2">        get_Attributs
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span></span></span></code></pre></div>
+<p>On peut alors prendre connaissance du docstring en faisant:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; help(Sept_Familles)</span></span></code></pre></div>
+<h1 id="interface">Interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>L&rsquo;interface d&rsquo;une classe est représentée par le diagramme suivant:</p>
+
+<figure >
+    
+        <img src="../images/UML.png" alt="Une représentation d&#39;une classe" />
+    
+    
+    <figcaption>
+        <p>
+        Une représentation d&#39;une classe
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>La suite en TP</strong></p>
 <ul>
-<li>ce que fait la fonction,</li>
-<li>ce qu&rsquo;elle prend en argument,</li>
-<li>ce qu&rsquo;elle renvoie.</li>
+<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
+<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
+<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
 </ul>
-<blockquote>
-<p>En pratique</p>
-</blockquote>
-<ul>
-<li>démarrer le fichier par un commentaire multi-lignes qui documente le module</li>
-<li>ajouter le prototype de chaque fonction selon la méthode vu dans le cours <a href="/docs/NSI/langages/page5/#prototypage-d-une-fonction">langage/mise au point</a></li>
-</ul>
-<p>Voici un exemple de commentaire multi-lignes pour présenter le module (mis à la premiere ligne du fichier):</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;&#34;&#34;module pour visualiser les nombres premiers
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">fonctions utiles pour tracer une spirale avec turtle.
-</span></span><span class="line"><span class="cl">&#34;&#34;&#34;</span></span></code></pre></div>
-<p>ce qui renvoie à l&rsquo;aide de la commande <code>help(module)</code>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Help on module fcts_turtle:
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">NAME
-</span></span><span class="line"><span class="cl">    fcts_turtle - module pour visualiser les nombres premiers
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">DESCRIPTION
-</span></span><span class="line"><span class="cl">    fonctions utiles pour tracer une spirale avec turtle.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">FUNCTIONS
-</span></span><span class="line"><span class="cl">    (prototype de chaque fonction)</span></span></code></pre></div>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li>Modularité - document source : <a href="https://docs.python.org/fr/3/tutorial/modules.html" rel="external">python.org</a></li>
-<li>Fiche recapitulative des instructions du module <code>os</code> : <a href="https://gist.github.com/YannBouyeron/941817d79b83a4b87c5a63580229cbbd" rel="external">Github YannBouyeron</a></li>
-<li>conventions d&rsquo;écriture des Docstrings <a href="https://riptutorial.com/fr/python/example/30002/ecrire-de-la-documentation-a-l-aide-de-docstrings" rel="external">RIPtutorial</a></li>
+<li>cours sur <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet" rel="external">python.developpez.com</a>: compléments sur les méthodes spéciales de <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4" rel="external">surcharge des opérateurs</a>, d&rsquo;<a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5" rel="external">héritage et polymorphisme</a></li>
+<li>références : <a href="https://docs.python.org/fr/3.6/tutorial/classes.html" rel="external">Classes sur docs.python.org</a></li>
+<li>prolongement sur les heritages et polymorphismes <a href="https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants" rel="external">python doctor POO - debutants</a></li>
+<li>Resumé de cours : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet" rel="external">Lyceum.fr &gt; POO</a></li>
+<li>Autres exercices : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet/exo" rel="external">Lyceum.fr &gt; POO &gt; Exercices</a></li>
 </ul>
 
   <footer class="footline">
@@ -433,6 +459,7 @@ Le fichier principal <code>nombresPrem.py</code> sera organisé comme ceci:</p>
             <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -451,9 +478,16 @@ Le fichier principal <code>nombresPrem.py</code> sera organisé comme ceci:</p>
             <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/nsi/structure/index.html"><a class="padding" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
             <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -523,9 +557,9 @@ Le fichier principal <code>nombresPrem.py</code> sera organisé comme ceci:</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782146710"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782146710" defer></script>
-    <script src="/js/theme.js?1782146710" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782172948"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782172948" defer></script>
+    <script src="/js/theme.js?1782172948" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

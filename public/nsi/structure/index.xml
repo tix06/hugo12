@@ -3,16 +3,114 @@
   <channel>
     <title>Structures de données :: allopizza</title>
     <link>//localhost:1313/nsi/structure/index.html</link>
-    <description>Traitement csv&#xD;Open Datas Un exemple de données ouvertes Plateforme ouverte des données publiques françaises Le Répertoire National des Élus (RNE) a pour finalité le suivi des titulaires d’un mandat électoral. Il est renseigné et tenu à jour par les préfectures et hauts commissariats et par les services du ministère de l’intérieur, notamment sur la base des éléments fournis par les élus lors de la phase d’enregistrement des candidatures.</description>
+    <description>types abstraits&#xD;type abstrait, liste chainee, tableau statique&#xD;Pile&#xD;pile, structures lineaires, expression correctement parenthesee&#xD;Files et Listes&#xD;autres structures lineaires, File, listes chainees&#xD;graphes&#xD;graphes, morphologie, implementation&#xD;algorithmes de parcours d’un graphe&#xD;parcours en profondeur, en largeur&#xD;arbres&#xD;arbres, binaires, implementations</description>
     <generator>Hugo</generator>
     <language>fr</language>
     <atom:link href="//localhost:1313/nsi/structure/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Traitement csv</title>
-      <link>//localhost:1313/nsi/structure/page13/index.html</link>
+      <title>types abstraits</title>
+      <link>//localhost:1313/nsi/structure/page1/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/nsi/structure/page13/index.html</guid>
-      <description>Open Datas Un exemple de données ouvertes Plateforme ouverte des données publiques françaises Le Répertoire National des Élus (RNE) a pour finalité le suivi des titulaires d’un mandat électoral. Il est renseigné et tenu à jour par les préfectures et hauts commissariats et par les services du ministère de l’intérieur, notamment sur la base des éléments fournis par les élus lors de la phase d’enregistrement des candidatures.</description>
+      <guid>//localhost:1313/nsi/structure/page1/index.html</guid>
+      <description>type abstrait, liste chainee, tableau statique</description>
+    </item>
+    <item>
+      <title>moyenne glissante</title>
+      <link>//localhost:1313/nsi/structure/page11/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page11/index.html</guid>
+      <description>tableau statique pour effectuer une moyenne glissante</description>
+    </item>
+    <item>
+      <title>Pile</title>
+      <link>//localhost:1313/nsi/structure/page2/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page2/index.html</guid>
+      <description>pile, structures lineaires, expression correctement parenthesee</description>
+    </item>
+    <item>
+      <title>Files et Listes</title>
+      <link>//localhost:1313/nsi/structure/page21/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page21/index.html</guid>
+      <description>autres structures lineaires, File, listes chainees</description>
+    </item>
+    <item>
+      <title>TD reduction chaine</title>
+      <link>//localhost:1313/nsi/structure/page22/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page22/index.html</guid>
+      <description>Exercice 1 : implementer une pile On donne les fonctions qui implémentent la pile: Pile,est_vide,empile,depile,sommet:&#xA;L = [&#39;a&#39;,1,&#39;b&#39;,2,&#39;c&#39;,3,&#39;d&#39;,4] def Pile(): return [] def est_vide(pile): return pile == [] def depile(pile): return pile.pop() def empile(a,pile): pile.append(a) def sommet(pile): return pile[-1] Utilisez les fonctions de cette interface pour resoudre l’exercice suivant:&#xA;* Soit une liste L = [&#34;a&#34;,1,&#34;b&#34;,2,&#34;c&#34;,3,&#34;d&#34;,4] * Parcourir les éléments de la liste L avec une boucle bornée * empiler tous les **nombres entiers** dans une pile `p`. * afficher `p` L = [&#39;a&#39;,1,&#39;b&#39;,2,&#39;c&#39;,3,&#39;d&#39;,4] On pourra utiliser la fonction isinstance(a,int) qui retourne True si a est de type int.</description>
+    </item>
+    <item>
+      <title>correction probleme reduction</title>
+      <link>//localhost:1313/nsi/structure/page23/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page23/index.html</guid>
+      <description>Reduction de chaines, Piles Exemples&#xA;assert reduc(&#39;aAbB&#39;) == list(&#39;&#39;) assert reduc(&#39;baAB&#39;) == list(&#39;&#39;) assert reduc(&#39;abBaAa&#39;) == list(&#39;aa&#39;) assert reduc([&#39;d&#39;,&#39;a&#39;,&#39;a&#39;,&#39;b&#39;,&#39;A&#39;,&#39;a&#39;,&#39;A&#39;,&#39;a&#39;]) == [&#39;d&#39;, &#39;a&#39;, &#39;a&#39;, &#39;b&#39;] assert reduc(&#39;abBaAa&#39;) == [&#39;a&#39;, &#39;a&#39;] Implémentation&#xA;def Pile(): return [] def est_vide(pile): return pile == [] def depile(pile): assert pile != [], &#39;impossible de depiler : pile vide&#39; return pile.pop() def empile(pile,a): pile.append(a) def sommet(pile): assert pile != [], &#39;pile vide: impossible de consulter le sommet&#39; return pile[-1] def deversepile(pile1,pile2): while not est_vide(pile1): empile(pile2,depile(pile1)) def inversepile(p1): p2 = [] while not est_vide(p1): empile(p2,depile(p1)) return p2 Programme itératif</description>
+    </item>
+    <item>
+      <title>graphes</title>
+      <link>//localhost:1313/nsi/structure/page5/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page5/index.html</guid>
+      <description>graphes, morphologie, implementation</description>
+    </item>
+    <item>
+      <title>TP implementation python graphes</title>
+      <link>//localhost:1313/nsi/structure/page6/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page6/index.html</guid>
+      <description>module networkx, interagir avec l&#39;objet graphe, dessiner, parcourir</description>
+    </item>
+    <item>
+      <title>algorithmes de parcours d&#39;un graphe</title>
+      <link>//localhost:1313/nsi/structure/page65/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page65/index.html</guid>
+      <description>parcours en profondeur, en largeur</description>
+    </item>
+    <item>
+      <title>TP algorithme parcours graphes</title>
+      <link>//localhost:1313/nsi/structure/page61/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page61/index.html</guid>
+      <description>Utiliser un outil en ligne Ouvrir l’application en ligne https://graphonline.ru/fr/&#xA;Influenceur Vous pouvez créer un premier graphe de type: sous-réseaux en étoile. Ce graphe pourrait être la représentation d’un réseau social, ou bien de 2 sous-réseaux interfacés par un routeur.</description>
+    </item>
+    <item>
+      <title>TP algorithme parcours graphes</title>
+      <link>//localhost:1313/nsi/structure/page64/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page64/index.html</guid>
+      <description>graphonline, reseaux sociaux, die hard 3 le probleme des transvasements</description>
+    </item>
+    <item>
+      <title>solution aux problèmes de transvasement</title>
+      <link>//localhost:1313/nsi/structure/page62/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page62/index.html</guid>
+      <description>Problème à 2 bidons: AB = 5L, 3L Le tableau de correspondance numero_sommet &lt;-&gt; volumes AB peut être mis sous forme d’un dictionnaire: (voir le schéma avec la position des sommets sur la page enoncé)&#xA;diagramme triangulaire des états de remplissage # Correspondance numero_sommet : volumes AB tab = { 1: (0,0), 2: (1,0), 3: (2,0), 4: (3,0), 5: (4,0), 6: (5,0), 7: (5,1), 8: (5,2), 9: (5,3), 10: (4,3), 11: (3,3), 12: (2,3), 13: (1,3), 14: (0,3), 15: (0,2), 16: (0,1) } Le graphe peut être représenté à l’aide d’une matrice de sommets successeurs:</description>
+    </item>
+    <item>
+      <title>coloration d&#39;un graphe</title>
+      <link>//localhost:1313/nsi/structure/page63/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page63/index.html</guid>
+      <description>bac Am Nord J1 2025, coloration d&#39;un graphe, networkx</description>
+    </item>
+    <item>
+      <title>arbres</title>
+      <link>//localhost:1313/nsi/structure/page4/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page4/index.html</guid>
+      <description>arbres, binaires, implementations</description>
+    </item>
+    <item>
+      <title>Activite arbre couvrant</title>
+      <link>//localhost:1313/nsi/structure/page41/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/nsi/structure/page41/index.html</guid>
+      <description>cours sur les graphes. Term NSI TP sur l’implementation en python des graphes Arbres TP sur la notion d’arbre couvrant Arbre couvrant minimum Definition: Etant donné un graphe non orienté connexe, un arbre couvrant est un graphe non cyclique qui relie tous les sommets du graphe.&#xA;Definition: Si le graphe possède des arêtes pondérées, un arbre couvrant arbre couvrant minimum est un arbre couvrant dont la somme des poids des arêtes est minimale (c’est-à-dire de poids inférieur ou égal à celui de tous les autres arbres couvrants du graphe). wikipedia</description>
     </item>
   </channel>
 </rss>

@@ -1,7 +1,7 @@
 ---
 Title: graphique avec matplotlib
 description: Tracé de graphiques avec curseur, contexte graphique
-weight: 21
+weight: 23
 ---
 
 # Tracé de graphiques avec curseur

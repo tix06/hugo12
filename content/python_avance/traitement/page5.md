@@ -1,7 +1,7 @@
 ---
 Title: recherche de correlations
 description: module seaborn, visualisation, recherche de clusters dans un nuage de points
-weight: 26
+weight: 27
 ---
 
 # Etape 6: Analyse graphique

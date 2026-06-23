@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="autres structures lineaires, File, listes chainees">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Files et Listes :: allopizza">
+    <meta name="twitter:description" content="autres structures lineaires, File, listes chainees">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page21/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Files et Listes :: allopizza">
+    <meta property="og:description" content="autres structures lineaires, File, listes chainees">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="Files et Listes :: allopizza">
+    <meta itemprop="description" content="autres structures lineaires, File, listes chainees">
+    <meta itemprop="wordCount" content="1512">
+    <title>Files et Listes :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782173194" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782173194" defer></script>
+    <script src="/js/search-lunr.js?1782173194" defer></script>
+    <script src="/js/search.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782173194";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782173194" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782173194" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782173194" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782173194" rel="stylesheet">
+    <link href="/css/theme.css?1782173194" rel="stylesheet">
+    <link href="/css/format-html.css?1782173194" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page21\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page21/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#definition-et-interface">Definition et interface</a></li>
+    <li><a href="#implémentations-en-python-natif">Implémentations en python natif</a></li>
+    <li><a href="#implémentation-avec-lextension-deque">Implémentation avec l’extension <code>deque</code></a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#principe">Principe</a></li>
+    <li><a href="#interface">Interface</a></li>
+    <li><a href="#implémentation-en-poo">Implémentation en POO</a></li>
+    <li><a href="#interêt-et-inconvenient-par-rapport-aux-listes-en-python">Interêt et inconvenient par rapport aux listes en python</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercice-1-créer-une-liste-chainée">Exercice 1: Créer une liste chainée</a></li>
+    <li><a href="#exercice-2-afficher-les-éléments-de-liste">Exercice 2: afficher les éléments de liste</a></li>
+    <li><a href="#exercice-3-insertion-dun-élément">Exercice 3: Insertion d&rsquo;un élément</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercice-1">Exercice 1</a></li>
+    <li><a href="#exercice-2">Exercice 2</a></li>
+    <li><a href="#exercice-3">Exercice 3</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Files et Listes</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page21.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page2/index.html" title="Pile (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page5/index.html" title="graphes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="files-et-listes">Files et Listes</h1>
+
+<p><em>Ce cours comporte 2 chapitres prérequis:</em></p>
+<ul>
+<li>Cours sur les<a href="/docs/NSI/structure/page1/"> 
+            types abstraits
+        </a>  et les tableaux statiques.</li>
+<li><a href="/docs/NSI/structure/page3/"> 
+            Programmation orientée objets
+        </a> </li>
+</ul>
+<p><em>Et plusieurs parties:</em></p>
+<ul>
+<li>les types abstraits: <a href="../page1">Lien</a></li>
+<li>les Piles: une structure linéaire: <a href="../page2">Lien</a></li>
+<li>exercices en ligne (TP) sur les Piles: <a href="../page22">Lien</a></li>
+<li>autres structures linéaires: <a href="../page21">Lien</a></li>
+</ul>
+<p><em>Et plusieurs notebooks:</em></p>
+<ul>
+<li>Piles, Files, exercices issus de la banque de sujets d&rsquo;EP: <a href="https://capytale2.ac-paris.fr/web/c/0a47-1458602" rel="external">Lien capytale.fr</a></li>
+<li>Listes chainées sur <a href="https://capytale2.ac-paris.fr/web/c/e3b8-4712390" rel="external">capytale2.ac-paris.fr</a></li>
+</ul>
+<h1 id="structures-de-données-rappels">Structures de données: rappels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les piles, files et listes sont des structures de données <strong>linéaires</strong>. Ce sont des types <strong>abstraits</strong>.</p>
+<p>Structure de données <strong>linéaire</strong> : les données sont rangées sur un ligne ou une colonne.</p>
+<p>Un <strong>type abstrait</strong> décrit essentiellement une interface, indépendamment du  langage de programmation.</p>
+<h1 id="files">Files<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="definition-et-interface">Definition et interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une file (queue ou FIFO pour first in, first out) est une collection d’objets munie  des opérations suivantes:</p>
+<ul>
+<li>savoir si la file est vide (is_empty);</li>
+<li>ajouter un élément dans la file (enfiler ou enqueue) en temps constant;</li>
+<li>retirer et renvoyer l’élément le plus ancien de la file (defiler ou dequeue).</li>
+</ul>
+<p>C&rsquo;est une structure de données utilisée en informatique pour par exemple gérer la file d&rsquo;attente lors de la gestion des impressions.</p>
+
+<figure >
+    
+        <img src="../images/file_ex.png" alt="exemple de gestion d&#39;une file d&#39;attente" />
+    
+    
+    <figcaption>
+        <p>
+        exemple de gestion d&#39;une file d&#39;attente
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="implémentations-en-python-natif">Implémentations en python natif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;implementation d&rsquo;une File est imparfaite avec une liste en python pour l&rsquo;opération de <em>defiler</em>. On peut utiliser l&rsquo;instruction <code>file.pop(0)</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">F</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">F</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span></span></span></code></pre></div>
+<p>Le problème est que celle-ci ne s&rsquo;effectue pas en temps constant.</p>
+<h2 id="implémentation-avec-lextension-deque">Implémentation avec l&rsquo;extension <code>deque</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La <em>bibliothèque standard</em> possède toutefois un module nommé <code>collections</code>  qui contient quelques structures de données supplémentaires, dont le type <code>deque</code>, qui est une implémentation de file:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collection</span> <span class="kn">import</span> <span class="n">deque</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="n">deque</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;Premier&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;Deuxieme&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;Troisieme&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span></span></span></code></pre></div>
+<p>affiche:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Deuxieme
+</span></span><span class="line"><span class="cl">Troisieme</span></span></code></pre></div>
+<h1 id="listes">Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le types abstrait <em>Liste</em> ne concerne pas le type <em>list</em> en python. C&rsquo;est une liste <em>chaînée</em> (ou liste <em>liée</em>): une structure de données composées d’une séquence d’<em>éléments</em> de liste.</p>
+<p>Ces éléments sont aussi appelés <em>noeuds</em> ou <em>maillons</em>.</p>
+<p>La <strong>tête</strong> d’une liste est son premier <em>maillon</em>. La <strong>queue</strong> d’une liste, son dernier.</p>
+<p>Chaque maillon <strong>M</strong> contient:</p>
+<ul>
+<li>une valeur, de n&rsquo;importe quel type.</li>
+<li>un lien (ou pointeur) vers le maillon suivant de la séquence.</li>
+</ul>
+<p>Il s&rsquo;agit d&rsquo;une structure <em>linéaire</em>, mais dans laquelle les éléments n&rsquo;occupent pas <em>à priori</em>, des positions contigües dans la mémoire:</p>
+<p><em>illustration:</em></p>
+
+<figure >
+    
+        <img src="../images/listeElem.png" alt="elements d" />
+    
+    
+    <figcaption>
+        <p>
+        elements dans une liste
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Pour relier ces éléments ensembles, dans une même structure de données, il faut alors utiliser des <em>pointeurs</em>.</p>
+<p>
+<figure >
+    
+        <img src="../images/listeElemPoint.png" alt="liste chainée grâce aux pointeurs" />
+    
+    
+    <figcaption>
+        <p>
+        liste chainée grâce aux pointeurs
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+L&rsquo;élément <strong>A</strong> pointe sur <strong>B</strong>, qui pointe sur <strong>C</strong>, qui pointe sur <strong>D</strong>. <strong>D</strong>, lui, ne pointe sur &hellip; <strong>rien</strong>!</p>
+<p>La plupart du temps, le lien du dernier maillon a pour valeur <em>None</em> en python, signifiant un pointeur sur <em>rien</em>.</p>
+<h2 id="interface">Interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On trouve en général les opérations suivantes pour l&rsquo;interface d&rsquo;une <em>Liste</em>:</p>
+<ul>
+<li><code>est_vide</code> : renvoie <code>True</code> si Liste vide</li>
+<li><code>taille</code> : renvoie le nombre de <em>maillons</em> de la séquence</li>
+<li><code>get_dernier_maillon</code></li>
+<li><code>get_maillon_indice</code></li>
+<li><code>ajouter_debut</code></li>
+<li><code>inserer_apres</code></li>
+<li><code>ajouter_fin</code></li>
+<li><code>supprimer_apres</code></li>
+<li>&hellip;</li>
+</ul>
+<h2 id="implémentation-en-poo">Implémentation en POO<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;implémentation est plus naturelle en <em>programmation orientée objet</em> <a href="/docs/NSI/structure/page3/"> 
+            voir le chapitre POO
+        </a> </p>
+<blockquote>
+<p>Un maillon est une instance de la classe <code>Maillon</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span></span></span></code></pre></div>
+<blockquote>
+<p>Une <em>Liste</em> est une instance de la classe <code>Liste</code></p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span></span></span></code></pre></div>
+<p>Son attribut <code>tete</code>  est de type <code>Maillon</code> , ou bien vaut <code>None</code> si la liste est vide.</p>
+<p>Cette classe ne comporte pour l&rsquo;instant que sa définition de la variable <code>tete</code>, mais elle est créée pour contenir, plus tard, l&rsquo;implementation des différentes méthodes prévues par l&rsquo;interface.</p>
+<p>
+<figure >
+    
+        <img src="../images/listeC.png" alt="liste chainée" />
+    
+    
+    <figcaption>
+        <p>
+        illustration d&#39;une liste chainée
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On peut alors créer une liste ainsi :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ma_liste</span> <span class="o">=</span> <span class="n">Liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">M3</span> <span class="o">=</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M2</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M3</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">M1</span></span></span></code></pre></div>
+<blockquote>
+<p><strong>Questions:</strong> à votre avis, que vaut <code>L.tete.val</code> ?</p>
+</blockquote>
+<blockquote>
+<p>et que vaut <code>L.tete.suiv.val</code>?</p>
+</blockquote>
+<h2 id="interêt-et-inconvenient-par-rapport-aux-listes-en-python">Interêt et inconvenient par rapport aux listes en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;interface d&rsquo;une liste chainée fournit des méthodes plus efficaces que la <em>Pile</em>, la <em>File</em> ou le <em>tableau</em>, lorsque l&rsquo;on veut par exemple: <strong>insérer</strong>, ou <strong>supprimer</strong> un élément dans la séquence.</p>
+<p>
+<figure >
+    
+        <img src="../images/listeC2.png" alt="insertion liste chainée" />
+    
+    
+    <figcaption>
+        <p>
+        insertion dans une liste
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Cette opération est prévue par l&rsquo;interface d&rsquo;une liste chainée =&gt; O(n): <code>inserer_apres(i)</code>, où <code>i</code> est l&rsquo;indice de l&rsquo;élément après lequel on veut <em>insérer</em>.</p>
+<p>Avec une liste python, qui implémente la Pile (voir cours) cela necessite de décaler toutes les valeurs de rang supérieur à <code>i </code>. C&rsquo;est une opération qui est évaluée en O($n^2$) pour sa complexité asymptotique.</p>
+<p>Il s&rsquo;agit du même problème lorsque l&rsquo;on veut <em>supprimer après <code>i</code></em>.</p>
+<p>Un autre avantage est la possibilité de faire pointer le dernier élément sur le premier de la liste. On créé ainsi une liste <em>périodique</em>.</p>
+<p><strong>Inconvénient:</strong> Pour accéder à un <em>maillon</em> de rang <code>i</code> dans une liste chainée, il faut remonter la liste depuis le premier élément (celui de tête), jusqu&rsquo;à celui de rang <code>i</code>. Et cela se fait avec une complexité asymtotique O(n).</p>
+<h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Editeur sur <a href="https://capytale2.ac-paris.fr/web/c/e3b8-4712390" rel="external">capytale2.ac-paris.fr</a></p>
+<h2 id="exercice-1-créer-une-liste-chainée">Exercice 1: Créer une liste chainée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1.</strong> Completer le script ci-dessous pour créer une liste chainée appelée <code>ma_liste</code> qui contiendra la éléments suivants:</p>
+<p><code>'Premier', 'Troisieme'</code>, <code>'Quatrieme'</code></p>
+<p>Vous devrez créer les maillons <code>M1</code>, <code>M2</code>, <code>M3</code> et renseigner leur contenu <code>M.val</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># a compléter</span></span></span></code></pre></div>
+<p><strong>2.</strong> Tester dans la console les instructions suivantes:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">val</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">val</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">val</span></span></span></code></pre></div>
+<p><strong>3.</strong> Rendez-vous sur<a href="http://pythontutor.com/visualize.html#mode=edit"> 
+            pythontutor.com
+        </a> 
+
+<figure >
+    
+        <img src="../images/pythontutor.png" alt="liste chainée et pythontutor" />
+    
+    
+    <figcaption>
+        <p>
+        liste chainée et pythontutor
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</p>
+<p>Dans la fenêtre d&rsquo;edition de <em>pythontutor</em>: Coller les lignes ci-dessous et executer le script <em>pas à pas</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="n">Liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">M3</span> <span class="o">=</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M2</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M3</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">M1</span></span></span></code></pre></div>
+<p><strong>4.</strong> Ajouter les lignes suivantes et dérouler le programme ligne par ligne:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">tete</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">val</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>Qu&rsquo;affiche la console? Ce résultat était-il prévisible? Pourquoi? (la copie <code>s = L.tete</code> se fait-elle par valeur ou bien par référence)</p>
+</blockquote>
+<h2 id="exercice-2-afficher-les-éléments-de-liste">Exercice 2: afficher les éléments de liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On cherche à parcourir les éléments d&rsquo;une liste chainée <code>L</code>.</p>
+<p>On propose un premier algorithme itératif. Celui-ci stocke l&rsquo;élément de tête de <code>L</code> dans une variable <code>M</code>.</p>
+<p>Puis une boucle non bornée parcourt les différents maillons de <code>L</code> jusqu&rsquo;à ce que <code>M.suiv</code> soit <code>None</code>, marquant le maillon de <em>queue</em>.</p>
+<p>On affiche alors les valeurs <code>M.val</code> de ces maillons avec <code>print</code>.</p>
+<p>Et on passe au maillon suivant: <code>M = M.suiv</code></p>
+<p><strong>1.</strong> Ecrire le script itératif.</p>
+<p><strong>2.</strong> Adapter ce script pour en faire une fonction <strong>recursive</strong> qui prend en paramètre un maillon M, et affiche toutes les valeurs jusqu&rsquo;à la fin de la liste. La condition d&rsquo;arrêt (Base) sera <code>M.suiv is None</code>.</p>
+<p>La fonction doit renvoyer une chaine de caractères fabriquée de la manière suivante : <code>A =&gt; ... =&gt; ... =&gt; D</code></p>
+<p>Compléter après le return:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="n">Liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">M3</span> <span class="o">=</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M2</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M3</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;C&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;D&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">M1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">M</span><span class="o">.</span><span class="n">suiv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>  <span class="c1"># affiche la valeur de queue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">.....</span></span></span></code></pre></div>
+<p><strong>3.</strong> Comment appeler cette fonction afin qu&rsquo;elle affiche TOUS les éléments de la liste L, du premier (<em>tête</em>) au dernier? Tester avec la liste <strong>ACD</strong> décrite dans le cours.</p>
+<h2 id="exercice-3-insertion-dun-élément">Exercice 3: Insertion d&rsquo;un élément<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/listeC2.png" alt="insertion liste chainée" />
+    
+    
+    <figcaption>
+        <p>
+        insertion dans une liste
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>Soit la liste chainée <code>L</code>: &lsquo;A&rsquo; =&gt; &lsquo;C&rsquo; =&gt; &lsquo;D&rsquo;</p>
+<p>On souhaite maintenant modifier la séquence de <code>L</code> créée dans l&rsquo;exercice 2. On va insérer un élément de valeur <code>B</code> à la $2^e$ position:</p>
+<p>A =&gt; B =&gt; C =&gt; D</p>
+<p>Ajouter dans votre programme les instructions qui permettront de:</p>
+<p><strong>1.</strong> Créer un nouveau maillon <code>M2</code>.</p>
+<p><strong>2.</strong> Affecter &lsquo;B&rsquo; comme valeur à <code>M2</code>.</p>
+<p><strong>3.</strong> Modifier le lien <code>M2.suiv</code> pour que celui-ci pointe vers le 3<!-- raw HTML omitted -->e<!-- raw HTML omitted --> élément de <code>ma_liste</code>.</p>
+<p><strong>4.</strong> Modifier le lien <code>L.tete.suiv</code> pour recréer la liste chainée. (ou bien celui de <code>M1</code>, ce qui revient à la même chose).</p>
+<p><strong>5.</strong> Utiliser la fonction <code>affiche</code> pour afficher les éléments de <code>L</code>.</p>
+<p><strong>6.</strong> Que se passerait-il avec cette fonction <code>affiche</code> si on mettait <code>M4.suiv = M1</code>? (liste chainée circulaire).</p>
+<h1 id="correction-des-exercices">Correction des exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="exercice-1">Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># correction de l&#39;exercice 1</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Maillon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Liste</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">ma_liste</span> <span class="o">=</span> <span class="n">Liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="p">,</span> <span class="n">M2</span><span class="p">,</span> <span class="n">M3</span> <span class="o">=</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">(),</span> <span class="n">Maillon</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;Premier&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;Troisieme&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;Quatrieme&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">M1</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M2</span>
+</span></span><span class="line"><span class="cl"><span class="n">M2</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="n">M3</span>
+</span></span><span class="line"><span class="cl"><span class="n">M3</span><span class="o">.</span><span class="n">suiv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl"><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span> <span class="o">=</span> <span class="n">M1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">suiv</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span><span class="o">.</span><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ma_liste</span><span class="o">.</span><span class="n">tete</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">M1</span><span class="o">.</span><span class="n">val</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="exercice-2">Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Correction de l&#39;exercice 2 en ligne question 2.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="n">L</span><span class="o">.</span><span class="n">tete</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="ow">not</span> <span class="n">M</span><span class="o">.</span><span class="n">suiv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">M</span> <span class="o">=</span> <span class="n">M</span><span class="o">.</span><span class="n">suiv</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">val</span><span class="p">)</span></span></span></code></pre></div>
+<p>Pour le script recursif:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Correction de l&#39;exercice 2.2 en ligne</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="n">M</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">M</span><span class="o">.</span><span class="n">suiv</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;=&gt;&#39;</span> <span class="o">+</span> <span class="n">affiche</span><span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">suiv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Correction question 2.3 en ligne</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">affiche</span><span class="p">(</span><span class="n">L</span><span class="o">.</span><span class="n">tete</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;A=&gt;B=&gt;C=&gt;D&#39;</span></span></span></code></pre></div>
+<h2 id="exercice-3">Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>(à venir)</p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Retour vers la page <a href="../page2/">introduction aux structures de données: les Piles</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782173194"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782173194" defer></script>
+    <script src="/js/theme.js?1782173194" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

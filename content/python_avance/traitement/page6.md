@@ -1,7 +1,7 @@
 ---
 Title: kmean et exoplanetes
 description: KNN et module Scikit-learn, previsions
-weight: 27
+weight: 28
 ---
 
 # Utiliser le module Scikit-learn

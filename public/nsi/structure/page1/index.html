@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="type abstrait, liste chainee, tableau statique">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="types abstraits :: allopizza">
+    <meta name="twitter:description" content="type abstrait, liste chainee, tableau statique">
+    <meta property="og:url" content="//localhost:1313/nsi/structure/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="types abstraits :: allopizza">
+    <meta property="og:description" content="type abstrait, liste chainee, tableau statique">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="types abstraits :: allopizza">
+    <meta itemprop="description" content="type abstrait, liste chainee, tableau statique">
+    <meta itemprop="wordCount" content="2575">
+    <title>types abstraits :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782172948" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782172948" defer></script>
+    <script src="/js/search-lunr.js?1782172948" defer></script>
+    <script src="/js/search.js?1782172948" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782172948";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782172948" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782172948" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782172948" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782172948" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782172948" rel="stylesheet">
+    <link href="/css/theme.css?1782172948" rel="stylesheet">
+    <link href="/css/format-html.css?1782172948" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/structure\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/structure/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#linterface-dune-liste-chainée">L&rsquo;interface d&rsquo;une liste chainée</a></li>
+    <li><a href="#généralités-sur-les-listes-chainées">Généralités sur les listes chainées</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#list-python">List python</a></li>
+    <li><a href="#numpyarray">numpy.array</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#linterface-dun-tableau">L&rsquo;interface d&rsquo;un tableau</a></li>
+    <li><a href="#tableaux-multidimentionnels">Tableaux multidimentionnels</a></li>
+    <li><a href="#tableaux-dynamiques-et-tableaux-statiques">Tableaux dynamiques et tableaux statiques</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercice-1-parcours-scolaire">Exercice 1: parcours scolaire</a></li>
+    <li><a href="#exercice-2-composition-dun-train">Exercice 2: composition d&rsquo;un train</a></li>
+    <li><a href="#exercice-3-separation-dune-liste">Exercice 3: separation d&rsquo;une liste</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#exercice-1-utiliser-linterface-du-tableau">Exercice 1: Utiliser l&rsquo;interface du tableau</a></li>
+    <li><a href="#exercice-2-moyenne-glissante-et-tableau-statique">Exercice 2: moyenne glissante et tableau statique</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/structure/index.html"><span itemprop="name">Structures de données</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">types abstraits</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/structure/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/index.html" title="Structures de données (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/structure/page2/index.html" title="Pile (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="types-abstraits">types abstraits</h1>
+
+<p><em>Ce cours comporte plusieurs parties:</em></p>
+<ul>
+<li>les types abstraits: <a href="../page1">Lien</a>, liste chainée et tableau statique</li>
+<li>TP utilisant la notion de tableau statique: <a href="../page11">Lien</a>, moyenne glissante.</li>
+<li>Cours sur les Piles: une structure linéaire: <a href="../page2">Lien</a></li>
+<li>exercices en ligne (TP) sur les Piles: <a href="../page22">Lien</a></li>
+<li>Cours sur les Files et autres structures linéaires: <a href="../page21">Lien</a></li>
+</ul>
+<h1 id="types-abstraits">Types abstraits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>La résolution d&rsquo;un problème par un programme nécessite:</p>
+<ul>
+<li>de définir les données du problème</li>
+<li>d&rsquo;utiliser des instructions du langage sur ces données</li>
+</ul>
+<p>Souvent, la résolution du problème demande d&rsquo;arranger ces données dans un <em>type abstrait</em>, afin d&rsquo;avoir une résolution plus efficace.</p>
+<p>Un type abstrait est défini par son <em>interface</em>, qui est indépendante de son <em>implémentation</em>.</p>
+<p>Les types abstraits sont des types <em>structurés</em>. On a déjà vu des types <em>structurés</em> natifs: les types séquences de texte (string), les types séquentiels (listes, tuples), et les mappages (dictionnaires).</p>
+<p><strong>Un type abstrait</strong> est caractérisé par une <em>interface</em> de programmation qui permet de manipuler les données de ce type. Sans pour autant avoir connaissance du contenu des fonctions proposées par l&rsquo;interface.</p>
+<p><strong>Spécifier</strong> un type abstrait, c&rsquo;est définir son <em>interface</em>, sans prejuger de la façon dont ses opérations sont implémentées.</p>
+<p><strong>Implémenter</strong>, c&rsquo;est fournir le code de ces opérations. Plusieurs implémentations peuvent correspondre à la même spécification. On verra dans ce chapitre la programmation dans un style fonctionnel. Il viendra plus tard la programmation par objet.</p>
+<p>On verra dans un premier temps, deux exemples de types abstraits: Les <em>listes chainées</em> et les <em>tableaux</em>. Dans un chapitre ultérieur, nous verrons les types abstraits <em>Piles</em>, <em>Files</em>, et <em>Graphes</em>.</p>
+<h1 id="listes-chaînées">Listes chaînées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une liste chaînée est une séquence ordonnée d&rsquo;éléments.
+L&rsquo;avantage sur un tableau (la Liste native en Python), c&rsquo;est qu&rsquo;en parcourant la Liste chainée, quelle que soit la profondeur de parcours, celle-ci présente la même structure.</p>
+<p>On peut donc lui associer des méthodes ou fonctions, qui seront indépendantes de cette profondeur. Que l&rsquo;on pourra utiliser de la même manière à chaque niveau de la liste chainée.</p>
+
+<figure >
+    
+        <img src="../images/liste_classes.png" alt="classes à parcourir après le collège" />
+    
+    
+    <figcaption>
+        <p>
+        classes à parcourir après le collège
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/liste_classes2.png" alt="classes à parcourir après la 2nde" />
+    
+    
+    <figcaption>
+        <p>
+        classes à parcourir après la 2nde
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>La <em>liste L</em> précédente représente la chaine: <code>&quot;2nde&quot; -&gt; &quot;1ere&quot; -&gt; &quot;Term&quot; -&gt; &quot;Univ</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">L = (&#34;Univ&#34;,(&#34;Term&#34;,(&#34;1ere&#34;,(&#34;2nde&#34;, ()))))</span></span></code></pre></div>
+<p>La liste chainée L contient 2 éléments <code>(tete, queue)</code> et <code>queue</code> est elle-même une liste chainée, contenant aussi <code>(tete, queue)</code>. Le dernier élément: <code>(tete, ())</code>.</p>
+<p>On utilisera par exemple une liste chainée lorsqu&rsquo;il y a une filiation entre les éléments, et surtout, lorsque l&rsquo;on doit souvent INSERER ou SUPPRIMER des éléments qui ne sont pas forcement à la fin de la liste.</p>
+<h2 id="linterface-dune-liste-chainée">L&rsquo;interface d&rsquo;une liste chainée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;<em>interface</em> fournit certaines fonctions.</p>
+<table>
+	<thead>
+			<tr>
+					<th>fonctions qui implémentent la liste chainée L</th>
+					<th>nom</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>créer une liste vide</td>
+					<td><code>creer_liste()</code></td>
+			</tr>
+			<tr>
+					<td>questionner si la liste est vide</td>
+					<td><code>liste_vide(L)</code></td>
+			</tr>
+			<tr>
+					<td>insérer un élément <strong>e</strong> en tête de liste et retourne une nouvelle liste</td>
+					<td><code>inserer_tete(L,e)</code></td>
+			</tr>
+			<tr>
+					<td>retourne l&rsquo;élément de tête (premier élément)</td>
+					<td><code>tete(L)</code></td>
+			</tr>
+			<tr>
+					<td>retourne la liste privée de son premier élément (retourne donc le 2<!-- raw HTML omitted -->e<!-- raw HTML omitted --> élément)</td>
+					<td><code>queue(L)</code></td>
+			</tr>
+			<tr>
+					<td>insere un nouvel <code>element_a_inserer</code> juste avant l&rsquo;élement recherché dans la liste</td>
+					<td><code>insere(L,element_recherche,element_a_inserer)</code></td>
+			</tr>
+			<tr>
+					<td>retourne une liste python avec tous les éléments de la liste chainée</td>
+					<td><code>elements_liste(L)</code></td>
+			</tr>
+	</tbody>
+</table>
+<p>Le <em>contenu</em> de ces fonctions va dépendre de l&rsquo;<em>implémentation</em> choisie par le programmeur.</p>
+<p>Par exemple, si l&rsquo;on choisit d&rsquo;implémenter la liste chainée par un tuple, on aura pour la premiere fonction:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">creer_liste</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">()</span></span></span></code></pre></div>
+<p>Alors que si l&rsquo;on choisit plutôt une liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">creer_liste</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">[]</span></span></span></code></pre></div>
+<h2 id="généralités-sur-les-listes-chainées">Généralités sur les listes chainées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une liste chainée est un objet:</p>
+<ul>
+<li>
+<p><strong>non mutable</strong>:
+on peut la modifier en partie (ajout/suppression d&rsquo;un élément), mais sa copie se fait par valeur.</p>
+</li>
+<li>
+<p><strong>dynamique</strong>:
+on peut modifier sa taille après création, par exemple en faisant: <code>L = inserer(L, e)</code>, mais cela va créer un nouvel objet.</p>
+</li>
+<li>
+<p>les éléments ont une relation d&rsquo;ordre entre eux.</p>
+</li>
+<li>
+<p>on peut atteindre un élément au rang i en temps proportionnel à i, avec une boucle par exemple.</p>
+</li>
+</ul>
+<p><strong>Mémoire</strong>: Contrairement aux tableaux, les éléments d&rsquo;une liste chaînée ne sont pas placés côte à côte dans la mémoire. Chaque case pointe vers une autre case en mémoire, qui n&rsquo;est pas nécessairement stockée juste à côté.</p>
+<p>L&rsquo;<strong>interface</strong> d&rsquo;une liste chainée doit aussi proposer <strong>l&rsquo;insertion d&rsquo;un élément au rang i, en temps constant.</strong> (Intercaler cet élément entre 2 éléments de la liste). Ceci ne peut pas être réalisé avec l&rsquo;implémentation vue plus haut.</p>
+<p>Nous verrons d&rsquo;autres implémentations pour ce type abstrait.</p>
+<p><em>Attention: les listes chaînées et les Listes Python sont différentes, il ne s&rsquo;agit pas des mêmes objets.</em></p>
+<h1 id="tableaux-choix-dune-structure-de-données-native-en-python">Tableaux, choix d&rsquo;une structure de données native en python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les <strong>tableaux statiques</strong> sont des structures de données de taille fixe, où chaque donnée est du même type. C&rsquo;est comme ceci que sont représentées les collections dans des langages comme C, Java, Ocaml, &hellip;</p>
+<p>La taille du tableau est fixe à sa création : on ne peut pas l’agrandir ou le réduire sans en recréer un nouveau.</p>
+<p>Un tableau peut être représenté en Python à l&rsquo;aide d&rsquo;une liste (type list), un tuple (type tuple), ou bien une matrice numpy (numpy.array).</p>
+<h2 id="list-python">List python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les tableaux en python sont implémentés par le type <code>list</code>, qui est en réalité un <strong>tableau dynamique</strong>: leur taille est variable, et les éléments stockés peuvent être de types différents (idem pour Javascript). Pour utiliser le type <code>list</code> en tant que tableau statique, on s&rsquo;interdira les aspects dynamiques.</p>
+<ol>
+<li>Création</li>
+</ol>
+<p>On rappelle que, pour créer une liste python, on peut utiliser les techniques suivantes:</p>
+<ul>
+<li>création par extension: en listant les éléments du tableau: <code>T = [1,2,3]</code></li>
+<li>par concaténation: On peut utiliser une somme d&rsquo;éléments à l&rsquo;aide des opérateurs <code>+</code> et <code>*</code>, par exemple: <code>T = [0] * 100</code></li>
+<li>par compréhension: on s&rsquo;appuie sur un itérateur (fonction génératrice), exemple: <code>T = [i for i in range(ord('A'), ord('Z')+1]</code>, ou <code>T = [x**2 for x in range(1,11)]</code></li>
+<li>par ajout dans une table vide (append)</li>
+<li>à l&rsquo;aide de la fonction <code>list</code>: <code>codes = list(range(ord('A'), ord('Z')+1)</code>, <code>T = list('bonjour')</code></li>
+</ul>
+<ol start="2">
+<li>
+<p>Manipuler
+On accède à un élément d&rsquo;un tableau à l&rsquo;aide d&rsquo;un indice, qui peut être positif: <code>T[1]</code> est le deuxière élément par exemple, <code>T[0]</code> étant le premier. Ou bien à l&rsquo;aide d&rsquo;un entier négatif, ce qui fait que <code>T[len(T)-1]</code> est le même que <code>T[-1]</code></p>
+</li>
+<li>
+<p>Parcourir</p>
+</li>
+</ol>
+<ul>
+<li>Le plus simple est de parcourir directement <strong>par élément</strong></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>parcourir <strong>par indice</strong>:</li>
+</ul>
+<p>Très utile si on veut modifier les valeurs lors du parcours:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span></span></span></code></pre></div>
+<p>ou bien lorsque l&rsquo;on veut parcourir 2 tableaux à la fois:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Agnes&#39;</span><span class="p">,</span><span class="s1">&#39;Kev&#39;</span><span class="p">,</span><span class="s1">&#39;Sam&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="mi">34</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">prenoms</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;prenom: </span><span class="si">{}</span><span class="s2">, age:</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prenoms</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">age</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span></span></span></code></pre></div>
+<h2 id="numpyarray">numpy.array<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En Python, les tableaux fixes peuvent être implémentés via la classe <code>array</code> du module <code>numpy</code>.</p>
+<p>La dimension est fixée à la construction. Les indices commencent à 0.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche 2</span></span></span></code></pre></div>
+<p>Pour des tableaux à plusieurs dimensions: On peut accéder aux éléments d’un array A en utilisant la syntaxe  <code>A[i, j]</code> , où  i  et  j  sont respectivement le numéro de ligne et le numéro de colonne de l’élément au sein du tableau. L’opérateur :  permet de sélectionner plusieurs éléments, voire tout une ligne ou colonne.</p>
+<h2 id="tuple">Tuple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour un tuple, celui-ci contiendra 2 données:</p>
+<ul>
+<li>la liste des valeurs, de dimension fixe. On mettra <code>None</code> pour les valeurs non renseignés.</li>
+<li>la valeur de la taille de la liste.</li>
+</ul>
+<p>Par exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span></span></span></code></pre></div>
+<p>C&rsquo;est alors un objet qui est:</p>
+<ul>
+<li><strong>statique</strong>: sa taille ne varie pas une fois celui-ci créé</li>
+<li><strong>non mutable</strong>: mais avec un élément qui lui, peut être <em>mutable</em>:</li>
+</ul>
+<p>On ne peut pas modifier <code>T[0]</code> ou <code>T[1]</code>. Ce sont les éléments d&rsquo;un tuple.</p>
+<p>Mais on peut modifier en partie <code>T[0]</code>, par exemple avec une instruction du genre: <code>T[0][i] = x</code>. La copie de T[0] se fait par reference.</p>
+<p>Un tableau peut servir à implémenter une grille de notes par exemple:</p>
+<p>
+<figure >
+    
+        <img src="../images/array.png" alt="Tableau de notes" />
+    
+    
+    <figcaption>
+        <p>
+        Tableau de notes
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Supposons, pour simplifier, que le tableau ne contient que les notes de Kyle:</p>
+<p>
+<figure >
+    
+        <img src="../images/array2.png" alt="Tableau des notes de Kyle" />
+    
+    
+    <figcaption>
+        <p>
+        Tableau des notes de Kyle
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+On peut représenter cet ensemble de notes par le tableau:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>Petits rappels</strong> sur le tuples:</p>
+<ul>
+<li>Construction par extension:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fruits</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pommes&#39;</span><span class="p">,</span><span class="s1">&#39;oranges&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Construction par concaténation:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span> <span class="c1"># ne pas oublier , sinon cela génère une list</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Construction par compréhension:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">carres</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ne pas oublier de mettre tuple au debut</span></span></span></code></pre></div>
+<ul>
+<li>avec la fonction <code>list</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">codes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">),</span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">lettres_bonjour</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s1">&#39;bonjour&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="linterface-dun-tableau">L&rsquo;interface d&rsquo;un tableau<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<table>
+	<thead>
+			<tr>
+					<th>fonctions qui implémentent un tableau T (Array)</th>
+					<th>nom</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>taille du tableau</td>
+					<td><code>taille(T)</code></td>
+			</tr>
+			<tr>
+					<td>demander l&rsquo;élément au rang i</td>
+					<td><code>element(T,i)</code></td>
+			</tr>
+			<tr>
+					<td>remplacer l&rsquo;élément au rang i par e</td>
+					<td><code>remplacer(T,i,e)</code></td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="tableaux-multidimentionnels">Tableaux multidimentionnels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">hugo</span> <span class="o">=</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">1400</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">richard</span> <span class="o">=</span> <span class="p">[</span><span class="mi">54</span><span class="p">,</span> <span class="mi">2800</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">emilie</span> <span class="o">=</span> <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">3700</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">tableau</span> <span class="o">=</span> <span class="p">[</span><span class="n">hugo</span><span class="p">,</span> <span class="n">richard</span><span class="p">,</span> <span class="n">emilie</span><span class="p">]</span></span></span></code></pre></div>
+<p>Alors, pour accéder à l&rsquo;un des éléments, on fait: <code>tableau[ligne i][colonne j]</code>:</p>
+<p><strong>List et tuple</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">tableau</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># correspond à la 2e (j=1) note de hugo (i=0)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1400</span> </span></span></code></pre></div>
+<p><strong>Array</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">tab1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tab1 est un array de 3 lignes et 2 colonnes</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">tab2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># tab2 est un array de 2 lignes et 3 colonnes</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># un tableau de 3x5 rempli de 1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># un tableau de 4 lignes et de 4 colonnes contenant que des 0</span></span></span></code></pre></div>
+<h2 id="tableaux-dynamiques-et-tableaux-statiques">Tableaux dynamiques et tableaux statiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les tableaux vus ci-dessus sont des tableaux <em>statiques</em>: leur taille ne peut pas être modifiée. Dans le cas où l&rsquo;on ait besoin d&rsquo;agrandir le tableau, il faut le copier dans un nouveau tableau, plus grand.</p>
+<p>Python implémente naturellement un autre type de tableau, que l&rsquo;on appelera <em>dynamique</em>: Les <em>Listes Python</em>. Ce problème de dimension n&rsquo;apparait pas dans les Listes Python, qui apportent de surcroit des méthodes bien pratiques comme <code>append</code> et <code>pop</code>.</p>
+<h1 id="exercices-sur-les-listes">Exercices sur les listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On propose l&rsquo;<strong>implémentation</strong> suivante pour les listes chainées:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">creer_liste</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">  L = creer_liste()
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">liste_vide</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple: 
+</span></span></span><span class="line"><span class="cl"><span class="s2">  liste_vide(L)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span> <span class="o">==</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inserer_tete</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  L = inserer_tete(L,e)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tete</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  L = (1,(2,()))
+</span></span></span><span class="line"><span class="cl"><span class="s2">  tete(L) -&gt; 1
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">queue</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  L = (1,(2,()))
+</span></span></span><span class="line"><span class="cl"><span class="s2">  queue(L) -&gt; (2,())
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">inserer</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">element_recherche</span><span class="p">,</span><span class="n">element_a_inserer</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  L = (1,(2,()))
+</span></span></span><span class="line"><span class="cl"><span class="s2">  inserer(L,2,3) -&gt; (1,(3,(2,())))
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Liste_des_elements</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># recherche</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="n">element_recherche</span> <span class="o">!=</span> <span class="n">tete</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Liste_des_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tete</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">queue</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># insertion</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">element_a_inserer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Liste_des_elements</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">Liste_des_elements</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">elements_liste</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Liste_des_elements</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">element</span> <span class="o">=</span> <span class="n">tete</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">queue</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Liste_des_elements</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">Liste_des_elements</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  </span></span></code></pre></div>
+<h2 id="exercice-1-parcours-scolaire">Exercice 1: parcours scolaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le <code>parcours</code> scolaire est un type abstrait qui s&rsquo;apparente à une Liste. Les éléments sont disposés dans cette Liste sous la forme:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(&#39;Terminale&#39;, (&#39;Premiere&#39;, (&#39;Seconde&#39;, ())))</span></span></code></pre></div>
+<p>L&rsquo;interface propose les fonctions suivantes:</p>
+<p><code>creer_liste, liste_vide, inserer, tete, queue</code>.</p>
+<p><strong>1.</strong> Quelles instructions, utilisant l&rsquo;interface, vont créer la Liste <code>parcours_lycee</code> de la manière suivante: <code>('Terminale', ('Premiere', ('Seconde', ())))</code>?</p>
+<p><strong>2.</strong> Quelle instruction va permettre de connaitre la dernière classe visitée lors du parcours scolaire?</p>
+<p><strong>3.</strong> Que retourne <code>queue(parcours_lycee)</code>? <em>(choisir)</em></p>
+<ul>
+<li>la première classe du parcours scolaire</li>
+<li>le parcours scolaire sans la dernière année</li>
+</ul>
+<p><strong>4.</strong> Que retourne le script suivant?</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">parcours_lycee</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">tete</span><span class="p">(</span><span class="n">parcours_lycee</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="n">parcours_lycee</span> <span class="o">=</span> <span class="n">queue</span><span class="p">(</span><span class="n">parcours_lycee</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>5.</strong> On souhaite utiliser ce type abstrait pour décrire le parcours universitaire. Quelle serie d&rsquo;instructions va créer la structure de données du parcours qui ira de <code>Licence 1</code> à <code>Master 2</code>? Cette liste s&rsquo;appelera <code>parcours_univ</code></p>
+<p><strong>6.</strong> On souhaite maintenant créer une liste unique appelée <code>scolarite</code>, issue de la jonction des deux listes, <code>parcours_lycee</code> et <code>parcours_univ</code>. Ecrire le script correspondant.</p>
+<h2 id="exercice-2-composition-dun-train">Exercice 2: composition d&rsquo;un train<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On cherche à implémenter la construction d&rsquo;un train pour voyageurs, motrice et wagons, à l&rsquo;aide d&rsquo;une liste chainée.</p>
+<p>Le train suit l&rsquo;ordre suivant:</p>
+<ul>
+<li>motrice</li>
+<li>wagon_1</li>
+<li>wagon_2</li>
+<li>wagon_3</li>
+</ul>
+<p><strong>1.</strong> Qu&rsquo;est ce qui est affiché par le programme suivant?</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="n">creer_liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="s1">&#39;motrice&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="s1">&#39;wagon_1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="s1">&#39;wagon_2&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L1</span><span class="p">,</span><span class="s1">&#39;wagon_3&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>2.</strong> Quelle instruction de l&rsquo;interface de liste faut-il utiliser pour consulter la nature du dernier wagon du train?</p>
+<p><strong>3.</strong> La fonction <code>elements_liste</code> va retourner les éléments de la liste chainée, en une liste python. Quelle instruction, utilisant <code>elements_liste</code>, va retourner la liste <code>['wagon_3', 'wagon_2', 'wagon_1','motrice']</code>?</p>
+<p><strong>4.</strong> INSERTION: On souhaite modifier la liste L1 et intercaler  <code>wagon_bar</code> entre le <code>wagon_1</code> et le <code>wagon_2</code>.</p>
+<ul>
+<li>Quelle instruction utilisant la fonction <code>insere</code> de l&rsquo;interface de liste va modifier L1 de cette façon?</li>
+<li>Quelle sera l&rsquo;objet retourné?</li>
+<li>Repérer les différentes parties de cette fonction.</li>
+</ul>
+<p><strong>5.</strong> Supprimer le wagon de queue à l&rsquo;aide d&rsquo;une instruction de l&rsquo;interface.</p>
+<h2 id="exercice-3-separation-dune-liste">Exercice 3: separation d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>1.</strong> Compléter la fonction <code>separe</code> qui sépare les éléments d&rsquo;une liste en deux listes selon s&rsquo;ils sont inférieurs (strictement) ou supérieurs (et égal) à une valeur <code>v</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">separe</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L_inf</span> <span class="o">=</span> <span class="n">creer_liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L_sup</span> <span class="o">=</span> <span class="n">creer_liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="ow">not</span> <span class="n">liste_vide</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># à completer</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># utilise les fonctions tete, queue et insere_tete</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># </span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># </span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L_inf</span><span class="p">,</span> <span class="n">L_sup</span></span></span></code></pre></div>
+<p><strong>2.</strong> Compléter alors le programme au niveau du repère ICI. Le programme affiche les 2 listes une fois celles-ci séparées. La liste L contiendra les valeurs à séparer.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="n">creer_liste</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">inserer_tete</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">elem</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">v</span> <span class="o">=</span> <span class="mi">12</span> 
+</span></span><span class="line"><span class="cl"><span class="c1"># ICI, appel de la fonction separe</span>
+</span></span><span class="line"><span class="cl"><span class="n">L_inf</span><span class="p">,</span> <span class="n">L_sup</span> <span class="o">=</span> <span class="n">separe</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L_inf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L_sup</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (1, (3, (11, (2, (5, (4, (2, (8, (1, ())))))))))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># (20, (18, (16, (101, (12, (15, ()))))))</span></span></span></code></pre></div>
+<h1 id="exercices-sur-les-tableaux-statiques">Exercices sur les Tableaux statiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On propose l&rsquo;implémentation suivante pour les tableaux statiques:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">([</span><span class="s1">&#39;lundi&#39;</span><span class="p">,</span><span class="s1">&#39;mardi&#39;</span><span class="p">,</span><span class="s1">&#39;mercredi&#39;</span><span class="p">,</span><span class="s1">&#39;jeudi&#39;</span><span class="p">,</span><span class="s1">&#39;vendredi&#39;</span><span class="p">],</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; taille(T)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; 5
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">element</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; element(T,3)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; &#39;jeudi&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">remplacer</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;exemple:
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; remplacer(T,2,&#39;jour des enfants&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; T
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &gt; ([&#39;lundi&#39;,&#39;mardi&#39;,&#39;jour des enfants&#39;,&#39;jeudi&#39;,&#39;vendredi&#39;],5)
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># à completer</span></span></span></code></pre></div>
+<h2 id="exercice-1-utiliser-linterface-du-tableau">Exercice 1: Utiliser l&rsquo;interface du tableau<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/array.png" alt="Tableau de notes" />
+    
+    
+    <figcaption>
+        <p>
+        Tableau de notes
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p><strong>1.</strong> Soit le tableau qui implémente les notes de Kyle dans les matières C1, C2, C3:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span> </span></span></code></pre></div>
+<p><strong>a.</strong> Ecrire l&rsquo;instruction qui retourne la note de Kyle dans la matière C3.</p>
+<p><strong>b.</strong> Kyle n&rsquo;a pas eu 8, mais 12/20 dans la matière C3. Ecrire l&rsquo;instruction qui modifie sa note 8 en 12, à partir d&rsquo;une fonction de l&rsquo;interface des tableaux.</p>
+<p><strong>c.</strong> Compléter le script donné plus haut pour cette fonction.</p>
+<p><strong>d.</strong> Ecrire le script d&rsquo;une fonction <code>moyenne</code> qui calcule la moyenne des notes du tableau T.</p>
+<p><strong>2.</strong> Soit le tableau suivant qui implémente les notes de Kyle, Sean, Quentin et Zinedine dans les matières C1, C2, C3:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">T</span> <span class="o">=</span> <span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]],</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span></span></span></code></pre></div>
+<p><strong>a.</strong> Recopier le tableau T et remplacer les &lsquo;?&rsquo; par les bonnes valeurs (utiliser l&rsquo;image plus haut). Que signifie le tuple <code>(4,3)</code> placé comme 2e élément du tableau?</p>
+<p><strong>b.</strong> Utiliser l&rsquo;instruction <code>taille</code> de l&rsquo;interface pour donner le nombre d&rsquo;élèves dans le tableau. Puis le nombre de colonnes (matières):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n_eleves</span> <span class="o">=</span> <span class="n">taille</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">n_matieres</span> <span class="o">=</span> <span class="n">taille</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>2c.</strong> Modifier la fonction <code>remplacer</code> pour que celle-ci modifie la note dans la matière voulue pour un élève donné.</p>
+<p>Par exemple: Pour modifier la note de la colonne 2 de l&rsquo;élève au rang 0 (premiere ligne):</p>
+<p>Si on veut lui mettre 12, on fera: <code>remplacer(T,0,2,12)</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">remplacer</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">T</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche </span>
+</span></span><span class="line"><span class="cl"><span class="p">([[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]],</span> <span class="o">..</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>3.</strong> Quelle instruction, utilisant la fonction <code>moyenne</code> va retourner la moyenne des notes de Zinedine?</p>
+<p><strong>4.</strong> <code>moyenne_matiere</code>
+Programmer la fonction <code>moyenne_matiere</code> qui va calculer la moyenne sur une matière pour la colonne <code>j</code> d&rsquo;une matrice <code>M</code>.</p>
+<p>Pour programmer cette fonction <code>moyenne_matiere(M,j)</code>, il faudra:</p>
+<ul>
+<li>Faire la somme $M[0][j] + M[1][j] + M[2][j] + M[3][j]$. Utiliser un <strong>accumulateur <code>s</code> dans une boucle bornée</strong>.</li>
+<li>Diviser <code>s</code> par le nombre de notes</li>
+<li>retourner la valeur</li>
+</ul>
+<h2 id="exercice-2-moyenne-glissante-et-tableau-statique">Exercice 2: moyenne glissante et tableau statique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>énoncé à la <a href="../page11">page suivante</a>.</p>
+<h1 id="liens-et-prolongements">Liens et prolongements<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Types séquentiels natifs <a href="https://dlatreyte.github.io/terminales-nsi/chap-6/1-structures-integrees/" rel="external">cours David Latreyte</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" checked><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="active " data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><a class="padding" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782172948"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782172948" defer></script>
+    <script src="/js/theme.js?1782172948" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

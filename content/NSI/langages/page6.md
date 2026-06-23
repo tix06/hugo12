@@ -2,7 +2,7 @@
 Title: exercices sur la recursivité
 description: exercices recursivite
 hidden: true
-weight: 23
+weight: 14
 ---
 
 [RETOUR au cours sur la recursivité](../page2/)
