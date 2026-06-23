@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="arbres, parcours, tri par insertion et tri fusion, récursivité">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="donnees structurees 2 :: allopizza">
+    <meta name="twitter:description" content="arbres, parcours, tri par insertion et tri fusion, récursivité">
+    <meta property="og:url" content="//localhost:1313/nsi/sujets/page3/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="donnees structurees 2 :: allopizza">
+    <meta property="og:description" content="arbres, parcours, tri par insertion et tri fusion, récursivité">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="donnees structurees 2 :: allopizza">
+    <meta itemprop="description" content="arbres, parcours, tri par insertion et tri fusion, récursivité">
+    <meta itemprop="wordCount" content="2637">
+    <title>donnees structurees 2 :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
+    <script src="/js/search-lunr.js?1782229390" defer></script>
+    <script src="/js/search.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
+    <link href="/css/theme.css?1782229390" rel="stylesheet">
+    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/sujets\/page3\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/sujets/page3/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#question-1">Question 1</a></li>
+    <li><a href="#question-2">Question 2</a></li>
+    <li><a href="#question-3">Question 3</a></li>
+    <li><a href="#question-4">Question 4</a></li>
+    <li><a href="#question-5">Question 5</a></li>
+    <li><a href="#question-6">Question 6</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#partie-a--parcours-dun-arbre">Partie A : Parcours d’un arbre</a></li>
+    <li><a href="#question-1-1">Question 1</a></li>
+    <li><a href="#question-2-1">Question 2</a></li>
+    <li><a href="#question-3-1">Question 3</a></li>
+    <li><a href="#question-4-1">Question 4</a></li>
+    <li><a href="#question-5-1">Question 5</a></li>
+    <li><a href="#partie-b--méthode-diviser-pour-régner">Partie B : Méthode ‘diviser pour régner’</a></li>
+    <li><a href="#question-6-1">Question 6</a></li>
+    <li><a href="#question-7">Question 7</a></li>
+    <li><a href="#question-8">Question 8</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#question-1-2">Question 1</a></li>
+    <li><a href="#question-2-2">Question 2</a></li>
+    <li><a href="#question-3-2">Question 3</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#partie-a--manipulation-dune-liste-en-python">Partie A : Manipulation d’une liste en Python</a>
+      <ul>
+        <li><a href="#donner-les-affichages-obtenus-après-lexécution-du-code-python-suivant">Donner les affichages obtenus après l’exécution du code Python suivant.</a></li>
+        <li><a href="#écrire-un-code-python-permettant-dafficher-les-éléments-dindice-2-à-4-de-la-liste-notes">Écrire un code Python permettant d’afficher les éléments d’indice 2 à 4 de la liste <code>notes</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#partie-b--tri-par-insertion">Partie B : Tri par insertion</a>
+      <ul>
+        <li><a href="#voici-une-implémentation-en-python-de-cet-algorithme-recopier-et-compléter-les">Voici une implémentation en Python de cet algorithme. Recopier et compléter les</a></li>
+        <li><a href="#donner-le-contenu-de-la-liste-notes-après-le-premier-passage-dans-la-boucle-for">Donner le contenu de la liste <code>notes</code> après le premier passage dans la boucle for.</a></li>
+        <li><a href="#donner-le-contenu-de-la-liste-notes-après-le-troisième-passage-dans-la-boucle">Donner le contenu de la liste <code>notes</code> après le troisième passage dans la boucle</a></li>
+        <li><a href="#quelle-est-la-complexité-algorithmique-de-cet-algorithme-dans-le-meilleur-des-cas-celui-où-la-liste-en-paramètre-est-déjà-triée-justifiez">Quelle est la complexité algorithmique de cet algorithme dans le <strong>meilleur</strong> des cas? (celui où la liste en paramètre est déjà triée). Justifiez.</a></li>
+      </ul>
+    </li>
+    <li><a href="#partie-c--tri-fusion">Partie C : Tri fusion</a>
+      <ul>
+        <li><a href="#cet-algorithme-est-il-itératif-ou-récursif--justifier-en-une-phrase">Cet algorithme est-il itératif ou récursif ? Justifier en une phrase.</a></li>
+        <li><a href="#expliquer-en-quelques-lignes-comment-faire-pour-rassembler-dans-une-main-deux-tas-déjà-triés-de-cartes-la-carte-en-haut-dun-tas-étant-la-plus-petite-de-ce-même-tas--la-deuxième-carte-dun-tas-nétant-visible-quaprès-avoir-retiré-la-première-carte-de-ce-tas">Expliquer en quelques lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d&rsquo;un tas étant la plus petite de ce même tas ; la deuxième carte d&rsquo;un tas n&rsquo;étant visible qu&rsquo;après avoir retiré la première carte de ce tas.</a></li>
+        <li><a href="#voici-une-implémentation-de-lalgorithme-de-tri-fusion-recopier-et-compléter-les-lignes-8-9-et-10-surlignées-uniquement-celles-ci">Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci).</a></li>
+        <li><a href="#expliquer-le-rôle-de-la-première-ligne-du-code-de-la-question-précédente">Expliquer le rôle de la première ligne du code de la question précédente.</a></li>
+      </ul>
+    </li>
+    <li><a href="#partie-d--comparaison-du-tri-par-insertion-et-du-tri-fusion">Partie D : Comparaison du tri par insertion et du tri fusion</a>
+      <ul>
+        <li><a href="#quel-algorithme-a-été-utilisé--le-tri-par-insertion-ou-le-tri-fusion--justifier">Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.</a></li>
+        <li><a href="#identifier-le-tri-qui-a-une-complexité-dans-le-pire-des-cas-en--et-identifier-le-tri-qui-a-une-complexité-dans-le-pire-des-cas-en-">Identifier le tri qui a une complexité, dans le <strong>pire des cas</strong>, en $O(n^2)$ et identifier le tri qui a une complexité, dans le pire des cas, en $O(n log_2 n)$.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/sujets/index.html"><span itemprop="name">sujets bac ecrit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">donnees structurees 2</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/sujets/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page2/index.html" title="donnees structurees 1 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page12/index.html" title="Files (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="donnees-structurees-2">donnees structurees 2</h1>
+
+<h1 id="bac-2022-polynesie-exercice-5">Bac 2022 Polynesie: Exercice 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice traite du thème « algorithmique », et principalement des algorithmes sur les arbres binaires.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">arbre binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">hauteur</span></span></p>
+<p>On manipule ici les arbres binaires avec trois fonctions :</p>
+<ul>
+<li><code>est_vide(A)</code> qui renvoie <code>True</code> si l&rsquo;arbre binaire <code>A</code> est vide, <code>False</code> s&rsquo;il ne l&rsquo;est pas ;</li>
+<li><code>sous_arbre_gauche(A)</code> qui renvoie le sous-arbre gauche de l&rsquo;arbre binaire <code>A</code> ;</li>
+<li><code>sous_arbre_droit(A)</code> qui renvoie le sous-arbre droit de l&rsquo;arbre binaire <code>A</code>.</li>
+</ul>
+<p>L&rsquo;arbre binaire renvoyé par les fonctions <code>sous_arbre_gauche</code> et <code>sous_arbre_droit</code> peut éventuellement être l&rsquo;arbre vide.</p>
+<p>On définit la <strong>hauteur</strong> d&rsquo;un arbre binaire non vide de la façon suivante :</p>
+<ul>
+<li>si ses sous-arbres gauche et droit sont vides, sa hauteur est 0 ;</li>
+<li>si l&rsquo;un des deux au moins est non vide, alors sa hauteur est égale à 1 + M, où M est la plus grande des hauteurs de ses sous-arbres (gauche et droit) non vides.</li>
+</ul>
+<h2 id="question-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A. Donner la hauteur de l&rsquo;arbre ci-dessous.</p>
+
+<figure >
+    
+        <img src="../images/page3_1.png" alt="304 × 232" />
+    
+    
+    <figcaption>
+        <p>
+        304 × 232
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>B. Dessiner sur la copie un arbre binaire de hauteur 4.</p>
+<p>La hauteur d&rsquo;un arbre est calculée par l&rsquo;algorithme récursif suivant :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Algorithme hauteur(A):
+</span></span><span class="line"><span class="cl">  test d&#39;assertion : A est supposé non vide
+</span></span><span class="line"><span class="cl">  si sous_arbre_gauche(A) vide et sous_arbre_droit(A) vide:
+</span></span><span class="line"><span class="cl">    renvoyer 0
+</span></span><span class="line"><span class="cl">  sinon, si sous_arbre_gauche(A) vide:
+</span></span><span class="line"><span class="cl">    renvoyer 1 + hauteur(sous_arbre_droit(A))
+</span></span><span class="line"><span class="cl">  sinon, si ... :
+</span></span><span class="line"><span class="cl">    renvoyer ...
+</span></span><span class="line"><span class="cl">  sinon:
+</span></span><span class="line"><span class="cl">    renvoyer 1 + max(hauteur(sous_arbre_gauche(A)),
+</span></span><span class="line"><span class="cl">    hauteur(sous_arbre_droit(A)))</span></span></code></pre></div>
+<h2 id="question-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Recopier sur la copie les lignes 7 et 8 en complétant les points de suspension.</p>
+<h2 id="question-3">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On considère un arbre binaire <code>R</code> dont on note <code>G</code> le sous-arbre gauche et <code>D</code> le sous-arbre droit. On suppose que <code>R</code> est de hauteur 4 et <code>G</code> de hauteur 2.</p>
+<p>A.  Justifier le fait que <code>D</code> n&rsquo;est pas l&rsquo;arbre vide et déterminer sa hauteur.</p>
+<p>B.  Illustrer cette situation par un dessin.</p>
+<p>Soit un arbre binaire non vide de hauteur h. On note <code>n</code> le nombre de nœuds de cet arbre. On admet que $h+1 \leqslant n \leqslant 2^{h+1}−1$.</p>
+<h2 id="question-4">Question 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Vérifier ces inégalités sur l&rsquo;arbre binaire de la question 1.A.</p>
+<p>B.  Expliquer comment construire un arbre binaire de hauteur h quelconque
+ayant h+1 nœuds.</p>
+<p>C. Expliquer comment construire un arbre binaire de hauteur h quelconque ayant
+$2^{h+1}−1$ nœuds.</p>
+<p><em>Indication</em> : $2^{h+1}−1 = 1+2+4+...+2^h$</p>
+<p>L&rsquo;objectif de la fin de l’exercice est d&rsquo;écrire le code d&rsquo;une fonction <code>fabrique(h, n)</code> qui prend comme paramètres deux nombres entiers positifs <code>h</code> et <code>n</code> tels que $h+1 \leqslant n \leqslant 2^{h+1}−1$, et qui renvoie un arbre binaire de hauteur h à n nœuds.</p>
+<p>Pour cela, on a besoin des deux fonctions suivantes:</p>
+<ul>
+<li><code>arbre_vide()</code>, qui renvoie un arbre vide ;</li>
+<li><code>arbre(gauche, droit)</code> qui renvoie l&rsquo;arbre de fils gauche <code>gauche</code> et de fils
+droit <code>droit</code>.</li>
+</ul>
+<h2 id="question-5">Question 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Recopier sur la copie l&rsquo;arbre binaire ci-dessous et numéroter ses nœuds de 1 en
+1 en commençant à 1, en effectuant un parcours en profondeur préfixe.</p>
+<p>
+<figure >
+    
+        <img src="../images/page3_2.png" alt="546 × 322" />
+    
+    
+    <figcaption>
+        <p>
+        546 × 322
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+La fonction <code>fabrique</code> ci-dessous a pour but de répondre au problème posé. Pour cela, la fonction <code>annexe</code> utilise la valeur de <code>n</code>, qu&rsquo;elle peut modifier, et renvoie un arbre binaire de hauteur <code>hauteur_max</code> dont le nombre de nœuds est égal à la valeur de <code>n</code> au moment de son appel.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fabrique</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">annexe</span><span class="p">(</span><span class="n">hauteur_max</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">arbre_vide</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">hauteur_max</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">      <span class="n">gauche</span> <span class="o">=</span> <span class="n">annexe</span><span class="p">(</span><span class="n">hauteur_max</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">droite</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">arbre</span><span class="p">(</span><span class="n">gauche</span><span class="p">,</span> <span class="n">droite</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">annexe</span><span class="p">(</span><span class="n">h</span><span class="p">)</span></span></span></code></pre></div>
+<h2 id="question-6">Question 6<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Recopier sur la copie les lignes 7 et 11 en complétant les points de suspension.</p>
+<h1 id="bac-2022-metropole-1-exercice-4">Bac 2022 Metropole 1: Exercice 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice, composé de deux parties A et B, porte sur le parcours des arbres
+binaires, le principe “diviser pour régner” et la récursivité.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">arbre</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">parcours</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">File</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">récursivité</span></span></p>
+<p>Cet exercice traite du calcul de la somme d’un arbre binaire. Cette somme consiste à additionner toutes les valeurs numériques contenues dans les nœuds de l’arbre.</p>
+<p>L’arbre utilisé dans les parties A et B est le suivant :</p>
+
+<figure >
+    
+        <img src="../images/page3_3.png" alt="314 × 252" />
+    
+    
+    <figcaption>
+        <p>
+        314 × 252
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="partie-a--parcours-dun-arbre">Partie A : Parcours d’un arbre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h2 id="question-1-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Donner la somme de l’arbre précédent. Justifier la réponse en explicitant le calcul qui a permis de l’obtenir.</p>
+<h2 id="question-2-1">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Indiquer la lettre correspondante aux noms ‘racine’, ‘feuille’, ‘nœud’, ‘SAG’ (Sous Arbre Gauche) et ‘SAD’ (Sous Arbre Droit). Chaque lettre <strong>A, B, C, D</strong> et <strong>E</strong> devra être utilisée une seule fois.</p>
+
+<figure >
+    
+        <img src="../images/page3_4.png" alt="Arbre avec les lettres à associer - 578 × 310" />
+    
+    
+    <figcaption>
+        <p>
+        Arbre avec les lettres à associer - 578 × 310
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="question-3-1">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Parmi les quatre propositions A, B, C et D ci-dessous, donnant un parcours en
+largeur d’abord de l’arbre, une seule est correcte. Indiquer laquelle.</p>
+<ul>
+<li><strong>Proposition A :</strong> 7 - 6 - 4 - 3 - 9 - 2 - 1</li>
+<li><strong>Proposition B :</strong> 3 - 6 - 7 - 4 - 2 - 9 - 1</li>
+<li><strong>Proposition C :</strong> 3 - 6 - 2 - 7 - 4 - 9 - 1</li>
+<li><strong>Proposition D :</strong> 7 - 4 - 6 - 9 - 1 - 2 – 3</li>
+</ul>
+<h2 id="question-4-1">Question 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Écrire en langage Python la fonction somme qui prend en paramètre une liste de
+nombres et qui renvoie la somme de ses éléments.</p>
+<p>Exemple : <code>somme([1, 2, 3, 4])</code> est égale à 10.</p>
+<h2 id="question-5-1">Question 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction <code>parcourir(arbre)</code> pourrait se traduire en langage naturel par :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">parcourir</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">L</span> <span class="o">=</span> <span class="n">liste_vide</span>
+</span></span><span class="line"><span class="cl">  <span class="n">F</span> <span class="o">=</span> <span class="n">file_vide</span>
+</span></span><span class="line"><span class="cl">  <span class="n">enfiler</span> <span class="n">A</span> <span class="n">dans</span> <span class="n">F</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Tant</span> <span class="n">que</span> <span class="n">F</span> <span class="n">n</span> <span class="n">est</span> <span class="n">pas</span> <span class="n">vide</span>
+</span></span><span class="line"><span class="cl">    <span class="n">défiler</span> <span class="n">S</span> <span class="n">de</span> <span class="n">F</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ajouter</span> <span class="n">la</span> <span class="n">valeur</span> <span class="n">de</span> <span class="n">la</span> <span class="n">racine</span> <span class="n">de</span> <span class="n">S</span> <span class="n">dans</span> <span class="n">L</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Pour</span> <span class="n">chaque</span> <span class="n">sous</span> <span class="n">arbre</span> <span class="n">SA</span> <span class="n">non</span> <span class="n">vide</span> <span class="n">de</span> <span class="n">S</span>
+</span></span><span class="line"><span class="cl">        <span class="n">enfiler</span> <span class="n">SA</span> <span class="n">dans</span> <span class="n">F</span>
+</span></span><span class="line"><span class="cl">  <span class="n">renvoyer</span> <span class="n">L</span></span></span></code></pre></div>
+<p>Donner le type de parcours obtenu grâce à la fonction <code>parcourir</code>.</p>
+<h2 id="partie-b--méthode-diviser-pour-régner">Partie B : Méthode ‘diviser pour régner’<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h2 id="question-6-1">Question 6<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Parmi les quatre propositions A,B, C et D ci-dessous, indiquer la seule
+proposition correcte.</p>
+<p>En informatique, le principe diviser pour régner signifie :</p>
+<ul>
+<li><strong>Proposition A</strong>: diviser une fonction en deux fonctions plus petites</li>
+<li><strong>Proposition B</strong>: utiliser plusieurs modules</li>
+<li><strong>Proposition C</strong>: séparer les informations en fonction de leur types</li>
+<li><strong>Proposition D</strong>: diviser un problème en deux problèmes plus petits et
+indépendants.</li>
+</ul>
+<h2 id="question-7">Question 7<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L’arbre présenté dans le problème peut être décomposé en racine et sous
+arbres :</p>
+<p>
+<figure >
+    
+        <img src="../images/page3_5.png" alt="376 × 258" />
+    
+    
+    <figcaption>
+        <p>
+        376 × 258
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Indiquer dans l’esprit de ‘diviser pour régner’ l’égalité donnant la somme d’un arbre en fonction de la somme des sous arbres et de la valeur numérique de la racine.</p>
+<h2 id="question-8">Question 8<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Écrire en langage Python une fonction récursive <code>calcul_somme(arbre)</code>.
+Cette fonction calcule la somme de l’arbre passé en paramètre.
+Les fonctions suivantes sont disponibles :</p>
+<ul>
+<li><code>est_vide(arbre)</code> : renvoie <code>True</code> si <code>arbre</code>est vide et renvoie <code>False</code>
+sinon ;</li>
+<li><code>valeur_racine(arbre)</code> : renvoie la valeur numérique de la racine de
+<code>arbre</code>;</li>
+<li><code>arbre_gauche(arbre)</code> : renvoie le sous arbre gauche de <code>arbre</code>;</li>
+<li><code>arbre_droit(arbre)</code> : renvoie le sous arbre droit de <code>arbre</code>.</li>
+</ul>
+<h1 id="bac-2022-metropole-2-exercice-1">Bac 2022 Metropole 2: Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice porte sur les arbres binaires de recherche, la programmation orientée objet et la récursivité.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ABR</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">POO</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">récursivité</span></span></p>
+<p>Dans cet exercice, la <strong>taille</strong> d’un arbre est le nombre de nœuds qu’il contient. Sa <strong>hauteur</strong> est le nombre de nœuds du plus long chemin qui joint le nœud racine à l’une des feuilles (nœuds sans sous-arbres). On convient que la hauteur d’un arbre ne contenant qu’un nœud vaut 1 et la hauteur de l’arbre vide vaut 0.</p>
+<h2 id="question-1-2">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On considère l’arbre binaire représenté ci-dessous:</p>
+
+<figure >
+    
+        <img src="../images/page3_6.png" alt="Figure 1 - 390 × 370" />
+    
+    
+    <figcaption>
+        <p>
+        Figure 1 - 390 × 370
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<p>A.  Donner la taille de cet arbre.</p>
+<p>B.  Donner la hauteur de cet arbre.</p>
+<p>C.  Représenter sur la copie le sous-arbre droit du nœud de valeur 15.</p>
+<p>D.  Justifier que l’arbre de la figure 1 est un arbre binaire de recherche.</p>
+<p>E. On insère la valeur 17 dans l’arbre de la figure 1 de telle sorte que 17 soit une nouvelle feuille de l’arbre et que le nouvel arbre obtenu soit encore un arbre binaire de recherche. Représenter sur la copie ce nouvel arbre.</p>
+<h2 id="question-2-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On considère la classe Noeud définie de la façon suivante en Python :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Noeud</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span> <span class="o">=</span> <span class="n">g</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">valeur</span> <span class="o">=</span> <span class="n">v</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">droit</span> <span class="o">=</span> <span class="n">d</span></span></span></code></pre></div>
+<p>A.  Parmi les trois instructions (A), (B) et (C) suivantes, écrire
+sur la copie la lettre correspondant à celle qui construit et
+stocke dans la variable abr l’arbre représenté ci-contre.</p>
+<p>(A) <code>abr=Noeud(Noeud(Noeud(None,13,None),15,None),21,None)</code></p>
+<p>(B) <code>abr=Noeud(None,13,Noeud(Noeud(None,15,None),21,None))</code></p>
+<p>(C) <code>abr=Noeud(Noeud(None,13,None),15,Noeud(None,21,None))</code></p>
+<p>B.  Recopier et compléter la ligne 7 du code de la fonction <code>ins</code> ci-dessous qui prend en paramètres une valeur <code>v</code> et un arbre binaire de recherche <code>abr</code> et qui renvoie l’arbre obtenu suite à l’insertion de la valeur <code>v</code> dans l’arbre <code>abr</code>. Les lignes 8 et 9 permettent de ne pas insérer la valeur <code>v</code> si celle-ci est déjà présente dans <code>abr</code>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ins</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">abr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Noeud</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">abr</span><span class="o">.</span><span class="n">valeur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Noeud</span><span class="p">(</span><span class="n">abr</span><span class="o">.</span><span class="n">gauche</span><span class="p">,</span><span class="n">abr</span><span class="o">.</span><span class="n">valeur</span><span class="p">,</span><span class="n">ins</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">abr</span><span class="o">.</span><span class="n">droit</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="k">elif</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">abr</span><span class="o">.</span><span class="n">valeur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">............................................</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">abr</span> </span></span></code></pre></div>
+<h2 id="question-3-2">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La fonction <code>nb_sup</code> prend en paramètres une valeur <code>v</code> et un arbre binaire de
+recherche <code>abr</code> et renvoie le nombre de valeurs supérieures ou égales à la valeur <code>v</code> dans l’arbre <code>abr</code>.</p>
+<p>Le code de cette fonction <code>nb_sup</code> est donné ci-dessous :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">nb_sup</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">abr</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">abr</span><span class="o">.</span><span class="n">valeur</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="mi">1</span><span class="o">+</span><span class="n">nb_sup</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="o">.</span><span class="n">gauche</span><span class="p">)</span><span class="o">+</span><span class="n">nb_sup</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="o">.</span><span class="n">droit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">nb_sup</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="o">.</span><span class="n">gauche</span><span class="p">)</span><span class="o">+</span><span class="n">nb_sup</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">abr</span><span class="o">.</span><span class="n">droit</span><span class="p">)</span></span></span></code></pre></div>
+<p>A.  On exécute l’instruction <code>nb_sup(16, abr)</code> dans laquelle <code>abr</code> est l’arbre
+initial de la figure 1. Déterminer le nombre d’appels à la fonction <code>nb_sup</code>.</p>
+<p>B.  L’arbre passé en paramètre étant un arbre binaire de recherche, on peut
+améliorer la fonction <code>nb_sup</code> précédente afin de réduire ce nombre d’appels.
+Écrire sur la copie le code modifié de cette fonction.</p>
+<h1 id="bac-2023-centres-etrangers-j4">Bac 2023 Centres etrangers J4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>(extrait du sujet)</em> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tri fusion</span></span></p>
+<p>Le grossiste enregistre dans la liste <code>sommes</code> les montants des commandes,
+avant réduction, que des clients ont passées dans son magasin.</p>
+<p>Par exemple : <code>sommes = [140, 78, 115, 94, 46, 108, 55, 53]</code></p>
+<p>Il va utiliser la méthode de tri-fusion pour trier la liste sommes dans l’ordre
+croissant.
+L’algorithme du tri-fusion est naturellement décrit de façon récursive (dans toute
+la suite, on supposera pour simplifier que le nombre d’éléments de la liste est
+une puissance de 2) :</p>
+<ul>
+<li>si la liste n’a qu’un ou aucun élément, elle est déjà triée,</li>
+<li>sinon:
+<ul>
+<li>on sépare la liste initiale en deux listes de même taille,</li>
+<li>on applique récursivement l’algorithme sur ces deux listes,</li>
+<li>on fusionne les deux listes triées obtenues en une seule liste triée.</li>
+</ul>
+</li>
+</ul>
+<p>On trouve ci-dessous un exemple de déroulement de cet algorithme pour la liste
+<code>[140,78,115,94]</code> de 4 éléments :</p>
+<p>
+<figure >
+    
+        <img src="../images/page3_8.png" alt="division et tri fusion" />
+    
+    
+    <figcaption>
+        <p>
+        division et tri fusion
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+{.class width=1072 height=478px}</p>
+<p><strong>a.</strong> Appliquer sur votre copie, de la même façon que dans l’exemple précédent,
+le déroulement de l’algorithme pour la liste suivante :
+<code>[46, 108, 55, 53]</code></p>
+<p>On rappelle que l’appel <code>L.append(x)</code> ajoute l’élément x à la fin de la liste L et que
+<code>len(L)</code> renvoie la taille de la liste L.</p>
+<p><strong>b.</strong> La fonction <code>fusion</code> ci-dessous renvoie une liste de valeurs triées à partir des
+deux listes <code>liste1</code> et <code>liste2</code> préalablement triées. Ecrire sur la copie l’instruction à
+placer à la ligne 4 du code de la fonction fusion :</p>
+<p>
+<figure >
+    
+        <img src="../images/page3_9.png" alt="script de la fonction fusion" />
+    
+    
+    <figcaption>
+        <p>
+        script de la fonction fusion
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+{.class width=820 height=562px}</p>
+<p>Choisir parmi les propositions:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span> <span class="ow">and</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">i2</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste2</span><span class="p">):</span></span></span></code></pre></div>
+<p><em>Justifiez votre choix</em>.</p>
+<p><strong>c.</strong> Recopier et compléter sur la copie la fonction récursive <code>tri_fusion</code> suivante, qui prend en paramètre une liste non triée et la renvoie sous la
+forme d’une nouvelle liste triée.</p>
+<p>On utilisera la fonction <code>fusion</code> de la question précédente.</p>
+<p>Exemple : <code>tri_fusion([140,115,78,94])</code> doit renvoyer
+<code>[78,94,115,140]</code></p>
+<p>Aide Python : si <code>L</code> est une liste, l’instruction <code>L[i:j]</code> renvoie la liste
+constituée des éléments de <code>L</code> indexés de <code>i</code> à <code>j-1</code>.
+Par exemple, si <code>L=[5,4,8,7,3]</code>, <code>L[2:4]</code> vaut <code>[8,7]</code>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">liste</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># a completer</span></span></span></code></pre></div>
+<h1 id="bac-2021-polynesie-exercice-1">Bac 2021 Polynesie Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Algorithmes de tri</strong> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">insertion</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tri fusion</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">complexité</span></span></p>
+<p>Cet exercice traite principalement du thème « algorithmique, langages et
+programmation ». Le but est de comparer le tri par insertion (l&rsquo;un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe de « diviser pour régner »).</p>
+<h2 id="partie-a--manipulation-dune-liste-en-python">Partie A : Manipulation d’une liste en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="donner-les-affichages-obtenus-après-lexécution-du-code-python-suivant">Donner les affichages obtenus après l’exécution du code Python suivant.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">notes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">notes</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">notes</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">notes</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="écrire-un-code-python-permettant-dafficher-les-éléments-dindice-2-à-4-de-la-liste-notes">Écrire un code Python permettant d&rsquo;afficher les éléments d&rsquo;indice 2 à 4 de la liste <code>notes</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h2 id="partie-b--tri-par-insertion">Partie B : Tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le tri par insertion est un algorithme efficace qui s&rsquo;inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l&rsquo;insère au bon endroit dans la main gauche.</p>
+<h3 id="voici-une-implémentation-en-python-de-cet-algorithme-recopier-et-compléter-les">Voici une implémentation en Python de cet algorithme. Recopier et compléter les<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>lignes 6 et 7 surlignées (uniquement celles-ci).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34; trie par insertion la liste en paramètre &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">indice_courant</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">element_a_inserer</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_courant</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">indice_courant</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">.................</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">liste</span><span class="p">[</span><span class="o">...........</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="o">...........</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">liste</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">element_a_inserer</span></span></span></code></pre></div>
+<p>On a écrit dans la console les instructions suivantes :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">notes = [8, 7, 18, 14, 12, 9, 17, 3]
+</span></span><span class="line"><span class="cl">tri_insertion(notes)
+</span></span><span class="line"><span class="cl">print(notes)</span></span></code></pre></div>
+<p>On a obtenu l&rsquo;affichage suivant : <code>[3, 7, 8, 9, 12, 14, 17, 18]</code></p>
+<p>On s&rsquo;interroge sur les étapes lors de l’exécution de <code>tri_insertion(notes)</code></p>
+<h3 id="donner-le-contenu-de-la-liste-notes-après-le-premier-passage-dans-la-boucle-for">Donner le contenu de la liste <code>notes</code> après le premier passage dans la boucle for.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="donner-le-contenu-de-la-liste-notes-après-le-troisième-passage-dans-la-boucle">Donner le contenu de la liste <code>notes</code> après le troisième passage dans la boucle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>for.</p>
+<h3 id="quelle-est-la-complexité-algorithmique-de-cet-algorithme-dans-le-meilleur-des-cas-celui-où-la-liste-en-paramètre-est-déjà-triée-justifiez">Quelle est la complexité algorithmique de cet algorithme dans le <strong>meilleur</strong> des cas? (celui où la liste en paramètre est déjà triée). Justifiez.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h2 id="partie-c--tri-fusion">Partie C : Tri fusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L&rsquo;algorithme de tri fusion suit le principe de « diviser pour régner ».</p>
+<ol>
+<li>Si le tableau à trier n’a qu’un élément, il est déjà trié.</li>
+<li>Sinon, séparer le tableau en deux parties à peu près égales.</li>
+<li>Trier les deux parties avec l’algorithme de tri fusion.</li>
+<li>Fusionner les deux tableaux triés en un seul tableau.</li>
+</ol>
+<p><em>source wikipedia</em></p>
+<h3 id="cet-algorithme-est-il-itératif-ou-récursif--justifier-en-une-phrase">Cet algorithme est-il itératif ou récursif ? Justifier en une phrase.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="expliquer-en-quelques-lignes-comment-faire-pour-rassembler-dans-une-main-deux-tas-déjà-triés-de-cartes-la-carte-en-haut-dun-tas-étant-la-plus-petite-de-ce-même-tas--la-deuxième-carte-dun-tas-nétant-visible-quaprès-avoir-retiré-la-première-carte-de-ce-tas">Expliquer en quelques lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d&rsquo;un tas étant la plus petite de ce même tas ; la deuxième carte d&rsquo;un tas n&rsquo;étant visible qu&rsquo;après avoir retiré la première carte de ce tas.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>À la fin du procédé, les cartes en main doivent être triées par ordre croissant.</p>
+<p>Une fonction <code>fusionner</code> a été implémentée en Python en s&rsquo;inspirant du procédé de la
+question précédente. Elle prend quatre arguments : la liste qui est en train d&rsquo;être triée, l&rsquo;indice où commence la sous-liste de gauche à fusionner, l&rsquo;indice où termine cette sous-liste, et l&rsquo;indice où se termine la sous-liste de droite.</p>
+<h3 id="voici-une-implémentation-de-lalgorithme-de-tri-fusion-recopier-et-compléter-les-lignes-8-9-et-10-surlignées-uniquement-celles-ci">Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci).<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_fusion</span> <span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34; trie par fusion la liste en paramètre depuis
+</span></span></span><span class="line"><span class="cl"><span class="s2">  i_debut jusqu’à i_fin &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">i_debut</span> <span class="o">&lt;</span> <span class="n">i_fin</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i_partage</span> <span class="o">=</span> <span class="n">floor</span><span class="p">((</span><span class="n">i_debut</span> <span class="o">+</span> <span class="n">i_fin</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">i_debut</span><span class="p">,</span> <span class="o">..............................</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tri_fusion</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="o">..............................</span><span class="p">,</span> <span class="n">i_fin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fusionner</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="o">...............</span><span class="p">,</span> <span class="o">.............</span><span class="p">,</span> <span class="o">.............</span><span class="p">)</span> </span></span></code></pre></div>
+<p>Remarque : la fonction <code>floor</code> renvoie la partie entière du nombre passé en paramètre.</p>
+<h3 id="expliquer-le-rôle-de-la-première-ligne-du-code-de-la-question-précédente">Expliquer le rôle de la première ligne du code de la question précédente.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h2 id="partie-d--comparaison-du-tri-par-insertion-et-du-tri-fusion">Partie D : Comparaison du tri par insertion et du tri fusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Voici une illustration des étapes d’un tri effectué sur la liste <code>[3, 41, 52, 26, 38, 57, 9, 49]</code></p>
+
+<figure >
+    
+        <img src="../images/page3_7.png" alt="Figure 1 - 500 × 400" />
+    
+    
+    <figcaption>
+        <p>
+        Figure 1 - 500 × 400
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h3 id="quel-algorithme-a-été-utilisé--le-tri-par-insertion-ou-le-tri-fusion--justifier">Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="identifier-le-tri-qui-a-une-complexité-dans-le-pire-des-cas-en--et-identifier-le-tri-qui-a-une-complexité-dans-le-pire-des-cas-en-">Identifier le tri qui a une complexité, dans le <strong>pire des cas</strong>, en $O(n^2)$ et identifier le tri qui a une complexité, dans le pire des cas, en $O(n log_2 n)$.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>Remarque : n représente la longueur de la liste à trier.</em></p>
+<p>Justifier brièvement ces deux complexités.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e" checked><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
+    <script src="/js/theme.js?1782229390" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

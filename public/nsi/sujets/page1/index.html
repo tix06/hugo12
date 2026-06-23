@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="listes et tuple, dictionnaires, tableaux, bases en python">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="tableaux et bases en python :: allopizza">
+    <meta name="twitter:description" content="listes et tuple, dictionnaires, tableaux, bases en python">
+    <meta property="og:url" content="//localhost:1313/nsi/sujets/page1/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="tableaux et bases en python :: allopizza">
+    <meta property="og:description" content="listes et tuple, dictionnaires, tableaux, bases en python">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="tableaux et bases en python :: allopizza">
+    <meta itemprop="description" content="listes et tuple, dictionnaires, tableaux, bases en python">
+    <meta itemprop="wordCount" content="2578">
+    <title>tableaux et bases en python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
+    <script src="/js/search-lunr.js?1782229390" defer></script>
+    <script src="/js/search.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
+    <link href="/css/theme.css?1782229390" rel="stylesheet">
+    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/sujets\/page1\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/sujets/page1/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#question-1">Question 1</a></li>
+    <li><a href="#question-2">Question 2</a></li>
+    <li><a href="#question-3">Question 3</a></li>
+    <li><a href="#question-4">Question 4</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#question-1-1">Question 1</a></li>
+    <li><a href="#question-2-1">Question 2</a></li>
+    <li><a href="#question-3-1">Question 3</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#1-appropriation">1. Appropriation</a></li>
+    <li><a href="#2-développement">2. Développement</a></li>
+    <li><a href="#3-améliorations">3. Améliorations</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#question-1-2">Question 1</a></li>
+    <li><a href="#question-2-2">Question 2</a></li>
+    <li><a href="#question-3-2">Question 3</a></li>
+    <li><a href="#question-4-1">Question 4</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/sujets/index.html"><span itemprop="name">sujets bac ecrit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tableaux et bases en python</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/sujets/page1.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/index.html" title="sujets bac ecrit (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page2/index.html" title="donnees structurees 1 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="tableaux-et-bases-en-python">tableaux et bases en python</h1>
+
+<h1 id="bac-2021-amerique-nord-exercice-3">Bac 2021 Amerique Nord: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice porte sur les tableaux et sur la programmation de base en Python.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tableau</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span></p>
+<p>On rappelle que <code>len</code> est une fonction qui prend un tableau en paramètre et renvoie sa longueur. C’est-à-dire le nombre d’éléments présents dans le tableau.</p>
+<p><strong>Exemple</strong> : <code>len([12, 54, 34, 57]</code> vaut 4.</p>
+<p>Le but de cet exercice est de programmer différentes réductions pour un site de vente de vêtements en ligne.</p>
+<p>On rappelle que si le prix d’un article avant réduction est de x euros,</p>
+<ul>
+<li>son prix vaut 0,5x si on lui applique une réduction de 50%,</li>
+<li>son prix vaut 0,6x si on lui applique une réduction de 40%,</li>
+<li>son prix vaut 0,7x si on lui applique une réduction de 30%,</li>
+<li>son prix vaut 0,8x si on lui applique une réduction de 20%,</li>
+<li>son prix vaut 0,9x si on lui applique une réduction de 10%.</li>
+</ul>
+<p>Dans le système informatique du site de vente, l’ensemble des articles qu’un client veut acheter, appelé panier, est modélisé par un tableau de flottants.</p>
+<p>Par exemple, si un client veut acheter un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, le système informatique aura le tableau suivant :</p>
+<p><code>tab = [30.5, 15.0, 6.0, 20.0, 5.0, 35.0, 10.5]`` </code></p>
+<h2 id="question-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Écrire une fonction Python <code>total_hors_reduction</code> ayant pour argument le tableau des prix des articles du panier d’un client et renvoyant le total des prix de ces articles.</p>
+<p>B.  Le site de vente propose la promotion suivante comme offre de bienvenue : 20% de réduction sur le premier article de la liste, 30% de réduction sur le deuxième article de la liste (s’il y a au moins deux articles) et aucune réduction sur le reste des articles (s’il y en a).
+Recopier sur la copie et compléter la fonction Python <code>offre_bienvenue</code> prenant en paramètre le tableau tab des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre de bienvenue.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">offre_bienvenue</span> <span class="p">(</span> <span class="n">tab</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34; tableau -&gt; float &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">somme</span> <span class="o">=</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="n">longueur</span> <span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">somme</span> <span class="o">=</span> <span class="n">tab</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*...</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">longueur</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">longueur</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="n">somme</span> <span class="o">=...</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<p>Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_reduction même si la question 1 n’a pas été traitée.</p>
+<h2 id="question-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Lors de la période des soldes, le site de vente propose les réductions suivantes :</p>
+<ul>
+<li>si le panier contient 5 articles ou plus, une réduction globale de 50%,</li>
+<li>si le panier contient 4 articles, une réduction globale de 40%,</li>
+<li>si le panier contient 3 articles, une réduction globale de 30%,</li>
+<li>si le panier contient 2 articles, une réduction globale de 20%,</li>
+<li>si le panier contient 1 article, une réduction globale de 10%.</li>
+</ul>
+<p>Proposer une fonction Python <code>prix_solde</code> ayant pour argument le tableau tab des prix des articles du panier d’un client et renvoyant le total des prix de ces articles lorsqu’on leur applique la réduction des soldes.</p>
+<h2 id="question-3">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Écrire une fonction <code>minimum</code> qui prend en paramètre un tableau tab de nombres et renvoie la valeur minimum présente dans le tableau.</p>
+<p>B.  Pour ses bons clients, le site de vente propose une offre promotionnelle, à partir de 2 articles achetés, l’article le moins cher des articles commandés est offert.</p>
+<p>Écrire une fonction Python <code>offre_bon_client</code> ayant pour paramètre le tableau des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre bon client.</p>
+<h2 id="question-4">Question 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.</p>
+<p><strong>Exemple :</strong> Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :</p>
+<p><code>tab = [30.5, 15.0, 6.0, 20.0, 5.0, 35.0, 10.5]</code></p>
+<p>Pour le premier groupe (le pantalon à 30,50 euros, le tee-shirt à 15 euros, la paire de chaussettes à 6 euros), l’article le moins cher, la paire de chaussettes à 6 euros, est offert. Pour le second groupe (la jupe à 20 euros, la paire de collants à 5 euros, la robe à 35 euros), la paire de collants
+à 5 euros est offerte.
+Donc le total après promotion de déstockage est 111 euros.
+On constate que le prix après promotion de déstockage dépend de l’ordre dans lequel se présentent les articles dans le panier.</p>
+<p>A.  Proposer un panier contenant les mêmes articles que ceux de l’exemple mais ayant un prix
+après promotion de déstockage différent de 111 euros.</p>
+<p>B.  Proposer un panier contenant les mêmes articles mais ayant le prix après promotion de déstockage le plus bas possible.</p>
+<p>C.  Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.</p>
+<h1 id="bac-2021-metropole-sept-exercice-2">Bac 2021 Metropole Sept: Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Principaux thèmes abordés : structure de données (tableaux, dictionnaires) et langages et programmation (spécification).</em>
+<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tableaux</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">dictionnaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span></p>
+<p>Objectif de l’exercice :</p>
+<p>Les Aventuriers du Rail© est un jeu de société dans lequel les joueurs doivent construire des lignes de chemin de fer entre différentes villes d&rsquo;un pays.</p>
+<p>La carte des liaisons possibles dans la région Occitanie est donnée en annexe 1 de l’exercice 2. Dans l’annexe 2 de l’exercice 2, les liaisons possédées par le joueur 1 sont en noir, et celles du joueur 2 en blanc. Les liaisons en gris sont encore en jeu.</p>
+<p>Codages des structures de données utilisées :</p>
+<ul>
+<li>Liste des liaisons d&rsquo;un joueur : Toutes les liaisons directes (sans ville intermédiaire) construites par un joueur seront enregistrées dans une variable de type &ldquo;tableau de tableaux&rdquo;.
+Le joueur 1 possède les lignes directes &ldquo;Toulouse-Muret&rdquo;, &ldquo;Toulouse-Montauban&rdquo;,
+&ldquo;Gaillac-St Sulpice&rdquo; et &ldquo;Muret-Pamiers&rdquo; (liaisons indiquées en noir dans l’annexe 2 de l’exercice 2). Ces liaisons sont mémorisées dans la variable ci-dessous.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">liaisonsJoueur1 = [[&#34;Toulouse&#34;,&#34;Muret&#34;],
+</span></span><span class="line"><span class="cl">                   [&#34;Toulouse&#34;,&#34;Montauban&#34;],
+</span></span><span class="line"><span class="cl">                   [&#34;Gaillac&#34;,&#34;St Sulpice&#34;],
+</span></span><span class="line"><span class="cl">                   [&#34;Muret&#34;,&#34;Pamiers&#34;]] </span></span></code></pre></div>
+<p>Remarque : Seules les liaisons directes existent, par exemple [&ldquo;Toulouse&rdquo;,&ldquo;Muret&rdquo;] ou [&ldquo;Muret&rdquo;,&ldquo;Toulouse&rdquo;]. Par contre, le tableau [&ldquo;Toulouse&rdquo;,&ldquo;Mazamet&rdquo;] n&rsquo;existe pas, puisque la ligne Toulouse-Mazamet passe par Castres.</p>
+<ul>
+<li>Dictionnaire associé à un joueur : On code la liste des villes et des trajets possédée
+par un joueur en utilisant un dictionnaire de tableaux. Chaque clef de ce
+dictionnaire est une ville de départ, et chaque valeur est un tableau contenant les
+villes d&rsquo;arrivée possibles en fonction des liaisons possédées par le joueur.
+Le dictionnaire de tableaux du joueur 1 est donné ci-dessous :</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DictJoueur1 = {
+</span></span><span class="line"><span class="cl">              &#34;Toulouse&#34;:[&#34;Muret&#34;,&#34;Montauban&#34;],
+</span></span><span class="line"><span class="cl">              &#34;Montauban&#34;:[&#34;Toulouse&#34;],
+</span></span><span class="line"><span class="cl">              &#34;Gaillac&#34;:[&#34;St Sulpice&#34;],
+</span></span><span class="line"><span class="cl">              &#34;St Sulpice&#34;:[&#34;Gaillac&#34;],
+</span></span><span class="line"><span class="cl">              &#34;Muret&#34;:[&#34;Toulouse&#34;,&#34;Pamiers&#34;],
+</span></span><span class="line"><span class="cl">              &#34;Pamiers&#34;:[&#34;Muret&#34;]}</span></span></code></pre></div>
+<h2 id="question-1-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Expliquer pourquoi la liste des liaisons suivante n&rsquo;est pas valide :</p>
+<p><code>tableauliaisons = [[&quot;Toulouse&quot;,&quot;Auch&quot;], [&quot;Luchon&quot;,&quot;Muret&quot;], [&quot;Quillan&quot;,&quot;Limoux&quot;] ]</code></p>
+<h2 id="question-2-1">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette question concerne le joueur n°2 (Rappel : les liaisons possédées par le joueur n°2 sont représentées par un rectangle blanc dans l’annexe 2 de l’exercice 2).</p>
+<p>A.  Donner le tableau <code>liaisonsJoueur2</code>, des liaisons possédées par le joueur n°2.</p>
+<p>B.  Recopier et compléter le dictionnaire suivant, associé au joueur n°2 :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DictJoueur2 = {
+</span></span><span class="line"><span class="cl">              &#34;Toulouse&#34;:[&#34;Castres&#34;,&#34;Castelnaudary&#34;],
+</span></span><span class="line"><span class="cl">              …
+</span></span><span class="line"><span class="cl">              }</span></span></code></pre></div>
+<h2 id="question-3-1">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>À partir du tableau de tableaux contenant les liaisons d&rsquo;un joueur, on souhaite
+construire le dictionnaire correspondant au joueur. Une première proposition a
+abouti à la fonction construireDict ci-dessous</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">construireDict</span><span class="p">(</span><span class="n">listeLiaisons</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  listeLiaisons est un tableau de tableaux représentant la
+</span></span></span><span class="line"><span class="cl"><span class="s2">  liste des liaisons d&#39;un joueur comme décrit dans le problème
+</span></span></span><span class="line"><span class="cl"><span class="s2">   &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Dict</span><span class="o">=</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">liaison</span> <span class="ow">in</span> <span class="n">listeLiaisons</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">villeA</span> <span class="o">=</span> <span class="n">liaison</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">villeB</span> <span class="o">=</span> <span class="n">liaison</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">villeA</span> <span class="ow">in</span> <span class="n">Dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Dict</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">destinationsA</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="ow">not</span> <span class="n">villeB</span> <span class="ow">in</span> <span class="n">destinationsA</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">destinationsA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">villeB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Dict</span> </span></span></code></pre></div>
+<p>A.  Écrire sur votre copie un assert dans la fonction construireDict qui permet
+de vérifier que la listeLiaisons n’est pas vide.</p>
+<p>B.  Sur votre copie, donner le résultat de cette fonction ayant comme argument la variable liaisonsJoueur1 donnée dans l’énoncé et expliquer en quoi cette
+fonction ne répond que partiellement à la demande.</p>
+<p>C.  La fonction construireDict, définie ci-dessus, est donc partiellement
+inexacte. Compléter la fonction construireDict pour qu’elle génère bien l’ensemble du dictionnaire de tableaux correspondant à la liste de liaisons données en argument. À l’aide des numéros de lignes, on précisera où est inséré ce code.</p>
+<p>
+<figure >
+    
+        <img src="../images/page1_1.png" alt="1282 × 862" />
+    
+    
+    <figcaption>
+        <p>
+        1282 × 862
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/page1_2.png" alt="1318 × 878" />
+    
+    
+    <figcaption>
+        <p>
+        1318 × 878
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</p>
+<h1 id="bac-2021-metropole-sept-exercice-5">Bac 2021 Metropole Sept: Exercice 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Principaux thèmes abordés : Traitement de données en tables (CSV) et langages et programmation (spécification).</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tableau</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">csv</span></span></p>
+<p>Afin d’améliorer l’ergonomie d’un logiciel de traitement des inscriptions dans une université, un programmeur souhaite exploiter l’intelligence artificielle pour renseigner certains champs par auto-complétion. Il s’intéresse au descripteur « genre » (masculin, féminin ou indéterminé).</p>
+<p>Pour cela il propose d’exploiter les dernières lettres du prénom
+pour proposer automatiquement le genre.</p>
+<p>Pour vérifier son hypothèse, il récupère un fichier CSV associant plus de 60 000 prénoms du monde entier au genre de la personne portant ce prénom. En utilisant seulement la dernière lettre, le taux de réussite de sa démarche est de 72,9% avec la fonction définie ci-dessous :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">genre</span><span class="p">(</span><span class="n">prenom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">liste_M</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;é&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;þ&#39;</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;ç&#39;</span><span class="p">,</span> <span class="s1">&#39;ö&#39;</span><span class="p">,</span> <span class="s1">&#39;ã&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="s1">&#39;â&#39;</span><span class="p">,</span> <span class="s1">&#39;ï&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste_F</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;ä&#39;</span><span class="p">,</span> <span class="s1">&#39;ü&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;ë&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">prenom</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">prenom</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">liste_M</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;M&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">elif</span> <span class="n">prenom</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">prenom</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">liste_F</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;F&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;I&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pour rappel, C.lower() convertit le caractère C en minuscule.</span></span></span></code></pre></div>
+<h2 id="1-appropriation">1. Appropriation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Expliquer ce qu’est un fichier CSV.</p>
+<p>B.  Donner le type de l’argument prenom de la fonction <code>genre</code>, et le type de la réponse renvoyée.</p>
+<h2 id="2-développement">2. Développement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour effectuer son étude sur les prénoms à partir du fichier CSV, le programmeur souhaite utiliser la bibliothèque csv.</p>
+<p>A.  La bibliothèque csv est un module natif du moteur python.
+Donner, dans ce cas, l’instruction d’importation.</p>
+<p>B.  Au cours du développement de son projet, le programmeur souhaite insérer une assertion sur l’argument donné à la fonction.
+Proposer une assertion sur le type de l’argument qui corrige une erreur lorsque
+le type ne correspond pas à celui attendu.</p>
+<p>C.  Avant le déploiement de sa solution, le programmeur décide de rendre sa fonction plus robuste.
+Pour cela il veut remplacer l’assertion proposée dans la question <strong>2.B)</strong> par une
+gestion de l’argument pour éviter toutes erreurs empêchant la poursuite du programme.
+Proposer alors une ou plusieurs instructions en Python utilisant l’argument afin de s’assurer que la fonction se termine quel que soit le type de l’argument.</p>
+<h2 id="3-améliorations">3. Améliorations<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En prenant en compte les deux dernières lettres du prénom, il parvient à augmenter son taux de réussite à 74,4%. Pour cela, son étude du fichier CSV lui permet de créer deux listes : <code>liste_M2</code> pour les terminaisons de deux lettres associées aux prénoms masculins et <code>liste_F2</code> pour les prénoms féminins.
+Sur votre copie, recopier et modifier la structure conditionnelle (lignes 8 à 13) de la fonction genre afin de prendre en compte les terminaisons de deux lettres des listes <code>liste_M2</code> et <code>liste_F2</code>.</p>
+<h1 id="bac-2021-etranger1-exercice-2">Bac 2021 Etranger1: Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Notion abordée : structures de données (dictionnaires)</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">dictionnaires</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tuple</span></span></p>
+<p>Une ville souhaite gérer son parc de vélos en location partagée. L’ensemble de la flotte de vélos est stocké dans une table de données représentée en langage Python par un dictionnaire contenant des associations de type <code>id_velo: dict_velo</code> où <code>id_velo</code> est un nombre entier compris entre 1 et 199 qui correspond à l&rsquo;identifiant unique du vélo et <code>dict_velo</code> est un dictionnaire dont les clés sont : <code>&quot;type&quot;, &quot;etat&quot;, &quot;station&quot;</code>.</p>
+<p>Les valeurs associées aux clés <code>&quot;type&quot;, &quot;etat&quot;, &quot;station&quot;</code>de <code>dict_velo</code> sont de type chaînes de caractères ou nombre entier :</p>
+<ul>
+<li><code>&quot;type&quot;</code> : chaîne de caractères qui peut prendre la valeur &ldquo;electrique&rdquo; ou
+&ldquo;classique&rdquo;</li>
+<li><code>&quot;état&quot;</code> : nombre entier qui peut prendre la valeur 1 si le vélo est disponible, 0 si le vélo est en déplacement, -1 si le vélo est en panne</li>
+<li><code>&quot;station&quot;</code>: chaînes de caractères qui identifie la station où est garé le vélo.</li>
+</ul>
+<p>Dans le cas où le vélo est en déplacement ou en panne, <code>&quot;station&quot;</code> correspond à celle où il a été dernièrement stationné.</p>
+<p>Voici un extrait de la table de données :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">flotte = {
+</span></span><span class="line"><span class="cl">  12 : {&#34;type&#34; : &#34;electrique&#34;, &#34;etat&#34; : 1, &#34;station&#34; : &#34;Prefecture&#34;},
+</span></span><span class="line"><span class="cl">  80 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : 0, &#34;station&#34; : &#34;Saint-Leu&#34;},
+</span></span><span class="line"><span class="cl">  45 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : 1, &#34;station&#34; : &#34;Baraban&#34;},
+</span></span><span class="line"><span class="cl">  41 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : -1, &#34;station&#34; : &#34;Citadelle&#34;},
+</span></span><span class="line"><span class="cl">  26 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : 1, &#34;station&#34; : &#34;Coliseum&#34;},
+</span></span><span class="line"><span class="cl">  28 : {&#34;type&#34; : &#34;electrique&#34;, &#34;etat&#34; : 0, &#34;station&#34; : &#34;Coliseum&#34;},
+</span></span><span class="line"><span class="cl">  74 : {&#34;type&#34; : &#34;electrique&#34;, &#34;etat&#34; : 1, &#34;station&#34; : &#34;Jacobins&#34;},
+</span></span><span class="line"><span class="cl">  13 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : 0, &#34;station&#34; : &#34;Citadelle&#34;},
+</span></span><span class="line"><span class="cl">  83 : {&#34;type&#34; : &#34;classique&#34;, &#34;etat&#34; : -1, &#34;station&#34; : &#34;Saint-Leu&#34;},
+</span></span><span class="line"><span class="cl">  22 : {&#34;type&#34; : &#34;electrique&#34;, &#34;etat&#34; : -1, &#34;station&#34; : &#34;Joffre&#34;}
+</span></span><span class="line"><span class="cl">  }</span></span></code></pre></div>
+<p><code>flotte</code> étant une variable globale du programme.</p>
+<p>Toutes les questions de cet exercice se réfèrent à l&rsquo;extrait de la table flotte fourni cidessus. L&rsquo;annexe 1 présente un rappel sur les dictionnaires en langage Python.</p>
+<h2 id="question-1-2">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>1.a. Que renvoie l&rsquo;instruction <code>flotte[26]</code> ?</li>
+<li>1.b. Que renvoie l&rsquo;instruction <code>flotte[80][&quot;etat&quot;]</code> ?</li>
+<li>1.c. Que renvoie l&rsquo;instruction <code>flotte[99][&quot;etat&quot;]</code> ?</li>
+</ul>
+<h2 id="question-2-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Voici le script d&rsquo;une fonction :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">proposition</span><span class="p">(</span><span class="n">choix</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">flotte</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&#34;type&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">choix</span> <span class="ow">and</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&#34;etat&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">flotte</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s2">&#34;station&#34;</span><span class="p">]</span></span></span></code></pre></div>
+<ul>
+<li>2.a. <strong>Quelles sont</strong> les valeurs possibles de la variable <code>choix</code> ?</li>
+<li>2.b. <strong>Expliquer</strong> ce que renvoie la fonction lorsque l&rsquo;on choisit comme paramètre l&rsquo;une des valeurs possibles de la variable <code>choix</code>.</li>
+</ul>
+<h2 id="question-3-2">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>3.a. Écrire un script en langage Python qui affiche les identifiants <code>(id_velo)</code> de tous les vélos disponibles à la station <code>&quot;Citadelle&quot;</code>.</li>
+<li>3.b. Écrire un script en langage Python qui permet d&rsquo;afficher l&rsquo;identifiant
+<code>(id_velo)</code> et la station de tous les vélos électriques qui ne sont pas en panne.</li>
+</ul>
+<h2 id="question-4-1">Question 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On dispose d&rsquo;une table de données des positions GPS de toutes les stations,
+dont un extrait est donné ci-dessous. Cette table est stockée sous forme d’un
+dictionnaire.</p>
+<p>Chaque élément du dictionnaire est du type:
+<code>'nom de la station' : (latitude, longitude)</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">stations</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Prefecture&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8905</span><span class="p">,</span> <span class="mf">2.2967</span><span class="p">)</span> <span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Saint-Leu&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8982</span><span class="p">,</span> <span class="mf">2.3017</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Coliseum&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8942</span><span class="p">,</span> <span class="mf">2.2874</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;Jacobins&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mf">49.8912</span><span class="p">,</span> <span class="mf">2.3016</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div>
+<p>On <strong>admet</strong> que l&rsquo;on dispose d&rsquo;une fonction <code>distance(p1, p2)</code> permettant de
+renvoyer la distance en mètres entre deux positions données par leurs
+coordonnées GPS (latitude et longitude).</p>
+<p>Cette fonction prend en paramètre deux tuples représentant les coordonnées des
+deux positions GPS et renvoie un nombre entier représentant cette distance en
+mètres.</p>
+<p>Par exemple, <code>distance((49.8905, 2.2967), (49.8912, 2.3016))</code> renvoie 9591</p>
+<p>Écrire une fonction qui prend en paramètre les coordonnées GPS de l&rsquo;utilisateur
+sous forme d’un tuple et qui renvoie, pour chaque station située à moins de 800
+mètres de l&rsquo;utilisateur :</p>
+<ul>
+<li>le nom de la station ;</li>
+<li>la distance entre l&rsquo;utilisateur et la station ;</li>
+<li>les identifiants des vélos disponibles dans cette station.
+Une station où aucun vélo n’est disponible ne doit pas être affichée.</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e" checked><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="active " data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
+    <script src="/js/theme.js?1782229390" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

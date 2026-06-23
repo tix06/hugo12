@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="architecture :: allopizza">
+    <meta name="twitter:description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta property="og:url" content="//localhost:1313/nsi/sujets/page6/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="architecture :: allopizza">
+    <meta property="og:description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI term">
+    <meta itemprop="name" content="architecture :: allopizza">
+    <meta itemprop="description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta itemprop="wordCount" content="2743">
+    <title>architecture :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
+    <script src="/js/search-lunr.js?1782229390" defer></script>
+    <script src="/js/search.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
+    <link href="/css/theme.css?1782229390" rel="stylesheet">
+    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi\/sujets\/page6\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi/sujets/page6/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#question-1">Question 1</a></li>
+    <li><a href="#question-2">Question 2</a></li>
+    <li><a href="#question-3">Question 3</a></li>
+    <li><a href="#question-4">Question 4</a></li>
+    <li><a href="#question-5">Question 5</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#question-1-1">Question 1</a></li>
+    <li><a href="#question-2-1">Question 2</a></li>
+    <li><a href="#question-3-1">Question 3</a></li>
+    <li><a href="#question-4-sup-hors-bac">Question 4 (sup hors bac)</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#les-états-possibles-dun-processus-sont--prêt-élu-terminé-et-bloqué">Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.</a>
+      <ul>
+        <li><a href="#expliquer-à-quoi-correspond-létat-élu">Expliquer à quoi correspond l’état élu.</a></li>
+        <li><a href="#proposer-un-schéma-illustrant-les-passages-entre-les-différents-états">Proposer un schéma illustrant les passages entre les différents états.</a></li>
+      </ul>
+    </li>
+    <li><a href="#parmi-les-propositions-suivantes-recopier-celle-qui-décrit-le-fonctionnement-des-entréessorties-dans-une-file-">Parmi les propositions suivantes, recopier celle qui décrit le fonctionnement des entrées/sorties dans une file :</a></li>
+    <li><a href="#on-suppose-que-les-quatre-processus-arrivent-dans-la-file-et-y-sont-placés-dans-lordre-c-c-c-et-c">On suppose que les quatre processus arrivent dans la file et y sont placés dans l’ordre C₁, C₂, C₃ et C₄.</a></li>
+    <li><a href="#on-trouvera-ci-dessous-deux-programmes-rédigés-en-pseudo-code">On trouvera ci-dessous deux programmes rédigés en pseudo-code.</a>
+      <ul>
+        <li><a href="#en-supposant-que-les-processus-correspondant-à-ces-programmes-sexécutent-simultanément-exécution-concurrente-expliquer-le-problème-qui-peut-être-rencontré">En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.</a></li>
+        <li><a href="#proposer-une-modification-du-programme-2-permettant-déviter-ce-problème">Proposer une modification du programme 2 permettant d’éviter ce problème.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/sujets/index.html"><span itemprop="name">sujets bac ecrit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">architecture</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/sujets/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page8/index.html" title="algo et recursivite (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page5/index.html" title="BDD SQL (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="architecture">architecture</h1>
+
+<h1 id="bac-2021-centres-étrangers-2-exercice-3">Bac 2021 Centres étrangers 2: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Thèmes abordés : conversion décimal/binaire, table de vérité, codage des caractères</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ascii</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">xor</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">chiffrement</span></span></p>
+<p>L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de
+caractères à l’aide du codage ASCII et de la fonction logique XOR.</p>
+<p><strong>1.</strong> Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation
+binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre
+89.</p>
+<p><strong>2.</strong> La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole
+$\bigoplus$, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais
+pas les deux.</p>
+<p>On donne ci-contre la table de vérité de la fonction XOR:</p>
+
+<figure >
+    
+        <img src="../images/xor1.png"  />
+    
+    
+</figure>
+
+<p>Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor2.png"  />
+    
+    
+</figure>
+
+Poser et calculer l’opération : $11001110 \bigoplus 01101011$</p>
+<p><strong>3.</strong> On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les
+caractères de A à Z.
+On peut alors considérer l’opération XOR entre deux caractères en effectuant
+le XOR entre les codes ASCII des deux caractères. Par exemple : &lsquo;F&rsquo; XOR &lsquo;S&rsquo;
+sera le résultat de $01000110 \bigoplus 01010011$.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor3.png"  />
+    
+    
+</figure>
+
+On souhaite mettre au point une méthode de cryptage à l’aide de la fonction
+XOR.</p>
+<p>Pour cela, on dispose d’un message à crypter et d’une clé de cryptage de même
+longueur que ce message. Le message et la clé sont composés uniquement
+des caractères du tableau ci-dessus et on applique la fonction XOR caractère
+par caractère entre les lettres du message à crypter et les lettres de la clé de
+cryptage.</p>
+<p>Par exemple, voici le cryptage du mot ALPHA à l’aide de la clé YAKYA :</p>
+<p>
+<figure >
+    
+        <img src="../images/xor4.png"  />
+    
+    
+</figure>
+
+Ecrire une fonction <code>xor_crypt(message, cle)</code> qui prend en paramètres deux
+chaînes de caractères et qui renvoie la liste des entiers correspondant au
+message crypté.</p>
+<p><em>Aide :</em></p>
+<ul>
+<li>On pourra utiliser la fonction native du langage Python <code>ord(c)</code> qui prend en paramètre un caractère c et qui renvoie un nombre représentant le code ASCII du caractère c.</li>
+<li>On considère également que l’on dispose d’une fonction écrite <code>xor(n1,n2)</code> qui prend en paramètre deux nombres n1 et n2 et qui renvoie le résultat de n1 ⊕ n2.</li>
+</ul>
+<p><strong>4.</strong> On souhaite maintenant générer une clé de la taille du message à partir d’un
+mot quelconque. On considère que le mot choisi est plus court que le
+message, il faut donc le reproduire un certain nombre de fois pour créer une
+clé de la même longueur que le message.</p>
+<p>Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la
+clé sera YAKYAKYA.)</p>
+<p>Créer une fonction <code>generer_cle(mot,n)</code> qui renvoie la clé de longueur n à partir de la chaîne de caractères mot.</p>
+<p><strong>5.</strong> Recopier et compléter la table de vérité de $(𝑬𝟏 \bigoplus 𝑬𝟐) \bigoplus 𝑬𝟐$.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor5.png"  />
+    
+    
+</figure>
+
+A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.</p>
+<h1 id="bac-2022-polynesie-exercice-2">Bac 2022 Polynesie: Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice traite du thème « architecture matérielle », et principalement d&rsquo;ordonnancement et d&rsquo;expressions booléennes.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ordonnancement</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span></p>
+<p>Un système est composé de 4 périphériques, numérotés de 0 à 3, et d&rsquo;une mémoire, reliés entre eux par un bus auquel est également connecté un dispositif ordonnanceur.
+À l&rsquo;aide d&rsquo;un signal spécifique envoyé sur le bus, l&rsquo;ordonnanceur sollicite à tour de rôle les périphériques pour qu&rsquo;ils indiquent le type d&rsquo;opération (lecture ou écriture) qu&rsquo;ils souhaitent effectuer, et l&rsquo;adresse mémoire concernée.</p>
+<p>Un tour a lieu quand les 4 périphériques ont été sollicités. <strong>Au début d&rsquo;un nouveau tour, on considère que toutes les adresses sont disponibles en lecture et écriture.</strong></p>
+<p>Si un périphérique demande l&rsquo;écriture à une adresse mémoire <strong>à laquelle on n&rsquo;a pas encore accédé</strong> pendant le tour, l&rsquo;ordonnanceur répond &ldquo;OK&rdquo; et l&rsquo;écriture a lieu.
+Si on a déjà demandé la lecture ou l&rsquo;écriture à cette adresse, l&rsquo;ordonnanceur répond &ldquo;ATT&rdquo; et l&rsquo;opération n&rsquo;a pas lieu.</p>
+<p>Si un périphérique demande la lecture à une adresse à laquelle on n&rsquo;a pas encore accédé en écriture pendant le tour, l&rsquo;ordonnanceur répond &ldquo;OK&rdquo; et la lecture a lieu.
+Plusieurs lectures peuvent avoir donc lieu pendant le même tour à la même adresse.</p>
+<p>Si un périphérique demande la lecture à une adresse à laquelle on a déjà accédé en écriture, l&rsquo;ordonnanceur répond &ldquo;ATT&rdquo; et la lecture n&rsquo;a pas lieu.</p>
+<p>Ainsi, pendant un tour, une adresse peut être utilisée soit une seule fois en écriture, soit autant de fois qu&rsquo;on veut en lecture, soit pas utilisée.</p>
+<p>Si un périphérique ne peut pas effectuer une opération à une adresse, il demande la même opération à la même adresse au tour suivant.</p>
+<h2 id="question-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le tableau donné en annexe 1 indique, sur chaque ligne, le périphérique
+sélectionné, l&rsquo;adresse à laquelle il souhaite accéder et l&rsquo;opération à effectuer sur cette adresse. Compléter dans la dernière colonne de cette annexe, à rendre avec la copie, la réponse donnée par l&rsquo;ordonnanceur pour chaque opération.</p>
+<p>On suppose dans toute la suite que :</p>
+<ul>
+<li>le périphérique 0 écrit systématiquement à l&rsquo;adresse 10 ;</li>
+<li>le périphérique 1 lit systématiquement à l&rsquo;adresse 10 ;</li>
+<li>le périphérique 2 écrit alternativement aux adresses 11 et 12 ;</li>
+<li>le périphérique 3 lit alternativement aux adresses 11 et 12 ;</li>
+</ul>
+<p>Pour les périphériques 2 et 3, le changement d’adresse n’est effectif que lorsque l’opération et réalisée.</p>
+<h2 id="question-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On suppose que les périphériques sont sélectionnés à chaque tour dans l&rsquo;ordre
+0 ; 1 ; 2 ; 3. Expliquer ce qu&rsquo;il se passe pour le périphérique 1.</p>
+<p>Les périphériques sont sollicités de la manière suivante lors de quatre tours successifs :</p>
+<ul>
+<li>au premier tour, ils sont sollicités dans l’ordre 0 ; 1 ; 2 ; 3 ;</li>
+<li>au deuxième tour, dans l’ordre 1 ; 2 ; 3 ; 0 ;</li>
+<li>au troisième tour, 2 ; 3 ; 0 ; 1 ;</li>
+<li>puis 3 ; 0 ; 1 ; 2 au dernier tour.</li>
+<li>Et on recommence&hellip;</li>
+</ul>
+<h2 id="question-3">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Préciser pour chacun de ces tours si le périphérique 0 peut écrire et si le
+périphérique 1 peut lire.</p>
+<p>B.  En déduire la proportion des valeurs écrites par le périphérique 0 qui sont
+effectivement lues par le périphérique 1.</p>
+<p>On change la méthode d&rsquo;ordonnancement : on détermine l&rsquo;ordre des périphériques au cours d&rsquo;un tour à l&rsquo;aide de deux listes d&rsquo;attente <code>ATTL_L</code> et <code>ATT_E</code> établies au tour précédent.</p>
+<p>Au cours d&rsquo;un tour, on place dans la liste <code>ATT_L</code> toutes les opérations de lecture mises en attente, et dans la liste d&rsquo;attente <code>ATT_E</code> toutes les opérations d&rsquo;écriture mises en attente.</p>
+<p>Au début du tour suivant, on établit l&rsquo;ordre d&rsquo;interrogation des périphériques en procédant ainsi :</p>
+<ul>
+<li>on interroge ceux présents dans la liste ATT_L, par ordre croissant d&rsquo;adresse,</li>
+<li>on interroge ensuite ceux présents dans la liste ATT_E, par ordre croissant
+d&rsquo;adresse,</li>
+<li>puis on interroge les périphériques restants, par ordre croissant d’adresse.</li>
+</ul>
+<h2 id="question-4">Question 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Compléter et rendre avec la copie le tableau fourni en annexe 2, en utilisant
+l&rsquo;ordonnancement décrit ci-dessus, sur 3 tours.</p>
+<p>Les colonnes e0 et e1 du tableau suivant recensent les deux chiffres de l&rsquo;écriture binaire de l’entier n de la première colonne.</p>
+<table>
+	<thead>
+			<tr>
+					<th>nombre n</th>
+					<th>écriture binaire de n sur deux bits</th>
+					<th>e1</th>
+					<th>e0</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>00</td>
+					<td>0</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>1</td>
+					<td>01</td>
+					<td>0</td>
+					<td>1</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>10</td>
+					<td>1</td>
+					<td>0</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>11</td>
+					<td>1</td>
+					<td>1</td>
+			</tr>
+	</tbody>
+</table>
+<p>L&rsquo;ordonnanceur attribue à deux signaux sur le bus de données les valeurs de <strong>e0</strong> et <strong>e1</strong> associées au numéro du circuit qu’il veut sélectionner. On souhaite construire à l&rsquo;aide des portes ET, OU et NON un circuit pour chaque périphérique.</p>
+<p>Chacun des quatre circuits à construire prend en entrée deux signaux <strong>e0</strong> et <strong>e1</strong>, le signal de sortie <strong>s</strong> valant 1 uniquement lorsque les niveaux de <strong>e0</strong> et <strong>e1</strong> correspondent aux bits de l&rsquo;écriture en binaire du numéro du périphérique correspondant.</p>
+<p>Par exemple, le circuit ci-dessous réalise la sélection du périphérique 3. En effet, le signal <strong>s</strong> vaut 1 si et seulement si <strong>e0</strong> et <strong>e1</strong> valent tous les deux 1.</p>
+
+<figure >
+    
+        <img src="../images/page6_1.png" alt="470 × 138" />
+    
+    
+    <figcaption>
+        <p>
+        470 × 138
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="question-5">Question 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A.  Recopier sur la copie et indiquer dans le circuit ci-dessous les entrées e0 et e1 de façon à ce que ce circuit sélectionne le périphérique 1.</p>
+<p>
+<figure >
+    
+        <img src="../images/page6_2.png" alt="566 × 170" />
+    
+    
+    <figcaption>
+        <p>
+        566 × 170
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+B.  Dessiner un circuit constitué d&rsquo;une porte ET et d&rsquo;une porte NON, qui
+sélectionne le périphérique 2.
+c. Dessiner un circuit permettant de sélectionner le périphérique 0.</p>
+<p>
+<figure >
+    
+        <img src="../images/page6_3.png" alt="1252 × 590" />
+    
+    
+    <figcaption>
+        <p>
+        1252 × 590
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/page6_4.png" alt="1252 × 788" />
+    
+    
+    <figcaption>
+        <p>
+        1252 × 788
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+</p>
+<h1 id="bac-2022-metropole1-exercice-3">Bac 2022 Metropole1: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Cet exercice porte sur les représentations binaires et les protocoles de routage.</p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">routage</span></span></p>
+<h2 id="question-1-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Une adresse IPv4 est représentée sous la forme de 4 nombres séparés par des
+points. Chacun de ces 4 nombres peut être représenté sur un octet.</p>
+<p>A.  Donner en écriture décimale l’adresse IPv4 correspondant à l’écriture binaire :</p>
+<p>11000000.10101000.10000000.10000011</p>
+<p>B.  Tous les ordinateurs du réseau A ont une adresse IPv4 de la forme :
+192.168.128._ _ _ , où seul le dernier octet (représenté par _ _ _ ) diffère.
+Donner le nombre d’adresses différentes possibles du réseau A.</p>
+<h2 id="question-2-1">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On rappelle que le protocole RIP cherche à minimiser le nombre de routeurs
+traversés (qui correspond à la métrique). On donne les tables de routage d’un
+réseau informatique composé de 5 routeurs (appelés A, B, C, D et E), chacun
+associé directement à un réseau du même nom obtenues avec le protocole RIP :</p>
+<p>
+<figure >
+    
+        <img src="../images/page6_5.png" alt="1234 × 916" />
+    
+    
+    <figcaption>
+        <p>
+        1234 × 916
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+A.  Donner la liste des routeurs avec lesquels le routeur A est directement
+relié.</p>
+<p>B.  Représenter graphiquement et de manière sommaire les 5 routeurs
+ainsi que les liaisons existantes entre ceux-ci.</p>
+<h2 id="question-3-1">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le protocole OSPF est un protocole de routage qui cherche à minimiser la
+somme des métriques des liaisons entre routeurs.</p>
+<p>Dans le protocole de routage OSPF le débit des liaisons entre routeurs agit
+sur la métrique via la relation : $metrique = \tfrac{10^8}{debit}$  dans laquelle le débit est exprimé en bit par seconde (bps).</p>
+<p>On rappelle qu’un kbps est égal à $10^3$  bps et qu’un Mbps est égal à $10^6$  bps.</p>
+<p>A. Recopier sur votre copie et compléter le tableau suivant :</p>
+<table>
+	<thead>
+			<tr>
+					<th>Débit</th>
+					<th>100 kbps</th>
+					<th>500 kbps</th>
+					<th>?</th>
+					<th>100 Mbps</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Métrique associé</td>
+					<td>1000</td>
+					<td>?</td>
+					<td>10</td>
+					<td>1</td>
+			</tr>
+	</tbody>
+</table>
+<p>
+<figure >
+    
+        <img src="../images/page6_6.png" alt="1230 × 644" />
+    
+    
+    <figcaption>
+        <p>
+        1230 × 644
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+Les nombres présents sur les liaisons représentent les coûts des routes avec le
+protocole OSPF.</p>
+<p>B.  Indiquer le chemin emprunté par un message d’un ordinateur du réseau F à
+destination d’un ordinateur du réseau I.
+Justifier votre réponse.</p>
+<p>C.  Recopier et compléter la table de routage du routeur F.</p>
+<p>D.  Citer une unique panne qui suffirait à ce que toutes les données des échanges de tout autre réseau à destination du réseau F transitent par le routeur G.
+Expliquer en détail votre réponse.</p>
+<h2 id="question-4-sup-hors-bac">Question 4 (sup hors bac)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A. Donner les caractéristiques du graphe de réseaux schématisé plus haut.</p>
+<p>On donne cette fois le tableau constitué à partir de l&rsquo;algorithme de Dijkstra, appliqué à ce même graphe de reseaux:</p>
+<ul>
+<li>le colonnes représentent les sommets à atteindre</li>
+<li>les lignes sont les sommets de départ</li>
+<li>On renseigne dans les cases la distance cumulée depuis le noeud <strong>F</strong>, jusqu&rsquo;au noeud de la colonne, en passant par le noeud adjacent de la ligne. Par exemple, <strong>I</strong> peut être atteint en venant du noeud <strong>K</strong> avec une longueur de 13.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th></th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+					<th>K</th>
+					<th>L</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>F</td>
+					<td></td>
+					<td>5</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>G</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>H</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>6</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>I</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>J</td>
+					<td>8</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>8</td>
+					<td>11</td>
+			</tr>
+			<tr>
+					<td>K</td>
+					<td></td>
+					<td></td>
+					<td>13</td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>L</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<p>B. Représenter le graphe des chemins pour explorer depuis <strong>F</strong> les autres noeuds, en suivant le chemin <em>le plus court</em>.</p>
+<p>C. Ce graphe représente l&rsquo;arbre couvrant du graphe. Donner les caractéristiques de cet arbre.</p>
+<p>D. Quel est le chemin le plus court pour aller de F à G?</p>
+<p>E. Même question, mais cette fois pour aller de H à K.</p>
+<h1 id="bac-2024-metropole1-exercice-2">bac 2024 metropole1 exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Cet exercice traite de protocoles de routage, de sécurité des communications et de
+base de données relationnelle.</p>
+<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">routage</span></span>
+<p>Une agence de voyage propose des croisières en bateau. Chaque croisière a un nom
+unique et passe par quatre escales correspondant à des villes qui ont elles aussi des noms différents.
+Pour gérer les réservations de ses clients, l’agence utilise une base de données.</p>
+<p><strong>Partie A</strong></p>
+<p>L’agence de voyage possède deux bureaux distincts.
+Elle passe par un prestataire de service qui héberge sa base de données et utilise un système de gestion de base de données relationnelle.
+Vous trouverez ci-après un schéma du réseau entre les deux bureaux de l’agence de
+voyage et le prestataire.
+On peut y voir les différents routeurs (nommés de A à I) ainsi que le coût des liaisons entre eux.</p>
+
+<figure >
+    
+        <img src="../images/page6_9.png" alt="Topologie du réseau" />
+    
+    
+    <figcaption>
+        <p>
+        Topologie du réseau
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<ol>
+<li>Donner deux services rendus par un système de gestion de bases de données
+relationnelles.</li>
+</ol>
+<p>Le protocole RIP (Routing Information Protocol) est un protocole de routage qui
+minimise le nombre de routeurs par lesquels les paquets transitent.</p>
+<p>Le protocole OSPF (Open Shortest Path First) est un protocole de routage qui
+minimise le coût du transit des paquets. Ce coût s&rsquo;evalue grâce à la loi:</p>
+$$cout = \tfrac{18^8}{Debit}$$<ol start="2">
+<li>Donner la route suivie par une requête issue du bureau numéro 1 jusqu’au
+prestataire si on utilise le protocole RIP.</li>
+<li>Le debit d&rsquo;une liaison, utilisé pour le calcul du coût, s&rsquo;exprime en bits par seconde. Donner une définition de ce qu&rsquo;est le <em>débit</em></li>
+<li>Calculer le coût pour une liaison de débit 100 Mb par s. <em>(fast ethernet)</em></li>
+<li>Donner les deux routes que pourrait suivre une requête issue du bureau numéro
+2 jusqu’au prestataire si on utilise le protocole OSPF. Donner le coût de chaque
+route.</li>
+</ol>
+<h1 id="bac-2021-candidat-libre-exercice-3">bac 2021 candidat libre exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">cmd unix</span></span>
+<p>La commande UNIX <code>ps</code> présente un cliché instantané des processus en cours d’exécution.</p>
+<p>Avec l’option <code>−eo pid,ppid,stat,command</code>, cette commande affiche dans l’ordre l’identifiant du processus <code>PID</code> (process identifier), le <code>PPID</code> (parent process identifier), l’état <code>STAT</code> et le nom de la commande à l’origine du processus.</p>
+<p>Les valeurs du champ <code>STAT</code> indique l’état des processus :</p>
+<p><code>R</code> : processus en cours d’exécution</p>
+<p><code>S</code> : processus endormi</p>
+<p>Sur un ordinateur, on exécute la commande <code>ps −eo pid,ppid,stat,command</code> et on obtient un affichage dont on donne ci-dessous un extrait:</p>
+
+<figure >
+    
+        <img src="../images/page6_7.png"  />
+    
+    
+</figure>
+
+<p>À l’aide de cet affichage, répondre aux questions ci-dessous.</p>
+<ol>
+<li>Quel est le nom de la première commande exécutée par le système d’exploitation lors du démarrage?</li>
+<li>Quels sont les identifiants des processus actifs sur cet ordinateur au moment de l’appel de la commande <code>ps</code>? Justifier la réponse.</li>
+<li>Depuis quelle application a-t-on exécuté la commande <code>ps</code>? Donner les autres commandes qui ont été exécutées à partir de cette application.</li>
+<li>Expliquer l’ordre dans lequel les deux commandes <code>python programme1.py</code> et <code>python programme2.py</code> ont été exécutées.</li>
+<li>Peut-on prédire que l’une des deux commandes <code>python programme1.py</code> et <code>python programme2.py</code> finira avant l’autre?</li>
+</ol>
+<h1 id="bac-2021-candidat-libre-exercice-2-sujet-2">bac 2021 candidat libre exercice 2 sujet 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ordonnancement</span></span>
+<h2 id="les-états-possibles-dun-processus-sont--prêt-élu-terminé-et-bloqué">Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="expliquer-à-quoi-correspond-létat-élu">Expliquer à quoi correspond l’état élu.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="proposer-un-schéma-illustrant-les-passages-entre-les-différents-états">Proposer un schéma illustrant les passages entre les différents états.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On suppose que quatre processus C₁, C₂, C₃ et C₄ sont créés sur un ordinateur, et qu’aucun autre processus n’est lancé sur celui-ci, ni préalablement ni pendant l’exécution des quatre processus.</p>
+<p>L’ordonnanceur, pour exécuter les différents processus prêts, les place dans une structure de données de type file. Un processus prêt est enfilé et un processus élu est défilé.</p>
+<h2 id="parmi-les-propositions-suivantes-recopier-celle-qui-décrit-le-fonctionnement-des-entréessorties-dans-une-file-">Parmi les propositions suivantes, recopier celle qui décrit le fonctionnement des entrées/sorties dans une file :<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Premier entré, dernier sorti</li>
+<li>Premier entré, premier sorti</li>
+<li>Dernier entré, premier sorti</li>
+</ul>
+<h2 id="on-suppose-que-les-quatre-processus-arrivent-dans-la-file-et-y-sont-placés-dans-lordre-c-c-c-et-c">On suppose que les quatre processus arrivent dans la file et y sont placés dans l’ordre C₁, C₂, C₃ et C₄.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les temps d’exécution totaux de C₁, C₂, C₃ et C₄ sont respectivement 100 ms, 150 ms, 80 ms et 60 ms.</p>
+<p>Après 40 ms d’exécution, le processus C₁ demande une opération d’écriture disque, opération qui dure 200 ms. Pendant cette opération d’écriture, le processus C₁ passe à l’état bloqué.</p>
+<p>Après 20 ms d’exécution, le processus C₃ demande une opération d’écriture disque, opération qui dure 10 ms. Pendant cette opération d’écriture, le processus C₃ passe à l’état bloqué.</p>
+<p>Sur la frise chronologique donnée en annexe (à rendre avec la copie), les états du processus C₂ sont donnés.</p>
+<blockquote>
+<p>Compléter la frise avec les états des processus C₁, C₃ et C₄.</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/page6_8.png" alt="Annexe de l’exercice 2" />
+    
+    
+    <figcaption>
+        <p>
+        Annexe de l’exercice 2
+        
+            
+        
+        </p> 
+    </figcaption>
+    
+</figure>
+
+<h2 id="on-trouvera-ci-dessous-deux-programmes-rédigés-en-pseudo-code">On trouvera ci-dessous deux programmes rédigés en pseudo-code.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Verrouiller un fichier signifie que le programme demande un accès exclusif au fichier et l’obtient si le fichier est disponible.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Programme 1</th>
+					<th>Programme 2</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Verrouiller fichier_1</td>
+					<td>Verrouiller fichier_2</td>
+			</tr>
+			<tr>
+					<td>Calculs sur fichier_1</td>
+					<td>Verrouiller fichier_1</td>
+			</tr>
+			<tr>
+					<td>Verrouiller fichier_2</td>
+					<td>Calculs sur fichier_1</td>
+			</tr>
+			<tr>
+					<td>Calculs sur fichier_1</td>
+					<td>Calculs sur fichier_2</td>
+			</tr>
+			<tr>
+					<td>Calculs sur fichier_2</td>
+					<td>Déverrouiller fichier_1</td>
+			</tr>
+			<tr>
+					<td>Calculs sur fichier_1</td>
+					<td>Déverrouiller fichier_2</td>
+			</tr>
+			<tr>
+					<td>Déverrouiller fichier_2</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>Déverrouiller fichier_1</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="en-supposant-que-les-processus-correspondant-à-ces-programmes-sexécutent-simultanément-exécution-concurrente-expliquer-le-problème-qui-peut-être-rencontré">En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="proposer-une-modification-du-programme-2-permettant-déviter-ce-problème">Proposer une modification du programme 2 permettant d’éviter ce problème.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b" checked><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e" checked><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
+    <script src="/js/theme.js?1782229390" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
