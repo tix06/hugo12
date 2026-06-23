@@ -4,7 +4,7 @@ description: traitement sql et visualisation
 weight: 25
 ---
 
-# Etape 4: Base de données exoplanetes.db
+# Base de données exoplanetes.db
 ## Principe
 Nous allons utiliser un **script Python** pour nous connecter à la base de données `exoplanetes.db` et tester quelques requêtes en langage SQLite.
 
