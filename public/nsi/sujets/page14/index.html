@@ -5,22 +5,22 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="structures lineaires Files">
+    <meta name="description" content="chiffrement symetrique, asymetrique, RSA, https, codage des caracteres, XOR, chiffrement, securite des transmissions">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Files :: allopizza">
-    <meta name="twitter:description" content="structures lineaires Files">
-    <meta property="og:url" content="//localhost:1313/nsi/sujets/page12/index.html">
+    <meta name="twitter:title" content="securite :: allopizza">
+    <meta name="twitter:description" content="chiffrement symetrique, asymetrique, RSA, https, codage des caracteres, XOR, chiffrement, securite des transmissions">
+    <meta property="og:url" content="//localhost:1313/nsi/sujets/page14/index.html">
     <meta property="og:site_name" content="allopizza">
-    <meta property="og:title" content="Files :: allopizza">
-    <meta property="og:description" content="structures lineaires Files">
+    <meta property="og:title" content="securite :: allopizza">
+    <meta property="og:description" content="chiffrement symetrique, asymetrique, RSA, https, codage des caracteres, XOR, chiffrement, securite des transmissions">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI term">
-    <meta itemprop="name" content="Files :: allopizza">
-    <meta itemprop="description" content="structures lineaires Files">
-    <meta itemprop="wordCount" content="904">
-    <title>Files :: allopizza</title>
+    <meta itemprop="name" content="securite :: allopizza">
+    <meta itemprop="description" content="chiffrement symetrique, asymetrique, RSA, https, codage des caracteres, XOR, chiffrement, securite des transmissions">
+    <meta itemprop="wordCount" content="1335">
+    <title>securite :: allopizza</title>
     <link href="/css/auto-complete/auto-complete.min.css?1782383061" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1782383061" defer></script>
     <script src="/js/search-lunr.js?1782383061" defer></script>
@@ -45,7 +45,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/nsi\/sujets\/page12\/index.html';
+      window.relearn.path='\/nsi\/sujets\/page14\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/\/localhost:1313';
@@ -90,7 +90,7 @@
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-origin="/nsi/sujets/page12/index.html">
+  <body class="mobile-support html" data-origin="/nsi/sujets/page14/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar" class="default-animation">
@@ -103,22 +103,28 @@
             <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#partie-a---la-méthode-du-masque-jetable">Partie A - La méthode du masque jetable</a></li>
+    <li><a href="#partie-b---sécurisation-des-communications">Partie B - Sécurisation des communications</a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/sujets/index.html"><span itemprop="name">sujets bac ecrit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Files</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">Page principale</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/sujets/index.html"><span itemprop="name">sujets bac ecrit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">securite</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/sujets/page12.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI/sujets/page14.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page3/index.html" title="donnees structurees 2 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page5/index.html" title="BDD SQL (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page4/index.html" title="algorithmique (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi/sujets/page7/index.html" title="reseaux (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -139,169 +145,261 @@
   <header class="headline">
   </header>
 
-<h1 id="files">Files</h1>
+<h1 id="securite">securite</h1>
 
-<h1 id="bac-2023-centres-etrangers-exercice-3">Bac 2023 Centres Etrangers: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p><em>Cet exercice porte sur les structures de Files</em></p>
-<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">Files</span></span>
+<h1 id="bac-2021-centres-étrangers-2-exercice-3">Bac 2021 Centres étrangers 2: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Thèmes abordés : conversion décimal/binaire, table de vérité, codage des caractères</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ascii</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">xor</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">chiffrement</span></span></p>
+<p>L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de
+caractères à l’aide du codage ASCII et de la fonction logique XOR.</p>
+<p><strong>1.</strong> Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation
+binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre
+89.</p>
+<p><strong>2.</strong> La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole
+$\bigoplus$, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais
+pas les deux.</p>
+<p>On donne ci-contre la table de vérité de la fonction XOR:</p>
 
 <figure >
     
-        <img src="../images/page12_simon.jpg"
-        
-            width="150"
-            
+        <img src="../images/xor1.png"
         
          />
     
     
 </figure>
 
-<p><em>Simon</em> est un jeu de société électronique de forme circulaire comportant quatre grosses touches de couleurs différentes : rouge, vert, bleu et jaune.</p>
-<p>Le jeu joue une séquence de couleurs que le joueur doit
-mémoriser et répéter ensuite. S’il réussit, une couleur parmi les 4
-est ajoutée à la fin de la séquence. La nouvelle séquence est
-jouée depuis le début et le jeu continue. Dès que le joueur se
-trompe, la séquence est vidée et réinitialisée avec une couleur et
-une nouvelle partie commence.</p>
-<p>Exemple de séquence jouée : <em>rouge =&gt; bleu =&gt; rouge =&gt; jaune =&gt; bleu</em></p>
-<p>Dans cet exercice nous essaierons de reproduire ce jeu.</p>
-<p>Les quatre couleurs sont stockées dans un tuple nommé couleurs :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">couleurs</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;bleu&#34;</span><span class="p">,</span> <span class="s2">&#34;rouge&#34;</span><span class="p">,</span> <span class="s2">&#34;jaune&#34;</span><span class="p">,</span> <span class="s2">&#34;vert&#34;</span><span class="p">)</span></span></span></code></pre></div>
-<p>Pour stocker la séquence à afficher nous utiliserons une structure de file que l’on nommera sequence tout au long de l’exercice.</p>
-<p>La file est une structure linéaire de type FIFO (First In First Out). Nous utiliserons durant cet exercice les fonctions suivantes :</p>
+<p>Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor2.png"
+        
+         />
+    
+    
+</figure>
+
+Poser et calculer l’opération : $11001110 \bigoplus 01101011$</p>
+<p><strong>3.</strong> On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les
+caractères de A à Z.
+On peut alors considérer l’opération XOR entre deux caractères en effectuant
+le XOR entre les codes ASCII des deux caractères. Par exemple : &lsquo;F&rsquo; XOR &lsquo;S&rsquo;
+sera le résultat de $01000110 \bigoplus 01010011$.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor3.png"
+        
+         />
+    
+    
+</figure>
+
+On souhaite mettre au point une méthode de cryptage à l’aide de la fonction
+XOR.</p>
+<p>Pour cela, on dispose d’un message à crypter et d’une clé de cryptage de même
+longueur que ce message. Le message et la clé sont composés uniquement
+des caractères du tableau ci-dessus et on applique la fonction XOR caractère
+par caractère entre les lettres du message à crypter et les lettres de la clé de
+cryptage.</p>
+<p>Par exemple, voici le cryptage du mot ALPHA à l’aide de la clé YAKYA :</p>
+<p>
+<figure >
+    
+        <img src="../images/xor4.png"
+        
+         />
+    
+    
+</figure>
+
+Ecrire une fonction <code>xor_crypt(message, cle)</code> qui prend en paramètres deux
+chaînes de caractères et qui renvoie la liste des entiers correspondant au
+message crypté.</p>
+<p><em>Aide :</em></p>
+<ul>
+<li>On pourra utiliser la fonction native du langage Python <code>ord(c)</code> qui prend en paramètre un caractère c et qui renvoie un nombre représentant le code ASCII du caractère c.</li>
+<li>On considère également que l’on dispose d’une fonction écrite <code>xor(n1,n2)</code> qui prend en paramètre deux nombres n1 et n2 et qui renvoie le résultat de n1 ⊕ n2.</li>
+</ul>
+<p><strong>4.</strong> On souhaite maintenant générer une clé de la taille du message à partir d’un
+mot quelconque. On considère que le mot choisi est plus court que le
+message, il faut donc le reproduire un certain nombre de fois pour créer une
+clé de la même longueur que le message.</p>
+<p>Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la
+clé sera YAKYAKYA.)</p>
+<p>Créer une fonction <code>generer_cle(mot,n)</code> qui renvoie la clé de longueur n à partir de la chaîne de caractères mot.</p>
+<p><strong>5.</strong> Recopier et compléter la table de vérité de $(𝑬𝟏 \bigoplus 𝑬𝟐) \bigoplus 𝑬𝟐$.</p>
+<p>
+<figure >
+    
+        <img src="../images/xor5.png"
+        
+         />
+    
+    
+</figure>
+
+A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.</p>
+<h1 id="exercice-3-25-nsij2me1">Exercice 3 25-NSIJ2ME1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Cet exercice porte sur la programmation de base en Python, la sécurisation des
+communications et les réseaux.</em></p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">chiffrement</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">https</span></span></p>
+<h2 id="partie-a---la-méthode-du-masque-jetable">Partie A - La méthode du masque jetable<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Dans cette partie, on s’intéresse à une méthode de chiffrement dite du masque jetable.</em></p>
+<p>Voici ce que l’on peut lire sur le site Wikipédia :</p>
+<p>Le chiffrement par la méthode du masque jetable consiste à combiner le message en
+clair avec une clé présentant les caractéristiques très particulières suivantes :</p>
+<ul>
+<li>la clé doit être une suite de caractères au moins aussi longue que le message
+à chiffrer ;</li>
+<li>les caractères composant la clé doivent être choisis de façon totalement
+aléatoire ;</li>
+<li>chaque clé, ou « masque », ne doit être utilisée qu’une seule fois (d’où le nom
+de masque jetable).
+Illustrons cette méthode par un exemple : on souhaite chiffrer le message HELLO avec
+la clé aléatoire, ou « masque », WMCKL.</li>
+</ul>
+<p>Pour cela, on attribue un nombre à chaque lettre, par exemple le rang dans l’alphabet, de 0 à 25.</p>
 <table>
 	<thead>
 			<tr>
-					<th>Fonction</th>
-					<th>Description</th>
+					<th>Lettre</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>D</th>
+					<th>E</th>
+					<th>F</th>
+					<th>G</th>
+					<th>H</th>
+					<th>I</th>
+					<th>J</th>
+					<th>&hellip;</th>
+					<th>Y</th>
+					<th>Z</th>
 			</tr>
 	</thead>
 	<tbody>
 			<tr>
-					<td><code>creer_file_vide()</code></td>
-					<td>renvoie une file vide</td>
-			</tr>
-			<tr>
-					<td><code>est_vide(f)</code></td>
-					<td>renvoie <code>True</code> si <code>f</code> est vide <code>False</code> sinon</td>
-			</tr>
-			<tr>
-					<td><code>enfiler(f, element)</code></td>
-					<td>ajoute <code>element</code> en queue de <code>f</code></td>
-			</tr>
-			<tr>
-					<td><code>defiler(f)</code></td>
-					<td>retire l&rsquo;element en tête de <code>f</code> et le renvoie</td>
-			</tr>
-			<tr>
-					<td><code>taille(f)</code></td>
-					<td>renvoie le nombre d&rsquo;elements de <code>f</code></td>
+					<td>Rang</td>
+					<td>0</td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+					<td>&hellip;</td>
+					<td>24</td>
+					<td>25</td>
 			</tr>
 	</tbody>
 </table>
-<p>En fin de chaque séquence, le Simon tire au hasard une couleur parmi les 4 proposées.
-On utilisera la fonction <code>randint(a,b)</code> de la bibliothèque <code>random</code> qui permet
-d’obtenir un nombre entier compris entre <code>a</code> inclus et <code>b</code> inclus pour le tirage aléatoire.
-Exemple : <code>randint(1,5)</code> peut renvoyer 1, 2, 3, 4 ou 5.</p>
+<p>Ensuite, on additionne la valeur du rang de chaque lettre du message avec la valeur
+du rang correspondante dans le masque.</p>
+<p>Enfin, si le résultat est supérieur à 25 on soustrait 26 (calcul dit « modulo 26 »).
+Ainsi, le chiffrement du message HELLO avec la clé WMCKL donne le message chiffré
+DQNVZ comme le montre l’illustration suivante.</p>
+
+<figure >
+    
+        <img src="../images/page14_1.png"
+        
+        alt="Exemple de chiffrement par la méthode du masque jetable - wikipedia" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Exemple de chiffrement par la méthode du masque jetable - wikipedia
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Dans cet exercice, on ne travaillera que sur des chaînes de caractères écrites en
+majuscules non accentuées (les 26 caractères allant de ‘A’ à ‘Z’).</p>
 <ol>
-<li>Recopier et compléter, sur votre copie, les &hellip; des lignes 3 et 4 de la fonction
-ajout(f) qui permet de tirer au hasard une couleur et de l’ajouter à une séquence.
-La fonction ajout prend en paramètre la séquence <code>f</code> ; elle renvoie la séquence <code>f</code>
-modifiée (qui intègre la couleur ajoutée au format chaîne de caractères).</li>
+<li>Chiffrer, par la méthode du masque jetable, le message LIBRE à l’aide de la clé
+EYQMT.</li>
 </ol>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ajout</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">	<span class="n">couleurs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;bleu&#34;</span><span class="p">,</span><span class="s2">&#34;rouge&#34;</span><span class="p">,</span><span class="s2">&#34;jaune&#34;</span><span class="p">,</span><span class="s2">&#34;vert&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">	<span class="n">indice</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="n">enfiler</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">f</span></span></span></code></pre></div>
-<p>En cas d&rsquo;erreur du joueur durant sa réponse, la partie reprend au début ; il faut donc
-vider la file <code>sequence</code> pour recommencer à zéro en appelant <code>vider(sequence)</code> qui
-permet de rendre la file <code>sequence</code> vide sans la renvoyer.</p>
+<p>En Python, on crée une fois pour toute la variable alphabet qui sera accessible et
+utilisable dans toutes les fonctions. Celle-ci contient la liste des 26 lettres de l’alphabet rangées dans l’ordre alphabétique :</p>
+<p><code>alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']</code></p>
 <ol start="2">
-<li>Ecrire la fonction <code>vider</code> qui prend en paramètre une séquence <code>f</code> et la vide sans la
-renvoyer.</li>
+<li>Écrire une fonction Python <code>indice</code> qui prend pour paramètre une liste <code>L</code> et
+renvoie l’indice de element dans la liste <code>L</code>.</li>
 </ol>
-<p>Le <em>Simon</em> doit afficher successivement les différentes couleurs de la séquence.
-Ce rôle est confié à la fonction <code>affich_seq(sequence)</code>, qui prend en paramètre la
-file de couleurs <code>sequence</code>, définie par l’algorithme suivant :</p>
-<ul>
-<li>on ajoute une nouvelle couleur à <code>sequence</code> ;</li>
-<li>on affiche les couleurs de la séquence, une par une, avec une pause de 0,5 s entre
-chaque affichage</li>
-</ul>
-<p>Une fonction <code>affichage(couleur)</code> (dont la rédaction n’est pas demandée dans
-cet exercice) permettra l’affichage de la couleur souhaitée avec couleur de type
-chaîne de caractères correspondant à une des 4 couleurs.
-La temporisation de 0,5 s sera effectuée avec la commande time.sleep(0.5).
-Après l’exécution de la fonction <code>affich_seq</code>, la file sequence ne devra pas être
-vidée de ses éléments.</p>
+<p>On supposera que chaque élément de la liste <code>L</code> n’y apparaît qu’une seule fois
+et que element est bien présent dans la liste <code>L</code>.</p>
+<p>Par exemple, l’appel <code>indice(alphabet, 'K')</code> renvoie l’entier 10.</p>
 <ol start="3">
-<li>Recopier et compléter, sur la copie, les &hellip; des lignes 4 à 10 de la fonction
-<code>affich_seq(sequence)</code> ci-dessous :</li>
+<li>Écrire une fonction Python <code>lettres_vers_indices</code> qui prend pour
+paramètre une chaîne de caractères et renvoie, dans l’ordre, la liste des indices
+de ces caractères dans l’alphabet. Par exemple, l’appel <code>lettres_vers_indices('HELLO')</code> renvoie la liste d’entiers <code>[7, 4, 11, 11, 14]</code>.</li>
 </ol>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">affiche_seq</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">	<span class="n">stock</span> <span class="o">=</span> <span class="n">ceer_file_vide</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="n">ajout</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">		<span class="n">c</span> <span class="o">=</span> <span class="o">...</span>
-</span></span><span class="line"><span class="cl">		<span class="o">...</span>
-</span></span><span class="line"><span class="cl">		<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="o">...</span> <span class="p">:</span> 
-</span></span><span class="line"><span class="cl">		<span class="o">...</span></span></span></code></pre></div>
+<p>On dispose également d’une fonction <code>indices_vers_lettres</code>, qu’on ne demande
+pas d’écrire, permettant de convertir une liste d’entiers, compris entre 0 et 25, en une chaîne de caractères.</p>
+<p>Par exemple, l’appel <code>indices_vers_lettres([3, 16, 13, 21, 25])</code> renvoie
+la chaîne de caractères &lsquo;DQNVZ&rsquo;.</p>
+<p>Ci-après, on donne une fonction Python <code>chiffrement</code> incomplète, qui, à partir d’un
+message <code>msg</code> et d’une clé <code>cle</code> entrés en paramètres, renvoie la chaîne de caractères représentant le message chiffré par la méthode du masque jetable.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chiffrement</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">),</span> <span class="s1">&#39;impossible&#39;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">indices_msg</span> <span class="o">=</span> <span class="n">lettres_vers_indices</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">indices_cle</span> <span class="o">=</span> <span class="n">lettres_vers_indices</span><span class="p">(</span><span class="n">cle</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">indices_msg_chiffre</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ind</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="n">ind</span> <span class="o">&gt;=</span> <span class="mi">26</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">ind</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">		<span class="n">indices_msg_chiffre</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">msg_chiffre</span> <span class="o">=</span> <span class="n">indices_vers_lettres</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">msg_chiffre</span></span></span></code></pre></div>
 <ol start="4">
-<li>Nous allons ici créer une fonction <code>tour_de_jeu(sequence)</code> qui gère le déroulement
-d’un tour quelconque de jeu côté joueur. La fonction <code>tour_de_jeu</code> prend en
-paramètre la file de couleurs sequence, qui contient un certain nombre de couleurs.</li>
+<li>Recopier et compléter les lignes 7 à 13 de la fonction <code>chiffrement</code>.</li>
+<li>Indiquer, en justifiant, ce que l’on observe lors de l’appel
+<code>chiffrement('RESEAU', 'GFTZ')</code>.</li>
 </ol>
-<ul>
-<li>Le jeu électronique <em>Simon</em> commence par ajouter une couleur à la séquence et
-affiche l’intégralité de la séquence.</li>
-<li>Le joueur doit reproduire la séquence dans le même ordre. Il choisit une couleur
-via la fonction <code>saisie_joueur()</code>.</li>
-<li>On vérifie si cette couleur est conforme à celle de la séquence.</li>
-<li>S’il s’agit de la bonne couleur, on poursuit sinon on vide <code>sequence</code>.</li>
-<li>Si le joueur arrive au bout de la séquence, il valide le tour de jeu et le jeu se
-poursuit avec un nouveau tour de jeu, sinon le joueur a perdu et le jeu s’arrête.
-La fonction <code>tour_de_jeu</code> s’arrête donc si le joueur a trouvé toutes les bonnes
-couleurs de <code>sequence</code> dans l’ordre, ou bien dès que le joueur se trompe.
-Après l’exécution de la fonction <code>tour_de_jeu</code>, la file sequence ne devra pas être
-vidée de ses éléments en cas de victoire.</li>
-</ul>
-<p>a. Afin d’obtenir la fonction <code>tour_de_jeu(sequence)</code> correspondant au comportement décrit ci-dessus, recopier le script ci-dessous et :</p>
-<ul>
-<li>Complétez le &hellip;</li>
-<li>Choisir parmi les propositions de syntaxes suivantes lesquelles
-correspondent aux ZONES A, B, C, D, E et F figurant dans le script et les y
-remplacer (il ne faut donc en choisir que six parmi les onze) :</li>
-</ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vider(sequence)
-</span></span><span class="line"><span class="cl">defiler(sequence)
-</span></span><span class="line"><span class="cl">enfiler(sequence,c_joueur)
-</span></span><span class="line"><span class="cl">enfiler(stock,c_seq)
-</span></span><span class="line"><span class="cl">enfiler(sequence, defiler(stock))
-</span></span><span class="line"><span class="cl">enfiler(stock, defiler(sequence))
-</span></span><span class="line"><span class="cl">affich_seq(sequence)
-</span></span><span class="line"><span class="cl">while not est_vide(sequence):
-</span></span><span class="line"><span class="cl">while not est_vide(stock):
-</span></span><span class="line"><span class="cl">if not est_vide(sequence):
-</span></span><span class="line"><span class="cl">if not est_vide(stock):</span></span></code></pre></div>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tour_de_jeu</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">	<span class="n">ZONE</span> <span class="n">A</span>
-</span></span><span class="line"><span class="cl">	<span class="n">stock</span> <span class="o">=</span> <span class="n">creer_file_vide</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">		<span class="n">c_joueur</span> <span class="o">=</span> <span class="n">saisie_joueur</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">		<span class="n">c_seq</span> <span class="o">=</span> <span class="n">ZONE</span> <span class="n">B</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">c_joueur</span> <span class="o">...</span> <span class="n">c_seq</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">			<span class="n">ZONE</span> <span class="n">C</span>
-</span></span><span class="line"><span class="cl">		<span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">			<span class="n">ZONE</span> <span class="n">D</span>
-</span></span><span class="line"><span class="cl">	<span class="n">ZONE</span> <span class="n">E</span>
-</span></span><span class="line"><span class="cl">	    <span class="n">ZONE</span> <span class="n">F</span></span></span></code></pre></div>
-<p>b. Proposer une modification pour que la fonction se répète si le joueur trouve
-toutes les couleurs de la séquence (dans ce cas, une nouvelle couleur est ajoutée) ou s’il se trompe (dans ce cas, la séquence est vidée et se voit ajouter une
-nouvelle couleur). On pourra ajouter des instructions qui ne sont pas proposées
-dans la question a</p>
+<p>On s’intéresse maintenant au déchiffrement d’un message chiffré par la méthode du
+masque jetable.</p>
+<p>Par exemple, le déchiffrement du message DQNVZ avec la clé WMCKL donne le
+message HELLO.</p>
+<ol start="6">
+<li>Déchiffrer le message GMEDH avec la clé FVEIT.</li>
+<li>Expliquer comment procéder pour déchiffrer un message lorsqu’on connaît la
+clé.</li>
+</ol>
+<p>On souhaite maintenant écrire, en Python, une fonction dechiffrement qui permet
+de déchiffrer un message chiffré par la méthode du masque jetable.</p>
+<p>Pour cela, on s’inspire de la fonction chiffrement dans laquelle les paramètres ainsi que les lignes 2 à 5 sont inchangées. On décide cependant de remplacer, ligne 6, le nom de la variable <code>indices_msg_chiffre</code> par le nom plus explicite
+<code>indices_msg_dechiffre</code>.
+8. Adapter les lignes 6 à 13 de la fonction <code>chiffrement</code> pour obtenir la nouvelle
+fonction <code>dechiffrement</code>.</p>
+<h2 id="partie-b---sécurisation-des-communications">Partie B - Sécurisation des communications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ol start="9">
+<li>Expliquer la différence entre un algorithme de chiffrement symétrique et un
+algorithme de chiffrement asymétrique.</li>
+</ol>
+<p>Alice souhaite envoyer un message à Bob par l’intermédiaire d’un réseau informatique
+en utilisant un algorithme de chiffrement asymétrique.</p>
+<p>Pour cela, Bob envoie à Alice sa clé publique. Alice chiffre ensuite le message à l’aide de la clé publique de Bob qu’elle vient de recevoir, puis elle envoie ce message chiffré à Bob.</p>
+<ol start="10">
+<li>Indiquer comment Bob peut déchiffrer le message que lui envoie Alice.</li>
+<li>Expliquer comment une tierce personne pourrait se faire passer pour Alice sans
+que Bob ne s’en aperçoive.</li>
+<li>Expliquer brièvement le fonctionnement du protocole HTTPS.</li>
+<li>Expliquer pourquoi, pour sécuriser intégralement les communications sur
+Internet, on utilise le protocole HTTPS plutôt qu’un chiffrement asymétrique.</li>
+</ol>
 
   <footer class="footline">
   </footer>
@@ -425,12 +523,12 @@ dans la question a</p>
             <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>

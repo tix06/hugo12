@@ -19,28 +19,28 @@
     <meta property="article:section" content="NSI term">
     <meta itemprop="name" content="Arbres :: allopizza">
     <meta itemprop="description" content="arbre, parcours">
-    <meta itemprop="wordCount" content="351">
+    <meta itemprop="wordCount" content="1408">
     <title>Arbres :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
-    <script src="/js/search-lunr.js?1782229390" defer></script>
-    <script src="/js/search.js?1782229390" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1782383061" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782383061" defer></script>
+    <script src="/js/search-lunr.js?1782383061" defer></script>
+    <script src="/js/search.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+      window.relearn.index_js_url="/searchindex.en.js?1782383061";
     </script>
-    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
-    <link href="/css/theme.css?1782229390" rel="stylesheet">
-    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782383061" rel="stylesheet">
+    <link href="/css/theme.css?1782383061" rel="stylesheet">
+    <link href="/css/format-html.css?1782383061" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -108,6 +108,12 @@
   <ul>
     <li><a href="#partie-b">Partie B</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#partie-a">Partie A</a></li>
+    <li><a href="#partie-b-1">Partie B</a></li>
+    <li><a href="#partie-c">Partie C</a></li>
+  </ul>
 </nav>
                 </div>
               </div>
@@ -153,16 +159,19 @@
 <p>
 <figure >
     
-        <img src="../images/page7_2.png" alt="arborescence fichiers" />
+        <img src="../images/page7_2.png"
+        
+        alt="arborescence fichiers" />
     
     
     <figcaption>
+        
         <p>
-        arborescence fichiers
-        
+            arborescence fichiers
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
@@ -212,6 +221,245 @@ français. On ne demande pas d’implémenter cet algorithme en Python.</li>
 permettrait de répondre à la question précédente beaucoup plus efficacement
 et expliquer votre choix.</li>
 </ol>
+<h1 id="exercice-1-25-nsij2me1">Exercice 1 25-NSIJ2ME1:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Cet exercice porte sur les arbres binaires et la programmation Python.</p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">arbre</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">compression</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">codage binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">dictionnaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tableaux</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">occurences</span></span></p>
+<p>Le codage de Shannon-Fano est un système de codage utilisé pour la compression
+sans pertes de données. Il a été mis au point par Robert Fano d’après une idée de
+Claude Shannon.</p>
+<h2 id="partie-a">Partie A<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans cette partie, on va étudier l’utilisation des arbres de codage.
+Un arbre de codage est un arbre binaire où chaque feuille contient un symbole du texte que l’on souhaite coder. Le code binaire d’un symbole s’obtient alors en concaténant les 0 et les 1 sur les branches qui mènent de la racine à la feuille contenant ce symbole.</p>
+<p>Par exemple, pour l’arbre de codage donné en Figure 1, le symbole <code>c</code> est codé par le
+mot binaire 1101, tandis que <code>d</code> est codé par le mot binaire 11000. Les codes binaires des symboles ne sont donc pas tous de la même taille. Pour décoder un mot binaire, il suffit de descendre dans l’arbre, depuis la racine, selon les 0 et les 1 qu’on lit jusqu’à trouver une feuille (et donc un symbole), puis de recommencer avec la suite du mot binaire pour décoder les symboles suivants.</p>
+
+<figure >
+    
+        <img src="../images/page10_1.png"
+        
+        alt="Exemple d’arbre de codage" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Exemple d’arbre de codage
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<ol>
+<li>
+<p>Écrire le mot binaire qui sera utilisé pour encoder le caractère espace,
+représenté par le symbole
+dans l’arbre.</p>
+</li>
+<li>
+<p>Déterminer le texte codé par le mot binaire 0001110101111110011001.</p>
+</li>
+<li>
+<p>Citer le type de parcours de l’arbre qui permettrait d’obtenir les symboles
+classés par taille d’encodage croissante.</p>
+</li>
+</ol>
+<h2 id="partie-b-1">Partie B<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans cette partie, on va utiliser le codage de Shannon-Fano pour encoder le texte :</p>
+<p><code>je pense, donc je suis</code></p>
+<p>Dans la méthode de Shannon-Fano, l’arbre de codage est calculé pour un texte donné
+par l’algorithme suivant.</p>
+<ul>
+<li>Étape 1 : classer les symboles du texte par nombre d’occurrences croissant;</li>
+<li>Étape 2 : en gardant le classement obtenu, séparer les symboles en deux sous-
+groupes de sorte que les totaux des nombres d’occurrences soient les plus
+proches possibles dans les deux sous-groupes;</li>
+<li>Étape 3 : placer tous les symboles du premier groupe dans le fils gauche (côté
+étiqueté par 1), et ceux du second groupe dans le fils droit (côté étiqueté par 0);</li>
+<li>Étape 4 : recommencer récursivement pour chacun des sous-groupes jusqu’à
+ce qu’ils n’aient plus qu’un seul symbole ; on a alors une feuille étiquetée par ce
+symbole.</li>
+</ul>
+<p>Après avoir classé les symboles par nombre d’occurrences croissant (étape 1), on
+obtient le tableau suivant :</p>
+<table>
+	<thead>
+			<tr>
+					<th>symbole</th>
+					<th>i</th>
+					<th>u</th>
+					<th>c</th>
+					<th>o</th>
+					<th>d</th>
+					<th>,</th>
+					<th>p</th>
+					<th>n</th>
+					<th>j</th>
+					<th>s</th>
+					<th>e</th>
+					<th>_</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>nombre d’occurrences</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>2</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>4</td>
+			</tr>
+	</tbody>
+</table>
+<ol start="4">
+<li>Justifier par le calcul que l’étape 2 mène à la situation illustrée par la Figure 2.</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/page10_2.png"
+        
+        alt="Le résultat de l’étape 2" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Le résultat de l’étape 2
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>En appliquant l’algorithme de Shannon-Fano, on peut obtenir l’arbre de la Figure 3.</p>
+
+<figure >
+    
+        <img src="../images/page10_3.png"
+        
+        alt="Arbre de codage obtenu par l’algorithme de Shannon-Fano" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Arbre de codage obtenu par l’algorithme de Shannon-Fano
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>On rappelle qu’un arbre réduit à un seul nœud, c’est-à-dire réduit à une feuille, est de hauteur 0.</p>
+<ol start="5">
+<li>Donner la hauteur de l’arbre de la Figure 3 et préciser dans le contexte de
+l’exercice ce qu’elle représente.</li>
+</ol>
+<p>On rappelle que dans le code ASCII, chaque symbole est codé sur un octet.</p>
+<ol start="6">
+<li>Justifier, en comparant le codage ASCII et le codage de Shannon-Fano, que ce
+second codage permet d’utiliser environ deux fois moins d’octets pour le texte :
+je pense, donc je suis</li>
+<li>Dessiner, en vous inspirant de l’arbre de la Figure 1, un arbre de codage qui
+permettrait d’encoder le mot « chiffrer » en utilisant l’algorithme de Shannon-Fano.</li>
+</ol>
+<h2 id="partie-c">Partie C<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans cette partie, on souhaite écrire une fonction Python qui donnera le mot binaire
+obtenu pour coder un texte avec l’algorithme de Shannon-Fano. On commence par la
+fonction <code>creer_dico_occ</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">creer_dico_occ</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;renvoie un dictionnaire dont les clés sont les
+</span></span></span><span class="line"><span class="cl"><span class="s2">	symboles de texte et les valeurs associées leur
+</span></span></span><span class="line"><span class="cl"><span class="s2">	nombre d&#39;occurences dans texte&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">dico</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">symbole</span> <span class="ow">in</span> <span class="n">texte</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">symbole</span> <span class="ow">in</span> <span class="n">dico</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">dico</span><span class="p">[</span><span class="n">symbole</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	 		<span class="n">dico</span><span class="p">[</span><span class="n">symbole</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">dico</span></span></span></code></pre></div>
+<ol start="8">
+<li>Recopier et compléter les lignes 8 et 10 du code de la fonction
+<code>creer_dico_occ</code>.</li>
+</ol>
+<p>On dispose d’une fonction <code>creer_tab_trie</code> qui prend en paramètre un dictionnaire
+construit avec la fonction <code>creer_dico_occ</code> et qui renvoie une liste de tuples classés dans l’ordre croissant d’occurrences des symboles.</p>
+<p>Par exemple :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">texte</span> <span class="o">=</span> <span class="s1">&#39;je pense, donc je suis&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="n">creer_dico_occ</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">creer_tab_trie</span><span class="p">(</span><span class="n">dico</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[(</span><span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span></span></span></code></pre></div>
+<ol start="9">
+<li>Écrire une fonction somme_occ qui prend en paramètres un tableau <code>tab</code> de
+tuples <code>(symbole, nb_occ)</code> et qui renvoie la somme des nombres
+d’occurrences des symboles du tableau. Les tuples utilisés sont de même
+structure que l’élément renvoyé dans l’exemple précédent.</li>
+</ol>
+<p>On suppose pour la suite qu’on dispose d’une fonction <code>separe</code> qui sépare un tableau
+trié en deux sous-tableaux de manière à ce que les sommes de ces derniers soient les
+plus proches possible :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">separe</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="n">moitie</span> <span class="o">=</span> <span class="n">somme_occ</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">	<span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">	<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="n">moitie</span> <span class="o">&gt;</span> <span class="n">somme</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">	<span class="n">tab1</span> <span class="o">=</span> <span class="p">[</span><span class="n">tab</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">	<span class="n">tab2</span> <span class="o">=</span> <span class="p">[</span><span class="n">tab</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">))]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">tab1</span><span class="p">,</span> <span class="n">tab2</span></span></span></code></pre></div>
+<ol start="10">
+<li>Recopier et compléter les lignes 9 et 11 du code de la fonction récursive
+<code>shannon</code> qui prend en paramètres un caractère <code>symbole</code> et un tableau trié <code>tab</code>
+et qui renvoie l’écriture binaire associée à <code>symbole</code> dans le tableau <code>tab</code>.</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">shannon</span><span class="p">(</span><span class="n">symbole</span><span class="p">,</span> <span class="n">tab</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;&#34;&#34;renvoie l&#39;écriture binaire associée à symbole
+</span></span></span><span class="line"><span class="cl"><span class="s2">	dans le tableau trié tab&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="n">t1</span><span class="p">,</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">separe</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="n">symbole</span> <span class="ow">in</span> <span class="p">[</span><span class="n">elt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">elt</span> <span class="ow">in</span> <span class="n">t1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="s2">&#34;1&#34;</span> <span class="o">+</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="s2">&#34;0&#34;</span> <span class="o">+</span> <span class="o">...</span></span></span></code></pre></div>
+<ol start="11">
+<li>Décrire ce qui garantit la terminaison de la fonction récursive <code>shannon</code>.</li>
+<li>Écrire une fonction <code>encode_shannon</code> qui prend en paramètre un texte de type
+<code>str</code> et renvoie un mot binaire de type <code>str</code> obtenu après encodage par
+l’algorithme de <code>Shannon-Fano</code>.</li>
+</ol>
+<p>On pourra utiliser les fonctions vues précédemment qui sont recensées ci-
+après.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">creer_dico_occ(texte)
+</span></span><span class="line"><span class="cl">	renvoie un dictionnaire dont les clés sont les symboles
+</span></span><span class="line"><span class="cl">	du texte et les valeurs associées leur nombre
+</span></span><span class="line"><span class="cl">	d&#39;occurrences
+</span></span><span class="line"><span class="cl">creer_tab_trie(dico)
+</span></span><span class="line"><span class="cl">	renvoie la liste crée à partir d&#39;un dictionnaire
+</span></span><span class="line"><span class="cl">	de couples (symbole, nb_occ)
+</span></span><span class="line"><span class="cl">separe(tab)
+</span></span><span class="line"><span class="cl">	renvoie le tuple composé des 2 sous-tableaux triés
+</span></span><span class="line"><span class="cl">	avec des sommes d&#39;occurences proches
+</span></span><span class="line"><span class="cl">shannon(symbole, tab)
+</span></span><span class="line"><span class="cl">	renvoie l&#39;écriture binaire associée au symbole dans le
+</span></span><span class="line"><span class="cl">	tableau trié tab</span></span></code></pre></div>
 
   <footer class="footline">
   </footer>
@@ -340,6 +588,7 @@ et expliquer votre choix.</li>
             <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -409,9 +658,9 @@ et expliquer votre choix.</li>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
-    <script src="/js/theme.js?1782229390" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782383061"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782383061" defer></script>
+    <script src="/js/theme.js?1782383061" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -1,76 +1,8 @@
 ---
 Title: architecture
-description: architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix
+description: architecture, binaire, ordonnancement, commandes Unix
 weight: 66
 ---
-# Bac 2021 Centres étrangers 2: Exercice 3
-*Thèmes abordés : conversion décimal/binaire, table de vérité, codage des caractères*
-
-{{% badge icon="star" %}}binaire{{% /badge %}} {{% badge icon="star" %}}logique{{% /badge %}} {{% badge icon="star" %}}ascii{{% /badge %}} {{% badge icon="star" %}}xor{{% /badge %}} {{% badge icon="star" %}}chiffrement{{% /badge %}}
-
-L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de
-caractères à l’aide du codage ASCII et de la fonction logique XOR.
-
-**1.** Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation
-binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre
-89.
-
-**2.** La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole
-$\bigoplus$, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais
-pas les deux. 
-
-On donne ci-contre la table de vérité de la fonction XOR: 
-
-{{< img src="../images/xor1.png" >}}
-
-
-Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit.
-
-{{< img src="../images/xor2.png" >}}
-Poser et calculer l’opération : $11001110 \bigoplus 01101011$
-
-**3.** On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les
-caractères de A à Z.
-On peut alors considérer l’opération XOR entre deux caractères en effectuant
-le XOR entre les codes ASCII des deux caractères. Par exemple : 'F' XOR 'S'
-sera le résultat de $01000110 \bigoplus 01010011$.
-
-{{< img src="../images/xor3.png" >}}
-On souhaite mettre au point une méthode de cryptage à l’aide de la fonction
-XOR.
-
-Pour cela, on dispose d’un message à crypter et d’une clé de cryptage de même
-longueur que ce message. Le message et la clé sont composés uniquement
-des caractères du tableau ci-dessus et on applique la fonction XOR caractère
-par caractère entre les lettres du message à crypter et les lettres de la clé de
-cryptage.
-
-Par exemple, voici le cryptage du mot ALPHA à l’aide de la clé YAKYA :
-
-{{< img src="../images/xor4.png" >}}
-Ecrire une fonction `xor_crypt(message, cle)` qui prend en paramètres deux
-chaînes de caractères et qui renvoie la liste des entiers correspondant au
-message crypté. 
-
-*Aide :*
-
-* On pourra utiliser la fonction native du langage Python `ord(c)` qui prend en paramètre un caractère c et qui renvoie un nombre représentant le code ASCII du caractère c.
-* On considère également que l’on dispose d’une fonction écrite `xor(n1,n2)` qui prend en paramètre deux nombres n1 et n2 et qui renvoie le résultat de n1 ⊕ n2.
-
-**4.** On souhaite maintenant générer une clé de la taille du message à partir d’un
-mot quelconque. On considère que le mot choisi est plus court que le
-message, il faut donc le reproduire un certain nombre de fois pour créer une
-clé de la même longueur que le message.
-
-Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la
-clé sera YAKYAKYA.)
-
-Créer une fonction `generer_cle(mot,n)` qui renvoie la clé de longueur n à partir de la chaîne de caractères mot.
-
-**5.** Recopier et compléter la table de vérité de $(𝑬𝟏 \bigoplus 𝑬𝟐) \bigoplus 𝑬𝟐$.
-
-{{< img src="../images/xor5.png" >}}
-A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.
 
 # Bac 2022 Polynesie: Exercice 2
 *Cet exercice traite du thème « architecture matérielle », et principalement d'ordonnancement et d'expressions booléennes.*
@@ -170,130 +102,6 @@ c. Dessiner un circuit permettant de sélectionner le périphérique 0.
 {{< img src="../images/page6_3.png" caption="1252 × 590" >}}
 {{< img src="../images/page6_4.png" caption="1252 × 788" >}}
 
-# Bac 2022 Metropole1: Exercice 3
-Cet exercice porte sur les représentations binaires et les protocoles de routage.
-
-{{% badge icon="star" %}}binaire{{% /badge %}} {{% badge icon="star" %}}routage{{% /badge %}}
-
-## Question 1
-Une adresse IPv4 est représentée sous la forme de 4 nombres séparés par des
-points. Chacun de ces 4 nombres peut être représenté sur un octet.
-
-A.  Donner en écriture décimale l’adresse IPv4 correspondant à l’écriture binaire :
-
-11000000.10101000.10000000.10000011
-
-B.  Tous les ordinateurs du réseau A ont une adresse IPv4 de la forme :
-192.168.128._ _ _ , où seul le dernier octet (représenté par _ _ _ ) diffère.
-Donner le nombre d’adresses différentes possibles du réseau A.
-
-## Question 2
-On rappelle que le protocole RIP cherche à minimiser le nombre de routeurs
-traversés (qui correspond à la métrique). On donne les tables de routage d’un
-réseau informatique composé de 5 routeurs (appelés A, B, C, D et E), chacun
-associé directement à un réseau du même nom obtenues avec le protocole RIP : 
-
-{{< img src="../images/page6_5.png" caption="1234 × 916" >}}
-A.  Donner la liste des routeurs avec lesquels le routeur A est directement
-relié.
-
-B.  Représenter graphiquement et de manière sommaire les 5 routeurs
-ainsi que les liaisons existantes entre ceux-ci.
-
-## Question 3
-Le protocole OSPF est un protocole de routage qui cherche à minimiser la
-somme des métriques des liaisons entre routeurs.
-
-Dans le protocole de routage OSPF le débit des liaisons entre routeurs agit
-sur la métrique via la relation : $metrique = \tfrac{10^8}{debit}$  dans laquelle le débit est exprimé en bit par seconde (bps).
-
-On rappelle qu’un kbps est égal à $10^3$  bps et qu’un Mbps est égal à $10^6$  bps.
-
-A. Recopier sur votre copie et compléter le tableau suivant : 
-
-| Débit | 100 kbps | 500 kbps | ? | 100 Mbps |
-|--- | --- | --- | --- | --- |
-| Métrique associé | 1000 | ? | 10 | 1 |
-
-{{< img src="../images/page6_6.png" caption="1230 × 644" >}}
-Les nombres présents sur les liaisons représentent les coûts des routes avec le
-protocole OSPF.
-
-B.  Indiquer le chemin emprunté par un message d’un ordinateur du réseau F à
-destination d’un ordinateur du réseau I.
-Justifier votre réponse.
-
-C.  Recopier et compléter la table de routage du routeur F.
-
-D.  Citer une unique panne qui suffirait à ce que toutes les données des échanges de tout autre réseau à destination du réseau F transitent par le routeur G.
-Expliquer en détail votre réponse. 
-
-## Question 4 (sup hors bac)
-A. Donner les caractéristiques du graphe de réseaux schématisé plus haut.
-
-On donne cette fois le tableau constitué à partir de l'algorithme de Dijkstra, appliqué à ce même graphe de reseaux:
-
-* le colonnes représentent les sommets à atteindre
-* les lignes sont les sommets de départ
-* On renseigne dans les cases la distance cumulée depuis le noeud **F**, jusqu'au noeud de la colonne, en passant par le noeud adjacent de la ligne. Par exemple, **I** peut être atteint en venant du noeud **K** avec une longueur de 13.
-
-|  | G | H | I | J | K | L |
-| --- | --- |--- |--- |--- |--- |--- |
-| F |   | 5 |   |   |   |   |
-| G |   |   |   |   |   |   |
-| H |   |   | | 6 |   |   |
-| I |   |   |   |   |   |   |
-| J | 8 |   |   |   | 8 | 11|
-| K |   |   |  13 |   |   |   |
-| L |   |   |   |   |   |   |
-
-B. Représenter le graphe des chemins pour explorer depuis **F** les autres noeuds, en suivant le chemin *le plus court*. 
-
-C. Ce graphe représente l'arbre couvrant du graphe. Donner les caractéristiques de cet arbre. 
-
-D. Quel est le chemin le plus court pour aller de F à G? 
-
-E. Même question, mais cette fois pour aller de H à K.
-
-# bac 2024 metropole1 exercice 2
-Cet exercice traite de protocoles de routage, de sécurité des communications et de
-base de données relationnelle.
-
-{{% badge icon="star" %}}routage{{% /badge %}}
-
-Une agence de voyage propose des croisières en bateau. Chaque croisière a un nom
-unique et passe par quatre escales correspondant à des villes qui ont elles aussi des noms différents.
-Pour gérer les réservations de ses clients, l’agence utilise une base de données. 
-
-**Partie A**
-
-L’agence de voyage possède deux bureaux distincts.
-Elle passe par un prestataire de service qui héberge sa base de données et utilise un système de gestion de base de données relationnelle.
-Vous trouverez ci-après un schéma du réseau entre les deux bureaux de l’agence de
-voyage et le prestataire.
-On peut y voir les différents routeurs (nommés de A à I) ainsi que le coût des liaisons entre eux.
-
-{{< img src="../images/page6_9.png" caption="Topologie du réseau" >}}
-
-1. Donner deux services rendus par un système de gestion de bases de données
-relationnelles.
-
-Le protocole RIP (Routing Information Protocol) est un protocole de routage qui
-minimise le nombre de routeurs par lesquels les paquets transitent.
-
-Le protocole OSPF (Open Shortest Path First) est un protocole de routage qui
-minimise le coût du transit des paquets. Ce coût s'evalue grâce à la loi:
-
-$$cout = \tfrac{18^8}{Debit}$$
-
-2. Donner la route suivie par une requête issue du bureau numéro 1 jusqu’au
-prestataire si on utilise le protocole RIP.
-3. Le debit d'une liaison, utilisé pour le calcul du coût, s'exprime en bits par seconde. Donner une définition de ce qu'est le *débit*
-4. Calculer le coût pour une liaison de débit 100 Mb par s. *(fast ethernet)*
-5. Donner les deux routes que pourrait suivre une requête issue du bureau numéro
-2 jusqu’au prestataire si on utilise le protocole OSPF. Donner le coût de chaque
-route.
-
 
 # bac 2021 candidat libre exercice 3
 
@@ -326,9 +134,9 @@ Sur un ordinateur, on exécute la commande `ps −eo pid,ppid,stat,command` et o
 {{% badge icon="star" %}}ordonnancement{{% /badge %}}
 
 ## Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.
-### Expliquer à quoi correspond l’état élu.
+1. Expliquer à quoi correspond l’état élu.
 
-### Proposer un schéma illustrant les passages entre les différents états.
+2. Proposer un schéma illustrant les passages entre les différents états.
 
 On suppose que quatre processus C₁, C₂, C₃ et C₄ sont créés sur un ordinateur, et qu’aucun autre processus n’est lancé sur celui-ci, ni préalablement ni pendant l’exécution des quatre processus.
 
@@ -371,8 +179,8 @@ Verrouiller un fichier signifie que le programme demande un accès exclusif au f
 | Déverrouiller fichier_2	 |   |
 | Déverrouiller fichier_1	 |   |
 
-### En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.
+1. En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.
 
-### Proposer une modification du programme 2 permettant d’éviter ce problème.
+2. Proposer une modification du programme 2 permettant d’éviter ce problème.
 
 

@@ -105,7 +105,7 @@ Recopier sur la copie les lignes 7 et 11 en complétant les points de suspension
 *Cet exercice, composé de deux parties A et B, porte sur le parcours des arbres
 binaires, le principe “diviser pour régner” et la récursivité.*
 
-{{% badge icon="star" %}}arbre{{% /badge %}} {{% badge icon="star" %}}parcours{{% /badge %}} {{% badge icon="star" %}}File{{% /badge %}} {{% badge icon="star" %}}récursivité{{% /badge %}}
+{{% badge icon="star" %}}arbre{{% /badge %}} {{% badge icon="star" %}}parcours{{% /badge %}} {{% badge icon="star" %}}File{{% /badge %}} {{% badge icon="star" %}}récursivité{{% /badge %}} 
 
 Cet exercice traite du calcul de la somme d’un arbre binaire. Cette somme consiste à additionner toutes les valeurs numériques contenues dans les nœuds de l’arbre.
 
@@ -156,6 +156,7 @@ parcourir(A):
 Donner le type de parcours obtenu grâce à la fonction `parcourir`.
 
 ## Partie B : Méthode ‘diviser pour régner’
+{{% badge icon="star" %}}diviser pour regner{{% /badge %}}
 ## Question 6
 Parmi les quatre propositions A,B, C et D ci-dessous, indiquer la seule
 proposition correcte.
@@ -346,7 +347,7 @@ Cet exercice traite principalement du thème « algorithmique, langages et
 programmation ». Le but est de comparer le tri par insertion (l'un des algorithmes étudiés en 1ère NSI pour trier un tableau) avec le tri fusion (un algorithme qui applique le principe de « diviser pour régner »). 
 
 ## Partie A : Manipulation d’une liste en Python
-### Donner les affichages obtenus après l’exécution du code Python suivant. 
+1. Donner les affichages obtenus après l’exécution du code Python suivant. 
 
 ```python
 notes = [8, 7, 18, 14, 12, 9, 17, 3]
@@ -355,12 +356,12 @@ print(len(notes))
 print(notes)
 ```
 
-###  Écrire un code Python permettant d'afficher les éléments d'indice 2 à 4 de la liste `notes`
+2. Écrire un code Python permettant d'afficher les éléments d'indice 2 à 4 de la liste `notes`
 
 ## Partie B : Tri par insertion
 Le tri par insertion est un algorithme efficace qui s'inspire de la façon dont on peut trier une poignée de cartes. On commence avec une seule carte dans la main gauche (les autres cartes sont en tas sur la table) puis on pioche la carte suivante et on l'insère au bon endroit dans la main gauche.
 
-### Voici une implémentation en Python de cet algorithme. Recopier et compléter les
+1. Voici une implémentation en Python de cet algorithme. Recopier et compléter les
 lignes 6 et 7 surlignées (uniquement celles-ci). 
 
 ```python
@@ -387,10 +388,10 @@ On a obtenu l'affichage suivant : `[3, 7, 8, 9, 12, 14, 17, 18]`
 
 On s'interroge sur les étapes lors de l’exécution de `tri_insertion(notes)`
 
-### Donner le contenu de la liste `notes` après le premier passage dans la boucle for.
-### Donner le contenu de la liste `notes` après le troisième passage dans la boucle
+2. Donner le contenu de la liste `notes` après le premier passage dans la boucle for.
+3. Donner le contenu de la liste `notes` après le troisième passage dans la boucle
 for. 
-### Quelle est la complexité algorithmique de cet algorithme dans le **meilleur** des cas? (celui où la liste en paramètre est déjà triée). Justifiez.
+4. Quelle est la complexité algorithmique de cet algorithme dans le **meilleur** des cas? (celui où la liste en paramètre est déjà triée). Justifiez.
 
 ## Partie C : Tri fusion
 L'algorithme de tri fusion suit le principe de « diviser pour régner ».
@@ -402,15 +403,15 @@ L'algorithme de tri fusion suit le principe de « diviser pour régner ».
 
 *source wikipedia*
 
-### Cet algorithme est-il itératif ou récursif ? Justifier en une phrase. 
-### Expliquer en quelques lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d'un tas étant la plus petite de ce même tas ; la deuxième carte d'un tas n'étant visible qu'après avoir retiré la première carte de ce tas.
+1. Cet algorithme est-il itératif ou récursif ? Justifier en une phrase. 
+2. Expliquer en quelques lignes comment faire pour rassembler dans une main deux tas déjà triés de cartes, la carte en haut d'un tas étant la plus petite de ce même tas ; la deuxième carte d'un tas n'étant visible qu'après avoir retiré la première carte de ce tas.
 
 À la fin du procédé, les cartes en main doivent être triées par ordre croissant. 
 
 Une fonction `fusionner` a été implémentée en Python en s'inspirant du procédé de la
 question précédente. Elle prend quatre arguments : la liste qui est en train d'être triée, l'indice où commence la sous-liste de gauche à fusionner, l'indice où termine cette sous-liste, et l'indice où se termine la sous-liste de droite.
 
-### Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci). 
+3. Voici une implémentation de l’algorithme de tri fusion. Recopier et compléter les lignes 8, 9 et 10 surlignées (uniquement celles-ci). 
 
 ```python
 from math import floor
@@ -427,7 +428,7 @@ def tri_fusion (liste, i_debut, i_fin):
 
  Remarque : la fonction `floor` renvoie la partie entière du nombre passé en paramètre. 
 
-### Expliquer le rôle de la première ligne du code de la question précédente.
+4. Expliquer le rôle de la première ligne du code de la question précédente.
 
 ## Partie D : Comparaison du tri par insertion et du tri fusion
 
@@ -436,9 +437,9 @@ Voici une illustration des étapes d’un tri effectué sur la liste `[3, 41, 52
 {{< img src="../images/page3_7.png" caption="Figure 1 - 500 × 400" >}}
 
 
-### Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.
+1. Quel algorithme a été utilisé : le tri par insertion ou le tri fusion ? Justifier.
 
-### Identifier le tri qui a une complexité, dans le **pire des cas**, en $O(n^2)$ et identifier le tri qui a une complexité, dans le pire des cas, en $O(n log_2 n)$.
+2. Identifier le tri qui a une complexité, dans le **pire des cas**, en $O(n^2)$ et identifier le tri qui a une complexité, dans le pire des cas, en $O(n log_2 n)$.
 
 *Remarque : n représente la longueur de la liste à trier.*
 

@@ -266,5 +266,140 @@ B.  Fournir une requête SQL permettant de trouver toutes les descriptions des
 emplois de Denis Johnson (Denis est son prénom et Johnson est son nom).
 On veillera à n’afficher que la description des emplois et non les films associés à ces emplois. 
 
+# Exercice 2 25-NSIJ2ME1:
+Cet exercice porte sur les bases de données relationnelles, le langage SQL et la
+programmation.
+
+{{% badge icon="star" %}}sql{{% /badge %}} {{% badge icon="star" %}}python{{% /badge %}} {{% badge icon="star" %}}tableaux{{% /badge %}} {{% badge icon="star" %}}sqlite{{% /badge %}}
+
+## Partie A
+{{% badge icon="star" %}}sql{{% /badge %}}
+
+Une ludothèque municipale a décidé de moderniser sa gestion en créant une base de
+données informatique. Cette base de données permettra de suivre les jeux
+disponibles, les emprunts effectués par les adhérents, ainsi que les avis laissés sur les
+différents jeux. Pour commencer, quatre tables principales ont été identifiées : jeu, adhérent, emprunt et avis. Ces tables et leurs relations vont permettre de stocker toutes les informations essentielles au bon fonctionnement de la ludothèque. On va considérer que la ludothèque n’a qu’un exemplaire de chaque jeu (deux jeux de la ludothèque ne peuvent donc pas avoir le même nom).
+
+{{< img src="../images/page5_2.png" width=400 caption="La base de données de la ludothèque" >}}
+
+Dans la figure ci-dessus, les clés primaires de chacune des tables sont soulignées et les clés étrangères sont précédées du symbole #.
+
+Dans cet exercice, on pourra utiliser les clauses du langage SQL pour :
+* construire des requêtes d’interrogation à l’aide de `SELECT`, `FROM`, `WHERE` (avec les opérateurs logiques `AND`, `OR`) et `JOIN ... ON` ;
+* construire des requêtes d’insertion et de mise à jour à l’aide de `UPDATE`,
+`INSERT` et `DELETE`;
+* affiner les recherches à l’aide de `DISTINCT` et `ORDER BY`;
+* réaliser des agrégations à l’aide de `COUNT`, `SUM` ou  `AVG`.
+
+Par exemple, l’instruction SQL suivante donne le nombre de jeux présents dans la table jeu:
+
+`SELECT COUNT(nomJeu) FROM jeu;`
+
+1. Expliquer pourquoi on ne peut pas prendre l’attribut nom comme clé primaire
+pour la relation adherent.
+2. Décrire ce que donne la requête SQL suivante :
+
+```sql
+SELECT nomJeu, editeur
+FROM jeu
+ORDER BY nomJeu;
+```
+
+Lorsque qu’un jeu est emprunté et n’a pas encore été rendu, la valeur de l’attribut
+`dateRendu` de la table emprunt est à `NULL`.
+
+3. Écrire une requête permettant de connaitre le nom de tous les jeux qui sont en
+cours d’emprunt.
+4. Écrire une requête SQL pour afficher le nom et le prénom de tous les adhérents
+qui ont emprunté le jeu “Catan”.
+5. Claire VOYANT, adhérente de longue date à cette ludothèque, a emprunté le
+jeu “Catan” et l’a rendu le 3 juin 2025. Lors de l’emprunt, la valeur de
+`id_emprunt` était 1538.
+Écrire une requête SQL qui a permis de mettre à jour la base de données afin
+qu’elle prenne en compte que ce jeu a été rendu. Toutes les dates de la base
+de données sont écrites sous le format `'AAAA-MM-JJ'`.
+6. Écrire une requête SQL qui permet de trouver le nom et la catégorie de tous les
+jeux de la ludothèque sortis à partir de 2010 et dont l’âge minimum est
+strictement inférieur à 10 ans.
+
+On modifie la table `avis` pour ajouter une note (entier 0-5) pour chaque jeu à l'aide de l'attribut `note`.
+
+7. Ecrire une requête sql qui calcule la moyenne des notes obtenues pour le jeu "Catan".
+
+La ludothèque décide d’organiser des événements. Pour cela, elle ajoute une relation
+`evenement` à sa base de données. En outre, pour chaque événement, elle souhaite
+garder en mémoire une trace des adhérents qui y ont participé. À cette fin, elle
+complète sa base avec une relation `participation`.
+
+{{< img src="../images/page5_3.png" caption="La base de données de la ludothèque actualisée" >}}
+
+
+8. Proposer les clés étrangères de la table participation en précisant le nom
+des attributs auxquels elles font référence.
+9. Proposer une requête qui identifie les adherants qui ont participé à l'evenement de nom "concours_pokemon".
+10. Ecrire la requête qui compte le nombre de participations par membre aux differents evenements (GROUP BY `id_adherant`), et retourne une liste ordonnée de manière décroissante de participations pour ces membres.
+
+
+## Partie B
+{{% badge icon="star" %}}python{{% /badge %}} {{% badge icon="star" %}}tableaux{{% /badge %}} {{% badge icon="star" %}}sqlite{{% /badge %}}
+
+Le programme Python suivant permet de créer la liste de tous les jeux empruntés,
+sachant que, dans celle-ci, un jeu va apparaître autant de fois qu’il a été emprunté.
+
+```python
+import sqlite3
+
+# Connexion à la base de données
+connection = sqlite3.connect("ludotheque.db")
+# creation d'un curseur pour recuperer les donnees des requetes
+curseur = connection.cursor()
+
+# Exécution de la requête
+curseur.execute("SELECT nomJeu FROM emprunt")
+
+# Récupération des résultats
+jeux = curseur.fetchall()
+
+liste = []
+# Création de la liste des jeux empruntés
+for jeu in jeux:
+  liste.append(jeu[0])
+
+# Fermeture de la connexion
+curseur.close()
+connection.close()
+```
+
+8. Écrire un script Python permettant de créer le dictionnaire `dict_emprunts` qui,
+à chaque jeu emprunté, associe le nombre de fois où il a été emprunté.
+
+On veut créer un podium des jeux les plus souvent empruntés. Comme il peut y avoir
+des égalités à la première, deuxième ou troisième place, il peut y avoir plus de trois jeux sélectionnés sur le podium.
+
+Par exemple, si le dictionnaire des emprunts est :
+
+```python
+dict_emprunts = {
+"Terraforming Mars": 25,
+"Codenames": 22,
+"Agricola": 18,
+"Puerto Rico": 18,
+"Caylus": 18,
+"Dominion": 22,
+"Dixit": 12,
+}
+```
+
+
+il y aura sur le podium les jeux “Agricola”, “Puerto Rico” et “Caylus” puis les jeux
+“Dominion” et “Codenames” et enfin le jeu “Terraforming Mars”.
+
+Pour modéliser ce podium en Python, on va utiliser une liste de trois listes.
+Pour l’exemple précédent, cette liste sera :
+
+`[["Agricola", "Puerto Rico", "Caylus"], ["Dominion",
+"Codenames"], ["Terraforming Mars"]]`
+
+9. Proposer un script Python permettant de générer ce podium.
 
 

@@ -9,7 +9,7 @@ weight: 63
 
 {{% badge icon="star" %}}Files{{% /badge %}}
 
-{{< img src="../images/page12_simon.jpg" >}}
+{{< img src="../images/page12_simon.jpg" width=150 >}}
 
 *Simon* est un jeu de société électronique de forme circulaire comportant quatre grosses touches de couleurs différentes : rouge, vert, bleu et jaune.
 

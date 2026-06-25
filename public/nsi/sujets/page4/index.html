@@ -19,28 +19,28 @@
     <meta property="article:section" content="NSI term">
     <meta itemprop="name" content="algorithmique :: allopizza">
     <meta itemprop="description" content="récursivité, chaine de caractères, random.choice">
-    <meta itemprop="wordCount" content="715">
+    <meta itemprop="wordCount" content="1778">
     <title>algorithmique :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
-    <script src="/js/search-lunr.js?1782229390" defer></script>
-    <script src="/js/search.js?1782229390" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1782383061" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782383061" defer></script>
+    <script src="/js/search-lunr.js?1782383061" defer></script>
+    <script src="/js/search.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+      window.relearn.index_js_url="/searchindex.en.js?1782383061";
     </script>
-    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
-    <link href="/css/theme.css?1782229390" rel="stylesheet">
-    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782383061" rel="stylesheet">
+    <link href="/css/theme.css?1782383061" rel="stylesheet">
+    <link href="/css/format-html.css?1782383061" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -110,6 +110,12 @@
     <li><a href="#question-2">Question 2</a></li>
     <li><a href="#question-3">Question 3</a></li>
     <li><a href="#question-4">Question 4</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#partie-a--quelques-outils">Partie A – Quelques outils</a></li>
+    <li><a href="#partie-b--première-approche-de-rangement">Partie B – Première approche de rangement</a></li>
+    <li><a href="#partie-c--rangement-optimisé-par-récursivité">Partie C – Rangement optimisé par récursivité</a></li>
   </ul>
 </nav>
                 </div>
@@ -244,6 +250,153 @@ paramètre une chaîne de caractères de longueur supérieure ou égale à 2, et
 <p>B.  Écrire le code d’une fonction <code>regleB</code>, prenant en paramètre une chaîne de
 caractères et renvoyant <code>True</code> si la chaîne est construite suivant la règle B,
 et <code>False</code> sinon.</p>
+<h1 id="exercice-2-24-nsij2me1">Exercice 2 24-NSIJ2ME1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Cet exercice porte sur la programmation orientée objets, les tris, les algorithmes
+gloutons, la récursivité et les assertions.</p>
+<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">récursivité</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">POO</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">glouton</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">prog dynamique</span></span></p>
+<p>Cet exercice est composé de trois parties dont les deux dernières sont indépendantes
+entre elles.
+Dans cet exercice, l’entête des fonctions est décrit avec le type des objets en
+paramètre et le type de l’objet renvoyé. Ainsi la fonction puissance qui prend un
+paramètre flottant x et un entier n puis qui renvoie le flottant <code>x**n</code> a pour entête <code>puissance(x: float, n: int) -&gt; float</code></p>
+<p>Une entreprise transporte des marchandises. Elle souhaite maximiser son profit en
+optimisant le remplissage de ses moyens de transport. On considère qu’un moyen de
+transport est limité par son volume (exprimé en litres). Chaque marchandise est
+caractérisée par son prix (en euros) et son volume indivisible (en litres).</p>
+<p>Supposons qu’on ait trois marchandises caractérisées par les couples (prix, volume)
+suivants : 𝑚𝑚1 =(100,10), 𝑚𝑚2 =(100,10) et 𝑚𝑚3 =(250,20). Si le moyen de transport
+peut encore charger 25 litres, il vaut mieux charger la marchandise numéro 3 qui
+rapporte 250 € à l’entreprise plutôt que charger les marchandises numéros 2 et 3 qui
+rapportent 200 € au total pour le même espace utilisé.</p>
+<h2 id="partie-a--quelques-outils">Partie A – Quelques outils<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Nous souhaitons définir une classe <code>Marchandise</code> dont chaque instance définit une
+marchandise possédant deux attributs entiers <code>prix</code> et <code>volume</code>.</p>
+<ol>
+<li>Compléter le constructeur qui renvoie un objet <code>Marchandise</code>. Utiliser le mot-clé
+<code>assert</code> afin qu’une exception soit levée si le paramètre <code>v</code> n’est pas strictement
+positif.
+On rappelle que si condition est une expression Python booléenne s’évaluant
+à <code>True</code> ou <code>False</code>, l’instruction <code>assert</code> condition déclenche une exception
+quand la condition s’évalue à <code>False</code>.</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Marchandise</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">v</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;Marchandise&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<ol start="2">
+<li>
+<p>Donner une instruction qui permet de créer une variable <code>m1</code> représentant une
+marchandise d’un volume de 7 litres coûtant 20 €.</p>
+</li>
+<li>
+<p>Proposer une méthode <code>ratio(self) -&gt; float</code> qui renvoie le ratio
+prix/volume d’une marchandise.</p>
+</li>
+<li>
+<p>Proposer une fonction <code>prixListe(tab: list) -&gt; int</code> qui renvoie le prix
+cumulé de l’ensemble des marchandises formant le tableau <code>tab</code>.</p>
+</li>
+</ol>
+<h2 id="partie-b--première-approche-de-rangement">Partie B – Première approche de rangement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le transporteur souhaite maximiser son profit. On considère que nous avons les quatre marchandises définies par les couples (prix, volume) suivants :
+𝑚𝑚1 =(40,20), 𝑚𝑚2 =(210,70), 𝑚𝑚3 =(160,40) et 𝑚𝑚4 =(50,50).</p>
+<ol start="5">
+<li>Préciser toutes les combinaisons de marchandises possibles si on ne dépasse
+pas un volume de 100 litres et le prix associé. En déduire la combinaison de
+marchandises qui maximise le prix.</li>
+</ol>
+<p>Une première méthode appelée <code>ChargementGlouton</code> consiste à trier les
+marchandises dans l’ordre décroissant de leur prix volumique (ratio prix/volume), puis transporter en priorité les marchandises avec le plus grand prix volumique. Si une marchandise est trop volumineuse pour être transportée, on essaie avec la
+marchandise ayant le prix volumique juste inférieur, ce jusqu’à ce qu’aucune
+marchandise ne puisse rentrer. Ainsi, en notant <code>v_restant</code> le volume disponible et
+<code>m_i</code> la $(𝑖 +1)^e$ marchandise une fois les marchandises triées, l’algorithme peut s’écrire:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ChargementGlouton
+</span></span><span class="line"><span class="cl">n = nombre de marchandises
+</span></span><span class="line"><span class="cl">POUR i ALLANT de 0 à n-1 FAIRE
+</span></span><span class="line"><span class="cl">| SI volume de m_i &lt;= v_restant ALORS
+</span></span><span class="line"><span class="cl">| | charger m_i
+</span></span><span class="line"><span class="cl">| | v_restant = v_restant - volume de m_i
+</span></span><span class="line"><span class="cl">TRANSPORTER le chargement prévu</span></span></code></pre></div>
+<p>Le tri dans l’ordre décroissant des prix volumiques donne 𝑚𝑚3 , 𝑚𝑚2, 𝑚𝑚1, 𝑚𝑚4. Si le moyen de transport accepte 100 litres de chargement, l’algorithme charge 𝑚𝑚3 et 𝑚𝑚1 pour un prix de 200 € (à comparer avec la combinaison trouvée précédemment pour maximiser le prix).</p>
+<p>Par la suite, on rappelle que dans l’implémentation Python, les marchandises sont
+définies par des instances de la classe <code>Marchandise</code>.</p>
+<p>On donne quelques qualificatifs : <em>dichotomique, glouton, graphique, insertion,
+maximum, récursif, tri.</em></p>
+<ol start="6">
+<li>
+<p>Indiquer, sans justification, le qualificatif qui s’applique le mieux à l’algorithme précédent.</p>
+</li>
+<li>
+<p>Recopier et compléter la fonction <code>tri(tab: list) -&gt; None</code> ci-dessous afin
+qu’elle trie en place un tableau contenant des objets de type <code>Marchandise</code> selon
+l’ordre décroissant des ratios. Ainsi, <code>tab[0]</code> doit contenir la marchandise avec
+le plus haut ratio prix/volume après l’appel <code>tri(tab)</code>.</p>
+</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">tab</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">marchandise</span> <span class="o">=</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span> <span class="o">&gt;</span> <span class="o">...</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="n">j</span> <span class="o">=</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tab</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">marchandise</span></span></span></code></pre></div>
+<ol start="8">
+<li>Sans justifier, préciser le nom de ce tri, ainsi que son coût temporel dans le pire des cas (constant, logarithmique, linéaire, quasi-linéaire (𝑛𝑛 log2 𝑛𝑛), quadratique, cubique ou exponentiel).</li>
+<li>Recopier et compléter la fonction charge suivante qui applique l’algorithme
+<code>ChargementGlouton</code> décrit plus haut.</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">charge</span><span class="p">(</span><span class="n">tab</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">volume</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">tri</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">chargement</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="o">...</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<h2 id="partie-c--rangement-optimisé-par-récursivité">Partie C – Rangement optimisé par récursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>L’algorithme précédent ne renvoie pas toujours une solution optimale. On peut donc
+suivre un algorithme récursif. On note n le nombre de marchandises et on souhaite
+implémenter la fonction récursive <code>chargeOptimale</code> d’entête :</p>
+<p><code>chargeOptimale(tab: list, v_restant: int, i: int) -&gt; list</code></p>
+<p>Un appel à cette fonction doit permettre de calculer la charge optimale pour un
+transport de volume v_restant utilisant les marchandises à partir de l’indice i :</p>
+<ul>
+<li>si i &gt;= n, toutes les marchandises ont été essayées et il n’en reste plus
+d’autres disponibles. L’appel récursif renvoie la liste vide ;</li>
+<li>si i &lt; n et la marchandise d’indice i est de volume strictement supérieur au
+volume restant, l’appel récursif renvoie le résultat de l’appel effectué avec le
+même volume restant mais avec la marchandise suivante, c’est-à-dire
+<code>chargeOptimale(tab, v_restant, i+1)</code> ;</li>
+<li>si i &lt; n et la marchandise d’indice i est de volume inférieur ou égal au
+volume restant, il existe deux options possibles :
+– Option 1 soit on utilise la marchandise i, auquel cas le chargement
+contiendra cette marchandise et celles du résultat de l’appel récursif à
+partir de la prochaine marchandise et d’un volume restant strictement
+inférieur,
+– Option 2 soit on n’utilise pas la marchandise i, auquel cas le chargement
+sera le résultat de l’appel récursif avec le même volume restant mais à
+partir de la marchandise suivante.</li>
+</ul>
+<p>On garde l’option de chargement qui maximise le prix transporté.</p>
+<ol start="10">
+<li>Compléter le code de la fonction chargeOptimale dont le principe a été décrit
+ci-avant.</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chargeOptimale</span><span class="p">(</span><span class="n">tab</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">v_restant</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">i</span><span class="o">&gt;=...</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">volume</span> <span class="o">&gt;</span> <span class="n">v_restant</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">chargeOptimale</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="n">v_restant</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">option1</span> <span class="o">=</span> <span class="n">chargeOptimale</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">option2</span> <span class="o">=</span> <span class="p">[</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">chargeOptimale</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">prixListe</span><span class="p">(</span><span class="n">option1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">prixListe</span><span class="p">(</span><span class="n">option2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl">      <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
 
   <footer class="footline">
   </footer>
@@ -372,6 +525,7 @@ et <code>False</code> sinon.</p>
             <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -441,9 +595,9 @@ et <code>False</code> sinon.</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
-    <script src="/js/theme.js?1782229390" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782383061"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782383061" defer></script>
+    <script src="/js/theme.js?1782383061" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

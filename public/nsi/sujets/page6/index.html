@@ -5,42 +5,42 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta name="description" content="architecture, binaire, ordonnancement, commandes Unix">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="architecture :: allopizza">
-    <meta name="twitter:description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta name="twitter:description" content="architecture, binaire, ordonnancement, commandes Unix">
     <meta property="og:url" content="//localhost:1313/nsi/sujets/page6/index.html">
     <meta property="og:site_name" content="allopizza">
     <meta property="og:title" content="architecture :: allopizza">
-    <meta property="og:description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
+    <meta property="og:description" content="architecture, binaire, ordonnancement, commandes Unix">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI term">
     <meta itemprop="name" content="architecture :: allopizza">
-    <meta itemprop="description" content="architecture, binaire, codage des caracteres, XOR, chiffrement, securite des transmissions, ordonnancement, routage, commandes Unix">
-    <meta itemprop="wordCount" content="2743">
+    <meta itemprop="description" content="architecture, binaire, ordonnancement, commandes Unix">
+    <meta itemprop="wordCount" content="1432">
     <title>architecture :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1782229390" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1782229390" defer></script>
-    <script src="/js/search-lunr.js?1782229390" defer></script>
-    <script src="/js/search.js?1782229390" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1782383061" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782383061" defer></script>
+    <script src="/js/search-lunr.js?1782383061" defer></script>
+    <script src="/js/search.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1782229390";
+      window.relearn.index_js_url="/searchindex.en.js?1782383061";
     </script>
-    <script src="/js/lunr/lunr.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1782229390" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1782229390" defer></script>
+    <script src="/js/lunr/lunr.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782383061" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782383061" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782229390" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782229390" rel="stylesheet">
-    <link href="/css/theme.css?1782229390" rel="stylesheet">
-    <link href="/css/format-html.css?1782229390" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782383061" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782383061" rel="stylesheet">
+    <link href="/css/theme.css?1782383061" rel="stylesheet">
+    <link href="/css/format-html.css?1782383061" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -114,27 +114,10 @@
   </ul>
 
   <ul>
-    <li><a href="#question-1-1">Question 1</a></li>
-    <li><a href="#question-2-1">Question 2</a></li>
-    <li><a href="#question-3-1">Question 3</a></li>
-    <li><a href="#question-4-sup-hors-bac">Question 4 (sup hors bac)</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#les-états-possibles-dun-processus-sont--prêt-élu-terminé-et-bloqué">Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.</a>
-      <ul>
-        <li><a href="#expliquer-à-quoi-correspond-létat-élu">Expliquer à quoi correspond l’état élu.</a></li>
-        <li><a href="#proposer-un-schéma-illustrant-les-passages-entre-les-différents-états">Proposer un schéma illustrant les passages entre les différents états.</a></li>
-      </ul>
-    </li>
+    <li><a href="#les-états-possibles-dun-processus-sont--prêt-élu-terminé-et-bloqué">Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.</a></li>
     <li><a href="#parmi-les-propositions-suivantes-recopier-celle-qui-décrit-le-fonctionnement-des-entréessorties-dans-une-file-">Parmi les propositions suivantes, recopier celle qui décrit le fonctionnement des entrées/sorties dans une file :</a></li>
     <li><a href="#on-suppose-que-les-quatre-processus-arrivent-dans-la-file-et-y-sont-placés-dans-lordre-c-c-c-et-c">On suppose que les quatre processus arrivent dans la file et y sont placés dans l’ordre C₁, C₂, C₃ et C₄.</a></li>
-    <li><a href="#on-trouvera-ci-dessous-deux-programmes-rédigés-en-pseudo-code">On trouvera ci-dessous deux programmes rédigés en pseudo-code.</a>
-      <ul>
-        <li><a href="#en-supposant-que-les-processus-correspondant-à-ces-programmes-sexécutent-simultanément-exécution-concurrente-expliquer-le-problème-qui-peut-être-rencontré">En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.</a></li>
-        <li><a href="#proposer-une-modification-du-programme-2-permettant-déviter-ce-problème">Proposer une modification du programme 2 permettant d’éviter ce problème.</a></li>
-      </ul>
-    </li>
+    <li><a href="#on-trouvera-ci-dessous-deux-programmes-rédigés-en-pseudo-code">On trouvera ci-dessous deux programmes rédigés en pseudo-code.</a></li>
   </ul>
 </nav>
                 </div>
@@ -174,90 +157,6 @@
 
 <h1 id="architecture">architecture</h1>
 
-<h1 id="bac-2021-centres-étrangers-2-exercice-3">Bac 2021 Centres étrangers 2: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p><em>Thèmes abordés : conversion décimal/binaire, table de vérité, codage des caractères</em></p>
-<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ascii</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">xor</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">chiffrement</span></span></p>
-<p>L’objectif de l’exercice est d’étudier une méthode de cryptage d’une chaîne de
-caractères à l’aide du codage ASCII et de la fonction logique XOR.</p>
-<p><strong>1.</strong> Le nombre 65, donné ici en écriture décimale, s’écrit 01000001 en notation
-binaire. En détaillant la méthode utilisée, donner l’écriture binaire du nombre
-89.</p>
-<p><strong>2.</strong> La fonction logique OU EXCLUSIF, appelée XOR et représentée par le symbole
-$\bigoplus$, fournit une sortie égale à 1 si l’une ou l’autre des deux entrées vaut 1 mais
-pas les deux.</p>
-<p>On donne ci-contre la table de vérité de la fonction XOR:</p>
-
-<figure >
-    
-        <img src="../images/xor1.png"  />
-    
-    
-</figure>
-
-<p>Si on applique cette fonction à un nombre codé en binaire, elle opère bit à bit.</p>
-<p>
-<figure >
-    
-        <img src="../images/xor2.png"  />
-    
-    
-</figure>
-
-Poser et calculer l’opération : $11001110 \bigoplus 01101011$</p>
-<p><strong>3.</strong> On donne, ci-dessous, un extrait de la table ASCII qui permet d’encoder les
-caractères de A à Z.
-On peut alors considérer l’opération XOR entre deux caractères en effectuant
-le XOR entre les codes ASCII des deux caractères. Par exemple : &lsquo;F&rsquo; XOR &lsquo;S&rsquo;
-sera le résultat de $01000110 \bigoplus 01010011$.</p>
-<p>
-<figure >
-    
-        <img src="../images/xor3.png"  />
-    
-    
-</figure>
-
-On souhaite mettre au point une méthode de cryptage à l’aide de la fonction
-XOR.</p>
-<p>Pour cela, on dispose d’un message à crypter et d’une clé de cryptage de même
-longueur que ce message. Le message et la clé sont composés uniquement
-des caractères du tableau ci-dessus et on applique la fonction XOR caractère
-par caractère entre les lettres du message à crypter et les lettres de la clé de
-cryptage.</p>
-<p>Par exemple, voici le cryptage du mot ALPHA à l’aide de la clé YAKYA :</p>
-<p>
-<figure >
-    
-        <img src="../images/xor4.png"  />
-    
-    
-</figure>
-
-Ecrire une fonction <code>xor_crypt(message, cle)</code> qui prend en paramètres deux
-chaînes de caractères et qui renvoie la liste des entiers correspondant au
-message crypté.</p>
-<p><em>Aide :</em></p>
-<ul>
-<li>On pourra utiliser la fonction native du langage Python <code>ord(c)</code> qui prend en paramètre un caractère c et qui renvoie un nombre représentant le code ASCII du caractère c.</li>
-<li>On considère également que l’on dispose d’une fonction écrite <code>xor(n1,n2)</code> qui prend en paramètre deux nombres n1 et n2 et qui renvoie le résultat de n1 ⊕ n2.</li>
-</ul>
-<p><strong>4.</strong> On souhaite maintenant générer une clé de la taille du message à partir d’un
-mot quelconque. On considère que le mot choisi est plus court que le
-message, il faut donc le reproduire un certain nombre de fois pour créer une
-clé de la même longueur que le message.</p>
-<p>Par exemple, si le mot choisi est YAK pour crypter le message ALPHABET, la
-clé sera YAKYAKYA.)</p>
-<p>Créer une fonction <code>generer_cle(mot,n)</code> qui renvoie la clé de longueur n à partir de la chaîne de caractères mot.</p>
-<p><strong>5.</strong> Recopier et compléter la table de vérité de $(𝑬𝟏 \bigoplus 𝑬𝟐) \bigoplus 𝑬𝟐$.</p>
-<p>
-<figure >
-    
-        <img src="../images/xor5.png"  />
-    
-    
-</figure>
-
-A l’aide de ce résultat, proposer une démarche pour décrypter un message crypté.</p>
 <h1 id="bac-2022-polynesie-exercice-2">Bac 2022 Polynesie: Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p><em>Cet exercice traite du thème « architecture matérielle », et principalement d&rsquo;ordonnancement et d&rsquo;expressions booléennes.</em></p>
 <p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ordonnancement</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">logique</span></span></p>
@@ -353,16 +252,19 @@ l&rsquo;ordonnancement décrit ci-dessus, sur 3 tours.</p>
 
 <figure >
     
-        <img src="../images/page6_1.png" alt="470 × 138" />
+        <img src="../images/page6_1.png"
+        
+        alt="470 × 138" />
     
     
     <figcaption>
+        
         <p>
-        470 × 138
-        
+            470 × 138
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
@@ -372,16 +274,19 @@ l&rsquo;ordonnancement décrit ci-dessus, sur 3 tours.</p>
 <p>
 <figure >
     
-        <img src="../images/page6_2.png" alt="566 × 170" />
+        <img src="../images/page6_2.png"
+        
+        alt="566 × 170" />
     
     
     <figcaption>
+        
         <p>
-        566 × 170
-        
+            566 × 170
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
@@ -392,16 +297,19 @@ c. Dessiner un circuit permettant de sélectionner le périphérique 0.</p>
 <p>
 <figure >
     
-        <img src="../images/page6_3.png" alt="1252 × 590" />
+        <img src="../images/page6_3.png"
+        
+        alt="1252 × 590" />
     
     
     <figcaption>
+        
         <p>
-        1252 × 590
-        
+            1252 × 590
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
@@ -409,246 +317,23 @@ c. Dessiner un circuit permettant de sélectionner le périphérique 0.</p>
 
 <figure >
     
-        <img src="../images/page6_4.png" alt="1252 × 788" />
+        <img src="../images/page6_4.png"
+        
+        alt="1252 × 788" />
     
     
     <figcaption>
+        
         <p>
-        1252 × 788
-        
+            1252 × 788
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
 </p>
-<h1 id="bac-2022-metropole1-exercice-3">Bac 2022 Metropole1: Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Cet exercice porte sur les représentations binaires et les protocoles de routage.</p>
-<p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">binaire</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">routage</span></span></p>
-<h2 id="question-1-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Une adresse IPv4 est représentée sous la forme de 4 nombres séparés par des
-points. Chacun de ces 4 nombres peut être représenté sur un octet.</p>
-<p>A.  Donner en écriture décimale l’adresse IPv4 correspondant à l’écriture binaire :</p>
-<p>11000000.10101000.10000000.10000011</p>
-<p>B.  Tous les ordinateurs du réseau A ont une adresse IPv4 de la forme :
-192.168.128._ _ _ , où seul le dernier octet (représenté par _ _ _ ) diffère.
-Donner le nombre d’adresses différentes possibles du réseau A.</p>
-<h2 id="question-2-1">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>On rappelle que le protocole RIP cherche à minimiser le nombre de routeurs
-traversés (qui correspond à la métrique). On donne les tables de routage d’un
-réseau informatique composé de 5 routeurs (appelés A, B, C, D et E), chacun
-associé directement à un réseau du même nom obtenues avec le protocole RIP :</p>
-<p>
-<figure >
-    
-        <img src="../images/page6_5.png" alt="1234 × 916" />
-    
-    
-    <figcaption>
-        <p>
-        1234 × 916
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-A.  Donner la liste des routeurs avec lesquels le routeur A est directement
-relié.</p>
-<p>B.  Représenter graphiquement et de manière sommaire les 5 routeurs
-ainsi que les liaisons existantes entre ceux-ci.</p>
-<h2 id="question-3-1">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le protocole OSPF est un protocole de routage qui cherche à minimiser la
-somme des métriques des liaisons entre routeurs.</p>
-<p>Dans le protocole de routage OSPF le débit des liaisons entre routeurs agit
-sur la métrique via la relation : $metrique = \tfrac{10^8}{debit}$  dans laquelle le débit est exprimé en bit par seconde (bps).</p>
-<p>On rappelle qu’un kbps est égal à $10^3$  bps et qu’un Mbps est égal à $10^6$  bps.</p>
-<p>A. Recopier sur votre copie et compléter le tableau suivant :</p>
-<table>
-	<thead>
-			<tr>
-					<th>Débit</th>
-					<th>100 kbps</th>
-					<th>500 kbps</th>
-					<th>?</th>
-					<th>100 Mbps</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Métrique associé</td>
-					<td>1000</td>
-					<td>?</td>
-					<td>10</td>
-					<td>1</td>
-			</tr>
-	</tbody>
-</table>
-<p>
-<figure >
-    
-        <img src="../images/page6_6.png" alt="1230 × 644" />
-    
-    
-    <figcaption>
-        <p>
-        1230 × 644
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-Les nombres présents sur les liaisons représentent les coûts des routes avec le
-protocole OSPF.</p>
-<p>B.  Indiquer le chemin emprunté par un message d’un ordinateur du réseau F à
-destination d’un ordinateur du réseau I.
-Justifier votre réponse.</p>
-<p>C.  Recopier et compléter la table de routage du routeur F.</p>
-<p>D.  Citer une unique panne qui suffirait à ce que toutes les données des échanges de tout autre réseau à destination du réseau F transitent par le routeur G.
-Expliquer en détail votre réponse.</p>
-<h2 id="question-4-sup-hors-bac">Question 4 (sup hors bac)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>A. Donner les caractéristiques du graphe de réseaux schématisé plus haut.</p>
-<p>On donne cette fois le tableau constitué à partir de l&rsquo;algorithme de Dijkstra, appliqué à ce même graphe de reseaux:</p>
-<ul>
-<li>le colonnes représentent les sommets à atteindre</li>
-<li>les lignes sont les sommets de départ</li>
-<li>On renseigne dans les cases la distance cumulée depuis le noeud <strong>F</strong>, jusqu&rsquo;au noeud de la colonne, en passant par le noeud adjacent de la ligne. Par exemple, <strong>I</strong> peut être atteint en venant du noeud <strong>K</strong> avec une longueur de 13.</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th></th>
-					<th>G</th>
-					<th>H</th>
-					<th>I</th>
-					<th>J</th>
-					<th>K</th>
-					<th>L</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>F</td>
-					<td></td>
-					<td>5</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>G</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>H</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>6</td>
-					<td></td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>I</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>J</td>
-					<td>8</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td>8</td>
-					<td>11</td>
-			</tr>
-			<tr>
-					<td>K</td>
-					<td></td>
-					<td></td>
-					<td>13</td>
-					<td></td>
-					<td></td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>L</td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-			</tr>
-	</tbody>
-</table>
-<p>B. Représenter le graphe des chemins pour explorer depuis <strong>F</strong> les autres noeuds, en suivant le chemin <em>le plus court</em>.</p>
-<p>C. Ce graphe représente l&rsquo;arbre couvrant du graphe. Donner les caractéristiques de cet arbre.</p>
-<p>D. Quel est le chemin le plus court pour aller de F à G?</p>
-<p>E. Même question, mais cette fois pour aller de H à K.</p>
-<h1 id="bac-2024-metropole1-exercice-2">bac 2024 metropole1 exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Cet exercice traite de protocoles de routage, de sécurité des communications et de
-base de données relationnelle.</p>
-<span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">routage</span></span>
-<p>Une agence de voyage propose des croisières en bateau. Chaque croisière a un nom
-unique et passe par quatre escales correspondant à des villes qui ont elles aussi des noms différents.
-Pour gérer les réservations de ses clients, l’agence utilise une base de données.</p>
-<p><strong>Partie A</strong></p>
-<p>L’agence de voyage possède deux bureaux distincts.
-Elle passe par un prestataire de service qui héberge sa base de données et utilise un système de gestion de base de données relationnelle.
-Vous trouverez ci-après un schéma du réseau entre les deux bureaux de l’agence de
-voyage et le prestataire.
-On peut y voir les différents routeurs (nommés de A à I) ainsi que le coût des liaisons entre eux.</p>
-
-<figure >
-    
-        <img src="../images/page6_9.png" alt="Topologie du réseau" />
-    
-    
-    <figcaption>
-        <p>
-        Topologie du réseau
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
-<ol>
-<li>Donner deux services rendus par un système de gestion de bases de données
-relationnelles.</li>
-</ol>
-<p>Le protocole RIP (Routing Information Protocol) est un protocole de routage qui
-minimise le nombre de routeurs par lesquels les paquets transitent.</p>
-<p>Le protocole OSPF (Open Shortest Path First) est un protocole de routage qui
-minimise le coût du transit des paquets. Ce coût s&rsquo;evalue grâce à la loi:</p>
-$$cout = \tfrac{18^8}{Debit}$$<ol start="2">
-<li>Donner la route suivie par une requête issue du bureau numéro 1 jusqu’au
-prestataire si on utilise le protocole RIP.</li>
-<li>Le debit d&rsquo;une liaison, utilisé pour le calcul du coût, s&rsquo;exprime en bits par seconde. Donner une définition de ce qu&rsquo;est le <em>débit</em></li>
-<li>Calculer le coût pour une liaison de débit 100 Mb par s. <em>(fast ethernet)</em></li>
-<li>Donner les deux routes que pourrait suivre une requête issue du bureau numéro
-2 jusqu’au prestataire si on utilise le protocole OSPF. Donner le coût de chaque
-route.</li>
-</ol>
 <h1 id="bac-2021-candidat-libre-exercice-3">bac 2021 candidat libre exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">cmd unix</span></span>
 <p>La commande UNIX <code>ps</code> présente un cliché instantané des processus en cours d’exécution.</p>
@@ -660,7 +345,9 @@ route.</li>
 
 <figure >
     
-        <img src="../images/page6_7.png"  />
+        <img src="../images/page6_7.png"
+        
+         />
     
     
 </figure>
@@ -676,8 +363,14 @@ route.</li>
 <h1 id="bac-2021-candidat-libre-exercice-2-sujet-2">bac 2021 candidat libre exercice 2 sujet 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">ordonnancement</span></span>
 <h2 id="les-états-possibles-dun-processus-sont--prêt-élu-terminé-et-bloqué">Les états possibles d’un processus sont : prêt, élu, terminé et bloqué.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<h3 id="expliquer-à-quoi-correspond-létat-élu">Expliquer à quoi correspond l’état élu.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<h3 id="proposer-un-schéma-illustrant-les-passages-entre-les-différents-états">Proposer un schéma illustrant les passages entre les différents états.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ol>
+<li>
+<p>Expliquer à quoi correspond l’état élu.</p>
+</li>
+<li>
+<p>Proposer un schéma illustrant les passages entre les différents états.</p>
+</li>
+</ol>
 <p>On suppose que quatre processus C₁, C₂, C₃ et C₄ sont créés sur un ordinateur, et qu’aucun autre processus n’est lancé sur celui-ci, ni préalablement ni pendant l’exécution des quatre processus.</p>
 <p>L’ordonnanceur, pour exécuter les différents processus prêts, les place dans une structure de données de type file. Un processus prêt est enfilé et un processus élu est défilé.</p>
 <h2 id="parmi-les-propositions-suivantes-recopier-celle-qui-décrit-le-fonctionnement-des-entréessorties-dans-une-file-">Parmi les propositions suivantes, recopier celle qui décrit le fonctionnement des entrées/sorties dans une file :<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -697,16 +390,19 @@ route.</li>
 
 <figure >
     
-        <img src="../images/page6_8.png" alt="Annexe de l’exercice 2" />
+        <img src="../images/page6_8.png"
+        
+        alt="Annexe de l’exercice 2" />
     
     
     <figcaption>
+        
         <p>
-        Annexe de l’exercice 2
-        
+            Annexe de l’exercice 2
             
-        
-        </p> 
+                
+            
+        </p>
     </figcaption>
     
 </figure>
@@ -755,8 +451,14 @@ route.</li>
 			</tr>
 	</tbody>
 </table>
-<h3 id="en-supposant-que-les-processus-correspondant-à-ces-programmes-sexécutent-simultanément-exécution-concurrente-expliquer-le-problème-qui-peut-être-rencontré">En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<h3 id="proposer-une-modification-du-programme-2-permettant-déviter-ce-problème">Proposer une modification du programme 2 permettant d’éviter ce problème.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ol>
+<li>
+<p>En supposant que les processus correspondant à ces programmes s’exécutent simultanément (exécution concurrente), expliquer le problème qui peut être rencontré.</p>
+</li>
+<li>
+<p>Proposer une modification du programme 2 permettant d’éviter ce problème.</p>
+</li>
+</ol>
 
   <footer class="footline">
   </footer>
@@ -885,6 +587,7 @@ route.</li>
             <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="active " data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -954,9 +657,9 @@ route.</li>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782229390"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782229390" defer></script>
-    <script src="/js/theme.js?1782229390" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782383061"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782383061" defer></script>
+    <script src="/js/theme.js?1782383061" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
