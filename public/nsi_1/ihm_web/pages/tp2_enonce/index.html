@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="&lt;!DOCTYPE html&gt; TP3 - Énoncé - Animation sur tracé SVG 🎮 TP2 - Animation sur tracé SVG Énoncé du travail pratique">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="&lt;!DOCTYPE html&gt; TP3 - Énoncé - Animation sur tracé SVG 🎮 TP2 - Animation sur tracé SVG Énoncé du travail pratique">
+    <meta property="og:url" content="//localhost:1313/nsi_1/ihm_web/pages/tp2_enonce/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:description" content="&lt;!DOCTYPE html&gt; TP3 - Énoncé - Animation sur tracé SVG 🎮 TP2 - Animation sur tracé SVG Énoncé du travail pratique">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI prem">
+    <meta itemprop="description" content="&lt;!DOCTYPE html&gt; TP3 - Énoncé - Animation sur tracé SVG 🎮 TP2 - Animation sur tracé SVG Énoncé du travail pratique">
+    <meta itemprop="wordCount" content="1535">
+    <title></title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782463386" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782463386" defer></script>
+    <script src="/js/search-lunr.js?1782463386" defer></script>
+    <script src="/js/search.js?1782463386" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782463386";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782463386" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782463386" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782463386" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782463386" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782463386" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782463386" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782463386" rel="stylesheet">
+    <link href="/css/theme.css?1782463386" rel="stylesheet">
+    <link href="/css/format-html.css?1782463386" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi_1\/ihm_web\/pages\/tp2_enonce\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi_1/ihm_web/pages/tp2_enonce/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/ihm_web/index.html"><span itemprop="name">IHM web</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI_1/ihm_web/pages/tp(2)_enonce.html" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/ihm_web/html_page6/index.html" title="serveur Flask (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/tp/index.html" title="TP (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi_1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id=""></h1>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - Énoncé - Animation sur tracé SVG</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #2c3e50;
+            font-family: Arial, sans-serif;
+        }
+        
+        .instructions {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .instructions h1 {
+            color: #3498db;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .etape {
+            background: #ecf0f1;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        
+        .etape h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        
+        /* Sections À FAIRE et QUESTIONS très visibles */
+        .etape h3 {
+            margin-top: 20px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        .etape h3[style*="e74c3c"] {
+            background: #ffe6e6;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .etape h3[style*="2980b9"] {
+            background: #e3f2fd;
+            border-left: 5px solid #2980b9;
+        }
+        
+        .etape h3[style*="27ae60"] {
+            background: #e8f5e9;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .etape h3[style*="8e44ad"] {
+            background: #f3e5f5;
+            border-left: 5px solid #8e44ad;
+        }
+        
+        .etape ol, .etape ul {
+            line-height: 1.8;
+        }
+        
+        .etape ol li {
+            margin: 8px 0;
+        }
+        
+        code {
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .code-block {
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            white-space: pre;
+        }
+        
+        .fichiers {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .fichiers h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>🎮 TP2 - Animation sur tracé SVG</h1>
+        <p class="subtitle">Énoncé du travail pratique</p>
+        
+        <div class="fichiers">
+            <h3>📁 Fichier fourni :</h3>
+            <ul>
+                
+                <li><strong><a href="../tp2_travail/" download="tp(2)_travail.html">tp(2)_travail.html</a></strong> : Le fichier sur lequel vous allez travailler</li>
+            </ul>
+            <p><strong>💡 Conseil :</strong> Gardez les deux fichiers ouverts en même temps (l'énoncé dans le navigateur, le fichier de travail dans votre éditeur).</p>
+        </div>
+        
+        <div class="etape">
+            <h2>📐 ÉTAPE 1 : Créer le conteneur principal</h2>
+            <p><strong>Objectif :</strong> Créer une zone de 600×600px centrée qui contiendra toute l'animation.</p>
+            
+            <p><strong>Ce qui est déjà fait :</strong></p>
+            <ul>
+                <li>Le CSS du conteneur <code>#main-container</code> est déjà défini</li>
+                <li>Dimensions : 600px × 600px</li>
+                <li><code>position: relative</code> (important pour les éléments enfants)</li>
+                <li><code>margin: 0 auto</code> (centrage horizontal)</li>
+            </ul>
+            
+            <h3 style="color: #e74c3c;">📝 À FAIRE VOUS-MÊME :</h3>
+            <ol>
+                <li><strong>Ouvrez le fichier avec votre éditeur HTML</strong> (Notepad++, VSCode, ou autre)</li>
+                <li><strong>Cherchez dans le code :</strong> Trouvez la section <code>&lt;style&gt;</code> puis <code>#main-container</code></li>
+                <li><strong>Lisez chaque propriété CSS</strong> et essayez de comprendre son rôle</li>
+                <li><strong>Observez le résultat :</strong> Ouvrez <code>tp2_travail.html</code> dans votre navigateur, vous devriez voir un carré violet dégradé</li>
+            </ol>
+            
+            <h3 style="color: #2980b9;">❓ QUESTIONS :</h3>
+            <ol>
+                <li>Quelle est la largeur du conteneur ?</li>
+                <li>Quelle propriété permet de centrer le conteneur horizontalement ?</li>
+                <li>Pourquoi utilise-t-on <code>position: relative</code> ?</li>
+            </ol>
+            
+            <p><strong>✅ Validation :</strong> Vous devriez voir un carré violet dégradé de 600×600px centré dans la page.</p>
+        </div>
+        
+        <div class="etape">
+            <h2>🎨 ÉTAPE 2 : Ajouter les cercles décoratifs</h2>
+            <p><strong>Objectif :</strong> Créer 3 cercles semi-transparents positionnés en <code>position: absolute</code>.</p>
+            
+            <p><strong>Ce qui est déjà fait :</strong></p>
+            <ul>
+                <li>Les 3 <code>&lt;div class="cercle"&gt;</code> sont dans le HTML</li>
+                <li>Le CSS de base (forme ronde, transparence) est défini</li>
+                <li>Les positions sont déjà définies dans le CSS</li>
+            </ul>
+            
+            <h3 style="color: #e74c3c;">📝 À FAIRE VOUS-MÊME :</h3>
+            <ol>
+                <li><strong>Trouvez le HTML des cercles :</strong> Cherchez dans le code les 3 lignes contenant <code>&lt;div class="cercle" id="cercle1"&gt;&lt;/div&gt;</code></li>
+                <li><strong>Trouvez le CSS des cercles :</strong> Cherchez dans le <code>&lt;style&gt;</code> la partie avec <code>.cercle</code> et <code>#cercle1</code>, <code>#cercle2</code>, <code>#cercle3</code></li>
+                <li><strong>Observez le résultat :</strong> Les 3 cercles blancs semi-transparents doivent être visibles dans le conteneur violet</li>
+            </ol>
+            
+            <h3 style="color: #2980b9;">❓ QUESTIONS :</h3>
+            <ol>
+                <li>Quelle propriété CSS transforme un carré en cercle ?</li>
+                <li>Que signifie <code>rgba(255, 255, 255, 0.2)</code> ?</li>
+                <li>À quoi servent <code>top</code> et <code>left</code> ?</li>
+                <li>Où se positionne <code>#cercle1</code> ?</li>
+            </ol>
+            
+            <h3 style="color: #27ae60;">🎯 EXERCICE PRATIQUE :</h3>
+            <p><strong>Ajoutez un 4ème cercle :</strong> de diametre 120px, centré en x=300,y=200.</p>
+            <ol>
+                <li>Ajoutez dans le HTML : <i>(et compléter)</i> <code>&lt;div class="cercle" id="...."&gt;&lt;/div&gt;</code></li>
+                <li>Ajoutez dans le CSS: <i>(et compléter)</i> 
+                    <div class="code-block">#cercle4 {
+                    ...
+}</div>
+                </li>
+                <li>Rafraîchissez la page (F5) et vérifiez qu'un 4ème cercle apparaît</li>
+            </ol>
+            
+            <p><strong>✅ Validation :</strong> Vous devriez voir 3 cercles blancs semi-transparents (ou 4 si vous avez fait l'exercice) dans le conteneur violet.</p>
+            
+            <p><strong>💡 À comprendre :</strong></p>
+            <div class="code-block">/* Position absolute par rapport au conteneur parent */
+position: absolute;
+top: 50px;      /* 50px depuis le haut */
+left: 50px;     /* 50px depuis la gauche */
+
+/* OU utiliser bottom/right */
+bottom: 100px;  /* 100px depuis le bas */
+right: 80px;    /* 80px depuis la droite */</div>
+        </div>
+        
+        <div class="etape">
+            <h2>✨ ÉTAPE 3 : Animation sur trajectoire elliptique</h2>
+            <p><strong>Objectif :</strong> Faire suivre le sprite une trajectoire définie en SVG.</p>
+            
+            <h3 style="color: #e74c3c;">📝 À FAIRE VOUS-MÊME :</h3>
+            <p><strong>ÉTAPE 3.1 - Observer le SVG :</strong></p>
+            <ol>
+                <li>Cherchez dans le code HTML la balise <code>&lt;svg id="hidden-svg"&gt;</code></li>
+                <li>Observez le <code>viewBox="0 0 300 269"</code> → système de coordonnées de 300×269 unités</li>
+                <li>Observez le <code>&lt;path id="monChemin" d="..."&gt;</code> → c'est la trajectoire elliptique</li>
+            </ol>
+            
+            <p><strong>ÉTAPE 3.2 - Décommenter le code JavaScript :</strong></p>
+            <ol>
+                <li><strong>Trouvez le script :</strong> Descendez tout en bas du code HTML jusqu'à <code>&lt;script&gt;</code></li>
+                <li><strong>Repérez les commentaires :</strong> Vous verrez <code>/*</code> au début et <code>*/</code> à la fin</li>
+                <li><strong>Supprimez ces lignes :</strong>
+                    <ul>
+                        <li>Supprimez la ligne <code>/* TODO ÉTAPE 3...</code></li>
+                        <li>Supprimez la ligne <code>FIN DU CODE...</code> et le <code>*/</code></li>
+                    </ul>
+                </li>
+                <li><strong>Vérifiez :</strong> Le code JavaScript ne doit plus être grisé/en commentaire</li>
+            </ol>
+            
+            <p><strong>ÉTAPE 3.3 - Tester l'animation :</strong></p>
+            <ol>
+                <li>Enregistrez votre fichier (Ctrl+S)</li>
+                <li>Rafraîchissez la page dans le navigateur (F5)</li>
+                <li>Ouvrez la console (F12 → onglet Console)</li>
+                <li><strong>Vérifiez qu'il n'y a pas d'erreurs</strong> (texte rouge dans la console)</li>
+                <li>Cliquez sur le bouton <strong>"▶ Démarrer"</strong></li>
+                <li><strong>Le sprite (point jaune) doit suivre l'ellipse !</strong></li>
+            </ol>
+            
+            <h3 style="color: #2980b9;">❓ QUESTIONS DE COMPRÉHENSION :</h3>
+            <ol>
+                <li><strong>Que fait <code>path.getTotalLength()</code> ?</strong><br>
+                    </li>
+                
+                <li><strong>Que fait <code>path.getPointAtLength(distance)</code> ?</strong><br>
+                    </li>
+                
+                <li><strong>Pourquoi divise-t-on <code>point.x</code> par <code>svgWidth</code> ?</strong><br>
+                    </li>
+                
+                <li><strong>Pourquoi multiplie-t-on ensuite par 600 ?</strong><br>
+                    </li>
+                
+                <li><strong>Que représente la variable <code>progress</code> ?</strong><br>
+                    </li>
+                
+                <li><strong>Que se passe-t-il quand <code>progress</code> atteint 1 ?</strong><br></li>
+                <li><strong>Quelle fonction gère le déplacement du sprite? Comment?</strong></li>
+            </ol>
+            
+            <h3 style="color: #8e44ad;">🔍 COMMENT ÇA MARCHE :</h3>
+            <p><strong>La conversion des coordonnées en 3 étapes :</strong></p>
+            <div class="code-block">// ÉTAPE 1 : Coordonnées SVG (système du viewBox)
+point.x = 150  (dans le système 0-300)
+point.y = 100  (dans le système 0-269)
+
+// ÉTAPE 2 : Conversion en pourcentage
+percentX = 150 / 300 = 0.5   (50%)
+percentY = 100 / 269 = 0.37  (37%)
+
+// ÉTAPE 3 : Conversion en pixels du conteneur
+x = 0.5 × 600 = 300px    (50% de 600px)
+y = 0.37 × 600 = 222px   (37% de 600px)</div>
+            
+            <h3 style="color: #27ae60;">🎯 EXERCICE DE TEST :</h3>
+            <p>Une fois l'animation lancée :</p>
+            <ol>
+                <li>Testez le bouton <strong>"⏸ Pause"</strong> → l'animation doit s'arrêter</li>
+                <li>Testez le bouton <strong>"↺ Recommencer"</strong> → le sprite retourne au début</li>
+                <li>Bougez le curseur <strong>"Vitesse"</strong> → l'animation doit accélérer ou ralentir</li>
+                <li>Observez l'affichage de la position en % et des coordonnées x, y</li>
+            </ol>
+            
+            <p><strong>✅ Validation :</strong> Le sprite jaune suit la trajectoire elliptique en boucle. Les boutons et le curseur fonctionnent.</p>
+            
+            <p><strong>⚠️ En cas d'erreur :</strong></p>
+            <ul>
+                <li><strong>Le sprite ne bouge pas :</strong> Vérifiez que vous avez bien décommenté TOUT le code JavaScript</li>
+                <li><strong>Erreur dans la console :</strong> Vérifiez qu'il n'y a pas de <code>/*</code> ou <code>*/</code> au milieu du code</li>
+                <li><strong>Le sprite est invisible :</strong> Vérifiez le CSS de <code>#sprite</code></li>
+            </ul>
+        </div>
+        
+        <div class="etape">
+            <h2>🎨 ÉTAPE 4 : Créer votre propre tracé avec GIMP</h2>
+            <p><strong>Objectif :</strong> Remplacer l'ellipse par votre propre dessin créé dans GIMP.</p>
+            
+            <h3 style="color: #e74c3c;">📝 À FAIRE VOUS-MÊME :</h3>
+            
+            <p><strong>PARTIE A - Créer le tracé dans GIMP :</strong></p>
+            <ol>
+                <li><strong>Ouvrir GIMP</strong></li>
+                <li><strong>Fichier → Nouvelle image</strong>
+                    <ul>
+                        <li>Largeur : 300 pixels</li>
+                        <li>Hauteur : 300 pixels</li>
+                        <li>Cliquez sur OK</li>
+                    </ul>
+                </li>
+                <li><strong>Activer l'outil Chemin</strong>
+                    <ul>
+                        <li>Appuyez sur la touche <strong>B</strong></li>
+                        <li>OU cliquez sur l'icône "Chemins" dans la boîte à outils</li>
+                    </ul>
+                    <img src="../images/svg1.png">
+                </li>
+                <li><strong>Dessiner votre tracé</strong>
+                    <ul>
+                        <li>Cliquez pour créer des points (au moins 4-5 points)</li>
+                        <li>Créez une forme intéressante (vague, spirale, zigzag...)</li>
+                        <li><em>Conseil :</em> Restez dans l'image, ne sortez pas des bords</li>
+                        <li><em>Optionnel :</em> Clic droit sur le dernier point → "Fermer le chemin" pour faire une boucle fermée</li>
+                    </ul>
+                    <img src="../images/svg2.png" style="width:100%">
+                </li>
+                <li><strong>Exporter en SVG</strong>
+                    <ul>
+                        <li>à partir du menu: Fenêtres → Fenêtres ancrables → Chemins ;</li>
+
+                            <img src="../images/gimp_menu.png" style="width:100%">
+
+                        <li>Dans l'explorateur des chemins (fenêtre à droite): Clic droit sur la miniature du calque → Exporter le chemin...</li> 
+                        <li>Donnez un nom : <code>mon-trace.svg</code></li>
+                        <li>Vérifiez que l'extension est bien <strong>.svg</strong></li>
+                        <li>Cliquez sur <strong>Exporter</strong></li>
+                        
+                    </ul>
+                </li>
+            </ol>
+            
+            <p><strong>PARTIE B - Extraire le path du fichier SVG :</strong></p>
+            <ol>
+                <li><strong>Ouvrir le fichier SVG avec un éditeur de texte</strong>
+                    <ul>
+                        <li>Clic droit sur <code>mon-trace.svg</code> → Ouvrir avec → Bloc-notes (ou VSCode, Notepad++)</li>
+                    </ul>
+                </li>
+                <li><strong>Repérer le viewBox</strong>
+                    <ul>
+                        <li>Cherchez la ligne contenant <code>&lt;svg ... viewBox="0 0 300 300"&gt;</code></li>
+                        <li>Notez les dimensions (ex: 300 300)</li>
+                    </ul>
+                </li>
+                <li><strong>Copier le path</strong>
+                    <ul>
+                        <li>Cherchez la ligne <code>&lt;path ... d="M 50,50 C ..."&gt;</code></li>
+                        <li>Sélectionnez TOUT le contenu de <code>d="..."</code> (entre les guillemets)</li>
+                        <li>Copiez-le (Ctrl+C)</li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <p><strong>PARTIE C - Intégrer dans votre code HTML :</strong></p>
+            <ol>
+                <li><strong>Commenter l'ancien SVG</strong>
+                    <ul>
+                        <li>Cherchez la section avec <code>&lt;svg id="hidden-svg"&gt;</code> (l'ellipse)</li>
+                        <li>Ajoutez <code>&lt;!--</code> AVANT <code>&lt;svg</code></li>
+                        <li>Ajoutez <code>--&gt;</code> APRÈS <code>&lt;/svg&gt;</code></li>
+                        <li>Ça devrait ressembler à :
+                            <div class="code-block">&lt;!--
+&lt;svg id="hidden-svg" viewBox="0 0 300 269"&gt;
+    &lt;path id="monChemin" d="..." /&gt;
+&lt;/svg&gt;
+--&gt;</div>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Décommenter le nouveau SVG</strong>
+                    <ul>
+                        <li>Cherchez la section "ÉTAPE 4 : Votre SVG personnalisé"</li>
+                        <li>Retirez le <code>&lt;!--</code> au début</li>
+                        <li>Retirez le <code>--&gt;</code> à la fin</li>
+                    </ul>
+                </li>
+                <li><strong>Coller votre path</strong>
+                    <ul>
+                        <li>Remplacez <code>COLLEZ_ICI_VOTRE_PATH_DEPUIS_GIMP</code></li>
+                        <li>Par le contenu que vous avez copié depuis le fichier SVG GIMP</li>
+                    </ul>
+                </li>
+                <li><strong>Adapter les dimensions si nécessaire</strong>
+                    <ul>
+                        <li>Si votre viewBox GIMP était <code>300 300</code>, pas de changement</li>
+                        <li>Si c'était différent (ex: <code>400 400</code>), modifiez dans le JavaScript :
+                            <div class="code-block">// Cherchez ces lignes et modifiez :
+const svgWidth = 400;   // au lieu de 300
+const svgHeight = 400;  // au lieu de 269</div>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            
+            <p><strong>PARTIE D - Tester votre tracé :</strong></p>
+            <ol>
+                <li>Enregistrez votre fichier HTML (Ctrl+S)</li>
+                <li>Rafraîchissez la page dans le navigateur (F5)</li>
+                <li>Ouvrez la console (F12) et <strong>vérifiez qu'il n'y a pas d'erreurs</strong></li>
+                <li>Cliquez sur "▶ Démarrer"</li>
+                <li><strong>Le sprite doit suivre VOTRE tracé !</strong></li>
+            </ol>
+            
+            <h3 style="color: #2980b9;">❓ QUESTIONS :</h3>
+            <ol>
+                <li><strong>Où est définie la trajectoire du sprite ?</strong><br>
+                    </li>
+                
+                <li><strong>Pourquoi doit-on adapter <code>svgWidth</code> et <code>svgHeight</code> ?</strong><br>
+                    </li>
+                
+                <li><strong>Que se passe-t-il si on oublie de commenter l'ancien SVG ?</strong><br>
+                    </li>
+            </ol>
+            
+            <h3 style="color: #27ae60;">🎯 DÉFI BONUS (pour les rapides) :</h3>
+            <ol>
+                <li>Créez un tracé en forme de votre initiale (première lettre de votre prénom)</li>
+                <li>Modifiez la couleur du sprite en changeant <code>background:</code> dans le CSS</li>
+                <li>Créez un deuxième sprite avec un ID différent et faites-le suivre le même tracé</li>
+            </ol>
+            
+            <p><strong>✅ Validation :</strong> Le sprite jaune suit votre tracé personnalisé créé dans GIMP.</p>
+            
+            <p><strong>⚠️ Problèmes courants :</strong></p>
+            <ul>
+                <li><strong>Le sprite ne bouge plus :</strong> Vérifiez que l'ID est bien <code>id="monChemin"</code> et qu'il n'y en a qu'un seul (commentez l'ancien SVG)</li>
+                <li><strong>Le sprite sort du cadre :</strong> Adaptez <code>svgWidth</code> et <code>svgHeight</code> selon votre viewBox GIMP</li>
+                <li><strong>Erreur "Cannot read property...":</strong> Vérifiez la syntaxe du path (guillemets, pas de caractères manquants)</li>
+                <li><strong>Le tracé SVG est vide dans GIMP :</strong> Assurez-vous d'avoir bien utilisé l'outil "Chemins" (touche B) et non le pinceau</li>
+            </ul>
+        </div>
+        
+        <div class="etape" style="background: #d4edda; border-left-color: #28a745;">
+            <h2>🎉 Félicitations !</h2>
+            <p>Si vous avez terminé toutes les étapes, vous maîtrisez maintenant :</p>
+            <ul>
+                <li>✅ Le positionnement CSS avec <code>position: relative</code> et <code>absolute</code></li>
+                <li>✅ La manipulation des coordonnées SVG</li>
+                <li>✅ La conversion de systèmes de coordonnées</li>
+                <li>✅ L'animation avec <code>requestAnimationFrame()</code></li>
+                <li>✅ L'utilisation de GIMP pour créer des tracés vectoriels</li>
+                <li>✅ L'intégration SVG dans une page web</li>
+            </ul>
+            <p><strong>Prochaines étapes possibles :</strong> Ajouter des collisions, créer plusieurs sprites, modifier la couleur selon la position, ajouter des sons...</p>
+        </div>
+    </div>
+</body>
+</html>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421" checked><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page6/index.html"><a class="padding" href="/nsi_1/donnees/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page4/index.html"><a class="padding" href="/nsi_1/reseaux/page4/index.html">GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/html_page2/index.html"><a class="padding" href="/nsi_1/reseaux/html_page2/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184"><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516" checked><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi_1/ihm_web/pages/tp2_enonce/index.html"><a class="padding" href="/nsi_1/ihm_web/pages/tp2_enonce/index.html"><i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782463386"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782463386" defer></script>
+    <script src="/js/theme.js?1782463386" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+---
+Title: fiche POO
+hidden: true
+weight: 20
+---
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.fiche { padding: 1.5rem 0; font-family: var(--font-sans); }
+.section { margin-bottom: 2.5rem; }
+.section-title { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-secondary); margin-bottom: 1rem; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+.card-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 10px; }
+.full { grid-column: 1 / -1; }
+.reflex { margin-bottom: 8px; padding: 8px 10px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); border-left: 3px solid; border-radius: 0; }
+.r-purple { border-color: #7F77DD; }
+.r-teal { border-color: #1D9E75; }
+.r-amber { border-color: #BA7517; }
+.r-coral { border-color: #D85A30; }
+.r-blue { border-color: #378ADD; }
+.reflex p { font-size: 13px; color: var(--color-text-primary); line-height: 1.6; }
+.piege { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #FCEBEB; border-radius: var(--border-radius-md); margin-bottom: 8px; }
+.piege i { color: #A32D2D; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+.piege p { font-size: 13px; color: #501313; line-height: 1.5; }
+.astuce { display: flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: #EAF3DE; border-radius: var(--border-radius-md); margin-bottom: 8px; }
+.astuce i { color: #3B6D11; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+.astuce p { font-size: 13px; color: #173404; line-height: 1.5; }
+.code-ann { font-family: var(--font-mono); font-size: 11.5px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 10px 14px; margin: 8px 0; line-height: 1.8; color: var(--color-text-primary); overflow-x: auto; }
+.kw { color: #7F77DD; }
+.cm { color: #464433; font-style: italic; }
+.fn { color: #1D9E75; }
+.ann { color: #D85A30; font-weight: 500; }
+.str { color: #BA7517; }
+.badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; white-space: nowrap; margin-bottom: 8px; }
+.b-purple { background: #EEEDFE; color: #3C3489; }
+.b-teal { background: #E1F5EE; color: #085041; }
+.b-coral { background: #FAECE7; color: #712B13; }
+.b-amber { background: #FAEEDA; color: #633806; }
+.b-blue { background: #E6F1FB; color: #0C447C; }
+.schema { display: flex; gap: 0; margin: 10px 0; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); overflow: hidden; }
+.schema-col { flex: 1; padding: 10px 12px; }
+.schema-col:first-child { background: #EEEDFE; border-right: 0.5px solid #AFA9EC; }
+.schema-col:last-child { background: #E1F5EE; }
+.schema-label { font-size: 11px; font-weight: 500; color: #534AB7; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.schema-label.teal { color: #0F6E56; }
+.schema-item { font-size: 12px; font-family: var(--font-mono); color: var(--color-text-primary); padding: 2px 0; }
+.schema-sub { font-size: 11px; color: var(--color-text-secondary); margin-top: 2px; }
+.divider { height: 0.5px; background: var(--color-border-tertiary); margin: 8px 0; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.tag { font-family: var(--font-mono); font-size: 11.5px; padding: 2px 8px; border-radius: 4px; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-secondary); color: var(--color-text-primary); }
+@media (prefers-color-scheme: dark) {
+  .piege { background: #501313; }
+  .piege p { color: #F7C1C1; }
+  .piege i { color: #F09595; }
+  .astuce { background: #173404; }
+  .astuce p { color: #C0DD97; }
+  .astuce i { color: #97C459; }
+  .b-purple { background: #3C3489; color: #CECBF6; }
+  .b-teal { background: #085041; color: #9FE1CB; }
+  .b-coral { background: #712B13; color: #F5C4B3; }
+  .b-amber { background: #633806; color: #FAC775; }
+  .b-blue { background: #0C447C; color: #B5D4F4; }
+  .schema-col:first-child { background: #26215C; border-right-color: #534AB7; }
+  .schema-col:last-child { background: #04342C; }
+  .schema-label { color: #AFA9EC; }
+  .schema-label.teal { color: #5DCAA5; }
+}
+</style>
+<body>
+<div class="fiche">
+
+<div class="section">
+  <div class="section-title"><i class="ti ti-building" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"></i>Comprendre la programmation objet</div>
+  <div class="cards">
+
+    <div class="card full">
+      <div class="card-title">Qu'est-ce qu'une classe ?</div>
+      <div class="reflex r-purple"><p>Une classe est un <em>moule</em> qui décrit comment fabriquer des objets. Elle regroupe des données (<strong style="font-weight:500">attributs</strong>) et des comportements (<strong style="font-weight:500">méthodes</strong>) qui appartiennent à un même concept.</p></div>
+      <div class="schema">
+        <div class="schema-col">
+          <div class="schema-label">Attributs — ce que l'objet <em>sait</em></div>
+          <div class="schema-item">self.nom</div>
+          <div class="schema-item">self.poids</div>
+          <div class="schema-item">self.date_arrivee</div>
+          <div class="schema-sub">→ des données propres à chaque objet</div>
+        </div>
+        <div class="schema-col">
+          <div class="schema-label teal">Méthodes — ce que l'objet <em>fait</em></div>
+          <div class="schema-item">__init__()</div>
+          <div class="schema-item">__str__()</div>
+          <div class="schema-item">chasser()</div>
+          <div class="schema-sub">→ des fonctions qui opèrent sur l'objet</div>
+        </div>
+      </div>
+      <div class="astuce"><i class="ti ti-bulb"></i><p>Analogie : la classe <code>Renard</code> est la fiche descriptive, chaque objet <code>renard1 = Renard(...)</code> est un renard concret avec ses propres valeurs.</p></div>
+    </div>
+
+    <div class="card full">
+      <div class="card-title">À quoi sert <code>self</code> ?</div>
+      <div class="reflex r-teal"><p><code>self</code> désigne l'objet <em>en cours d'utilisation</em>. C'est une référence automatique vers l'instance qui appelle la méthode. Python le passe en secret : quand on écrit <code>renard1.chasser(200, 3)</code>, Python exécute en réalité <code>Renard.chasser(renard1, 200, 3)</code>.</p></div>
+      <div class="code-ann"><span class="kw">class</span> <span class="fn">Renard</span>:<br>
+    &nbsp;&nbsp;<span class="kw">def</span> <span class="fn">__init__</span>(self, identifiant, nom, poids, date_arrivee):<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ann">#  self  ↑ toujours 1er paramètre, jamais oublier</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;self.identifiant = identifiant  <span class="cm"># crée l'attribut sur CET objet</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;self.nom = nom                  <span class="cm"># self.X = X pour chaque param</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;self.poids = poids<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;self.date_arrivee = date_arrivee<br>
+
+renard1 = Renard(101, <span class="str">'Zorro'</span>, 4.2, <span class="str">'2023-01-15'</span>)<br>
+renard2 = Renard(102, <span class="str">'Luna'</span>, 3.8, <span class="str">'2024-03-01'</span>)<br>
+<span class="cm"># renard1.nom == 'Zorro'  ≠  renard2.nom == 'Luna'</span><br>
+<span class="cm"># chaque objet a ses propres attributs</span></div>
+      <div class="piege"><i class="ti ti-alert-triangle"></i><p>Oublier <code>self</code> comme premier paramètre d'une méthode provoque une <code>TypeError</code> au moment de l'appel. C'est une erreur systématique à vérifier en relecture.</p></div>
+      <div class="piege"><i class="ti ti-alert-triangle"></i><p>Écrire <code>nom = valeur</code> au lieu de <code>self.nom = valeur</code> dans <code>__init__</code> crée une variable locale qui disparaît immédiatement — l'attribut n'existe pas.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><i class="ti ti-tool" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"></i>Les méthodes spéciales à maîtriser</div>
+  <div class="cards">
+
+    <div class="card">
+      <span class="badge b-purple">constructeur</span>
+      <div class="card-title"><code>__init__</code> — créer un objet</div>
+      <div class="reflex r-purple"><p>Appelé automatiquement lors de <code>MonObjet(...)</code>. Son rôle : initialiser tous les attributs de l'objet. Un attribut non défini ici mais utilisé ailleurs lèvera une <code>AttributeError</code>.</p></div>
+      <div class="code-ann"><span class="kw">def</span> <span class="fn">__init__</span>(self, a, b):<br>
+    &nbsp;&nbsp;self.a = a   <span class="cm"># attribut créé</span><br>
+    &nbsp;&nbsp;self.b = b   <span class="cm"># attribut créé</span><br>
+    &nbsp;&nbsp;self.c = 0   <span class="cm"># attribut avec valeur par défaut</span><br>
+    &nbsp;&nbsp;self.liste = []  <span class="cm"># attribut liste vide</span></div>
+      <div class="astuce"><i class="ti ti-bulb"></i><p>Repérer tous les <code>self.X</code> utilisés dans les autres méthodes du sujet → ils doivent tous être initialisés ici.</p></div>
+    </div>
+
+    <div class="card">
+      <span class="badge b-teal">affichage</span>
+      <div class="card-title"><code>__str__</code> — représentation textuelle</div>
+      <div class="reflex r-teal"><p>Appelé automatiquement par <code>print(objet)</code> et <code>str(objet)</code>. Doit obligatoirement <code>return</code> une chaîne de caractères — jamais de <code>print()</code> à l'intérieur.</p></div>
+      <div class="code-ann"><span class="kw">def</span> <span class="fn">__str__</span>(self):<br>
+    &nbsp;&nbsp;<span class="cm"># méthode 1 : concaténation classique</span><br>
+    &nbsp;&nbsp;ch = <span class="str">'Renard ID '</span><br>
+    &nbsp;&nbsp;ch += str(self.identifiant)   <span class="ann"># ← convertir int en str !</span><br>
+    &nbsp;&nbsp;ch += <span class="str">' - '</span> + self.nom<br>
+    &nbsp;&nbsp;<span class="kw">return</span> ch<br>
+<br>
+    &nbsp;&nbsp;<span class="cm"># méthode 2 : f-string (plus lisible)</span><br>
+    &nbsp;&nbsp;<span class="kw">return</span> <span class="str">f'Renard ID {self.identifiant} - {self.nom}'</span></div>
+      <div class="piege"><i class="ti ti-alert-triangle"></i><p>Retourner un entier ou None depuis <code>__str__</code> lève une <code>TypeError</code>. Tout doit être converti en <code>str</code> avant la concaténation.</p></div>
+    </div>
+
+    <div class="card full">
+      <span class="badge b-coral">méthode personnalisée</span>
+      <div class="card-title">Écrire une méthode qui accède aux attributs et appelle d'autres méthodes</div>
+      <div class="code-ann"><span class="kw">def</span> <span class="fn">smoothie_possible</span>(self, nom_smoothie):<br>
+    &nbsp;&nbsp;<span class="ann">#                    ↑ self toujours 1er, puis les vrais paramètres</span><br>
+    &nbsp;&nbsp;<span class="kw">for</span> fruit <span class="kw">in</span> self.db_smoothies[nom_smoothie]:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ann">                    #  ↑ on accède à un attribut de l'objet via self.</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> fruit <span class="kw">not in</span> self.liste_fruits_disponibles:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> False<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> True<br>
+<br>
+<span class="kw">def</span> <span class="fn">liste_smoothies_possibles</span>(self):<br>
+    &nbsp;&nbsp;possibles = []<br>
+    &nbsp;&nbsp;<span class="kw">for</span> smoothie <span class="kw">in</span> self.db_smoothies:<br>
+        &nbsp;&nbsp;<span class="kw">if</span> self.smoothie_possible(smoothie):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ann">#&nbsp;&nbsp;  ↑ appel d'une autre méthode : self.nom_methode(args)</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;possibles.append(smoothie)<br>
+    &nbsp;&nbsp;<span class="kw">return</span> possibles</div><br>
+      <div class="astuce"><i class="ti ti-bulb"></i><p>Règle d'or : tout accès à un attribut de l'objet ou à une autre méthode de la classe passe par <code>self.</code> — sans exception.</p></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><i class="ti ti-list-check" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"></i>Checklist lecture d'une question sur les classes</div>
+  <div class="cards">
+    <div class="card full">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;">
+
+        <div>
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">Avant de coder</div>
+          <div class="reflex r-purple"><p>1. Identifier la classe concernée et lire ses attributs dans <code>__init__</code>.</p></div>
+          <div class="reflex r-purple"><p>2. Repérer les méthodes déjà fournies que je peux appeler via <code>self.</code></p></div>
+          <div class="reflex r-purple"><p>3. Relire la docstring : que doit retourner la méthode ? (<code>bool</code>, <code>list</code>, <code>int</code>, <code>str</code>, <code>None</code>…)</p></div>
+        </div>
+
+        <div>
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">En codant</div>
+          <div class="reflex r-teal"><p>4. Premier paramètre = <code>self</code>, puis les autres.</p></div>
+          <div class="reflex r-teal"><p>5. Chaque accès à une donnée de l'objet : <code>self.attribut</code>.</p></div>
+          <div class="reflex r-teal"><p>6. Chaque appel à une méthode de la classe : <code>self.methode(args)</code>.</p></div>
+        </div>
+
+        <div>
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.06em;">Avant de valider</div>
+          <div class="reflex r-amber"><p>7. La méthode retourne bien le bon type ? (ne pas oublier le <code>return</code>)</p></div>
+          <div class="reflex r-amber"><p>8. Pour <code>__str__</code> : tout est bien converti en <code>str</code> ?</p></div>
+          <div class="reflex r-amber"><p>9. Pour <code>__init__</code> : tous les attributs attendus sont bien créés avec <code>self.X = X</code> ?</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title"><i class="ti ti-eye" aria-hidden="true" style="vertical-align:-1px;margin-right:6px;"></i>Erreurs les plus fréquentes en objet</div>
+  <div class="cards">
+    <div class="card full">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;">
+        <div>
+          <div class="piege"><i class="ti ti-alert-triangle"></i><p><strong style="font-weight:500">Oublier <code>self</code> en 1er paramètre</strong><br>Erreur : <code>TypeError: smoothie_possible() takes 1 positional argument but 2 were given</code></p></div>
+          <div class="piege"><i class="ti ti-alert-triangle"></i><p><strong style="font-weight:500">Écrire <code>nom = x</code> au lieu de <code>self.nom = x</code></strong><br>L'attribut n'existe pas → <code>AttributeError</code> ailleurs dans le code.</p></div>
+        </div>
+        <div>
+          <div class="piege"><i class="ti ti-alert-triangle"></i><p><strong style="font-weight:500">Appeler une méthode sans <code>self.</code></strong><br>Écrire <code>smoothie_possible(nom)</code> au lieu de <code>self.smoothie_possible(nom)</code> → <code>NameError</code>.</p></div>
+          <div class="piege"><i class="ti ti-alert-triangle"></i><p><strong style="font-weight:500">Retourner une valeur non-string dans <code>__str__</code></strong><br>Retourner <code>self.identifiant</code> (un int) sans <code>str()</code> → <code>TypeError</code> lors du <code>print()</code>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>

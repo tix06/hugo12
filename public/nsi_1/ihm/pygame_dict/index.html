@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="utilite des dictionnaires pour mon Escape Game">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="dictionnaires pour inventaire :: allopizza">
+    <meta name="twitter:description" content="utilite des dictionnaires pour mon Escape Game">
+    <meta property="og:url" content="//localhost:1313/nsi_1/ihm/pygame_dict/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="dictionnaires pour inventaire :: allopizza">
+    <meta property="og:description" content="utilite des dictionnaires pour mon Escape Game">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI prem">
+    <meta itemprop="name" content="dictionnaires pour inventaire :: allopizza">
+    <meta itemprop="description" content="utilite des dictionnaires pour mon Escape Game">
+    <meta itemprop="wordCount" content="2368">
+    <title>dictionnaires pour inventaire :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782569104" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782569104" defer></script>
+    <script src="/js/search-lunr.js?1782569104" defer></script>
+    <script src="/js/search.js?1782569104" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782569104";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782569104" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782569104" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782569104" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782569104" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782569104" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782569104" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782569104" rel="stylesheet">
+    <link href="/css/theme.css?1782569104" rel="stylesheet">
+    <link href="/css/format-html.css?1782569104" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi_1\/ihm\/pygame_dict\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi_1/ihm/pygame_dict/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-rappel--les-listes-ce-que-vous-connaissez-déjà-10-min">1. Rappel : Les listes, ce que vous connaissez déjà (10 min)</a>
+      <ul>
+        <li><a href="#structure-des-listes">Structure des listes</a></li>
+        <li><a href="#utiliser-les-listes-pour-un-jeu--première-tentative">Utiliser les listes pour un jeu : première tentative</a></li>
+        <li><a href="#le-problème-avec-les-listes">Le problème avec les listes</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-introduction-aux-dictionnaires-15-min">2. Introduction aux dictionnaires (15 min)</a>
+      <ul>
+        <li><a href="#quest-ce-quun-dictionnaire-">Qu&rsquo;est-ce qu&rsquo;un dictionnaire ?</a></li>
+        <li><a href="#syntaxe-de-base">Syntaxe de base</a></li>
+        <li><a href="#comparaison-liste-vs-dictionnaire">Comparaison liste vs dictionnaire</a></li>
+        <li><a href="#opérations-de-base-sur-les-dictionnaires">Opérations de base sur les dictionnaires</a>
+          <ul>
+            <li><a href="#accéder-à-une-valeur">Accéder à une valeur</a></li>
+            <li><a href="#modifier-une-valeur">Modifier une valeur</a></li>
+            <li><a href="#ajouter-une-nouvelle-paire-clé-valeur">Ajouter une nouvelle paire clé-valeur</a></li>
+            <li><a href="#vérifier-si-une-clé-existe">Vérifier si une clé existe</a></li>
+            <li><a href="#supprimer-une-paire-clé-valeur">Supprimer une paire clé-valeur</a></li>
+            <li><a href="#obtenir-une-valeur-avec-une-valeur-par-défaut">Obtenir une valeur avec une valeur par défaut</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#3-les-dictionnaires-pour-lescape-game-20-min">3. Les dictionnaires pour l&rsquo;escape game (20 min)</a>
+      <ul>
+        <li><a href="#31-représenter-un-objet-du-jeu">3.1. Représenter un objet du jeu</a></li>
+        <li><a href="#32-gérer-une-collection-dobjets">3.2. Gérer une collection d&rsquo;objets</a></li>
+        <li><a href="#33-parcourir-et-utiliser-les-objets">3.3. Parcourir et utiliser les objets</a></li>
+        <li><a href="#34-détecter-un-clic-sur-un-objet">3.4. Détecter un clic sur un objet</a></li>
+        <li><a href="#35-gérer-linventaire">3.5. Gérer l&rsquo;inventaire</a></li>
+        <li><a href="#36-gérer-les-interactions-entre-objets">3.6. Gérer les interactions entre objets</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-exemple-complet--mini-escape-game-avec-dictionnaires-10-min">4. Exemple complet : Mini escape game avec dictionnaires (10 min)</a></li>
+    <li><a href="#5-dictionnaires-avancés-pour-le-jeu-10-min">5. Dictionnaires avancés pour le jeu (10 min)</a>
+      <ul>
+        <li><a href="#51-dictionnaires-imbriqués">5.1. Dictionnaires imbriqués</a></li>
+        <li><a href="#52-état-global-du-jeu">5.2. État global du jeu</a></li>
+        <li><a href="#53-actions-et-interactions">5.3. Actions et interactions</a></li>
+        <li><a href="#54-système-de-quêtes">5.4. Système de quêtes</a></li>
+      </ul>
+    </li>
+    <li><a href="#6-comparaison-finale-et-bonnes-pratiques-5-min">6. Comparaison finale et bonnes pratiques (5 min)</a>
+      <ul>
+        <li><a href="#pourquoi-les-dictionnaires-sont-parfaits-pour-les-jeux">Pourquoi les dictionnaires sont parfaits pour les jeux</a></li>
+        <li><a href="#bonnes-pratiques-avec-les-dictionnaires">Bonnes pratiques avec les dictionnaires</a></li>
+        <li><a href="#quand-utiliser-listes-vs-dictionnaires-">Quand utiliser listes vs dictionnaires ?</a></li>
+      </ul>
+    </li>
+    <li><a href="#récapitulatif">Récapitulatif</a></li>
+    <li><a href="#exercices-pratiques">Exercices pratiques</a>
+      <ul>
+        <li><a href="#exercice-1--créer-vos-objets">Exercice 1 : Créer vos objets</a></li>
+        <li><a href="#exercice-2--fonction-de-recherche">Exercice 2 : Fonction de recherche</a></li>
+        <li><a href="#exercice-3--système-dinventaire">Exercice 3 : Système d&rsquo;inventaire</a></li>
+        <li><a href="#exercice-4--interaction-complexe">Exercice 4 : Interaction complexe</a></li>
+      </ul>
+    </li>
+    <li><a href="#pour-aller-plus-loin-dans-votre-projet">Pour aller plus loin dans votre projet</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/ihm/index.html"><span itemprop="name">IHM python</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">dictionnaires pour inventaire</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI_1/IHM/pygame_dict.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/ihm/pygamecours/index.html" title="IHM python Cours (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/ihm/pygame/index.html" title="projet Pygame (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi_1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="dictionnaires-pour-inventaire">dictionnaires pour inventaire</h1>
+
+<h1 id="les-dictionnaires-python-pour-gérer-un-escape-game">Les dictionnaires Python pour gérer un escape game<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Durée</strong> : 1 heure<br>
+<strong>Prérequis</strong> : Connaître les listes Python<br>
+<strong>Objectif</strong> : Découvrir les dictionnaires et comprendre pourquoi ils sont essentiels pour gérer les objets et états d&rsquo;un jeu</p>
+<hr>
+<h2 id="1-rappel--les-listes-ce-que-vous-connaissez-déjà-10-min">1. Rappel : Les listes, ce que vous connaissez déjà (10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="structure-des-listes">Structure des listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une <strong>liste</strong> est une collection ordonnée d&rsquo;éléments, accessibles par leur <strong>position</strong> (index).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Liste de prénoms</span>
+</span></span><span class="line"><span class="cl"><span class="n">prenoms</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="s2">&#34;Charlie&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Accès par index (position)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">prenoms</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Affiche : Alice</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">prenoms</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Affiche : Bob</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">prenoms</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Affiche : Charlie</span></span></span></code></pre></div>
+<h3 id="utiliser-les-listes-pour-un-jeu--première-tentative">Utiliser les listes pour un jeu : première tentative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Imaginons qu&rsquo;on veuille gérer un objet de notre escape game avec une liste :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Un objet &#34;clé&#34; représenté par une liste</span>
+</span></span><span class="line"><span class="cl"><span class="n">cle</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;clé dorée&#34;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&#34;Une petite clé qui brille&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#      [0] nom      [1] x  [2] y  [3] ramassée  [4] description</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Accès aux informations</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cle</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># nom</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cle</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># position x</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cle</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>  <span class="c1"># est-elle ramassée ?</span></span></span></code></pre></div>
+<h3 id="le-problème-avec-les-listes">Le problème avec les listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>❌ <strong>Difficile à lire</strong> : Que représente <code>cle[3]</code> ? Il faut se souvenir de l&rsquo;ordre<br>
+❌ <strong>Difficile à maintenir</strong> : Si on ajoute une propriété, tous les indices changent<br>
+❌ <strong>Erreurs faciles</strong> : Confondre l&rsquo;ordre des éléments<br>
+❌ <strong>Code cryptique</strong> : <code>if objet[3] == False:</code> ne dit rien sur ce qu&rsquo;on vérifie</p>
+<p><strong>Exercice mental</strong> : Si on a 10 objets différents avec des propriétés différentes, comment s&rsquo;en sortir avec des listes ?</p>
+<hr>
+<h2 id="2-introduction-aux-dictionnaires-15-min">2. Introduction aux dictionnaires (15 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="quest-ce-quun-dictionnaire-">Qu&rsquo;est-ce qu&rsquo;un dictionnaire ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un <strong>dictionnaire</strong> est une collection d&rsquo;éléments accessibles par leur <strong>nom</strong> (clé) plutôt que par leur position.</p>
+<p><strong>Analogie</strong> : Un dictionnaire papier</p>
+<ul>
+<li>Dans un dictionnaire français, on cherche un mot (la clé) pour obtenir sa définition (la valeur)</li>
+<li>On ne dit pas &ldquo;donne-moi le 1547ème mot&rdquo;, mais &ldquo;donne-moi la définition de &rsquo;escape'&rdquo;</li>
+</ul>
+<h3 id="syntaxe-de-base">Syntaxe de base<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Création d&#39;un dictionnaire</span>
+</span></span><span class="line"><span class="cl"><span class="n">personne</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;Alice&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;age&#34;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ville&#34;</span><span class="p">:</span> <span class="s2">&#34;Paris&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Accès par clé (beaucoup plus clair !)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">personne</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">])</span>    <span class="c1"># Affiche : Alice</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">personne</span><span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">])</span>    <span class="c1"># Affiche : 25</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">personne</span><span class="p">[</span><span class="s2">&#34;ville&#34;</span><span class="p">])</span>  <span class="c1"># Affiche : Paris</span></span></span></code></pre></div>
+<p><strong>Structure</strong> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dictionnaire</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;clé1&#34;</span><span class="p">:</span> <span class="n">valeur1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;clé2&#34;</span><span class="p">:</span> <span class="n">valeur2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;clé3&#34;</span><span class="p">:</span> <span class="n">valeur3</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<ul>
+<li>Les <strong>clés</strong> sont généralement des chaînes de caractères (entre guillemets)</li>
+<li>Les <strong>valeurs</strong> peuvent être de n&rsquo;importe quel type : nombres, chaînes, booléens, listes, ou même d&rsquo;autres dictionnaires !</li>
+</ul>
+<h3 id="comparaison-liste-vs-dictionnaire">Comparaison liste vs dictionnaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># AVEC UNE LISTE (difficile à lire)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cle_liste</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;clé dorée&#34;</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&#34;Une petite clé qui brille&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="n">cle_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">est_ramassee</span> <span class="o">=</span> <span class="n">cle_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># AVEC UN DICTIONNAIRE (clair et explicite)</span>
+</span></span><span class="line"><span class="cl"><span class="n">cle_dict</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;clé dorée&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ramassee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une petite clé qui brille&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="n">cle_dict</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">est_ramassee</span> <span class="o">=</span> <span class="n">cle_dict</span><span class="p">[</span><span class="s2">&#34;ramassee&#34;</span><span class="p">]</span></span></span></code></pre></div>
+<p><strong>Quelle version préférez-vous lire ?</strong></p>
+<h3 id="opérations-de-base-sur-les-dictionnaires">Opérations de base sur les dictionnaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h4 id="accéder-à-une-valeur">Accéder à une valeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">joueur</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="s2">&#34;vie&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&#34;niveau&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">])</span>      <span class="c1"># Alice</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;vie&#34;</span><span class="p">])</span>      <span class="c1"># 100</span></span></span></code></pre></div>
+<h4 id="modifier-une-valeur">Modifier une valeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;vie&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>        <span class="c1"># La vie passe à 80</span>
+</span></span><span class="line"><span class="cl"><span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;niveau&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>      <span class="c1"># Le niveau passe à 2</span></span></span></code></pre></div>
+<h4 id="ajouter-une-nouvelle-paire-clé-valeur">Ajouter une nouvelle paire clé-valeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;score&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1500</span>    <span class="c1"># Ajoute une nouvelle clé &#34;score&#34;</span></span></span></code></pre></div>
+<h4 id="vérifier-si-une-clé-existe">Vérifier si une clé existe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="s2">&#34;vie&#34;</span> <span class="ow">in</span> <span class="n">joueur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Le joueur a des points de vie&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="s2">&#34;magie&#34;</span> <span class="ow">in</span> <span class="n">joueur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Le joueur a de la magie&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Pas de magie&#34;</span><span class="p">)</span>  <span class="c1"># Ceci sera affiché</span></span></span></code></pre></div>
+<h4 id="supprimer-une-paire-clé-valeur">Supprimer une paire clé-valeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span> <span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;score&#34;</span><span class="p">]</span>       <span class="c1"># Supprime la clé &#34;score&#34;</span></span></span></code></pre></div>
+<h4 id="obtenir-une-valeur-avec-une-valeur-par-défaut">Obtenir une valeur avec une valeur par défaut<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Si la clé n&#39;existe pas, retourne une valeur par défaut</span>
+</span></span><span class="line"><span class="cl"><span class="n">magie</span> <span class="o">=</span> <span class="n">joueur</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;magie&#34;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Retourne 0 si &#34;magie&#34; n&#39;existe pas</span></span></span></code></pre></div>
+<hr>
+<h2 id="3-les-dictionnaires-pour-lescape-game-20-min">3. Les dictionnaires pour l&rsquo;escape game (20 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="31-représenter-un-objet-du-jeu">3.1. Représenter un objet du jeu<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Au lieu d&rsquo;utiliser des listes compliquées, utilisons des dictionnaires pour chaque objet :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">porte</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;porte&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;verrouille&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une lourde porte en bois&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;message_verrouille&#34;</span><span class="p">:</span> <span class="s2">&#34;La porte est fermée à clé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;message_ouvert&#34;</span><span class="p">:</span> <span class="s2">&#34;Vous ouvrez la porte et sortez. Victoire !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cle</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;clé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ramassee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une petite clé dorée&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;dans_inventaire&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tableau</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;tableau&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">450</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;examine&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Un tableau représentant un paysage&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;description_detaillee&#34;</span><span class="p">:</span> <span class="s2">&#34;En examinant de plus près, vous voyez un code : 1234&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<p><strong>Avantages</strong> :
+✅ Chaque objet peut avoir des propriétés différentes<br>
+✅ Le code est auto-documenté (on comprend ce que fait <code>objet[&quot;verrouille&quot;]</code>)<br>
+✅ Facile d&rsquo;ajouter de nouvelles propriétés<br>
+✅ Pas de confusion sur l&rsquo;ordre des éléments</p>
+<h3 id="32-gérer-une-collection-dobjets">3.2. Gérer une collection d&rsquo;objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut mettre tous les objets dans une liste :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">objets</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;porte&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;verrouille&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une lourde porte en bois&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;clé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ramassee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une petite clé dorée&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;coffre&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">550</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ouvert&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Un vieux coffre poussiéreux&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></div>
+<h3 id="33-parcourir-et-utiliser-les-objets">3.3. Parcourir et utiliser les objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Afficher tous les objets</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">objets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Objet : </span><span class="si">{</span><span class="n">objet</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> à la position (</span><span class="si">{</span><span class="n">objet</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">objet</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Trouver un objet par son nom</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">trouver_objet</span><span class="p">(</span><span class="n">nom_objet</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">objets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">nom_objet</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">objet</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Utilisation</span>
+</span></span><span class="line"><span class="cl"><span class="n">porte</span> <span class="o">=</span> <span class="n">trouver_objet</span><span class="p">(</span><span class="s2">&#34;porte&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">porte</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La porte est verrouillée&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="34-détecter-un-clic-sur-un-objet">3.4. Détecter un clic sur un objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">verifier_clic_objet</span><span class="p">(</span><span class="n">x_souris</span><span class="p">,</span> <span class="n">y_souris</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Vérifie si le clic touche un objet&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">objets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Vérifier si le clic est dans les limites de l&#39;objet</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">objet</span><span class="p">[</span><span class="s2">&#34;x&#34;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x_souris</span> <span class="o">&lt;=</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;x&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;largeur&#34;</span><span class="p">]</span> <span class="ow">and</span>
+</span></span><span class="line"><span class="cl">            <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;y&#34;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">y_souris</span> <span class="o">&lt;=</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;y&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;hauteur&#34;</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">objet</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Dans la boucle d&#39;événements</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span>
+</span></span><span class="line"><span class="cl">    <span class="n">objet_clique</span> <span class="o">=</span> <span class="n">verifier_clic_objet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">objet_clique</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Vous avez cliqué sur : </span><span class="si">{</span><span class="n">objet_clique</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">objet_clique</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">])</span></span></span></code></pre></div>
+<h3 id="35-gérer-linventaire">3.5. Gérer l&rsquo;inventaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># L&#39;inventaire est une liste de dictionnaires</span>
+</span></span><span class="line"><span class="cl"><span class="n">inventaire</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ramasser_objet</span><span class="p">(</span><span class="n">objet</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Ajoute un objet à l&#39;inventaire&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">objet</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;ramassee&#34;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;ramassee&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inventaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">objet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;Vous ramassez : </span><span class="si">{</span><span class="n">objet</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Cet objet a déjà été ramassé&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">afficher_inventaire</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Affiche le contenu de l&#39;inventaire&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inventaire</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Votre inventaire est vide&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Inventaire :&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">inventaire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;  - </span><span class="si">{</span><span class="n">objet</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">objet_dans_inventaire</span><span class="p">(</span><span class="n">nom_objet</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Vérifie si un objet est dans l&#39;inventaire&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">inventaire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="n">nom_objet</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">False</span></span></span></code></pre></div>
+<h3 id="36-gérer-les-interactions-entre-objets">3.6. Gérer les interactions entre objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">utiliser_cle_sur_porte</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Tente d&#39;ouvrir la porte avec la clé&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">porte</span> <span class="o">=</span> <span class="n">trouver_objet</span><span class="p">(</span><span class="s2">&#34;porte&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">objet_dans_inventaire</span><span class="p">(</span><span class="s2">&#34;clé&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">porte</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">porte</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;Vous utilisez la clé. La porte s&#39;ouvre !&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La porte est déjà ouverte&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Vous n&#39;avez pas de clé&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">examiner_objet</span><span class="p">(</span><span class="n">objet</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Examine un objet en détail&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;tableau&#34;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objet</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;examine&#34;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;examine&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">objet</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;description_detaillee&#34;</span><span class="p">,</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span></span></span></code></pre></div>
+<hr>
+<h2 id="4-exemple-complet--mini-escape-game-avec-dictionnaires-10-min">4. Exemple complet : Mini escape game avec dictionnaires (10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Voici un exemple fonctionnel simplifié qui montre comment tout s&rsquo;assemble :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pygame</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">font</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">font</span><span class="o">.</span><span class="n">Font</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Définition des objets avec des dictionnaires</span>
+</span></span><span class="line"><span class="cl"><span class="n">objets</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;clé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;couleur&#34;</span><span class="p">:</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">215</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>  <span class="c1"># Doré</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ramassee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une clé dorée&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;porte&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">650</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;couleur&#34;</span><span class="p">:</span> <span class="p">(</span><span class="mi">139</span><span class="p">,</span> <span class="mi">69</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>  <span class="c1"># Marron</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;verrouille&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Une porte en bois&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># État du jeu</span>
+</span></span><span class="line"><span class="cl"><span class="n">inventaire</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;Trouvez la clé et ouvrez la porte !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">victoire</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">MOUSEBUTTONDOWN</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">victoire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x_souris</span><span class="p">,</span> <span class="n">y_souris</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="n">pos</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1"># Vérifier les clics sur les objets</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">objets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">objet</span><span class="p">[</span><span class="s2">&#34;x&#34;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">x_souris</span> <span class="o">&lt;=</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;x&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;largeur&#34;</span><span class="p">]</span> <span class="ow">and</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;y&#34;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">y_souris</span> <span class="o">&lt;=</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;y&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;hauteur&#34;</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    <span class="c1"># Clic sur la clé</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;clé&#34;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;ramassee&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;ramassee&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">inventaire</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">objet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;Vous ramassez la clé !&#34;</span>
+</span></span><span class="line"><span class="cl">                    
+</span></span><span class="line"><span class="cl">                    <span class="c1"># Clic sur la porte</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;porte&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1"># Vérifier si on a la clé</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">a_la_cle</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">obj</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;clé&#34;</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">inventaire</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">a_la_cle</span> <span class="ow">and</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;Vous ouvrez la porte ! VICTOIRE !&#34;</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">victoire</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">elif</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;verrouille&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;La porte est verrouillée. Il faut une clé.&#34;</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;La porte est déjà ouverte !&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Affichage</span>
+</span></span><span class="line"><span class="cl">    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>  <span class="c1"># Fond gris</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Dessiner les objets</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">objet</span> <span class="ow">in</span> <span class="n">objets</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Ne pas dessiner la clé si elle est ramassée</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;clé&#34;</span> <span class="ow">and</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;ramassee&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">screen</span><span class="p">,</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;couleur&#34;</span><span class="p">],</span> 
+</span></span><span class="line"><span class="cl">                        <span class="p">(</span><span class="n">objet</span><span class="p">[</span><span class="s2">&#34;x&#34;</span><span class="p">],</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;y&#34;</span><span class="p">],</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;largeur&#34;</span><span class="p">],</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;hauteur&#34;</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Afficher le message</span>
+</span></span><span class="line"><span class="cl">    <span class="n">texte</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">550</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Afficher l&#39;inventaire</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inv_text</span> <span class="o">=</span> <span class="s2">&#34;Inventaire : &#34;</span> <span class="o">+</span> <span class="s2">&#34;, &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">obj</span><span class="p">[</span><span class="s2">&#34;nom&#34;</span><span class="p">]</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">inventaire</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inventaire</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">inv_text</span> <span class="o">=</span> <span class="s2">&#34;Inventaire : vide&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inv_surface</span> <span class="o">=</span> <span class="n">font</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">inv_text</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">inv_surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span></span></span></code></pre></div>
+<p><strong>Ce que fait ce programme</strong> :</p>
+<ol>
+<li>Définit une clé et une porte comme dictionnaires</li>
+<li>Permet de cliquer sur la clé pour la ramasser</li>
+<li>La clé disparaît et va dans l&rsquo;inventaire</li>
+<li>On peut cliquer sur la porte pour tenter de l&rsquo;ouvrir</li>
+<li>La porte s&rsquo;ouvre seulement si on a la clé</li>
+</ol>
+<hr>
+<h2 id="5-dictionnaires-avancés-pour-le-jeu-10-min">5. Dictionnaires avancés pour le jeu (10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="51-dictionnaires-imbriqués">5.1. Dictionnaires imbriqués<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut mettre des dictionnaires dans des dictionnaires :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">objet_complexe</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;coffre&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;position&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;dimensions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;largeur&#34;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;hauteur&#34;</span><span class="p">:</span> <span class="mi">60</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;contenu&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;or&#34;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;gemmes&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;objet_special&#34;</span><span class="p">:</span> <span class="s2">&#34;amulette&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ouvert&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Accès aux valeurs imbriquées</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">objet_complexe</span><span class="p">[</span><span class="s2">&#34;position&#34;</span><span class="p">][</span><span class="s2">&#34;x&#34;</span><span class="p">])</span>  <span class="c1"># 100</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">objet_complexe</span><span class="p">[</span><span class="s2">&#34;contenu&#34;</span><span class="p">][</span><span class="s2">&#34;or&#34;</span><span class="p">])</span>   <span class="c1"># 50</span></span></span></code></pre></div>
+<h3 id="52-état-global-du-jeu">5.2. État global du jeu<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un dictionnaire peut représenter l&rsquo;état complet du jeu :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etat_jeu</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;niveau_actuel&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;temps_ecoule&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;enigmes_resolues&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;enigme1&#34;</span><span class="p">,</span> <span class="s2">&#34;enigme3&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;inventaire&#34;</span><span class="p">:</span> <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;score&#34;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;indices_trouves&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;code_coffre&#34;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;message_secret&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;pieces_visitees&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;salon&#34;</span><span class="p">,</span> <span class="s2">&#34;cuisine&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;drapeaux&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;porte_ouverte&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;alarme_declenchee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;a_parle_au_gardien&#34;</span><span class="p">:</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Vérifications faciles</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="s2">&#34;code_coffre&#34;</span> <span class="ow">in</span> <span class="n">etat_jeu</span><span class="p">[</span><span class="s2">&#34;indices_trouves&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Vous connaissez le code du coffre&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">etat_jeu</span><span class="p">[</span><span class="s2">&#34;drapeaux&#34;</span><span class="p">][</span><span class="s2">&#34;a_parle_au_gardien&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Le gardien vous a donné un indice&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="53-actions-et-interactions">5.3. Actions et interactions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut même stocker des fonctions ou des messages dans les dictionnaires :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">objets_interactifs</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;levier&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;actif&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description_initial&#34;</span><span class="p">:</span> <span class="s2">&#34;Un levier rouillé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description_active&#34;</span><span class="p">:</span> <span class="s2">&#34;Le levier a été activé. Un passage secret s&#39;ouvre.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;ouvrir_passage&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;livre&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;lu&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Un vieux grimoire&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;texte&#34;</span><span class="p">:</span> <span class="s2">&#34;Les pages révèlent : &#39;Le code est 4-2-7-9&#39;&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;donner_indice&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">interagir_avec_objet</span><span class="p">(</span><span class="n">objet</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Gère l&#39;interaction avec un objet selon son type d&#39;action&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;action&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;ouvrir_passage&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;actif&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;description_active&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;action&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;donner_indice&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;lu&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;lu&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;texte&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;Vous avez déjà lu ce livre&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">objet</span><span class="p">[</span><span class="s2">&#34;description&#34;</span><span class="p">]</span></span></span></code></pre></div>
+<h3 id="54-système-de-quêtes">5.4. Système de quêtes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">quetes</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;trouver_cle&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;titre&#34;</span><span class="p">:</span> <span class="s2">&#34;Trouver la clé&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Cherchez la clé pour ouvrir la porte&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;terminee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;objectifs&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;cle_trouvee&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;id&#34;</span><span class="p">:</span> <span class="s2">&#34;resoudre_enigme&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;titre&#34;</span><span class="p">:</span> <span class="s2">&#34;Résoudre l&#39;énigme du tableau&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;Déchiffrez le message caché dans le tableau&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;terminee&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;objectifs&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;tableau_examine&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;code_trouve&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">verifier_quetes</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Vérifie si les quêtes sont terminées&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">quete</span> <span class="ow">in</span> <span class="n">quetes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">quete</span><span class="p">[</span><span class="s2">&#34;terminee&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># Vérifier si tous les objectifs sont remplis</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tous_objectifs</span> <span class="o">=</span> <span class="nb">all</span><span class="p">(</span><span class="n">quete</span><span class="p">[</span><span class="s2">&#34;objectifs&#34;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">tous_objectifs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">quete</span><span class="p">[</span><span class="s2">&#34;terminee&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;Quête terminée : </span><span class="si">{</span><span class="n">quete</span><span class="p">[</span><span class="s1">&#39;titre&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div>
+<hr>
+<h2 id="6-comparaison-finale-et-bonnes-pratiques-5-min">6. Comparaison finale et bonnes pratiques (5 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="pourquoi-les-dictionnaires-sont-parfaits-pour-les-jeux">Pourquoi les dictionnaires sont parfaits pour les jeux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+	<thead>
+			<tr>
+					<th>Critère</th>
+					<th>Listes</th>
+					<th>Dictionnaires</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Lisibilité</td>
+					<td>❌ <code>objet[3]</code></td>
+					<td>✅ <code>objet[&quot;verrouille&quot;]</code></td>
+			</tr>
+			<tr>
+					<td>Flexibilité</td>
+					<td>❌ Ordre fixe</td>
+					<td>✅ Propriétés variables</td>
+			</tr>
+			<tr>
+					<td>Maintenance</td>
+					<td>❌ Changer l&rsquo;ordre casse tout</td>
+					<td>✅ Ajouter/retirer facilement</td>
+			</tr>
+			<tr>
+					<td>Clarté du code</td>
+					<td>❌ Besoin de commentaires</td>
+					<td>✅ Auto-documenté</td>
+			</tr>
+			<tr>
+					<td>Gestion d&rsquo;objets complexes</td>
+					<td>❌ Très difficile</td>
+					<td>✅ Naturel</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="bonnes-pratiques-avec-les-dictionnaires">Bonnes pratiques avec les dictionnaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>✅ <strong>Utilisez des noms de clés descriptifs</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Bien</span>
+</span></span><span class="line"><span class="cl"><span class="n">joueur</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;points_de_vie&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&#34;niveau&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Moins bien</span>
+</span></span><span class="line"><span class="cl"><span class="n">joueur</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;pv&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&#34;niv&#34;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span></span></span></code></pre></div>
+<p>✅ <strong>Soyez cohérents dans la structure</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Tous les objets ont les mêmes clés de base</span>
+</span></span><span class="line"><span class="cl"><span class="n">objet1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;...&#34;</span><span class="p">,</span> <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;...&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">objet2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;nom&#34;</span><span class="p">:</span> <span class="s2">&#34;...&#34;</span><span class="p">,</span> <span class="s2">&#34;x&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;y&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;...&#34;</span><span class="p">}</span></span></span></code></pre></div>
+<p>✅ <strong>Utilisez <code>.get()</code> pour éviter les erreurs</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Risqué - erreur si la clé n&#39;existe pas</span>
+</span></span><span class="line"><span class="cl"><span class="n">vie</span> <span class="o">=</span> <span class="n">joueur</span><span class="p">[</span><span class="s2">&#34;vie&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Sûr - retourne 100 par défaut</span>
+</span></span><span class="line"><span class="cl"><span class="n">vie</span> <span class="o">=</span> <span class="n">joueur</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;vie&#34;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span></span></span></code></pre></div>
+<p>✅ <strong>Documentez la structure de vos dictionnaires</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Structure d&#39;un objet du jeu :</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># {</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &#34;nom&#34;: str,           # Nom de l&#39;objet</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &#34;x&#34;: int,             # Position X</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &#34;y&#34;: int,             # Position Y</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &#34;ramassable&#34;: bool,   # Peut-on le ramasser ?</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     &#34;description&#34;: str    # Description affichée</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># }</span></span></span></code></pre></div>
+<h3 id="quand-utiliser-listes-vs-dictionnaires-">Quand utiliser listes vs dictionnaires ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Utilisez une liste quand</strong> :</p>
+<ul>
+<li>L&rsquo;ordre est important</li>
+<li>Vous avez une série d&rsquo;éléments similaires et simples</li>
+<li>Exemple : <code>scores = [100, 95, 87, 82]</code></li>
+</ul>
+<p><strong>Utilisez un dictionnaire quand</strong> :</p>
+<ul>
+<li>Vous avez des propriétés nommées</li>
+<li>Vous voulez accéder aux données par leur signification</li>
+<li>Vous gérez des objets complexes</li>
+<li>Exemple : <code>joueur = {&quot;nom&quot;: &quot;Alice&quot;, &quot;score&quot;: 100, &quot;niveau&quot;: 3}</code></li>
+</ul>
+<hr>
+<h2 id="récapitulatif">Récapitulatif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>🎯 <strong>Les dictionnaires</strong> permettent d&rsquo;accéder aux données par <strong>nom</strong> (clé) plutôt que par position</p>
+<p>🎯 <strong>Syntaxe</strong> : <code>{&quot;clé&quot;: valeur, &quot;clé2&quot;: valeur2}</code></p>
+<p>🎯 <strong>Parfaits pour</strong> : Représenter des objets de jeu avec de multiples propriétés</p>
+<p>🎯 <strong>Avantages</strong> : Code lisible, flexible, maintenable, auto-documenté</p>
+<p>🎯 <strong>Pour votre escape game</strong> :</p>
+<ul>
+<li>Chaque objet est un dictionnaire</li>
+<li>L&rsquo;inventaire est une liste de dictionnaires</li>
+<li>L&rsquo;état du jeu est un dictionnaire</li>
+<li>Les quêtes sont des dictionnaires dans une liste</li>
+</ul>
+<hr>
+<h2 id="exercices-pratiques">Exercices pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="exercice-1--créer-vos-objets">Exercice 1 : Créer vos objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Créez 3 dictionnaires représentant des objets pour votre escape game. Chaque objet doit avoir au minimum : nom, position (x, y), dimensions, et une description.</p>
+<h3 id="exercice-2--fonction-de-recherche">Exercice 2 : Fonction de recherche<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Écrivez une fonction <code>trouver_objet_par_nom(nom, liste_objets)</code> qui cherche un objet dans une liste de dictionnaires et le retourne.</p>
+<h3 id="exercice-3--système-dinventaire">Exercice 3 : Système d&rsquo;inventaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Créez un système d&rsquo;inventaire avec les fonctions :</p>
+<ul>
+<li><code>ajouter_a_inventaire(objet)</code></li>
+<li><code>retirer_de_inventaire(nom_objet)</code></li>
+<li><code>afficher_inventaire()</code></li>
+</ul>
+<h3 id="exercice-4--interaction-complexe">Exercice 4 : Interaction complexe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Créez une fonction qui vérifie si le joueur peut ouvrir un coffre :</p>
+<ul>
+<li>Le coffre doit être fermé</li>
+<li>Le joueur doit avoir la clé dans son inventaire</li>
+<li>Si oui, le coffre s&rsquo;ouvre et donne son contenu</li>
+</ul>
+<hr>
+<h2 id="pour-aller-plus-loin-dans-votre-projet">Pour aller plus loin dans votre projet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Maintenant que vous connaissez les dictionnaires, vous pouvez :</p>
+<ol>
+<li><strong>Créer un fichier JSON</strong> pour stocker vos objets (JSON est basé sur les dictionnaires)</li>
+<li><strong>Gérer plusieurs salles</strong> avec un dictionnaire de salles</li>
+<li><strong>Créer un système de sauvegarde</strong> en enregistrant l&rsquo;état du jeu</li>
+<li><strong>Ajouter des dialogues</strong> avec des personnages (PNJ)</li>
+<li><strong>Implémenter des énigmes complexes</strong> avec plusieurs étapes</li>
+</ol>
+<p><strong>Bon courage pour votre escape game !</strong> 🗝️🚪</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/competences_num/index.html"><a class="padding" href="/competences_num/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421" checked><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page4/index.html"><a class="padding" href="/nsi_1/reseaux/page4/index.html">GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/html_page2/index.html"><a class="padding" href="/nsi_1/reseaux/html_page2/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184" checked><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/page6/index.html"><a class="padding" href="/nsi_1/ihm/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516"><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782569104"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782569104" defer></script>
+    <script src="/js/theme.js?1782569104" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

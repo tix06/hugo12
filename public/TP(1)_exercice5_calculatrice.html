@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercice 5 – Calculatrice JavaScript</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f5f5f0;
+            margin: 0;
+            padding: 20px;
+            color: #222;
+        }
+
+        h1 { color: #1a1a2e; }
+
+        .section {
+            background: white;
+            border-left: 5px solid #4CAF50;
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.07);
+        }
+
+        .section h2 { margin-top: 0; }
+
+        .hint {
+            background: #fff8e1;
+            border-left: 4px solid #FFC107;
+            padding: 12px 16px;
+            margin-top: 15px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #ce9178;
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        pre .comment { color: #6a9955; }
+        pre .keyword { color: #569cd6; }
+        pre .string  { color: #ce9178; }
+        pre .todo    { color: #FFCC00; font-weight: bold; }
+
+        /* ===== LA CALCULATRICE ===== */
+        .calculatrice {
+            display: inline-block;
+            background: #2b2b2b;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 4px 4px 16px rgba(0,0,0,0.35);
+            margin: 10px 0;
+        }
+
+        /* Écran style CASIO : une seule ligne */
+        #ecran {
+            display: block;
+            width: 220px;
+            background: #c8d8a0;
+            color: #1a2a00;
+            font-family: 'Courier New', monospace;
+            font-size: 1.4em;
+            text-align: right;
+            padding: 8px 10px;
+            border: 2px inset #888;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            /* UNE SEULE LIGNE — pas de retour à la ligne */
+            white-space: nowrap;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        /* Grille de boutons : 4 colonnes */
+        .grille-boutons {
+            display: grid;
+            grid-template-columns: repeat(4, 56px);
+            gap: 6px;
+        }
+
+        .grille-boutons button {
+            width: 56px;
+            height: 48px;
+            font-size: 1.1em;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #555;
+            color: #f0f0f0;
+            box-shadow: 0 3px 0 #222;
+            transition: transform 0.08s, box-shadow 0.08s;
+        }
+
+        .grille-boutons button:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0 #222;
+        }
+
+        /* Boutons chiffres */
+        .btn-chiffre { background: #444 !important; }
+
+        /* Boutons opérateurs */
+        .btn-op { background: #e67e22 !important; color: white !important; }
+
+        /* Bouton égal */
+        .btn-egal { background: #27ae60 !important; color: white !important; }
+
+        /* Bouton effacer */
+        .btn-clear { background: #c0392b !important; color: white !important; }
+
+        /* Bouton 0 occupe 2 colonnes */
+        .btn-zero { grid-column: span 2; }
+
+        /* Correction section */
+        .section-correction {
+            background: #e7f3ff;
+            border-left-color: #2196F3;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #1565C0;
+            padding: 6px 0;
+            user-select: none;
+        }
+
+        details[open] summary { color: #0d47a1; }
+    </style>
+</head>
+<body>
+
+<h1>🧑‍💻 TP JavaScript – Interactions et logique</h1>
+
+<!-- EXERCICE 5 -->
+<div class="section">
+    <h2>📝 Exercice 5 : Challenge – Calculatrice simplifiée</h2>
+    <p>
+        On vous donne l'interface d'une calculatrice déjà mise en page (boutons 0–9, +, −, ×, ÷, =, C)
+        et un écran d'affichage une ligne (style CASIO).<br>
+        <strong>Votre mission :</strong> compléter le script pour la faire fonctionner avec des réels.
+    </p>
+
+    <!-- La calculatrice HTML (donnée aux élèves) -->
+    <div class="calculatrice">
+        <span id="ecran">0</span>
+
+        <div class="grille-boutons">
+            <!-- Ligne 1 -->
+            <button id="btnC"   class="btn-clear">C</button>
+            <button id="btnDiv" class="btn-op">÷</button>
+            <button id="btnMul" class="btn-op">×</button>
+            <button id="btnSub" class="btn-op">−</button>
+            <!-- Ligne 2 -->
+            <button id="btn7" class="btn-chiffre">7</button>
+            <button id="btn8" class="btn-chiffre">8</button>
+            <button id="btn9" class="btn-chiffre">9</button>
+            <button id="btnAdd" class="btn-op">+</button>
+            <!-- Ligne 3 -->
+            <button id="btn4" class="btn-chiffre">4</button>
+            <button id="btn5" class="btn-chiffre">5</button>
+            <button id="btn6" class="btn-chiffre">6</button>
+            <!-- Égal couvre 2 lignes (span 2 rows via style inline) -->
+            <button id="btnEgal" class="btn-egal" style="grid-row: span 2;">＝</button>
+            <!-- Ligne 4 -->
+            <button id="btn1" class="btn-chiffre">1</button>
+            <button id="btn2" class="btn-chiffre">2</button>
+            <button id="btn3" class="btn-chiffre">3</button>
+            <!-- Ligne 5 : 0 sur 2 colonnes + virgule -->
+            <button id="btn0"   class="btn-chiffre btn-zero">0</button>
+            <button id="btnDot" class="btn-chiffre">.</button>
+        </div>
+    </div>
+
+    <div class="hint">
+        <strong>💡 Pistes :</strong>
+        <ul>
+            <li>Créez deux variables : <code>let operande = "";</code> pour construire le nombre en cours,
+                et <code>let operateur = "";</code> pour mémoriser l'opération choisie (+, −, ×, ÷).</li>
+            <li>Créez aussi <code>let premierNombre = 0;</code> pour stocker la valeur avant l'opérateur.</li>
+            <li>Quand on clique sur un chiffre, on <strong>ajoute</strong> ce chiffre à <code>operande</code>
+                et on met à jour l'écran : <code>ecran.textContent = operande;</code></li>
+            <li>Quand on clique sur un opérateur, on mémorise <code>premierNombre = parseFloat(operande);</code>,
+                on note l'opérateur, et on remet <code>operande = "";</code> à vide pour saisir le second nombre.</li>
+            <li>Quand on clique sur <strong>=</strong>, on calcule le résultat selon l'opérateur mémorisé
+                (avec <code>if / else if</code>) et on l'affiche.</li>
+            <li><strong>C</strong> remet tout à zéro.</li>
+            <li><code>parseFloat("3.14")</code> convertit une chaîne en nombre réel.</li>
+        </ul>
+    </div>
+
+    <p><strong>Structure du code à compléter :</strong></p>
+
+<pre>
+<span class="comment">// ========================================
+// CODE DE DÉPART (NE PAS MODIFIER)
+// ========================================</span>
+<span class="keyword">const</span> ecran = document.getElementById(<span class="string">'ecran'</span>);
+
+<span class="comment">// Récupération de tous les boutons chiffres</span>
+<span class="keyword">const</span> btn0 = document.getElementById(<span class="string">'btn0'</span>);
+<span class="keyword">const</span> btn1 = document.getElementById(<span class="string">'btn1'</span>);
+<span class="comment">// ... (idem jusqu'à btn9)</span>
+<span class="keyword">const</span> btnDot = document.getElementById(<span class="string">'btnDot'</span>);
+<span class="keyword">const</span> btnAdd = document.getElementById(<span class="string">'btnAdd'</span>);
+<span class="comment">// ... btnSub, btnMul, btnDiv</span>
+<span class="keyword">const</span> btnEgal  = document.getElementById(<span class="string">'btnEgal'</span>);
+<span class="keyword">const</span> btnC     = document.getElementById(<span class="string">'btnC'</span>);
+
+<span class="comment">// ========================================
+// À COMPLÉTER PAR LES ÉLÈVES
+// ========================================</span>
+
+<span class="comment">// 1) Déclarez vos variables ici</span>
+<span class="todo">// TODO : let operande = ...
+// TODO : let premierNombre = ...
+// TODO : let operateur = ...</span>
+
+<span class="comment">// 2) Fonction appelée quand on clique sur un chiffre ou le point</span>
+<span class="keyword">function</span> clicChiffre(chiffre) {
+    <span class="todo">// TODO : ajouter le chiffre à operande
+    // TODO : mettre à jour l'écran</span>
+}
+
+<span class="comment">// 3) Fonction appelée quand on clique sur un opérateur</span>
+<span class="keyword">function</span> clicOperateur(op) {
+    <span class="todo">// TODO : mémoriser le premier nombre
+    // TODO : mémoriser l'opérateur
+    // TODO : vider operande</span>
+}
+
+<span class="comment">// 4) Fonction appelée quand on clique sur =</span>
+<span class="keyword">function</span> clicEgal() {
+    <span class="todo">// TODO : récupérer le second nombre (parseFloat)
+    // TODO : calculer selon operateur
+    // TODO : afficher le résultat</span>
+}
+
+<span class="comment">// 5) Fonction appelée quand on clique sur C</span>
+<span class="keyword">function</span> clicClear() {
+    <span class="todo">// TODO : tout remettre à zéro</span>
+}
+
+<span class="comment">// ========================================
+// CONNEXION DES BOUTONS (NE PAS MODIFIER)
+// ========================================</span>
+btn0.addEventListener(<span class="string">'click'</span>, () => clicChiffre(<span class="string">'0'</span>));
+btn1.addEventListener(<span class="string">'click'</span>, () => clicChiffre(<span class="string">'1'</span>));
+<span class="comment">// ... (idem jusqu'à btn9 et btnDot)</span>
+btnAdd.addEventListener(<span class="string">'click'</span>, () => clicOperateur(<span class="string">'+'</span>));
+<span class="comment">// ... btnSub → '-', btnMul → '*', btnDiv → '/'</span>
+btnEgal.addEventListener(<span class="string">'click'</span>, clicEgal);
+btnC.addEventListener(<span class="string">'click'</span>, clicClear);
+</pre>
+</div>
+
+<!-- SECTION CORRECTION -->
+<div class="section section-correction">
+    <h2>✅ Correction (à dévoiler après avoir essayé !)</h2>
+    <p><em>Cliquez pour révéler la correction :</em></p>
+    <details>
+        <summary>👁 Afficher la correction</summary>
+<pre style="margin-top:12px">
+<span class="comment">// ========================================
+// CORRECTION COMPLÈTE
+// ========================================</span>
+
+<span class="keyword">let</span> operande      = <span class="string">""</span>;
+<span class="keyword">let</span> premierNombre = <span class="keyword">null</span>;
+<span class="keyword">let</span> operateur     = <span class="string">""</span>;
+
+<span class="keyword">function</span> clicChiffre(chiffre) {
+    <span class="comment">// On évite deux points décimaux</span>
+    <span class="keyword">if</span> (chiffre === <span class="string">'.'</span> && operande.includes(<span class="string">'.'</span>)) <span class="keyword">return</span>;
+    operande += chiffre;
+    ecran.textContent = operande;
+}
+
+<span class="keyword">function</span> clicOperateur(op) {
+    <span class="keyword">if</span> (operande === <span class="string">""</span>) <span class="keyword">return</span>; <span class="comment">// rien à faire si pas de nombre saisi</span>
+    premierNombre = parseFloat(operande);
+    operateur     = op;
+    operande      = <span class="string">""</span>;
+    ecran.textContent = <span class="string">"0"</span>;
+}
+
+<span class="keyword">function</span> clicEgal() {
+    <span class="keyword">if</span> (premierNombre === <span class="keyword">null</span> || operande === <span class="string">""</span>) <span class="keyword">return</span>;
+    <span class="keyword">const</span> deuxiemeNombre = parseFloat(operande);
+    <span class="keyword">let</span> resultat;
+
+    <span class="keyword">if</span>      (operateur === <span class="string">'+'</span>) resultat = premierNombre + deuxiemeNombre;
+    <span class="keyword">else if</span> (operateur === <span class="string">'-'</span>) resultat = premierNombre - deuxiemeNombre;
+    <span class="keyword">else if</span> (operateur === <span class="string">'*'</span>) resultat = premierNombre * deuxiemeNombre;
+    <span class="keyword">else if</span> (operateur === <span class="string">'/'</span>) {
+        <span class="keyword">if</span> (deuxiemeNombre === 0) {
+            ecran.textContent = <span class="string">"Erreur"</span>;
+            <span class="keyword">return</span>;
+        }
+        resultat = premierNombre / deuxiemeNombre;
+    }
+
+    ecran.textContent = resultat;
+    <span class="comment">// Prépare un éventuel enchaînement de calculs</span>
+    operande      = String(resultat);
+    premierNombre = <span class="keyword">null</span>;
+    operateur     = <span class="string">""</span>;
+}
+
+<span class="keyword">function</span> clicClear() {
+    operande      = <span class="string">""</span>;
+    premierNombre = <span class="keyword">null</span>;
+    operateur     = <span class="string">""</span>;
+    ecran.textContent = <span class="string">"0"</span>;
+}
+</pre>
+    </details>
+</div>
+
+<!-- ========================================
+     SCRIPT ÉLÈVE — À COMPLÉTER
+     ======================================== -->
+<script>
+    // ========================================
+    // CODE DE DÉPART (NE PAS MODIFIER)
+    // ========================================
+    const ecran  = document.getElementById('ecran');
+    const btn0   = document.getElementById('btn0');
+    const btn1   = document.getElementById('btn1');
+    const btn2   = document.getElementById('btn2');
+    const btn3   = document.getElementById('btn3');
+    const btn4   = document.getElementById('btn4');
+    const btn5   = document.getElementById('btn5');
+    const btn6   = document.getElementById('btn6');
+    const btn7   = document.getElementById('btn7');
+    const btn8   = document.getElementById('btn8');
+    const btn9   = document.getElementById('btn9');
+    const btnDot = document.getElementById('btnDot');
+    const btnAdd = document.getElementById('btnAdd');
+    const btnSub = document.getElementById('btnSub');
+    const btnMul = document.getElementById('btnMul');
+    const btnDiv = document.getElementById('btnDiv');
+    const btnEgal = document.getElementById('btnEgal');
+    const btnC    = document.getElementById('btnC');
+
+    // ========================================
+    // CORRECTION (masquée pour les élèves)
+    // ========================================
+    let operande      = "";
+    let premierNombre = null;
+    let operateur     = "";
+
+    function clicChiffre(chiffre) {
+        if (chiffre === '.' && operande.includes('.')) return;
+        operande += chiffre;
+        ecran.textContent = operande;
+    }
+
+    function clicOperateur(op) {
+        if (operande === "") return;
+        premierNombre = parseFloat(operande);
+        operateur     = op;
+        operande      = "";
+        ecran.textContent = "0";
+    }
+
+    function clicEgal() {
+        if (premierNombre === null || operande === "") return;
+        const deuxiemeNombre = parseFloat(operande);
+        let resultat;
+        if      (operateur === '+') resultat = premierNombre + deuxiemeNombre;
+        else if (operateur === '-') resultat = premierNombre - deuxiemeNombre;
+        else if (operateur === '*') resultat = premierNombre * deuxiemeNombre;
+        else if (operateur === '/') {
+            if (deuxiemeNombre === 0) { ecran.textContent = "Erreur"; return; }
+            resultat = premierNombre / deuxiemeNombre;
+        }
+        ecran.textContent = resultat;
+        operande      = String(resultat);
+        premierNombre = null;
+        operateur     = "";
+    }
+
+    function clicClear() {
+        operande = ""; premierNombre = null; operateur = "";
+        ecran.textContent = "0";
+    }
+
+    // ========================================
+    // CONNEXION DES BOUTONS (NE PAS MODIFIER)
+    // ========================================
+    btn0.addEventListener('click', () => clicChiffre('0'));
+    btn1.addEventListener('click', () => clicChiffre('1'));
+    btn2.addEventListener('click', () => clicChiffre('2'));
+    btn3.addEventListener('click', () => clicChiffre('3'));
+    btn4.addEventListener('click', () => clicChiffre('4'));
+    btn5.addEventListener('click', () => clicChiffre('5'));
+    btn6.addEventListener('click', () => clicChiffre('6'));
+    btn7.addEventListener('click', () => clicChiffre('7'));
+    btn8.addEventListener('click', () => clicChiffre('8'));
+    btn9.addEventListener('click', () => clicChiffre('9'));
+    btnDot.addEventListener('click', () => clicChiffre('.'));
+    btnAdd.addEventListener('click', () => clicOperateur('+'));
+    btnSub.addEventListener('click', () => clicOperateur('-'));
+    btnMul.addEventListener('click', () => clicOperateur('*'));
+    btnDiv.addEventListener('click', () => clicOperateur('/'));
+    btnEgal.addEventListener('click', clicEgal);
+    btnC.addEventListener('click', clicClear);
+</script>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 ---
 Title: coder les caracteres et couleurs
+description: coder les caracteres et les couleurs
 weight: 8
 ---
 

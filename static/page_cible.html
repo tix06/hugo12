@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechActu — Le journal du numérique</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { font-size: 2em; }
+    nav a {
+      color: #ecf0f1;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+    #pub {
+      background-color: #f39c12;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .article {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .article h2 { color: #2c3e50; margin-bottom: 10px; }
+    .article p { line-height: 1.6; color: #555; margin-bottom: 10px; }
+    .badge {
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      font-size: 0.75em;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    #formulaire {
+      background: white;
+      border-radius: 8px;
+      padding: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    #formulaire h2 { margin-bottom: 15px; color: #2c3e50; }
+    #formulaire input, #formulaire textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95em;
+    }
+    #formulaire button {
+      background: #2c3e50;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      background: #2c3e50;
+      color: #aaa;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TechActu</h1>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#">IA</a>
+      <a href="#">Sécurité</a>
+      <a href="#">À propos</a>
+    </nav>
+  </header>
+
+  <div id="pub">
+    📢 PUBLICITÉ — Abonnez-vous à TechActu Premium pour 9,99€/mois — PUBLICITÉ 📢
+  </div>
+
+  <main>
+
+    <div class="article" id="article1">
+      <span class="badge">Intelligence Artificielle</span>
+      <h2>Les LLM transforment le développement web</h2>
+      <p id="intro">
+        Les modèles de langage de grande taille (LLM) sont désormais intégrés dans la plupart des environnements de développement. Des millions de développeurs les utilisent quotidiennement pour générer, déboguer et documenter du code.
+      </p>
+      <p>
+        Cette révolution soulève des questions sur la formation des futurs ingénieurs et sur la place de la réflexion algorithmique dans les cursus scolaires.
+      </p>
+    </div>
+
+    <div class="article" id="article2">
+      <span class="badge">Sécurité</span>
+      <h2>Comprendre les failles XSS en 5 minutes</h2>
+      <p>
+        Le Cross-Site Scripting (XSS) reste l'une des vulnérabilités les plus répandues sur le web. Elle consiste à injecter du code JavaScript malveillant dans une page consultée par d'autres utilisateurs.
+      </p>
+      <p>
+        Contrairement à la manipulation locale du DOM — qui n'affecte que votre propre navigateur — une faille XSS permet d'affecter tous les visiteurs d'un site.
+      </p>
+    </div>
+
+    <div class="article" id="article3">
+      <span class="badge">Réseau</span>
+      <h2>HTTP, le protocole fondamental du web</h2>
+      <p>
+        Chaque fois que votre navigateur charge une page, il envoie une requête HTTP au serveur. Ce dernier répond avec le code HTML, CSS et JavaScript. Le navigateur se charge ensuite d'interpréter et d'afficher le tout.
+      </p>
+      <p>
+        Ce modèle <strong>client-serveur</strong> est au cœur du fonctionnement d'internet. Le client (votre navigateur) et le serveur communiquent via le protocole HTTP, qui opère à la couche <em>Application</em> du modèle OSI.
+      </p>
+    </div>
+
+    <div id="formulaire">
+      <h2>Contactez la rédaction</h2>
+      <input type="text" id="champ-nom" placeholder="Votre nom">
+      <input type="text" id="champ-sujet" placeholder="Sujet de votre message">
+      <textarea rows="4" placeholder="Votre message..."></textarea>
+      <button>Envoyer</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 TechActu — Tous droits réservés</p>
+    <p id="compteur">Visiteurs aujourd'hui : <span id="nb-visiteurs">1 247</span></p>
+  </footer>
+
+</body>
+</html>

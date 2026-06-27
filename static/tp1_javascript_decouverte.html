@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP - Découverte du JavaScript et du DOM</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        
+        /* Zone d'interaction */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #667eea;
+            color: white;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        button:active {
+            transform: scale(0.98);
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 200px;
+        }
+        
+        /* Zone d'affichage des résultats */
+        .info {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+        
+        .info-line {
+            margin: 10px 0;
+            padding: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .info-line strong {
+            color: #667eea;
+        }
+        
+        /* Aide visuelle */
+        .hint {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .console-example {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .console-example .comment {
+            color: #6a9955;
+        }
+        
+        .console-example .keyword {
+            color: #569cd6;
+        }
+        
+        .console-example .string {
+            color: #ce9178;
+        }
+        
+        .console-example .function {
+            color: #dcdcaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 TP - Découverte du JavaScript et du DOM</h1>
+        
+        <div class="section">
+            <h2>🎯 Objectif du TP</h2>
+            <p>Apprendre à manipuler les éléments d'une page web avec JavaScript :</p>
+            <ul>
+                <li>Récupérer des éléments HTML avec <code>document.getElementById()</code></li>
+                <li>Lire les valeurs des boutons et curseurs</li>
+                <li>Modifier le contenu des éléments pour afficher des informations</li>
+                <li>Réagir aux événements (clics, changements de valeur)</li>
+            </ul>
+        </div>
+
+        <!-- ZONE D'INTERACTION -->
+        <div class="section">
+            <h2>🕹️ Zone d'interaction</h2>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <button id="btnRouge">Bouton Rouge</button>
+                    <button id="btnBleu">Bouton Bleu</button>
+                    <button id="btnVert">Bouton Vert</button>
+                </div>
+                
+                <div class="control-group">
+                    <label for="curseurVitesse">Vitesse:</label>
+                    <input type="range" id="curseurVitesse" min="1" max="10" value="5">
+                    <span id="valeurVitesse">5</span>
+                </div>
+                
+                <div class="control-group">
+                    <label for="champTexte">Votre nom:</label>
+                    <input type="text" id="champTexte" placeholder="Entrez votre nom">
+                </div>
+            </div>
+        </div>
+
+        <!-- ZONE D'AFFICHAGE -->
+        <div class="section">
+            <h2>📊 Zone d'affichage (à remplir avec JavaScript)</h2>
+            <div class="info">
+                <div class="info-line">
+                    <strong>Dernier bouton cliqué:</strong> <span id="afficheBouton">Aucun</span>
+                </div>
+                <div class="info-line">
+                    <strong>Valeur du curseur:</strong> <span id="afficheVitesse">-</span>
+                </div>
+                <div class="info-line">
+                    <strong>Nom saisi:</strong> <span id="afficheNom">-</span>
+                </div>
+                <div class="info-line">
+                    <strong>Nombre de clics total:</strong> <span id="afficheClics">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- EXERCICE 1 -->
+        <div class="section">
+            <h2>📝 Exercice 1 : Explorer avec la console</h2>
+            <p><strong>Ouvrez la console du navigateur</strong> (F12 ou clic droit > Inspecter > Console)</p>
+            
+            <div class="hint">
+                <strong>💡 À faire dans la console :</strong>
+                <ol>
+                    <li>Tapez : <code>document.getElementById('btnRouge')</code> et observez le résultat</li>
+                    <li>Tapez : <code>document.getElementById('curseurVitesse').value</code></li>
+                    <li>Bougez le curseur, puis retapez la commande précédente</li>
+                    <li>Tapez : <code>document.getElementById('afficheBouton').textContent = 'Test'</code></li>
+                </ol>
+            </div>
+            
+            <h3>Questions :</h3>
+            <ul>
+                <li>Que retourne <code>document.getElementById()</code> ?</li>
+                <li>Comment récupérer la valeur d'un curseur (input range) ?</li>
+                <li>Comment modifier le texte affiché dans un élément ?</li>
+            </ul>
+        </div>
+
+        <!-- EXERCICE 2 -->
+        <div class="section">
+            <h2>📝 Exercice 2 : Premiers pas dans le script</h2>
+            <p>Complétez le code JavaScript ci-dessous (voir les commentaires <code>// TODO</code>)</p>
+            
+            <div class="console-example">
+<span class="comment">// 1. Récupérer les éléments</span><br>
+<span class="keyword">const</span> btnRouge = document.<span class="function">getElementById</span>(<span class="string">'btnRouge'</span>);<br>
+<span class="keyword">const</span> afficheBouton = <span class="comment">// TODO: récupérer l'élément 'afficheBouton'</span><br>
+
+<span class="comment">// 2. Créer une fonction qui s'exécute au clic</span><br>
+<span class="keyword">function</span> <span class="function">clicRouge</span>() {
+    afficheBouton.textContent = <span class="string">'Rouge'</span>;
+}<br>
+
+<span class="comment">// 3. Associer la fonction au bouton</span><br>
+btnRouge.<span class="function">addEventListener</span>(<span class="string">'click'</span>, clicRouge);
+            </div>
+            
+            <div class="hint">
+                <strong>💡 Aide :</strong>
+                <ul>
+                    <li><code>const</code> permet de déclarer une constante (une variable qui ne change pas)</li>
+                    <li><code>addEventListener('click', fonction)</code> dit "quand on clique, exécute cette fonction"</li>
+                    <li><code>.textContent</code> permet de lire ou modifier le texte d'un élément</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- EXERCICE 3 -->
+        <div class="section">
+            <h2>📝 Exercice 3 : Gérer le curseur</h2>
+            <p>Faites en sorte que quand on bouge le curseur, sa valeur s'affiche dans "Valeur du curseur"</p>
+            
+            <div class="console-example">
+<!--
+<span class="keyword">const</span> curseurVitesse = <span class="comment">// TODO: récupérer le curseur</span><br>
+-->
+<span class="keyword">const</span> afficheVitesse = <span class="comment">// TODO: récupérer la zone d'affichage</span><br>
+
+<span class="comment">// TODO: créer une fonction qui met à jour l'affichage</span><br>
+<span class="keyword">function</span> <span class="function">majVitesse</span>() {<br>
+    <span class="comment">// Récupérer la valeur du curseur avec curseurVitesse.value</span><br>
+    <span class="comment">// L'afficher dans afficheVitesse avec .textContent</span><br>
+}
+<br>
+<span class="comment">// TODO: écouter l'événement 'input' sur le curseur</span>
+            </div>
+            
+            <div class="hint">
+                <strong>💡 Indice :</strong> Pour les curseurs, on utilise l'événement <code>'input'</code> au lieu de <code>'click'</code>
+            </div>
+        </div>
+
+        <!-- EXERCICE 4 -->
+        <div class="section">
+            <h2>📝 Exercice 4 : Challenge - Compteur de clics</h2>
+            <p>Créez un compteur qui s'incrémente à chaque clic sur n'importe quel bouton</p>
+            
+            <div class="hint">
+                <strong>💡 Pistes :</strong>
+                <ul>
+                    <li>Créez une variable <code>let compteur = 0;</code> (pas const, car elle va changer !)</li>
+                    <li>Dans vos fonctions de clic, ajoutez <code>compteur++;</code> (pour ajouter 1)</li>
+                    <li>Mettez à jour l'affichage avec <code>afficheClics.textContent = compteur;</code></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SECTION CORRECTION 
+        <div class="section" style="background: #e7f3ff; border-left-color: #2196F3;">
+            <h2>✅ Correction (à dévoiler après avoir essayé !)</h2>
+            <p><em>Voir le code source de cette page (clic droit > Code source de la page) pour la correction complète</em></p>
+        </div>
+    -->
+
+    <!-- SCRIPT POUR LES ÉLÈVES (avec des parties à compléter) -->
+    <script>
+        // ========================================
+        // CODE DE DÉPART (NE PAS MODIFIER)
+        // ========================================
+        
+        // Ce code fait fonctionner l'affichage de la valeur du curseur à côté
+        const curseurVitesse = document.getElementById('curseurVitesse');
+        const valeurVitesse = document.getElementById('valeurVitesse');
+        
+        curseurVitesse.addEventListener('input', function() {
+            valeurVitesse.textContent = curseurVitesse.value;
+        });
+        
+        
+        // ========================================
+        // VOTRE CODE ICI (EXERCICES À COMPLÉTER)
+        // ========================================
+        
+        // EXERCICE 2 : Gérer le bouton rouge
+        // ---------------------------------
+        
+        // TODO: Décommentez et complétez le code ci-dessous
+        
+        /*
+        const btnRouge = document.getElementById('btnRouge');
+        const afficheBouton = // TODO: récupérer 'afficheBouton'
+        
+        function clicRouge() {
+            afficheBouton.textContent = 'Rouge';
+        }
+        
+        btnRouge.addEventListener('click', clicRouge);
+        */
+        
+        
+        // EXERCICE 3 : Gérer le curseur de vitesse
+        // ----------------------------------------
+        
+        // TODO: Complétez le code
+        
+        /*
+        const afficheVitesse = // TODO
+        
+        function majVitesse() {
+            // TODO: récupérer la valeur et l'afficher
+        }
+        
+        // TODO: addEventListener
+        */
+        
+        
+        // EXERCICE 4 : Compteur de clics
+        // ------------------------------
+        
+        // TODO: Créez votre compteur ici
+        
+    </script>
+    
+    
+    <!-- Exercice 5 -->
+    <div class="section">
+        <h2>Exercice 5: Super Challenge - Calculatrice</h2>
+        <p>Vous pourrez télécharger l'énoncé depuis la page index du site allophysique.</p>
+    </div>
+</div>
+</body>
+</html>
