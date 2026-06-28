@@ -5,6 +5,12 @@ hidden: true
 weight: 14
 ---
 
+* creation d'images numeriques version 1: [Lien](../img_num1)
+* creation d'images numeriques version 2: [Lien](../img_num11)
+* traitement d'une image: detourage, filtre, incrustation: [Lien](../img_num2)
+* tuto pour detourer une image avec Gimp: [Lien](../img_num22)
+
+
 # Traitement d'images numeriques en langage python
 *Ce TP est une variante de celui proposé à l'adresse [suivante](../img_num1). Dans cette version, on n'utilisera pas de matrice pour placer les informations de couleur de l'image, ce qui rend le traitement plus direct, mais moins en lien avec le programme de 1ere NSI.*
 

@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="tableau de pixels, tableaux python, parcours, filtre et transformation d&#39;une image numerique">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="codage d&#39;une image :: allopizza">
+    <meta name="twitter:description" content="tableau de pixels, tableaux python, parcours, filtre et transformation d&#39;une image numerique">
+    <meta property="og:url" content="//localhost:1313/nsi_1/donnees/page8/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="codage d&#39;une image :: allopizza">
+    <meta property="og:description" content="tableau de pixels, tableaux python, parcours, filtre et transformation d&#39;une image numerique">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="NSI prem">
+    <meta itemprop="name" content="codage d&#39;une image :: allopizza">
+    <meta itemprop="description" content="tableau de pixels, tableaux python, parcours, filtre et transformation d&#39;une image numerique">
+    <meta itemprop="wordCount" content="2672">
+    <title>codage d&#39;une image :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782659429" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782659429" defer></script>
+    <script src="/js/search-lunr.js?1782659429" defer></script>
+    <script src="/js/search.js?1782659429" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782659429";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782659429" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782659429" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782659429" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782659429" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782659429" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782659429" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782659429" rel="stylesheet">
+    <link href="/css/theme.css?1782659429" rel="stylesheet">
+    <link href="/css/format-html.css?1782659429" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/nsi_1\/donnees\/page8\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/nsi_1/donnees/page8/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#une-image-un-tableau-de-pixels">Une image: un tableau de pixels</a></li>
+    <li><a href="#construire-une-image-numérique">Construire une image numérique</a></li>
+    <li><a href="#codage-de-limage-dans-un-fichier">codage de l&rsquo;image dans un fichier</a></li>
+    <li><a href="#codage-dune-image-dans-un-tableau-de-données">Codage d&rsquo;une image dans un tableau de données</a></li>
+    <li><a href="#profondeur-de-couleur">Profondeur de couleur</a>
+      <ul>
+        <li><a href="#niveaux-de-gris">niveaux de gris</a></li>
+        <li><a href="#couleur">couleur</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#luminosité-dune-image">Luminosité d&rsquo;une image</a></li>
+    <li><a href="#contraste">Contraste</a></li>
+    <li><a href="#qualité-des-images">Qualité des images</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#poids-dune-image-avecsans-compression">Poids d&rsquo;une image avec/sans compression</a>
+      <ul>
+        <li><a href="#image-matricielle-sans-compression">Image matricielle sans compression</a></li>
+        <li><a href="#image-matricielle-avec-compression">Image matricielle avec compression</a></li>
+      </ul>
+    </li>
+    <li><a href="#traitement-dune-image-sans-modifier-sa-dimension">Traitement d&rsquo;une image sans modifier sa dimension</a></li>
+    <li><a href="#transformation-de-la-taille-dune-image">Transformation de la taille d&rsquo;une image</a></li>
+    <li><a href="#lireécrire-dans-un-fichier">Lire/écrire dans un fichier</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#recherche-du-minmax">Recherche du min/max</a></li>
+    <li><a href="#compréhension-de-liste">Compréhension de liste</a></li>
+    <li><a href="#créer-une-image-à-partir-dinstructions">Créer une image à partir d&rsquo;instructions</a></li>
+    <li><a href="#traitement-dune-image-sans-modifier-sa-dimension-1">Traitement d&rsquo;une image sans modifier sa dimension</a></li>
+    <li><a href="#agrandissement-reduction">Agrandissement, reduction</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/donnees/index.html"><span itemprop="name">donnees</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">codage d&#39;une image</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI_1/donnees/page8.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/donnees/page7/index.html" title="coder les caracteres et couleurs (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/donnees/page11/index.html" title="TP simulation portes logiques (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable nsi_1" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="codage-dune-image">codage d&#39;une image</h1>
+
+<h1 id="coder-une-image">Coder une image<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="une-image-un-tableau-de-pixels">Une image: un tableau de pixels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/grille_a.png"
+        
+        alt="image pixelisée monochrome" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image pixelisée monochrome
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>Comment représenter l&rsquo;image de ce symbole de manière numérique? Compléter la grille de droite avec les valeurs 0 ou 1.</p>
+</blockquote>
+<p>L&rsquo;objet mathematique correspondant est une <em>matrice</em>. C&rsquo;est un tableau constitué de lignes et colonnes. Le caractère <strong>a</strong> sera représenté par la matrice <code>M</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="o">..</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="o">..</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="o">..</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">     <span class="p">[</span><span class="o">..</span><span class="p">]]</span></span></span></code></pre></div>
+<p><code>M</code> est une liste de lignes, où chaque ligne est aussi une liste.</p>
+<h2 id="construire-une-image-numérique">Construire une image numérique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On utilise des boucles simples ou imbriquées, constituées d&rsquo;une seule ou plusieurs instructions pour peindre les pixels (voir activité sur le site Algorea):</p>
+
+<figure >
+    
+        <img src="../images/algo1.png"
+        
+        alt="pixels sur une ligne: boucle simple" />
+    
+    
+    <figcaption>
+        
+        <p>
+            pixels sur une ligne: boucle simple
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">faire 6 fois:
+</span></span><span class="line"><span class="cl">  peindre en rouge
+</span></span><span class="line"><span class="cl">faire 6 fois:
+</span></span><span class="line"><span class="cl">  peindre en bleu</span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/algo2.png"
+        
+        alt="tableau de pixels. boucles imbriquées" />
+    
+    
+    <figcaption>
+        
+        <p>
+            tableau de pixels. boucles imbriquées
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">faire 12 fois:
+</span></span><span class="line"><span class="cl">  faire 6 fois:
+</span></span><span class="line"><span class="cl">    peindre bleu
+</span></span><span class="line"><span class="cl">    peindre rouge</span></span></code></pre></div>
+
+<figure >
+    
+        <img src="../images/algo3.png"
+        
+        alt="tableau de pixels. utiliser un variant de boucle" />
+    
+    
+    <figcaption>
+        
+        <p>
+            tableau de pixels. utiliser un variant de boucle
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">pour</span> <span class="n">i</span> <span class="n">variant</span> <span class="n">de</span> <span class="mi">0</span> <span class="err">à</span> <span class="mi">11</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pour</span> <span class="n">j</span> <span class="n">variant</span> <span class="n">de</span> <span class="mi">0</span> <span class="err">à</span> <span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">peindre</span> <span class="n">bleu</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pour</span> <span class="n">k</span> <span class="n">variant</span> <span class="n">de</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="err">à</span> <span class="mi">11</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">peindre</span> <span class="n">en</span> <span class="n">magenta</span></span></span></code></pre></div>
+<h2 id="codage-de-limage-dans-un-fichier">codage de l&rsquo;image dans un fichier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les plus petits détails de l&rsquo;image sont ses <em>pixels</em> : des petits carrés remplis chacun avec une seule couleur.
+Coder les pixels de l&rsquo;image revient à coder les couleurs de ses pixels.
+Les valeurs des couleurs des pixels sont alors mises les unes à la suite des autres, et constituent ainsi le fichier image en s&rsquo;ajoutant aux métadonnées.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">P1
+</span></span><span class="line"><span class="cl">6 5
+</span></span><span class="line"><span class="cl">0 1 1 1 0 1
+</span></span><span class="line"><span class="cl">0 0 0 0 1 1
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div>
+<p>Grâce aux métadonnées du fichier, les informations de format (P1, P2, &hellip;) et de dimension (6 * 5), l&rsquo;ordinateur va traiter cette suite de chiffres selon une matrice de valeurs:</p>
+
+<figure >
+    
+        <img src="../images/png_to_python.png"
+        
+        alt="import des données du fichier dans un programme python. Codage des couleurs en 24 bits rgb" />
+    
+    
+    <figcaption>
+        
+        <p>
+            import des données du fichier dans un programme python. Codage des couleurs en 24 bits rgb
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Chaque information va coder la couleur d&rsquo;un pixel (un petit carré de couleur uniforme). Une fois agrandie, l&rsquo;affichage ne pourra pas proposer plus d&rsquo;informations que celles contenues dans le fichier source. C&rsquo;est pour cette raison que l&rsquo;image apparait parfois <em>pixelisée</em>.</p>
+
+<figure >
+    
+        <img src="../images/zlatan.jpg"
+        
+        alt="image pixelisée couleur" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image pixelisée couleur
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><strong>Le poids de cette image</strong> : pour 100 pixels sur 100 pixels (10 000 px)
+</p>
+$$nombre\quad pixels \times 3 octets = 10000\times 3 = 30000 octets $$<p>
+Ce qui correspond à
+</p>
+$$\tfrac{30000}{1024} = 29ko$$<h2 id="codage-dune-image-dans-un-tableau-de-données">Codage d&rsquo;une image dans un tableau de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On a vu en <a href="/docs/SNT_2nde/pages/page5/photo_num3/">travaux pratiques</a>, que le programme qui permet l&rsquo;affichage des données en tableau utilise 2 boucles bornées, imbriquées:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># L est un tableau python 5 * 5</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">L</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span></span></span></code></pre></div>
+<p>On obtient alors une image de type Noir et Blanc, sur une matrice de diodes 5 * 5.</p>
+<h2 id="profondeur-de-couleur">Profondeur de couleur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La représentation <em>bitmap</em> d’une image par une matrice de pixels ne se limite pas à des images binaires en noir (0) et blanc (1).</p>
+<p>En modifiant la profondeur de l’image, on peut coder plus de couleurs dans un pixel</p>
+<h3 id="niveaux-de-gris">niveaux de gris<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>(voir image plus bas).</p>
+<p>Par exemple, le tableau suivant représente des valeurs allant du plus foncé au plus clair:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># fichier
+</span></span><span class="line"><span class="cl">P2
+</span></span><span class="line"><span class="cl">3 2
+</span></span><span class="line"><span class="cl">0 50 100 150 200 255
+</span></span><span class="line"><span class="cl"># matrice
+</span></span><span class="line"><span class="cl">pix = [[0,50,100],[150,200,255]]</span></span></code></pre></div>
+<h3 id="couleur">couleur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le codage des couleurs utilise la synthèse additive. Voir animation sur Algorea &gt; SNT V2 &gt; photographie numerique &gt; <a href="https://parcours.algorea.org/contents/4707-4702-1067253748629066205-1625996270397195025-1089626022569595539/" rel="external">ambiance lumineuse</a></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># fichier
+</span></span><span class="line"><span class="cl">P3
+</span></span><span class="line"><span class="cl">2 3
+</span></span><span class="line"><span class="cl">255 0 0 0 255 0 0 0 255 255 255 255
+</span></span><span class="line"><span class="cl">255 0 0 0 255 0
+</span></span><span class="line"><span class="cl"># matrice
+</span></span><span class="line"><span class="cl">pix = [
+</span></span><span class="line"><span class="cl">[[255,0,0],[0,255,0]],
+</span></span><span class="line"><span class="cl">[[0,0,255],[255,255,255]],
+</span></span><span class="line"><span class="cl">[[255,0,0],[0,255,0]]
+</span></span><span class="line"><span class="cl">]</span></span></code></pre></div>
+<p><em>Saurez-vous deviner le codage des couleurs sur cette image?</em></p>
+
+<figure >
+    
+        <img src="../images/bmp2.png"
+        
+        alt="certains logiciels de design proposent de faire des essais de coloration. Ici, données en hex" />
+    
+    
+    <figcaption>
+        
+        <p>
+            certains logiciels de design proposent de faire des essais de coloration. Ici, données en hex
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h1 id="caractéristiques-des-images">Caractéristiques des images<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="luminosité-dune-image">Luminosité d&rsquo;une image<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La luminosité d&rsquo;une image représente la clarté de l&rsquo;image.
+Pour un pixel donné, on peut établir une mesure de la luminosité de la manière suivante :
+Soient R, V et B les valeurs des intensités de chaque canal coloré. La luminosité L est égale à :
+</p>
+$$L = R+V+B$$<p>Pour calculer la luminosité moyenne d&rsquo;une image, voici l&rsquo;algorithme:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">s = 0
+</span></span><span class="line"><span class="cl">pour chaque ligne:
+</span></span><span class="line"><span class="cl">  pour chaque colonne:
+</span></span><span class="line"><span class="cl">    p &lt;- couleur du pixel
+</span></span><span class="line"><span class="cl">    s = s + (p[0] + p[1] + p[2])/3
+</span></span><span class="line"><span class="cl">luminosite &lt;- s / (ligne*colonne)</span></span></code></pre></div>
+<p>Pour chaque pixel, on fait la moyenne de ses 3 couleurs primaires.</p>
+<p>On ajoute la valeur à l&rsquo;accumulateur s. Puis on fait la moyenne des valeurs de s en divisant par le nombre de pixels <code>(ligne*colonne)</code>.</p>
+<h2 id="contraste">Contraste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les deux images présentées dans le paragraphe précédent, sur la luminosité, sont trop peu <strong>contrastées</strong> pour en apprécier le contenu.</p>
+<p>En effet, l&rsquo;amplitude de luminosité entre les pixels clairs et les pixels foncés est trop petite.
+En d&rsquo;autres termes, les tons sombres et les tons clairs de l&rsquo;image ont des luminosités qui ont des valeurs trop proches.</p>
+<p>Le <strong>contraste</strong> mesure la différence de luminosité entre les tons clairs et les tons sombre.</p>
+<p><em>Exemple :</em></p>
+
+<figure >
+    
+        <img src="../images/dessinGrisclair.png"
+        
+        alt="image et contrastes" />
+    
+    
+    <figcaption>
+        
+        <p>
+            images faible contraste
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Soient les fonctions <code>recherche_du_max</code> et <code>recherche_du_min</code> qui retournent la valeur du max ou du min dans une liste python simple.</p>
+<p>img est un tableau de valeurs des couleurs en niveau de gris des pixels. Par exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">img = [[101,202,210,255,213,...], 
+</span></span><span class="line"><span class="cl">       [101,202,210,255,213,...], 
+</span></span><span class="line"><span class="cl">       [...]]</span></span></code></pre></div>
+<p>Le programme va parcourir chaque ligne, c&rsquo;est à dire chaque sous-liste de img.</p>
+<p>Si la fonction <code>max_ligne</code> retourne une valeur supérieure à max, c&rsquo;est qu&rsquo;une valeur plus grande d&rsquo;intensité a été trouvée dans cette ligne. On remet à jour la valeur max de l&rsquo;image avec <code>max = max_ligne</code>, et on passe à la ligne suivante.</p>
+<p>(même principe pour <code>min_ligne</code>)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">max = 0
+</span></span><span class="line"><span class="cl">min = 255
+</span></span><span class="line"><span class="cl">pour chaque ligne de img:
+</span></span><span class="line"><span class="cl">  max_ligne = recherche_du_max(ligne)
+</span></span><span class="line"><span class="cl">  min_ligne = recherche_du_min(ligne)
+</span></span><span class="line"><span class="cl">  si max_ligne &gt; max: max = max_ligne
+</span></span><span class="line"><span class="cl">  si min_ligne &lt; min: min = min_ligne</span></span></code></pre></div>
+<h2 id="qualité-des-images">Qualité des images<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La <strong>définition</strong>  D d&rsquo;une  image  est  définie  par  un  nombre  de  pixels  selon la longueur et la largeur de l’image  numérique. C&rsquo;est une caractéristique propre de l&rsquo;image.</p>
+<p>On l&rsquo;exprime le plus souvent en donnant les dimensions du plan de pixels, par exemple, une image de définition :</p>
+$$1900 \times 1700~pixels$$<p>La  <strong>résolution</strong>  R d&rsquo;une  image  numérique  correspond  à sa <strong>densité</strong> en points (pixels).  On mesure la densité de pixels sur l&rsquo;écran en pixels par pouce (ppi) et la densité de points sur l&rsquo;image imprimée en points par pouce (dpi). Ce n&rsquo;est pas une caractéristique de l&rsquo;image elle-même, mais de sa restitution par un écran (ou imprimé).</p>
+<p>Selon le cas, on calculera la résolution selon l&rsquo;un des côtés de l&rsquo;image. Ou bien selon la diagonale de l&rsquo;iamge.</p>
+<p>La résolution peut s&rsquo;exprimer en pixels par pouce. On peut en déduire la résolution en pixels par cm à l&rsquo;aide de la relation suivante</p>
+<p>entre la <strong>Définition</strong> D, la <strong>Résolution</strong> R, et le nombre de cm par pouces (2,54).</p>
+$$R(px/cm) = \tfrac{R(px/pouce)}{2,54(cm/pouce)}$$<p>En effet : <em>1 pouce vaut 2,54 cm</em>. Un petit calcul montre que R = 72 ppi correspond à 28,3 pixels pour 1 cm.</p>
+<p><em>Exemple :</em> Soit une image de définition 800x533 que l&rsquo;on imprime sur du papier photo de taille 15x10 (en cm), calculez la résolution de cette image en ppp.</p>
+<p><em>Réponse : On prendra :</em></p>
+<p><em>Définition : D = 800px et Longueur : L = 15 cm</em>. <em>On cherche R : resolution</em>
+</p>
+$$R = \tfrac{D}{L}\times 2,54 = \tfrac{800}{15}\times 2,54 = 135 ppp$$<p><strong>Agrandissement et perte de qualité</strong>: lorsque le nombre de points codés dans l&rsquo;image est inférieur au nombre de pixels de l&rsquo;écran, il n&rsquo;y a pas assez de points. L&rsquo;agrandissement va déteriorer l&rsquo;image, car un même point va être placé sur plusieurs pixels côte à côte. C&rsquo;est ce que l&rsquo;on appelle la pixelisation de l&rsquo;image.</p>
+
+<figure >
+    
+        <img src="../images/bmp1.png"
+        
+        alt="agrandissement jusqu&#39;à pixelisation" />
+    
+    
+    <figcaption>
+        
+        <p>
+            agrandissement jusqu&#39;à pixelisation
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>La selection d&rsquo;une partie des points de l&rsquo;image montre qu&rsquo;il n&rsquo;y a plus assez de points avec le zoom x12. On peut afficher une image à partir de cet agrandisement, mais il y a pixelisation.</em> (voir la partie sur la transformation d&rsquo;une image)</p>
+<h1 id="transformation-des-images">Transformation des images<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="poids-dune-image-avecsans-compression">Poids d&rsquo;une image avec/sans compression<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="image-matricielle-sans-compression">Image matricielle sans compression<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>En <em>format brut</em>.</p>
+<p>A partir de ce qui a été vu plus haut, le poids d&rsquo;une image non compressée de définition D et de profondeur de couleur C a un poids P :
+</p>
+$$P = D \times C$$<p><em>Exemple :</em> D = 1900 pixels * 1700 pixels et C = 3 octets</p>
+$$P = 1900 \times 1700 \times 3 = 9,7.10^6 octets = 9,7 Mo$$<p>En réalité, les images sont compressées. Ce qui permet d&rsquo;avoir un poids moindre pour leur stockage, leur transfert&hellip;</p>
+<h3 id="image-matricielle-avec-compression">Image matricielle avec compression<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La <strong>compression</strong> d&rsquo;une image c’est la réduction de la quantité d’informations nécessaires pour décrire l’image. Les idées générales sont :</p>
+<ul>
+<li>De rassembler plusieurs pixels de même couleur, et établir une couleur moyenne des pixels sur une zone donnée.</li>
+<li>supprimer des informations : par exemple en diminuant le nombre de couleurs possibles. On fait une réduction de l&rsquo;espace des couleurs à celles qui sont  les plus fréquentes dans l&rsquo;image.</li>
+</ul>
+<p><strong>Le format PNG</strong> est un format d&rsquo;image bitmap qui utilise la <strong>compression sans perte</strong>. Le facteur de compression n&rsquo;est alors pas très élevé. Les données y sont réorganisées pour tenir moins de place. La compression utilise l&rsquo;algorithme <a href="https://fr.wikipedia.org/wiki/Deflate" rel="external">Deflate</a>, basé sur le <a href="https://cermics.enpc.fr/polys/info1/main/node76.html" rel="external">code de Huffman</a>.</p>
+<p><em>Rappelez vous que le fichier image est constitué de caractères (base 64). C&rsquo;est donc les occurences de ces caractères dans le fichier qui permet la compression avec l&rsquo;agorithme Deflate.</em></p>
+
+<figure >
+    
+        <img src="../images/compression.png"
+        
+        alt="exemple de code de Huffman pour la compression d&#39;un texte" />
+    
+    
+    <figcaption>
+        
+        <p>
+            exemple de code de Huffman pour la compression d&#39;un texte
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>voir explication sur <a href="https://hmalherbe.fr/thalesm/gestclasse/documents/Terminale_NSI/2020-2021/Evaluations/Term_NSI_Bac_Blanc_Fevrier_2021.pdf" rel="external">la page de hmalherbe.fr</a></em></p>
+<p>Le <strong>format jpg</strong> est un format compressé avec pertes. L&rsquo;idée est de supprimer la différence de valeur des couleurs pour des pixels contigûs, aux couleurs proches.</p>
+
+<figure >
+    
+        <img src="../images/compressionjpg.png"
+        
+        alt="La compression réduit la taille du fichier, mais dégrade la qualité de l’image." />
+    
+    
+    <figcaption>
+        
+        <p>
+            La compression réduit la taille du fichier, mais dégrade la qualité de l’image.
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>image issue du site <a href="https://helpx.adobe.com/fr/lightroom-classic/lightroom-key-concepts/compression.html" rel="external">adobe.com</a></em></p>
+<h2 id="traitement-dune-image-sans-modifier-sa-dimension">Traitement d&rsquo;une image sans modifier sa dimension<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On utilise la matrice d&rsquo;une <em>image source</em>. On créé une matrice d&rsquo;<em>image cible</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;image_source.ppm&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_source</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f1</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">3</span><span class="p">:]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">M_source</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">M_cible</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">M_source</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">M_source</span><span class="p">)]</span></span></span></code></pre></div>
+<p>On parcourt ensuite chaque valeur de pixel de l&rsquo;image source, on effectue un traitement sur ces valeurs, et on place chacune dans la matrice de l&rsquo;image cible.</p>
+
+<figure >
+    
+        <img src="../images/image_cible.png"
+        
+        alt="image issue du site de frederic-junier.gitlab.io" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image issue du site de frederic-junier.gitlab.io
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Puis on construit l&rsquo;image cible à partir de sa matrice.</p>
+<h2 id="transformation-de-la-taille-dune-image">Transformation de la taille d&rsquo;une image<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Certains logiciels permettent de reduire ou agrandir la taille d&rsquo;une image (resize). Cela modifie le nombre de pixels. Cette transformation se fait en conservant les proportions de l&rsquo;image (homothétie).</p>
+<p>La <strong>reduction</strong> consiste à choisir certains points de l&rsquo;image d&rsquo;origine pour les placer dans celle reduite.</p>
+
+<figure >
+    
+        <img src="../images/transfo3.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Un <strong>agrandissement</strong> simple peut se faire en reportant la valeur d&rsquo;un point sur un carré de points de l&rsquo;image agrandie:</p>
+
+<figure >
+    
+        <img src="../images/transfo4.png"
+        
+         />
+    
+    
+</figure>
+
+<p>L&rsquo;agrandissement peut aussi se faire en faisant une <strong>interpolation</strong> des valeurs des points (on invente les couleurs manquantes par un calcul de moyenne)</p>
+
+<figure >
+    
+        <img src="../images/transfo2.png"
+        
+         />
+    
+    
+</figure>
+
+<p><em>Interpoler: introduire dans une série de valeurs, de nouvelles valeurs intermédiaires.</em></p>
+<p>Merci à <a href="https://www.zonensi.fr/NSI/Premiere/C04/ImagesBMP/ImagesBMP.pdf" rel="external">zonensi.fr</a> pour le travail sur cette partie du cours.</p>
+<h2 id="lireécrire-dans-un-fichier">Lire/écrire dans un fichier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les algorithmes de compression, d&rsquo;agrandissement ou de reduction d&rsquo;image agissent sur D (definition) ou sur C (profondeur de couleur) définis plus haut. Voyons ici la méthode pour lire et écrire dans un fichier image d&rsquo;extension <code>.ppm</code>. Cela peut se faire à l&rsquo;aide des fonctions natives de Python. Une autre option est d&rsquo;utiliser la librairie PIL, comme vu en TP.</p>
+<p>Soit le fichier <code>image_source.ppm</code>, dont le contenu est donné ci-dessous (4 premiers pixels)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">P3
+</span></span><span class="line"><span class="cl">1000 801
+</span></span><span class="line"><span class="cl">255
+</span></span><span class="line"><span class="cl">87 87 87 
+</span></span><span class="line"><span class="cl">84 84 84 
+</span></span><span class="line"><span class="cl">81 81 81 
+</span></span><span class="line"><span class="cl">80 80 80</span></span></code></pre></div>
+<p>On peut manipuler les pixels d&rsquo;une image à l&rsquo;aide des instructions natives du langage python.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;image_source.ppm&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f1</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">3</span><span class="p">:]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span></span></span></code></pre></div>
+<p>Sortie:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># affichage des 4 premieres lignes :
+</span></span><span class="line"><span class="cl">[&#39;87&#39;, &#39;87&#39;, &#39;87&#39;]
+</span></span><span class="line"><span class="cl">[&#39;84&#39;, &#39;84&#39;, &#39;84&#39;]
+</span></span><span class="line"><span class="cl">[&#39;81&#39;, &#39;81&#39;, &#39;81&#39;]
+</span></span><span class="line"><span class="cl">[&#39;80&#39;, &#39;80&#39;, &#39;80&#39;]</span></span></code></pre></div>
+<p>Ce format en listes pour les valeurs des couleurs de pixels est utile pour appliquer un traitement.</p>
+<p>Pour recomposer la chaine de caractère à partir de la liste, il faut faire l&rsquo;opération inverse de <code>line.split()</code>, c&rsquo;est à dire:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt; &#39; &#39;.join([&#39;87&#39;, &#39;87&#39;, &#39;87&#39;])
+</span></span><span class="line"><span class="cl">&#39;87 87 87&#39;</span></span></code></pre></div>
+<p>On peut rediriger les valeurs vers un nouveau fichier:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;image_source.ppm&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;image_copie.ppm&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">largeur</span> <span class="o">=</span> <span class="mi">1000</span>
+</span></span><span class="line"><span class="cl"><span class="n">hauteur</span> <span class="o">=</span> <span class="mi">801</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;P3&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">largeur</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">hauteur</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;255&#39;</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f1</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">3</span><span class="p">:]:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">L</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ici: traitement sur les valeurs du pixel</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pixel</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pixel</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span></span></span></code></pre></div>
+<h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="recherche-du-minmax">Recherche du min/max<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour parcourir un tableau <code>T</code> à 2 dimensions, il faut 2 boucles imbriquées, la 1ere pour parcourir les lignes, et la 2e pour les colonnes.</p>
+<p>Cela donne souvent le script suivant:</p>
+<p><em>script A:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># i est le numero de ligne</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># toutes les lignes ont la meme longueur que T[0]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># j est le numero de colonne</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span> <span class="n">traitement</span> <span class="n">sur</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span></span></span></code></pre></div>
+<p><em>script B:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">T</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span> <span class="n">traitement</span> <span class="n">sur</span> <span class="n">elem</span></span></span></code></pre></div>
+<ol>
+<li>Lequel de ces scripts realise un parcours par indice? Lequel realise un parcours par élément.</li>
+<li>Utiliser l&rsquo;un de ces scripts pour écrire une fonction <code>min_max</code>, qui détermine la valeur minimale et la valeur maximale parmi les données de la matrice.</li>
+<li>Ecrire une fonction <code>moyenne</code> qui retourne la moyenne des valeurs d&rsquo;une matrice.</li>
+</ol>
+<h2 id="compréhension-de-liste">Compréhension de liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le script suivant construit une matrice <code>M</code> de zeros:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="c1"># a completer (1)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># a completer (2)  </span></span></span></code></pre></div>
+<ol>
+<li>Compléter le script</li>
+<li>Quelle est la dimension de cette matrice? Et quelles seraient les dimension de l&rsquo;image correspondante (largeur/hauteur)?</li>
+<li>Simplifier le script au niveau des lignes 5 et 6, en utilisant l&rsquo;instruction <code>[0] * n</code>, qui est équivalent, ici, à <code>[0,0,0,0]</code>.</li>
+<li>Ré-ecrire ce même script, en utilisant la compréhension de liste.</li>
+</ol>
+<h2 id="créer-une-image-à-partir-dinstructions">Créer une image à partir d&rsquo;instructions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+
+<figure >
+    
+        <img src="../images/suisse.png"
+        
+        alt="drapeau suisse" />
+    
+    
+    <figcaption>
+        
+        <p>
+            drapeau suisse
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<ol>
+<li>Ecrire le script qui permet de construire la matrice de ce drapeau suisse, en noir et blanc. La dimension sera de <code>700*500</code> pixels</li>
+<li>Ecrire le script qui construit la matrice du drapeau, mais cette fois, avec la couleur de fond rouge. Chaque élément de la matrice sera un tuple (R,V,B)</li>
+</ol>
+<h2 id="traitement-dune-image-sans-modifier-sa-dimension-1">Traitement d&rsquo;une image sans modifier sa dimension<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On souhaite transformer une image source en couleur, en une image cible en niveaux de gris. On utilise pour cela la formule de calcul de la Luminence: *(r,g,b sont les intensités des couleurs primaires 0..255)</p>
+$$L = 0.299\times r + 0.587\times g + 0.114\times b$$<p>La valeur calculée pour L sera placée comme niveau de gris dans la matrice cible.</p>
+<ol>
+<li>Ecrire le script de la fonction luminence, qui calcule la valeur de L à partir d&rsquo;un tuple <code>(r,g,b)</code></li>
+<li>Placer dans la fonction un test d&rsquo;assertion sur les valeurs permises pour r,g,b. Ce test, basé sur les données d&rsquo;entrée, est appelé test de <em>précondition</em></li>
+<li>Ecrire une fonction <code>matrice_rgb_to_gris</code> qui créé une matrice de niveaux de gris (valeurs de luminence) à partir d&rsquo;une matrice couleur.</li>
+</ol>
+<h2 id="agrandissement-reduction">Agrandissement, reduction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On considère une image source de largeur L et de hauteur H et un entier $k > 0$ :</p>
+<p>Un <em>agrandissement</em> de coefficient <code>k</code> de l’image source est une image cible de dimensions $(k\times L,k \times H)$ dont le pixel de coordonnées $(x, y)$ prend la valeur du pixel en $(x//k, y//k)$ dans l’image source.</p>
+
+<figure >
+    
+        <img src="../images/agrandissement.png"
+        
+        alt="image issue du site de frederic-junier.gitlab.io" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image issue du site de frederic-junier.gitlab.io
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<ol>
+<li>On considère l&rsquo;image <code>3*3</code> de matrice <code>M = [[1,0,1],[0,1,0],[1,1,1]]</code>. Quelle sera la dimension de l&rsquo;image cible si le coefficient <code>k</code> est égal à 2?</li>
+<li>Représenter la matrice <code>M_cible</code> avec ses valeurs calculées à partir de celles de <code>M</code></li>
+<li>La fonction <code>changement_echelle</code> prend 2 paramètres, <code>M</code>, la matrice $(L,H)$ de l&rsquo;image source, et <code>k</code>, le coefficient. Cette fonction retourne une image calculée sur les valeurs de <code>M</code>, avec une dimension $(k\times L,k \times H)$. Ecrire le script de cette fonction.</li>
+<li>Cette fonction, sert-elle aussi pour réaliser une <em>reduction</em> de la taille de l&rsquo;image source? Donner un exemple.</li>
+<li>Quel défaut aura une image agrandie selon cette méthode?</li>
+<li>Quel sera le poids de l&rsquo;image reduite d&rsquo;un facteur k? Exprimer en fonction du poids P de l&rsquo;image source.</li>
+</ol>
+<blockquote>
+<p>Fiche d&rsquo;exercices sur les images numeriques: <a href="/pdf/NSI/sd7_images_num.pdf">version pdf</a></p>
+</blockquote>
+<h1 id="suite-du-cours">Suite du cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><a href="/docs/SNT_2nde/pages/page5/photo_num4/">Enjeux ethiques et societaux de l&rsquo;image</a></li>
+<li>Exercices de niveau 1ere NSI: <a href="https://frederic-junier.gitlab.io/parc-nsi/chapitre7/NSI-Images-Tableaux2d--2021V2.pdf" rel="external">site de frederic-junier</a></li>
+<li>sujet bac avec corrigé sur code de Huffman: <a href="https://hmalherbe.fr/thalesm/gestclasse/documents/Terminale_NSI/2020-2021/Evaluations/Term_NSI_Bac_Blanc_Fevrier_2021.pdf" rel="external">Lien vers la page de hmalherbe.fr</a></li>
+<li>Compléments sur code de Huffman <a href="https://madamasterclass.com/mod/page/view.php?id=892" rel="external">fiche sur le site madamasterclass.com</a></li>
+</ul>
+<!-- raw HTML omitted -->
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421" checked><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" checked><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page4/index.html"><a class="padding" href="/nsi_1/reseaux/page4/index.html">GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/html_page2/index.html"><a class="padding" href="/nsi_1/reseaux/html_page2/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184"><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/page6/index.html"><a class="padding" href="/nsi_1/ihm/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516"><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/snt/index.html"><input type="checkbox" id="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4" aria-controls="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4"><label for="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu SNT</span></label><a class="padding default-animation" href="/snt/index.html">SNT<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/index.html"><input type="checkbox" id="R-section-09803e578e8ec627e73ee9df1dba3ba1" aria-controls="R-subsections-09803e578e8ec627e73ee9df1dba3ba1"><label for="R-section-09803e578e8ec627e73ee9df1dba3ba1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees structurees</span></label><a class="padding default-animation" href="/snt/donnees/index.html">donnees structurees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-09803e578e8ec627e73ee9df1dba3ba1" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/page1/index.html"><a class="padding" href="/snt/donnees/page1/index.html">codage des nombres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/web/index.html"><a class="padding" href="/snt/web/index.html">Le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/index.html"><a class="padding" href="/snt/internet/index.html">internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/index.html"><input type="checkbox" id="R-section-208ab0e974a19a4c45b9a6a40fbedcd4" aria-controls="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4"><label for="R-section-208ab0e974a19a4c45b9a6a40fbedcd4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu informatique embarquée</span></label><a class="padding default-animation" href="/snt/robotique/index.html">informatique embarquée<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/robotique/page1/index.html"><a class="padding" href="/snt/robotique/page1/index.html">IOT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page4/index.html"><a class="padding" href="/snt/robotique/page4/index.html">Programme informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page5/index.html"><a class="padding" href="/snt/robotique/page5/index.html">Python Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/img_num/index.html"><input type="checkbox" id="R-section-40f85ba153e0e4340fbde2302a463673" aria-controls="R-subsections-40f85ba153e0e4340fbde2302a463673"><label for="R-section-40f85ba153e0e4340fbde2302a463673"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu images numeriques</span></label><a class="padding default-animation" href="/snt/img_num/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-40f85ba153e0e4340fbde2302a463673" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/img_num/page7/index.html"><a class="padding" href="/snt/img_num/page7/index.html">Photographie numérique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page2/index.html"><a class="padding" href="/snt/img_num/page2/index.html">Enjeux ethiques et societaux de l&#39;image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page5/index.html"><a class="padding" href="/snt/img_num/page5/index.html">EXIF et données colorimetriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page3/index.html"><a class="padding" href="/snt/img_num/page3/index.html">TP pixel art<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/localisation/index.html"><input type="checkbox" id="R-section-e7c35689adb9fe065b5057ce434cfa37" aria-controls="R-subsections-e7c35689adb9fe065b5057ce434cfa37"><label for="R-section-e7c35689adb9fe065b5057ce434cfa37"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu localisation</span></label><a class="padding default-animation" href="/snt/localisation/index.html">localisation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7c35689adb9fe065b5057ce434cfa37" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/localisation/page1/index.html"><a class="padding" href="/snt/localisation/page1/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page2/index.html"><a class="padding" href="/snt/localisation/page2/index.html">geolocaliser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/competences_num/index.html"><a class="padding" href="/competences_num/index.html">competences numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782659429"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782659429" defer></script>
+    <script src="/js/theme.js?1782659429" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

@@ -4,6 +4,11 @@ description: format matriciel, module PIL, drapeaux pays
 weight: 13
 ---
 
+* creation d'images numeriques version 1: [Lien](../img_num1)
+* creation d'images numeriques version 2: [Lien](../img_num11)
+* traitement d'une image: detourage, filtre, incrustation: [Lien](../img_num2)
+* tuto pour detourer une image avec Gimp: [Lien](../img_num22)
+
 # Créer des images numeriques - Partie 1
 Les images numériques matricielles sont des tableaux de pixels. On peut concevoir images de *synthèse* à partir d'instructions en python (ou autre langage). Des librairies comme `PIL` permettent de manipuler les pixels comme les données d'une table.
 

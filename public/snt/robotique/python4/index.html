@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="A quoi sert un programme informatique Sojourner (de la sonde Mars Pathfinder est le premier rover géologue envoyé sur Mars. Il a ouvert la voie aux autres Spirit, Opportunity (2003), Curiosity (2011), Perseverence (2021) et Zuhrong (2021).
+le robot explorateur Pathfinder (1997) en plein travail Ce premier rover, muni d’un moteur (chenilles), d’une batterie solaire et une autre au Lithium, disposait d’une camera, une station meteo, et d’un spectromètre à RX pour analyser les échantillons minéraux. Il possedait egalement une antenne, dirigée vers la Terre pour ses communications.">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Programme informatique :: allopizza">
+    <meta name="twitter:description" content="A quoi sert un programme informatique Sojourner (de la sonde Mars Pathfinder est le premier rover géologue envoyé sur Mars. Il a ouvert la voie aux autres Spirit, Opportunity (2003), Curiosity (2011), Perseverence (2021) et Zuhrong (2021).
+le robot explorateur Pathfinder (1997) en plein travail Ce premier rover, muni d’un moteur (chenilles), d’une batterie solaire et une autre au Lithium, disposait d’une camera, une station meteo, et d’un spectromètre à RX pour analyser les échantillons minéraux. Il possedait egalement une antenne, dirigée vers la Terre pour ses communications.">
+    <meta property="og:url" content="//localhost:1313/snt/robotique/python4/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="Programme informatique :: allopizza">
+    <meta property="og:description" content="A quoi sert un programme informatique Sojourner (de la sonde Mars Pathfinder est le premier rover géologue envoyé sur Mars. Il a ouvert la voie aux autres Spirit, Opportunity (2003), Curiosity (2011), Perseverence (2021) et Zuhrong (2021).
+le robot explorateur Pathfinder (1997) en plein travail Ce premier rover, muni d’un moteur (chenilles), d’une batterie solaire et une autre au Lithium, disposait d’une camera, une station meteo, et d’un spectromètre à RX pour analyser les échantillons minéraux. Il possedait egalement une antenne, dirigée vers la Terre pour ses communications.">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="SNT">
+    <meta itemprop="name" content="Programme informatique :: allopizza">
+    <meta itemprop="description" content="A quoi sert un programme informatique Sojourner (de la sonde Mars Pathfinder est le premier rover géologue envoyé sur Mars. Il a ouvert la voie aux autres Spirit, Opportunity (2003), Curiosity (2011), Perseverence (2021) et Zuhrong (2021).
+le robot explorateur Pathfinder (1997) en plein travail Ce premier rover, muni d’un moteur (chenilles), d’une batterie solaire et une autre au Lithium, disposait d’une camera, une station meteo, et d’un spectromètre à RX pour analyser les échantillons minéraux. Il possedait egalement une antenne, dirigée vers la Terre pour ses communications.">
+    <meta itemprop="wordCount" content="2155">
+    <title>Programme informatique :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782654639" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782654639" defer></script>
+    <script src="/js/search-lunr.js?1782654639" defer></script>
+    <script src="/js/search.js?1782654639" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782654639";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782654639" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782654639" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782654639" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782654639" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782654639" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782654639" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782654639" rel="stylesheet">
+    <link href="/css/theme.css?1782654639" rel="stylesheet">
+    <link href="/css/format-html.css?1782654639" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/snt\/robotique\/python4\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/snt/robotique/python4/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#que-fait-un-programme-informatique">Que fait un programme informatique?</a></li>
+    <li><a href="#quelques-repères-historiques">Quelques repères historiques</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#quelques-exemples">Quelques exemples</a>
+      <ul>
+        <li><a href="#origami">Origami</a></li>
+        <li><a href="#code-pin">Code PIN</a></li>
+      </ul>
+    </li>
+    <li><a href="#les-ingrédients-dun-algorithme">Les ingrédients d&rsquo;un algorithme</a>
+      <ul>
+        <li><a href="#données-variables-et-opérations">Données: Variables et opérations</a></li>
+        <li><a href="#interface-entréessorties">Interface: Entrées/Sorties</a></li>
+        <li><a href="#contrôler-le-programme-structures-conditionnelles">Contrôler le programme: Structures conditionnelles</a></li>
+        <li><a href="#contrôler-le-programme-boucles">Contrôler le programme: Boucles</a></li>
+        <li><a href="#structure-fonctions-et-procedures">Structure: Fonctions et Procedures</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#un-programme-informatique">Un programme informatique</a></li>
+    <li><a href="#un-langage-de-programmation">Un langage de programmation</a></li>
+    <li><a href="#un-algorithme">Un algorithme</a></li>
+    <li><a href="#un-bug">Un bug</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ex-1-code-pin-et-code-puk">Ex 1: code PIN et code PUK</a></li>
+    <li><a href="#ex-2-application-pour-la-course-à-pied">Ex 2: Application pour la course à pied</a></li>
+    <li><a href="#ex-3-diamètre-douverture-de-lappareil-photographique">Ex 3: Diamètre d&rsquo;ouverture de l&rsquo;appareil photographique</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ex-1">Ex 1</a></li>
+    <li><a href="#ex-2">Ex 2</a></li>
+    <li><a href="#ex-3">Ex 3</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#boucle-simple">Boucle simple</a>
+      <ul>
+        <li><a href="#plots">Plots</a></li>
+        <li><a href="#caisses">Caisses</a></li>
+      </ul>
+    </li>
+    <li><a href="#boucle-et-test-conditionnel">Boucle et test conditionnel</a></li>
+    <li><a href="#boucle-conditionnelle-while">Boucle conditionnelle: <code>while</code></a></li>
+    <li><a href="#boucle-for-boucle-conditionnelle-while">Boucle <code>for</code>, boucle conditionnelle <code>while</code></a></li>
+    <li><a href="#utiliser-des-variables">Utiliser des variables</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/snt/index.html"><span itemprop="name">SNT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/snt/robotique/index.html"><span itemprop="name">informatique embarquée</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Programme informatique</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/SNT/robotique/python4.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/snt/robotique/page1/index.html" title="IOT (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/snt/robotique/python5/index.html" title="Python Turtle (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable snt" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="programme-informatique">Programme informatique</h1>
+
+<h1 id="a-quoi-sert-un-programme-informatique">A quoi sert un programme informatique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Sojourner</em> (de la sonde <a href="https://fr.wikipedia.org/wiki/Mars_Pathfinder" rel="external">Mars Pathfinder</a> est le premier <em>rover</em> géologue envoyé sur Mars. Il a ouvert la voie aux autres <em>Spirit</em>, <em>Opportunity</em> (2003), <em>Curiosity</em> (2011), <em>Perseverence</em> (2021) et <em>Zuhrong</em> (2021).</p>
+
+<figure >
+    
+        <img src="../images/pathfinder.jpg"
+        
+        alt="le robot explorateur Pathfinder (1997) en plein travail" />
+    
+    
+    <figcaption>
+        
+        <p>
+            le robot explorateur Pathfinder (1997) en plein travail
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Ce premier <em>rover</em>, muni d&rsquo;un moteur (chenilles), d&rsquo;une batterie solaire et une autre au Lithium, disposait d&rsquo;une camera, une station meteo, et d&rsquo;un spectromètre à RX pour analyser les échantillons minéraux. Il possedait egalement une antenne, dirigée vers la Terre pour ses communications.</p>
+<p>Les programmes qui le contrôlaient devaient lui permettre d&rsquo;<em>evoluer</em> de manière plus ou moins <em>autonome</em> sur la surface de Mars, et de réaliser diverses <em>mesures physiques</em>, tout en veillant à sa propre <em>sécurité</em> et <em>autonomie</em> (batteries).</p>
+<h2 id="que-fait-un-programme-informatique">Que fait un programme informatique?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Ce qui fait fonctionner un appareil numérique, c&rsquo;est un <strong>programme</strong>:
+C&rsquo;est donc grâce à un programme que l&rsquo;on fait fonctionner un ordinateur, une console de jeux, une machine à laver, le poste de pilotage d&rsquo;un avion, un guichet automatique bancaire…</p>
+<p>
+<figure >
+    
+        <img src="../images/machines.png"
+        
+        alt="des machines utilisant un programme informatique " />
+    
+    
+    <figcaption>
+        
+        <p>
+            des machines utilisant un programme informatique 
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+Mais c&rsquo;est aussi grâce à un programme que ces machines peuvent fournir un service: un logiciel de bureautique, un jeu, le lavage du linge, le pilotage automatique, ou le retrait d&rsquo;argent de son compte&hellip;.</p>
+<p>Aujourd&rsquo;hui, le smartphone est l&rsquo;objet qui nous permet d&rsquo;executer de nombreux programmes, en permanence.</p>
+<p>
+<figure >
+    
+        <img src="../images/iphone.jpg"
+        
+        alt="applications et smartphone" />
+    
+    
+    <figcaption>
+        
+        <p>
+            applications et smartphone
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+On confond parfois <strong>programme informatique</strong> et <strong>logiciel</strong>, ou <strong>application</strong>.
+Un logiciel peut comporter plusieurs programmes.</p>
+<h2 id="quelques-repères-historiques">Quelques repères historiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>En <strong>1842</strong>, la comtesse Ada Lovelace crée des diagrammes pour la machine analytique de Charles Babbage. Ces diagrammes sont considérés aujourd&rsquo;hui comme étant les <em>premiers programmes</em> informatiques au monde</li>
+<li><strong>1936</strong>: Première formulation de ce qu&rsquo;est un <em>programme</em> par Alan Turing.</li>
+<li><strong>1940</strong>: Les premiers ordinateurs. Les programmes informatiques étaient alors conçus par des analystes, rédigés par des programmeurs et saisis par des opératrices sur des bandes type cartes en carton perforé.</li>
+<li>Le premier système d&rsquo;exploitation a été développé en <strong>1954</strong>.</li>
+<li><strong>1970</strong>: début de la programmation structurée. Depuis, la variété et mise à jour des langages n&rsquo;a cessé de rendre plus accéssible la programmation.</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/frise.jpg"
+        
+        alt="Compléter la frise" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Compléter la frise
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h1 id="algorithme">Algorithme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un algorithme traduit le cahier des charges d&rsquo;un programme en un langage naturel et non ambigü, où les instructions sont séquencées.</p>
+<h2 id="quelques-exemples">Quelques exemples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="origami">Origami<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li><strong>Cahier des charges:</strong> <em>Réaliser une grue (l&rsquo;animal) par 10 pliages succéssifs d&rsquo;une feuille de papier.</em></li>
+<li><strong>Algorithme:</strong></li>
+</ul>
+
+<figure >
+    
+        <img src="../images/origami.png"
+        
+        alt="extrait de la séquence de pliage" />
+    
+    
+    <figcaption>
+        
+        <p>
+            extrait de la séquence de pliage
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>L&rsquo;algorithme du pliage de l&rsquo;origami présente une <strong>structure linéaire</strong>. On peut visualiser celui-ci à l&rsquo;aide d&rsquo;un <a href="https://www.playhooky.fr/technologie/algorithmes-algorigrammes/" rel="external">algorigramme</a></p>
+</blockquote>
+
+<figure >
+    <a href="https://www.playhooky.fr/technologie/algorithmes-algorigrammes/">
+        <img src="../images/algorigramme1.png"
+        
+         />
+    </a>
+    
+</figure>
+
+<h3 id="code-pin">Code PIN<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li><strong>Cahier des charges:</strong> <em>Demander à l&rsquo;utilisateur du smartphone de saisir son code PIN, et s&rsquo;il echoue 3 fois, lui demander son code PUK</em></li>
+<li><strong>Algorithme:</strong> L&rsquo;un des deux algorithmes correspond bien au cahier des charges</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># algorithme 1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Répéter</span> <span class="mi">3</span> <span class="n">fois</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">demander</span> <span class="n">code</span> <span class="n">PIN</span>
+</span></span><span class="line"><span class="cl"><span class="n">Si</span> <span class="n">code</span> <span class="n">PIN</span> <span class="n">incorrect</span>
+</span></span><span class="line"><span class="cl">  <span class="n">demander</span> <span class="n">code</span> <span class="n">PUK</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sinon</span>
+</span></span><span class="line"><span class="cl">  <span class="n">passer</span></span></span></code></pre></div>
+<p>Ce premier algorithme montre une <strong>structure alternative</strong>: on commence par tester la condition ; si elle est vraie, l’action 2 est exécutée, sinon, c&rsquo;est l&rsquo;action 3.</p>
+
+<figure >
+    <a href="https://www.playhooky.fr/technologie/algorithmes-algorigrammes/">
+        <img src="../images/algorigramme2.png"
+        
+         />
+    </a>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># algorithme 2</span>
+</span></span><span class="line"><span class="cl"><span class="n">demander</span> <span class="n">code</span> <span class="n">PIN</span>
+</span></span><span class="line"><span class="cl"><span class="n">nbessai</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tant</span> <span class="n">que</span> <span class="n">code</span> <span class="n">PIN</span> <span class="n">incorrect</span> <span class="n">et</span> <span class="n">nbessai</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">demander</span> <span class="n">code</span> <span class="n">PIN</span>
+</span></span><span class="line"><span class="cl">  <span class="n">nbessai</span> <span class="o">=</span> <span class="n">nbessai</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Si</span> <span class="n">code</span> <span class="n">PIN</span> <span class="n">incorrect</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">demander</span> <span class="n">code</span> <span class="n">PUK</span></span></span></code></pre></div>
+<p>Dans ce 2e algorithme:</p>
+<ul>
+<li>on utilise une <em>variable</em> appelée <code>nbessai</code>. Sa valeur est d&rsquo;abord mise à 1, puis évolue au fur et à mesure que le programme avance.</li>
+<li>on utilise une structure qui amène une répétition. (une <strong>structure itérative</strong>): <code>Tant que &lt;condition&gt; …</code>qui répète le bloc tant que la condition est VRAIE.</li>
+</ul>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>Pour l&rsquo;algorithme 1, compléter l&rsquo;algorigramme.</li>
+<li>Trouver lequel des 2 algorithmes correspond bien au cahier des charges.</li>
+<li>Pour les 2 algorithmes: Expliquer ce que fait le programme si l&rsquo;utilisateur entre 2 fois un code PIN erroné, puis entre le bon (au 3e essai).</li>
+<li>Pour l&rsquo;algorithme 2: expliquer ce que fait le programme lorsque l&rsquo;on entre 3 code PIN erronés.</li>
+</ol>
+<h2 id="les-ingrédients-dun-algorithme">Les ingrédients d&rsquo;un algorithme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Les instructions relatives aux ingrédients d&rsquo;un algorithme seront données en langage naturel, mais à la manière du langage Python.</p>
+<h3 id="données-variables-et-opérations">Données: Variables et opérations<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une variable stocke une valeur et peut être utilisée pour des opérations.</p>
+<p>(voir <a href="/docs/SNT_2nde/pages/pages_algo/python/python2/index.html">introduction à la programmation</a>)</p>
+<ul>
+<li>Exemples
+Le signe <code>=</code> permet d&rsquo;affecter une valeur à une variable:</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>nom de la variable</th>
+					<th>affectation d&rsquo;une valeur</th>
+					<th>type de variable</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>nbessai</td>
+					<td><code>nbessai = 1</code></td>
+					<td>nombre entier</td>
+			</tr>
+			<tr>
+					<td>message</td>
+					<td><code>message = &quot;bonjour&quot;</code></td>
+					<td>texte</td>
+			</tr>
+			<tr>
+					<td>text1</td>
+					<td>texte1 = &ldquo;je suis &quot;</td>
+					<td>texte</td>
+			</tr>
+			<tr>
+					<td>text2</td>
+					<td>texte2 = &ldquo;le prof&rdquo;</td>
+					<td>texte</td>
+			</tr>
+	</tbody>
+</table>
+<p>Lors de l&rsquo;affectation, python va choisir un type pour cette variable, ce qui va permettre certaines opérations.</p>
+<ul>
+<li>Opérations sur les variables de type textes:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">text1</span> <span class="o">=</span> <span class="s2">&#34;je suis &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">text2</span> <span class="o">=</span> <span class="s2">&#34;le prof&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">text</span> <span class="o">=</span> <span class="n">text1</span> <span class="o">+</span> <span class="n">text2</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">afficher</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">je</span> <span class="n">suis</span> <span class="n">le</span> <span class="n">prof</span></span></span></code></pre></div>
+<ul>
+<li>Opérations sur les variables de type nombres entiers:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nbessai</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nbessai</span> <span class="o">=</span> <span class="n">nbessai</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">afficher</span><span class="p">(</span><span class="n">nbessai</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
+<h3 id="interface-entréessorties">Interface: Entrées/Sorties<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un algorithme doit fournir une interface qui permet d&rsquo;interagir avec l&rsquo;utilisateur. Il doit pouvoir lire et entrer des données.</p>
+<p>Ce sont les instructions: <em>afficher</em> et <em>entrer</em> qui réalisent ceci.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">afficher</span><span class="p">(</span><span class="s2">&#34;un message&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">afficher</span><span class="p">(</span><span class="n">une_variable</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">entrer</span><span class="p">(</span><span class="s2">&#34;position&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="contrôler-le-programme-structures-conditionnelles">Contrôler le programme: Structures conditionnelles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Cette structure permet d’effectuer une séquence d’opérations selon la valeur d’une condition.</p>
+<p>Une condition est une expression logique (on dit également booléenne), dont la valeur est vrai ou faux.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Si</span> <span class="p">(</span> <span class="o">&lt;</span><span class="n">expression_logique</span><span class="o">&gt;</span> <span class="p">)</span> <span class="n">alors</span> 
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="n">bloc_alors</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Sinon</span> 
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="n">bloc_sinon</span><span class="o">&gt;</span></span></span></code></pre></div>
+<ul>
+<li>
+<p>Exemple: le physionomiste d&rsquo;une discothèque</p>
+<ul>
+<li><em>Programme 1: Vous pouvez entrer si vous avez plus de 18 ans</em></li>
+</ul>
+</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/disco1.png"
+        
+         />
+    
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">si</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="n">alors</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dire</span><span class="p">(</span><span class="s2">&#34;vous pouvez entrer&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sinon</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">      <span class="n">dire</span><span class="p">(</span><span class="s2">&#34;repasser une prochaine fois&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li><em>Vous pouvez entrer si vous avez plus de 18 ans, ET si vous ne portez pas des baskets</em></li>
+</ul>
+
+<figure >
+    
+        <img src="../images/disco2.png"
+        
+         />
+    
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">si</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="n">ET</span> <span class="n">non</span> <span class="n">porte_des_baskets</span> <span class="n">alors</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dire</span><span class="p">(</span><span class="s2">&#34;vous pouvez entrer&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sinon</span> <span class="p">:</span> 
+</span></span><span class="line"><span class="cl">      <span class="n">dire</span><span class="p">(</span><span class="s2">&#34;repasser une prochaine fois&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<h3 id="contrôler-le-programme-boucles">Contrôler le programme: Boucles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<ul>
+<li>Les structures répétitives permettent d’exécuter plusieurs fois un bloc d’opérations, en faisant varier automatiquement une variable de boucle.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Pour</span> <span class="o">&lt;</span><span class="n">identificateur_variable</span><span class="o">&gt;</span> <span class="n">de</span> <span class="o">&lt;</span><span class="n">valeur_début</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">&lt;</span><span class="n">valeur_fin</span><span class="o">&gt;</span> <span class="n">faire</span>
+</span></span><span class="line"><span class="cl"> <span class="o">&lt;</span><span class="n">bloc_opérations</span><span class="o">&gt;</span> </span></span></code></pre></div>
+<ul>
+<li>Les structures répétitives permettent d’exécuter plusieurs fois un bloc d’opérations, tant qu’une condition (de continuation) est satisfaite.</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Tantque</span> <span class="p">(</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="p">)</span> <span class="n">faire</span>
+</span></span><span class="line"><span class="cl"> <span class="o">&lt;</span><span class="n">bloc_opérations</span><span class="o">&gt;</span> </span></span></code></pre></div>
+<h3 id="structure-fonctions-et-procedures">Structure: Fonctions et Procedures<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du remaniement de son code : C’est à dire ré-écrire les parties du programme qui fonctionnent et les mettre dans une fonction. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
+<p>La programmation se fait en deux temps: On commence par programmer la fonction</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fonction</span> <span class="n">carre</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">y</span></span></span></code></pre></div>
+<p>Puis on appelle cette fonction:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">carre</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span></span></span></code></pre></div>
+<p>Le programme retourne dans ce cas la valeur 100.</p>
+<h1 id="langages-informatiques">Langages informatiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les instructions qu&rsquo;un ordinateur devra exécuter doivent pouvoir être exprimées de manière précise et non ambiguë.</p>
+<h1 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="un-programme-informatique">Un programme informatique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C&rsquo;est un ensemble d&rsquo;opérations destinées à être exécutées par un ordinateur.</p>
+<p>Un <strong>programme source</strong> est un code écrit par un informaticien dans un <strong>langage de programmation</strong>. Il peut être <strong>compilé</strong> vers une forme binaire ou directement <strong>interprété</strong>. Au final, les instructions seront traduites en <strong>binaire</strong>, afin qu&rsquo;elles soient exécutées par un microprocesseur.</p>
+<h2 id="un-langage-de-programmation">Un langage de programmation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>C&rsquo;est une notation utilisée pour exprimer des algorithmes et écrire des programmes.</p>
+<h2 id="un-algorithme">Un algorithme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un algorithme est un procédé pour obtenir un résultat par une succession de calculs, décrits sous forme de termes simples dans une langue naturelle.
+C&rsquo;est une suite finie et non ambigüe d&rsquo;instructions, permettant de resoudre certains problèmes.</p>
+<h2 id="un-bug">Un bug<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un bug est un défaut de construction dans un programme. Les instructions que l&rsquo;appareil informatique exécute ne correspondent pas à ce qui est attendu, ce qui provoque des dysfonctionnements et des pannes.</p>
+<h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="ex-1-code-pin-et-code-puk">Ex 1: code PIN et code PUK<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le programme suivant, est-il celui utilisé pour le deverouillage d&rsquo;un smartphone? Pour repondre à la question:</p>
+<ul>
+<li>dessiner l&rsquo;algorigramme correspondant.</li>
+<li>Expliquer ce que fait le programme lorsque l&rsquo;utilisateur se trompe 3 fois de suite de code PIN, puis parvient enfin à rentrer le bon (au 4e essai).</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># algorithme 3</span>
+</span></span><span class="line"><span class="cl"><span class="n">demander</span> <span class="n">code</span> <span class="n">PIN</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tant</span> <span class="n">que</span> <span class="n">code</span> <span class="n">PIN</span> <span class="n">incorrect</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">demander</span> <span class="n">code</span> <span class="n">PIN</span>
+</span></span><span class="line"><span class="cl"><span class="n">demander</span> <span class="n">code</span> <span class="n">PUK</span></span></span></code></pre></div>
+<h2 id="ex-2-application-pour-la-course-à-pied">Ex 2: Application pour la course à pied<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li><strong>Cahier des charges:</strong> <em>Une application de course à pieds sur spartphone propose à l&rsquo;utilisateur de rentrer les distances parcourues chaque jour. Lorsque l&rsquo;utilisateur a atteint son objectif, fixé à 42 km, le décompte s&rsquo;arrête. L&rsquo;ecran affiche alors: <strong>Félicitations</strong></em></li>
+<li><strong>Algorithme:</strong></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tant</span> <span class="n">que</span> <span class="n">total</span> <span class="o">...</span>    <span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">distance</span> <span class="o">=</span> <span class="n">entrer</span><span class="p">(</span><span class="s2">&#34;Saisir la distance : &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="n">Afficher</span><span class="p">(</span><span class="s2">&#34;Félicitations&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p><em>Remarque:</em> l&rsquo;instruction <code>distance = entrer(&quot;Saisir la distance : &quot;))</code> va afficher <em>Saisir la distance :</em>, puis stocker celle-ci dans la variable <em>distance</em>.</p>
+<ul>
+<li>Compléter l&rsquo;algorithme.</li>
+<li>Expliquer ce que fait le programme lorsque l&rsquo;utilisateur entre successivement: 10, 12, 10, 15.</li>
+</ul>
+<h2 id="ex-3-diamètre-douverture-de-lappareil-photographique">Ex 3: Diamètre d&rsquo;ouverture de l&rsquo;appareil photographique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>
+<p><strong>Cahier des charges:</strong> <em>Pour l&rsquo;appareil photo numérique: Mesurer le flux lumineux. Si celui-ci est supérieur à 100 Lux, diminuer le diamètre d&rsquo;ouverture. S&rsquo;il est infèrieur ou égal à 100 Lux, ouvrir davantage.</em></p>
+</li>
+<li>
+<p><strong>Algorithme:</strong></p>
+</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Répeter</span> <span class="n">indefiniment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Mesurer</span> <span class="n">la</span> <span class="n">lumière</span> <span class="n">et</span> <span class="n">stocker</span> <span class="n">dans</span> <span class="n">L</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Si</span> <span class="n">L</span> <span class="o">...</span>  <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Sinon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<blockquote>
+<p>A vous de jouer: Compléter l&rsquo;algorithme.</p>
+</blockquote>
+<p><em>Remarque:</em> on peut utiliser les fonctions <code>diminuer</code> et <code>augmenter</code> pour agir sur l&rsquo;ouverture de l&rsquo;appareil photo.</p>
+<h1 id="exercices-supplementaires">Exercices supplementaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="ex-1">Ex 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On donne le script d&rsquo;un programme en langage naturel, ainsi que sa traduction en Python. Déterminer, à la fin du programme, les valeurs stockées dans les variables a, b et c.</p>
+<ul>
+<li>Programme 1 en langage naturel</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">si</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">sinon</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="n">div</span> <span class="mi">2</span></span></span></code></pre></div>
+<ul>
+<li>Programme 1 en langage Python</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl"> <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">/</span> <span class="mi">2</span> </span></span></code></pre></div>
+<h2 id="ex-2">Ex 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On donne le script d&rsquo;un programme en langage naturel, ainsi que sa traduction en Python. Déterminer, à la fin du programme, la valeur stockée dans la variable a.</p>
+<ul>
+<li>Programme 2 en langage naturel</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">Tantque</span> <span class="p">(</span> <span class="n">a</span> <span class="n">different</span> <span class="n">de</span> <span class="mi">0</span> <span class="p">)</span> <span class="n">faire</span>
+</span></span><span class="line"><span class="cl"> <span class="n">afficher</span> <span class="p">(</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">a</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">1</span> </span></span></code></pre></div>
+<ul>
+<li>Programme 2 en langage Python</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span> <span class="n">a</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">):</span>
+</span></span><span class="line"><span class="cl"> <span class="nb">print</span> <span class="mi">2</span><span class="o">*</span><span class="n">a</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="mi">1</span> </span></span></code></pre></div>
+<h2 id="ex-3">Ex 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On donne le script d&rsquo;un programme en langage naturel, ainsi que sa traduction en Python. Déterminer, à la fin du programme, la valeur stockée dans la variable a.</p>
+<ul>
+<li>Programme 3 en langage naturel</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pour</span> <span class="n">i</span> <span class="n">de</span> <span class="mi">1</span> <span class="n">a</span> <span class="n">n</span> <span class="n">faire</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"> <span class="n">Afficher</span> <span class="p">(</span> <span class="n">a</span> <span class="p">)</span></span></span></code></pre></div>
+<ul>
+<li>Programme 3 en langage Python</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"> <span class="nb">print</span> <span class="n">a</span></span></span></code></pre></div>
+<p><em>range(a,b) permet de parcourir les valeurs a, a+1, …, b-1 (b non compris)</em></p>
+<h1 id="exercices-issus-du-site-algorea">Exercices issus du site Algorea<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="boucle-simple">Boucle simple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="plots">Plots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ecrire un programme utilisant une boucle <code>for</code>, permettant au robot de deposer un plot sur chaque repère.</p>
+
+<figure >
+    
+        <img src="../images/robot0.png"
+        
+        alt="parcours initial" />
+    
+    
+    <figcaption>
+        
+        <p>
+            parcours initial
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>Fonctions disponibles :</em> <code>tournerGauche()</code>, <code>tournerDroite()</code>, <code>avancer()</code>, <code>deposerPlot()</code>, <code>surCaseMarquee()</code>, <code>plotDevant()</code>.</p>
+<p><em>Mots-clés autorisés :</em> <code>for</code>.</p>
+<h3 id="caisses">Caisses<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Programmez le robot pour qu&rsquo;il pousse les caisses sur les cases marquées.</p>
+
+<figure >
+    
+        <img src="../images/robot1.png"
+        
+        alt="parcours carré" />
+    
+    
+    <figcaption>
+        
+        <p>
+            parcours carré
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>Fonctions disponibles :</em> <code>tournerGauche(), tournerDroite(), avancer(), pousserCaisse()</code>.</p>
+<p><em>Mots-clés autorisés :</em> <code>for</code>.</p>
+<h2 id="boucle-et-test-conditionnel">Boucle et test conditionnel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Compléter le programme suivant pour qu&rsquo;il permette au robot de déposer tous les plots sur les repères. Le programme doit fonctionner quel que soit le terrain (1, 2, ou 3) proposé:</p>
+
+<figure >
+    
+        <img src="../images/robot11.png"
+        
+        alt="terrain 1" />
+    
+    
+    <figcaption>
+        
+        <p>
+            terrain 1
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/robot12.png"
+        
+        alt="terrain 2" />
+    
+    
+    <figcaption>
+        
+        <p>
+            terrain 2
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/robot13.png"
+        
+        alt="terrain 3" />
+    
+    
+    <figcaption>
+        
+        <p>
+            terrain 3
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">robot</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">surCaseMarquee</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">deposerPlot</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="o">...</span></span></span></code></pre></div>
+<p><em>Fonctions disponibles :</em> <code>tournerGauche()</code>, <code>tournerDroite()</code>, <code>avancer()</code>, <code>deposerPlot()</code>, <code>surCaseMarquee()</code>, <code>plotDevant()</code>.</p>
+<p><em>Mots-clés autorisés :</em> <code>if, else, for</code>.</p>
+<h2 id="boucle-conditionnelle-while">Boucle conditionnelle: <code>while</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Programmer le robot pour qu&rsquo;il ramasse sa bille et la pose sur le trou le plus éloigné. Cette fois, on n&rsquo;utilisera pas le mot-clé <code>for</code> car on ne connait pas à l&rsquo;avance le nombre de cases à parcourir.</p>
+<p>On utilisera plutôt le mot-clé <code>while</code> suivi de la condition à réaliser pour executer les instructions.</p>
+<p>Ce sujet contient deux tests, avec une position différente pour le trou. Votre programme doit fonctionner pour les deux.</p>
+
+<figure >
+    
+        <img src="../images/robot21.png"
+        
+        alt="test 1" />
+    
+    
+    <figcaption>
+        
+        <p>
+            test 1
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/robot22.png"
+        
+        alt="test 2" />
+    
+    
+    <figcaption>
+        
+        <p>
+            test 2
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>Fonctions disponibles :</em> <code>droite(), ramasser(), deposer(), surTrou()</code></p>
+<p><em>Mots-clés autorisés :</em> <code>while, not</code></p>
+<h2 id="boucle-for-boucle-conditionnelle-while">Boucle <code>for</code>, boucle conditionnelle <code>while</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Même exercice que precedemment, mais cette fois, ce sont les 2 parcours suivants qui doivent être réalisés par le même programme:</p>
+
+<figure >
+    
+        <img src="../images/robot31.png"
+        
+        alt="test 1" />
+    
+    
+    <figcaption>
+        
+        <p>
+            test 1
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/robot32.png"
+        
+        alt="test 2" />
+    
+    
+    <figcaption>
+        
+        <p>
+            test 2
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>Fonctions disponibles :</em> <code>droite(), gauche(), bas(), ramasser(), deposer(), surTrou(), surObjet()</code></p>
+<p><em>Mots-clés autorisés :</em> <code>for, while, not</code></p>
+<h2 id="utiliser-des-variables">Utiliser des variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour la première situation, le robot consomme 1 segment de sa batterie chaque fois qu&rsquo;il pose un plot. Il doit s&rsquo;arrêter de travailler lorsque sa batterie ne contient plus qu&rsquo;un seul segment. Comment peut-il tenir le compte du nombre de segments utilisés, et donc, du niveau de sa batterie?</p>
+
+<figure >
+    
+        <img src="../images/robot4.png"
+        
+        alt="batterie du robot" />
+    
+    
+    <figcaption>
+        
+        <p>
+            batterie du robot
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p><em>Fonctions disponibles :</em> <code>tournerGauche()</code>, <code>tournerDroite()</code>, <code>avancer()</code>, <code>deposerPlot()</code>, <code>surCaseMarquee()</code>, <code>plotDevant()</code>.</p>
+<p><em>Mots-clés et symboles autorisés :</em> <code>for, while, not, =, +, -, &gt;, &lt;</code></p>
+<h1 id="liens-et-ressources">Liens et ressources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Programme informatique: <a href="https://fr.wikipedia.org/wiki/Programme_informatique#:~:text=Un%20programme%20informatique%20est%20un,forme%20binaire%20ou%20directement%20interpr%C3%A9t%C3%A9." rel="external">wikipedia</a></li>
+<li>exercice sur algorithme issu du Bordas 3.0 SNT (code PIN)</li>
+<li>exercice sur algorithme issu du Delagrave SNT (course à pieds)</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types natifs</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types natifs<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421"><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page4/index.html"><a class="padding" href="/nsi_1/reseaux/page4/index.html">GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/html_page2/index.html"><a class="padding" href="/nsi_1/reseaux/html_page2/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184"><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/page6/index.html"><a class="padding" href="/nsi_1/ihm/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516"><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/snt/index.html"><input type="checkbox" id="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4" aria-controls="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" checked><label for="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu SNT</span></label><a class="padding default-animation" href="/snt/index.html">SNT<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/index.html"><input type="checkbox" id="R-section-09803e578e8ec627e73ee9df1dba3ba1" aria-controls="R-subsections-09803e578e8ec627e73ee9df1dba3ba1"><label for="R-section-09803e578e8ec627e73ee9df1dba3ba1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees structurees</span></label><a class="padding default-animation" href="/snt/donnees/index.html">donnees structurees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-09803e578e8ec627e73ee9df1dba3ba1" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/page1/index.html"><a class="padding" href="/snt/donnees/page1/index.html">codage des nombres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/web/index.html"><a class="padding" href="/snt/web/index.html">Le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/index.html"><a class="padding" href="/snt/internet/index.html">internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="parent " data-nav-id="/snt/robotique/index.html"><input type="checkbox" id="R-section-208ab0e974a19a4c45b9a6a40fbedcd4" aria-controls="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4" checked><label for="R-section-208ab0e974a19a4c45b9a6a40fbedcd4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu informatique embarquée</span></label><a class="padding default-animation" href="/snt/robotique/index.html">informatique embarquée<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/robotique/page1/index.html"><a class="padding" href="/snt/robotique/page1/index.html">IOT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/snt/robotique/python4/index.html"><a class="padding" href="/snt/robotique/python4/index.html">Programme informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/python5/index.html"><a class="padding" href="/snt/robotique/python5/index.html">Python Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/img_num/index.html"><a class="padding" href="/snt/img_num/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/index.html"><input type="checkbox" id="R-section-e7c35689adb9fe065b5057ce434cfa37" aria-controls="R-subsections-e7c35689adb9fe065b5057ce434cfa37"><label for="R-section-e7c35689adb9fe065b5057ce434cfa37"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu localisation</span></label><a class="padding default-animation" href="/snt/localisation/index.html">localisation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7c35689adb9fe065b5057ce434cfa37" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/localisation/page1/index.html"><a class="padding" href="/snt/localisation/page1/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page2/index.html"><a class="padding" href="/snt/localisation/page2/index.html">geolocaliser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/competences_num/index.html"><a class="padding" href="/competences_num/index.html">competences numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782654639"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782654639" defer></script>
+    <script src="/js/theme.js?1782654639" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
