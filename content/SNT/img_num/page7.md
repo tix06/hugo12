@@ -7,7 +7,7 @@ weight: 13
 
 * {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} Photographie numerique: [Lien](../page7)
 * {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} Enjeux ethiques et societaux: [Lien](../page2)
-* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP detourer une image avec Gimp: [Lien](../page6)
+* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP detourer une image avec Gimp: [Lien](/competences_num/images_num/page1)
 * {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP données EXIF et données colorimetriques: [Lien](../page5)
 * {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} TP pixel art avec microbit: [Lien](../page3)
 * {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} Coder une image numerique avec un langage de programmation ou dans un fichier de données: [Lien](../page1)

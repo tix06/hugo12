@@ -8,7 +8,7 @@ weight: 15
 * creation d'images numeriques version 1: [Lien](../img_num1)
 * creation d'images numeriques version 2: [Lien](../img_num11)
 * traitement d'une image: detourage, filtre, incrustation: [Lien](../img_num2)
-* tuto pour detourer une image avec Gimp: [Lien](../img_num22)
+* tuto pour detourer une image avec Gimp: [Lien](/competences_num/images_num/page1)
 
 
 *Prérequis:* TP images numeriques ([partie1](../img_num1/))
