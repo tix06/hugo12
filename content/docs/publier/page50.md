@@ -1,5 +1,7 @@
 ---
-Title: HTML de zero
+Title: La démocratie athenienne
+description: balises HTML, structurer le document
+weight: 15
 ---
 
 

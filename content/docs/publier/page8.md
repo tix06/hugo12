@@ -1,5 +1,7 @@
 ---
-Title: html css
+Title: La bataille de Marignan
+description: langages web, html css, structure et mise en forme du document web
+weight: 16
 ---
 
 # Encodage des caracteres et header en html

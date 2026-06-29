@@ -1,11 +1,11 @@
 ---
-Title: detourer une image avec Gimp
-description: tuto detourer une image avec Gimp
+Title: detourer une image
+description: tuto Gimp, edition et modification d'image numerique
 titleHidden: true
 weight: 16
 ---
 
-# Détourer une image avec Gimp (retirer le fond)
+# Selectionner une forme, retirer le fond avec Gimp
 
 {{< img src="../images/gimp-chien.jpg" link="../images/gimp-chien.jpg" caption="image à telecharger" >}}
 

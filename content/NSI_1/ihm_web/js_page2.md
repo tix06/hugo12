@@ -6,10 +6,10 @@ weight: 16
 
 * cours 1 sur les fondamentaux en js: [Lien](../js_page1)
 * cours 2 sur la structure du langage: [Lien](../js_page2)
-* TP 1 - decouverte du js: [Lien](/tp1_javascript_decouverte.html)
+* TP 1 - decouverte du js: [Lien](/js/tp1_javascript_decouverte.html)
 * TP 2 - TP hack: [Lien](../js_page3)
-* TP 3 - calculatrice : [Lien v1](/TP1_exercice5.html) ou [Lien v2](/TP1_exercice5_calculatrice.html)
-* TP 4 - Animation sur tracé SVG: [Lien](/tp2_enonce.html), [correction](/tp2_correc.html)
+* TP 3 - calculatrice : [Lien v1](/js/TP1_exercice5.html) ou [Lien v2](/TP1_exercice5_calculatrice.html)
+* TP 4 - Animation sur tracé SVG: [Lien](/js/tp2_enonce.html), [correction](/js/tp2_correc.html)
 
 # Javascript : compléments
 

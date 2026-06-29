@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 - Fichier de travail - Animation sur tracé SVG</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #2c3e50;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* ==========================================
+           ÉTAPE 1 : LE CONTENEUR PRINCIPAL
+           ========================================== */
+        
+        #main-container {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        
+        /* ==========================================
+           ÉTAPE 2 : LES CERCLES DÉCORATIFS
+           ========================================== */
+        
+        .cercle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        #cercle1 {
+            width: 100px;
+            height: 100px;
+            top: 50px;
+            left: 50px;
+        }
+        
+        #cercle2 {
+            width: 150px;
+            height: 150px;
+            bottom: 100px;
+            right: 80px;
+        }
+        
+        #cercle3 {
+            width: 80px;
+            height: 80px;
+            top: 40%;
+            left: 60%;
+        }
+        
+        /* ==========================================
+           ÉTAPE 3 : LE SPRITE
+           ========================================== */
+        
+        #sprite {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #ffeb3b 0%, #ff9800 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
+            z-index: 10;
+        }
+        
+        /* SVG caché pour les calculs */
+        #hidden-svg {
+            position: absolute;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+        }
+        
+        /* ==========================================
+           CONTRÔLES
+           ========================================== */
+        
+        .controls {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        button {
+            margin: 5px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background: #3498db;
+            color: white;
+            border-radius: 6px;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        input[type="range"] {
+            width: 300px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ==========================================
+         ZONE D'ANIMATION
+         ========================================== -->
+    <div id="main-container">
+        <!-- ÉTAPE 2 : Les cercles décoratifs -->
+        <div class="cercle" id="cercle1"></div>
+        <div class="cercle" id="cercle2"></div>
+        <div class="cercle" id="cercle3"></div>
+        
+        <!-- ÉTAPE 3 : Le sprite -->
+        <div id="sprite"></div>
+    </div>
+    
+    <!-- ==========================================
+         SVG CACHÉ POUR LES CALCULS
+         ========================================== -->
+    
+    <!-- ÉTAPE 3 : Trajectoire elliptique -->
+    <svg id="hidden-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 269">
+        <path id="monChemin"
+              d="M 150,50 
+                 C 220,50 270,100 270,150 
+                 C 270,200 220,220 150,220 
+                 C 80,220 30,200 30,150 
+                 C 30,100 80,50 150,50 Z" />
+    </svg>
+    
+    <!-- ÉTAPE 4 : Votre SVG personnalisé (à décommenter et compléter) -->
+    <!--
+    <svg id="hidden-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+        <path id="monChemin"
+              d="COLLEZ_ICI_VOTRE_PATH_DEPUIS_GIMP" />
+    </svg>
+    -->
+    
+    <!-- ==========================================
+         CONTRÔLES
+         ========================================== -->
+    <div class="controls">
+        <div>
+            <button id="playBtn">▶ Démarrer</button>
+            <button id="pauseBtn" disabled>⏸ Pause</button>
+            <button id="resetBtn">↺ Recommencer</button>
+        </div>
+        <div>
+            <label>Vitesse: 
+                <input type="range" id="speedRange" min="0.5" max="5" step="0.5" value="1">
+                <span id="speedValue">1x</span>
+            </label>
+        </div>
+        <div style="margin-top: 10px; color: #7f8c8d;">
+            Position: <span id="position">0</span>% | 
+            Coordonnées: x=<span id="coordX">0</span>, y=<span id="coordY">0</span>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         ÉTAPE 3 : SCRIPT JAVASCRIPT
+         ========================================== -->
+    <script>
+        
+        // TODO ÉTAPE 3 : Décommentez tout le code ci-dessous
+        // (Supprimez la ligne ci-dessous et la dernière ligne avec les étoiles)
+        /*
+        
+        // ===== 1. RÉCUPÉRATION DES ÉLÉMENTS =====
+        
+        const path = document.getElementById('monChemin');
+        const sprite = document.getElementById('sprite');
+        const container = document.getElementById('main-container');
+        
+        const playBtn = document.getElementById('playBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const speedRange = document.getElementById('speedRange');
+        const speedValue = document.getElementById('speedValue');
+        
+        const positionDisplay = document.getElementById('position');
+        const coordXDisplay = document.getElementById('coordX');
+        const coordYDisplay = document.getElementById('coordY');
+        
+        
+        // ===== 2. VARIABLES D'ANIMATION =====
+        
+        let isPlaying = false;      // L'animation est-elle en cours ?
+        let progress = 0;           // Progression sur le chemin (0 à 1)
+        let speed = 1;              // Vitesse (multiplicateur)
+        let animationId = null;     // ID de l'animation
+        
+        
+        // ===== 3. CALCULS PRÉLIMINAIRES =====
+        
+        // Longueur totale du chemin SVG
+        const pathLength = path.getTotalLength();
+        console.log("Longueur du chemin:", pathLength);
+        
+        // Dimensions du viewBox SVG (système de coordonnées source)
+        const svg = document.getElementById('hidden-svg');
+        const viewBox = svg.viewBox.baseVal;
+        const svgWidth = viewBox.width;   // 300
+        const svgHeight = viewBox.height; // 269
+        
+        console.log("ViewBox SVG:", svgWidth, "×", svgHeight);
+        
+        // Dimensions du conteneur (toujours 600×600)
+        const containerWidth = 600;
+        const containerHeight = 600;
+        
+        
+        // ===== 4. FONCTION PRINCIPALE : MISE À JOUR DE LA POSITION =====
+        
+        function updateSpritePosition(progress) {
+            // 4.1 Calculer la distance le long du chemin
+            const distance = progress * pathLength;
+            
+            // 4.2 Obtenir les coordonnées SVG à cette distance
+            const point = path.getPointAtLength(distance);
+            
+            // 4.3 Convertir en pourcentage (normalisation)
+            const percentX = point.x / svgWidth;
+            const percentY = point.y / svgHeight;
+            
+            // 4.4 Convertir en pixels dans le conteneur
+            const x = percentX * containerWidth;
+            const y = percentY * containerHeight;
+            
+            // 4.5 Positionner le sprite
+            sprite.style.left = x + 'px';
+            sprite.style.top = y + 'px';
+            
+            // 4.6 Mettre à jour les affichages
+            positionDisplay.textContent = Math.round(progress * 100);
+            coordXDisplay.textContent = Math.round(x);
+            coordYDisplay.textContent = Math.round(y);
+        }
+        
+        
+        // ===== 5. BOUCLE D'ANIMATION =====
+        
+        function animate() {
+            // Si on a appuyé sur pause, arrêter
+            if (!isPlaying) return;
+            
+            // Avancer sur le chemin
+            progress += 0.001 * speed;
+            
+            // Si on arrive à la fin, recommencer
+            if (progress >= 1) {
+                progress = 0;
+            }
+            
+            // Mettre à jour la position
+            updateSpritePosition(progress);
+            
+            // Demander la prochaine frame
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        
+        // ===== 6. GESTION DES BOUTONS =====
+        
+        // Bouton Play
+        playBtn.addEventListener('click', function() {
+            isPlaying = true;
+            playBtn.disabled = true;
+            pauseBtn.disabled = false;
+            animate();
+        });
+        
+        // Bouton Pause
+        pauseBtn.addEventListener('click', function() {
+            isPlaying = false;
+            playBtn.disabled = false;
+            pauseBtn.disabled = true;
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+            }
+        });
+        
+        // Bouton Reset
+        resetBtn.addEventListener('click', function() {
+            progress = 0;
+            updateSpritePosition(progress);
+            if (isPlaying) {
+                pauseBtn.click();
+            }
+        });
+        
+        // Curseur de vitesse
+        speedRange.addEventListener('input', function() {
+            speed = parseFloat(speedRange.value);
+            speedValue.textContent = speed + 'x';
+        });
+        
+        
+        // ===== 7. INITIALISATION =====
+        
+        // Placer le sprite au début du chemin
+        updateSpritePosition(0);
+        
+        
+        // FIN DU CODE À DÉCOMMENTER
+        */
+    </script>
+</body>
+</html>

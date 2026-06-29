@@ -1,5 +1,7 @@
 ---
-Title: mon film prefere
+Title: mon film prefere v2
+description: appliquer ses connaissances pour construire une page web de zero, version NSI_1
+weight: 18
 ---
 
 # Créer une page web sur votre film préféré

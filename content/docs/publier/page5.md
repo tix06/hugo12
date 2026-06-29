@@ -1,5 +1,7 @@
 ---
-Title: de Writer a HTML
+Title: Les plastiques
+description: balises HTML, structurer le document
+weight: 14
 ---
 
 # Découverte du langage HTML
