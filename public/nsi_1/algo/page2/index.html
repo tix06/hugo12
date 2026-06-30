@@ -5,44 +5,44 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="clustering, classification">
+    <meta name="description" content="algorithmes de recherche et de tri, complexité algorithmique">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="IA :: allopizza">
-    <meta name="twitter:description" content="clustering, classification">
+    <meta name="twitter:title" content="Tri et recherche :: allopizza">
+    <meta name="twitter:description" content="algorithmes de recherche et de tri, complexité algorithmique">
     <meta property="og:url" content="//localhost:1313/nsi_1/algo/page2/index.html">
     <meta property="og:site_name" content="allopizza">
-    <meta property="og:title" content="IA :: allopizza">
-    <meta property="og:description" content="clustering, classification">
+    <meta property="og:title" content="Tri et recherche :: allopizza">
+    <meta property="og:description" content="algorithmes de recherche et de tri, complexité algorithmique">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI prem">
     <meta property="article:modified_time" content="2026-06-25T15:49:56+02:00">
-    <meta itemprop="name" content="IA :: allopizza">
-    <meta itemprop="description" content="clustering, classification">
+    <meta itemprop="name" content="Tri et recherche :: allopizza">
+    <meta itemprop="description" content="algorithmes de recherche et de tri, complexité algorithmique">
     <meta itemprop="dateModified" content="2026-06-25T15:49:56+02:00">
-    <meta itemprop="wordCount" content="1434">
-    <title>IA :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1782811838" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1782811838" defer></script>
-    <script src="/js/search-lunr.js?1782811838" defer></script>
-    <script src="/js/search.js?1782811838" defer></script>
+    <meta itemprop="wordCount" content="2574">
+    <title>Tri et recherche :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782837264" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782837264" defer></script>
+    <script src="/js/search-lunr.js?1782837264" defer></script>
+    <script src="/js/search.js?1782837264" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1782811838";
+      window.relearn.index_js_url="/searchindex.en.js?1782837264";
     </script>
-    <script src="/js/lunr/lunr.min.js?1782811838" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1782811838" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1782811838" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1782811838" defer></script>
+    <script src="/js/lunr/lunr.min.js?1782837264" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782837264" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782837264" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782837264" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1782811838" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782811838" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782811838" rel="stylesheet">
-    <link href="/css/theme.css?1782811838" rel="stylesheet">
-    <link href="/css/format-html.css?1782811838" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1782837264" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782837264" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782837264" rel="stylesheet">
+    <link href="/css/theme.css?1782837264" rel="stylesheet">
+    <link href="/css/format-html.css?1782837264" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -108,31 +108,55 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#le-clustering">Le clustering</a></li>
-    <li><a href="#comment-recommander-un-produit-à-un-client">Comment recommander un produit à un client</a></li>
+    <li><a href="#les-2-méthodes-de-recherche">Les 2 méthodes de recherche</a></li>
+    <li><a href="#recherche-séquentielle">Recherche séquentielle</a></li>
+    <li><a href="#recherche-dichotomique">Recherche dichotomique</a></li>
+    <li><a href="#cours-recherche-linéaire">COURS: recherche linéaire</a>
+      <ul>
+        <li><a href="#efficacité-de-la-recherche-linéaire">Efficacité de la recherche linéaire</a></li>
+      </ul>
+    </li>
+    <li><a href="#cours-recherche-dichotomique">COURS: Recherche dichotomique</a>
+      <ul>
+        <li><a href="#terminaison-de-la-fonction-de-recherche-dichotomique">Terminaison de la fonction de recherche dichotomique</a></li>
+        <li><a href="#efficacité-de-la-recherche-dichotomique">Efficacité de la recherche dichotomique</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
-    <li><a href="#joueurs-de-nba-kmeans">Joueurs de NBA: Kmeans</a></li>
-    <li><a href="#projet-exoplanètes-kmeans">Projet Exoplanètes: Kmeans</a></li>
-    <li><a href="#reseau-de-neurones-vittasciences">Reseau de neurones: Vittasciences</a></li>
+    <li><a href="#le-tri-par-insertion">Le tri par insertion</a>
+      <ul>
+        <li><a href="#principe">Principe</a></li>
+        <li><a href="#efficacité-du-tri-par-insertion">Efficacité du tri par insertion</a></li>
+      </ul>
+    </li>
+    <li><a href="#le-tri-par-selection">Le tri par selection</a></li>
+    <li><a href="#sort-et-sorted">SORT et SORTED</a>
+      <ul>
+        <li><a href="#sortedt">sorted(t)</a></li>
+        <li><a href="#tsort">t.sort()</a></li>
+      </ul>
+    </li>
+    <li><a href="#tri-à-partir-dune-clé">Tri à partir d&rsquo;une clé</a></li>
+    <li><a href="#efficacité">Efficacité</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/algo/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">IA</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/algo/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Tri et recherche</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/NSI_1/algo/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/algo/page1/index.html" title="data analyse (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/algo/index.html" title="algorithmes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/architecture/index.html" title="architecture (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/nsi_1/algo/page4/index.html" title="jeu du juste prix 0-100 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -153,285 +177,433 @@
   <header class="headline">
   </header>
 
-<h1 id="ia">IA</h1>
+<h1 id="tri-et-recherche">Tri et recherche</h1>
 
-<h1 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Les logiciels d&rsquo;intelligence artificielle peuvent être prévus pour aider à prévoir/décider, ou produire/générer. Ces logiciels ont un fonctionnement commun à la base: ils procedent à une <em>première phase d&rsquo;appentissage</em> et utilisent alors un grand nombre de données, qui leur sert à créer <em>un modèle</em>.</p>
-<h1 id="comment-sest-developpée-lia">Comment s&rsquo;est developpée l&rsquo;IA?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Des données sont collectés à partir d’objets connectés, à partir de l’activité des internautes sur les sites de e-commerce (marketing digital), des statistiques d’utilisation de produits, de véhicules, de bâtiments, voire des données collectées suite à des évènements naturels, biologiques, etc.</p>
-<p>Ces données peuvent servir les domaines de la santé (suivi de la propagation d’épidémies, aide au diagnostic,… des transports (analyse de flux,), de l’environnement (prévisions météorologiques, contrôle de la pollution), mais aussi dans l’analyse de la clientèle  dans l’industrie et le commerce.</p>
-<p>En se basant sur des informations passées, les techniciens spécialisés dans l’observation des grosses données (big datas) peuvent ainsi faire des prévisions dans chacun de ces domaines. Ou prendre des décisions en fonction des variables.</p>
-<p><em>Deux exemples montrant la diversité des tâches:</em></p>
+<p><em>Pourquoi écrire des algorithmes?</em> Pour resoudre un problème, comme trier une liste par ordre croissant, un humain y parviendra avec de l&rsquo;observation, de l&rsquo;intuition. Il sera peut être difficile d&rsquo;expliquer sa demarche. <a href="https://fr.wikipedia.org/wiki/Alan_Turing" rel="external">Alan Türing</a> (1912-1954), le père de la machine de Türing, cherche à réduire cette part d&rsquo;intuition en mettant en place un algorithme, qui va guider sa machine, de manière mécanique, jusqu&rsquo;à la résolution. <em>Les machines n&rsquo;ont pas d&rsquo;intuition&hellip;</em>.</p>
+<h1 id="algorithmes-de-recherche-et-de-tri">Algorithmes de recherche et de tri<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Deux familles d&rsquo;algorithmes fortement liées:</p>
+<p><em>Algorithmes de recherche: essentiels pour les bases de données. Par exemple: de l&rsquo;identifiant du client pour retrouver la fiche client. L&rsquo;algorithme le plus simple est celui de la recherche séquentielle.</em></p>
+<p><em>Algorithmes de tri: la recherche dichotomique sur une table déjà triée va être beaucoup plus efficace que la recherche sequentielle sur une table non triée</em></p>
+<h2 id="les-2-méthodes-de-recherche">Les 2 méthodes de recherche<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <ul>
-<li>Les logiciels de mailing (classification): On utilise un ensemble d&rsquo;email etiquettés comme <em>spam</em> ou <em>non spam</em> pour la phase d&rsquo;entrainement. Puis on prevoit la catégorie d&rsquo;un nouvel email à partir du <em>modèle</em> qui a été généré.</li>
-<li>Les logiciels utilisés dans l&rsquo;immobilier (regression): On évalue le coût d&rsquo;un nouveau bien à partir d&rsquo;un ensemble de bien déjà vendus. Le coût depend des caractéristiques du bien selon des lois mathématiques que l&rsquo;on définit pour créer un <em>modèle</em>.</li>
+<li><strong>Cas n°1:</strong> données non triées</li>
 </ul>
-<h1 id="le-principe-de-lanalyse-de-données">Le principe de l&rsquo;analyse de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<blockquote>
-<p>Le principe : on récupère les données, on les nettoie, on les explore, puis on utilise nos algorithmes pour créer de l’intelligence (artificielle) qui aide à la prévision/décision. Ces algorithmes sont basés sur des outils statistiques. La machine qui execute un tel algorithme est capable d&rsquo;apprendre de manière autonome, dans une séquence où les données collectées servent à établir un <em>modèle</em>. La machine améliore son modèle grâce à un <em>score</em> associé à l&rsquo;exploitation des données. Puis elle utilise ce <em>modèle</em> lorsque le <em>score</em> est optimal pour <em>résoudre</em> une série de problèmes.</p>
-</blockquote>
-<p><strong>Les 3 phases du machine learning</strong>:</p>
-<ul>
-<li><strong>Explorez les données</strong>. Cette étape doit permettre de mieux comprendre les différents comportements et de bien saisir le phénomène sous-jacent. On cherche:
-<ul>
-<li>soit à réaliser une <strong>classification</strong>, par exemple sous forme arborescente. C&rsquo;est ce que l&rsquo;on cherche à réaliser lorsque l&rsquo;on peut discriminer la population à trier à partir de critères qualitatifs. L&rsquo;idée est alors de trouver les bonnes clés de tri, qui vont partager la population.</li>
-<li>soit à chercher une <strong>corrélation entre grandeurs</strong>, si celle-ci sont numériques, et presentent une continuité. Chaque donnée observée est l&rsquo;expression d&rsquo;une variable aléatoire générée par une distribution de probabilité. On cherche alors à énoncer une conclusion du type : &ldquo;suite à l&rsquo;exploration, il y a clairement une relation entre X et Y, ces 2 grandeurs semblent liées par une relation de regression linéaire (ou non linéaire) du type $Y=a.X+b$, ou plus généralement, $Y=f(X)$. Il s&rsquo;agit là aussi d&rsquo;un apprentissage supervisé.</li>
-</ul>
-</li>
-<li>Modéliser les données.
-<ul>
-<li>Dans le premier cas, à partir de valeurs dites <strong>discrètes</strong> (des <em>catégories</em>), on devra réaliser une segmentation des objets en entrée en différentes catégories. La prédiction réalisée à partir d&rsquo;une nouvelle entrée donne en sortie une liste de labels possibles. Le but est de définir des <strong>classes</strong>.</li>
-<li>Dans le deuxième cas, il s&rsquo;agira d&rsquo;un <strong>traitement mathématique</strong> des données (regression).</li>
-</ul>
-</li>
-</ul>
+<p><em>Enoncé</em>: Supposons que notre liste contienne des valeurs (des cartes) issues d&rsquo;un paquet mélangé (non <em>triées</em>). On cherche dans cette liste la carte du 2 de pique. On part de la carte la plus à gauche, et on remonte la liste vers la droite jusqu&rsquo;à trouver cette carte (ou ne rien trouver si elle n&rsquo;est pas dans la liste). La fonction de recherche retournera l&rsquo;indice i si celle-ci est trouvée, -1 sinon. Il s&rsquo;agit d&rsquo;une recherche <strong>séquentielle</strong>.</p>
 
 <figure >
     
-        <img src="../images/donneesRegression.png"
+        <img src="../images/recherche11.png"
         
-        alt="classification et regression" />
+         />
     
     
-    <figcaption>
+</figure>
+
+
+<figure >
+    
+        <img src="../images/recherche2.png"
         
-        <p>
-            illutration de la différence entre classification et regression linéaire
-            
-                
-            
-        </p>
-    </figcaption>
+         />
+    
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/recherche3.png"
+        
+         />
+    
     
 </figure>
 
 <ul>
-<li><strong>Déployer le modèle</strong>. Une fois le modèle établit, on va encore le vérifier et l&rsquo;ajuster à partir de certaines des données : il faudra donc prévoir une séparation initiale de ces données : certaines des données servent à générer le modèle (le <em>training set</em>). Les autres sont celles qui vont permettre de valider (tester) ou améliorer si besoin le modèle (le <em>testing set</em>).</li>
-<li><strong>Utiliser le modèle</strong>:
-<ul>
-<li><strong>Prévoir la catégorie</strong>: faire de la prédiction à partir pour les nouvelles données.</li>
-<li>ou <strong>Calculer/estimer</strong> une valeur à partir du modèle de regression.</li>
+<li><strong>Cas n°2:</strong> données triées</li>
 </ul>
-</li>
-</ul>
+<p><em>Enoncé</em>: Supposons cette fois que la liste contient cartes triées dans un ordre croissant. On cherche le 2 de carreau. On commence par la valeur (carte) du milieu de la liste. Si la carte du milieu de la liste est supérieure à cette carte, on réduit la liste à sa moitié gauche, et on prend à nouveau l&rsquo;indice du milieu&hellip; On procède ainsi, par elimination de la moitié gauche ou droite de la liste jusqu&rsquo;à trouver la carte (ou ne pas trouver si celle-ci n&rsquo;y est pas, et que l&rsquo;on a reduit le paquet à une seule carte). Il s&rsquo;agit d&rsquo;une recherche <strong>dichotomique</strong>.</p>
 
 <figure >
     
-        <img src="../images/IA2.png"
+        <img src="../images/recherche4.png"
         
-        alt="prediction par un modèle de machine learning avec apprentissage supervisé" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            prediction par un modèle de machine learning avec apprentissage supervisé
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-<h1 id="deux-exemples-de-classification">Deux exemples de classification<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="le-clustering">Le clustering<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p><strong>mots clés :</strong> <em>Données continues</em>, <em>apprentissage non supervisé</em>, <em>algorithme des k-plus proches voisins</em></p>
-<p>Le clustering désigne les méthodes de regroupement automatique de données qui se ressemblent le plus en un ensemble de &ldquo;nuages&rdquo;, appelés clusters. On cherche à repérer, et mesurer la similarité entre les différentes données. Par exemple, les points sur le graphe ci-dessous peuvent être considérés comme similaires s&rsquo;ils sont proches en termes de distance.</p>
 
 <figure >
     
-        <img src="../images/clustering.png"
+        <img src="../images/recherche5.png"
         
-        alt="clustering" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            L&#39;objectif du clustering est de retrouver les différents clusters de données, c&#39;est-à-dire de regrouper les données similaires entre elles
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-<p>Lors de la phase d&rsquo;apprentissage, le logiciel doit trouver des caractéristiques communes entre les objets. Certains regroupements vont donner une entropie moins élevée. La meilleure règle de regroupement sera alors celle qui donne l&rsquo;entropie la plus faible (plus l&rsquo;entropie est faible, plus l&rsquo;ordre est élevé).</p>
-<p>Le modèle est établit à partir d&rsquo;un certain nombre de règles, qui mène à l&rsquo;attribution d&rsquo;une classe pour une nouvelle donnée, qui ne fait pas partie de l&rsquo;ensemble de depart.</p>
 
 <figure >
     
-        <img src="../images/IA3.png"
+        <img src="../images/recherche6.png"
         
-        alt="prediction par un modèle de machine learning" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            prediction par un modèle de machine learning
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-<h2 id="comment-recommander-un-produit-à-un-client">Comment recommander un produit à un client<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p><strong>mots clés :</strong> <em>Données discretes</em>, <em>règles d&rsquo;association</em>, <em>apprentissage non supervisé</em>.</p>
-<p>La recommandation est une problématique qui revient très souvent dans l&rsquo;ananlyse de données pour le marketing électronique. La recommandation se base sur des similarités entre utilisateurs, ou bien des similarités entre produits. Ce <em>filtrage collaboratif</em> repose sur l’adage : Si deux personnes ont aimé des contenus identiques par le passé, elles ont une probabilité élevée d’aimer les mêmes choses dans le futur.</p>
-<p>Sur l&rsquo;image ci-dessous, on regarde par exemple ce qu&rsquo;ont voté les utilisateurs similaires, c&rsquo;est-à-dire ceux qui ont déjà voté la même chose sur d&rsquo;autres produits (surlignés en vert). On peut alors prédire ce qu&rsquo;aurait voté notre utilisateur sur le produit cherché, et ne proposer que les produits sur lesquels il aurait mis un pouce vert.</p>
+<h2 id="recherche-séquentielle">Recherche séquentielle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Autre exemple</strong></p>
+<p>Imaginez un jeu où votre adversaire doit deviner le nombre que vous avez en tête.</p>
 <p>
 <figure >
     
-        <img src="../images/recommandation.png"
+        <img src="../images/recherche1.png"
         
-        alt="recommandation à partir de pouces verts" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            Les utilisateurs similaires (en vert) n&#39;ont pas aimé le produit que notre utilisateur n&#39;a pas encore noté. L&#39;algorithme aura donc tendance à prédire une mauvaise note et à ne pas recommander le produit ici
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-Les utilisateurs similaires (en vert) n&rsquo;ont pas aimé le produit que notre utilisateur n&rsquo;a pas encore noté. L&rsquo;algorithme aura donc tendance à prédire une mauvaise note et à ne pas recommander le produit ici.</p>
-<blockquote>
-<p>En pratique : On peut voir la liste des profils utilisateurs comme une <strong>matrice</strong>. L’objectif d’un algorithme de recommandation est de remplir les cases vides de cette matrice. Quel serait le score de Gregory (dernière ligne du tableau) pour l’article &ldquo;<em>ordinateur portable</em>&rdquo;, marqué avec un <code>?</code>.  Il faudra établir une correspondance entre les objets et les profils.</p>
-</blockquote>
-<p>Il existe alors plusieurs méthodes d&rsquo;association :</p>
-<ul>
-<li>l&rsquo;association basée sur les clients (voir exemple ci-dessus)</li>
-</ul>
-<blockquote>
-<p>On pourrait par exemple, calculer un coefficient de similitude entre Gregory et les autres usagers pour tous les articles renseignés, puis établir une liste triée.</p>
-</blockquote>
-<ul>
-<li>l&rsquo;association basée sur les objets (l&rsquo;exemple dit du <em>panier de la ménagère</em>)</li>
-</ul>
+Votre adversaire connait les bornes entre lesquelles vous avez choisi votre nombre.</p>
+<p>A chacune de ses propositions, vous lui répondez <strong>VRAI</strong> ou <strong>FAUX</strong>, sans autre aide. S&rsquo;il doit deviner un nombre entre 1 et 100, dans le PIRE des CAS, il peut proposer jusqu&rsquo;à 100 nombres pour trouver la bonne valeur que vous avez en tête.</p>
 
 <figure >
     
-        <img src="../images/achats.png"
+        <img src="../images/jeu_vrai_faux.png"
         
-        alt="une liste d&#39;achats" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            une liste d&#39;achats
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-<blockquote>
-<p>Cette fois on ne s&rsquo;interesse plus au profil du client, mais on cherche une règle d&rsquo;occurence entre les objets. Pour trouver les associations entre 2 produits, on construit le tableau de co-occurrence montrant combien de fois 2 produits ont été achetés ensemble.</p>
-</blockquote>
-<p>
+<p>Et si la plage de recherche fait <strong>n</strong> valeurs, le nombre d&rsquo;essais peut aller jusqu&rsquo;à <strong>n</strong> propositions. On dit que la complexité algorithmique pour résoudre ce problème (trouver la valeur en parcourant tous les nombres possibles), est <strong>O(n)</strong>. C&rsquo;est-à-dire une classe de complexité <em>linéaire</em>.  Il existe un algorithme plus efficaces, comme celui de recherche par <em>dichotomie</em>, dont la complexité est <strong>O(log(n))</strong>.</p>
+<p>Cette différence d&rsquo;efficacité entre fonctions de <strong>n</strong> (taille du paramètre d&rsquo;entrée) est d&rsquo;autant marquée que le nombre <strong>n</strong> est grand.</p>
+<p>Ce problème s&rsquo;apparente à celui de la recherche séquentielle dans une table:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">T: liste d&#39;elements
+</span></span><span class="line"><span class="cl">X: element a trouver dans la liste 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Fonction recherche1(X,T)-&gt;Booleen:
+</span></span><span class="line"><span class="cl">    i = 0
+</span></span><span class="line"><span class="cl">    Tant que i &lt; len(T) et T[i] != X:
+</span></span><span class="line"><span class="cl">        i = i + 1
+</span></span><span class="line"><span class="cl">    Fin
+</span></span><span class="line"><span class="cl">    Si i == len(T):
+</span></span><span class="line"><span class="cl">        Retourner False
+</span></span><span class="line"><span class="cl">    Sinon:
+</span></span><span class="line"><span class="cl">        Retourner True
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; recherche1(10, [0,2, 4, 6, 8, 10])
+</span></span><span class="line"><span class="cl">True
+</span></span><span class="line"><span class="cl">&gt; recherche2(9, [0,2, 4, 6, 8, 10])
+</span></span><span class="line"><span class="cl">False</span></span></code></pre></div>
+<ul>
+<li><a href="../page4">Jouer à ce jeu: (0-100)</a></li>
+<li><a href="../page5">Jouer à ce jeu: (0-1000)</a></li>
+</ul>
+<p>-&gt; <a href="/pdf/NSI_1/algo1_exercices.pdf"> 
+             fiche de TD à compléter
+        </a> </p>
+<h2 id="recherche-dichotomique">Recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour l&rsquo;aider, vous l&rsquo;aidez à chacun de ses essais en déclarant PLUS (le nombre que vous avez en tête est plus grand), ou MOINS (plus petit).</p>
+
 <figure >
     
-        <img src="../images/produits.png"
+        <img src="../images/jeu_plus_moins.png"
         
-        alt="tableau de co-occurence" />
+         />
     
-    
-    <figcaption>
-        
-        <p>
-            tableau de co-occurence
-            
-                
-            
-        </p>
-    </figcaption>
     
 </figure>
 
-<em>Ici : le produit A apparaît dans 80% des achats, le produit C n&rsquo;apparaît jamais en même temps que le produit E, les produits A et D apparaissent simultanément dans 40% des achats.
-Ces observations peuvent suggérer une règle de la forme : « Si un client achète le produit A ALORS il achète le produit D ».</em></p>
-<p>On cherche alors à générer des règles du type : <em>si A alors D</em> avec, pour chacune, un pourcentage de confiance. Par exemple, cette règle apparaissant ici apparaissant dans 40% des achats, on considère que le pourcentage de confiance est égal à 40%. Ces regles d&rsquo;association vont constituer des <strong>classes</strong>. Ces <em>classes</em> étant à priori inconnues, il s&rsquo;agit alors d&rsquo;un système d&rsquo;<em>apprentissage non supervisé</em>.</p>
-<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="joueurs-de-nba-kmeans">Joueurs de NBA: Kmeans<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Regression linéaire et recherche des plus proches voisins: <a href="/docs/NSI_1/algo/page1/">Lien</a></p>
-<h2 id="projet-exoplanètes-kmeans">Projet Exoplanètes: Kmeans<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p><a href="/docs/python/pages/traitement/page6/">Lien</a> vers la dernière étape du projet.</p>
-<h2 id="reseau-de-neurones-vittasciences">Reseau de neurones: Vittasciences<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<ul>
-<li>Page d&rsquo;accueil: <a href="https://fr.vittascience.com/ia/" rel="external">Lien</a></li>
-<li>Tuto <a href="https://fr.vittascience.com/support/videos/player?id=EDtvcOl_PhA" rel="external">video1</a></li>
-<li>Tuto <a href="https://fr.vittascience.com/ia/" rel="external">video2</a></li>
-</ul>
+<p>Une fois que le nombre a été deviné, vous lui annoncez le nombre d&rsquo;essais. Ce nombre est souvent inférieur au nombre d&rsquo;essais pour la recherche séquentielle.</p>
+<p>L&rsquo;algorithme que vous utilisez peut s&rsquo;écrire en langage naturel:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">fonction</span> <span class="n">devine_un_nombre</span><span class="p">(</span><span class="n">borne_inf</span><span class="p">:</span> <span class="n">entier</span><span class="p">,</span> <span class="n">borne_sup</span><span class="p">:</span> <span class="n">entier</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">c</span><span class="p">:</span> <span class="n">entier</span>
+</span></span><span class="line"><span class="cl">  <span class="k">var</span> <span class="n">N</span><span class="p">:</span> <span class="n">entier</span><span class="p">[</span><span class="n">borne_inf</span> <span class="o">..</span> <span class="n">borne_sup</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">tirage_aleatoire</span><span class="p">(</span><span class="n">borne_inf</span><span class="p">,</span> <span class="n">borne_sup</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">var</span> <span class="n">c</span><span class="p">:</span> <span class="n">entier</span> <span class="o">&lt;-</span> <span class="mi">0</span> <span class="c1"># compteur du nombre d&#39;essais</span>
+</span></span><span class="line"><span class="cl">  <span class="k">var</span> <span class="n">p</span><span class="p">:</span> <span class="n">entier</span><span class="p">[</span><span class="n">borne_inf</span> <span class="o">..</span> <span class="n">borne_sup</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="o">-</span><span class="mi">1</span> <span class="c1"># valeur proposée par l&#39;adversaire</span>
+</span></span><span class="line"><span class="cl">  <span class="n">tant</span> <span class="n">que</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">N</span> <span class="n">faire</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">&lt;-</span> <span class="n">saisie</span><span class="p">(</span><span class="s2">&#34;quel nombre proposes tu?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span> <span class="o">&lt;-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">si</span> <span class="n">p</span> <span class="o">&gt;</span> <span class="n">N</span> <span class="n">alors</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">afficher</span><span class="p">(</span><span class="s2">&#34;c&#39;est moins&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sinon</span> <span class="n">si</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="n">N</span> <span class="n">alors</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">afficher</span><span class="p">(</span><span class="s2">&#34;c&#39;est plus&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sinon</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">afficher</span><span class="p">(</span><span class="s2">&#34;bravo c&#39;est gagné&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">fin</span>
+</span></span><span class="line"><span class="cl">  <span class="n">retourner</span> <span class="n">c</span></span></span></code></pre></div>
+<blockquote>
+<p>Questions:</p>
+</blockquote>
+<blockquote>
 <ol>
-<li>Choisir: Detection d&rsquo;images. Entrainer le modèle avec plusieurs catégories. Uploader des images et les placer dans les catégories (exemple pierre/feuille/ciseaux)</li>
+<li>Faire plusieurs parties avec pour bornes: [0 .. 100]. Quelle est la valeur de c dans chaque cas?</li>
+<li>Quelles sont les  puissances m et n de 2 qui encadrent la valeur $2^n < 100 < 2^m$?</li>
+<li>Jouer à ce même jeu, mais avec les bornes: [0 .. 1000]</li>
+<li>Comparer c avec n et m tels que $2^n < 1000 < 2^m$</li>
 </ol>
+</blockquote>
+<p><em>Le jeu auquel vous avez joué est celui d&rsquo;une recherche dichotomique. Vous avez cherché un élément (une valeur) dans un ensemble trié (l&rsquo;ensemble des entiers [0 ..100])</em></p>
+<h2 id="cours-recherche-linéaire">COURS: recherche linéaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Def:</strong> La recherche dans une liste consiste à trouver un élément x dans cette liste, et retourner l&rsquo;indice de x. Cet algorithme consiste à observer les valeurs de la table, l&rsquo;une après l&rsquo;autre, jusqu&rsquo;à trouver la valeur cherchée <strong>x</strong>, ou arriver au bout de la table.</p>
+<p>Dans le cas d&rsquo;une <strong>table non triée</strong>, seul l&rsquo;algorithme de <strong>recherche linéaire</strong> est susceptible de donner un resultat.</p>
+<p>L&rsquo;algorithme suivant retourne l&rsquo;index de x, ou bien -1 si x n&rsquo;est pas dans la liste.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche1</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span><span class="o">-&gt;</span><span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  :param T: list of elements
+</span></span></span><span class="line"><span class="cl"><span class="s2">  :param x: element
+</span></span></span><span class="line"><span class="cl"><span class="s2">  :return: int, index of x in the list
+</span></span></span><span class="line"><span class="cl"><span class="s2">           else -1
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="ow">and</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">i</span></span></span></code></pre></div>
+<blockquote>
+<p>Questions</p>
+<ol>
+<li>Que retourne l&rsquo;instruction suivante: <code>recherche1([i for i in range(0,10,2)], 8)</code>?</li>
+<li>Que retourne l&rsquo;instruction suivante: <code>recherche1([i for i in range(0,10,2)], 10)</code>?</li>
+</ol>
+</blockquote>
+<h3 id="efficacité-de-la-recherche-linéaire">Efficacité de la recherche linéaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>Def</strong>: <strong>L&rsquo;efficacité</strong> est mesurée par la <em>COMPLEXITE</em>: La <strong>complexité</strong> mesure le nombre d&rsquo;opérations effectuées par la fonction. Ce nombre d&rsquo;opérations dépend des <em>valeurs des paramètres</em>, mais aussi de la <em>taille</em> de ces paramètres. C&rsquo;est pourquoi, il est d&rsquo;usage de considérer plusieurs cas pour mesurer l&rsquo;efficacité. Elle est en général exprimée comme une <strong>fonciton de n</strong>, où n est la <strong>taille de la liste</strong> passée en paramètre.</p>
+<p>Quelles sont les <strong>opérations</strong> que l&rsquo;on comptabilise? Pour les algorithmes de recherche, ce sont les opérations de comparaisons, dans la boucle non bornée:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">while i &lt; len(T) and T[i] != x</span></span></code></pre></div>
+<p>Il y a 2 comparaisons par itération: celle de l&rsquo;opérateur <code>&gt;</code> et celle de <code>=</code>.</p>
+<p>On peut définir ce que l&rsquo;on appelle le <strong>pire des cas</strong>. Pour une taille n de la liste, les éléments sont rangés de telle sorte que le nombre d&rsquo;opérations effectuée est maximum. Pour la recherche linéaire, c&rsquo;est lorsque l&rsquo;élément x ne se trouve pas dans la liste.</p>
+<p>Dans ce cas, le <strong>nombre d&rsquo;opérations</strong>  de comparaisons est égal à $2 \times n$. Pour simplifier, on dira que ce nombre d&rsquo;opérations est <strong>égal à n</strong>.</p>
+<p>La complexité est dite <em>linéaire</em> (proportionnelle à N). Le coefficient $2 \times N$ n&rsquo;a pas d&rsquo;importance.</p>
+<h2 id="cours-recherche-dichotomique">COURS: Recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Def:</strong> La recherche dichotomique est l&rsquo;algorithme le plus efficace lorsque la <strong>table</strong> dans laquelle on recherche une valeur <strong>est triée</strong>. Cette recherche consiste à <strong>diviser par 2</strong> l&rsquo;ensemble de recherche. Pour cela, on définit le milieu de l&rsquo;intervalle de recherche, puis on conserve:</p>
+<ul>
+<li><code>T[borne_inf : milieu-1]</code> si <code>x &lt; T[milieu]</code></li>
+<li><code>T[milieu +1 : borne_sup]</code> si <code>x &gt; T[milieu]</code></li>
+</ul>
 
 <figure >
     
-        <img src="../images/pfc1.png"
+        <img src="../images/Binary_search_vs_Linear_search_example_svg.png"
         
-         />
+        alt="comparaison du nombre d&#39;essais. Recherche par dichotomie vs recherche sequentielle. wikipedia" />
     
+    
+    <figcaption>
+        
+        <p>
+            comparaison du nombre d&#39;essais. Recherche par dichotomie vs recherche sequentielle. wikipedia
+            
+                
+            
+        </p>
+    </figcaption>
     
 </figure>
 
-<ol start="2">
-<li>
-<p>Utiliser alors une image de la caméra ou bien uploadée pour prédire la classe</p>
-</li>
-<li>
-<p>Cliquer sur le bouton <em>python</em>. Le modèle sera alors sauvegardé dans le navigateur. Un script minimal s&rsquo;affiche alors dans l&rsquo;IDE python. Modifier le script</p>
-</li>
+<p><em>Exemple:</em> On recherche un mot commençant par la lettre <em>c</em> dans un dictionnaire contenant 26 mots. Chaque mot commence par une lettre différente. La première de chaque mot du dictionnaire est dans l&rsquo;ensemble [a .. z]. Le dictionnaire est trié par ordre lexicographique.</p>
+<p>Il s&rsquo;agit d&rsquo;une liste du type <code>['a','b','c','d', ..'m', ..,'x','y','z']</code>.</p>
+<p>Comme il s&rsquo;agit d&rsquo;une liste dont les indices vont de 0 à 25: Le milieu, c&rsquo;est 25//2 soit 12. la lettre <em>c</em> a un rang inférieur à 12 (lettre <em>m</em>). Donc, dans une première étape de recherche, on prendra la liste entre les rangs 0 et 11 pour rechercher <em>c</em>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_dicho</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param T: sorted list of elements
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :param x: element
+</span></span></span><span class="line"><span class="cl"><span class="s2">    :return: int, index of x in the list
+</span></span></span><span class="line"><span class="cl"><span class="s2">           else -1
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i_min</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i_max</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">i_max</span> <span class="o">&gt;=</span> <span class="n">i_min</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">i_min</span> <span class="o">+</span> <span class="n">i_max</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">mid</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">T</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i_min</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">i_max</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></span></span></code></pre></div>
+<h3 id="terminaison-de-la-fonction-de-recherche-dichotomique">Terminaison de la fonction de recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Dans le pire des cas, l&rsquo;intervalle va se réduire jusqu&rsquo;à se limiter à un seul élément. Celui dont l&rsquo;index est <code>mid</code>. Avec <code>i_min == i_max</code></p>
+<p>Si l&rsquo;élément recherché est dans la liste: Cet élément est alors la valeur recherchée x, et la fonction se termine en retournant la valeur de l&rsquo;index de x dans la liste, <code>mid</code>.</p>
+<p>Si l&rsquo;élément recherché n&rsquo;est pas dans la liste: alors, soit <code>i_min</code> prend la valeur de <code>mid+1</code>, soit <code>i_max</code> prend la valeur de <code>mid-1</code>. On a alors <code>i_min &gt; i_max</code>, qui est la condition d&rsquo;arrêt de la boucle.</p>
+<h3 id="efficacité-de-la-recherche-dichotomique">Efficacité de la recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le nombre d&rsquo;opérations de comparaison, dans le pire des cas, est proportionnel à <code>log(n)</code>. <strong>n</strong> étant égal à la taille de la liste. Et <code>log(n)</code> étant egal au <em>nombre de divisions par 2 qu&rsquo;il faut effectuer pour que n arrive à 1</em>:</p>
+<p>100 -&gt; 50 -&gt; 25 -&gt; 13 -&gt; 7 -&gt; 4 -&gt; 2 -&gt; 1 (6 à 7 divisions)</p>
+<p>On dit que la complexité est <em>logarithmique</em>.</p>
+<h1 id="algorithmes-de-tri">Algorithmes de tri<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Definition:</strong> un algorithme de tri permet d&rsquo;organiser une collection d&rsquo;objets selon une relation d&rsquo;ordre. <a href="https://fr.wikipedia.org/wiki/Algorithme_de_tri" rel="external">wikipedia</a>.</p>
+<p>Nous nous intéressons ici aux méthodes de <em>tri en place</em>: On modifie directement le tableau à trier en permuttant des éléments, sans créer de nouveaux tableaux.</p>
+<p>Le tri peut être effectué avec des éléments numériques. Mais il peut aussi être effectué avec des caractères. On parle alors de tri <em>lexicographique</em>.</p>
+<p>On a vu <a href="/pdf/NSI/algos_tri_simples.pdf">deux algorithmes de tri</a>: le tri par insertion, et le tri par selection. Le langage Python possède une fonction de tri native: <code>sorted</code>, et une méthode de tri associée aux listes: <code>sort</code>.</p>
+<h2 id="le-tri-par-insertion">Le tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><em>Principe:</em> Pour cet algorithme, trier, c’est déplacer des éléments, et y <strong>insérer</strong> l’élément rangé, depuis le debut déjà trié de la liste, jusqu’à la fin. Voir le detail dans le cours de <a href="/nsi/algorithmes/page8/index.html">terminale NSI</a></p>
+<p><em>Exemple d&rsquo;algorithme</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Pour chaque carte de la donne :
+</span></span><span class="line"><span class="cl">  Regarder à la fin de la main triée
+</span></span><span class="line"><span class="cl">  Mémoriser la clé de cette carte
+</span></span><span class="line"><span class="cl">  Tant que la nouvelle carte va avant la carte de la main triée :
+</span></span><span class="line"><span class="cl">    Avancer le regard d’une carte vers la gauche dans la main triée
+</span></span><span class="line"><span class="cl">  Fin tant que
+</span></span><span class="line"><span class="cl">  Insérer la nouvelle carte à gauche de la carte de la main triée qu’on vient de regarder
+</span></span><span class="line"><span class="cl">Fin pour chaque</span></span></code></pre></div>
+<blockquote>
+<p>Question:
+représenter la main du joueur lorsqu’il reçoit les cartes 6, puis 9 puis Valet. Il utilise l’algorithme de tri par insertion pour les classer. Il possède au debut de la partie: 8, 10, Dame, Roi,  As</p>
+</blockquote>
+<p><em>Programme python</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri1</span><span class="p">(</span><span class="n">table</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">k</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">table</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">temp</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">table</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">table</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">k</span><span class="o">-=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">table</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">table</span></span></span></code></pre></div>
+<blockquote>
+<p>Question: quelle partie du programme python correspond à:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Tant que la nouvelle carte va avant la carte de la main triée :
+</span></span><span class="line"><span class="cl">    Avancer le regard d’une carte vers la gauche dans la main triée</span></span></code></pre></div>
+<h3 id="efficacité-du-tri-par-insertion">Efficacité du tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La mesure la durée d&rsquo;execution de l&rsquo;algorithme pour une liste donnée s&rsquo;appelle la <em>complexité</em>. C&rsquo;est une mesure en <em>unités</em> de temps. La complexité depend de la taille de la liste. C&rsquo;est donc une fonction de n, tel que <code>n = len(L)</code>.</p>
+<p>Pour expérimenter la mesure de cette durée, aller sur <a href="https://pythontutor.com/render.html#code=from%20random%20import%20sample%0AL%20%3D%20%5Bchr%28i%2B97%29%20for%20i%20in%20range%283%29%5D%0AL%20%3D%20sample%28L,len%28L%29%29%0A%0Adef%20tri1%28L%29%3A%0A%20%20%20%20for%20i%20in%20range%281,len%28L%29%29%3A%0A%20%20%20%20%20%20%20%20temp%20%3D%20L%5Bi%5D%0A%20%20%20%20%20%20%20%20k%20%3D%20i%0A%20%20%20%20%20%20%20%20while%20k%3E0%20and%20L%5Bk-1%5D%3Etemp%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20L%5Bk%5D%20%3D%20L%5Bk-1%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20k%20%3D%20k-1%0A%20%20%20%20%20%20%20%20L%5Bk%5D%20%3D%20temp%0A%20%20%20%20%20%20%20%20%0Atri1%28L%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" rel="external">pythontutor</a>.</p>
+<p>Voici le script utilisé:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">sample</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">97</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="n">sample</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri1</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">temp</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">k</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">k</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">temp</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">k</span> <span class="o">=</span> <span class="n">k</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">L</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="n">tri1</span><span class="p">(</span><span class="n">L</span><span class="p">)</span></span></span></code></pre></div>
+<p>Puis executer le script pour avoir la mesure du nombre de <em>steps</em>&hellip; Cette mesure dépend de l&rsquo;argument placé dans la fonction <code>range</code>, utilisée pour créer la liste <code>L</code>. Compléter le tableau:</p>
+<table>
+	<thead>
+			<tr>
+					<th>liste L</th>
+					<th>n</th>
+					<th>nombre de steps pour trier</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>L = [chr(i+97) for i in range(3)]</code></td>
+					<td>3</td>
+					<td>30</td>
+			</tr>
+			<tr>
+					<td><code>L = [chr(i+97) for i in range(6)]</code></td>
+					<td>6</td>
+					<td>63</td>
+			</tr>
+			<tr>
+					<td><code>L = [chr(i+97) for i in range(12)]</code></td>
+					<td>12</td>
+					<td>&hellip;</td>
+			</tr>
+			<tr>
+					<td><code>L = [chr(i+97) for i in range(24)]</code></td>
+					<td>24</td>
+					<td>&hellip;</td>
+			</tr>
+	</tbody>
+</table>
+<p><em>Analyser alors la fonction <strong>steps=f(n)</strong></em></p>
+<blockquote>
+<p>Question: Ce nombre, augmente t-il de manière régulière avec <code>n</code>? La fonction <em>temps=f(n)</em> est-elle linéaire?</p>
+</blockquote>
+<h2 id="le-tri-par-selection">Le tri par selection<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Principe</em>: On recherche le plus petit élément dans la partie non triée et on l&rsquo;insère à la fin de la partie <em>triée</em>.</p>
+<p><em>Exemple d&rsquo;algorithme</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Pour i allant de 1 à n-1 faire:
+</span></span><span class="line"><span class="cl">    indmin ← i
+</span></span><span class="line"><span class="cl">    Pour j allant de i+1 à n faire:
+</span></span><span class="line"><span class="cl">        Si tab[j] &lt; tab[indmin] alors:
+</span></span><span class="line"><span class="cl">            indmin ← j
+</span></span><span class="line"><span class="cl">        Fin si
+</span></span><span class="line"><span class="cl">    Fin pour
+</span></span><span class="line"><span class="cl">    min ← tab[indmin]
+</span></span><span class="line"><span class="cl">    tab[indmin] ← tab[i]
+</span></span><span class="line"><span class="cl">    tab[i] ← min
+</span></span><span class="line"><span class="cl">Fin pour</span></span></code></pre></div>
+<blockquote>
+<p>Questions:</p>
+<ol>
+<li>quelle partie de l&rsquo;algorithme vous fait penser à la recherche du minimum dans une liste?</li>
+<li>Comment permute-t-on les valeurs de 2 variables a et b? Faut-il utiliser une variable supplémentaire c? Expliquer. Y-a-t-il une partie du programme qui montre une permutation entre éléments de la liste?</li>
 </ol>
-
-<figure >
-    
-        <img src="../images/pfc2.png"
-        
-         />
-    
-    
-</figure>
-
-<ol start="4">
-<li>Choisir une image à uploader pour prediction de la classe.</li>
-</ol>
-
-<figure >
-    
-        <img src="../images/ciseaux.png"
-        
-         />
-    
-    
-</figure>
-
-<ol start="5">
-<li>Lire la classe dans la console
-
-<figure >
-    
-        <img src="../images/pfc3.png"
-        
-         />
-    
-    
-</figure>
-</li>
-</ol>
+</blockquote>
+<p><em>Programme python:</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri2</span><span class="p">(</span><span class="n">T</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">indmin</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">T</span><span class="p">))</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">T</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">indmin</span><span class="p">]</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">indmin</span><span class="o">=</span><span class="n">k</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">indmin</span> <span class="o">!=</span> <span class="n">i</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="n">indmin</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">indmin</span><span class="p">],</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">T</span></span></span></code></pre></div>
+<blockquote>
+<p>Question 3. Comment est réalisée en python la permutation des 2 éléments de liste?</p>
+</blockquote>
+<h2 id="sort-et-sorted">SORT et SORTED<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="sortedt">sorted(t)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>fonction qui renvoie une liste triée à partir de la liste <em>t</em>. On l&rsquo;utilise de la manière suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t1</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span></span></span></code></pre></div>
+<h3 id="tsort">t.sort()<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>méthode qui modifie la liste <em>t</em>. On peut lui ajouter un paramètre, comme <code>reverse = True</code>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span></span></span></code></pre></div>
+<h2 id="tri-à-partir-dune-clé">Tri à partir d&rsquo;une clé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Lorsque les éléments à trier sont aux-mêmes des sous-listes, le tri est réalisé à partir d&rsquo;une <em>clé</em>: la <em>clé</em> est l&rsquo;une des valeurs de la sous-liste.</p>
+<p>Par exemple, pour la liste suivante:</p>
+<p><code>M = [(&quot;Paulette&quot;, 93), (&quot;Marie&quot;, 62), (&quot;Thomas&quot;, 45), (&quot;Jean&quot;, 50)]</code></p>
+<p>Celle-ci pourra être triée par ordre alphabetique du nom: la clé est alors la première valeur de la sous-liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">[(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Marie&#39;</span><span class="p">,</span> <span class="mi">62</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Paulette&#39;</span><span class="p">,</span> <span class="mi">93</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">)]</span></span></span></code></pre></div>
+<p>Mais elle peut aussi être triée par age des personnes: à partir de la 2e valeur.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">[(</span><span class="s1">&#39;Thomas&#39;</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Marie&#39;</span><span class="p">,</span> <span class="mi">62</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Paulette&#39;</span><span class="p">,</span> <span class="mi">93</span><span class="p">)]</span></span></span></code></pre></div>
+<h2 id="efficacité">Efficacité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La meilleure complexité que l&rsquo;on peut attendre pour un algorithme de tri est quasi linéaire. Mais il s&rsquo;agit d&rsquo;algorithmes plus élaborés que ceux vus en classe.</p>
+<p>Ainsi, pour le tri par insertion, le nombre d&rsquo;opérations f(N) dépend de la disposition des éléments, tel que:</p>
+$$a.N < f(N) < a.N^2$$<p>La complexité est <em>linéaire</em> dans le meilleur des cas (liste déjà triée), mais <em>quadratique</em> dans le pire des cas (liste triée à l&rsquo;envers).</p>
+<p>Pour le tri par séléction, le nombre d&rsquo;opérations est constant, et egal à $b.N^2$. La complexité est <em>quadratique</em>.</p>
+<h1 id="documents">Documents<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li><a href="/pdf/NSI/algos_tri_simples.pdf">Activité: deux algorithmes de tri</a>)</li>
+</ul>
+<p>*<a href="/pdf/NSI/algorithmes2_recherche_tri.pdf"> 
+            fiche d&#39;exercices
+        </a> </p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>cours et animations sur la <a href="https://www.lyceum.fr/1g/nsi/8-algorithmique/2-algorithmes-de-tri" rel="external">page du site Lyceum</a>. La complexité y est traitée de manière experimentale.</li>
+<li>Eduscol: Preuve de l&rsquo;algorithme de recherche dichotomique <a href="https://eduscol.education.fr/document/30064/download" rel="external">detail en pdf</a></li>
+<li>TD avec interface python en ligne: <a href="https://mcoilhac.forge.apps.education.fr/site-nsi/tris/3_insertion/" rel="external">mcoilhac.forge.apps.education.fr</a></li>
+</ul>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -582,9 +754,11 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
             <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="parent " data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421" checked><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
             <li class="parent " data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce" checked><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
-            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active hidden " data-nav-id="/nsi_1/algo/page2/index.html"><a class="padding" href="/nsi_1/algo/page2/index.html">IA<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/nsi_1/algo/page2/index.html"><a class="padding" href="/nsi_1/algo/page2/index.html">Tri et recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page4/index.html"><a class="padding" href="/nsi_1/algo/page4/index.html">jeu du juste prix 0-100<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page5/index.html"><a class="padding" href="/nsi_1/algo/page5/index.html">jeu du juste prix 0-1000<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page7/index.html"><a class="padding" href="/nsi_1/algo/page7/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page9/index.html"><a class="padding" href="/nsi_1/algo/page9/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -594,7 +768,9 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
             <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page12/index.html"><a class="padding" href="/nsi_1/donnees/page12/index.html">listes et tableaux en sciences<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page13/index.html"><a class="padding" href="/nsi_1/donnees/page13/index.html">Donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/reseaux/page1/index.html"><a class="padding" href="/nsi_1/reseaux/page1/index.html">modele OSI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/reseaux/page2/index.html"><a class="padding" href="/nsi_1/reseaux/page2/index.html">protocoles<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -631,12 +807,10 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/web/index.html"><input type="checkbox" id="R-section-0e208a64729005a439f5bfa6f6e6e404" aria-controls="R-subsections-0e208a64729005a439f5bfa6f6e6e404"><label for="R-section-0e208a64729005a439f5bfa6f6e6e404"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Le web</span></label><a class="padding default-animation" href="/snt/web/index.html">Le web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0e208a64729005a439f5bfa6f6e6e404" class="collapsible-menu">
-            <li class="" data-nav-id="/snt/web/web1/index.html"><a class="padding" href="/snt/web/web1/index.html">HTML CSS<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/web/web5/index.html"><a class="padding" href="/snt/web/web5/index.html">introduction à CSS<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/web/web3/index.html"><a class="padding" href="/snt/web/web3/index.html">javascript processing P5<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/web/web/index.html"><a class="padding" href="/snt/web/web/index.html">le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/web/web0/index.html"><a class="padding" href="/snt/web/web0/index.html">modele client serveur<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/web/web4/index.html"><a class="padding" href="/snt/web/web4/index.html">TP evalue le CV<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/web/page1/index.html"><a class="padding" href="/snt/web/page1/index.html">le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page2/index.html"><a class="padding" href="/snt/web/page2/index.html">modele client serveur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page3/index.html"><a class="padding" href="/snt/web/page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page4/index.html"><a class="padding" href="/snt/web/page4/index.html">introduction à CSS<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/internet/index.html"><input type="checkbox" id="R-section-0a4fd8094af173d46409c88602d33e05" aria-controls="R-subsections-0a4fd8094af173d46409c88602d33e05"><label for="R-section-0a4fd8094af173d46409c88602d33e05"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu internet</span></label><a class="padding default-animation" href="/snt/internet/index.html">internet<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0a4fd8094af173d46409c88602d33e05" class="collapsible-menu">
             <li class="" data-nav-id="/snt/internet/page1/index.html"><a class="padding" href="/snt/internet/page1/index.html">généralités<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/internet/page2/index.html"><a class="padding" href="/snt/internet/page2/index.html">reseau local et reseau internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -652,9 +826,11 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
             <li class="" data-nav-id="/snt/img_num/page5/index.html"><a class="padding" href="/snt/img_num/page5/index.html">EXIF et données colorimetriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/img_num/page3/index.html"><a class="padding" href="/snt/img_num/page3/index.html">TP pixel art<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/localisation/index.html"><input type="checkbox" id="R-section-e7c35689adb9fe065b5057ce434cfa37" aria-controls="R-subsections-e7c35689adb9fe065b5057ce434cfa37"><label for="R-section-e7c35689adb9fe065b5057ce434cfa37"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu localisation</span></label><a class="padding default-animation" href="/snt/localisation/index.html">localisation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7c35689adb9fe065b5057ce434cfa37" class="collapsible-menu">
-            <li class="" data-nav-id="/snt/localisation/page1/index.html"><a class="padding" href="/snt/localisation/page1/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page6/index.html"><a class="padding" href="/snt/localisation/page6/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/localisation/page2/index.html"><a class="padding" href="/snt/localisation/page2/index.html">geolocaliser<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page8/index.html"><a class="padding" href="/snt/localisation/page8/index.html">fonction de conversion TI83<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page9/index.html"><a class="padding" href="/snt/localisation/page9/index.html">fonction de conversion android<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a"><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu competences numeriques</span></label><a class="padding default-animation" href="/docs/index.html">competences numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
             <li class="" data-nav-id="/docs/rediger/index.html"><input type="checkbox" id="R-section-585205baf223d24ff9470bbb2a380be9" aria-controls="R-subsections-585205baf223d24ff9470bbb2a380be9"><label for="R-section-585205baf223d24ff9470bbb2a380be9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu rediger</span></label><a class="padding default-animation" href="/docs/rediger/index.html">rediger<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-585205baf223d24ff9470bbb2a380be9" class="collapsible-menu">
             <li class="" data-nav-id="/docs/rediger/page4/index.html"><a class="padding" href="/docs/rediger/page4/index.html">recherche RGPD<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -677,7 +853,45 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
             <li class="" data-nav-id="/docs/tableur/page3/index.html"><a class="padding" href="/docs/tableur/page3/index.html">nobels<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/docs/tableur/page2/index.html"><a class="padding" href="/docs/tableur/page2/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/docs/images_num/index.html"><input type="checkbox" id="R-section-e327ae7bb879b680d39069590059dfeb" aria-controls="R-subsections-e327ae7bb879b680d39069590059dfeb"><label for="R-section-e327ae7bb879b680d39069590059dfeb"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu dessiner</span></label><a class="padding default-animation" href="/docs/images_num/index.html">dessiner<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e327ae7bb879b680d39069590059dfeb" class="collapsible-menu">
-            <li class="" data-nav-id="/docs/images_num/page1/index.html"><a class="padding" href="/docs/images_num/page1/index.html">detourer une image<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/docs/images_num/page1/index.html"><a class="padding" href="/docs/images_num/page1/index.html">detourer une image<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/data_scientist/index.html"><input type="checkbox" id="R-section-55ceb2e96895fd3ed8fee2ad27025a63" aria-controls="R-subsections-55ceb2e96895fd3ed8fee2ad27025a63"><label for="R-section-55ceb2e96895fd3ed8fee2ad27025a63"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu analyser</span></label><a class="padding default-animation" href="/docs/data_scientist/index.html">analyser<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-55ceb2e96895fd3ed8fee2ad27025a63" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/data_scientist/page1/index.html"><a class="padding" href="/docs/data_scientist/page1/index.html">somme et moyenne sur Excel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page2/index.html"><a class="padding" href="/docs/data_scientist/page2/index.html">tracé d&#39;un histogramme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page3/index.html"><a class="padding" href="/docs/data_scientist/page3/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page30/index.html"><a class="padding" href="/docs/data_scientist/page30/index.html">matchs OM Nice<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page4/index.html"><a class="padding" href="/docs/data_scientist/page4/index.html">enquete police<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page41/index.html"><a class="padding" href="/docs/data_scientist/page41/index.html">Synthèse des résultats du TP police<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page5/index.html"><a class="padding" href="/docs/data_scientist/page5/index.html">tableur pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page6/index.html"><a class="padding" href="/docs/data_scientist/page6/index.html">Informatique et données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page7/index.html"><a class="padding" href="/docs/data_scientist/page7/index.html">Projet analyse des données de sondage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page9/index.html"><a class="padding" href="/docs/data_scientist/page9/index.html">data.gouv maires de France<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/tableur_ti/index.html"><a class="padding" href="/docs/data_scientist/tableur_ti/index.html">tableur sur calcu TI83<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/programmer/index.html"><input type="checkbox" id="R-section-1523b50fb05f5ad7f8d679cc9a89f4a3" aria-controls="R-subsections-1523b50fb05f5ad7f8d679cc9a89f4a3"><label for="R-section-1523b50fb05f5ad7f8d679cc9a89f4a3"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu programmer</span></label><a class="padding default-animation" href="/docs/programmer/index.html">programmer<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1523b50fb05f5ad7f8d679cc9a89f4a3" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/programmer/python7/index.html"><a class="padding" href="/docs/programmer/python7/index.html">de scratch à python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/techno/index.html"><input type="checkbox" id="R-section-966d082c46a284123a002bf416ac9c21" aria-controls="R-subsections-966d082c46a284123a002bf416ac9c21"><label for="R-section-966d082c46a284123a002bf416ac9c21"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu technologies</span></label><a class="padding default-animation" href="/techno/index.html">technologies<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-966d082c46a284123a002bf416ac9c21" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/ti/index.html"><input type="checkbox" id="R-section-da9019d1fee978edb6bfe441b13ca948" aria-controls="R-subsections-da9019d1fee978edb6bfe441b13ca948"><label for="R-section-da9019d1fee978edb6bfe441b13ca948"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Texas instruments</span></label><a class="padding default-animation" href="/techno/ti/index.html">Texas instruments<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-da9019d1fee978edb6bfe441b13ca948" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/ti/ti_prisenmain/index.html"><a class="padding" href="/techno/ti/ti_prisenmain/index.html">Ti83 prise en main<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_prisenmain_mb/index.html"><a class="padding" href="/techno/ti/ti_prisenmain_mb/index.html">Ti83 et mise a niveau microbit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_microbit/index.html"><a class="padding" href="/techno/ti/ti_microbit/index.html">Ti83 microbit prise en main<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_mariotte/index.html"><a class="padding" href="/techno/ti/ti_mariotte/index.html">Loi de Mariotte<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/techno/mb/index.html"><input type="checkbox" id="R-section-5c8ef4dcbda600e0aab5410f90c15f1e" aria-controls="R-subsections-5c8ef4dcbda600e0aab5410f90c15f1e"><label for="R-section-5c8ef4dcbda600e0aab5410f90c15f1e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Microbit</span></label><a class="padding default-animation" href="/techno/mb/index.html">Microbit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5c8ef4dcbda600e0aab5410f90c15f1e" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/mb/mb_init/index.html"><a class="padding" href="/techno/mb/mb_init/index.html">informatique des objets<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_integ/index.html"><a class="padding" href="/techno/mb/mb_integ/index.html">capteurs integres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_bulles/index.html"><a class="padding" href="/techno/mb/mb_bulles/index.html">niveau a bulles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_grove/index.html"><a class="padding" href="/techno/mb/mb_grove/index.html">MB grove<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_led/index.html"><a class="padding" href="/techno/mb/mb_led/index.html">MB LED clignotante<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_ctn/index.html"><a class="padding" href="/techno/mb/mb_ctn/index.html">MB diviseur de tension<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_lumi/index.html"><a class="padding" href="/techno/mb/mb_lumi/index.html">Capteur lumiere<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_sons/index.html"><a class="padding" href="/techno/mb/mb_sons/index.html">MB sons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_c/index.html"><a class="padding" href="/techno/mb/mb_c/index.html">mesure de c du son<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_portes/index.html"><a class="padding" href="/techno/mb/mb_portes/index.html">portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_mariotte/index.html"><a class="padding" href="/techno/mb/mb_mariotte/index.html">loi de Mariotte<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio/index.html"><a class="padding" href="/techno/mb/mb_radio/index.html">reseau radio SNT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio2/index.html"><a class="padding" href="/techno/mb/mb_radio2/index.html">reseau radio 1ere<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio3/index.html"><a class="padding" href="/techno/mb/mb_radio3/index.html">reseau radio term<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio5/index.html"><a class="padding" href="/techno/mb/mb_radio5/index.html">Chiffrement<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -732,9 +946,9 @@ Ces observations peuvent suggérer une règle de la forme : « Si un client ac
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782811838"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782811838" defer></script>
-    <script src="/js/theme.js?1782811838" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782837264"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782837264" defer></script>
+    <script src="/js/theme.js?1782837264" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

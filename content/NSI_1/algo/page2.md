@@ -1,116 +1,415 @@
 ---
-Title: IA
-description: clustering, classification
-hidden: true
-weight: 8
+Title: Tri et recherche
+description: algorithmes de recherche et de tri, complexité algorithmique
+weight: 4
 ---
 
-# Principe
-Les logiciels d'intelligence artificielle peuvent être prévus pour aider à prévoir/décider, ou produire/générer. Ces logiciels ont un fonctionnement commun à la base: ils procedent à une *première phase d'appentissage* et utilisent alors un grand nombre de données, qui leur sert à créer *un modèle*.
+*Pourquoi écrire des algorithmes?* Pour resoudre un problème, comme trier une liste par ordre croissant, un humain y parviendra avec de l'observation, de l'intuition. Il sera peut être difficile d'expliquer sa demarche. [Alan Türing](https://fr.wikipedia.org/wiki/Alan_Turing) (1912-1954), le père de la machine de Türing, cherche à réduire cette part d'intuition en mettant en place un algorithme, qui va guider sa machine, de manière mécanique, jusqu'à la résolution. *Les machines n'ont pas d'intuition...*.
 
-# Comment s'est developpée l'IA?
-Des données sont collectés à partir d’objets connectés, à partir de l’activité des internautes sur les sites de e-commerce (marketing digital), des statistiques d’utilisation de produits, de véhicules, de bâtiments, voire des données collectées suite à des évènements naturels, biologiques, etc.
+# Algorithmes de recherche et de tri
+Deux familles d'algorithmes fortement liées:
 
-Ces données peuvent servir les domaines de la santé (suivi de la propagation d’épidémies, aide au diagnostic,… des transports (analyse de flux,), de l’environnement (prévisions météorologiques, contrôle de la pollution), mais aussi dans l’analyse de la clientèle  dans l’industrie et le commerce.
+*Algorithmes de recherche: essentiels pour les bases de données. Par exemple: de l'identifiant du client pour retrouver la fiche client. L'algorithme le plus simple est celui de la recherche séquentielle.*
+ 
+*Algorithmes de tri: la recherche dichotomique sur une table déjà triée va être beaucoup plus efficace que la recherche sequentielle sur une table non triée* 
 
-En se basant sur des informations passées, les techniciens spécialisés dans l’observation des grosses données (big datas) peuvent ainsi faire des prévisions dans chacun de ces domaines. Ou prendre des décisions en fonction des variables.
+## Les 2 méthodes de recherche
+* **Cas n°1:** données non triées
 
-*Deux exemples montrant la diversité des tâches:* 
+*Enoncé*: Supposons que notre liste contienne des valeurs (des cartes) issues d'un paquet mélangé (non *triées*). On cherche dans cette liste la carte du 2 de pique. On part de la carte la plus à gauche, et on remonte la liste vers la droite jusqu'à trouver cette carte (ou ne rien trouver si elle n'est pas dans la liste). La fonction de recherche retournera l'indice i si celle-ci est trouvée, -1 sinon. Il s'agit d'une recherche **séquentielle**.
 
-* Les logiciels de mailing (classification): On utilise un ensemble d'email etiquettés comme *spam* ou *non spam* pour la phase d'entrainement. Puis on prevoit la catégorie d'un nouvel email à partir du *modèle* qui a été généré.
-* Les logiciels utilisés dans l'immobilier (regression): On évalue le coût d'un nouveau bien à partir d'un ensemble de bien déjà vendus. Le coût depend des caractéristiques du bien selon des lois mathématiques que l'on définit pour créer un *modèle*.
+{{< img src="../images/recherche11.png" >}}
 
-# Le principe de l'analyse de données
+{{< img src="../images/recherche2.png" >}}
 
-> Le principe : on récupère les données, on les nettoie, on les explore, puis on utilise nos algorithmes pour créer de l’intelligence (artificielle) qui aide à la prévision/décision. Ces algorithmes sont basés sur des outils statistiques. La machine qui execute un tel algorithme est capable d'apprendre de manière autonome, dans une séquence où les données collectées servent à établir un *modèle*. La machine améliore son modèle grâce à un *score* associé à l'exploitation des données. Puis elle utilise ce *modèle* lorsque le *score* est optimal pour *résoudre* une série de problèmes.
+{{< img src="../images/recherche3.png" >}}
 
-**Les 3 phases du machine learning**:
+* **Cas n°2:** données triées
 
-* **Explorez les données**. Cette étape doit permettre de mieux comprendre les différents comportements et de bien saisir le phénomène sous-jacent. On cherche:
-  * soit à réaliser une **classification**, par exemple sous forme arborescente. C'est ce que l'on cherche à réaliser lorsque l'on peut discriminer la population à trier à partir de critères qualitatifs. L'idée est alors de trouver les bonnes clés de tri, qui vont partager la population.
-  *  soit à chercher une **corrélation entre grandeurs**, si celle-ci sont numériques, et presentent une continuité. Chaque donnée observée est l'expression d'une variable aléatoire générée par une distribution de probabilité. On cherche alors à énoncer une conclusion du type : "suite à l'exploration, il y a clairement une relation entre X et Y, ces 2 grandeurs semblent liées par une relation de regression linéaire (ou non linéaire) du type $Y=a.X+b$, ou plus généralement, $Y=f(X)$. Il s'agit là aussi d'un apprentissage supervisé.
-* Modéliser les données. 
-  * Dans le premier cas, à partir de valeurs dites **discrètes** (des *catégories*), on devra réaliser une segmentation des objets en entrée en différentes catégories. La prédiction réalisée à partir d'une nouvelle entrée donne en sortie une liste de labels possibles. Le but est de définir des **classes**.
-  * Dans le deuxième cas, il s'agira d'un **traitement mathématique** des données (regression). 
+*Enoncé*: Supposons cette fois que la liste contient cartes triées dans un ordre croissant. On cherche le 2 de carreau. On commence par la valeur (carte) du milieu de la liste. Si la carte du milieu de la liste est supérieure à cette carte, on réduit la liste à sa moitié gauche, et on prend à nouveau l'indice du milieu... On procède ainsi, par elimination de la moitié gauche ou droite de la liste jusqu'à trouver la carte (ou ne pas trouver si celle-ci n'y est pas, et que l'on a reduit le paquet à une seule carte). Il s'agit d'une recherche **dichotomique**.
 
-{{< img src="../images/donneesRegression.png" alt="classification et regression" caption="illutration de la différence entre classification et regression linéaire" >}}
-* **Déployer le modèle**. Une fois le modèle établit, on va encore le vérifier et l'ajuster à partir de certaines des données : il faudra donc prévoir une séparation initiale de ces données : certaines des données servent à générer le modèle (le *training set*). Les autres sont celles qui vont permettre de valider (tester) ou améliorer si besoin le modèle (le *testing set*). 
-* **Utiliser le modèle**:
-  * **Prévoir la catégorie**: faire de la prédiction à partir pour les nouvelles données.
-  * ou **Calculer/estimer** une valeur à partir du modèle de regression.
+{{< img src="../images/recherche4.png" >}}
 
-{{< img src="../images/IA2.png" caption="prediction par un modèle de machine learning avec apprentissage supervisé" >}}
+{{< img src="../images/recherche5.png" >}}
 
-# Deux exemples de classification
-## Le clustering
-**mots clés :** *Données continues*, *apprentissage non supervisé*, *algorithme des k-plus proches voisins*
+{{< img src="../images/recherche6.png" >}}
 
-Le clustering désigne les méthodes de regroupement automatique de données qui se ressemblent le plus en un ensemble de "nuages", appelés clusters. On cherche à repérer, et mesurer la similarité entre les différentes données. Par exemple, les points sur le graphe ci-dessous peuvent être considérés comme similaires s'ils sont proches en termes de distance.
+## Recherche séquentielle
+**Autre exemple**
 
-{{< img src="../images/clustering.png" alt="clustering" caption="L'objectif du clustering est de retrouver les différents clusters de données, c'est-à-dire de regrouper les données similaires entre elles" >}}
+Imaginez un jeu où votre adversaire doit deviner le nombre que vous avez en tête.
 
-Lors de la phase d'apprentissage, le logiciel doit trouver des caractéristiques communes entre les objets. Certains regroupements vont donner une entropie moins élevée. La meilleure règle de regroupement sera alors celle qui donne l'entropie la plus faible (plus l'entropie est faible, plus l'ordre est élevé).
+{{< img src="../images/recherche1.png" >}}
+Votre adversaire connait les bornes entre lesquelles vous avez choisi votre nombre.
 
-Le modèle est établit à partir d'un certain nombre de règles, qui mène à l'attribution d'une classe pour une nouvelle donnée, qui ne fait pas partie de l'ensemble de depart.
+A chacune de ses propositions, vous lui répondez **VRAI** ou **FAUX**, sans autre aide. S'il doit deviner un nombre entre 1 et 100, dans le PIRE des CAS, il peut proposer jusqu'à 100 nombres pour trouver la bonne valeur que vous avez en tête.
 
-{{< img src="../images/IA3.png" caption="prediction par un modèle de machine learning" >}}
+{{< img src="../images/jeu_vrai_faux.png" >}}
+
+Et si la plage de recherche fait **n** valeurs, le nombre d'essais peut aller jusqu'à **n** propositions. On dit que la complexité algorithmique pour résoudre ce problème (trouver la valeur en parcourant tous les nombres possibles), est **O(n)**. C'est-à-dire une classe de complexité *linéaire*.  Il existe un algorithme plus efficaces, comme celui de recherche par *dichotomie*, dont la complexité est **O(log(n))**.
 
 
+Cette différence d'efficacité entre fonctions de **n** (taille du paramètre d'entrée) est d'autant marquée que le nombre **n** est grand.
 
-## Comment recommander un produit à un client
-**mots clés :** *Données discretes*, *règles d'association*, *apprentissage non supervisé*.
+Ce problème s'apparente à celui de la recherche séquentielle dans une table:
 
-La recommandation est une problématique qui revient très souvent dans l'ananlyse de données pour le marketing électronique. La recommandation se base sur des similarités entre utilisateurs, ou bien des similarités entre produits. Ce *filtrage collaboratif* repose sur l’adage : Si deux personnes ont aimé des contenus identiques par le passé, elles ont une probabilité élevée d’aimer les mêmes choses dans le futur.
+```
+T: liste d'elements
+X: element a trouver dans la liste 
 
-Sur l'image ci-dessous, on regarde par exemple ce qu'ont voté les utilisateurs similaires, c'est-à-dire ceux qui ont déjà voté la même chose sur d'autres produits (surlignés en vert). On peut alors prédire ce qu'aurait voté notre utilisateur sur le produit cherché, et ne proposer que les produits sur lesquels il aurait mis un pouce vert.
+Fonction recherche1(X,T)->Booleen:
+    i = 0
+    Tant que i < len(T) et T[i] != X:
+        i = i + 1
+    Fin
+    Si i == len(T):
+        Retourner False
+    Sinon:
+        Retourner True
 
-{{< img src="../images/recommandation.png" alt="recommandation à partir de pouces verts" caption="Les utilisateurs similaires (en vert) n'ont pas aimé le produit que notre utilisateur n'a pas encore noté. L'algorithme aura donc tendance à prédire une mauvaise note et à ne pas recommander le produit ici" >}}
-Les utilisateurs similaires (en vert) n'ont pas aimé le produit que notre utilisateur n'a pas encore noté. L'algorithme aura donc tendance à prédire une mauvaise note et à ne pas recommander le produit ici.
+> recherche1(10, [0,2, 4, 6, 8, 10])
+True
+> recherche2(9, [0,2, 4, 6, 8, 10])
+False
+```
 
-> En pratique : On peut voir la liste des profils utilisateurs comme une **matrice**. L’objectif d’un algorithme de recommandation est de remplir les cases vides de cette matrice. Quel serait le score de Gregory (dernière ligne du tableau) pour l’article "*ordinateur portable*", marqué avec un `?`.  Il faudra établir une correspondance entre les objets et les profils.
+* [Jouer à ce jeu: (0-100)](../page4)
+* [Jouer à ce jeu: (0-1000)](../page5)
 
-Il existe alors plusieurs méthodes d'association : 
+-> {{< a link="/pdf/NSI_1/algo1_exercices.pdf" caption=" fiche de TD à compléter" >}}
 
-* l'association basée sur les clients (voir exemple ci-dessus)
+## Recherche dichotomique
+Pour l'aider, vous l'aidez à chacun de ses essais en déclarant PLUS (le nombre que vous avez en tête est plus grand), ou MOINS (plus petit).
 
-> On pourrait par exemple, calculer un coefficient de similitude entre Gregory et les autres usagers pour tous les articles renseignés, puis établir une liste triée.
+{{< img src="../images/jeu_plus_moins.png" >}}
 
-* l'association basée sur les objets (l'exemple dit du *panier de la ménagère*)
+Une fois que le nombre a été deviné, vous lui annoncez le nombre d'essais. Ce nombre est souvent inférieur au nombre d'essais pour la recherche séquentielle.
 
-{{< img src="../images/achats.png" caption="une liste d'achats" >}}
-> Cette fois on ne s'interesse plus au profil du client, mais on cherche une règle d'occurence entre les objets. Pour trouver les associations entre 2 produits, on construit le tableau de co-occurrence montrant combien de fois 2 produits ont été achetés ensemble.
 
-{{< img src="../images/produits.png" caption="tableau de co-occurence" >}}
-*Ici : le produit A apparaît dans 80% des achats, le produit C n'apparaît jamais en même temps que le produit E, les produits A et D apparaissent simultanément dans 40% des achats.
-Ces observations peuvent suggérer une règle de la forme : « Si un client achète le produit A ALORS il achète le produit D ».*
 
-On cherche alors à générer des règles du type : *si A alors D* avec, pour chacune, un pourcentage de confiance. Par exemple, cette règle apparaissant ici apparaissant dans 40% des achats, on considère que le pourcentage de confiance est égal à 40%. Ces regles d'association vont constituer des **classes**. Ces *classes* étant à priori inconnues, il s'agit alors d'un système d'*apprentissage non supervisé*.
+L'algorithme que vous utilisez peut s'écrire en langage naturel:
 
-# Travaux pratiques
-## Joueurs de NBA: Kmeans
-Regression linéaire et recherche des plus proches voisins: [Lien](/docs/NSI_1/algo/page1/)
+```
+fonction devine_un_nombre(borne_inf: entier, borne_sup: entier) -> c: entier
+  var N: entier[borne_inf .. borne_sup] <- tirage_aleatoire(borne_inf, borne_sup)
+  var c: entier <- 0 # compteur du nombre d'essais
+  var p: entier[borne_inf .. borne_sup] <- -1 # valeur proposée par l'adversaire
+  tant que p != N faire:
+    p <- saisie("quel nombre proposes tu?")
+    c <- c + 1
+    si p > N alors:
+      afficher("c'est moins")
+    sinon si p < N alors:
+      afficher("c'est plus")
+    sinon:
+      afficher("bravo c'est gagné")
+  fin
+  retourner c
+```
 
-## Projet Exoplanètes: Kmeans
-[Lien](/docs/python/pages/traitement/page6/) vers la dernière étape du projet.
+> Questions:
 
-## Reseau de neurones: Vittasciences
-* Page d'accueil: [Lien](https://fr.vittascience.com/ia/)
-* Tuto [video1](https://fr.vittascience.com/support/videos/player?id=EDtvcOl_PhA)
-* Tuto [video2](https://fr.vittascience.com/ia/)
+>1. Faire plusieurs parties avec pour bornes: [0 .. 100]. Quelle est la valeur de c dans chaque cas?
+> 2. Quelles sont les  puissances m et n de 2 qui encadrent la valeur $2^n < 100 < 2^m$?
+> 3. Jouer à ce même jeu, mais avec les bornes: [0 .. 1000]
+> 4. Comparer c avec n et m tels que $2^n < 1000 < 2^m$
 
-1. Choisir: Detection d'images. Entrainer le modèle avec plusieurs catégories. Uploader des images et les placer dans les catégories (exemple pierre/feuille/ciseaux)
+*Le jeu auquel vous avez joué est celui d'une recherche dichotomique. Vous avez cherché un élément (une valeur) dans un ensemble trié (l'ensemble des entiers [0 ..100])* 
 
-{{< img src="../images/pfc1.png" >}}
+## COURS: recherche linéaire
+**Def:** La recherche dans une liste consiste à trouver un élément x dans cette liste, et retourner l'indice de x. Cet algorithme consiste à observer les valeurs de la table, l'une après l'autre, jusqu'à trouver la valeur cherchée **x**, ou arriver au bout de la table.
 
-2. Utiliser alors une image de la caméra ou bien uploadée pour prédire la classe
+Dans le cas d'une **table non triée**, seul l'algorithme de **recherche linéaire** est susceptible de donner un resultat. 
 
-3. Cliquer sur le bouton *python*. Le modèle sera alors sauvegardé dans le navigateur. Un script minimal s'affiche alors dans l'IDE python. Modifier le script
+L'algorithme suivant retourne l'index de x, ou bien -1 si x n'est pas dans la liste.
 
-{{< img src="../images/pfc2.png" >}}
+```python
+def recherche1(T, x)->int:
+  """
+  :param T: list of elements
+  :param x: element
+  :return: int, index of x in the list
+           else -1
+  """
+  i = 0
+  while i < len(T) and T[i] != x:
+    i = i + 1
+  if i == len(T):
+    return -1
+  else: 
+    return i
+``` 
 
-4. Choisir une image à uploader pour prediction de la classe.
+> Questions
+>1. Que retourne l'instruction suivante: `recherche1([i for i in range(0,10,2)], 8)`? 
+>2. Que retourne l'instruction suivante: `recherche1([i for i in range(0,10,2)], 10)`?
 
-{{< img src="../images/ciseaux.png" >}}
+### Efficacité de la recherche linéaire
+**Def**: **L'efficacité** est mesurée par la *COMPLEXITE*: La **complexité** mesure le nombre d'opérations effectuées par la fonction. Ce nombre d'opérations dépend des *valeurs des paramètres*, mais aussi de la *taille* de ces paramètres. C'est pourquoi, il est d'usage de considérer plusieurs cas pour mesurer l'efficacité. Elle est en général exprimée comme une **fonciton de n**, où n est la **taille de la liste** passée en paramètre.
 
-5. Lire la classe dans la console
-{{< img src="../images/pfc3.png" >}}
+Quelles sont les **opérations** que l'on comptabilise? Pour les algorithmes de recherche, ce sont les opérations de comparaisons, dans la boucle non bornée:
+
+```
+while i < len(T) and T[i] != x
+```
+
+Il y a 2 comparaisons par itération: celle de l'opérateur `>` et celle de `=`.
+
+On peut définir ce que l'on appelle le **pire des cas**. Pour une taille n de la liste, les éléments sont rangés de telle sorte que le nombre d'opérations effectuée est maximum. Pour la recherche linéaire, c'est lorsque l'élément x ne se trouve pas dans la liste.
+
+Dans ce cas, le **nombre d'opérations**  de comparaisons est égal à $2 \times n$. Pour simplifier, on dira que ce nombre d'opérations est **égal à n**. 
+
+La complexité est dite *linéaire* (proportionnelle à N). Le coefficient $2 \times N$ n'a pas d'importance.
+
+## COURS: Recherche dichotomique
+**Def:** La recherche dichotomique est l'algorithme le plus efficace lorsque la **table** dans laquelle on recherche une valeur **est triée**. Cette recherche consiste à **diviser par 2** l'ensemble de recherche. Pour cela, on définit le milieu de l'intervalle de recherche, puis on conserve:
+
+* `T[borne_inf : milieu-1]` si `x < T[milieu]`
+* `T[milieu +1 : borne_sup]` si `x > T[milieu]`
+
+{{< img src="../images/Binary_search_vs_Linear_search_example_svg.png" caption="comparaison du nombre d'essais. Recherche par dichotomie vs recherche sequentielle. wikipedia" >}}
+
+*Exemple:* On recherche un mot commençant par la lettre *c* dans un dictionnaire contenant 26 mots. Chaque mot commence par une lettre différente. La première de chaque mot du dictionnaire est dans l'ensemble [a .. z]. Le dictionnaire est trié par ordre lexicographique.
+
+Il s'agit d'une liste du type `['a','b','c','d', ..'m', ..,'x','y','z']`. 
+
+Comme il s'agit d'une liste dont les indices vont de 0 à 25: Le milieu, c'est 25//2 soit 12. la lettre *c* a un rang inférieur à 12 (lettre *m*). Donc, dans une première étape de recherche, on prendra la liste entre les rangs 0 et 11 pour rechercher *c*.
+
+```python
+def recherche_dicho(T,x):
+    """
+    :param T: sorted list of elements
+    :param x: element
+    :return: int, index of x in the list
+           else -1
+    """
+    i_min = 0
+    i_max = len(T) - 1
+    while (i_max >= i_min):
+        mid = (i_min + i_max)//2
+        if T[mid] == x:
+            return mid
+        elif T[mid] < x:
+            i_min = mid +1
+        else:
+            i_max = mid -1
+    return -1
+```
+
+### Terminaison de la fonction de recherche dichotomique
+Dans le pire des cas, l'intervalle va se réduire jusqu'à se limiter à un seul élément. Celui dont l'index est `mid`. Avec `i_min == i_max`
+
+Si l'élément recherché est dans la liste: Cet élément est alors la valeur recherchée x, et la fonction se termine en retournant la valeur de l'index de x dans la liste, `mid`.
+
+Si l'élément recherché n'est pas dans la liste: alors, soit `i_min` prend la valeur de `mid+1`, soit `i_max` prend la valeur de `mid-1`. On a alors `i_min > i_max`, qui est la condition d'arrêt de la boucle.
+
+### Efficacité de la recherche dichotomique
+Le nombre d'opérations de comparaison, dans le pire des cas, est proportionnel à `log(n)`. **n** étant égal à la taille de la liste. Et `log(n)` étant egal au *nombre de divisions par 2 qu'il faut effectuer pour que n arrive à 1*:
+
+100 -> 50 -> 25 -> 13 -> 7 -> 4 -> 2 -> 1 (6 à 7 divisions)
+
+On dit que la complexité est *logarithmique*.
+
+# Algorithmes de tri
+**Definition:** un algorithme de tri permet d'organiser une collection d'objets selon une relation d'ordre. [wikipedia](https://fr.wikipedia.org/wiki/Algorithme_de_tri).
+
+Nous nous intéressons ici aux méthodes de *tri en place*: On modifie directement le tableau à trier en permuttant des éléments, sans créer de nouveaux tableaux. 
+
+Le tri peut être effectué avec des éléments numériques. Mais il peut aussi être effectué avec des caractères. On parle alors de tri *lexicographique*.
+
+On a vu [deux algorithmes de tri](/pdf/NSI/algos_tri_simples.pdf): le tri par insertion, et le tri par selection. Le langage Python possède une fonction de tri native: `sorted`, et une méthode de tri associée aux listes: `sort`.
+
+## Le tri par insertion
+### Principe
+*Principe:* Pour cet algorithme, trier, c’est déplacer des éléments, et y **insérer** l’élément rangé, depuis le debut déjà trié de la liste, jusqu’à la fin. Voir le detail dans le cours de [terminale NSI](/NSI/algorithmes/page8/)
+
+
+
+*Exemple d'algorithme*
+
+```
+Pour chaque carte de la donne :
+  Regarder à la fin de la main triée
+  Mémoriser la clé de cette carte
+  Tant que la nouvelle carte va avant la carte de la main triée :
+    Avancer le regard d’une carte vers la gauche dans la main triée
+  Fin tant que
+  Insérer la nouvelle carte à gauche de la carte de la main triée qu’on vient de regarder
+Fin pour chaque
+```
+
+> Question: 
+représenter la main du joueur lorsqu’il reçoit les cartes 6, puis 9 puis Valet. Il utilise l’algorithme de tri par insertion pour les classer. Il possède au debut de la partie: 8, 10, Dame, Roi,  As
+
+*Programme python*
+
+```python
+def tri1(table):
+    for i in range(1,len(table)):
+        temp = table[i]
+        k = i
+        while k>0 and table[k-1]>temp:
+            table[k]=table[k-1]
+            k-=1
+        table[k]=temp
+    return table
+```
+
+> Question: quelle partie du programme python correspond à: 
+
+```
+Tant que la nouvelle carte va avant la carte de la main triée :
+    Avancer le regard d’une carte vers la gauche dans la main triée
+``` 
+
+### Efficacité du tri par insertion
+La mesure la durée d'execution de l'algorithme pour une liste donnée s'appelle la *complexité*. C'est une mesure en *unités* de temps. La complexité depend de la taille de la liste. C'est donc une fonction de n, tel que `n = len(L)`.
+
+Pour expérimenter la mesure de cette durée, aller sur [pythontutor](https://pythontutor.com/render.html#code=from%20random%20import%20sample%0AL%20%3D%20%5Bchr%28i%2B97%29%20for%20i%20in%20range%283%29%5D%0AL%20%3D%20sample%28L,len%28L%29%29%0A%0Adef%20tri1%28L%29%3A%0A%20%20%20%20for%20i%20in%20range%281,len%28L%29%29%3A%0A%20%20%20%20%20%20%20%20temp%20%3D%20L%5Bi%5D%0A%20%20%20%20%20%20%20%20k%20%3D%20i%0A%20%20%20%20%20%20%20%20while%20k%3E0%20and%20L%5Bk-1%5D%3Etemp%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20L%5Bk%5D%20%3D%20L%5Bk-1%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20k%20%3D%20k-1%0A%20%20%20%20%20%20%20%20L%5Bk%5D%20%3D%20temp%0A%20%20%20%20%20%20%20%20%0Atri1%28L%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false).
+
+Voici le script utilisé:
+
+```python
+from random import sample
+L = [chr(i+97) for i in range(3)]
+L = sample(L,len(L))
+
+def tri1(L):
+    for i in range(1,len(L)):
+        temp = L[i]
+        k = i
+        while k>0 and L[k-1]>temp:
+            L[k] = L[k-1]
+            k = k-1
+        L[k] = temp
+        
+tri1(L)
+```
+
+Puis executer le script pour avoir la mesure du nombre de *steps*... Cette mesure dépend de l'argument placé dans la fonction `range`, utilisée pour créer la liste `L`. Compléter le tableau:
+
+| liste L | n | nombre de steps pour trier |
+|--- |--- |--- |
+| `L = [chr(i+97) for i in range(3)]` | 3 |30 |
+| `L = [chr(i+97) for i in range(6)]` | 6 | 63 |
+| `L = [chr(i+97) for i in range(12)]` | 12 | ... |
+| `L = [chr(i+97) for i in range(24)]` | 24 | ... |
+
+*Analyser alors la fonction **steps=f(n)***
+
+> Question: Ce nombre, augmente t-il de manière régulière avec `n`? La fonction *temps=f(n)* est-elle linéaire?
+
+## Le tri par selection
+*Principe*: On recherche le plus petit élément dans la partie non triée et on l'insère à la fin de la partie *triée*.
+
+*Exemple d'algorithme*
+
+```
+Pour i allant de 1 à n-1 faire:
+    indmin ← i
+    Pour j allant de i+1 à n faire:
+        Si tab[j] < tab[indmin] alors:
+            indmin ← j
+        Fin si
+    Fin pour
+    min ← tab[indmin]
+    tab[indmin] ← tab[i]
+    tab[i] ← min
+Fin pour
+```
+
+> Questions:
+> 1. quelle partie de l'algorithme vous fait penser à la recherche du minimum dans une liste?
+> 2. Comment permute-t-on les valeurs de 2 variables a et b? Faut-il utiliser une variable supplémentaire c? Expliquer. Y-a-t-il une partie du programme qui montre une permutation entre éléments de la liste?
+
+*Programme python:*
+
+```python
+def tri2(T):
+    for i in range(len(T)-1):
+        indmin = i
+        for k in range(i+1, len(T)) :
+            if T[k] < T[indmin] :
+                indmin=k
+        if indmin != i :
+            T[i], T[indmin] = T[indmin], T[i]
+    return T
+``` 
+
+> Question 3. Comment est réalisée en python la permutation des 2 éléments de liste?
+
+## SORT et SORTED
+### sorted(t)
+fonction qui renvoie une liste triée à partir de la liste *t*. On l'utilise de la manière suivante:
+
+```python
+> t = [5, 0, 6, 4, 2]
+> t1 = sorted(t)
+> t1
+[0, 2, 4, 5, 6]
+```
+
+### t.sort()
+méthode qui modifie la liste *t*. On peut lui ajouter un paramètre, comme `reverse = True`:
+
+```python
+> t = [5, 0, 6, 4, 2]
+> t.sort()
+> t
+[0, 2, 4, 5, 6]
+> t.sort(reverse = True)
+> t
+[6, 5, 4, 2, 0]
+```
+
+## Tri à partir d'une clé
+Lorsque les éléments à trier sont aux-mêmes des sous-listes, le tri est réalisé à partir d'une *clé*: la *clé* est l'une des valeurs de la sous-liste.
+
+Par exemple, pour la liste suivante:
+
+`M = [("Paulette", 93), ("Marie", 62), ("Thomas", 45), ("Jean", 50)]`
+
+Celle-ci pourra être triée par ordre alphabetique du nom: la clé est alors la première valeur de la sous-liste:
+
+```python
+> t = sorted(M, key = lambda item: item[0])
+> t
+[('Jean', 50), ('Marie', 62), ('Paulette', 93), ('Thomas', 45)]
+```
+
+Mais elle peut aussi être triée par age des personnes: à partir de la 2e valeur.
+
+```python
+> t = sorted(M, key = lambda item: item[1])
+> t
+[('Thomas', 45), ('Jean', 50), ('Marie', 62), ('Paulette', 93)]
+```
+
+## Efficacité
+La meilleure complexité que l'on peut attendre pour un algorithme de tri est quasi linéaire. Mais il s'agit d'algorithmes plus élaborés que ceux vus en classe. 
+
+Ainsi, pour le tri par insertion, le nombre d'opérations f(N) dépend de la disposition des éléments, tel que:
+
+$$a.N < f(N) < a.N^2$$
+
+La complexité est *linéaire* dans le meilleur des cas (liste déjà triée), mais *quadratique* dans le pire des cas (liste triée à l'envers).
+
+Pour le tri par séléction, le nombre d'opérations est constant, et egal à $b.N^2$. La complexité est *quadratique*.
+
+# Documents
+
+* [Activité: deux algorithmes de tri](/pdf/NSI/algos_tri_simples.pdf))
+
+*{{< a link="/pdf/NSI/algorithmes2_recherche_tri.pdf" caption="fiche d'exercices" >}}
+# Liens
+* cours et animations sur la [page du site Lyceum](https://www.lyceum.fr/1g/nsi/8-algorithmique/2-algorithmes-de-tri). La complexité y est traitée de manière experimentale.
+* Eduscol: Preuve de l'algorithme de recherche dichotomique [detail en pdf](https://eduscol.education.fr/document/30064/download)
+* TD avec interface python en ligne: [mcoilhac.forge.apps.education.fr](https://mcoilhac.forge.apps.education.fr/site-nsi/tris/3_insertion/)
+
+
+
+
+
+
+
+

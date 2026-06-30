@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="decouverte et programmation de la carte microbit, fonction radio">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="reseau radio SNT :: allopizza">
+    <meta name="twitter:description" content="decouverte et programmation de la carte microbit, fonction radio">
+    <meta property="og:url" content="//localhost:1313/techno/mb/mb_radio/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="reseau radio SNT :: allopizza">
+    <meta property="og:description" content="decouverte et programmation de la carte microbit, fonction radio">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="technologies">
+    <meta itemprop="name" content="reseau radio SNT :: allopizza">
+    <meta itemprop="description" content="decouverte et programmation de la carte microbit, fonction radio">
+    <meta itemprop="wordCount" content="1816">
+    <title>reseau radio SNT :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782836328" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782836328" defer></script>
+    <script src="/js/search-lunr.js?1782836328" defer></script>
+    <script src="/js/search.js?1782836328" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782836328";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782836328" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782836328" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782836328" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782836328" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782836328" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782836328" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782836328" rel="stylesheet">
+    <link href="/css/theme.css?1782836328" rel="stylesheet">
+    <link href="/css/format-html.css?1782836328" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/techno\/mb\/mb_radio\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/techno/mb/mb_radio/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#prise-en-main-de-linterface-microbit-sur-vittascience">Prise en main de l&rsquo;interface microbit sur Vittascience</a></li>
+    <li><a href="#premier-programme">Premier programme</a>
+      <ul>
+        <li><a href="#introduction-au-langage-python">Introduction au langage Python</a></li>
+      </ul>
+    </li>
+    <li><a href="#dessiner-son-propre-logo">Dessiner son propre logo</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#projet-1-animation-à-plusieurs-cartes-microbit">Projet 1: Animation à plusieurs cartes microbit</a></li>
+    <li><a href="#projet-2-communication-confidentielle">Projet 2: Communication confidentielle</a></li>
+    <li><a href="#compléments-configuration-radio">Compléments: Configuration radio</a></li>
+    <li><a href="#programme-de-la-carte-mb-mystere">Programme de la carte MB mystere</a>
+      <ul>
+        <li><a href="#programme-de-la-carte-eleve">Programme de la carte eleve</a></li>
+        <li><a href="#programme-de-la-carte-enseignant">Programme de la carte enseignant</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/techno/index.html"><span itemprop="name">technologies</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/techno/mb/index.html"><span itemprop="name">Microbit</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">reseau radio SNT</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/techno/MB/MB_radio.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/techno/mb/mb_mariotte/index.html" title="loi de Mariotte (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/techno/mb/mb_radio2/index.html" title="reseau radio 1ere (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable techno" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="reseau-radio-snt">reseau radio SNT</h1>
+
+<h1 id="partie-1-gestion-de-laffichage">Partie 1: Gestion de l&rsquo;affichage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une présentation générale de la carte microbit se trouve à la page <a href="../MB_init">suivante</a>.</p>
+<p>La <a href="/pdf/SNT/python_MB.pdf">fiche reponse</a> pour les questions.</p>
+<h2 id="prise-en-main-de-linterface-microbit-sur-vittascience">Prise en main de l&rsquo;interface microbit sur Vittascience<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Ce premier travail permet de découvrir l&rsquo;interface Vittascience.com pour la programmation de la carte microbit. Les questions qui suivent cette manipulation vont présenter le langage Python. Aucune connaissance du langage n&rsquo;est requise pour ce premier travail.</em></p>
+<ul>
+<li>
+<p>Aller à la page <a href="https://fr.vittascience.com/microbit/?mode=mixed&console=bottom&toolbox=vittascience" rel="external">Editeur microbit</a> sur Vittascience.com</p>
+</li>
+<li>
+<p>Brancher la carte microbit sur l&rsquo;un des ports USB de l&rsquo;ordinateur. La carte est alors visible depuis l&rsquo;explorateur comme une nouvelle mémoire flash.</p>
+</li>
+</ul>
+<h2 id="premier-programme">Premier programme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>La page présente 2 espaces. L&rsquo;edition du programme se fait dans la partie gauche (celle présentant les blocs à assembler). A droite, c&rsquo;est la traduction du programme en langage Python, qui est réalisée de manière automatique.</p>
+
+<figure >
+    
+        <img src="../images/vitta_init1.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Le programme en langage Python est alors:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">pass</span></span></span></code></pre></div>
+<p>En colorant les différentes parties du script Python, on peut mettre en correspondance: les <em>blocs</em> et leur équivalent en <em>langage informatique</em>:</p>
+
+<figure >
+    
+        <img src="../images/vitta_init6.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Mettre un bloc de type affichage sur la carte microbit, comme illustré ci-dessous:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/vitta_init2.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Modifier l&rsquo;image pour avoir l&rsquo;affichage d&rsquo;un smiley. Il faut modifier le paramètre du bloc et choisir une image parmi les propositions:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/vitta_init3.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Vous pouvez alors téléverser le programme dans la carte microbit et observer l&rsquo;affichage. Il y a 2 options proposées:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/vitta_init9.png"
+        
+         />
+    
+    
+</figure>
+
+<ul>
+<li>Soit utiliser le bouton <em>téléverser</em>. Le programme se charge alors automatiquement dans la carte microbit</li>
+<li>soit le bouton de téléchargement. C&rsquo;est l&rsquo;ordinateur qui charge alors le programme généré (l&rsquo;extension est <code>.hex</code>). Il faudra le deplacer sur la carte microbit à l&rsquo;aide de l&rsquo;explorateur:</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/televerser.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Ajouter une instruction conditionnelle (si le bouton A est préssé, alors&hellip;)</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/vitta_init4.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Observer le script Python.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">HAPPY</span><span class="p">)</span></span></span></code></pre></div>
+<p>Si on met à nouveau les blocs en correspondance avec les instructions du langage, cela donne:</p>
+
+<figure >
+    
+        <img src="../images/vitta_init7.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p><strong>Qu1.</strong>: colorier le script sur la fiche de reponse.</p>
+</blockquote>
+<p>Les instructions en python ne sont pas alignées sur la même verticale. On dit qu&rsquo;elles sont <em>indentées</em> lorsqu&rsquo;elles présentent un décalage horizontal. Cette disposition est aussi visible sur l&rsquo;algorithme écrit en langage <em>scratch</em> (blocs colorés).</p>
+<blockquote>
+<p><strong>Qu2.</strong>: Expliquer la signification de cette <em>indentation</em> en Python</p>
+</blockquote>
+<blockquote>
+<p>Terminer maintenant le programme selon l&rsquo;image suivante:</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/vitta_init5.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Et téléverser dans la carte microbit. Comment réagit-elle lorsque vous appuyez sur le bouton A, le bouton B?</p>
+</blockquote>
+<blockquote>
+<p><strong>Qu3.</strong>: Comment la réagit la carte lorsque l&rsquo;on appuie sur les 2 boutons simultanément? Cela génère t-il un bug a l&rsquo;affichage? Pourquoi?</p>
+</blockquote>
+<blockquote>
+<p>Modifier la structure conditionnelle en remplaçant la séquence: si &hellip; si &hellip;</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction1</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction2</span></span></span></code></pre></div>
+<blockquote>
+<p>par la séquence: si &hellip; sinon si &hellip;</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">button_a</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction1</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">button_b</span><span class="o">.</span><span class="n">is_pressed</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="n">instruction2</span></span></span></code></pre></div>
+<blockquote>
+<p><strong>Qu4.</strong>: Cela améliore t-il le comportement de la carte lorsque l&rsquo;on appuie simultanément sur les 2 boutons? Pourquoi?</p>
+</blockquote>
+<h3 id="introduction-au-langage-python">Introduction au langage Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Le langage python, comme tout langage informatique est un langage très <em>structuré</em>, qui utilise un petit nombre de <em>mots clés</em>, à partir desquels on construit des <em>instructions</em>.</p>
+<p>Les couleurs (programme en blocs, fenêtre de gauche) indiquent la famille d&rsquo;instructions. Les instructions du langage peuvent être rassemblées selon les principales familles qui sont:</p>
+<ul>
+<li>Affichage</li>
+<li>Entrées/ Sorties</li>
+<li>Logique</li>
+<li>Boucles</li>
+<li>Variables</li>
+</ul>
+<p>D&rsquo;autres familles d&rsquo;instructions concernent la programmation de Fonctions, ou l&rsquo;utilisation de types construits comme les chaines de caractères et les listes, les opérations Math, ou la gestion des erreurs (Exceptions).</p>
+<p>Les fonctions Communication, Capteurs, Actionneurs, Robots, &hellip; concernent la manipulation d&rsquo;objets technologiques et apportent des extensions du langage. Selon les besoins, il faudra parfois ajouter des extensions de cette sorte, comme ici avec la première ligne:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span></span></span></code></pre></div>
+<p>Avec la programmation par blocs sur l&rsquo;interface <a href="https://fr.vittascience.com/microbit/?mode=mixed&console=bottom&toolbox=vittascience" rel="external">Vittascience.com</a>, cette ligne est ajoutée dès que vous choisissez une instruction du bloc Entrées/Sorties spécifique à la carte microbit.</p>
+<blockquote>
+<p><strong>Qu5.:</strong> compléter le tableau avec la description de l&rsquo;instruction:</p>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>mot clé</th>
+					<th>description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>import</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>display.show()</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>button_a.is_pressed()</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>button_b.is_pressed()</code></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<p>Les instructions qui terminent par des parenthèses <code>()</code> sont des <em>fonctions</em>. Les <em>fonctions</em> executent une série d&rsquo;instructions, qui sont rassemblées dans un seul bloc appelé <em>fonction</em>. Cela permet de rendre le script plus court et plus lisible. Une fonction peut être réutilisée à plusieurs endroits du programme.</p>
+<p>Parmi ces <em>fonctions</em>, certaines doivent être écrites en plaçant un argument entre les parenthèses. Cela permet de préciser leur comportement.</p>
+<blockquote>
+<p>**Qu6.: Dans le tableau précédent, quelle est LA fonction qui nécessite un argument? A quoi sert-il?</p>
+</blockquote>
+<p>Certaines instructions vont permettre des répétitions (famille des boucles), d&rsquo;autres vont executer des branchements conditionnels (famille logique). Ce sont les mots clés <code>while</code> et <code>if</code>.</p>
+<blockquote>
+<p><strong>Qu7.:</strong> Retrouver les familles pour chacun de ces 2 mots clés, <code>if</code> et <code>while</code>. Préciser: lequel va servir pour une instruction conditionnelle, executée une seule fois? Lequel sert à répéter un bloc de code (écrire dans la colonne <em>execution</em>)?</p>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>mot clé</th>
+					<th>famille</th>
+					<th>execution</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>if</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>while</td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><strong>Qu8:</strong> compléter le tableau avec la description de chacune des instructions:</p>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>instruction</th>
+					<th>description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>while True:</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>if button_a.is_pressed():</code></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="dessiner-son-propre-logo">Dessiner son propre logo<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le bloc suivant permet de personnaliser l&rsquo;image affichée:</p>
+
+<figure >
+    
+        <img src="../images/vitta_init13.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Lorsque l&rsquo;on ajoute ce bloc au programme, cela insère les 2 lignes suivantes dans le script python:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">led_image</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span><span class="s1">&#39;00000:00000:00000:00000:00000&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">display</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">led_image</span><span class="p">)</span></span></span></code></pre></div>
+<p>L&rsquo;image est alors générée par la ligne <code>led_image = Image('00000:00000:00000:00000:00000')</code>. L&rsquo;instruction <code>display.show(led_image)</code> va afficher cette image sur la carte microbit.</p>
+<blockquote>
+<p>Remplacer les 2 images du programme précédent (smiley happy/sad). Placer vos propres dessins, réalisés à partir de la matrice.</p>
+</blockquote>
+<p>Pour dessiner l&rsquo;image, il faut cliquer dans les cellules de la matrice(pixels). Le bloc suivant affiche un <strong>Y</strong> sur la carte microbit.</p>
+
+<figure >
+    
+        <img src="../images/vitta_init14.png"
+        
+         />
+    
+    
+</figure>
+
+<ol>
+<li>Quel est le code correspondant pour le <strong>Y</strong>?</li>
+<li>Programmez la carte afin qu&rsquo;elle montre l&rsquo;animation suivante:</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/Y.gif"
+        
+        alt="rotation droite" />
+    
+    
+    <figcaption>
+        
+        <p>
+            rotation droite
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<ol start="3">
+<li>Recopier le code python qui est généré -&gt; <strong>Qu9.</strong></li>
+</ol>
+<h1 id="partie-2--projets-utilisant-le-module-radio">Partie 2 : Projets utilisant le module radio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><strong>Envoyer un message par ondes radio</strong>
+La carte microbit possède une antenne radio, ce qui lui permet d&rsquo;emettre et de recevoir des messages.</p>
+
+<figure >
+    
+        <img src="../images/E_R_MB.png"
+        
+        alt="communication radio en reseau" />
+    
+    
+    <figcaption>
+        
+        <p>
+            communication radio en reseau
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h2 id="projet-1-animation-à-plusieurs-cartes-microbit">Projet 1: Animation à plusieurs cartes microbit<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>Utiliser le module radio de la carte microbit pour afficher un dessin glissant sur plusieurs cartes.</em></p>
+<p>Il faudra synchroniser l&rsquo;animation, afin de provoquer cet effet de glissement de l&rsquo;image. Par exemple, déclencher l&rsquo;animation sur la carte 2 lorsque le dessin sort de la carte 1.</p>
+<h2 id="projet-2-communication-confidentielle">Projet 2: Communication confidentielle<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Vous allez envoyer un message dans le reseau de cartes.
+L&rsquo;une de ces cartes est une <em>carte mystère</em>. Celle-ci est programmée pour repondre lorsqu&rsquo;elle reçoit le message &ldquo;Hello&rdquo;.</p>
+<p>Vous cherchez à découvrir ce que la <strong>carte mystère va répondre</strong>. Aussi, vous allez programmer votre carte pour qu&rsquo;elle emette le mot &ldquo;Hello&rdquo;, et qu&rsquo;elle n&rsquo;affiche que les mots différents de &ldquo;Hello&rdquo;: c&rsquo;est à dire les messages qui proviennent de la carte mystère&hellip;</p>
+
+<figure >
+    
+        <img src="../images/carte_mystere.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Voici le programme que vous devrez saisir:</p>
+
+<figure >
+    
+        <img src="../images/prog_mystere.png"
+        
+        alt="programme complet" />
+    
+    
+    <figcaption>
+        
+        <p>
+            programme complet
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Dans le menu <em>Variables</em>, créer une nouvelle variable que vous nommerez <strong>n</strong>.</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_1.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Créez 2 autres variables que vous nommerez <em>texte</em> et <em>message</em>.</p>
+<p>Ajouter l&rsquo;instruction <em>Affecter à n la valeur &quot; &ldquo;</em>.</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_2.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Saisir une valeur numerique à 2 chiffres dans ce bloc. Ce sera votre identifiant. Cette valeur doit être unique, personne ne devra avoir la même parmi les autres cartes du reseau. (L&rsquo;exemple suivant sera traité avec la valeur <strong>19</strong>).</p>
+<blockquote>
+<p><strong>Ne pas choisir 19: ce nombre doit être différent pour chacune des cartes élèves de la classe.</strong></p>
+</blockquote>
+<p>Ajouter l&rsquo;instruction <em>Affecter à texte la valeur &quot; &ldquo;</em>.</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_3.png"
+        
+        alt="La variable n se trouve dans la liste des blocs du menu Variables" />
+    
+    
+    <figcaption>
+        
+        <p>
+            La variable n se trouve dans la liste des blocs du menu Variables
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Ajouter la variable <em>n</em> dans ce bloc.</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_4.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Ajouter alors les blocs suivants pour finir la partie <em>Au demarrage</em>:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_5.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Ces instructions permettent de construire la variable <em>message</em> par collage des 2 chaines de caractère, <em>n</em> et <em>texte</em>.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;19&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="n">texte</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="n">texte</span></span></span></code></pre></div>
+<blockquote>
+<p>Un langage informatique utilise des <em>variables</em>. Ce sont des caractères ou des mots, qui n&rsquo;existent pas dans le langage, et que vous choisissez pour y stocker une valeur. En langage <em>Python</em>, le signe &lsquo;=&rsquo; devant une variable indique que l&rsquo;on stocke la valeur de droite dans la variable ecrite à gauche:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">jour</span> <span class="o">=</span> <span class="s1">&#39;lundi&#39;</span></span></span></code></pre></div>
+<blockquote>
+<p>Cette instruction signifie que l&rsquo;on stocke le mot &rsquo;lundi&rsquo; dans la variable <code>jour</code>.</p>
+</blockquote>
+<p><strong>Question a:</strong> Quelles sont les variables utilisées dans ce programme?</p>
+<p><strong>Question b:</strong> Quelles chaines de caractères sont stockées dans les variables lors des 3 premieres instructions:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="s1">&#39;19&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="n">texte</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span></span></span></code></pre></div>
+<p><strong>Question c</strong>: Quel est le contenu de la variable <em>message</em> apres la dernière instruction?</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">message</span> <span class="o">+</span> <span class="n">texte</span></span></span></code></pre></div>
+<p><em>Poursuivre la programmation:</em>
+Dans la partie <em>Répéter indefiniment</em>:</p>
+<p>Ajouter les blocs qui permettront d&rsquo;envoyer par radio la chaine <em>message</em>.
+
+<figure >
+    
+        <img src="../images/pro_mys_6.png"
+        
+         />
+    
+    
+</figure>
+</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_7.png"
+        
+        alt="Remplacer le texte par la variable message" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Remplacer le texte par la variable message
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Ajouter les blocs qui vont traiter les messages radio reçus (s&rsquo;il y en a):</p>
+<ul>
+<li>
+<p>Ajouter le bloc <em><code>[radio]</code> si une chaine est reçu dans stringData alors:</em></p>
+</li>
+<li>
+<p>Puis, pour obtenir la condition <em>si dans la chaine strigData obtenir la sous-chaine&hellip;</em>, vous allez passer par les étapes suivantes:</p>
+</li>
+</ul>
+
+<figure >
+    
+        <img src="../images/pro_mys_8.png"
+        
+        alt="choisir la variable stringData" />
+    
+    
+    <figcaption>
+        
+        <p>
+            choisir la variable stringData
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    
+        <img src="../images/pro_mys_9.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Placer ce bloc dans l&rsquo;instruction conditionnelle:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_11.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Rechercher l&rsquo;instruction suivante dans le menu <em>Textes</em>:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_12.png"
+        
+        alt="il faudra probablement remplacer la variable proposée" />
+    
+    
+    <figcaption>
+        
+        <p>
+            il faudra probablement remplacer la variable proposée
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Choisir la variable <em>stringData</em></p>
+
+<figure >
+    
+        <img src="../images/pro_mys_13.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Choisir la <em>sous-chaine depuis la</em> <strong>premiere lettre</strong>:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_14.png"
+        
+         />
+    
+    
+</figure>
+
+<p>Dans le menu math, trouver le selecteur de valeur numerique:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_16.png"
+        
+        alt="mettre la valeur 1" />
+    
+    
+    <figcaption>
+        
+        <p>
+            mettre la valeur 1
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<p>Modifier le signe (mettre <code>=</code>) et compléter l&rsquo;instruction avec la variable <strong>n</strong>:</p>
+
+<figure >
+    
+        <img src="../images/pro_mys_15.png"
+        
+         />
+    
+    
+</figure>
+
+<blockquote>
+<p>Téléverser et tester le programme.</p>
+</blockquote>
+<p><strong>Question d</strong>: Vous devriez recevoir un message personnalisé de la carte microbit mystère. BRAVO!! Recopiez ce message.</p>
+<p><strong>Question e</strong>: Le programme utilise des instructions apportées par la librairie <code>radio</code>, utiles pour la programmation de la carte microbit.</p>
+<p>Quel est le rôle des fonctions suivantes: Recopier et compléter le tableau:</p>
+<table>
+	<thead>
+			<tr>
+					<th>instruction</th>
+					<th>description</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>send</code></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td><code>receive</code></td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>Question f</strong>: Quel est le rôle de la variable <code>stringData</code>? <em>(Que contient-elle?)</em></p>
+<h2 id="compléments-configuration-radio">Compléments: Configuration radio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><code>radio.config(channel=7)</code>: Configure la fréquence d&rsquo;émission : la valeur est un numéro entre 0 et 83</p>
+<p><code>radio.config(group=0)</code>:  Configure le groupe : au sein d&rsquo;une même adresse, 256 groupes numérotés de 0 à 255 peuvent cohabiter`</p>
+<h2 id="programme-de-la-carte-mb-mystere">Programme de la carte MB mystere<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><em>notes pour l&rsquo;enseignant</em></p>
+<h3 id="programme-de-la-carte-eleve">Programme de la carte eleve<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Correction à venir</p>
+<h3 id="programme-de-la-carte-enseignant">Programme de la carte enseignant<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">microbit</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">radio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">utime</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2"># chaque carte eleve recoit son propre message
+</span></span></span><span class="line"><span class="cl"><span class="s2"># meme apres plusieurs appuis successifs sur le btn a
+</span></span></span><span class="line"><span class="cl"><span class="s2"># son id est stocke dans le dict D
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">radio</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">radio</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">channel</span> <span class="o">=</span> <span class="mi">7</span><span class="p">,</span> <span class="n">power</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mardi&#39;</span><span class="p">,</span> <span class="s1">&#39;juillet&#39;</span><span class="p">,</span> <span class="s1">&#39;but&#39;</span><span class="p">]</span> <span class="c1"># ...liste de mots mysteres a completer</span>
+</span></span><span class="line"><span class="cl"><span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">D</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="n">n_precedent</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">stringData</span> <span class="o">=</span> <span class="n">radio</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">stringData</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="n">stringData</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n_precedent</span> <span class="o">!=</span> <span class="n">n</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="n">n</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">D</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="o">%</span><span class="n">l</span><span class="p">],</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="n">message</span> <span class="o">=</span> <span class="n">stringData</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">      <span class="n">radio</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">utime</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">display</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="c1"># repere pour avoir le nombre de message retournes</span>
+</span></span><span class="line"><span class="cl">      <span class="n">display</span><span class="o">.</span><span class="n">set_pixel</span><span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span><span class="p">,(</span><span class="n">i</span><span class="o">%</span><span class="mi">25</span><span class="p">)</span><span class="o">//</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">n_precedent</span> <span class="o">=</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">n_precedent</span> <span class="o">==</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1"># gestion d&#39;un appui prolongé</span>
+</span></span><span class="line"><span class="cl">        <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">n_precedent</span> <span class="o">==</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">D</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n_precedent</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># RAZ du TTL et id precedent</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># on renvoie le mot</span></span></span></code></pre></div>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>Introduction au module radio (TP Lucioles): <a href="https://microbit-micropython.readthedocs.io/fr/latest/tutorials/radio.html" rel="external">microbit-micropython.readthedocs.io</a></li>
+<li>TP message secret: <a href="https://microbit.org/fr/projects/make-it-code-it/tell-me-a-secret/" rel="external">microbit.org</a></li>
+<li>specifications du contrôleur radio <a href="https://lancaster-university.github.io/microbit-docs/ubit/radio/" rel="external">lancaster-university</a>`</li>
+<li>diagramme d&rsquo;état et diagramme d&rsquo;activité<a href="https://www.uv.es/nemiche/cursos/UML5.pdf" rel="external">www.uv.es</a></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/tp_reseau_term/index.html"><a class="padding" href="/nsi/architecture/tp_reseau_term/index.html">TP table de routage<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421"><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page1-2/index.html"><a class="padding" href="/nsi_1/donnees/page1-2/index.html">listes en SPC<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page1/index.html"><a class="padding" href="/nsi_1/reseaux/page1/index.html">modele OSI<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/page2/index.html"><a class="padding" href="/nsi_1/reseaux/page2/index.html">protocoles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_reseau/index.html"><a class="padding" href="/nsi_1/reseaux/tp_reseau/index.html">TP simulation d&#39;un réseau<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/page7/index.html"><a class="padding" href="/nsi_1/reseaux/page7/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_get_post/index.html"><a class="padding" href="/nsi_1/reseaux/tp_get_post/index.html">TP GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_requests/index.html"><a class="padding" href="/nsi_1/reseaux/tp_requests/index.html">tuto requests<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184"><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/page6/index.html"><a class="padding" href="/nsi_1/ihm/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516"><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/snt/index.html"><input type="checkbox" id="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4" aria-controls="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4"><label for="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu SNT</span></label><a class="padding default-animation" href="/snt/index.html">SNT<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/index.html"><input type="checkbox" id="R-section-09803e578e8ec627e73ee9df1dba3ba1" aria-controls="R-subsections-09803e578e8ec627e73ee9df1dba3ba1"><label for="R-section-09803e578e8ec627e73ee9df1dba3ba1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees structurees</span></label><a class="padding default-animation" href="/snt/donnees/index.html">donnees structurees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-09803e578e8ec627e73ee9df1dba3ba1" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/page1/index.html"><a class="padding" href="/snt/donnees/page1/index.html">codage des nombres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/web/index.html"><input type="checkbox" id="R-section-0e208a64729005a439f5bfa6f6e6e404" aria-controls="R-subsections-0e208a64729005a439f5bfa6f6e6e404"><label for="R-section-0e208a64729005a439f5bfa6f6e6e404"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Le web</span></label><a class="padding default-animation" href="/snt/web/index.html">Le web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0e208a64729005a439f5bfa6f6e6e404" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/web/page1/index.html"><a class="padding" href="/snt/web/page1/index.html">le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page2/index.html"><a class="padding" href="/snt/web/page2/index.html">modele client serveur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page3/index.html"><a class="padding" href="/snt/web/page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/page4/index.html"><a class="padding" href="/snt/web/page4/index.html">introduction à CSS<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/internet/index.html"><input type="checkbox" id="R-section-0a4fd8094af173d46409c88602d33e05" aria-controls="R-subsections-0a4fd8094af173d46409c88602d33e05"><label for="R-section-0a4fd8094af173d46409c88602d33e05"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu internet</span></label><a class="padding default-animation" href="/snt/internet/index.html">internet<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0a4fd8094af173d46409c88602d33e05" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/internet/page1/index.html"><a class="padding" href="/snt/internet/page1/index.html">généralités<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/page2/index.html"><a class="padding" href="/snt/internet/page2/index.html">reseau local et reseau internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/page3/index.html"><a class="padding" href="/snt/internet/page3/index.html">circulation des données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/tp_reseau/index.html"><a class="padding" href="/snt/internet/tp_reseau/index.html">TP simulation d&#39;un réseau<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/robotique/index.html"><input type="checkbox" id="R-section-208ab0e974a19a4c45b9a6a40fbedcd4" aria-controls="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4"><label for="R-section-208ab0e974a19a4c45b9a6a40fbedcd4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu informatique embarquée</span></label><a class="padding default-animation" href="/snt/robotique/index.html">informatique embarquée<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/robotique/page1/index.html"><a class="padding" href="/snt/robotique/page1/index.html">IOT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page4/index.html"><a class="padding" href="/snt/robotique/page4/index.html">Programme informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page5/index.html"><a class="padding" href="/snt/robotique/page5/index.html">Python Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/img_num/index.html"><input type="checkbox" id="R-section-40f85ba153e0e4340fbde2302a463673" aria-controls="R-subsections-40f85ba153e0e4340fbde2302a463673"><label for="R-section-40f85ba153e0e4340fbde2302a463673"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu images numeriques</span></label><a class="padding default-animation" href="/snt/img_num/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-40f85ba153e0e4340fbde2302a463673" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/img_num/page7/index.html"><a class="padding" href="/snt/img_num/page7/index.html">Photographie numérique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page2/index.html"><a class="padding" href="/snt/img_num/page2/index.html">Enjeux ethiques et societaux de l&#39;image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page5/index.html"><a class="padding" href="/snt/img_num/page5/index.html">EXIF et données colorimetriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page3/index.html"><a class="padding" href="/snt/img_num/page3/index.html">TP pixel art<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/localisation/index.html"><input type="checkbox" id="R-section-e7c35689adb9fe065b5057ce434cfa37" aria-controls="R-subsections-e7c35689adb9fe065b5057ce434cfa37"><label for="R-section-e7c35689adb9fe065b5057ce434cfa37"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu localisation</span></label><a class="padding default-animation" href="/snt/localisation/index.html">localisation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7c35689adb9fe065b5057ce434cfa37" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/localisation/page6/index.html"><a class="padding" href="/snt/localisation/page6/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page2/index.html"><a class="padding" href="/snt/localisation/page2/index.html">geolocaliser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page8/index.html"><a class="padding" href="/snt/localisation/page8/index.html">fonction de conversion TI83<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page9/index.html"><a class="padding" href="/snt/localisation/page9/index.html">fonction de conversion android<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a"><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu competences numeriques</span></label><a class="padding default-animation" href="/docs/index.html">competences numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/rediger/index.html"><input type="checkbox" id="R-section-585205baf223d24ff9470bbb2a380be9" aria-controls="R-subsections-585205baf223d24ff9470bbb2a380be9"><label for="R-section-585205baf223d24ff9470bbb2a380be9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu rediger</span></label><a class="padding default-animation" href="/docs/rediger/index.html">rediger<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-585205baf223d24ff9470bbb2a380be9" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/rediger/page4/index.html"><a class="padding" href="/docs/rediger/page4/index.html">recherche RGPD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page6/index.html"><a class="padding" href="/docs/rediger/page6/index.html">histoire informatique et reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page7/index.html"><a class="padding" href="/docs/rediger/page7/index.html">Mettre en forme RGPD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page1/index.html"><a class="padding" href="/docs/rediger/page1/index.html">guide style<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page3/index.html"><a class="padding" href="/docs/rediger/page3/index.html">Utiliser Writer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page31/index.html"><a class="padding" href="/docs/rediger/page31/index.html">Writer et Word<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page9/index.html"><a class="padding" href="/docs/rediger/page9/index.html">moteurs de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/publier/index.html"><input type="checkbox" id="R-section-478e1538def6137ee6a5132245d49679" aria-controls="R-subsections-478e1538def6137ee6a5132245d49679"><label for="R-section-478e1538def6137ee6a5132245d49679"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu publier</span></label><a class="padding default-animation" href="/docs/publier/index.html">publier<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-478e1538def6137ee6a5132245d49679" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/publier/page4/index.html"><a class="padding" href="/docs/publier/page4/index.html">classif vivant<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page5/index.html"><a class="padding" href="/docs/publier/page5/index.html">Les plastiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page50/index.html"><a class="padding" href="/docs/publier/page50/index.html">La démocratie athenienne<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page8/index.html"><a class="padding" href="/docs/publier/page8/index.html">La bataille de Marignan<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page51/index.html"><a class="padding" href="/docs/publier/page51/index.html">mon film prefere v1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page52/index.html"><a class="padding" href="/docs/publier/page52/index.html">mon film prefere v2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page1/index.html"><a class="padding" href="/docs/publier/page1/index.html">questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/tableur/index.html"><input type="checkbox" id="R-section-0aae2561850e970b2527d68c334f7c0c" aria-controls="R-subsections-0aae2561850e970b2527d68c334f7c0c"><label for="R-section-0aae2561850e970b2527d68c334f7c0c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu utiliser un tableur</span></label><a class="padding default-animation" href="/docs/tableur/index.html">utiliser un tableur<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0aae2561850e970b2527d68c334f7c0c" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/tableur/page1/index.html"><a class="padding" href="/docs/tableur/page1/index.html">tableau de notes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/tableur/page3/index.html"><a class="padding" href="/docs/tableur/page3/index.html">nobels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/tableur/page2/index.html"><a class="padding" href="/docs/tableur/page2/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/images_num/index.html"><input type="checkbox" id="R-section-e327ae7bb879b680d39069590059dfeb" aria-controls="R-subsections-e327ae7bb879b680d39069590059dfeb"><label for="R-section-e327ae7bb879b680d39069590059dfeb"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu dessiner</span></label><a class="padding default-animation" href="/docs/images_num/index.html">dessiner<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e327ae7bb879b680d39069590059dfeb" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/images_num/page1/index.html"><a class="padding" href="/docs/images_num/page1/index.html">detourer une image<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/data_scientist/index.html"><input type="checkbox" id="R-section-55ceb2e96895fd3ed8fee2ad27025a63" aria-controls="R-subsections-55ceb2e96895fd3ed8fee2ad27025a63"><label for="R-section-55ceb2e96895fd3ed8fee2ad27025a63"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu analyser</span></label><a class="padding default-animation" href="/docs/data_scientist/index.html">analyser<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-55ceb2e96895fd3ed8fee2ad27025a63" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/data_scientist/page1/index.html"><a class="padding" href="/docs/data_scientist/page1/index.html">somme et moyenne sur Excel<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page2/index.html"><a class="padding" href="/docs/data_scientist/page2/index.html">tracé d&#39;un histogramme<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page3/index.html"><a class="padding" href="/docs/data_scientist/page3/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page30/index.html"><a class="padding" href="/docs/data_scientist/page30/index.html">matchs OM Nice<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page4/index.html"><a class="padding" href="/docs/data_scientist/page4/index.html">enquete police<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page41/index.html"><a class="padding" href="/docs/data_scientist/page41/index.html">Synthèse des résultats du TP police<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page5/index.html"><a class="padding" href="/docs/data_scientist/page5/index.html">tableur pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page6/index.html"><a class="padding" href="/docs/data_scientist/page6/index.html">Informatique et données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page7/index.html"><a class="padding" href="/docs/data_scientist/page7/index.html">Projet analyse des données de sondage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/page9/index.html"><a class="padding" href="/docs/data_scientist/page9/index.html">data.gouv maires de France<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/data_scientist/tableur_ti/index.html"><a class="padding" href="/docs/data_scientist/tableur_ti/index.html">tableur sur calcu TI83<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/programmer/index.html"><input type="checkbox" id="R-section-1523b50fb05f5ad7f8d679cc9a89f4a3" aria-controls="R-subsections-1523b50fb05f5ad7f8d679cc9a89f4a3"><label for="R-section-1523b50fb05f5ad7f8d679cc9a89f4a3"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu programmer</span></label><a class="padding default-animation" href="/docs/programmer/index.html">programmer<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-1523b50fb05f5ad7f8d679cc9a89f4a3" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/programmer/python7/index.html"><a class="padding" href="/docs/programmer/python7/index.html">de scratch à python<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/techno/index.html"><input type="checkbox" id="R-section-966d082c46a284123a002bf416ac9c21" aria-controls="R-subsections-966d082c46a284123a002bf416ac9c21" checked><label for="R-section-966d082c46a284123a002bf416ac9c21"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu technologies</span></label><a class="padding default-animation" href="/techno/index.html">technologies<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-966d082c46a284123a002bf416ac9c21" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/ti/index.html"><input type="checkbox" id="R-section-da9019d1fee978edb6bfe441b13ca948" aria-controls="R-subsections-da9019d1fee978edb6bfe441b13ca948"><label for="R-section-da9019d1fee978edb6bfe441b13ca948"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Texas instruments</span></label><a class="padding default-animation" href="/techno/ti/index.html">Texas instruments<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-da9019d1fee978edb6bfe441b13ca948" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/ti/ti_prisenmain/index.html"><a class="padding" href="/techno/ti/ti_prisenmain/index.html">Ti83 prise en main<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_prisenmain_mb/index.html"><a class="padding" href="/techno/ti/ti_prisenmain_mb/index.html">Ti83 et mise a niveau microbit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_microbit/index.html"><a class="padding" href="/techno/ti/ti_microbit/index.html">Ti83 microbit prise en main<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/ti/ti_mariotte/index.html"><a class="padding" href="/techno/ti/ti_mariotte/index.html">Loi de Mariotte<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/techno/mb/index.html"><input type="checkbox" id="R-section-5c8ef4dcbda600e0aab5410f90c15f1e" aria-controls="R-subsections-5c8ef4dcbda600e0aab5410f90c15f1e" checked><label for="R-section-5c8ef4dcbda600e0aab5410f90c15f1e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Microbit</span></label><a class="padding default-animation" href="/techno/mb/index.html">Microbit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5c8ef4dcbda600e0aab5410f90c15f1e" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/mb/mb_init/index.html"><a class="padding" href="/techno/mb/mb_init/index.html">informatique des objets<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_integ/index.html"><a class="padding" href="/techno/mb/mb_integ/index.html">capteurs integres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_bulles/index.html"><a class="padding" href="/techno/mb/mb_bulles/index.html">niveau a bulles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_grove/index.html"><a class="padding" href="/techno/mb/mb_grove/index.html">MB grove<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_led/index.html"><a class="padding" href="/techno/mb/mb_led/index.html">MB LED clignotante<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_ctn/index.html"><a class="padding" href="/techno/mb/mb_ctn/index.html">MB diviseur de tension<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_lumi/index.html"><a class="padding" href="/techno/mb/mb_lumi/index.html">Capteur lumiere<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_sons/index.html"><a class="padding" href="/techno/mb/mb_sons/index.html">MB sons<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_c/index.html"><a class="padding" href="/techno/mb/mb_c/index.html">mesure de c du son<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_portes/index.html"><a class="padding" href="/techno/mb/mb_portes/index.html">portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_mariotte/index.html"><a class="padding" href="/techno/mb/mb_mariotte/index.html">loi de Mariotte<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/techno/mb/mb_radio/index.html"><a class="padding" href="/techno/mb/mb_radio/index.html">reseau radio SNT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio2/index.html"><a class="padding" href="/techno/mb/mb_radio2/index.html">reseau radio 1ere<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio3/index.html"><a class="padding" href="/techno/mb/mb_radio3/index.html">reseau radio term<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/techno/mb/mb_radio5/index.html"><a class="padding" href="/techno/mb/mb_radio5/index.html">Chiffrement<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
+            <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782836328"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782836328" defer></script>
+    <script src="/js/theme.js?1782836328" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>
