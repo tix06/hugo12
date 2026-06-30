@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html id="R-html" lang="fr" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.163.2">
+    <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
+    <meta name="description" content="machines et architecture reseau, liaisons entre machines, adresses MAC et adresses IP">
+    <meta name="author" content="Etixi">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="reseau local et reseau internet :: allopizza">
+    <meta name="twitter:description" content="machines et architecture reseau, liaisons entre machines, adresses MAC et adresses IP">
+    <meta property="og:url" content="//localhost:1313/snt/internet/page2/index.html">
+    <meta property="og:site_name" content="allopizza">
+    <meta property="og:title" content="reseau local et reseau internet :: allopizza">
+    <meta property="og:description" content="machines et architecture reseau, liaisons entre machines, adresses MAC et adresses IP">
+    <meta property="og:locale" content="fr">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="SNT">
+    <meta itemprop="name" content="reseau local et reseau internet :: allopizza">
+    <meta itemprop="description" content="machines et architecture reseau, liaisons entre machines, adresses MAC et adresses IP">
+    <meta itemprop="wordCount" content="1753">
+    <title>reseau local et reseau internet :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1782811838" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1782811838" defer></script>
+    <script src="/js/search-lunr.js?1782811838" defer></script>
+    <script src="/js/search.js?1782811838" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.index_js_url="/searchindex.en.js?1782811838";
+    </script>
+    <script src="/js/lunr/lunr.min.js?1782811838" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1782811838" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1782811838" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1782811838" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      window.relearn.contentLangs=['fr'];
+    </script>
+    <link href="/fonts/fontawesome/css/all.min.css?1782811838" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1782811838" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1782811838" rel="stylesheet">
+    <link href="/css/theme.css?1782811838" rel="stylesheet">
+    <link href="/css/format-html.css?1782811838" rel="stylesheet" id="R-format-style">
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/snt\/internet\/page2\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/localhost:1313';
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // translations
+      window.T_Copy_to_clipboard = `Copier le texte dans le presse-papiers`;
+      window.T_Copied_to_clipboard = `Texte copié dans le presse-papiers!`;
+      window.T_Link_copied_to_clipboard = `Lien copié dans le presse-papiers!`;
+      window.T_Reset_view = `Réinitialiser la vue`;
+      window.T_View_reset = `Vue réinitialisée!`;
+      window.T_No_results_found = `Aucun résultat trouvé pour "{0}"`;
+      window.T_N_results_found = `{1} résultats trouvés pour "{0}"`;
+      window.T_Browser_unsupported_feature = `Ce navigateur ne prend pas en charge cette fonctionnalité`;
+      // variant stuff
+      window.relearn.themevariants = [ 'auto', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantprefix = "my-custom-";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.localStorage.getItem(window.relearn.absBaseUri + "/variant") ?? "";
+        if( !variant ||
+            (!variant.startsWith(window.relearn.customvariantprefix) && !window.relearn.themevariants.includes(variant)) ||
+            (variant.startsWith(window.relearn.customvariantprefix) && !window.localStorage.getItem(window.relearn.absBaseUri + "/variantstylesheet-" + variant)) ){
+          variant = window.relearn.themevariants[0];
+          window.localStorage.setItem(window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+    </script>
+  </head>
+  <body class="mobile-support html" data-origin="/snt/internet/page2/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar" class="default-animation">
+        <div class="topbar-wrapper default-animation">
+          <div class="topbar-sidebar-divider default-animation"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar default-animation" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button></span>
+            </div>
+            <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#reseau-dordinateurs">Reseau d&rsquo;ordinateurs</a>
+      <ul>
+        <li><a href="#quest-ce-quun-système-informatique-">Qu&rsquo;est ce qu&rsquo;un système informatique ?</a></li>
+        <li><a href="#des-services-diversifiés">des services diversifiés</a></li>
+        <li><a href="#le-commutateur-switch-et-le-routeur">Le commutateur (switch) et le routeur</a></li>
+      </ul>
+    </li>
+    <li><a href="#différences-entre-reseau-local-et-reseau-internet">Différences entre reseau local et reseau internet</a>
+      <ul>
+        <li><a href="#reseau-local-systeme-réparti">Reseau local: Systeme <em>réparti</em></a></li>
+        <li><a href="#reseau-internet-un-système-distribué">Reseau internet: un système <em>distribué</em></a></li>
+      </ul>
+    </li>
+    <li><a href="#définitions">Définitions</a>
+      <ul>
+        <li><a href="#caractéristiques-physiques--canal-de-transmission">Caractéristiques physiques : canal de transmission:</a>
+          <ul>
+            <li><a href="#1-reseau-local">1. reseau local</a></li>
+            <li><a href="#2-reseau-internet">2. reseau internet</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#adressage-dans-un-reseau-local-mac">adressage dans un reseau local: MAC</a></li>
+    <li><a href="#adressage-ip">adressage IP</a>
+      <ul>
+        <li><a href="#ipv4"><strong>IPv4</strong></a></li>
+        <li><a href="#ipv6"><strong>IPv6</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#dns-ip-et-url">DNS, IP et URL</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/snt/index.html"><span itemprop="name">SNT</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/snt/internet/index.html"><span itemprop="name">internet</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">reseau local et reseau internet</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/SNT/internet/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/snt/internet/page1/index.html" title="généralités (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><a href="/snt/internet/page3/index.html" title="circulation des données (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+            </div>
+            <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
+<span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable snt" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="reseau-local-et-reseau-internet">reseau local et reseau internet</h1>
+
+
+<figure >
+    <a href="https://youtu.be/9UMvyfT4V_Y?si=Zmow35HcXlXAGxRS">
+        <img src="../images/video_internet_2.png"
+        
+        alt="Comment fonctionne internet - Youtube" />
+    </a>
+    
+    <figcaption>
+        
+        <p>
+            Comment fonctionne internet - Youtube
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h1 id="faire-communiquer-des-ordinateurs">Faire communiquer des ordinateurs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une première idée naïve : tout usage du numérique met des machines en connexion, et qui échangent des données.</p>
+<p>
+<figure >
+    
+        <img src="../images/reseau1.png"
+        
+        alt="communication avec 2 ordinateurs" />
+    
+    
+    <figcaption>
+        
+        <p>
+            communication avec 2 ordinateurs
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+Ce modèle <em>simpliste</em> de réseau va devenir irréalisable lorsque celui-ci contiendra de nombreux ordinateurs :</p>
+<ul>
+<li>grand nombre de connexions (et de liaisons physiques) au départ de chaque ordinateur</li>
+<li>grand nombre de ports utilisés</li>
+</ul>
+<p><em>Internet</em> ne constitue pas un graphe <em>complet</em>, c&rsquo;est à dire un reseau dans lequel chaque machine est directement connectée à une autre.</p>
+<p>Il faudra d&rsquo;autres éléments pour connecter les ordinateurs entre eux.</p>
+<h2 id="reseau-dordinateurs">Reseau d&rsquo;ordinateurs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="quest-ce-quun-système-informatique-">Qu&rsquo;est ce qu&rsquo;un système informatique ?<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un système informatique fonctionne sur le modèle <strong>client-serveur</strong> :</p>
+<p>Les parcs informatiques des écoles, universités, et entreprises ont leur activité qui dépend d&rsquo;informations partagées sur leur réseau. (gestion des salles, ressources, identité des étudiants, des clients, les stocks, la comptabilité, les états financiers,&hellip;). En conséquence, une panne informatique ne leur permettrait plus de fonctionner. C&rsquo;est pour cette raison que les ordinateurs doivent être connectés, que ces informations doivent être <em>distribuées</em>; que l&rsquo;information doit être accessible, même si l&rsquo;un des ordinateurs est en panne.</p>
+<blockquote>
+<p>Un système informatique est alors constitué :</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>d&rsquo;une ou plusieurs base(s) de données</li>
+<li>d&rsquo;ordinateurs serveurs qui stockent les bases de données</li>
+<li>d&rsquo;ordinateurs clients : des ordinateurs plus simples, et qui doivent avoir accès aux ressouces.</li>
+</ul>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/LAN.png"
+        
+        alt="LAN" />
+    
+    
+    <figcaption>
+        
+        <p>
+            local area network (LAN)
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h3 id="des-services-diversifiés">des services diversifiés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un réseau d&rsquo;ordinateurs peut aussi servir à fournir des services de communication :</p>
+<ul>
+<li>courrier électronique</li>
+<li>outils de collaboration (redaction à plusieurs)</li>
+<li>visioconférence</li>
+<li>la conclusion d&rsquo;affaires par voie électronique, commandes en temps réel</li>
+<li>logiciel partagé</li>
+</ul>
+<p>C&rsquo;est l&rsquo;utilisation d&rsquo;un serveur partagé dans le réseau qui permet d&rsquo;acceder à ces services.</p>
+<p>Certains de ces services peuvent aussi être fournis par un serveur sur un réseau externe, accessible depuis internet. C&rsquo;est ce que l&rsquo;on appelle <strong>le cloud</strong> : <em>la livraison de ressources et de services à la demande par internet.</em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>Un réseau d&rsquo;ordinateur peut aussi servir à partager du matériel (une imprimante), ou une connexion internet (le routeur). (voir note en bas de page sur la configuration d&rsquo;un reseau local<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>)</p>
+<h3 id="le-commutateur-switch-et-le-routeur">Le commutateur (switch) et le routeur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Les appareils ne sont pas forcément connectés directement, mais peuvent l&rsquo;être au moyen d&rsquo;un <em>switch</em>. (concentre les liaisons et possède une table de routage avec les adresses mac des ordinateurs reliés).</p>
+<p>les switchs (commutateurs) peuvent lire les adresses matérielles des paquets entrants afin de les transmettre à la destination appropriée.</p>
+<p>Les réseaux sont alors reliés entre eux par un <em>routeur</em></p>
+<p>
+<figure >
+    
+        <img src="../images/reseau3.png"
+        
+        alt="réseau d" />
+    
+    
+    <figcaption>
+        
+        <p>
+            réseaux d&#39;ordinateurs
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<em>Sur cette image, plusieurs sous-reseaux sont reliés par des routeurs. Par contre, l&rsquo;appareil qui interconnecte les machines dans un même sous-reseau est un switch</em>.</p>
+<p>le <strong>routeur</strong> est l&rsquo;appareil disposant plusieurs adresses IP, une adresse par interface (voir plus loin). Il fait office de passerelle entre les périphériques sur un réseau local (LAN) et Internet. Dans un réseau de réseaux, cette machine doit posséder plusieurs interfaces (plusieurs cartes réseau), chacune reliée à un réseau. Son rôle va être d&rsquo;aiguiller les paquets reçus entre les différents réseaux.</p>
+
+<figure >
+    
+        <img src="../images/routeur_interface.png"
+        
+        alt="Un routeur possède plusieurs interfaces" />
+    
+    
+    <figcaption>
+        
+        <p>
+            Un routeur possède plusieurs interfaces
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<h2 id="différences-entre-reseau-local-et-reseau-internet">Différences entre reseau local et reseau internet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="reseau-local-systeme-réparti">Reseau local: Systeme <em>réparti</em><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Un système réparti permet de partager des ressources, données et logiciels.</p>
+<p>Avec un réseau local d&rsquo;ordinateurs, qui peut constituer un système réparti, l&rsquo;utilisateur se trouve devant la réalité des machines et leurs caractéristiques diverses, la varieté des équipements, et de leur système d&rsquo;exploitation; pour executer un programme sur une machine distante, l&rsquo;usager doit ouvrir une session. La maitenance d&rsquo;un reseau local demande une bonne connaissance de tous ces matériels.</p>
+<p>Et si l&rsquo;un des ordinateurs tombe en panne, les autres ordinateurs risquent de s&rsquo;en apercevoir (base de donnée inaccessible, etc&hellip;).</p>
+<p><strong>Définition:</strong> Un système réparti est un système qui vous empêche de travailler quand une machine dont vous n’avez jamais entendu parler tombe en panne.</p>
+<p>Des exemples de systèmes répartis: un centre de documentation, bibliothèque, reseau de lycée, contrôle et organisation d&rsquo;activité en temps réél,&hellip;</p>
+<p><em>Pour approfondir :</em>  (Wikihow) comment configurer son réseau local ? <sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<h3 id="reseau-internet-un-système-distribué">Reseau internet: un système <em>distribué</em><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Lorsque l&rsquo;on utilise internet, on ne voit plus cette variété d&rsquo;équipement.</p>
+<p>le système distribué est un ensemble d&rsquo;ordinateurs indépendants, présenté à l&rsquo;utilisateur comme un système unique cohérent. Souvent une couche logicielle intermédiaire appelée middleware située au dessus du système d&rsquo;exploitation est responsable de son implémentation.</p>
+<p>Un exemple est le <strong><a href="https://fr.wikipedia.org/wiki/World_Wide_Web" rel="external">web</a></strong> dans lequel toute information apparait comme un document. C&rsquo;est donc un logiciel élaboré au dessus du réseau, qui nous fait oublier la variété des supports utilisés pour transmettre les données (Serveur, Adsl, Box, wifi, bluetooth&hellip;).</p>
+<h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<blockquote>
+<p>Un <strong>système distribué</strong>: C&rsquo;est un ensemble d’ordinateurs indépendants qui apparaît à un utilisateur comme un système unique et cohérent</p>
+</blockquote>
+<blockquote>
+<p><strong>Internet</strong> n&rsquo;est pas un réseau d&rsquo;ordinateurs. C&rsquo;est un réseau de réseaux.</p>
+</blockquote>
+<blockquote>
+<p><strong>Le web</strong>, c&rsquo;est un système distribué opérant au-dessus d&rsquo;internet.</p>
+</blockquote>
+<h3 id="caractéristiques-physiques--canal-de-transmission">Caractéristiques physiques : canal de transmission:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h4 id="1-reseau-local">1. reseau local<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>Deux critères permettent de les caractériser : la technologie de transmission utilisée, et leur taille.</p>
+<p>Dans un reseau local, les <strong>supports de transmission</strong> des données peuvent être :</p>
+<ul>
+<li>cable ethernet</li>
+<li>wifi (ondes EM)</li>
+<li>bluetooth (ondes EM à courte portée)</li>
+</ul>
+<h4 id="2-reseau-internet">2. reseau internet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<p>Une fois sorties du reseau local, les transmissions peuvent se faire par:</p>
+<ul>
+<li>fibre optique (<a href="https://fr.wikipedia.org/wiki/ADSL" rel="external">Adsl</a>)</li>
+<li>ligne de type telephonique (<a href="https://fr.wikipedia.org/wiki/ADSL" rel="external">Adsl</a>)</li>
+<li>reseau de telephonie mobile (4G, 5G)</li>
+</ul>
+<p><em>Remarque:</em> L&rsquo;utilisation d&rsquo;internet demande un <em>abonnement</em> à un FAI.</p>
+<h1 id="adressage-des-machines">Adressage des machines.<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="adressage-dans-un-reseau-local-mac">adressage dans un reseau local: MAC<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>une adresse <strong>MAC</strong> (Media Access Control), appelée également adresse Ethernet, est l&rsquo;adresse physique d&rsquo;une interface (carte réseau, wifi, &hellip;). Chaque adresse MAC est normalement unique au monde et fournie par le fabricant de l&rsquo;interface.</p>
+<p>Cette adresse est constituée de 6 octets, soit 12 caractères hexadécimaux, comme par exemple:</p>
+$$01:b8:43:c4:85:a3$$<p>Un ordinateur qui reçoit un message par l&rsquo;une de ses interface, va lire si l&rsquo;adresse MAC est bien la sienne. Sinon, c&rsquo;est que le message ne lui est pas destiné: il détruit alors le message.</p>
+<p>Dans un reseau local où les machines sont interconnectées via un switch: Pour envoyer la trame vers la bonne machine, le switch se sert de l&rsquo;adresse MAC destination contenue dans l&rsquo;en-tête de la trame.
+Il contient en fait une table qui fait l&rsquo;association entre un port du switch (une prise RJ45 femelle) et une adresse MAC. Cette table est appelée la table CAM.</p>
+<h2 id="adressage-ip">adressage IP<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>une adresse IP est un identifiant numérique unique attribué à chaque appareil (appareils mobiles, ordinateurs, routeurs, imprimantes, consoles de jeux, etc.) connecté à un réseau TCP / IP comme Internet. Plus précisemment, <strong>c&rsquo;est l&rsquo;identifiant de la <em>carte reseau</em>,</strong> reelle ou virtuelle.
+Chaque dispositif peut se connecter grâce à cette adresse IP à d’autres périphériques et partager des informations. Il s&rsquo;agit du Protocole Internet (IP).</p>
+<blockquote>
+<p>Question: Est-il possible de connaître l&rsquo;emplacement de mon ordinateur (smartphone, &hellip;) en connaissant son adresse IP?</p>
+</blockquote>
+<p>En principe, non, pas exactement, car mon dispositif possède une adresse IP privée&hellip; Il existe 2 types d&rsquo;adresses IP:</p>
+<ul>
+<li>
+<p>Adresse IP privée: 2 machines peuvent avoir la même adresse privée à condition qu&rsquo;elles soient sur 2 reseaux privés distincts. Pour une machine dotée d&rsquo;une adresse privée qui doit accéder à internet, une traduction de son adresse privée en adresse publique est nécessaire. C&rsquo;est le mécanisme NAT (Network Adress Translation) qui assure cette fonction. Ce mécanisme de traduction d&rsquo;adresse réseau se fait par la <em>passerelle</em>, qui se situe à l&rsquo;<em>interface entre les réseaux</em> privés et les réseaux publics. Elle est aussi nommée routeur (gateway). Une passerelle possède au moins 2 interfaces reseau.</p>
+</li>
+<li>
+<p>adresse IP publique: adresse attribuée aux machines connectées sur Internet. Ce sont les FAI qui sont autorisés à affecter des adresses publiques. Ces adresses sont uniques au niveau mondial. L&rsquo;essor constant d&rsquo;internet au niveau mondial fait que l&rsquo;on migre progressivement de la norme IPv4 vers IPv6. Ce sont deux protocoles réseau de la couche 3 du modèle OSI (Open Systems Interconnection).</p>
+</li>
+</ul>
+<h3 id="ipv4"><strong>IPv4</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ces adresses IP constituées de <strong>4 nombres</strong> sont les plus répandues à l&rsquo;heure actuelle, on les appelle IPv4.</p>
+<p><em>Un exemple d&rsquo;adresse IPV4: (exprimée par 4 nombres decimaux 0-255)</em></p>
+$$192.168.0.10$$<p>Bien que codés sur 32 bits (4 octets), leur nombre se révèle assez limité : il n&rsquo;y a en effet &ldquo;que&rdquo; </p>
+$$256×256×256×256$$<p>
+possibilités d&rsquo;IP, soit </p>
+$$256^4=4\phantom*294\phantom*967\phantom*296$$<p>
+(plus de 4 milliards). Ce nombre a l&rsquo;air grand, mais on finira prochainement par l&rsquo;atteindre avec la multiplication des ordinateurs et des serveurs reliés à Internet.
+C&rsquo;est pourquoi ces IP ont vocation à être remplacées par un nouveau système : IPv6 (8 groupes de 2 octets)</p>
+<h3 id="ipv6"><strong>IPv6</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Ce sont des adresses IP codées sur 128 bits, soit 16 octets, ou 32 caractères hexadecimaux.</p>
+<p>La nouvelle forme d&rsquo;IP, que l&rsquo;on va rencontrer de plus en plus, a la forme suivante : (exemple)</p>
+$$1703:01b8:43c4:85a3:0000:0000:a213:bba7$$<p>Leur nombre est d&rsquo;environ 10^29 fois plus important que pour les adresses IPv4.</p>
+<h2 id="dns-ip-et-url">DNS, IP et URL<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Lorsque l&rsquo;on demande un service sur internet, on ne saisit pas <code>http://adresse IP</code> mais <code>http://URL de la page</code> depuis la barre du navigateur. Il y a alors plusieurs étapes avant d&rsquo;obtenir une ressource du serveur:</p>
+<ol>
+<li>Le navigateur demande l&rsquo;adresse IP correspondant au domaine mentionné dans l&rsquo;URL. Il demande ce service à un serveur DNS.</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/DNS.png"
+        
+        alt="DNS" />
+    
+    
+    <figcaption>
+        
+        <p>
+            le DNS: un enorme repertoire contenant les adr IP
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<ol start="2">
+<li>Le navigateur se présente alors au serveur, qu&rsquo;il arrive à joindre grace à son adresse IP.</li>
+<li>Une fois la connection établie, le navigateur envoie sa requête, qui est souvent la demande d&rsquo;une page internet.</li>
+<li>Le serveur lui repond en lui envoyant la ressource demandée.</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/http.gif"
+        
+        alt="protocole HTTP" />
+    
+    
+    <figcaption>
+        
+        <p>
+            modèle client-serveur
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+<blockquote>
+<p>En pratique, la ressource n&rsquo;est pas envoyée en entier par le serveur, mais par petits morceaux. Cela rend l&rsquo;utilisation d&rsquo;internet plus efficace. (voir aussi le cours sur<a href="/docs/SNT_2nde/pages/page3/modele_OSI/"> 
+            le modele OSI et le protocole TCP
+        </a> )</p>
+</blockquote>
+<p><strong>le protocole IP:</strong> c&rsquo;est lui qui permet de se connecter à un autre ordinateur. Il gère l&rsquo;adressage.</p>
+<p><strong>le protocole TCP:</strong> permet d&rsquo;envoyer les paquets d&rsquo;un ordinateur vers un autre ordinateur. Il gère le routage et l&rsquo;interconnexion des différents réseaux.</p>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<ul>
+<li>
+<a href="../TP_reseau/index.html"> 
+            TP simulation d&#39;un reseau
+        </a> 
+</li>
+<li>
+<a href="../modele_OSI/"> 
+            Le modèle OSI (concerne la Spé NSI)
+        </a> 
+</li>
+</ul>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Le cloud : désigne le stockage et l’accès aux données par l’intermédiaire d’internet plutôt que via le disque dur d’un ordinateur. Mais aussi des services rendus par des logiciels hébergés <em>côté serveur</em>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>configurer son réseau local (Wikihow) : <a href="https://fr.wikihow.com/configurer-un-r" rel="external">https://fr.wikihow.com/configurer-un-r</a>éseau-local&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Systèmes répartis: Ce sont des systèmes pour lesquels les ordinateurs mis en reseau ont un couplage fort. Des exemples de systèmes répartis: un centre de documentation, bibliothèque, reseau de lycée, contrôle et organisation d&rsquo;activité en temps réél,&hellip;&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Système distribué: Les ordinateurs du reseau ont un couplage faible, et communiquent par echange de messages de manière asynchrone. La difficulté de mise en oeuvre d&rsquo;un algorithme sur un système distribué, est que l&rsquo;on n&rsquo;a pas connaissance de l&rsquo;état global du système (routage sur internet).&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <a id="R-logo" class="R-default direction-row" href="/index.html">
+          <span class="logo-title default-animation">allopizza</span>
+        </a>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Rechercher (CTRL+ALT+f)"><i class="fas fa-fw fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Rechercher</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Rechercher...">
+            <button class="search-clear" type="button" data-search-clear="" title="Recherche claire"><i class="fas fa-fw fa-times" title="Recherche claire"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks default-animation">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols default-animation">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/boucles/page2/index.html"><a class="padding" href="/python_bases/boucles/page2/index.html">listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/fonctions/page2/index.html"><a class="padding" href="/python_bases/fonctions/page2/index.html">fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/es/page54/index.html"><a class="padding" href="/python_bases/es/page54/index.html">lecture - ecriture fichier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/generalites/page4/index.html"><a class="padding" href="/python_bases/generalites/page4/index.html">installation python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/dessiner/page3/index.html"><a class="padding" href="/python_bases/dessiner/page3/index.html">dessiner avec Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/index.html"><input type="checkbox" id="R-section-0b3a53143d6972d24d31d5e5f16f10c9" aria-controls="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9"><label for="R-section-0b3a53143d6972d24d31d5e5f16f10c9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Travaux pratiques</span></label><a class="padding default-animation" href="/python_bases/tp/index.html">Travaux pratiques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0b3a53143d6972d24d31d5e5f16f10c9" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/tp/python1_variables/index.html"><a class="padding" href="/python_bases/tp/python1_variables/index.html">jeu de rôle en console<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_mastermind/index.html"><a class="padding" href="/python_bases/tp/tp_mastermind/index.html">mastermind<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pygame_pong/index.html"><a class="padding" href="/python_bases/tp/pygame_pong/index.html">pygame les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
+            <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page1/index.html"><a class="padding" href="/python_avance/traitement/page1/index.html">graphique avec matplotlib<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page2/index.html"><a class="padding" href="/python_avance/traitement/page2/index.html">regression lineaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page3/index.html"><a class="padding" href="/python_avance/traitement/page3/index.html">sql et python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page31/index.html"><a class="padding" href="/python_avance/traitement/page31/index.html">TP exoplanets.db<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page5/index.html"><a class="padding" href="/python_avance/traitement/page5/index.html">recherche de correlations<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/traitement/page6/index.html"><a class="padding" href="/python_avance/traitement/page6/index.html">kmean et exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page3/index.html"><a class="padding" href="/python_avance/mise_au_point/page3/index.html">modularité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/mise_au_point/page5/index.html"><a class="padding" href="/python_avance/mise_au_point/page5/index.html">mise au point<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/index.html"><input type="checkbox" id="R-section-60184c6a9c5abc3b64778fc64be7621b" aria-controls="R-subsections-60184c6a9c5abc3b64778fc64be7621b"><label for="R-section-60184c6a9c5abc3b64778fc64be7621b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI term</span></label><a class="padding default-animation" href="/nsi/index.html">NSI term<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-60184c6a9c5abc3b64778fc64be7621b" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286"><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page7/index.html"><a class="padding" href="/nsi/algorithmes/page7/index.html">algorithme de Boyer Moore<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/algorithmes/page2/index.html"><a class="padding" href="/nsi/algorithmes/page2/index.html">calculer sur un algorithme<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f"><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page21/index.html"><a class="padding" href="/nsi/structure/page21/index.html">Files et Listes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page5/index.html"><a class="padding" href="/nsi/structure/page5/index.html">graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page65/index.html"><a class="padding" href="/nsi/structure/page65/index.html">algorithmes de parcours d&#39;un graphe<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/structure/page4/index.html"><a class="padding" href="/nsi/structure/page4/index.html">arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/architecture/index.html"><input type="checkbox" id="R-section-f720872034ba83a2e62c051fb3f594c4" aria-controls="R-subsections-f720872034ba83a2e62c051fb3f594c4"><label for="R-section-f720872034ba83a2e62c051fb3f594c4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-f720872034ba83a2e62c051fb3f594c4" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/architecture/page10/index.html"><a class="padding" href="/nsi/architecture/page10/index.html">fichiers<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page2/index.html"><a class="padding" href="/nsi/architecture/page2/index.html">systeme d&#39;exploitation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page3/index.html"><a class="padding" href="/nsi/architecture/page3/index.html">graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page31/index.html"><a class="padding" href="/nsi/architecture/page31/index.html">protocoles de routage<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page6/index.html"><a class="padding" href="/nsi/architecture/page6/index.html">chiffrement symetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/page7/index.html"><a class="padding" href="/nsi/architecture/page7/index.html">chiffrement asymetrique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/architecture/tp_reseau_term/index.html"><a class="padding" href="/nsi/architecture/tp_reseau_term/index.html">TP table de routage<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/bases/index.html"><input type="checkbox" id="R-section-0758d657f7b1d85eef596977f4d5dc17" aria-controls="R-subsections-0758d657f7b1d85eef596977f4d5dc17"><label for="R-section-0758d657f7b1d85eef596977f4d5dc17"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu bases de donnees</span></label><a class="padding default-animation" href="/nsi/bases/index.html">bases de donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0758d657f7b1d85eef596977f4d5dc17" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/bases/page2/index.html"><a class="padding" href="/nsi/bases/page2/index.html">bases de donnees relationnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page7/index.html"><a class="padding" href="/nsi/bases/page7/index.html">langage SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page8/index.html"><a class="padding" href="/nsi/bases/page8/index.html">TP prenoms sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page6/index.html"><a class="padding" href="/nsi/bases/page6/index.html">TP romans sql<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page5/index.html"><a class="padding" href="/nsi/bases/page5/index.html">SQL - python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/bases/page9/index.html"><a class="padding" href="/nsi/bases/page9/index.html">TP base de libreoffice<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/sujets/index.html"><input type="checkbox" id="R-section-147be8dfcb4920c7b44896e67dfd768e" aria-controls="R-subsections-147be8dfcb4920c7b44896e67dfd768e"><label for="R-section-147be8dfcb4920c7b44896e67dfd768e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu sujets bac ecrit</span></label><a class="padding default-animation" href="/nsi/sujets/index.html">sujets bac ecrit<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-147be8dfcb4920c7b44896e67dfd768e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/sujets/page1/index.html"><a class="padding" href="/nsi/sujets/page1/index.html">tableaux et bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page2/index.html"><a class="padding" href="/nsi/sujets/page2/index.html">donnees structurees 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page3/index.html"><a class="padding" href="/nsi/sujets/page3/index.html">donnees structurees 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page12/index.html"><a class="padding" href="/nsi/sujets/page12/index.html">Files<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page4/index.html"><a class="padding" href="/nsi/sujets/page4/index.html">algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page8/index.html"><a class="padding" href="/nsi/sujets/page8/index.html">algo et recursivite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page6/index.html"><a class="padding" href="/nsi/sujets/page6/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page5/index.html"><a class="padding" href="/nsi/sujets/page5/index.html">BDD SQL<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page14/index.html"><a class="padding" href="/nsi/sujets/page14/index.html">securite<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page7/index.html"><a class="padding" href="/nsi/sujets/page7/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page13/index.html"><a class="padding" href="/nsi/sujets/page13/index.html">POO<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page9/index.html"><a class="padding" href="/nsi/sujets/page9/index.html">Graphes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/sujets/page10/index.html"><a class="padding" href="/nsi/sujets/page10/index.html">Arbres<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/ep/index.html"><input type="checkbox" id="R-section-e66e007c99395f42e9133c477dbd9717" aria-controls="R-subsections-e66e007c99395f42e9133c477dbd9717"><label for="R-section-e66e007c99395f42e9133c477dbd9717"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu epreuve pratique</span></label><a class="padding default-animation" href="/nsi/ep/index.html">epreuve pratique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e66e007c99395f42e9133c477dbd9717" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/ep/page11/index.html"><a class="padding" href="/nsi/ep/page11/index.html">algos essentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/tp/index.html"><input type="checkbox" id="R-section-355d85cb488704e3eb8e61894ed8cb5a" aria-controls="R-subsections-355d85cb488704e3eb8e61894ed8cb5a"><label for="R-section-355d85cb488704e3eb8e61894ed8cb5a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu mini-projets</span></label><a class="padding default-animation" href="/nsi/tp/index.html">mini-projets<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-355d85cb488704e3eb8e61894ed8cb5a" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi/tp/page9/index.html"><a class="padding" href="/nsi/tp/page9/index.html">Recherche Exoplanetes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page13/index.html"><a class="padding" href="/nsi/tp/page13/index.html">Courbes de transit<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page10/index.html"><a class="padding" href="/nsi/tp/page10/index.html">dataframes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page4/index.html"><a class="padding" href="/nsi/tp/page4/index.html">projet Dominos<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page5/index.html"><a class="padding" href="/nsi/tp/page5/index.html">Pygame Snake<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page552/index.html"><a class="padding" href="/nsi/tp/page552/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page6/index.html"><a class="padding" href="/nsi/tp/page6/index.html">arts numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi/tp/page11/index.html"><a class="padding" href="/nsi/tp/page11/index.html">ABR applications<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi/go/page1/index.html"><a class="padding" href="/nsi/go/page1/index.html">Grand oral<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/index.html"><input type="checkbox" id="R-section-59272606efade7c1d435e643c3869421" aria-controls="R-subsections-59272606efade7c1d435e643c3869421"><label for="R-section-59272606efade7c1d435e643c3869421"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu NSI prem</span></label><a class="padding default-animation" href="/nsi_1/index.html">NSI prem<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-59272606efade7c1d435e643c3869421" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/index.html"><input type="checkbox" id="R-section-864d258f4ea0bc43a83fc2124590efce" aria-controls="R-subsections-864d258f4ea0bc43a83fc2124590efce"><label for="R-section-864d258f4ea0bc43a83fc2124590efce"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi_1/algo/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-864d258f4ea0bc43a83fc2124590efce" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/algo/page3/index.html"><a class="padding" href="/nsi_1/algo/page3/index.html">algorithmique avancé<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/algo/page1/index.html"><a class="padding" href="/nsi_1/algo/page1/index.html">data analyse<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/architecture/index.html"><input type="checkbox" id="R-section-8633a4c643dd0e2a1000002e8af5c0d2" aria-controls="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2"><label for="R-section-8633a4c643dd0e2a1000002e8af5c0d2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu architecture</span></label><a class="padding default-animation" href="/nsi_1/architecture/index.html">architecture<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-8633a4c643dd0e2a1000002e8af5c0d2" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/index.html"><input type="checkbox" id="R-section-9fbe5d67df64a62ac758baabc5d9604e" aria-controls="R-subsections-9fbe5d67df64a62ac758baabc5d9604e"><label for="R-section-9fbe5d67df64a62ac758baabc5d9604e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux</span></label><a class="padding default-animation" href="/nsi_1/reseaux/index.html">reseaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-9fbe5d67df64a62ac758baabc5d9604e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/reseaux/page1/index.html"><a class="padding" href="/nsi_1/reseaux/page1/index.html">modele OSI<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/page2/index.html"><a class="padding" href="/nsi_1/reseaux/page2/index.html">protocoles<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_reseau/index.html"><a class="padding" href="/nsi_1/reseaux/tp_reseau/index.html">TP simulation d&#39;un réseau<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/page7/index.html"><a class="padding" href="/nsi_1/reseaux/page7/index.html">protocole HTTP<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_get_post/index.html"><a class="padding" href="/nsi_1/reseaux/tp_get_post/index.html">TP GET POST cookies<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/reseaux/tp_requests/index.html"><a class="padding" href="/nsi_1/reseaux/tp_requests/index.html">tuto requests<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm/index.html"><input type="checkbox" id="R-section-15f99a38e8da9087d29dba6087e17184" aria-controls="R-subsections-15f99a38e8da9087d29dba6087e17184"><label for="R-section-15f99a38e8da9087d29dba6087e17184"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM python</span></label><a class="padding default-animation" href="/nsi_1/ihm/index.html">IHM python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-15f99a38e8da9087d29dba6087e17184" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm/page6/index.html"><a class="padding" href="/nsi_1/ihm/page6/index.html">Cours - les bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/turtle1/index.html"><a class="padding" href="/nsi_1/ihm/turtle1/index.html">Editeur Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter1/index.html"><a class="padding" href="/nsi_1/ihm/tkinter1/index.html">Tkinter les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/tkinter2/index.html"><a class="padding" href="/nsi_1/ihm/tkinter2/index.html">Tkinter demineur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygamecours/index.html"><a class="padding" href="/nsi_1/ihm/pygamecours/index.html">IHM python Cours<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame_dict/index.html"><a class="padding" href="/nsi_1/ihm/pygame_dict/index.html">dictionnaires pour inventaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/pygame/index.html"><a class="padding" href="/nsi_1/ihm/pygame/index.html">projet Pygame<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm/img_num1/index.html"><a class="padding" href="/nsi_1/ihm/img_num1/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/index.html"><input type="checkbox" id="R-section-5ce95e96fe7d04f0310506b889996516" aria-controls="R-subsections-5ce95e96fe7d04f0310506b889996516"><label for="R-section-5ce95e96fe7d04f0310506b889996516"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu IHM web</span></label><a class="padding default-animation" href="/nsi_1/ihm_web/index.html">IHM web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-5ce95e96fe7d04f0310506b889996516" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page3/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page3/index.html">HTML<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/css_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/css_page1/index.html">css les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page1/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page1/index.html">les bases en javascript<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/js_page2/index.html"><a class="padding" href="/nsi_1/ihm_web/js_page2/index.html">javascript DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/ihm_web/html_page6/index.html"><a class="padding" href="/nsi_1/ihm_web/html_page6/index.html">serveur Flask<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/nsi_1/tp/index.html"><input type="checkbox" id="R-section-686aee55ca211e686388d2c1b582c83e" aria-controls="R-subsections-686aee55ca211e686388d2c1b582c83e"><label for="R-section-686aee55ca211e686388d2c1b582c83e"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu TP</span></label><a class="padding default-animation" href="/nsi_1/tp/index.html">TP<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-686aee55ca211e686388d2c1b582c83e" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/tp/page9/index.html"><a class="padding" href="/nsi_1/tp/page9/index.html">projet bases en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page55/index.html"><a class="padding" href="/nsi_1/tp/page55/index.html">exos tableaux listes python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/tp/page551/index.html"><a class="padding" href="/nsi_1/tp/page551/index.html">Jeu du Morpion<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="parent " data-nav-id="/snt/index.html"><input type="checkbox" id="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4" aria-controls="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" checked><label for="R-section-d69503e8cf1ccdf38a66c79e9ef00ed4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu SNT</span></label><a class="padding default-animation" href="/snt/index.html">SNT<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d69503e8cf1ccdf38a66c79e9ef00ed4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/index.html"><input type="checkbox" id="R-section-09803e578e8ec627e73ee9df1dba3ba1" aria-controls="R-subsections-09803e578e8ec627e73ee9df1dba3ba1"><label for="R-section-09803e578e8ec627e73ee9df1dba3ba1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees structurees</span></label><a class="padding default-animation" href="/snt/donnees/index.html">donnees structurees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-09803e578e8ec627e73ee9df1dba3ba1" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/donnees/page1/index.html"><a class="padding" href="/snt/donnees/page1/index.html">codage des nombres<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/web/index.html"><input type="checkbox" id="R-section-0e208a64729005a439f5bfa6f6e6e404" aria-controls="R-subsections-0e208a64729005a439f5bfa6f6e6e404"><label for="R-section-0e208a64729005a439f5bfa6f6e6e404"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Le web</span></label><a class="padding default-animation" href="/snt/web/index.html">Le web<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0e208a64729005a439f5bfa6f6e6e404" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/web/web1/index.html"><a class="padding" href="/snt/web/web1/index.html">HTML CSS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/web5/index.html"><a class="padding" href="/snt/web/web5/index.html">introduction à CSS<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/web3/index.html"><a class="padding" href="/snt/web/web3/index.html">javascript processing P5<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/web/index.html"><a class="padding" href="/snt/web/web/index.html">le web<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/web0/index.html"><a class="padding" href="/snt/web/web0/index.html">modele client serveur<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/web/web4/index.html"><a class="padding" href="/snt/web/web4/index.html">TP evalue le CV<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="parent " data-nav-id="/snt/internet/index.html"><input type="checkbox" id="R-section-0a4fd8094af173d46409c88602d33e05" aria-controls="R-subsections-0a4fd8094af173d46409c88602d33e05" checked><label for="R-section-0a4fd8094af173d46409c88602d33e05"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu internet</span></label><a class="padding default-animation" href="/snt/internet/index.html">internet<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0a4fd8094af173d46409c88602d33e05" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/internet/page1/index.html"><a class="padding" href="/snt/internet/page1/index.html">généralités<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/snt/internet/page2/index.html"><a class="padding" href="/snt/internet/page2/index.html">reseau local et reseau internet<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/page3/index.html"><a class="padding" href="/snt/internet/page3/index.html">circulation des données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/internet/tp_reseau/index.html"><a class="padding" href="/snt/internet/tp_reseau/index.html">TP simulation d&#39;un réseau<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/robotique/index.html"><input type="checkbox" id="R-section-208ab0e974a19a4c45b9a6a40fbedcd4" aria-controls="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4"><label for="R-section-208ab0e974a19a4c45b9a6a40fbedcd4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu informatique embarquée</span></label><a class="padding default-animation" href="/snt/robotique/index.html">informatique embarquée<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-208ab0e974a19a4c45b9a6a40fbedcd4" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/robotique/page1/index.html"><a class="padding" href="/snt/robotique/page1/index.html">IOT<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page4/index.html"><a class="padding" href="/snt/robotique/page4/index.html">Programme informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/robotique/page5/index.html"><a class="padding" href="/snt/robotique/page5/index.html">Python Turtle<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/img_num/index.html"><input type="checkbox" id="R-section-40f85ba153e0e4340fbde2302a463673" aria-controls="R-subsections-40f85ba153e0e4340fbde2302a463673"><label for="R-section-40f85ba153e0e4340fbde2302a463673"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu images numeriques</span></label><a class="padding default-animation" href="/snt/img_num/index.html">images numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-40f85ba153e0e4340fbde2302a463673" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/img_num/page7/index.html"><a class="padding" href="/snt/img_num/page7/index.html">Photographie numérique<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page2/index.html"><a class="padding" href="/snt/img_num/page2/index.html">Enjeux ethiques et societaux de l&#39;image<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page5/index.html"><a class="padding" href="/snt/img_num/page5/index.html">EXIF et données colorimetriques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/img_num/page3/index.html"><a class="padding" href="/snt/img_num/page3/index.html">TP pixel art<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/snt/localisation/index.html"><input type="checkbox" id="R-section-e7c35689adb9fe065b5057ce434cfa37" aria-controls="R-subsections-e7c35689adb9fe065b5057ce434cfa37"><label for="R-section-e7c35689adb9fe065b5057ce434cfa37"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu localisation</span></label><a class="padding default-animation" href="/snt/localisation/index.html">localisation<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e7c35689adb9fe065b5057ce434cfa37" class="collapsible-menu">
+            <li class="" data-nav-id="/snt/localisation/page1/index.html"><a class="padding" href="/snt/localisation/page1/index.html">GPS services<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page2/index.html"><a class="padding" href="/snt/localisation/page2/index.html">geolocaliser<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/localisation/page3/index.html"><a class="padding" href="/snt/localisation/page3/index.html">introduction aux graphes et internet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+            <li class="" data-nav-id="/docs/index.html"><input type="checkbox" id="R-section-b5fa667da3c6d162416dac7e8c63bf8a" aria-controls="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a"><label for="R-section-b5fa667da3c6d162416dac7e8c63bf8a"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu competences numeriques</span></label><a class="padding default-animation" href="/docs/index.html">competences numeriques<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b5fa667da3c6d162416dac7e8c63bf8a" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/rediger/index.html"><input type="checkbox" id="R-section-585205baf223d24ff9470bbb2a380be9" aria-controls="R-subsections-585205baf223d24ff9470bbb2a380be9"><label for="R-section-585205baf223d24ff9470bbb2a380be9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu rediger</span></label><a class="padding default-animation" href="/docs/rediger/index.html">rediger<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-585205baf223d24ff9470bbb2a380be9" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/rediger/page4/index.html"><a class="padding" href="/docs/rediger/page4/index.html">recherche RGPD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page6/index.html"><a class="padding" href="/docs/rediger/page6/index.html">histoire informatique et reseaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page7/index.html"><a class="padding" href="/docs/rediger/page7/index.html">Mettre en forme RGPD<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page1/index.html"><a class="padding" href="/docs/rediger/page1/index.html">guide style<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page3/index.html"><a class="padding" href="/docs/rediger/page3/index.html">Utiliser Writer<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page31/index.html"><a class="padding" href="/docs/rediger/page31/index.html">Writer et Word<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/rediger/page9/index.html"><a class="padding" href="/docs/rediger/page9/index.html">moteurs de recherche<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/publier/index.html"><input type="checkbox" id="R-section-478e1538def6137ee6a5132245d49679" aria-controls="R-subsections-478e1538def6137ee6a5132245d49679"><label for="R-section-478e1538def6137ee6a5132245d49679"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu publier</span></label><a class="padding default-animation" href="/docs/publier/index.html">publier<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-478e1538def6137ee6a5132245d49679" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/publier/page4/index.html"><a class="padding" href="/docs/publier/page4/index.html">classif vivant<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page5/index.html"><a class="padding" href="/docs/publier/page5/index.html">Les plastiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page50/index.html"><a class="padding" href="/docs/publier/page50/index.html">La démocratie athenienne<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page8/index.html"><a class="padding" href="/docs/publier/page8/index.html">La bataille de Marignan<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page51/index.html"><a class="padding" href="/docs/publier/page51/index.html">mon film prefere v1<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page52/index.html"><a class="padding" href="/docs/publier/page52/index.html">mon film prefere v2<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/publier/page1/index.html"><a class="padding" href="/docs/publier/page1/index.html">questionnaire<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/tableur/index.html"><input type="checkbox" id="R-section-0aae2561850e970b2527d68c334f7c0c" aria-controls="R-subsections-0aae2561850e970b2527d68c334f7c0c"><label for="R-section-0aae2561850e970b2527d68c334f7c0c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu utiliser un tableur</span></label><a class="padding default-animation" href="/docs/tableur/index.html">utiliser un tableur<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-0aae2561850e970b2527d68c334f7c0c" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/tableur/page1/index.html"><a class="padding" href="/docs/tableur/page1/index.html">tableau de notes<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/tableur/page3/index.html"><a class="padding" href="/docs/tableur/page3/index.html">nobels<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/docs/tableur/page2/index.html"><a class="padding" href="/docs/tableur/page2/index.html">analyse graphique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/docs/images_num/index.html"><input type="checkbox" id="R-section-e327ae7bb879b680d39069590059dfeb" aria-controls="R-subsections-e327ae7bb879b680d39069590059dfeb"><label for="R-section-e327ae7bb879b680d39069590059dfeb"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu dessiner</span></label><a class="padding default-animation" href="/docs/images_num/index.html">dessiner<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-e327ae7bb879b680d39069590059dfeb" class="collapsible-menu">
+            <li class="" data-nav-id="/docs/images_num/page1/index.html"><a class="padding" href="/docs/images_num/page1/index.html">detourer une image<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin" class="default-animation"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding default-animation">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols default-animation">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Thème</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-auto" value="auto" selected>Auto</option>
+                    <option id="R-select-variant-relearn-light" value="relearn-light">Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+            <li class="R-historyclearer">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-history"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <button>Supprimer l&#39;historique</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer" class="default-animation"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script>
+      window.MathJax = Object.assign( window.MathJax || {}, {
+        tex: {
+          inlineMath:  [['\\(', '\\)'], ['$',  '$']],  
+          displayMath: [['\\[', '\\]'], ['$$', '$$']], 
+        },
+        options: {
+          enableMenu: false 
+        }
+      }, JSON.parse("{}") );
+    </script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1782811838"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1782811838" defer></script>
+    <script src="/js/theme.js?1782811838" defer></script>
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+  </body>
+</html>

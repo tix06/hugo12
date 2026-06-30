@@ -1,5 +1,7 @@
 ---
 Title: nobels
+description: selectionner, ordonner, somme avec condition
+weight: 15
 ---
 
 # Statistiques et prix Nobel

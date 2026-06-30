@@ -1,0 +1,280 @@
+﻿---
+Title: projets ete
+---
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets NSI Été - Première</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            /*max-width: 900px;*/
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .intro {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #7f8c8d;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        .project-card {
+            background-color: #fff;
+            border-left: 5px solid #3498db;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .project-card.data-project {
+            border-left-color: #27ae60;
+        }
+        .project-card h2 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .data-project h2 {
+            color: #27ae60;
+        }
+        .tech-box {
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+        .tips-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tips-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tips-list li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+        .links-section a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .links-section a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>💻 Projets NSI pour l'Été</h1>
+    <p>Des idées concrètes pour pratiquer Python, HTML et CSS en autonomie</p>
+</header>
+
+<div class="intro">
+    <p><strong>Conseil méthodologique :</strong> Pour tous ces projets, commencez par une version simple qui fonctionne dans la console (texte noir sur blanc). Une fois que la logique est maîtrisée, essayez d'ajouter une interface visuelle (HTML/CSS) ou de sauvegarder les données dans un fichier.</p>
+</div>
+
+<h2 class="section-title">🚀 Les Classiques (Python & Web)</h2>
+
+<!-- PROJET 1: QUIZ -->
+<div class="project-card">
+    <h2>1. Le Générateur de Quiz Interactif</h2>
+    <p><strong>Concept :</strong> Créer un programme qui pose des questions à l'utilisateur, vérifie les réponses et affiche un score final.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - Listes et Dictionnaires (pour stocker questions/réponses).<br>
+        - Boucles <code>for/while</code> et conditions <code>if/else</code>.<br>
+        - Module <code>random</code> pour mélanger les questions.
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li>Commencez par hardcoder 3 questions dans une liste de dictionnaires.</li>
+        <li>Ensuite, essayez de charger les questions depuis un fichier texte ou JSON pour ne pas modifier le code à chaque fois.</li>
+        <li>Pour le web : utilisez Flask (micro-framework) ou générez simplement un fichier HTML avec Python.</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://docs.python.org/fr/3/tutorial/datastructures.html#dictionaries" target="_blank">Les dictionnaires</a>
+        <a href="https://docs.python.org/fr/3/library/random.html" target="_blank">Module Random</a>
+    </div>
+</div>
+
+<!-- PROJET 2: METEO -->
+<div class="project-card">
+    <h2>2. Le Dashboard Météo Personnel</h2>
+    <p><strong>Concept :</strong> Une application qui demande une ville et affiche la température actuelle via une API.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - Bibliothèque <code>requests</code> pour les appels HTTP.<br>
+        - Traitement de JSON (format de données des API).<br>
+        - Gestion des erreurs (ville inconnue, pas de connexion).
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li><a href="https://home.openweathermap.org/users/sign_up">Inscrivez-vous</a> sur OpenWeatherMap pour obtenir une clé API gratuite.</li>
+        <li>Placez la dans un script minimal: <a href="/docs/NSI_1/projets/page2">Tuto</a></li>
+        <li>Faites d'abord fonctionner la requête dans la console : imprimez le JSON brut.</li>
+        <li>Ensuite, extrayez juste la température et affichez-la proprement.</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://openweathermap.org/api" target="_blank">API OpenWeatherMap</a>
+        <!--
+        <a href="https://github.com/csparpa/pyowm" target="_blank">Exemple de code avec pyowm</a>
+        -->
+        <a href="https://docs.python-requests.org/en/latest/" target="_blank">Doc Requests</a>
+    </div>
+</div>
+
+<!-- PROJET 3: BUDGET -->
+<div class="project-card">
+    <h2>3. Le Gestionnaire de Budget Simpliste</h2>
+    <p><strong>Concept :</strong> Un outil pour enregistrer ses dépenses estivales et voir combien il reste d'argent de poche.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - Manipulation de fichiers (lecture/écriture CSV ou TXT).<br>
+        - Module <code>datetime</code> pour gérer les dates.<br>
+        - Calculs simples (sommes, moyennes).
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li>Décidez d'un format de fichier simple (ex: <code>date;montant;categorie</code>).</li>
+        <li>Le programme doit pouvoir : 1. Ajouter une dépense, 2. Lire tout l'historique, 3. Afficher le total.</li>
+        <li>Gérez les erreurs de saisie (que se passe-t-il si on tape "dix" au lieu de "10" ?).</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://docs.python.org/fr/3/tutorial/inputoutput.html#reading-and-writing-files" target="_blank">Gestion des fichiers</a>
+        <a href="https://docs.python.org/fr/3/library/datetime.html" target="_blank">Module Datetime</a>
+    </div>
+</div>
+
+<h2 class="section-title">📊 Analyse de Données (Open Data)</h2>
+<p style="margin-bottom: 20px; font-style: italic;">Note : Pour ces projets, nous n'utilisons pas Pandas. L'objectif est de maîtriser le module standard <code>csv</code>, les dictionnaires et la fonction <code>sorted()</code>.</p>
+
+<!-- PROJET 4: VILLES VERTES -->
+<div class="project-card data-project">
+    <h2>4. Le Classement des Villes Les Plus Vertes</h2>
+    <p><strong>Concept :</strong> Analyser un fichier CSV de données environnementales pour établir un classement des villes.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - <code>csv.DictReader</code> pour lire les données.<br>
+        - <code>sorted(data, key=lambda x: x['indice'])</code> pour le tri.<br>
+        - Conversion des types (string vers float).
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li>Trouvez un jeu de données simple sur <a href="https://www.data.gouv.fr/" target="_blank">data.gouv.fr</a>.</li>
+        <li>Affichez les 5 premières lignes pour identifier les noms des colonnes (clés du dictionnaire).</li>
+        <li>Attention : les nombres lus dans un CSV sont des textes. Pensez à <code>float()</code> avant de trier.</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://docs.python.org/fr/3/library/csv.html" target="_blank">Module CSV</a>
+        <a href="https://www.numerama.com/politique/588884-comment-utiliser-les-donnees-open-data-pour-comprendre-le-monde.html" target="_blank">Intro Open Data</a>
+    </div>
+</div>
+
+<!-- PROJET 5: TOURISME -->
+<div class="project-card data-project">
+    <h2>5. Analyseur de Fréquentation Touristique</h2>
+    <p><strong>Concept :</strong> Traiter les données d'affluence (musées, plages) pour identifier les pics de fréquentation.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - Accumulateurs (dictionnaires) pour compter par mois/jour.<br>
+        - <code>max(dictionnaire, key=dictionnaire.get)</code>.<br>
+        - Manipulation de chaînes (split de dates "JJ/MM/AAAA").
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li>Utilisez les données de <a href="https://opendata.nicecotedazur.org/" target="_blank">Nice Côte d'Azur Open Data</a>.</li>
+        <li>Créez un dictionnaire <code>compteur = {}</code>. Parcourez les données et incrémentez le compteur du mois correspondant.</li>
+        <li>Utilisez <code>try... except</code> pour ignorer les lignes mal formatées sans faire planter le programme.</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://docs.python.org/fr/3/tutorial/datastructures.html#dictionaries" target="_blank">Dictionnaires</a>
+        <a href="https://opendata.nicecotedazur.org/explore/" target="_blank">Catalogue Nice Open Data</a>
+    </div>
+</div>
+
+<!-- PROJET 6: IMMOBILIER -->
+<div class="project-card data-project">
+    <h2>6. Détecteur d'Anomalies de Prix (Immobilier)</h2>
+    <p><strong>Concept :</strong> Charger des ventes immobilières, trier par prix/m² et identifier les valeurs aberrantes.</p>
+    
+    <div class="tech-box">
+        <strong>Outils Python clés :</strong><br>
+        - <code>sorted()</code> avec lambda complexe (prix/surface).<br>
+        - Calculs : <code>prix_m2 = float(prix) / float(surface)</code>.<br>
+        - <code>csv.DictWriter</code> pour exporter les résultats.
+    </div>
+
+    <h3>Conseils pour démarrer :</h3>
+    <ul class="tips-list">
+        <li>Cherchez le fichier "Demande de Valeurs Foncières" (DVF) ou un extrait simplifié.</li>
+        <li>Testez votre code sur les 100 premières lignes seulement au début.</li>
+        <li>Essayez de générer un nouveau CSV contenant uniquement les 10 biens les plus chers au m².</li>
+    </ul>
+
+    <div class="links-section">
+        <p><strong>Pour explorer :</strong></p>
+        <a href="https://www.data.gouv.fr/fr/datasets/demandes-de-valeurs-foncieres-geolocalisees/" target="_blank">Données DVF</a>
+        <a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank">Fonctions Lambda</a>
+    </div>
+</div>
+
+<footer>
+    <p>Généré pour les élèves de Première NSI - Bon codage estival ! ☀️</p>
+</footer>
+
+</body>
+</html>

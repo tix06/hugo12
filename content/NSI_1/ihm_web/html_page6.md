@@ -274,6 +274,10 @@ if __name__ == '__main__':
 
 {{< img src="../images/congratulation.png" >}}
 
+
+# Projets
+* Voir la page [projets](../html_page7)
+
 # Liens
 * TP inspiré de: [https://qkzk.xyz/docs/nsi/cours_premiere/ihm_web/flask/](https://qkzk.xyz/docs/nsi/cours_premiere/ihm_web/flask/)
 * Flask pas à pas: [liris.cnrs dpt bio informatique](https://perso.liris.cnrs.fr/pierre-antoine.champin/2017/progweb-python/cours/cm2.html)

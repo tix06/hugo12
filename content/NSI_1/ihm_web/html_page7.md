@@ -177,7 +177,7 @@ par : `reponse = requete.json`
 **4.** Programmez enfin la vue dont la route est `/definition` afin de servir la page de la definition du mot *bonjour*, à condition que ce soit bien le mot demandé par le formulaire. Retourner *Page introuvable* sinon.
 
 
-
+*Remarque:* d'autres solutions peuvent être envisagées avec la lecture du [TP requests](../../reseaux/TP_requests) du chapitre sur les reseaux.
 
 
 

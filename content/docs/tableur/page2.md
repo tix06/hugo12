@@ -1,9 +1,11 @@
 ---
-Title: graphiques tableur
+Title: analyse graphique
+description: importer un fichier de reponses en format csv, analyse et representations graphiques
+weight: 19
 ---
 
 # Partie 1: Traitement de données avec un tableur
-Lors de la [seance précédente](/docs/competences/Form/page1), vous avez réalisé un questionnaire en ligne. L'interface de [framaforms](https://framaforms.org/abc/fr/) permet de visualiser les réponses, et d'établir des statistiques. 
+Lors de la [seance précédente](../../publier/page1), vous avez réalisé un questionnaire en ligne. L'interface de [framaforms](https://framaforms.org/abc/fr/) permet de visualiser les réponses, et d'établir des statistiques. 
 
 Mais, les réponses étant accessibles dans un format standard, le fichier de données peut également être ouvert avec un logiciel tableur.
 

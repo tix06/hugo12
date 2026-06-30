@@ -1,5 +1,7 @@
 ---
-Title: Utiliser Tableur
+Title: tableau de notes
+description: tableau de notes, formule de calcul, etendre une selection
+weight: 14
 ---
 
 # Tableau de notes
