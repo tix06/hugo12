@@ -3,6 +3,7 @@ Title : graphes et internet
 description: Modéliser le réseau internet, graphes, équipement, adresses IP, tables de routage
 weight: 45
 ---
+
 Ce cours comporte plusieurs pages:
 
 * [cours sur les graphes. Term NSI](../../structure/page5/)

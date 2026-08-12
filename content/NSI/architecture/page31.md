@@ -25,21 +25,23 @@ Ces protocoles doivent eviter les boucles de routage, et corriger les données d
 
 Chaque modification du reseau va entrainer un temps d'echange entre les routeurs, jusqu'à ce que ceux-ci finissent par établir une nouvelle table de routage.
 
+
+**Routages dynamiques**: 
+Les routeurs vont s’adapter à un réseau qui évolue au cours du temps (ajout ou suppression de routes, panne d’un routeur, etc..). Pour cela les routeurs se transmettent des informations pour qu’ils puissent mettre à jour leur table de routage. 
+
 * Voir le cours en detail sur [dlatreyte.github.io](https://dlatreyte.github.io/terminales-nsi/chap-11/5-routage/)
 
-# protocoles de routages dynamiques
-Les routeurs vont s’adapter à un réseau qui évolue au cours du temps (ajout ou suppression de routes, panne d’un routeur, etc..). Pour cela les routeurs se transmettent des informations pour qu’ils puissent mettre à jour leur table de routage. 
 
 ## Activité
 Pour chacune des videos, au cours de leur visionnage, prendre en notes pour repondre aux questions suivantes:
 
 **Le routage à vecteurs de distance**
 
-{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=kzablGaqUXM"  caption="Video (Youtube): Mooc de l'INT (institut des Mines Télécom)" >}}
+{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=kzablGaqUXM"  caption="Video (Youtube): Mooc de l'INT (institut des Mines Télécom)" width=300 >}}
 
 **Les routage à états de liens**
 
-{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=-utHPKREZV8"  caption="Video (Youtube): Mooc de l'INT (institut des Mines Télécom)" >}}
+{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=-utHPKREZV8"  caption="Video (Youtube): Mooc de l'INT (institut des Mines Télécom)" width=300 >}}
 
 
 1. Pour le routage étudié, un routeur connait-il la carte globale du reseau (quel routeur est connecté à tel autre)?
@@ -54,7 +56,7 @@ Pour chacune des videos, au cours de leur visionnage, prendre en notes pour repo
  
 
 ## Routage à vecteur de distance
-{{< img src="../images/routage_RIP.png"  caption="exemple de table de routage à vecteur de distance" >}}
+{{< img src="../images/routage_RIP.png"  caption="exemple de table de routage à vecteur de distance" width=300 >}}
 
 Un *vecteur de distance* est une donnée constituée de *(adresse du reseau, nombre de sauts, gateway)*
 
@@ -81,11 +83,11 @@ Ainsi, les informations vont circuler de proche en proche, très rapidement. Le 
 * Chaque routeur envoie sa table de routage à ses voisins toutes les 30 secondes. 
 * Si une route n’est pas actualisée pendant 180s, elle est supprimée de la table
 
-
+{{< img src="/images/video.png" link="https://youtu.be/Kml-9FOGZH4"  caption="Video (Youtube): simulateur RIPLAY" width=300 >}}
 
 ## Routage à états de liens
 
-{{< img src="../images/routage_OSPF.png"  caption="exemple de table de routage à états de liens" >}}
+{{< img src="../images/routage_OSPF.png"  caption="exemple de table de routage à états de liens" width=300 >}}
 
 **Coût associé au chemin:** homogène à une durée d'acheminement, calculé sur le débit des différentes sections du chemin. Dépend de l'encombrement, état du réseau, ...
 

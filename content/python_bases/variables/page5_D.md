@@ -1,7 +1,7 @@
 +++
 title= "introduction aux variables"
 linkTitle = "pensée algorithmique"
-description = "utiliser des variables pour mémoriser des état, pensée algorithmique"
+description = "utiliser des variables pour mémoriser des états, pensée algorithmique"
 weight = 1
 +++
 

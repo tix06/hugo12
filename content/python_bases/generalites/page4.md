@@ -3,12 +3,30 @@ Title: installation python
 weight: 11
 ---
 
+# Python est-il déjà installé?
+Verifier si Python est installé sur votre ordinateur:
+
+Vous pouvez vérifier cela en ouvrant l'invite de commandes et en tapant:
+
+```
+python --version
+```
+
+* Windows: Télécharger le fichier d'installation depuis le [site officiel](www.python.org) de Python. Lancer l'executable et cocher "Add Python to PATH". Puis cliquer sur *Install now*
+
+* Linux: Python peut être installé et géré via un gestionnaire de paquets comme apt, yum.
+
+* MacOS:  utiliser le gestionnaire de paquets brew. 
+
+L'installation de Python via ces gestionnaires configure souvent automatiquement le PATH. Cependant, une fois l'installation reussie, la commande `python --version` peut renvoyer une erreur. Dans ce cas, il faudra ajouter Python à la variable d'environnement PATH: [datascientist.fr](https://datascientist.fr/blog/tutoriel-python-comment-ajouter-python-a-path)
+
 # Installer un IDE python
 Dans ce tutoriel, vous allez installer un editeur Python et suivre un premier tutoriel. Vous aurez besoin d'un ordinateur, PC, Linux ou mac. 
 
-Choisir l'un des trois IDE python ou distribution python proposés ci dessous:
+Choisir l'un des IDE python ou distribution python proposés ci dessous:
 
 * Thonny
+* Pyzo
 * Anaconda
 * Winpython
 
@@ -22,7 +40,7 @@ L'IDE le plus simple et complet à utiliser sera **Thonny**:
 
 
 
-# Anaconda
+## Anaconda
 
 Installation de la distribution python ANACONDA. Systèmes Windows, Mac OSX, Linux
 
@@ -32,7 +50,7 @@ Page de telechargement sur le site [anaconda.com](https://www.anaconda.com/downl
 
 {{< img src="/images/video.png" link="https://www.youtube.com/watch?v=kkFSuZ4I0BY" caption="Youtube - Installer Anaconda sur Windows Facilement" >}}
 
-# Winpython
+## Winpython
 Distribution uniquement pour le système Windows
 
 Page de telechargement sur [Sourceforge](https://sourceforge.net/projects/winpython/files/)
