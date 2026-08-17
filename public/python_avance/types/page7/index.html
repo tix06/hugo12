@@ -5,51 +5,47 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="Travaux pratiques Au choix:
-Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell python: dans Pyzo ou Spyder par exemple. Opérations avec des nombres Tester les opérations suivantes dans l’editeur Python et répondez aux questions:">
+    <meta name="description" content="corrigé du TD sur int, float, str, bool">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="TP1 calculer en python :: allopizza">
-    <meta name="twitter:description" content="Travaux pratiques Au choix:
-Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell python: dans Pyzo ou Spyder par exemple. Opérations avec des nombres Tester les opérations suivantes dans l’editeur Python et répondez aux questions:">
-    <meta property="og:url" content="//localhost:1313/python_bases/generalites/page5/index.html">
+    <meta name="twitter:title" content="TD - types simples (corrigé) :: allopizza">
+    <meta name="twitter:description" content="corrigé du TD sur int, float, str, bool">
+    <meta property="og:url" content="//localhost:1313/python_avance/types/page7/index.html">
     <meta property="og:site_name" content="allopizza">
-    <meta property="og:title" content="TP1 calculer en python :: allopizza">
-    <meta property="og:description" content="Travaux pratiques Au choix:
-Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell python: dans Pyzo ou Spyder par exemple. Opérations avec des nombres Tester les opérations suivantes dans l’editeur Python et répondez aux questions:">
+    <meta property="og:title" content="TD - types simples (corrigé) :: allopizza">
+    <meta property="og:description" content="corrigé du TD sur int, float, str, bool">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Python - les bases">
-    <meta itemprop="name" content="TP1 calculer en python :: allopizza">
-    <meta itemprop="description" content="Travaux pratiques Au choix:
-Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell python: dans Pyzo ou Spyder par exemple. Opérations avec des nombres Tester les opérations suivantes dans l’editeur Python et répondez aux questions:">
-    <meta itemprop="wordCount" content="619">
-    <title>TP1 calculer en python :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1786988172" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1786988172" defer></script>
-    <script src="/js/search-lunr.js?1786988172" defer></script>
-    <script src="/js/search.js?1786988172" defer></script>
+    <meta property="article:section" content="Python avancé">
+    <meta itemprop="name" content="TD - types simples (corrigé) :: allopizza">
+    <meta itemprop="description" content="corrigé du TD sur int, float, str, bool">
+    <meta itemprop="wordCount" content="521">
+    <title>TD - types simples (corrigé) :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1786988225" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1786988225" defer></script>
+    <script src="/js/search-lunr.js?1786988225" defer></script>
+    <script src="/js/search.js?1786988225" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1786988172";
+      window.relearn.index_js_url="/searchindex.en.js?1786988225";
     </script>
-    <script src="/js/lunr/lunr.min.js?1786988172" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1786988172" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1786988172" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1786988172" defer></script>
+    <script src="/js/lunr/lunr.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1786988225" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1786988172" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1786988172" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1786988172" rel="stylesheet">
-    <link href="/css/theme.css?1786988172" rel="stylesheet">
-    <link href="/css/format-html.css?1786988172" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1786988225" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1786988225" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1786988225" rel="stylesheet">
+    <link href="/css/theme.css?1786988225" rel="stylesheet">
+    <link href="/css/format-html.css?1786988225" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/python_bases\/generalites\/page5\/index.html';
+      window.relearn.path='\/python_avance\/types\/page7\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/\/localhost:1313';
@@ -94,7 +90,7 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
       window.relearn.markVariant();
     </script>
   </head>
-  <body class="mobile-support html" data-origin="/python_bases/generalites/page5/index.html">
+  <body class="mobile-support html" data-origin="/python_avance/types/page7/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar" class="default-animation">
@@ -110,27 +106,27 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#opérations-avec-des-nombres">Opérations avec des nombres</a></li>
-    <li><a href="#opérations-de-comparaisons">Opérations de comparaisons</a></li>
-    <li><a href="#opérations-sur-les-chaines-de-caractères">Opérations sur les chaines de caractères</a></li>
-    <li><a href="#opérations-logiques">Opérations logiques</a></li>
+    <li><a href="#script-1--conversions-de-types">Script 1 — Conversions de types</a></li>
+    <li><a href="#script-2--chaînes-de-caractères">Script 2 — Chaînes de caractères</a></li>
+    <li><a href="#script-3--booléens-et-nombres-flottants">Script 3 — Booléens et nombres flottants</a></li>
+    <li><a href="#grille-de-correction-indicative">Grille de correction indicative</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_bases/index.html"><span itemprop="name">Bases en python</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP1 calculer en python</span><meta itemprop="position" content="3"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/types/index.html"><span itemprop="name">Types</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TD - types simples (corrigé)</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_bases/generalites/page5.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/types/page7.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/generalites/page2/index.html" title="calculer en python (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page1/index.html" title="types simples (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_bases/variables/page4/index.html" title="variables, opérations (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page2/index.html" title="types construits (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -145,268 +141,88 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
         </div>
       </nav>
       <div id="R-main-overlay"></div>
-      <main id="R-body-inner" class="highlightable python_bases" tabindex="-1">
+      <main id="R-body-inner" class="highlightable python_avance" tabindex="-1">
         <div class="flex-block-wrapper">
 <article class="default">
   <header class="headline">
   </header>
 
-<h1 id="tp1-calculer-en-python">TP1 calculer en python</h1>
+<h1 id="td---types-simples-corrigé">TD - types simples (corrigé)</h1>
 
-<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Au choix:</p>
+<h1 id="corrigé--td--types-simples-en-python">Corrigé — TD : Types simples en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Ce corrigé est destiné à l&rsquo;enseignant. Il détaille la réponse attendue et le raisonnement à valoriser pour chaque question.</em></p>
+<hr>
+<h2 id="script-1--conversions-de-types">Script 1 — Conversions de types<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Q1.</strong> Le script lève une erreur :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ValueError: invalid literal for int() with base 10: &#39;19.9&#39;</span></span></code></pre></div>
+<p>Aucun prix ne s&rsquo;affiche.</p>
+<p><strong>Q2.</strong> <code>str(19.90)</code> produit la chaîne <code>'19.9'</code> (le zéro final disparaît). Or <code>int()</code> appliqué à une chaîne n&rsquo;accepte que des chaînes représentant un <strong>entier</strong> — il ne fait pas d&rsquo;arrondi, contrairement à <code>int()</code> appliqué à un float qui, lui, <strong>tronque</strong>. Convertir en chaîne puis en entier n&rsquo;est donc pas équivalent à arrondir un flottant.</p>
+<p><strong>Q3.</strong> Version attendue :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">preparer_etiquette</span><span class="p">(</span><span class="n">prix</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">prix_arrondi</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Prix à afficher :&#34;</span><span class="p">,</span> <span class="n">prix_arrondi</span><span class="p">,</span> <span class="s2">&#34;euros&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">preparer_etiquette</span><span class="p">(</span><span class="mf">19.90</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Prix à afficher : 20 euros</span></span></span></code></pre></div>
+<p>Point clé à valoriser : utilisation de <code>round()</code> directement sur le float, sans passer par <code>str</code>. Une réponse utilisant <code>int(prix + 0.5)</code> peut être acceptée si l&rsquo;élève explique la limite (ne fonctionne pas pour les négatifs) ; c&rsquo;est l&rsquo;occasion de rappeler que <code>round()</code> est la fonction adaptée pour arrondir.</p>
+<hr>
+<h2 id="script-2--chaînes-de-caractères">Script 2 — Chaînes de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Q1.</strong> Le script lève une erreur :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TypeError: &#39;str&#39; object does not support item assignment</span></span></code></pre></div>
+<p><strong>Q2.</strong> Les chaînes de caractères sont des objets <strong>immuables</strong> en Python : une fois créées, elles ne peuvent pas être modifiées caractère par caractère via l&rsquo;affectation indexée (<code>nom[0] = ...</code>). Toute transformation doit produire une <strong>nouvelle</strong> chaîne.</p>
+<p><strong>Q3.</strong> Version attendue, par exemple :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">anonymiser</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">nom</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">anonymiser</span><span class="p">(</span><span class="s1">&#39;Dupont&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ****nt</span></span></span></code></pre></div>
+<p>Points clés à valoriser :</p>
 <ul>
-<li>Ouvrir une console python dans <em>winpython &gt; python QTConsole</em></li>
+<li>usage du slicing <code>nom[-2:]</code> (index négatif vu dans le cours) pour récupérer les deux derniers caractères ;</li>
+<li>construction d&rsquo;une nouvelle chaîne avec <code>*</code> (répétition) et <code>+</code> (concaténation), sans tentative de modification en place ;</li>
+<li>une solution utilisant <code>nom[:-2]</code> remplacé caractère par caractère dans une boucle est correcte mais moins élégante — à signaler sans pénaliser si le résultat est juste.</li>
 </ul>
-
-<figure >
-    
-        <img src="/images/qtconsole.png"
-        
-         />
-    
-    
-</figure>
-
-<ul>
-<li>Ouvrir un shell python: dans <em>Pyzo</em> ou <em>Spyder</em> par exemple.</li>
-</ul>
-<h2 id="opérations-avec-des-nombres">Opérations avec des nombres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>Tester les opérations suivantes dans l&rsquo;editeur Python et répondez aux questions:</p>
-</blockquote>
-<!-- raw HTML omitted -->
+<hr>
+<h2 id="script-3--booléens-et-nombres-flottants">Script 3 — Booléens et nombres flottants<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Q1.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Erreur de caisse
+</span></span><span class="line"><span class="cl">&lt;class &#39;bool&#39;&gt;</span></span></code></pre></div>
+<p><strong>Q2.</strong> <code>0.1 + 0.1 + 0.1</code> ne vaut pas exactement <code>0.3</code> en mémoire à cause de la représentation limitée des flottants (norme IEEE 754, mentionnée dans le cours) : le résultat réel est légèrement différent de <code>0.3</code> (par exemple <code>0.30000000000000004</code>), donc <code>compte == 0.3</code> renvoie <code>False</code>. La seconde ligne affichée confirme que le résultat d&rsquo;une comparaison est bien de type <code>bool</code>.</p>
+<p><strong>Q3.</strong> Version attendue :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">round</span><span class="p">(</span><span class="n">compte</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mf">0.3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Le compte est bon&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Erreur de caisse&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p>Point clé à valoriser : on ne compare pas deux flottants directement avec <code>==</code>, on arrondit d&rsquo;abord à une précision raisonnable avec <code>round()</code> (fonction déjà vue dans le cours). Une solution utilisant <code>math.isclose</code> peut être acceptée en bonus si l&rsquo;élève l&rsquo;a rencontrée ailleurs, mais n&rsquo;est pas exigée puisqu&rsquo;elle n&rsquo;est pas dans le cours fourni.</p>
+<hr>
+<h2 id="grille-de-correction-indicative">Grille de correction indicative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <table>
 	<thead>
 			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
+					<th>Question</th>
+					<th>Compétence évaluée</th>
+					<th>Barème indicatif</th>
 			</tr>
 	</thead>
 	<tbody>
 			<tr>
-					<td>+</td>
-					<td>12 + 10</td>
+					<td>Q1 (×3)</td>
+					<td>Lire du code et prédire un résultat / une erreur sans exécuter</td>
+					<td>1 pt chacune</td>
 			</tr>
 			<tr>
-					<td>*</td>
-					<td>12 * 0.1</td>
+					<td>Q2 (×3)</td>
+					<td>Mobiliser la notion exacte du cours pour expliquer</td>
+					<td>2 pts chacune</td>
 			</tr>
 			<tr>
-					<td>/</td>
-					<td>12 / 10</td>
-			</tr>
-			<tr>
-					<td>//</td>
-					<td>12 // 10</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>4 % 2</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>5 % 2</td>
-			</tr>
-			<tr>
-					<td>-</td>
-					<td>10 - 12</td>
-			</tr>
-			<tr>
-					<td>**</td>
-					<td>2**8</td>
-			</tr>
-			<tr>
-					<td>e</td>
-					<td>12e-3</td>
-			</tr>
-			<tr>
-					<td><code>*, /, +, -, ()</code></td>
-					<td>3-2*(50/2+3)</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>1%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>2%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>3%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>4%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>5%3</td>
+					<td>Q3 (×3)</td>
+					<td>Modifier le code en respectant une contrainte précise</td>
+					<td>3 pts chacune</td>
 			</tr>
 	</tbody>
 </table>
-<ul>
-<li><strong>Question a:</strong> Quel est le rôle pour chacun de ces opérateurs? Que donne <code>N%2</code> pour N pair; pour N impair?</li>
-<li><strong>Question b:</strong> Calculer à l&rsquo;aide de la console le résultat de: $11,27 \times \tfrac{9.10^{21}}{10^4}$. Ecrivez sur votre cahier l&rsquo;expression utilisée en python pour effectuer ce calcul, ainsi que le résultat, exprimé en langage mathématique.</li>
-<li><strong>Question c:</strong> Quelles sont les différentes manières d&rsquo;écrire $9.10^{21}$ en python?</li>
-</ul>
-<h2 id="opérations-de-comparaisons">Opérations de comparaisons<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>==</code> et nombres entiers</td>
-					<td><code>10*5 == 50</code></td>
-			</tr>
-			<tr>
-					<td><code>!=</code> et nombres entiers</td>
-					<td><code>10*4 != 50</code></td>
-			</tr>
-			<tr>
-					<td>&gt;= et nombres entiers</td>
-					<td><code>10*5 &gt;= 50</code></td>
-			</tr>
-			<tr>
-					<td><code>==</code> et nombres réels</td>
-					<td><code>0.1 == 0.3/3</code></td>
-			</tr>
-			<tr>
-					<td><code>&gt;,+,/,*,()</code></td>
-					<td><code>(50/2+3) &gt; 12.5*2</code></td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question d:</strong> Quel opérateur est prioritaire entre <code>/</code> et <code>+</code>? <em>Comme par exemple dans le calcul <code>2*(50/2+3)</code></em></li>
-<li><strong>Question e:</strong> Quel résultat donne <code>0.1 == 0.3/3</code>? Expliquer.</li>
-</ul>
-<h2 id="opérations-sur-les-chaines-de-caractères">Opérations sur les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<!-- raw HTML omitted -->
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>+</code></td>
-					<td>&quot;a&quot;+&quot;b&quot;</td>
-			</tr>
-			<tr>
-					<td><code>*</code></td>
-					<td>&quot;bonjour&quot; * 10</td>
-			</tr>
-			<tr>
-					<td><code>+,*,()</code></td>
-					<td>(&quot;bonjour&quot; + &quot; &quot;) * 10</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question f:</strong> à partir des exemples proposés, expliquer ce que réalisent les opérateurs + et * avec les chaines de caractères.</li>
-</ul>
-<p>On peut aussi réaliser les opérations de comparaison <code>&gt;, &lt;, ==, !=</code>sur les chaines. Et aussi le test d&rsquo;appartenance <code>in, not in</code>. Ces opérations retournent un booléen.</p>
-<ul>
-<li>comparaison d&rsquo;ordre: <code>&quot;A&quot; &lt; &quot;B&quot;</code> vaut <code>True</code>, <code>&quot;Ab&quot; &lt; &quot;A&quot;</code> vaut <code>False</code>.</li>
-<li>d&rsquo;égalité: <code>&quot;HA&quot; == &quot;ha&quot;</code> vaut False</li>
-</ul>
-<p>L&rsquo;opérateur <code>in</code> permet de tester si une suite de caractères se trouve dans un chaine:</p>
-<ul>
-<li>
-<p><code>&quot;ou&quot; in &quot;jour&quot;</code> vaut <code>True</code></p>
-</li>
-<li>
-<p><code>&quot;ou&quot; not in &quot;jour&quot;</code> vaut False</p>
-</li>
-<li>
-<p><strong>Question g:</strong> que valent chacune des opérations:</p>
-<ul>
-<li><code>&quot;A&quot; == &quot;a&quot;</code></li>
-<li><code>&quot;Ab&quot; &gt; &quot;Ac&quot;</code></li>
-<li><code>&quot;Ab&quot; &gt; &quot;A&quot;</code></li>
-<li><code>&quot;Books&quot; &gt; &quot;Money&quot;</code></li>
-<li><code>&quot;Bo&quot; in &quot;Books&quot;</code></li>
-<li><code>&quot;Bk&quot; in &quot;Books&quot;</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Question h:</strong> Quelle erreur est retournée par l&rsquo;opération <code>&quot;bonjour tous les &quot; +2</code>? (relever la fin du Traceback à partir de <em>TypeError&hellip;</em>)</p>
-</li>
-</ul>
-<h2 id="opérations-logiques">Opérations logiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemples à tester</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>not</code></td>
-					<td><code>not True</code></td>
-			</tr>
-			<tr>
-					<td><code>and</code></td>
-					<td><code>True and False</code></td>
-			</tr>
-			<tr>
-					<td><code>and</code></td>
-					<td><code>True and True</code></td>
-			</tr>
-			<tr>
-					<td><code>or</code></td>
-					<td><code>False or True</code></td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question i:</strong> Que vaut <code>not True and False</code>? Et <code>not (True and False)</code>? Pourquoi?</li>
-</ul>
-<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<ul>
-<li>Quels sont les types primitifs vus dans cette leçon? Faire un tableau avec le symbole de tous les opérateurs vus pour chacun de ces types.</li>
-<li>Que donne l&rsquo;instruction: <code>type(123e3)</code></li>
-<li>Quelle valeur maximale peut prendre un entier signé codé sur 32 bits?</li>
-<li>Pour les entiers, donner un exemple d&rsquo;utilisation de l&rsquo;opérateur <code>//</code> et de l&rsquo;opérateur <code>%</code></li>
-<li>Que donne <code>x%2</code> si <code>x</code> est pair? Si <code>x</code> est impair?</li>
-<li>Pour les chaines de caractères, qu&rsquo;est-ce qu&rsquo;une concaténation?</li>
-<li>Donner un exemple d&rsquo;utilisation du mot clé <code>in</code></li>
-<li>Donner un exemple de comparaison d&rsquo;ordre lexicographique entre chaines de caractères.</li>
-<li>Soit l&rsquo;opération logique ci-contre:</li>
-</ul>
-<p><code>S and not P</code></p>
-<p><code>S</code> peut prendre l&rsquo;une des 2 valeurs logiques <code>True</code> ou <code>False</code>. De même que <code>P</code>.</p>
-<p>Evaluer cette expression pour chaque combinaison de valeurs pour <code>S</code> et <code>P</code>. Par exemple, pour <code>S = True</code> et <code>P = True</code>, cette expression devient <code>True and not True</code>, qui est alors evaluée à <code>False</code>.</p>
-<blockquote>
-<p>Résumer dans un tableau.</p>
-</blockquote>
-<ul>
-<li>Donner la valeur de S et de P pour représenter l&rsquo;information suivante:</li>
-</ul>
-<blockquote>
-<p>le temps est ensoleillée (S) et il n&rsquo;y a pas de pluie (P)</p>
-</blockquote>
-<ul>
-<li>Donner alors la valeur retournée par l&rsquo;opération logique <code>S and not P</code></li>
-</ul>
+<p>Total : 18 points.</p>
 
   <footer class="footline">
   </footer>
@@ -452,10 +268,9 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
       <div id="R-content-wrapper" class="highlightable">
         <div class="R-sidebarmenu R-shortcutmenu-main default-animation">
           <ul class="enlarge morespace collapsible-menu">
-            <li class="parent " data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b" checked><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
+            <li class="" data-nav-id="/python_bases/index.html"><input type="checkbox" id="R-section-3bb3b74db384029874528d6c81eff48b" aria-controls="R-subsections-3bb3b74db384029874528d6c81eff48b"><label for="R-section-3bb3b74db384029874528d6c81eff48b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Bases en python</span></label><a class="padding default-animation" href="/python_bases/index.html">Bases en python<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3bb3b74db384029874528d6c81eff48b" class="collapsible-menu">
             <li class="" data-nav-id="/python_bases/variables/page5_d/index.html"><a class="padding" href="/python_bases/variables/page5_d/index.html">pensée algorithmique<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/generalites/page2/index.html"><a class="padding" href="/python_bases/generalites/page2/index.html">types de base<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active hidden " data-nav-id="/python_bases/generalites/page5/index.html"><a class="padding" href="/python_bases/generalites/page5/index.html">TP1 calculer en python<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/variables/page4/index.html"><a class="padding" href="/python_bases/variables/page4/index.html">variables, opérations<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/conditions/page1/index.html"><a class="padding" href="/python_bases/conditions/page1/index.html">structures conditionnelles<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/boucles/page5/index.html"><a class="padding" href="/python_bases/boucles/page5/index.html">boucles<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -471,9 +286,10 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
             <li class="" data-nav-id="/python_bases/tp/pyxelstudio1/index.html"><a class="padding" href="/python_bases/tp/pyxelstudio1/index.html">pyxelstudio les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/tp/tp_shifumi/index.html"><a class="padding" href="/python_bases/tp/tp_shifumi/index.html">shifumi<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_bases/tp/ascii_art/index.html"><a class="padding" href="/python_bases/tp/ascii_art/index.html">transformer image ascii<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
-            <li class="" data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f"><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
-            <li class="" data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c"><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
+            <li class="parent " data-nav-id="/python_avance/index.html"><input type="checkbox" id="R-section-30dde4d5801c4f10b7836cf7ca95af7f" aria-controls="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" checked><label for="R-section-30dde4d5801c4f10b7836cf7ca95af7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Python avancé</span></label><a class="padding default-animation" href="/python_avance/index.html">Python avancé<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-30dde4d5801c4f10b7836cf7ca95af7f" class="collapsible-menu">
+            <li class="parent " data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" checked><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_avance/types/page7/index.html"><a class="padding" href="/python_avance/types/page7/index.html">TD - types simples (corrigé)<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -748,9 +564,9 @@ Ouvrir une console python dans winpython &gt; python QTConsole Ouvrir un shell p
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1786988172"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1786988172" defer></script>
-    <script src="/js/theme.js?1786988172" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1786988225"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1786988225" defer></script>
+    <script src="/js/theme.js?1786988225" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

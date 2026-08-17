@@ -9,7 +9,7 @@ weight: 4
 
 # Les variables et les types natifs en Python
 
-*Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie `math`, sur les références, et les méthodes de chaines.*
+*Cette page apporte des informations sur les types de base, sur les fonctions de la librairie `math`, sur les références, et les méthodes de chaines.*
 
 Cette rubrique contient 4 pages : 
 
@@ -18,12 +18,17 @@ Cette rubrique contient 4 pages :
 * page 3 : [TP sur les variables](../page3/)
 <!--* page 4 : [flash-card sur les variables](../ex1/)
 -->
-Les types natifs de base, ce sont les types numérique, `int` et `float`, les chaines de caractères `str`, mais aussi le type `None`
+Les types natifs de base, ce sont les types numériques `int` et `float`, le type booléen `bool`, les chaines de caractères `str`, mais aussi le type `None`.
 
 ## le type de « rien » : `None`
-C'est le type des instrutions. Valeur possible : None
+`None` est la valeur unique du type `NoneType`. Elle représente l'absence de valeur.
 
-`None` est utile par exemple lorsque l'on veut terminer un fonction sans valeur de retour:
+```python
+type(None)
+# affiche <class 'NoneType'>
+```
+
+`None` est utile par exemple lorsque l'on veut terminer une fonction sans valeur de retour, ou lorsqu'une fonction ne contient pas d'instruction `return` (c'est alors la valeur de retour implicite) :
 
 ```python
 def f(x):
@@ -31,8 +36,18 @@ def f(x):
   return None
 ``` 
 
-## Transformer le type des donnée
-Pour consulter le type d'une donnée: fontion  `type`:
+## le type booléen : `bool`
+`bool` est le type des valeurs de vérité : `True` et `False`. C'est le résultat des comparaisons (`==`, `<`, `>=`, ...) et des expressions logiques.
+
+```python
+type(True)
+# affiche <class 'bool'>
+```
+
+*À noter :* en Python, `bool` est un sous-type de `int` : `True` vaut `1` et `False` vaut `0`. C'est pourquoi `True + True` donne `2`.
+
+## Transformer le type des données
+Pour consulter le type d'une donnée : fonction `type`:
 
 ```python
 a = 3
@@ -55,22 +70,26 @@ Pour transformer vers un autre type de base, on utilise les fonctions `int`, `fl
 float(3)
 # affiche 3.0
 float('3.8')
-# affiche 3.0
+# affiche 3.8
 ```
 
 * transformer en `int`
-convertit par exemple un flottant en entier en éliminant la partie décimale du nombre : 
+convertit par exemple un flottant en entier en **tronquant** la partie décimale du nombre (attention, ce n'est pas un arrondi) : 
 
 ```python
 int(3.5)
 # affiche 3
+int(-3.5)
+# affiche -3 (et non -4 : la troncature se fait vers 0)
 ``` 
 
-ou une chaine de caractères en un entier:
+ou une chaine de caractères en un entier :
 
 ```python
 int("3")
 # affiche 3
+int("3.5")
+# ValueError : int() ne convertit que des chaines représentant un entier
 ```
 
 # Opérations sur les types numériques
@@ -95,11 +114,16 @@ math.sin(PI/2)
 # affiche 1.0
 # le sinus de l'angle en radians
 math.fabs(-101)
-# affiche 101
-# Renvoie la valeur absolue de (-101)
-math.isnan(x)
+# affiche 101.0
+# Renvoie la valeur absolue de (-101), toujours sous forme de float
+math.isnan(PI)
+# affiche False
+math.isnan(float('nan'))
+# affiche True
 # Renvoie True si x est NaN (Not a Number)
 ```
+
+*Remarque:* les nombres flottants ont une précision limitée. Par exemple `0.1 + 0.2` n'affiche pas exactement `0.3` mais `0.30000000000000004`, à cause de la façon dont les flottants sont représentés en mémoire (norme IEEE 754). Il faut garder ceci en tête avant de comparer deux flottants avec `==`.
 
 # Opérations sur les booléens - rappels
 | operateur | symbole | exemple d'expression | resultat |
@@ -115,7 +139,7 @@ math.isnan(x)
 # Opérations avec les chaines de caractères
 Les opérateurs `+` et `*` sont autorisés dans les expressions avec les chaines de caractère.
 
-Le `+` réalise un *concaténation* de 2 chaines. Le `*` répète et concatène la chaine : 
+Le `+` réalise une *concaténation* de 2 chaines. Le `*` répète et concatène la chaine : 
 
 ```python
 a, b = 'Alan', 'Turing'
@@ -135,12 +159,25 @@ chaine[1:4]
 # affiche 'ell'
 ``` 
 
+On peut aussi utiliser des index négatifs (qui comptent depuis la fin de la chaine) et un pas (*step*) dans le slice :
+
+```python
+chaine[-1]
+# affiche 'd' (dernier caractère)
+chaine[::-1]
+# affiche 'dlroW olleH' (la chaine inversée)
+chaine[0:11:2]
+# affiche 'HloWrd' (un caractère sur deux)
+```
+
 Mais, contrairement aux Listes, on ne pourra pas modifier un caractère par son index:
 
 ```python
 chaine[0] = 'P'
 # TypeError: 'str' object does not support item assignment
 ```
+
+En fait, comme `int` et `float`, le type `str` est **immuable** (*immutable*) : une fois créée, une chaine ne peut plus être modifiée en place. Toute méthode qui semble « transformer » une chaine (`upper()`, `replace()`, ...) renvoie en réalité une **nouvelle** chaine.
 
 Une chaine de caractères est *itérable*: On peut la parcourir avec une boucle bornée. Par exemple, le script suivant élimine tous les espaces dans la chaine:
 
@@ -189,12 +226,20 @@ class str(object)
  | ...
 ``` 
 
+*Remarque:* pour construire une chaine à partir de valeurs de variables, la syntaxe moderne et recommandée est la **f-string**, plus lisible que `format` ou la concaténation avec `+` :
+
+```python
+nom, age = 'Ada', 36
+f"{nom} a {age} ans"
+# affiche 'Ada a 36 ans'
+```
+
 
 ### Découpage - assemblage: `split` et `join`
 
 Les méthodes `split` et `join` permettent de découper une chaîne selon un séparateur pour obtenir une liste, et à l'inverse de reconstruire une chaîne à partir d'une liste.
 
-`split` permet donc de découper :
+`split` permet donc de découper :
 
 
 ```python
@@ -202,7 +247,7 @@ Les méthodes `split` et `join` permettent de découper une chaîne selon un sé
 # affiche ['abc', 'def', 'ghi', 'jkl']
 ```
 
-Et à l'inverse :
+Et à l'inverse :
 
 
 ```python
@@ -215,11 +260,14 @@ Et à l'inverse :
 
 ### Remplacement: `replace`
 
-`replace` est très pratique pour remplacer une sous-chaîne par une autre, avec une limite éventuelle sur le nombre de remplacements :
+`replace` est très pratique pour remplacer une sous-chaîne par une autre, avec une limite éventuelle sur le nombre de remplacements :
 
 
 ```python
 "abcdefabcdefabcdef".replace("abc", "zoo")
+# affiche zoodefzoodefzoodef
+"abcdefabcdefabcdef".replace("abc", "zoo", 1)
+# affiche zoodefabcdefabcdef (un seul remplacement grâce au 3e argument)
 ```
 
 
@@ -250,14 +298,14 @@ nom.strip()
 Les **variables** en Python sont des **références nommées**.
 
 
-Une variable est une donc **étiquette** associée à une **valeur**. Ce nom est à peu près quelconque, mais pour l’ordinateur il s’agit d’une **référence** désignant une **adresse mémoire**, c’est-à-dire un emplacement précis dans la mémoire vive.
+Une variable est donc une **étiquette** associée à une **valeur**. Ce nom est à peu près quelconque, mais pour l’ordinateur il s’agit d’une **référence** désignant une **adresse mémoire**, c’est-à-dire un emplacement précis dans la mémoire vive.
 
 À cet emplacement est stockée une **valeur typée** bien déterminée.
 
 {{< img src="../images/var_normalesup1.png" link="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html" caption="image issue du cours sur http://www.normalesup.org/" >}}
 Cette valeur peut être en fait à peu près n’importe quel « objet » susceptible d’être placé dans la mémoire d’un ordinateur, par exemple : un nombre entier, un nombre réel, un nombre complexe, un vecteur, une chaîne de caractères, un tableau, une fonction, etc.
 
-La programme suivant permet de consulter l'adresse mémoire d'une variable:
+Le programme suivant permet de consulter l'adresse mémoire d'une variable:
 
 ```python
 a = 3
@@ -266,8 +314,19 @@ type(a) #=> int
 # Cet objet se trouve dans la mémoire de l'ordinateur
 # à un endroit que l'on peut obtenir avec `id`:
 id(a) #=> La position de l'objet nommé a dans la mémoire de l'ordinateur.
-# AFfiche
+# Affiche
 94875962855936
+```
+
+*Pour aller plus loin :* deux noms peuvent référencer le **même** objet en mémoire. L'opérateur `==` compare les **valeurs**, alors que l'opérateur `is` compare les **références** (l'identité, donc le résultat de `id`) :
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+a == b   # True : mêmes valeurs
+a is b   # False : deux objets distincts en mémoire
+c = a
+c is a   # True : c et a référencent le même objet
 ```
 
 ## Typage dynamique
@@ -391,10 +450,10 @@ c.split(' ')
 # ['GET', '/search', 'ville=nice', 'UTC=12']
 ```
 
-# Les types construits (séquences)
-voir la page suivante: [Types construits](../page2/)
+# Suite
+### travaux dirigés sur int, float, str, bool: [TP1](../page6)
+### page suivante: [Types construits](../page2/)
 
 # Liens
 <!--* Lien vers les [Flash cards](../ex1) sur les variables et séquences-->
 * Compléments: valeur, references, espace de nom: [Lien vers le cours de normalesup](http://www.normalesup.org/~doulcier/teaching/python/01_variables.html)
-

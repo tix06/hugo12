@@ -1,7 +1,7 @@
 ---
 Title: dataframe
 description: module pandas, dataframe
-weight: 8
+weight: 14
 ---
 
 # Les bases avec pandas

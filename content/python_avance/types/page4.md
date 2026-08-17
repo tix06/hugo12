@@ -2,7 +2,7 @@
 Title: TP2 listes, indices, méthodes
 description: parcours de liste, compréhension de liste et tracé graphique
 hidden: true
-weight: 6
+weight: 10
 ---
 
   

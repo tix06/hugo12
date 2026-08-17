@@ -1,7 +1,7 @@
 ---
 Title: tableaux python
 description: tableaux représentés par un tableur, tableau python, import csv
-weight: 6
+weight: 12
 ---
 
 {{< img src="../images/exc17.png" >}}

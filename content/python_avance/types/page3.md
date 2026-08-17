@@ -2,7 +2,7 @@
 Title : TP variables
 description: TP sur les types construits, les copies par valeur et reference
 hidden: true
-weight: 5
+weight: 9
 ---
 # Travaux pratiques
 ## Les types mutables et non mutables en python

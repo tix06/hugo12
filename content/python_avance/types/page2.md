@@ -1,7 +1,7 @@
 ---
 Title : types construits
 description: listes, dictionnaires, méthodes
-weight: 5
+weight: 7
 ---
 
   

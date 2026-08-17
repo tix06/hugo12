@@ -23,26 +23,26 @@
     <title>allophysique :: allopizza</title>
     <link href="//localhost:1313/index.html" rel="canonical" type="text/html" title="allophysique :: allopizza">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="allophysique :: allopizza">
-    <link href="/css/auto-complete/auto-complete.min.css?1786542221" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1786542221" defer></script>
-    <script src="/js/search-lunr.js?1786542221" defer></script>
-    <script src="/js/search.js?1786542221" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1786988225" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1786988225" defer></script>
+    <script src="/js/search-lunr.js?1786988225" defer></script>
+    <script src="/js/search.js?1786988225" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1786542221";
+      window.relearn.index_js_url="/searchindex.en.js?1786988225";
     </script>
-    <script src="/js/lunr/lunr.min.js?1786542221" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1786542221" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1786542221" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1786542221" defer></script>
+    <script src="/js/lunr/lunr.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1786988225" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1786988225" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1786542221" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1786542221" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1786542221" rel="stylesheet">
-    <link href="/css/theme.css?1786542221" rel="stylesheet">
-    <link href="/css/format-print.css?1786542221" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1786988225" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1786988225" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1786988225" rel="stylesheet">
+    <link href="/css/theme.css?1786988225" rel="stylesheet">
+    <link href="/css/format-print.css?1786988225" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -541,12 +541,27 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 <li>les valeurs logiques: booléen <code>bool</code></li>
 </ul>
 <p>Lorsque l&rsquo;on présente une valeur dans le programme, le langage s&rsquo;adapte selon le type, comme on le verra plus loin.</p>
+<blockquote>
 <p>Pour vérifier le type d&rsquo;un objet, on utilise la fonction <code>type</code></p>
+</blockquote>
 <p><em>Exemples</em></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">int</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">float</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="nb">float</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">str</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">bool</span></span></span></code></pre></div>
+<blockquote>
+<p>Pour changer le type, on utilise les <strong>fonctions</strong> <code>int, float, str</code>. On utilise par exemple <code>int</code> lorsque l&rsquo;on veut transformer un <em>float</em> ou un <em>str</em> en un entier:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;12&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;12&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">float</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mf">12.0</span></span></span></code></pre></div>
 <h2 id="les-nombres-entiers-et-décimaux">Les nombres entiers et décimaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="entier">Entier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p><strong>Un entier: type int</strong> <em>(ou integer)</em>. C&rsquo;est un <strong>nombre</strong> qui n&rsquo;a pas de point décimal. Les <em>algorithmes</em> utilisent en général des <em>entiers</em>, ce qui est avantageux pour les opérations de comparaison comme <code>==</code> ou <code>!=</code>.</p>
@@ -564,12 +579,14 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 </span></span><span class="line"><span class="cl"><span class="mf">12000.0</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">float</span></span></span></code></pre></div>
-<p>La division de 2 nombres avec l&rsquo;opérateur $/$ retourne toujours un type <em>float</em>:</p>
+<p>La division de 2 nombres avec l&rsquo;opérateur $/$ retourne toujours un type <em>float</em>, même avec des entiers:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">20</span><span class="o">/</span><span class="mi">8</span>
 </span></span><span class="line"><span class="cl"><span class="mf">2.5</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">20</span><span class="o">/</span><span class="mi">10</span>
 </span></span><span class="line"><span class="cl"><span class="mf">2.0</span></span></span></code></pre></div>
-<p>Les <em>float</em> en Python ont une précision limité. Ils sont généralement codés sur 15 chiffres significatifs et encodés sur 53 bits.</p>
+<p>Les <em>float</em> en Python ont une <em>précision limitée</em>. Ils sont généralement codés sur 15 chiffres significatifs et encodés sur 53 bits. Cela génère des imprecisions comme par exemple:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mf">0.3</span><span class="o">/</span><span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl"><span class="mf">2.9999999999999996</span></span></span></code></pre></div>
 <h2 id="chaine-de-caractère">Chaine de caractère<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>C&rsquo;est une séquence constituée d&rsquo;un ou plusieurs caractères, entourés de guillemets simples ou doubles.</p>
 <p>Notez que des chiffres mis entre guillemets sont des chaines de caractères et ne peuvent pas être manipulés comme des nombres (voir plus loin).</p>
@@ -581,7 +598,7 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;une autre chaine&#39;</span></span></span></code></pre></div>
 <p>Certains caractères spéciaux ne sont pas affichés, mais permettent la mise en forme:</p>
 <ul>
-<li>Par exemple, les caractères <code>\n</code>:</li>
+<li>Par exemple, le caractère <code>\n</code> génère un retour à la ligne:</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">citation_python</span> <span class="o">=</span> <span class="s1">&#39;je disais, &#34;être ou ne pas être,</span><span class="se">\n</span><span class="s1">telle est la question&#34;&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">citation_python</span><span class="p">)</span>
@@ -589,25 +606,41 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 </span></span><span class="line"><span class="cl"><span class="n">être</span> <span class="n">ou</span> <span class="n">ne</span> <span class="n">pas</span> <span class="n">être</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="n">telle</span> <span class="n">est</span> <span class="n">la</span> <span class="n">question</span></span></span></code></pre></div>
 <ul>
-<li>L&rsquo;addition de chaines se fait avec l&rsquo;opérateur <code>+</code></li>
+<li>L&rsquo;addition de chaines <em>(concaténation)</em> se fait avec l&rsquo;opérateur <code>+</code></li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Bonjour&#34;</span><span class="o">+</span><span class="s2">&#34;Hello&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">BonjourHello</span></span></span></code></pre></div>
 <ul>
-<li>Ou bien avec des accolades <code>{}</code> dans une expression formatée. Exemple:</li>
+<li>L&rsquo;opérateur <code>*</code> permet des répétitions multiples:</li>
 </ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">HiHiHi</span></span></span></code></pre></div>
+<ul>
+<li>Ou bien avec des accolades <code>{}</code> dans une expression formatée. Exemples:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Exemple 1 avec .format</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
 </span></span><span class="line"><span class="cl"><span class="n">Ec</span> <span class="o">=</span> <span class="mi">1200</span>
 </span></span><span class="line"><span class="cl"><span class="n">resultat</span> <span class="o">=</span> <span class="s2">&#34;Pour le systeme m = </span><span class="si">{}</span><span class="s2"> et E = </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">Ec</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Pour le systeme m = 100 et E = 1200</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Exemple 2 avec un f-string</span>
+</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ec</span> <span class="o">=</span> <span class="mi">1200</span>
+</span></span><span class="line"><span class="cl"><span class="n">resultat</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;Pour le systeme m = </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> et E = </span><span class="si">{</span><span class="n">Ec</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Pour le systeme m = 100 et E = 1200</span></span></span></code></pre></div>
 <h2 id="les-valeurs-logiques">Les valeurs logiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Ce sont les valeurs <code>True</code> et <code>False</code>. On peut les combiner dans des formules logiques avec les opérateurs <code>not</code>, <code>and</code>, <code>or</code>:</p>
+<p>Ce sont les valeurs <code>True</code> et <code>False</code>.</p>
+<h3 id="opérations-avec-not-and-et-or">opérations avec not, and et or<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut les combiner dans des formules logiques avec les opérateurs <code>not</code>, <code>and</code>, <code>or</code>:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span>
 </span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
+<h3 id="opérateurs-de-comparaison">opérateurs de comparaison<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Une opération de comparaison, utilisant les signes  <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> retourne un booléen <code>True</code> ou <code>False</code>:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">0</span> <span class="o">==</span> <span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="kc">True</span>
@@ -616,6 +649,7 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="mi">0</span> <span class="o">!=</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
 <p><em>Expressions possibles</em>: <code>0 == 0, 8+1 == 2 * 3, 13 &gt;= a, ...</code></p>
+<h3 id="utiliser-les-opérations-booléennes-dans-un-programme">Utiliser les opérations booléennes dans un programme<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Le booléen permet un branchement dans un algorithme (voir les structures conditionnelles). <em>Exemples:</em></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">  <span class="c1"># instruction 1</span>
@@ -629,10 +663,27 @@ gravitationnelles exercées par la Terre et la Lune sur le projectile se compens
 </span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">  <span class="c1"># instruction 2</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># execution du bloc d&#39;instruction 2</span></span></span></code></pre></div>
-<p>On peut souhaiter executer infiniment le même bloc d&rsquo;instructions:</p>
+</span></span><span class="line"><span class="cl"><span class="c1"># execution du bloc d&#39;instruction 2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="mi">10</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># instruction 1</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># instruction 2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># execution du bloc d&#39;instruction 1</span></span></span></code></pre></div>
+<p>On peut souhaiter executer infiniment le même bloc d&rsquo;instructions, avec l&rsquo;instruction `while:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">  <span class="c1"># bloc d&#39;instructions</span></span></span></code></pre></div>
+<h3 id="changer-de-type-avec-la-fonction-bool">Changer de type avec la fonction <code>bool</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Lors de la transformation de type avec <code>bool</code> ou <code>int</code>, le <code>True</code> correspond à un 1 et le <code>False</code> à un 0:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kc">False</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span></span></span></code></pre></div>
 <h1 id="les-opérations-de-base">Les opérations de base<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p><strong>1.</strong> Un langage informatique permet de réaliser des opérations sur des valeurs. L&rsquo;écriture de ces opérations peut différer de ce que l&rsquo;on écrit avec la calculatrice. Voici la liste des opérateurs en Python:</p>
 <table>
@@ -760,264 +811,22 @@ Une <em>opération logique</em> consiste à comparer 2 valeurs et tester si cell
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne </span>
 </span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
 <p><em>Remarque:</em> Le test de l&rsquo;égalité n&rsquo;est pas adapté pour les nombres réels. Seulement pour les nombres entiers. Ainsi, en Python, l&rsquo;opération <code>0.1*3 == 0.3</code> renvoie &hellip; <code>False</code>!</p>
-<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Au choix:</p>
-<ul>
-<li>Ouvrir une console python dans <em>winpython &gt; python QTConsole</em></li>
-</ul>
-
-<figure >
-    
-        <img src="/images/qtconsole.png"
-        
-         />
-    
-    
-</figure>
-
-<ul>
-<li>Ouvrir un shell python: dans <em>Pyzo</em> ou <em>Spyder</em> par exemple.</li>
-</ul>
-<h2 id="opérations-avec-des-nombres">Opérations avec des nombres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>Tester les opérations suivantes dans l&rsquo;editeur Python et répondez aux questions:</p>
-</blockquote>
-<!-- raw HTML omitted -->
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>+</td>
-					<td>12 + 10</td>
-			</tr>
-			<tr>
-					<td>*</td>
-					<td>12 * 0.1</td>
-			</tr>
-			<tr>
-					<td>/</td>
-					<td>12 / 10</td>
-			</tr>
-			<tr>
-					<td>//</td>
-					<td>12 // 10</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>4 % 2</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>5 % 2</td>
-			</tr>
-			<tr>
-					<td>-</td>
-					<td>10 - 12</td>
-			</tr>
-			<tr>
-					<td>**</td>
-					<td>2**8</td>
-			</tr>
-			<tr>
-					<td>e</td>
-					<td>12e-3</td>
-			</tr>
-			<tr>
-					<td><code>*, /, +, -, ()</code></td>
-					<td>3-2*(50/2+3)</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>1%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>2%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>3%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>4%3</td>
-			</tr>
-			<tr>
-					<td>%</td>
-					<td>5%3</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question a:</strong> Quel est le rôle pour chacun de ces opérateurs? Que donne <code>N%2</code> pour N pair; pour N impair?</li>
-<li><strong>Question b:</strong> Calculer à l&rsquo;aide de la console le résultat de: $11,27 \times \tfrac{9.10^{21}}{10^4}$. Ecrivez sur votre cahier l&rsquo;expression utilisée en python pour effectuer ce calcul, ainsi que le résultat, exprimé en langage mathématique.</li>
-<li><strong>Question c:</strong> Quelles sont les différentes manières d&rsquo;écrire $9.10^{21}$ en python?</li>
-</ul>
-<h2 id="opérations-de-comparaisons">Opérations de comparaisons<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>==</code> et nombres entiers</td>
-					<td><code>10*5 == 50</code></td>
-			</tr>
-			<tr>
-					<td><code>!=</code> et nombres entiers</td>
-					<td><code>10*4 != 50</code></td>
-			</tr>
-			<tr>
-					<td>&gt;= et nombres entiers</td>
-					<td><code>10*5 &gt;= 50</code></td>
-			</tr>
-			<tr>
-					<td><code>==</code> et nombres réels</td>
-					<td><code>0.1 == 0.3/3</code></td>
-			</tr>
-			<tr>
-					<td><code>&gt;,+,/,*,()</code></td>
-					<td><code>(50/2+3) &gt; 12.5*2</code></td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question d:</strong> Quel opérateur est prioritaire entre <code>/</code> et <code>+</code>? <em>Comme par exemple dans le calcul <code>2*(50/2+3)</code></em></li>
-<li><strong>Question e:</strong> Quel résultat donne <code>0.1 == 0.3/3</code>? Expliquer.</li>
-</ul>
-<h2 id="opérations-sur-les-chaines-de-caractères">Opérations sur les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<!-- raw HTML omitted -->
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemple</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>+</code></td>
-					<td>&quot;a&quot;+&quot;b&quot;</td>
-			</tr>
-			<tr>
-					<td><code>*</code></td>
-					<td>&quot;bonjour&quot; * 10</td>
-			</tr>
-			<tr>
-					<td><code>+,*,()</code></td>
-					<td>(&quot;bonjour&quot; + &quot; &quot;) * 10</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question f:</strong> à partir des exemples proposés, expliquer ce que réalisent les opérateurs + et * avec les chaines de caractères.</li>
-</ul>
-<p>On peut aussi réaliser les opérations de comparaison <code>&gt;, &lt;, ==, !=</code>sur les chaines. Et aussi le test d&rsquo;appartenance <code>in, not in</code>. Ces opérations retournent un booléen.</p>
-<ul>
-<li>comparaison d&rsquo;ordre: <code>&quot;A&quot; &lt; &quot;B&quot;</code> vaut <code>True</code>, <code>&quot;Ab&quot; &lt; &quot;A&quot;</code> vaut <code>False</code>.</li>
-<li>d&rsquo;égalité: <code>&quot;HA&quot; == &quot;ha&quot;</code> vaut False</li>
-</ul>
-<p>L&rsquo;opérateur <code>in</code> permet de tester si une suite de caractères se trouve dans un chaine:</p>
-<ul>
-<li>
-<p><code>&quot;ou&quot; in &quot;jour&quot;</code> vaut <code>True</code></p>
-</li>
-<li>
-<p><code>&quot;ou&quot; not in &quot;jour&quot;</code> vaut False</p>
-</li>
-<li>
-<p><strong>Question g:</strong> que valent chacune des opérations:</p>
-<ul>
-<li><code>&quot;A&quot; == &quot;a&quot;</code></li>
-<li><code>&quot;Ab&quot; &gt; &quot;Ac&quot;</code></li>
-<li><code>&quot;Ab&quot; &gt; &quot;A&quot;</code></li>
-<li><code>&quot;Books&quot; &gt; &quot;Money&quot;</code></li>
-<li><code>&quot;Bo&quot; in &quot;Books&quot;</code></li>
-<li><code>&quot;Bk&quot; in &quot;Books&quot;</code></li>
-</ul>
-</li>
-<li>
-<p><strong>Question h:</strong> Quelle erreur est retournée par l&rsquo;opération <code>&quot;bonjour tous les &quot; +2</code>? (relever la fin du Traceback à partir de <em>TypeError&hellip;</em>)</p>
-</li>
-</ul>
-<h2 id="opérations-logiques">Opérations logiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<blockquote>
-<p>à tester dans l&rsquo;éditeur Python:</p>
-</blockquote>
-<table>
-	<thead>
-			<tr>
-					<th>opérateur</th>
-					<th>exemples à tester</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>not</code></td>
-					<td><code>not True</code></td>
-			</tr>
-			<tr>
-					<td><code>and</code></td>
-					<td><code>True and False</code></td>
-			</tr>
-			<tr>
-					<td><code>and</code></td>
-					<td><code>True and True</code></td>
-			</tr>
-			<tr>
-					<td><code>or</code></td>
-					<td><code>False or True</code></td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li><strong>Question i:</strong> Que vaut <code>not True and False</code>? Et <code>not (True and False)</code>? Pourquoi?</li>
-</ul>
-<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<ul>
-<li>Quels sont les types primitifs vus dans cette leçon? Faire un tableau avec le symbole de tous les opérateurs vus pour chacun de ces types.</li>
-<li>Que donne l&rsquo;instruction: <code>type(123e3)</code></li>
-<li>Quelle valeur maximale peut prendre un entier signé codé sur 32 bits?</li>
-<li>Pour les entiers, donner un exemple d&rsquo;utilisation de l&rsquo;opérateur <code>//</code> et de l&rsquo;opérateur <code>%</code></li>
-<li>Que donne <code>x%2</code> si <code>x</code> est pair? Si <code>x</code> est impair?</li>
-<li>Pour les chaines de caractères, qu&rsquo;est-ce qu&rsquo;une concaténation?</li>
-<li>Donner un exemple d&rsquo;utilisation du mot clé <code>in</code></li>
-<li>Donner un exemple de comparaison d&rsquo;ordre lexicographique entre chaines de caractères.</li>
-<li>Soit l&rsquo;opération logique ci-contre:</li>
-</ul>
-<p><code>S and not P</code></p>
-<p><code>S</code> peut prendre l&rsquo;une des 2 valeurs logiques <code>True</code> ou <code>False</code>. De même que <code>P</code>.</p>
-<p>Evaluer cette expression pour chaque combinaison de valeurs pour <code>S</code> et <code>P</code>. Par exemple, pour <code>S = True</code> et <code>P = True</code>, cette expression devient <code>True and not True</code>, qui est alors evaluée à <code>False</code>.</p>
-<blockquote>
-<p>Résumer dans un tableau.</p>
-</blockquote>
-<ul>
-<li>Donner la valeur de S et de P pour représenter l&rsquo;information suivante:</li>
-</ul>
-<blockquote>
-<p>le temps est ensoleillée (S) et il n&rsquo;y a pas de pluie (P)</p>
-</blockquote>
-<ul>
-<li>Donner alors la valeur retournée par l&rsquo;opération logique <code>S and not P</code></li>
-</ul>
+<h1 id="travaux-pratiques">travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h3 id="lien-vers-le-tp1"><a href="../page5">Lien vers le TP1</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li><a href="../../generalites/page2">TP1 sur les opérations et types de base</a></li>
-<li><a href="../../variables/page4/">TP2 sur les variables</a></li>
+<li>Chapitre 1
+<ul>
+<li><a href="../../generalites/page2">types de base</a></li>
+<li><a href="../../generalites/page5">TP1 sur les opérations et types de base</a></li>
+</ul>
+</li>
+<li>Chapitre 2
+<ul>
+<li><a href="../../variables/page4/">Variables</a></li>
+<li><a href="../../variables/page6/">TP2 sur les variables</a></li>
+</ul>
+</li>
 <li><a href="../../conditions/page2/">cours: structures conditionnelles</a></li>
 <li><a href="../../conditions/page3/">TP3 conditions et fonctions</a></li>
 <li><a href="../../conditions/page4/">TP4 Boucles non bornées - while</a></li>
@@ -1056,6 +865,7 @@ Une <em>opération logique</em> consiste à comparer 2 valeurs et tester si cell
     
 </figure>
 
+<p>Une variable est donc une zone précise de la mémoire vive de l&rsquo;ordinateur (on parle d&rsquo;adresse mémoire). À partir de cet emplacement, on trouvera une succession de bits dont l&rsquo;agencement spécifique déterminera à la fois une valeur et un type.</p>
 <p><strong>2. Quel nom peut-on choisir pour une variable?:</strong> On peut choisir une lettre simple, minuscule ou majuscule, ou une chaine de caractères SANS espaces, et commençant obligatoirement par une LETTRE. Le nom peut contenir certains caractères spéciaux comme par exemple <code>_</code>. <em>(ne pas utiliser le signe <code>-</code>, utilisé pour une soustraction entre 2 variables)</em>.</p>
 <p>Exemples de noms de variables:</p>
 <ul>
@@ -1132,16 +942,18 @@ Les variables déclarées avec la fonction, entre parenthèse sont appelées <em
 
 <h1 id="visualiseur-python">Visualiseur python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Le site <a href="https://pythontutor.com/render.html#code=x%20%3D%2010%0Ay%20%3D%2014%0Ax%20%3D%20x%20%2B%202%0Aprint%28x%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" rel="external">pythontutor</a> permet de visualiser le contenu des variables et leur espace de nom.</p>
-<p><em>exemple 1</em>:</p>
+<p><em>exemple 1</em>: un espace mémoire pour chaque variable</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">14</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></span></span></code></pre></div>
-<p>Cliquer sur <em>next</em> pour dérouler le script pas à pas.</p>
 
 <figure >
     <a href="https://pythontutor.com/render.html#code=x%20%3D%2010%0Ay%20%3D%2014%0Ax%20%3D%20x%20%2B%202%0Aprint%28x%29&amp;cumulative=false&amp;curInstr=4&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
         <img src="../images/pythontutor0.png"
+        
+            width="300"
+            
         
         alt="exemple de représentation avec 2 variables x et y dans le main" />
     </a>
@@ -1158,18 +970,26 @@ Les variables déclarées avec la fonction, entre parenthèse sont appelées <em
     
 </figure>
 
-<p><em>exemple 2</em>:</p>
+<blockquote>
+<p>Cliquer sur l&rsquo;image pour lancer l&rsquo;app <em>pythontutor</em>. Cliquer sur <em>next</em> pour dérouler le script pas à pas.</p>
+</blockquote>
+<p><em>exemple 2</em>: un espace mémoire pour les variables et pour les fonctions</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">14</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># creation de la fonction avec le mot clé def</span>
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">additionne</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># appel de la fonction avec a = 10 et b = 14</span>
 </span></span><span class="line"><span class="cl"><span class="n">additionne</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
 
 <figure >
     <a href="https://pythontutor.com/render.html#code=x%20%3D%2010%0Ay%20%3D%2014%0A%0Adef%20additionne%28a,b%29%3A%0A%20%20return%20a%20%2B%20b%0A%0Aadditionne%28x,y%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">
         <img src="../images/pythontutor6.png"
+        
+            width="300"
+            
         
         alt="exemple avec appel d&#39;une fonction" />
     </a>
@@ -1186,202 +1006,25 @@ Les variables déclarées avec la fonction, entre parenthèse sont appelées <em
     
 </figure>
 
-<h1 id="editeur-python">Editeur Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Ouvrir dans <em>winpython &gt; python QTConsole</em></p>
-
-<figure >
-    
-        <img src="/images/qtconsole.png"
-        
-         />
-    
-    
-</figure>
-
-<!-- raw HTML omitted -->
-<h2 id="travaux-pratiques-opérations-sur-les-nombres">Travaux pratiques: opérations sur les nombres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
-<p>Tester les scripts suivants dans l&rsquo;editeur Python. Pour cela, recopier dans l&rsquo;ordre, et dans la même cellule, chacune des instructions du script, et executer celle-ci. Repondre ensuite aux questions.</p>
+<p>Cliquer sur l&rsquo;image pour lancer l&rsquo;app <em>pythontutor</em>. Cliquer sur <em>next</em> pour dérouler le script pas à pas.</p>
 </blockquote>
-<h3 id="script-1">Script 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Incrémenter une variable&hellip;</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="n">age</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question a:</strong> quelle est la valeur de <code>age</code> à la fin du script?</li>
-</ul>
-<h3 id="script-2">Script 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Le programme suivant permet de connaitre en quelle année un enfant, né en 2022, aura 17 ans</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="mi">2022</span>
-</span></span><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="n">age</span> <span class="o">+</span> <span class="mi">17</span>
-</span></span><span class="line"><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="n">annee</span> <span class="o">+</span> <span class="n">age</span>
-</span></span><span class="line"><span class="cl"><span class="n">annee</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question b:</strong> en quelle année aura-t-il 17 ans?</li>
-</ul>
-<h3 id="script-3">Script 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>On veut réaliser les opérations suivantes:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nombre</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">nombre</span>
-</span></span><span class="line"><span class="cl"><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="o">-</span><span class="mi">10</span>
-</span></span><span class="line"><span class="cl"><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="o">**</span><span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="n">nombre</span><span class="o">=</span><span class="n">nombre</span><span class="o">-</span><span class="mi">5</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question c:</strong> Quel est le résultat (c&rsquo;est à dire la valeur finale de <code>nombre</code>) pour une valeur de depart <code>nombre = 5</code>?</li>
-</ul>
-<h3 id="script-4">Script 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Écrire un programme dans l’éditeur qui :</p>
-<ul>
-<li>affecte 3 à la variable <code>nombre</code></li>
-<li>Ajoute 7 au triple du nombre.</li>
-<li>Multiplie le résultat par le nombre lui-même.</li>
-<li>Soustrait au résultat le nombre 1 ;</li>
-<li>Affiche le résultat obtenu.</li>
-</ul>
-<p>Ne pas utiliser de nouvelles variables pour les résultats intermédiaires. Seulement <code>nombre</code></p>
-<ul>
-<li><strong>Question d:</strong> Quel est le résultat?</li>
-</ul>
-<h3 id="script-5-permuter-la-valeur-de-2-variables">Script 5: permuter la valeur de 2 variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>On veut mettre la valeur de <code>a</code> dans <code>b</code> et celle de <code>b</code> dans <code>a</code>. Le problème est que lorsque l&rsquo;on fait&hellip;</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span></span></span></code></pre></div>
-<p>&hellip; on se retrouve avec les mêmes valeurs pour <code>b</code> et pour <code>a</code>. Il n&rsquo;y a pas eu d&rsquo;echange. L&rsquo;idée est d&rsquo;utiliser une troisième variable, <code>c</code> pour stocker la valeur de <code>b</code>, puis de l&rsquo;affecter à <code>a</code></p>
-<ul>
-<li><strong>Question e:</strong> Ecrire la série d&rsquo;instructions correspondantes. Puis vérifier qu&rsquo;il y a bien eu échange entre les variables.</li>
-</ul>
-<h2 id="opérations-sur-les-chaines-de-caractères">Opérations sur les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<h3 id="script-6">Script 6<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Associer des chaines de caractères.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">debut</span> <span class="o">=</span> <span class="s2">&#34;bonne annee&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">milieu</span> <span class="o">=</span> <span class="s2">&#34; &#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">fin</span> <span class="o">=</span> <span class="s2">&#34;grand mere&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">debut</span> <span class="o">+</span> <span class="n">milieu</span> <span class="o">+</span> <span class="n">fin</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span></span></span></code></pre></div>
-<p>Cet exemple vous a rappelle que l&rsquo;opérateur <code>+</code> est l&rsquo;opérateur de <em>concaténation</em> avec les chaines de caractères.</p>
-<ul>
-<li><strong>Question f:</strong> Ecrire un nouveau script qui construit le message suivant: <code>Ho Ho Ho Ho Ho Ho Ho Ho Ho Ho</code>, où le nombre de <code>Ho</code> est stocké dans une variable N.</li>
-</ul>
-<p><em>Astuce: utiliser l&rsquo;opérateur</em> <code>*</code></p>
-<h3 id="script-7">Script 7<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Associer des valeurs numériques et des chaines de caractères</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="mi">21</span>
-</span></span><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s2">&#34;Kevin&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;mon nom est &#34;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&#34;, et j&#39;ai &#34;</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="s2">&#34; ans&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">message</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question g:</strong> Le script s&rsquo;execute t-il, ou bien renvoie-t-il une erreur? Quelle erreur le cas écheant?</li>
-<li><strong>Question h:</strong> Modifier l&rsquo;avant derniere ligne par: <code>message = &quot;mon nom est &quot; + nom + &quot;, et j'ai &quot; + str(age) + &quot; ans&quot;</code>. Le script fonctionne t-il? Que renvoie t-il?</li>
-</ul>
-<p><em>Remarque:</em> La fonction <code>str</code> va tranformer la valeur numerique <code>age</code> en une chaine de caractères (les caractères &ldquo;2&rdquo; et &ldquo;1&rdquo;).</p>
-<p><em>Tester également l&rsquo;instruction:</em> <code>print(&quot;mon nom est &quot;,nom ,&quot; et j'ai &quot;,age, &quot;ans&quot;)</code></p>
-<p><em>Que constatez-vous?</em></p>
-<h3 id="script-8">Script 8<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Afficher avec la fonction <code>print</code></p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">45</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">26</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;le reste de la division de &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; par &#39;</span> <span class="o">+</span> <span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question i:</strong> Completer la derniere ligne du script pour afficher la phrase suivante: <code>Le reste de la division de 45 par 26 est egal a 19</code> Vous ne devrez pas écrire les chiffres 45, 26 et 19 dans le message. Seulement utiliser les variables, ou une opération sur ces variables.</li>
-</ul>
-<p>Nous avons vu qu&rsquo;une chaine de caractère pouvait être construite comme une association de plusieurs chaines de caractères. Une chaine de caractères est de type <em>string</em> (ou <code>str</code>) en python.</p>
-<p>Pour vérifier le type d&rsquo;une variable, on utilise la fonction <code>type</code></p>
-<blockquote>
-<p>Testez chacune des instructions suivantes pour vérifier le type des différentes variables</p>
-</blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">45</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">26</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="o">//</span><span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">m</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question j:</strong> Compléter le tableau</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>x=</th>
-					<th>type(x)</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>45</td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>45%26</td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>45/26</td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>45//26</td>
-					<td></td>
-			</tr>
-			<tr>
-					<td>str(45)</td>
-					<td></td>
-			</tr>
-	</tbody>
-</table>
-<h3 id="script-9">Script 9<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Calculer en physique</p>
-<p>Dans une cellule Python,</p>
-<ul>
-<li>commencez par attribuer 100 à la variable <code>m</code>, et 20 à la variable <code>v</code></li>
-<li>calculer puis afficher E, l&rsquo;energie cinetique pour un systeme de masse 100kg et de vitesse $20m.s^{-1}$, selon la loi:</li>
-</ul>
-$$Ec = \tfrac{1}{2}m.v^2$$<ul>
-<li>
-<p><strong>Question j:</strong> Quelle est l&rsquo;expression que vous avez saisie en langage Python? Quelle est la valeur calculée pour l&rsquo;énergie cinetique?</p>
-</li>
-<li>
-<p><strong>Question k:</strong> Construire une chaine de caractères, en utilisant la fonction <code>format</code> et précisant les conditions initiales, les valeurs pour m et pour v, et le résultat du calcul de l&rsquo;énergie cinétique. Recopier ici cette instruction en python.</p>
-</li>
-</ul>
-<p><em>L&rsquo;expression formatée a été vue dans le cours sur les <a href="/docs/python/pages/generalites/page2/">variables et opérateur</a>, partie &ldquo;chaines de caractères&rdquo; et consiste à utiliser la méthode de chaine <code>&quot;caracteres {}&quot;.format(x)</code></em></p>
-<ul>
-<li><strong>Question l:</strong> créer une fonction <code>Ec</code> qui prend pour paramètres <code>m</code> et <code>v</code> et retourne le resultat de $Ec = \tfrac{1}{2}m.v^2$. Appeler cette fonction avec les valeurs 100kg et $20m.s^{-1}$</li>
-</ul>
-<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<ul>
-<li>Comment se nomment <em>en python</em> les 4 types primitifs que l&rsquo;on a vus lors de ces premieres séances?</li>
-<li>Le changement de type entre variables se fait grace aux fonctions <code>str</code>, &lsquo;float&rsquo;, <code>int</code>, et <code>bool</code>
-<ul>
-<li>Comment transformer la chaine &ldquo;12&rdquo; en une valeur entière égale à 12? &ldquo;12&rdquo; =&gt; 12</li>
-<li>Comment réaliser l&rsquo;opération inverse? 12 =&gt; &ldquo;12&rdquo;</li>
-<li>Comment transformer la chaine &ldquo;12&rdquo; en un nombre flottant? &ldquo;12&rdquo; =&gt; 12.0</li>
-<li>Comment transformer l&rsquo;information 1 en un booléen <code>True</code>?</li>
-<li>Comment réaliser l&rsquo;opération inverse?</li>
-</ul>
-</li>
-<li>Qu&rsquo;est-ce qu&rsquo;une affectation multiple, en une seule ligne d&rsquo;instruction?</li>
-<li>Comment échange t-on la valeur de 2 variables <code>a</code> et <code>b</code>?</li>
-<li>Pourquoi l&rsquo;instruction: <code>print(&quot;aujourd'hui j'ai &quot;+ 18 +&quot;ans&quot;)</code> ne fonctionne t-elle pas? Corriger cette expression (donner 2 moyens).</li>
-<li>Donner un exemple d&rsquo;utilisation d&rsquo;une expression formatée pour écrire le résultat du calcul de la force de gravitation $F=G\times m_1 \times m_2/d^2$, à partir des différentes variables.</li>
-<li>Quel sera le type associé à <code>F</code> si l&rsquo;on réalise le calcul?</li>
-<li>Comment définir une fonction <code>F_gravitation</code> pour réaliser le calcul de <code>F</code>?</li>
-<li>Comment utiliser cette fonction pour calculer la force de gravitation Terre-Lune?</li>
-</ul>
-<p>$M_T = 5.972\times 10^{24}kg$,</p>
-<p>$M_L = 7.348\times 10^{22}kg$,</p>
-<p>$d = 3.844\times 10^{8}m$,</p>
-<p>$G = 6.67\times 10^{-11}SI$</p>
+<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h3 id="lien-vers-le-tp2"><a href="../page6">Lien vers le TP2</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li><a href="../../generalites/page2">TP1 sur les opérations et types de base</a></li>
-<li><a href="../../variables/page4/">TP2 sur les variables</a></li>
+<li>Chapitre 1
+<ul>
+<li><a href="../../generalites/page2">types de base</a></li>
+<li><a href="../../generalites/page5">TP1 sur les opérations et types de base</a></li>
+</ul>
+</li>
+<li>Chapitre 2
+<ul>
+<li><a href="../../variables/page4/">Variables</a></li>
+<li><a href="../../variables/page6/">TP2 sur les variables</a></li>
+</ul>
+</li>
 <li><a href="../../conditions/page2/">cours: structures conditionnelles</a></li>
 <li><a href="../../conditions/page3/">TP3 conditions et fonctions</a></li>
 <li><a href="../../conditions/page4/">TP4 Boucles non bornées - while</a></li>
@@ -3919,22 +3562,29 @@ codebase - millions lines of code visualized
 <h1 id="types-simples">types simples</h1>
 
 <h1 id="les-variables-et-les-types-natifs-en-python">Les variables et les types natifs en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p><em>Cette page apporte des informations sur sur les types de base, sur les fonctions de la librairie <code>math</code>, sur les références, et les méthodes de chaines.</em></p>
+<p><em>Cette page apporte des informations sur les types de base, sur les fonctions de la librairie <code>math</code>, sur les références, et les méthodes de chaines.</em></p>
 <p>Cette rubrique contient 4 pages :</p>
 <ul>
 <li>page 1 : variables natives de base</li>
 <li>page 2 : <a href="../page2/">types construits</a></li>
 <li>page 3 : <a href="../page3/">TP sur les variables</a></li>
 </ul>
-<p>Les types natifs de base, ce sont les types numérique, <code>int</code> et <code>float</code>, les chaines de caractères <code>str</code>, mais aussi le type <code>None</code></p>
+<p>Les types natifs de base, ce sont les types numériques <code>int</code> et <code>float</code>, le type booléen <code>bool</code>, les chaines de caractères <code>str</code>, mais aussi le type <code>None</code>.</p>
 <h2 id="le-type-de--rien---none">le type de « rien » : <code>None</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>C&rsquo;est le type des instrutions. Valeur possible : None</p>
-<p><code>None</code> est utile par exemple lorsque l&rsquo;on veut terminer un fonction sans valeur de retour:</p>
+<p><code>None</code> est la valeur unique du type <code>NoneType</code>. Elle représente l&rsquo;absence de valeur.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &lt;class &#39;NoneType&#39;&gt;</span></span></span></code></pre></div>
+<p><code>None</code> est utile par exemple lorsque l&rsquo;on veut terminer une fonction sans valeur de retour, ou lorsqu&rsquo;une fonction ne contient pas d&rsquo;instruction <code>return</code> (c&rsquo;est alors la valeur de retour implicite) :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="c1"># instructions</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div>
-<h2 id="transformer-le-type-des-donnée">Transformer le type des donnée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Pour consulter le type d&rsquo;une donnée: fontion  <code>type</code>:</p>
+<h2 id="le-type-booléen--bool">le type booléen : <code>bool</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><code>bool</code> est le type des valeurs de vérité : <code>True</code> et <code>False</code>. C&rsquo;est le résultat des comparaisons (<code>==</code>, <code>&lt;</code>, <code>&gt;=</code>, &hellip;) et des expressions logiques.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &lt;class &#39;bool&#39;&gt;</span></span></span></code></pre></div>
+<p><em>À noter :</em> en Python, <code>bool</code> est un sous-type de <code>int</code> : <code>True</code> vaut <code>1</code> et <code>False</code> vaut <code>0</code>. C&rsquo;est pourquoi <code>True + True</code> donne <code>2</code>.</p>
+<h2 id="transformer-le-type-des-données">Transformer le type des données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour consulter le type d&rsquo;une donnée : fonction <code>type</code>:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Créé un objet de type int et lui associe le nom &#39;a&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> 
@@ -3968,16 +3618,20 @@ codebase - millions lines of code visualized
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.0</span>
 </span></span><span class="line"><span class="cl"><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3.8&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.0</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3.8</span></span></span></code></pre></div>
 <ul>
 <li>transformer en <code>int</code>
-convertit par exemple un flottant en entier en éliminant la partie décimale du nombre :</li>
+convertit par exemple un flottant en entier en <strong>tronquant</strong> la partie décimale du nombre (attention, ce n&rsquo;est pas un arrondi) :</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="mf">3.5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span></span></span></code></pre></div>
-<p>ou une chaine de caractères en un entier:</p>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche -3 (et non -4 : la troncature se fait vers 0)</span></span></span></code></pre></div>
+<p>ou une chaine de caractères en un entier :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s2">&#34;3&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">int</span><span class="p">(</span><span class="s2">&#34;3.5&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ValueError : int() ne convertit que des chaines représentant un entier</span></span></span></code></pre></div>
 <h1 id="opérations-sur-les-types-numériques">Opérations sur les types numériques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Les opérateurs sur les nombres ont été vus dans le cours <a href="http://localhost:1313/docs/python/index_python_D/" rel="external">Python les bases</a>.</p>
 <ul>
@@ -3999,10 +3653,14 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche 1.0</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># le sinus de l&#39;angle en radians</span>
 </span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="o">-</span><span class="mi">101</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche 101</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Renvoie la valeur absolue de (-101)</span>
-</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 101.0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Renvoie la valeur absolue de (-101), toujours sous forme de float</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">PI</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche False</span>
+</span></span><span class="line"><span class="cl"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche True</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Renvoie True si x est NaN (Not a Number)</span></span></span></code></pre></div>
+<p><em>Remarque:</em> les nombres flottants ont une précision limitée. Par exemple <code>0.1 + 0.2</code> n&rsquo;affiche pas exactement <code>0.3</code> mais <code>0.30000000000000004</code>, à cause de la façon dont les flottants sont représentés en mémoire (norme IEEE 754). Il faut garder ceci en tête avant de comparer deux flottants avec <code>==</code>.</p>
 <h1 id="opérations-sur-les-booléens---rappels">Opérations sur les booléens - rappels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <table>
 	<thead>
@@ -4048,7 +3706,7 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 </table>
 <h1 id="opérations-avec-les-chaines-de-caractères">Opérations avec les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Les opérateurs <code>+</code> et <code>*</code> sont autorisés dans les expressions avec les chaines de caractère.</p>
-<p>Le <code>+</code> réalise un <em>concaténation</em> de 2 chaines. Le <code>*</code> répète et concatène la chaine :</p>
+<p>Le <code>+</code> réalise une <em>concaténation</em> de 2 chaines. Le <code>*</code> répète et concatène la chaine :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;Alan&#39;</span><span class="p">,</span> <span class="s1">&#39;Turing&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> 
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche AlanTuring</span>
@@ -4060,9 +3718,17 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;H&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;ell&#39;</span></span></span></code></pre></div>
+<p>On peut aussi utiliser des index négatifs (qui comptent depuis la fin de la chaine) et un pas (<em>step</em>) dans le slice :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;d&#39; (dernier caractère)</span>
+</span></span><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;dlroW olleH&#39; (la chaine inversée)</span>
+</span></span><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;HloWrd&#39; (un caractère sur deux)</span></span></span></code></pre></div>
 <p>Mais, contrairement aux Listes, on ne pourra pas modifier un caractère par son index:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;P&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># TypeError: &#39;str&#39; object does not support item assignment</span></span></span></code></pre></div>
+<p>En fait, comme <code>int</code> et <code>float</code>, le type <code>str</code> est <strong>immuable</strong> (<em>immutable</em>) : une fois créée, une chaine ne peut plus être modifiée en place. Toute méthode qui semble « transformer » une chaine (<code>upper()</code>, <code>replace()</code>, &hellip;) renvoie en réalité une <strong>nouvelle</strong> chaine.</p>
 <p>Une chaine de caractères est <em>itérable</em>: On peut la parcourir avec une boucle bornée. Par exemple, le script suivant élimine tous les espaces dans la chaine:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;Il fait beau.&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">res</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
@@ -4097,18 +3763,25 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 </span></span><span class="line"><span class="cl"> |      
 </span></span><span class="line"><span class="cl"> |      Example: &#39;.&#39;.join([&#39;ab&#39;, &#39;pq&#39;, &#39;rs&#39;]) -&gt; &#39;ab.pq.rs&#39;
 </span></span><span class="line"><span class="cl"> | ...</span></span></code></pre></div>
+<p><em>Remarque:</em> pour construire une chaine à partir de valeurs de variables, la syntaxe moderne et recommandée est la <strong>f-string</strong>, plus lisible que <code>format</code> ou la concaténation avec <code>+</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s1">&#39;Ada&#39;</span><span class="p">,</span> <span class="mi">36</span>
+</span></span><span class="line"><span class="cl"><span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche &#39;Ada a 36 ans&#39;</span></span></span></code></pre></div>
 <h3 id="découpage---assemblage-split-et-join">Découpage - assemblage: <code>split</code> et <code>join</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Les méthodes <code>split</code> et <code>join</code> permettent de découper une chaîne selon un séparateur pour obtenir une liste, et à l&rsquo;inverse de reconstruire une chaîne à partir d&rsquo;une liste.</p>
-<p><code>split</code> permet donc de découper :</p>
+<p><code>split</code> permet donc de découper :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;abc=:=def=:=ghi=:=jkl&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=:=&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;abc&#39;, &#39;def&#39;, &#39;ghi&#39;, &#39;jkl&#39;]</span></span></span></code></pre></div>
-<p>Et à l&rsquo;inverse :</p>
+<p>Et à l&rsquo;inverse :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;=:=&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;ghi&#39;</span><span class="p">,</span> <span class="s1">&#39;jkl&#39;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche abc=:=def=:=ghi=:=jkl</span></span></span></code></pre></div>
 <p><em>Remarque:</em> Si le séparateur est un terminateur, comme par exemple &lsquo;;&rsquo;, ou<code>&quot;\n&quot;</code>, il conviendra d&rsquo;utiliser d&rsquo;abord la méthode <code>strip</code>. Voir <em><a href="http://localhost:1313/docs/python/pages/variables/page2/#compl%C3%A9ments-sur-les-strings" rel="external">compléments</a></em> en bas de page.</p>
 <h3 id="remplacement-replace">Remplacement: <code>replace</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><code>replace</code> est très pratique pour remplacer une sous-chaîne par une autre, avec une limite éventuelle sur le nombre de remplacements :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;abcdefabcdefabcdef&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">,</span> <span class="s2">&#34;zoo&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p><code>replace</code> est très pratique pour remplacer une sous-chaîne par une autre, avec une limite éventuelle sur le nombre de remplacements :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s2">&#34;abcdefabcdefabcdef&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">,</span> <span class="s2">&#34;zoo&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche zoodefzoodefzoodef</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;abcdefabcdefabcdef&#34;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">,</span> <span class="s2">&#34;zoo&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche zoodefabcdefabcdef (un seul remplacement grâce au 3e argument)</span></span></span></code></pre></div>
 <h3 id="modifier-la-casse-dune-chaine">modifier la casse d&rsquo;une chaine<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>utiliser les méthodes <code>title()</code> (titre), <code>upper()</code> (mise en majuscule), <code>lower()</code> (minuscule).</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s1">&#39;charles babbage&#39;</span>
@@ -4125,7 +3798,7 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 <h1 id="compléments-sur-les-variables-et-types">Compléments sur les variables et types<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="valeur-et-référence">Valeur et référence<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Les <strong>variables</strong> en Python sont des <strong>références nommées</strong>.</p>
-<p>Une variable est une donc <strong>étiquette</strong> associée à une <strong>valeur</strong>. Ce nom est à peu près quelconque, mais pour l’ordinateur il s’agit d’une <strong>référence</strong> désignant une <strong>adresse mémoire</strong>, c’est-à-dire un emplacement précis dans la mémoire vive.</p>
+<p>Une variable est donc une <strong>étiquette</strong> associée à une <strong>valeur</strong>. Ce nom est à peu près quelconque, mais pour l’ordinateur il s’agit d’une <strong>référence</strong> désignant une <strong>adresse mémoire</strong>, c’est-à-dire un emplacement précis dans la mémoire vive.</p>
 <p>À cet emplacement est stockée une <strong>valeur typée</strong> bien déterminée.</p>
 <p>
 <figure >
@@ -4148,15 +3821,22 @@ convertit par exemple un flottant en entier en éliminant la partie décimale du
 </figure>
 
 Cette valeur peut être en fait à peu près n’importe quel « objet » susceptible d’être placé dans la mémoire d’un ordinateur, par exemple : un nombre entier, un nombre réel, un nombre complexe, un vecteur, une chaîne de caractères, un tableau, une fonction, etc.</p>
-<p>La programme suivant permet de consulter l&rsquo;adresse mémoire d&rsquo;une variable:</p>
+<p>Le programme suivant permet de consulter l&rsquo;adresse mémoire d&rsquo;une variable:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Créer un objet de type int et lui associe le nom &#39;a&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#=&gt; int</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Cet objet se trouve dans la mémoire de l&#39;ordinateur</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># à un endroit que l&#39;on peut obtenir avec `id`:</span>
 </span></span><span class="line"><span class="cl"><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1">#=&gt; La position de l&#39;objet nommé a dans la mémoire de l&#39;ordinateur.</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># AFfiche</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Affiche</span>
 </span></span><span class="line"><span class="cl"><span class="mi">94875962855936</span></span></span></code></pre></div>
+<p><em>Pour aller plus loin :</em> deux noms peuvent référencer le <strong>même</strong> objet en mémoire. L&rsquo;opérateur <code>==</code> compare les <strong>valeurs</strong>, alors que l&rsquo;opérateur <code>is</code> compare les <strong>références</strong> (l&rsquo;identité, donc le résultat de <code>id</code>) :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>   <span class="c1"># True : mêmes valeurs</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>   <span class="c1"># False : deux objets distincts en mémoire</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="ow">is</span> <span class="n">a</span>   <span class="c1"># True : c et a référencent le même objet</span></span></span></code></pre></div>
 <h2 id="typage-dynamique">Typage dynamique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Python est un langage à typage dynamique, ce qui signifie qu&rsquo;il n&rsquo;est pas necessaire de déclarer le type de donnée que représentera une variable (c&rsquo;est la différence avec le typage <em>statique</em>). C&rsquo;est l&rsquo;interpréteur qui examine la donnée tout au long de la vie du programme et choisit le type.</p>
 <h2 id="affectation-simple-et-multiple">Affectation simple et multiple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -4233,8 +3913,9 @@ Cette valeur peut être en fait à peu près n’importe quel « objet » suscep
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne les elements dans une liste</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># [&#39;GET&#39;, &#39;/search&#39;, &#39;ville=nice&#39;, &#39;UTC=12&#39;]</span></span></span></code></pre></div>
-<h1 id="les-types-construits-séquences">Les types construits (séquences)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>voir la page suivante: <a href="../page2/">Types construits</a></p>
+<h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h3 id="travaux-dirigés-sur-int-float-str-bool-tp1">travaux dirigés sur int, float, str, bool: <a href="../page6">TP1</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="page-suivante-types-construits">page suivante: <a href="../page2/">Types construits</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li>Compléments: valeur, references, espace de nom: <a href="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html" rel="external">Lien vers le cours de normalesup</a></li>
@@ -60253,9 +59934,9 @@ Expliquez le rôle des instructions suivantes:</li>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1786542233"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1786542233" defer></script>
-    <script src="/js/theme.js?1786542233" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1786988225"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1786988225" defer></script>
+    <script src="/js/theme.js?1786988225" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
