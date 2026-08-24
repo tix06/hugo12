@@ -1,10 +1,10 @@
 ---
-Title : TP variables
+Title : TD2a types construits
 description: TP sur les types construits, les copies par valeur et reference
 hidden: true
 weight: 9
 ---
-# Travaux pratiques
+
 ## Les types mutables et non mutables en python
 Vous traiterez chacun des exemples suivants en utilisant l'editeur de  [pythontutor](http://www.pythontutor.com/visualize.html#mode=edit)
 
@@ -239,8 +239,11 @@ ma_fonction(L1)
 
 Reproduire sommairement le schéma de la structure de données telle qu'elle serait représentée dans Pythontutor, à la fin de ce script.
 
-# Liens
-* TP5 [listes, indices, méthodes](/docs/python/pages/boucles/page3/)
-* TP6 [boucles et parcours de liste](../../boucles/page4)
+# Suite
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
+##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
+##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux
 
 

@@ -1,27 +1,21 @@
 ---
-Title: TP2 listes, indices, méthodes
-description: parcours de liste, compréhension de liste et tracé graphique
+Title: TD2b listes, indices, méthodes
+description: parcours de liste, compréhension de liste, méthodes de listes et dictionnaires, tracé graphique
 hidden: true
 weight: 10
 ---
 
   
-**Rappels de cours sur les listes**
-
-* [page 1: listes et boucles bornées](../../...python_bases/boucles/page2/)
-* [page 2: types construits: list, tuple, dict](../../variables/page2/)
-
-**Editeur Python**
-
-* Utiliser un **notebook**. Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur *Majuscule(Shift)* + *Entrée* pour **executer le code**.
 
 
 
 
-# TP6: Boucles bornées et parcours d'une liste
 
-## Ex preliminaire: Parcours d'une liste
-On pourra consulter le cours complet à l'adresse [python>boucles_bases](/docs/python/pages/boucles/page2/) et [python>boucles_avancé](/docs/python/pages/boucles/page1/)
+
+
+
+## Ex 0: Parcours d'une liste
+
 
 Une boucle bornée utilise le mot `for`. La structure suit le schéma suivant:
 
@@ -204,10 +198,89 @@ On peut aussi construire un dictionnaire par compréhension, en une seule ligne.
 
 > Construire le dictionnaire `D` par compréhension de dictionnaire.
 
-# Portfolio
-* Utiliser l'un des exemples utilisant une compréhension de liste pour repérer ce qu'est le variant de boucle, à quels endroits il faut le placer pour construire la liste.
 
-# Liens 
-* activité sur les copies par valeur et par reference: [pythontutor](/docs/python/pages/variables/page3/)
-* TP5 [listes, indices, méthodes](/docs/python/pages/boucles/page3/)
-* TP6 [boucles et parcours de liste](../page4)
+## Ex 5: Méthodes de listes — gérer un plan de vols
+On reprend l'exemple du cours sur les aéroports :
+
+```python
+aeroports = ['CDG', 'ORY', 'LIS']
+```
+
+* **Question a:** Un nouveau vol dessert New-York. Ajouter `'JFK'` **en fin** de liste, avec la méthode adéquate.
+
+* **Question b:** Un vol vers Londres-City doit être inséré **juste après** `'ORY'` (en 3e position), sans reconstruire toute la liste. Quelle méthode utiliser ? Écrire l'instruction.
+
+* **Question c:** Le vol vers `'LIS'` est annulé : supprimer cet aéroport de la liste (méthode `remove`).
+
+* **Question d:** Quel est l'index de `'JFK'` dans la liste actuelle ? Écrire l'instruction qui permet de l'obtenir sans le compter à la main.
+
+* **Question e:** Le dernier aéroport ajouté à la liste doit être retiré, et son nom doit être annoncé à l'écran. Quelle méthode permet de faire les deux à la fois ? Écrire l'instruction correspondante.
+
+* **Question f:** Une compagnie partenaire propose également les aéroports `['AMS', 'BRU']`. Fusionner cette liste à la fin de `aeroports`, en une seule instruction (sans boucle `for`).
+
+* **Question g (bilan):** Recopier le script complet, dans l'ordre des questions a à f, puis afficher `aeroports` à la fin. Vérifier votre résultat à l'IDE.
+
+
+## Ex 6: Trier une liste — classement de notes
+On donne la liste de notes suivante :
+
+```python
+notes = [12, 8, 15, 10, 20, 6, 14]
+```
+
+* **Question a:** Utiliser `sorted(notes)` pour obtenir une **copie** triée par ordre croissant, stockée dans une nouvelle variable `notes_triees`. Vérifier ensuite que `notes` n'a pas changé.
+
+* **Question b:** Utiliser la méthode `sort()` pour trier `notes` **en place**. Vérifier que `notes` a bien changé cette fois.
+
+* **Question c — piège classique:** Que se passe-t-il si on exécute `notes = notes.sort()` ? Tester à l'IDE, afficher `notes`, et expliquer le résultat obtenu en une phrase (aide : que renvoie une méthode qui trie « en place » ?).
+
+* **Question d:** En consultant `help(list.sort)` ou `help(sorted)`, trouver le paramètre optionnel qui permet de trier une liste par ordre **décroissant**. Trier `notes` par ordre décroissant, avec `sort()` puis avec `sorted()`.
+
+
+## Ex 7: Copier une liste — le piège de la référence
+On exécute le script suivant :
+
+```python
+original = [1, 2, 3]
+copie = original
+copie.append(4)
+print(original)
+print(copie)
+```
+
+* **Question a:** Sans exécuter, prédire ce qu'affichent les deux `print`. Vérifier ensuite à l'IDE.
+
+* **Question b:** Le résultat de `original` vous étonne-t-il ? Expliquer, en une ou deux phrases, pourquoi modifier `copie` a également modifié `original` (aide : que fait réellement l'instruction `copie = original` ?).
+
+* **Question c:** Réécrire le script pour que `copie` soit une liste réellement indépendante de `original` (deux façons sont possibles — en écrire au moins une). Vérifier qu'après modification de `copie`, `original` reste bien `[1, 2, 3]`.
+
+
+## Ex 8: Méthodes de dictionnaires — le carnet de capitales
+On reprend l'exemple du cours :
+
+```python
+capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
+```
+
+* **Question a:** Afficher, une par ligne, toutes les **clés** du dictionnaire (méthode `keys`).
+
+* **Question b:** Afficher, une par ligne, toutes les **valeurs** du dictionnaire (méthode `values`).
+
+* **Question c:** Afficher, une par ligne, chaque pays suivi de sa capitale sur la même ligne, par exemple `France Paris` (méthode `items`).
+
+* **Question d:** Le Portugal doit être ajouté au dictionnaire, avec Lisbonne pour capitale. Écrire l'instruction.
+
+* **Question e:** Une erreur s'est glissée : la capitale associée à `'Allemagne'` doit être modifiée en `'Berlin'` si ce n'est pas déjà le cas, sinon laissez comme c'est. Écrire l'instruction qui modifierait cette valeur si nécessaire.
+
+* **Question f:** Le pays `'Italie'` ne doit plus figurer dans le dictionnaire : le supprimer avec `del`.
+
+* **Question g:** Faire une copie indépendante de `capitales` dans une nouvelle variable `mes_capitales` (attention à ne pas faire une simple affectation). Ajouter `'Espagne': 'Madrid'` uniquement à `mes_capitales`, puis vérifier que `capitales` n'a pas changé.
+
+* **Question h (compréhension de dictionnaire):** Construire, **en une seule ligne**, un nouveau dictionnaire `capitales_maj` qui contient les mêmes clés que `capitales`, mais avec les valeurs (les noms de villes) tout en majuscules. On utilisera la méthode `upper()` sur les chaînes de caractères, dans une compréhension de dictionnaire.
+
+# Suite
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
+##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
+##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux

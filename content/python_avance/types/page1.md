@@ -13,11 +13,11 @@ weight: 4
 
 Cette rubrique contient 4 pages : 
 
-* page 1 : variables natives de base
-* page 2 : [types construits](../page2/)
-* page 3 : [TP sur les variables](../page3/)
-<!--* page 4 : [flash-card sur les variables](../ex1/)
--->
+* page 1 : [Cours](../page1/)
+* page 2 : [TP1](../page6/)
+* page 3 : [TD1](../page8/)
+
+
 Les types natifs de base, ce sont les types numériques `int` et `float`, le type booléen `bool`, les chaines de caractères `str`, mais aussi le type `None`.
 
 ## le type de « rien » : `None`
@@ -302,7 +302,7 @@ Une variable est donc une **étiquette** associée à une **valeur**. Ce nom est
 
 À cet emplacement est stockée une **valeur typée** bien déterminée.
 
-{{< img src="../images/var_normalesup1.png" link="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html" caption="image issue du cours sur http://www.normalesup.org/" >}}
+{{< img src="../images/var_normalesup1.png" link="http://www.normalesup.org/~doulcier/teaching/python/01_variables.html" width="300" caption="image issue du cours sur http://www.normalesup.org/" >}}
 Cette valeur peut être en fait à peu près n’importe quel « objet » susceptible d’être placé dans la mémoire d’un ordinateur, par exemple : un nombre entier, un nombre réel, un nombre complexe, un vecteur, une chaîne de caractères, un tableau, une fonction, etc.
 
 Le programme suivant permet de consulter l'adresse mémoire d'une variable:
@@ -451,8 +451,11 @@ c.split(' ')
 ```
 
 # Suite
-### travaux dirigés sur int, float, str, bool: [TP1](../page6)
-### page suivante: [Types construits](../page2/)
+
+##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page6" icon="palette" style="tip" %}}TP1{{% /button %}} Types simples
+##### {{% button href="../page8" icon="palette" style="important" %}}TD1{{% /button %}} Variables et types natifs
+
 
 # Liens
 <!--* Lien vers les [Flash cards](../ex1) sur les variables et séquences-->
