@@ -8,41 +8,41 @@
     <meta name="description" content="tableaux représentés par un tableur, tableau python, import csv">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="tableaux python :: allopizza">
+    <meta name="twitter:title" content="TP3 tableaux python :: allopizza">
     <meta name="twitter:description" content="tableaux représentés par un tableur, tableau python, import csv">
     <meta property="og:url" content="//localhost:1313/python_avance/types/page5/index.html">
     <meta property="og:site_name" content="allopizza">
-    <meta property="og:title" content="tableaux python :: allopizza">
+    <meta property="og:title" content="TP3 tableaux python :: allopizza">
     <meta property="og:description" content="tableaux représentés par un tableur, tableau python, import csv">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
-    <meta property="article:modified_time" content="2026-08-17T19:41:54+02:00">
-    <meta itemprop="name" content="tableaux python :: allopizza">
+    <meta property="article:modified_time" content="2026-08-26T17:00:48+02:00">
+    <meta itemprop="name" content="TP3 tableaux python :: allopizza">
     <meta itemprop="description" content="tableaux représentés par un tableur, tableau python, import csv">
-    <meta itemprop="dateModified" content="2026-08-17T19:41:54+02:00">
-    <meta itemprop="wordCount" content="734">
-    <title>tableaux python :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787755792" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787755792" defer></script>
-    <script src="/js/search-lunr.js?1787755792" defer></script>
-    <script src="/js/search.js?1787755792" defer></script>
+    <meta itemprop="dateModified" content="2026-08-26T17:00:48+02:00">
+    <meta itemprop="wordCount" content="1427">
+    <title>TP3 tableaux python :: allopizza</title>
+    <link href="/css/auto-complete/auto-complete.min.css?1787759284" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787759284" defer></script>
+    <script src="/js/search-lunr.js?1787759284" defer></script>
+    <script src="/js/search.js?1787759284" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787755792";
+      window.relearn.index_js_url="/searchindex.en.js?1787759284";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787755792" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787755792" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787755792" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1787755792" defer></script>
+    <script src="/js/lunr/lunr.min.js?1787759284" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787759284" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787759284" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1787759284" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787755792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787755792" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787755792" rel="stylesheet">
-    <link href="/css/theme.css?1787755792" rel="stylesheet">
-    <link href="/css/format-html.css?1787755792" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1787759284" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787759284" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787759284" rel="stylesheet">
+    <link href="/css/theme.css?1787759284" rel="stylesheet">
+    <link href="/css/format-html.css?1787759284" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -120,19 +120,27 @@
   <ul>
     <li><a href="#traitements-sur-le-fichier-csv-importé-du-tableur">Traitements sur le fichier csv importé du tableur</a></li>
   </ul>
+
+  <ul>
+    <li><a href="#1-copier-les-données-sans-len-tête">1. Copier les données sans l&rsquo;en-tête</a></li>
+    <li><a href="#2-rechercher-le-pays-ayant-le-plus-grand-nombre-délèves">2. Rechercher le pays ayant le plus grand nombre d&rsquo;élèves</a></li>
+    <li><a href="#3-trier-la-table-par-nombre-délèves-décroissant">3. Trier la table par nombre d&rsquo;élèves décroissant</a></li>
+    <li><a href="#4-construire-un-dictionnaire-par-pays">4. Construire un dictionnaire par pays</a></li>
+    <li><a href="#5-construire-un-dictionnaire-de-dictionnaires-automatiquement">5. Construire un dictionnaire de dictionnaires, automatiquement</a></li>
+  </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/types/index.html"><span itemprop="name">Types</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tableaux python</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/types/index.html"><span itemprop="name">Types</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP3 tableaux python</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/types/page5.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page2/index.html" title="types construits (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page10/index.html" title="tables de données (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/types/page12/index.html" title="dataframe (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
@@ -156,7 +164,7 @@
   <header class="headline">
   </header>
 
-<h1 id="tableaux-python">tableaux python</h1>
+<h1 id="tp3-tableaux-python">TP3 tableaux python</h1>
 
 
 <figure >
@@ -596,10 +604,74 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
 <li>Traiter la feuille d&rsquo;exercices sur les tableaux en python: <a href="/pdf/NSI_1/TP_excel_vers_python.pdf">lien vers le pdf</a></li>
 </ol>
 </blockquote>
+<h1 id="manipuler-une-table-de-données-liste-de-listes-et-dictionnaires">Manipuler une table de données (liste de listes et dictionnaires)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On dispose de la table suivante, qui donne, pour 4 pays européens, le nombre d&rsquo;élèves scolarisés dans le secondaire, le nombre de jours de vacances scolaires par an, et la durée des études secondaires (collège-lycée ou équivalent) :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">table</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;Pays&#34;</span><span class="p">,</span> <span class="s2">&#34;Nb élèves secondaire&#34;</span><span class="p">,</span> <span class="s2">&#34;Jours de vacances/an&#34;</span><span class="p">,</span> <span class="s2">&#34;Durée secondaire (ans)&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;France&#34;</span><span class="p">,</span> <span class="mi">5660000</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;Allemagne&#34;</span><span class="p">,</span> <span class="mi">6900000</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;Espagne&#34;</span><span class="p">,</span> <span class="mi">3500000</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="s2">&#34;Grèce&#34;</span><span class="p">,</span> <span class="mi">700000</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span></span></span></code></pre></div>
+<p>La première ligne contient les <strong>étiquettes de colonnes</strong>, les lignes suivantes les <strong>données</strong> proprement dites, un pays par ligne.</p>
+<hr>
+<h2 id="1-copier-les-données-sans-len-tête">1. Copier les données sans l&rsquo;en-tête<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On souhaite travailler uniquement sur les données (sans la ligne d&rsquo;étiquettes), dans une nouvelle variable <code>donnees</code>, tout en conservant <code>table</code> intacte.</p>
+<ul>
+<li>Écrire une instruction qui construit <code>donnees</code> par une <strong>copie par valeur</strong> de <code>table</code>, en excluant la première ligne.</li>
+<li>Vérifier que modifier <code>donnees</code> (par exemple en ajoutant une ligne avec <code>append</code>) ne modifie pas <code>table</code>.</li>
+</ul>
+<p><em>Remarque à garder en tête pour la suite du cours :</em> cette copie protège la liste <code>table</code> elle-même, mais les lignes qu&rsquo;elle contient (par exemple <code>donnees[0]</code>) restent les <strong>mêmes objets</strong> que ceux de <code>table</code>. Modifier un élément d&rsquo;une ligne de <code>donnees</code> (comme <code>donnees[0][1] = 0</code>) modifierait donc bien la ligne correspondante dans <code>table</code>. On appelle cela une copie <em>de surface</em> (shallow copy).</p>
+<hr>
+<h2 id="2-rechercher-le-pays-ayant-le-plus-grand-nombre-délèves">2. Rechercher le pays ayant le plus grand nombre d&rsquo;élèves<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>En parcourant <code>donnees</code> avec une boucle bornée, écrire un script qui détermine le pays possédant le plus grand nombre d&rsquo;élèves du secondaire (colonne d&rsquo;indice 1).</p>
+<p>Le script devra afficher le nom du pays et le nombre d&rsquo;élèves correspondant. On procèdera comme pour une recherche de maximum : une variable mémorise le meilleur pays trouvé jusqu&rsquo;ici, mise à jour à chaque fois qu&rsquo;une ligne fait mieux.</p>
+<hr>
+<h2 id="3-trier-la-table-par-nombre-délèves-décroissant">3. Trier la table par nombre d&rsquo;élèves décroissant<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Python permet de trier une liste avec la fonction <code>sorted</code> (qui renvoie une copie triée) ou avec la méthode <code>sort</code> (qui trie en place). Toutes deux acceptent un paramètre optionnel <code>key</code>, qui indique <strong>selon quel critère</strong> comparer les éléments.</p>
+<p><em>Documentation (extrait) :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sorted(iterable, key=None, reverse=False)
+</span></span><span class="line"><span class="cl">    - key : fonction appliquée à chaque élément avant comparaison
+</span></span><span class="line"><span class="cl">    - reverse=True : tri décroissant plutôt que croissant</span></span></code></pre></div>
+<p>Pour trier <code>donnees</code> selon le nombre d&rsquo;élèves (2e colonne de chaque ligne), la fonction <code>key</code> doit indiquer comment extraire cette valeur d&rsquo;une ligne. Par exemple, pour trier selon le nom du pays (1re colonne), on écrirait :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tri_par_pays</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">donnees</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ligne</span><span class="p">:</span> <span class="n">ligne</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></span></span></code></pre></div>
+<ul>
+<li>Écrire l&rsquo;instruction qui construit <code>tri_par_effectif</code>, une copie de <code>donnees</code> triée par nombre d&rsquo;élèves, du <strong>plus grand au plus petit</strong>.</li>
+<li>Vérifier que <code>donnees</code> n&rsquo;a pas été modifiée.</li>
+</ul>
+<hr>
+<h2 id="4-construire-un-dictionnaire-par-pays">4. Construire un dictionnaire par pays<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On souhaite représenter chaque pays par un dictionnaire, dont les clés sont les étiquettes de colonnes de la table d&rsquo;origine. Voici le script pour la France :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etiquettes</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">ligne_france</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">France</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">etiquettes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">ligne_france</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">etiquettes</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">ligne_france</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">etiquettes</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">ligne_france</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="n">etiquettes</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">ligne_france</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<ul>
+<li>Adapter ce script pour construire, de la même manière, les dictionnaires <code>Allemagne</code>, <code>Espagne</code> et <code>Grece</code>.</li>
+<li>Afficher chacun des 4 dictionnaires pour vérifier leur contenu.</li>
+</ul>
+<hr>
+<h2 id="5-construire-un-dictionnaire-de-dictionnaires-automatiquement">5. Construire un dictionnaire de dictionnaires, automatiquement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Le script de la question 4 doit être réécrit à la main pour chaque pays : ce n&rsquo;est pas satisfaisant si la table contient un jour 50 pays. On souhaite maintenant construire, <strong>à partir de la liste <code>table</code> d&rsquo;origine et à l&rsquo;aide d&rsquo;une boucle</strong>, un dictionnaire unique <code>pays_dict</code> qui rassemble tous les pays, de la forme :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Nb élèves secondaire&#39;</span><span class="p">:</span> <span class="mi">5660000</span><span class="p">,</span> <span class="s1">&#39;Jours de vacances/an&#39;</span><span class="p">:</span> <span class="mi">112</span><span class="p">,</span> <span class="s1">&#39;Durée secondaire (ans)&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div>
+<ul>
+<li>Écrire un script qui construit <code>pays_dict</code> automatiquement, en parcourant les lignes de <code>table</code> (sans la ligne d&rsquo;en-tête) avec une boucle bornée. On pourra s&rsquo;appuyer sur <code>etiquettes = table[0]</code> et parcourir, pour chaque pays, les indices de colonnes avec une seconde boucle bornée imbriquée.</li>
+<li>Vérifier que <code>pays_dict['France']</code> donne bien le même contenu que le dictionnaire <code>France</code> construit à la question 4.</li>
+</ul>
+<p><em>Pour aller plus loin :</em> la fonction native <code>zip</code> permet d&rsquo;associer deux listes élément par élément et simplifie beaucoup ce genre de construction (<code>dict(zip(etiquettes[1:], ligne[1:]))</code>). Si le temps le permet, cherchez sa documentation et proposez une version de <code>pays_dict</code> qui l&rsquo;utilise.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
-              <i class='fa-fw fas fa-calendar'></i> 17 août 2026
+              <i class='fa-fw fas fa-calendar'></i> 26 août 2026
   </footer>
 </article>
         </div>
@@ -668,7 +740,8 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
             <li class="parent " data-nav-id="/python_avance/types/index.html"><input type="checkbox" id="R-section-a7b179fb5a2a7ce424d7a310330b2c8c" aria-controls="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" checked><label for="R-section-a7b179fb5a2a7ce424d7a310330b2c8c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Types</span></label><a class="padding default-animation" href="/python_avance/types/index.html">Types<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-a7b179fb5a2a7ce424d7a310330b2c8c" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/types/page1/index.html"><a class="padding" href="/python_avance/types/page1/index.html">types simples<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page2/index.html"><a class="padding" href="/python_avance/types/page2/index.html">types construits<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/types/page10/index.html"><a class="padding" href="/python_avance/types/page10/index.html">tables de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_avance/types/page5/index.html"><a class="padding" href="/python_avance/types/page5/index.html">TP3 tableaux python<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
@@ -943,9 +1016,9 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787755792"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787755792" defer></script>
-    <script src="/js/theme.js?1787755792" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787759284"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787759284" defer></script>
+    <script src="/js/theme.js?1787759284" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
