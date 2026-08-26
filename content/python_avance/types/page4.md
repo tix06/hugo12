@@ -124,7 +124,7 @@ somme
 
 * **Question e:** adapter ce script pour calculer le nombre de boules de la pyramique à 7 étages suivante. Quel est ce nombre? Quel serait ce nombre pour une pyramide à 99 étage?
 
-{{< img src="../images/pyramide.jpeg" caption="ID 32142797 © [Ekostsov](https://fr.dreamstime.com/ekostsov_info) | Dreamstime.com" >}}
+{{< img src="../images/pyramide.jpeg" width="400px" caption="ID 32142797 © [Ekostsov](https://fr.dreamstime.com/ekostsov_info) | Dreamstime.com" >}}
 
 ## Ex 4: Autres types construits
 ### Tuple
@@ -136,7 +136,7 @@ T = (("A",1),("B",2),("C",3))
 
 L'interpreteur python construit l'objet `T` de la manière suivante:
 
-{{< img src="../images/tuple1.png" caption="image - pythontutor" >}}
+{{< img src="../images/tuple1.png" width="400px" caption="image - pythontutor" >}}
 
 Lorsque l'on utilise la boucle bornée:
 
@@ -146,7 +146,7 @@ for elem in T:
 
 ...cela créé un itérable (un ensemble), comme sur l'image suivante:
 
-{{< img src="../images/tuple2.png" caption="en orange: ensemble des itérables" >}}
+{{< img src="../images/tuple2.png" width="400px" caption="en orange: ensemble des itérables" >}}
 
 Ainsi, avec le programme suivant:
 

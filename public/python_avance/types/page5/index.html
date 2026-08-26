@@ -21,28 +21,28 @@
     <meta itemprop="name" content="tableaux python :: allopizza">
     <meta itemprop="description" content="tableaux représentés par un tableur, tableau python, import csv">
     <meta itemprop="dateModified" content="2026-08-17T19:41:54+02:00">
-    <meta itemprop="wordCount" content="697">
+    <meta itemprop="wordCount" content="734">
     <title>tableaux python :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787754254" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787754254" defer></script>
-    <script src="/js/search-lunr.js?1787754254" defer></script>
-    <script src="/js/search.js?1787754254" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1787755792" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787755792" defer></script>
+    <script src="/js/search-lunr.js?1787755792" defer></script>
+    <script src="/js/search.js?1787755792" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787754254";
+      window.relearn.index_js_url="/searchindex.en.js?1787755792";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787754254" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787754254" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787754254" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1787754254" defer></script>
+    <script src="/js/lunr/lunr.min.js?1787755792" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787755792" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787755792" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1787755792" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787754254" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787754254" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787754254" rel="stylesheet">
-    <link href="/css/theme.css?1787754254" rel="stylesheet">
-    <link href="/css/format-html.css?1787754254" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1787755792" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787755792" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787755792" rel="stylesheet">
+    <link href="/css/theme.css?1787755792" rel="stylesheet">
+    <link href="/css/format-html.css?1787755792" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -114,7 +114,7 @@
 <nav class="TableOfContents">
   <ul>
     <li><a href="#traitement-sur-une-liste">Traitement sur une liste</a></li>
-    <li><a href="#traitement-sur-une-table-liste-de-listes">Traitement sur une table (liste de listes)</a></li>
+    <li><a href="#traitement-sur-une-table-liste-de-listes--et-effet-de-bord">Traitement sur une table (liste de listes)  et effet de bord</a></li>
   </ul>
 
   <ul>
@@ -498,7 +498,7 @@ $$= alea() * 20$$
 <p>1c Modifier le script (faire <em>edit</em> dans pythontutor) pour que le programme place la
 valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
 </blockquote>
-<h2 id="traitement-sur-une-table-liste-de-listes">Traitement sur une table (liste de listes)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h2 id="traitement-sur-une-table-liste-de-listes--et-effet-de-bord">Traitement sur une table (liste de listes)  et effet de bord<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
 <ol start="2">
 <li>Animation sur Pythontutor: visualiser le parcours et traitement sur une liste</li>
@@ -549,10 +549,13 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
 <p>2c. Pourquoi écrit-on l&rsquo;instruction <code>m = moyenne(eleve[2:])</code> et non <code>m = moyenne(eleve))</code>?</p>
 </blockquote>
 <blockquote>
-<p>2d. Modifier le script pour que le programme place la valeur m dans la case <code>eleve[1]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
+<p>2d. Ajouter une instruction au programme pour placer la valeur m dans la case <code>eleve[1]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
 </blockquote>
 <blockquote>
-<p>2e. Modifier maintenant le programme pour calculer la moyenne de l&rsquo;élève 1. Comment doit-on modifier le programme?</p>
+<p>2e. La table a t-elle été modifiée? Expliquer.</p>
+</blockquote>
+<blockquote>
+<p>2f. Ecrire une fonction <code>ajoute_colonne_moyenne</code> qui prend en paramètre une table <code>classe</code> et un numero de colonne <code>c</code>. Le fonction devra ajouter la moyenne pour chaque élève, dans la colonne <code>c</code>. La table <code>classe</code> aura le format proposé dans l&rsquo;énoncé vu plus haut.</p>
 </blockquote>
 <h1 id="prolongement">Prolongement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="traitements-sur-le-fichier-csv-importé-du-tableur">Traitements sur le fichier csv importé du tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -940,9 +943,9 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787754254"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787754254" defer></script>
-    <script src="/js/theme.js?1787754254" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787755792"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787755792" defer></script>
+    <script src="/js/theme.js?1787755792" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

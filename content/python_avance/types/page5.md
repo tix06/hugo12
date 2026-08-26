@@ -114,7 +114,7 @@ Lien: [pythontutor](https://pythontutor.com/render.html#code=list1%20%3D%20%5B%2
 valeur `m` dans la case `list1[0]`. Noter ici l'instruction utilisée. Comment voit-on la modification dans pythontutor?
 
 
-## Traitement sur une table (liste de listes)
+## Traitement sur une table (liste de listes)  et effet de bord
 > 2. Animation sur Pythontutor: visualiser le parcours et traitement sur une liste
 
 Execution du script suivant sur [Pythontutor](https://pythontutor.com/render.html#code=classe%20%3D%20%5B%5B'%5Cufeff','moyenne','note1','note2','note3','note4','note5',%0A%20%20'note6','note7','note8','note9'%5D,%0A%20%5B'eleve1',%20'12,5',%2010.0,%208.9,%209.9,%2012.3,%2011.1,%2012.3,%2013.1,%2014.5,%2020.0%5D,%0A%20%5B'eleve2',%20'',%204.2,%202.1,%2016.5,%2015.0,%2019.6,%207.5,%2010.3,%2018.8,%2017.4%5D%5D%0A%0Adef%20moyenne%28tab%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20note%20in%20tab%3A%0A%20%20%20%20%20%20%20%20s%20%2B%3D%20note%0A%20%20%20%20return%20s%20/%20len%28tab%29%0A%0Aeleve%20%3D%20classe%5B2%5D%0Am%20%3D%20round%28moyenne%28eleve%5B2%3A%5D%29,2%29%0Aprint%28%22nom%20eleve%3A%20%7B%7D%20moyenne%3A%20%7B%7D%22.format%28eleve%5B0%5D,m%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
@@ -144,9 +144,11 @@ print(m)
 
 > 2c. Pourquoi écrit-on l'instruction `m = moyenne(eleve[2:])` et non `m = moyenne(eleve))`?
 
-> 2d. Modifier le script pour que le programme place la valeur m dans la case `eleve[1]`. Noter ici l'instruction utilisée. Comment voit-on la modification dans pythontutor?
+> 2d. Ajouter une instruction au programme pour placer la valeur m dans la case `eleve[1]`. Noter ici l'instruction utilisée. Comment voit-on la modification dans pythontutor?
 
-> 2e. Modifier maintenant le programme pour calculer la moyenne de l'élève 1. Comment doit-on modifier le programme?
+> 2e. La table a t-elle été modifiée? Expliquer.
+
+> 2f. Ecrire une fonction `ajoute_colonne_moyenne` qui prend en paramètre une table `classe` et un numero de colonne `c`. Le fonction devra ajouter la moyenne pour chaque élève, dans la colonne `c`. La table `classe` aura le format proposé dans l'énoncé vu plus haut.
 
 # Prolongement
 ## Traitements sur le fichier csv importé du tableur
