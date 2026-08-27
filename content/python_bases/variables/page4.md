@@ -75,16 +75,18 @@ x = 12/2
 x
 # retourne
 6.0
+# remarquer ici que la division simple retourne un float
 ```
 
 
 Et utiliser la valeur de cette même variable pour l'opération:
 
 ```python
+x = 6
 x = x + 1
 x
 # retourne
-7.0
+7
 ```
 
 **Affectation multiple:** On peut affecter une valeur à plusieurs variables en une seule ligne, ce qui amèliore la lecture d'un script:
@@ -109,6 +111,39 @@ Les opérations possibles sur une variable dépendent de son type.
 
 * Pour les variables de type nombre **int** et **float**, on peut utiliser les opérateurs `+,-,*,/,**,//,%`
 * Pour les variables de type **str** on peut aussi utiliser les opérateurs `+,*` mais le résultat est différent (opérateurs de concaténation).
+
+Lorsque l'on modifie une variable, on affecte à nouveau à la variable le résultat de l'opération:
+
+```python
+x = 6
+x = x + 8
+# x+8 vaut 14 que l'on affecte a nouveau a x
+print(x)
+# affiche 14
+```
+
+**Opérateur d'affectation composée**. L'instruction `x = x + 8` peut être simplifiée en `x += 8`.
+
+L'opérateur `+=` réalise l'opération et l'affectation à la même varaible, `x`:
+
+```python
+x = 6
+x += 8
+# x+8 vaut 14 que l'on affecte a nouveau a x
+print(x)
+# affiche 14
+```
+
+Il existe d'autres opérateurs d'affectation composée: `-=, *=, /=`.
+
+*Exemple*:
+
+```python
+x=6
+x /= 2
+x
+# affiche 3.0
+```
 
 **5. Variables et paramètres d'une fonction**
 Les variables déclarées avec la fonction, entre parenthèse sont appelées *paramètres*. Le schéma suivant illustre l'affectation des valeurs des variables `a = x` et `b = y` lors de l'appel de la fonction `additionne(x, y)`:
@@ -145,7 +180,8 @@ def additionne(a,b):
   return a + b
 
 # appel de la fonction avec a = 10 et b = 14
-additionne(x,y)
+> additionne(x,y)
+24
 ```
 
 {{< img src="../images/pythontutor6.png" width="300" link="https://pythontutor.com/render.html#code=x%20%3D%2010%0Ay%20%3D%2014%0A%0Adef%20additionne%28a,b%29%3A%0A%20%20return%20a%20%2B%20b%0A%0Aadditionne%28x,y%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false" caption="exemple avec appel d'une fonction" >}}
@@ -153,7 +189,7 @@ additionne(x,y)
 > Cliquer sur l'image pour lancer l'app *pythontutor*. Cliquer sur *next* pour dérouler le script pas à pas.
 
 # Travaux pratiques
-### [Lien vers le TP2](../page6)
+##### {{% button href="../page6" icon="palette" style="tip" %}}TP2{{% /button %}} Variables
 
 # Liens
 * Chapitre 1

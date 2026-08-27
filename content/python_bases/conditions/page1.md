@@ -1,5 +1,6 @@
 ---
 Title : structures conditionnelles
+titleHidden: true
 description: cours sur les structures conditionnelles
 weight: 5
 ---
@@ -21,6 +22,8 @@ if prix_essence > 1.8:
 ```
 
 *Remarquer que l'instruction `if .. condition ..:` finit par 2 points `:`, et que la ligne suivante est **indentée***
+
+**Toute portion de code** associée à une **structure de contrôle** (finissant par 2 points `:`) nécéssite une **indentation**.
 
 **2. Les blocs du programme**
 En Python, on utilise l'indentation (le retrait de la ligne) pour rendre compte des blocs de code.
@@ -59,10 +62,10 @@ else :
 * `elif` est **toujours** suivi d'une condition
 * `else` n'est **pas** suivi d'une condition. C'est l'alternative, dont le bloc est executé lorsqu'aucune des conditions precedentes n'est *vraie*.
 
-## Tests logiques
+# Tests logiques
 Il s'agit d'une expression booléenne qui est évaluée est qui renvoie `True` si elle est vrai, `False` sinon.
 
-### Opérateurs de comparaison
+## Opérateurs de comparaison
 
 *Quelques exemples de tests logiques :*
 
@@ -73,8 +76,36 @@ age <= 18   # inferieur ou egal
 nom == 'John' # egalité de chaines
 ```
 
-### Opérateurs logiques
-L'expression peut aussi contenir des opérateurs logiques : `and`, `or`, `not`:
+## Opérateurs et combinaisons logiques
+L'expression peut aussi contenir les opérateurs logiques de combinaisons: `and`, `or`, `not`.
+
+L'expression suivante, `A and B` est evaluée à `True` si `A` vaut `True`, et `B` vaut `True`. Dans tous les autres cas, (`A` vaut `False`, ou `B` vaut `False`, ou `A` et `B` valent `False`),  `A and B` est evaluée à `False`. On peut résumer tous les cas dans une table logique:
+
+| A | B | A and B |
+| --- | --- | --- |
+| `False` | `False` | `False` |
+| `False` | `True` | `False` |
+| `True` | `False` | `False` |
+| `True` | `True` | `True` |
+
+
+Pour l'opérateur logique `or`:
+
+| A | B | A or B |
+| --- | --- | --- |
+| `False` | `False` | `False` |
+| `False` | `True` | `True` |
+| `True` | `False` | `True` |
+| `True` | `True` | `True` |
+
+et pour l'opérateur `not`
+
+| A | not A |
+| --- | --- |
+| `False` | `True` |
+| `True` | `False` |
+
+*Exemple:*
 
 ```python
 n = int(input('entrer un nombre entier: '))
@@ -82,21 +113,28 @@ if n%2 == 0 and n > 0:
     print('vous avez entré un entier pair et positif')
 ```
 
-### Test sur une liste
-On peut aussi vérifier si un élement existe dans une liste : 
+Une instruction `if` peut également tester une valeur booléenne et exécuter son code si cette valeur vaut `True`, comme par exemple, ci-dessous, avec `if jeu_actif:`
 
-```python
-'Paris' in capitales  # True si 'Paris' est dans la liste capitales
-```
-
-Une instruction `if` peut également tester une valeur booléenne et exécuter son code si cette valeur vaut `True` :
+Il n'est pas nécéssaire d'écrire `== True` comme ici avec `if jeu_actif == True:`
 
 ```python
 if jeu_actif : 
   print('jouons !')
 ```
 
-### Test sur un dictionnaire
+## Test sur une liste
+On peut aussi vérifier si un élement existe dans une liste : 
+
+```python
+capitales = ['Paris', 'Berlin', 'Rome', 'Londres', 'Madrid']
+'Paris' in capitales  
+# retourne
+# True car 'Paris' est dans la liste capitales
+```
+
+
+
+## Test sur un dictionnaire
 Le mot-clé `in` permet de tester si une clé est présente dans le dictonnaire:
 
 ```python
@@ -131,7 +169,37 @@ Ce petit script, lorsqu'il est executé, renvoie toujours `True` quel que soit l
 * 0     # zero
 * None  # le type Rien
 
+**A savoir:** dans certains cas, on peut *faire l'économie* de l'*opérateur logique*. Dans l'instruction conditionnelle `if n`, la condition vaut `True` dès que `n` est différent de `0` ou de `None`, ou bien n vaut `True`.
+
+Ainsi, les scripts suivants sont équivalents
+
+```python
+# script 1
+# sortir = True ou bien sortir = False
+if sortir:
+  print('Vous pouvez sortir')
+
+if sortir==True:
+  print('Vous pouvez sortir')
+```
+
+```python
+# script 2
+# n est un entier
+if n != 0:
+  print('n est different de 0')
+
+if n:
+  print('n est different de 0')
+```
+
 # Suite
+
+##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
+#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+
+
 * [cours: ](../page1) structures conditionnelles
-* [TP1](../../conditions/page3_D/) sur les structures conditionnelles et boucles while
+* [TP1](../../conditions/page2/) sur les structures conditionnelles et boucles while
 * [TP2](../../conditions/page3_D/) sur les structures conditionnelles et fonctions

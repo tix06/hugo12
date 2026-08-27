@@ -38,7 +38,9 @@ annee = annee + age
 annee
 ```
 
-* **Question b:** en quelle année aura-t-il 17 ans?
+* **Question b1:** Un enfant né en 2022. En quelle année aura-t-il 17 ans?
+
+* **Question b2:** Ré-écrire le script précédent pour déterminer l'année à laquelle il aura 33 ans.
 
 ### Script 3
 On veut réaliser les opérations suivantes:
@@ -69,8 +71,10 @@ Ne pas utiliser de nouvelles variables pour les résultats intermédiaires. Seul
 On veut mettre la valeur de `a` dans `b` et celle de `b` dans `a`. Le problème est que lorsque l'on fait...
 
 ```python
+a, b = 14, 18
 b = a
 a = b
+print(a,b)
 ```
 
 ... on se retrouve avec les mêmes valeurs pour `b` et pour `a`. Il n'y a pas eu d'echange. 
@@ -80,7 +84,7 @@ L'idée est d'utiliser une troisième variable `c` pour stocker la valeur de `b`
 On fait alors `c <- b`, `b <- a`, puis `a <- c`.
 
 
-* **Question e:** Ecrire la série d'instructions correspondantes. Puis vérifier qu'il y a bien eu échange entre les variables: `print(f"a={a}, b={b}")`
+* **Question e:** Ecrire la série d'instructions correspondantes. Puis vérifier qu'il y a bien eu échange entre les variables. Utiliser une *f-string*:  `print(f"a={a}, b={b}")`
 
 ## Opérations sur les chaines de caractères
 
@@ -171,6 +175,8 @@ type(m)
 | 45%26 | |   |
 | 45/26 |  |   |
 | 45//26 |  |   |
+| 45 // 6 |  |
+| 45 % 6 |  |
 | str(45) |  |  |
 | 2**8 |   |  |
 | 6.02e-3 |   |   |
@@ -207,7 +213,8 @@ def calcule_somme_carres(a,b):
 
 * **Question l:** créer une fonction `Ec` qui prend pour paramètres `m` et `v` et retourne le resultat de $Ec = \tfrac{1}{2}m.v^2$. Appeler cette fonction avec les valeurs 100kg et $20m.s^{-1}$
 
-# Portfolio
+# Fiche de synthèse
+<!--
 * Comment se nomment *en python* les 4 types primitifs que l'on a vus lors de ces premieres séances?
 * Le changement de type entre variables se fait grace aux fonctions `str`, 'float', `int`, et `bool`
   * Comment transformer la chaine "12" en une valeur entière égale à 12? "12" => 12
@@ -215,9 +222,25 @@ def calcule_somme_carres(a,b):
   * Comment transformer la chaine "12" en un nombre flottant? "12" => 12.0
   * Comment transformer l'information 1 en un booléen `True`?
   * Comment réaliser l'opération inverse?
+-->
+
+* Définir ce qu'est une variable.
+* Comment le site Pythontutor illustre t-il la création de variables suivante? Faire un schéma
+
+```python
+x = 10
+y = 12
+```
+
+* Quel est le rôle du symbole `=` en python?
+* Quelle fonction python permet de connaitre le *type* de `x`?
 * Qu'est-ce qu'une affectation multiple, en une seule ligne d'instruction?
-* Comment échange t-on la valeur de 2 variables `a` et `b`?
-* Pourquoi l'instruction: `print("aujourd'hui j'ai "+ 18 +"ans")` ne fonctionne t-elle pas? Corriger cette expression (donner 2 moyens).
+* Comment échange t-on la valeur de 2 variables `a` et `b`? Donner DEUX méthodes.
+* Pourquoi l'instruction: `print("aujourd'hui j'ai "+ 18 +"ans")` ne fonctionne t-elle pas? Corriger cette expression. Donner 2 moyens:
+	* avec changement de type int->str et l'opérateur `+`
+	* avec une *f-string* (expression formatée)
+* Quelle instruction donne le quotient `q` de `a=45` par `b=6`? Quelle instruction donne le reste `r` de cette division. 
+* Quelle instruction permet de vérifier que `a` et égal à `(a//b)*b+a%b`? Votre expression devra utiliser les variables `q` et `r` et l'opérateur de comparaison `==`.
 * Donner un exemple d'utilisation d'une expression formatée pour écrire le résultat du calcul de la force de gravitation $F=G\times m_1 \times m_2/d^2$, à partir des différentes variables.
 * Quel sera le type associé à `F` si l'on réalise le calcul?
 * Comment définir une fonction `F_gravitation` pour réaliser le calcul de `F`?

@@ -40,6 +40,7 @@ Au choix:
 | % | 3%3 |
 | % | 4%3  |
 | % | 5%3 |
+| % | 12%10|
 
 
 
@@ -86,7 +87,7 @@ On peut aussi réaliser les opérations de comparaison `>, <, ==, !=`sur les cha
 * comparaison d'ordre: `"A" < "B"` vaut `True`, `"Ab" < "A"` vaut `False`.
 * d'égalité: `"HA" == "ha"` vaut False
 
-L'opérateur `in` permet de tester si une suite de caractères se trouve dans un chaine:
+**Test d'appartenance** et **ordre lexicographique**: L'opérateur `in` permet de tester si une suite de caractères se trouve dans un chaine. Les opérateurs de comparaison `>` et `<` vont comparer l'ordre des caractères dans l'alphabet.
 
 * `"ou" in "jour"` vaut `True` 
 *  `"ou" not in "jour"` vaut False
@@ -115,14 +116,20 @@ L'opérateur `in` permet de tester si une suite de caractères se trouve dans un
 
 * **Question i:** Que vaut `not True and False`? Et `not (True and False)`? Pourquoi?
 
-# Portfolio
-* Quels sont les types primitifs vus dans cette leçon? Faire un tableau avec le symbole de tous les opérateurs vus pour chacun de ces types.
+# Fiche de synthèse
+* Quels sont les types primitifs vus dans cette leçon? Faire un tableau avec les colonnes:
+  * *type*
+  * *exemple de valeur*
+  * *opérateurs* vus pour ce type, *rôle*, *exemple*
+* Quelle instruction permet faire les transformations int->float, int->str, float->str, bool->int?
 * Que donne l'instruction: `type(123e3)`
 * Quelle valeur maximale peut prendre un entier signé codé sur 32 bits?
-* Pour les entiers, donner un exemple d'utilisation de l'opérateur `//` et de l'opérateur `%`
+* Pour les entiers, donner plusieurs exemples d'utilisation de l'opérateur `//` et de l'opérateur `%`
 * Que donne `x%2` si `x` est pair? Si `x` est impair?
-* Pour les chaines de caractères, qu'est-ce qu'une concaténation?
-* Donner un exemple d'utilisation du mot clé `in`
+* Que donne `x//10`? Cette opération conserve t-elle ou élimine t-elle les unités?
+* Même question pour `x%10`
+* Pour les chaines de caractères, qu'est-ce qu'une concaténation? Donner un exemple, utilisant l'opérateur `+`.
+* Donner un exemple d'utilisation du mot clé `in`. Expliquer son rôle.
 * Donner un exemple de comparaison d'ordre lexicographique entre chaines de caractères.
 * Soit l'opération logique ci-contre:
 

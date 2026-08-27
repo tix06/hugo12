@@ -25,28 +25,28 @@ Opérations sur les nombres Tester les scripts suivants dans l’editeur Python.
     <meta itemprop="description" content="Travaux pratiques Ouvrir dans winpython &gt; python QTConsole
 Opérations sur les nombres Tester les scripts suivants dans l’editeur Python. Pour cela, recopier dans l’ordre, et dans la même cellule, chacune des instructions du script, et executer celle-ci. Repondre ensuite aux questions.">
     <meta itemprop="dateModified" content="2026-08-12T17:41:40+02:00">
-    <meta itemprop="wordCount" content="1075">
+    <meta itemprop="wordCount" content="1136">
     <title>TP2 variables :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787759232" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787759232" defer></script>
-    <script src="/js/search-lunr.js?1787759232" defer></script>
-    <script src="/js/search.js?1787759232" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1787850663" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1787850663" defer></script>
+    <script src="/js/search-lunr.js?1787850663" defer></script>
+    <script src="/js/search.js?1787850663" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787759232";
+      window.relearn.index_js_url="/searchindex.en.js?1787850663";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1787759232" defer></script>
+    <script src="/js/lunr/lunr.min.js?1787850663" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1787850663" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1787850663" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1787850663" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787759232" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787759232" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787759232" rel="stylesheet">
-    <link href="/css/theme.css?1787759232" rel="stylesheet">
-    <link href="/css/format-html.css?1787759232" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1787850663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787850663" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787850663" rel="stylesheet">
+    <link href="/css/theme.css?1787850663" rel="stylesheet">
+    <link href="/css/format-html.css?1787850663" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -206,7 +206,12 @@ Opérations sur les nombres Tester les scripts suivants dans l’editeur Python.
 </span></span><span class="line"><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="n">annee</span> <span class="o">+</span> <span class="n">age</span>
 </span></span><span class="line"><span class="cl"><span class="n">annee</span></span></span></code></pre></div>
 <ul>
-<li><strong>Question b:</strong> en quelle année aura-t-il 17 ans?</li>
+<li>
+<p><strong>Question b1:</strong> Un enfant né en 2022. En quelle année aura-t-il 17 ans?</p>
+</li>
+<li>
+<p><strong>Question b2:</strong> Ré-écrire le script précédent pour déterminer l&rsquo;année à laquelle il aura 33 ans.</p>
+</li>
 </ul>
 <h3 id="script-3">Script 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>On veut réaliser les opérations suivantes:</p>
@@ -232,13 +237,15 @@ Opérations sur les nombres Tester les scripts suivants dans l’editeur Python.
 </ul>
 <h3 id="script-5-permuter-la-valeur-de-2-variables">Script 5: permuter la valeur de 2 variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>On veut mettre la valeur de <code>a</code> dans <code>b</code> et celle de <code>b</code> dans <code>a</code>. Le problème est que lorsque l&rsquo;on fait&hellip;</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span></span></span></code></pre></div>
 <p>&hellip; on se retrouve avec les mêmes valeurs pour <code>b</code> et pour <code>a</code>. Il n&rsquo;y a pas eu d&rsquo;echange.</p>
 <p>L&rsquo;idée est d&rsquo;utiliser une troisième variable <code>c</code> pour stocker la valeur de <code>b</code>, échanger <code>a</code> et <code>b</code>, puis affecter <code>c</code> à <code>a</code>:</p>
 <p>On fait alors <code>c &lt;- b</code>, <code>b &lt;- a</code>, puis <code>a &lt;- c</code>.</p>
 <ul>
-<li><strong>Question e:</strong> Ecrire la série d&rsquo;instructions correspondantes. Puis vérifier qu&rsquo;il y a bien eu échange entre les variables: <code>print(f&quot;a={a}, b={b}&quot;)</code></li>
+<li><strong>Question e:</strong> Ecrire la série d&rsquo;instructions correspondantes. Puis vérifier qu&rsquo;il y a bien eu échange entre les variables. Utiliser une <em>f-string</em>:  <code>print(f&quot;a={a}, b={b}&quot;)</code></li>
 </ul>
 <h2 id="opérations-sur-les-chaines-de-caractères">Opérations sur les chaines de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="script-6">Script 6<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -339,6 +346,16 @@ Opérations sur les nombres Tester les scripts suivants dans l’editeur Python.
 					<td></td>
 			</tr>
 			<tr>
+					<td>45 // 6</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>45 % 6</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
 					<td>str(45)</td>
 					<td></td>
 					<td></td>
@@ -382,21 +399,26 @@ $$Ec = \tfrac{1}{2}m.v^2$$<ul>
 <ul>
 <li><strong>Question l:</strong> créer une fonction <code>Ec</code> qui prend pour paramètres <code>m</code> et <code>v</code> et retourne le resultat de $Ec = \tfrac{1}{2}m.v^2$. Appeler cette fonction avec les valeurs 100kg et $20m.s^{-1}$</li>
 </ul>
-<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h1 id="fiche-de-synthèse">Fiche de synthèse<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li>Comment se nomment <em>en python</em> les 4 types primitifs que l&rsquo;on a vus lors de ces premieres séances?</li>
-<li>Le changement de type entre variables se fait grace aux fonctions <code>str</code>, &lsquo;float&rsquo;, <code>int</code>, et <code>bool</code>
+<li>Définir ce qu&rsquo;est une variable.</li>
+<li>Comment le site Pythontutor illustre t-il la création de variables suivante? Faire un schéma</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="mi">12</span></span></span></code></pre></div>
 <ul>
-<li>Comment transformer la chaine &ldquo;12&rdquo; en une valeur entière égale à 12? &ldquo;12&rdquo; =&gt; 12</li>
-<li>Comment réaliser l&rsquo;opération inverse? 12 =&gt; &ldquo;12&rdquo;</li>
-<li>Comment transformer la chaine &ldquo;12&rdquo; en un nombre flottant? &ldquo;12&rdquo; =&gt; 12.0</li>
-<li>Comment transformer l&rsquo;information 1 en un booléen <code>True</code>?</li>
-<li>Comment réaliser l&rsquo;opération inverse?</li>
+<li>Quel est le rôle du symbole <code>=</code> en python?</li>
+<li>Quelle fonction python permet de connaitre le <em>type</em> de <code>x</code>?</li>
+<li>Qu&rsquo;est-ce qu&rsquo;une affectation multiple, en une seule ligne d&rsquo;instruction?</li>
+<li>Comment échange t-on la valeur de 2 variables <code>a</code> et <code>b</code>? Donner DEUX méthodes.</li>
+<li>Pourquoi l&rsquo;instruction: <code>print(&quot;aujourd'hui j'ai &quot;+ 18 +&quot;ans&quot;)</code> ne fonctionne t-elle pas? Corriger cette expression. Donner 2 moyens:
+<ul>
+<li>avec changement de type int-&gt;str et l&rsquo;opérateur <code>+</code></li>
+<li>avec une <em>f-string</em> (expression formatée)</li>
 </ul>
 </li>
-<li>Qu&rsquo;est-ce qu&rsquo;une affectation multiple, en une seule ligne d&rsquo;instruction?</li>
-<li>Comment échange t-on la valeur de 2 variables <code>a</code> et <code>b</code>?</li>
-<li>Pourquoi l&rsquo;instruction: <code>print(&quot;aujourd'hui j'ai &quot;+ 18 +&quot;ans&quot;)</code> ne fonctionne t-elle pas? Corriger cette expression (donner 2 moyens).</li>
+<li>Quelle instruction donne le quotient <code>q</code> de <code>a=45</code> par <code>b=6</code>? Quelle instruction donne le reste <code>r</code> de cette division.</li>
+<li>Quelle instruction permet de vérifier que <code>a</code> et égal à <code>(a//b)*b+a%b</code>? Votre expression devra utiliser les variables <code>q</code> et <code>r</code> et l&rsquo;opérateur de comparaison <code>==</code>.</li>
 <li>Donner un exemple d&rsquo;utilisation d&rsquo;une expression formatée pour écrire le résultat du calcul de la force de gravitation $F=G\times m_1 \times m_2/d^2$, à partir des différentes variables.</li>
 <li>Quel sera le type associé à <code>F</code> si l&rsquo;on réalise le calcul?</li>
 <li>Comment définir une fonction <code>F_gravitation</code> pour réaliser le calcul de <code>F</code>?</li>
@@ -754,9 +776,9 @@ $$Ec = \tfrac{1}{2}m.v^2$$<ul>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787759232"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787759232" defer></script>
-    <script src="/js/theme.js?1787759232" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787850663"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787850663" defer></script>
+    <script src="/js/theme.js?1787850663" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

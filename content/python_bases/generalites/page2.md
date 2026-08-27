@@ -104,7 +104,8 @@ Notez que des chiffres mis entre guillemets sont des chaines de caractères et n
 'une autre chaine'
 ```
 
-Certains caractères spéciaux ne sont pas affichés, mais permettent la mise en forme: 
+### caractères spéciaux
+Certains **caractères spéciaux** ne sont pas affichés, mais permettent la mise en forme: 
 
 * Par exemple, le caractère `\n` génère un retour à la ligne:
 
@@ -116,7 +117,8 @@ Certains caractères spéciaux ne sont pas affichés, mais permettent la mise en
 telle est la question
 ```
 
-* L'addition de chaines *(concaténation)* se fait avec l'opérateur `+`
+### addition de chaines
+*L'addition de chaines** *(concaténation)* se fait avec l'opérateur `+`
 
 ```python
 > print("Bonjour"+"Hello")
@@ -152,6 +154,31 @@ print(resultat)
 # Pour le systeme m = 100 et E = 1200
 ```
 
+L'exemple 2 illustre une chaine particulière appelée **f-string**. C'est une chaine:
+
+* préfixée par un `f`
+* suivie par une chaine entre guillemets `""` ou `''`
+* contenant des accolades `{}`
+* où tout texte placé entre accolades sera remplacé par la valeur de la variable correspondante.
+
+### Test d'appartenance
+L'opérateur `in` permet de tester si une suite de caractères se trouve dans un chaine:
+
+* `"ou" in "jour"` vaut `True` 
+*  `"ou" not in "jour"` vaut `False`
+
+### Ordre lexicographique
+On peut comparer les caractères ou les mots à partir de leur rang dans l'alphabet:
+
+```python
+'A' > 'B'
+# Affiche False
+'A' < 'B'
+# Affiche True
+'sauver'>'sauveur'
+# Affiche False
+```
+
 ## Les valeurs logiques
 Ce sont les valeurs `True` et `False`. 
 
@@ -178,7 +205,7 @@ False
 True
 ```
 
-*Expressions possibles*: `0 == 0, 8+1 == 2 * 3, 13 >= a, ...`
+*Expressions possibles*: `0 == 0, 8+1 == 2 * 3, 13 >= 1, 'A'<'B', 'a'>'c', 'Sol' in 'Soleil', ...`
 
 ### Utiliser les opérations booléennes dans un programme
 Le booléen permet un branchement dans un algorithme (voir les structures conditionnelles). *Exemples:*
@@ -243,6 +270,7 @@ False
 | ** | exposant | $2^{4}$ |
 | e | puissance de 10 (pour l'écriture en notation scientifique) | $1.2E-3$ ou $1.2\times 10^{-3}$ |
 
+
 **2.** Ces opérateurs peuvent aussi être appliqués sur des chaines de caractères.
 
 
@@ -288,11 +316,23 @@ True
 
 *Remarque:* Le test de l'égalité n'est pas adapté pour les nombres réels. Seulement pour les nombres entiers. Ainsi, en Python, l'opération `0.1*3 == 0.3` renvoie ... `False`!
 
+# Calcul sur des valeur entières
+Les programmes informatiques préfèrent utiliser des valeurs entières pour les calculs, même si les calculs avec nombres à virgules sont possibles. Pour cette raison, les opérateurs `//` et `%` sont souvent utilisés en combinaison.
 
+* *Rappel:* **La division euclidienne** de `a` par `b` est définie comme ceci: le dividende de `a` est égal au quotient de `a//b` multiplié par le diviseur `b`, augmenté du reste `a%b`:
+
+$$a = (a//b)*b + a%b$$
+
+* *Usages classiques*:
+  * `n%2` vaut 0 si `n` est pair
+  * `n%2` vaut 1 si `n` est impair
+  * `n%10` conserve les unités
+  * `n//10` conserve les dizaines et supprime les unités.
 
 
 # travaux pratiques
-### [Lien vers le TP1](../page5)
+
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP1{{% /button %}} Calculer en python
 
 # Liens
 * Chapitre 1

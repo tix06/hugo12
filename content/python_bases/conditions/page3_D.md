@@ -1,5 +1,6 @@
 ---
-Title: TP conditions
+Title: TP2b conditions et algorithmes
+titleHidden: true
 description: prevoir l'arrêt, realiser un compteur, multiplier sans le signe produit, fonctions
 weight: 5
 hidden : true
@@ -7,7 +8,7 @@ hidden : true
 
 
 
-# TP3: Structures conditionnelles
+# TP2b: Structures conditionnelles
 ## Editeur Python
 Au choix, utilisez:
 
@@ -211,9 +212,11 @@ print('le produit x * a vaut: ' + ...)
 * A quoi sert l'indentation en python sous une instruction conditionnelle?
 * Que faut-il contrôler dans une boucle non bornée (`while`) pour s'assurer que celle-ci finira toujours?
 * Montrer qu'il est possible de déterminer le nombre d'itérations du bloc conditionnel en fonction du variant. Prenez un exemple.
-## fonctions 
+
 * Rappeler comment s'écrit une structure conditionnelle avec alternative (if ... elif ... else). Placer les conditions, indentations, et les `:`
 * Dans une structure conditionnelle avec alternative, tous les cas sont-ils toujours examinés par le programme? Expliquez.
+
+## fonctions 
 * Expliquer la différence entre une variable (déclarée dans le *main*), et un paramètre (déclaré avec une fonction). Définir leur *portée*
 * Dans une fonction, quel est le rôle du mot-clé `return`?
 * Ecrire les fonctions pour les scripts: `parite`, `est_divisible`, `compare_2_nombres`, `IMC`.
@@ -225,10 +228,11 @@ print('le produit x * a vaut: ' + ...)
 |  ... |   |   |
 
 
-# Liens
-* [cours: ](../page1) structures conditionnelles
-* [TP1](../../conditions/page3_D/) sur les structures conditionnelles et boucles while
-* [TP2](../../conditions/page3_D/) sur les structures conditionnelles et fonctions
+# Suite
+
+##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
+#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 
 
 

@@ -1,6 +1,7 @@
 ---
-Title: conditions
+Title: TP2a conditions
 Description: TP conditions, boucles non bornées, compteur, jeu de devinettes
+titleHidden: true
 hidden: true
 weight : 6
 ---
@@ -27,6 +28,45 @@ Mettre `#%%` avant chaque script pour créer une *cellule*. Executer la cellule 
 {{< img src="../images/cell.png" >}}
   
 
+# Branchements et conditions simples
+1. Un robot est en mouvement lorsque son état `avancer` est mis à `True`. Sinon, il reste au repos. Compléter le programme suivant pour mettre en mouvement le robot s'il n'y a pas d'obstacle devant lui.
+
+```python
+obstacle = False
+batterie = True
+avancer = False
+if not obstacle:
+  ...
+```
+
+2. Ajouter une deuxième condition sur l'état de la batterie: le robot n'avance que s'il n'y a pas d'obstacle ET que la batterie n'est pas vide:
+
+
+```python
+obstacle = False
+batterie = True
+avancer = False
+if not obstacle:
+  if ... : 
+    ...
+```
+
+3. Ecrire à nouveau le programme, mais avec une combinaison d'opération, et un seul `if`
+
+```python
+obstacle = False
+batterie = True
+avancer = False
+if ... and ...:
+  ...
+```
+
+4. Le comportement du robot depend maintenant de la jauge de la batterie. La variable `batterie` prend une valeur entre 0 (vide) et 100 (max). Le robot avance dans le cas où:
+
+* le niveau de batterie est supérieur à 80 (même s'il y a un obstacle)
+* il n'y a pas d'obstacle, et la batterie a un niveau supérieur à 40.
+
+Dans les autres cas, le robot n'avance pas. Ecrire ce nouveau programme.
 
 # Condition sur une valeur entrée (`INPUT`)
 La fonction `input` permet d'ouvrir une boite de dialogue, d'attendre la saisie, et de récupérer une information donnée par l'utilisateur.
@@ -162,80 +202,41 @@ A chaque fois que la condition `choix_joueur != N_aleatoire` est `True`, c'est �
 
 Lorsque les valeurs `choix_joueur` et `N_aleatoire` sont identiques, le programme passe à la ligne `print('Bravo vous avez gagné')` 
 
-> **Question c:** A votre avis: à quoi sert la 3e ligne `choix_joueur = 100`?
+> **Question c:** 
 
-> Testez ce programme. Modifiez la condition d'arrêt de la boucle pour que l'on puisse sortir du jeu lorsque l'on saisit la valeur 0. Cela doit arrêter la partie.
+> c1. A votre avis: 
+* à quoi sert ce jeu?
+  * à compter le nombre de fois où l'ordinateur tire aléatoirement le nombre 100?
+  * à compter le nombre de fois où l'ordinateur tire aléatoirement le nombre 10?  
+  * à deviner le nombre tiré aléatoirement (1 à 10) par l'ordinateur, en ayant droit à un seul essai.
+  * à deviner le nombre tiré aléatoirement par l'ordinateur (1 à 10), avec un nombre d'essais à priori infini, jusqu'à ce que l'on trouve.
+* à quoi sert la 3e ligne `choix_joueur = 100`?
 
-> Ajouter aussi un compteur du nombre d'essais. Afficher ce nombre à la fin du jeu.
+> c2. Testez ce programme. Modifiez la condition d'arrêt de la boucle pour que l'on puisse sortir du jeu lorsque l'on saisit la valeur 0. Cela doit arrêter la partie.
 
-# Remarque : 0 et None 
-Dans le test logique, 0 et None se comportent comme s'il s'agissait de `False`:
+> c3. Ajouter un compteur du nombre d'essais. Afficher ce nombre à la fin du jeu.
 
-```python
-ch = input('Entrez un nombre entier quelconque')
-n =eval(ch)
-if n:
- print("vrai")
-else:
- print("faux")
-```
-
-Ce petit script, lorsqu'il est executé, renvoie toujours `True` quel que soit le nombre saisi, mais `False` dans les cas suivants. Si on saisit 
-
-* 0     # zero
-* None  # le type Rien
-
-**A savoir:** dans certains cas, on peut *faire l'économie* de l'*opérateur logique*. Dans l'instruction conditionnelle `if n`, la condition vaut `True` dès que `n` est différent de `0` ou de `None`, ou bien n vaut `True`.
-
-Ainsi, les scripts suivants sont équivalents
-
-```python
-# script 1
-# sortir = True ou bien sortir = False
-if sortir:
-  print('Vous pouvez sortir')
-
-if sortir==True:
-  print('Vous pouvez sortir')
-```
-
-```python
-# script 2
-# n est un entier
-if n != 0:
-  print('n est different de 0')
-
-if n:
-  print('n est different de 0')
-```
-
-# Portfolio
-* Quelle est l'instruction python qui génère une *sortie*? Donner un exemple.
-* Quelle instruction python permet de saisir une *entrée*? Donner un exemple. Quel est le type systématiquement retourné par cette instruction? Comment obtenir une valeur entière à partir de la saisie par l'utilisateur?
+# Fiche de synthèse
+## structure conditionnelle
+* A quoi sert l'indentation en python sous une instruction conditionnelle?
 * Quelle est l'instruction conditionnelle avec *alternative* en python? `if .. else` ou bien `if .. elif .. else`?
 * Quelle est l'instruction conditionnelle avec *différents cas*? `if .. else` ou bien `if .. elif .. else`?
+* Dans une structure conditionnelle avec alternative, tous les cas sont-ils toujours examinés par le programme? Expliquez.
+* Quelle est l'instruction python qui génère une *sortie*? Donner un exemple.
+* Quelle instruction python permet de saisir une *entrée*? Donner un exemple. Quel est le type systématiquement retourné par cette instruction? Comment obtenir une valeur entière à partir de la saisie par l'utilisateur?
+## boucle while
 * Quelle instruction génère une boucle infinie avec `while`?
+* Que faut-il contrôler dans une boucle non bornée (`while`) pour s'assurer que celle-ci finira toujours?
 * Boucle non bornée: pourquoi faut-il initialiser la variable `i` avant d'écrire `while i <= 3:`?
 * Boucle non bornée: Comment **réaliser un compteur simple**, utlisant une boucle bornée, avec une condition d'arrêt lorsque la variable atteint la valeur 10? Ecrire le script complet. Votre programme doit être fonctionnel.
 * Compléter la phrase: Le quotient d'une division euclidienne de a par b (`a//b`) est égal au nombre de fois qu'il faut executer `a = a - b` pour que l'on obtienne `a ... b`. 
 * Dans quel cas peut-on faire l'économie d'un opérateur lors de l'écriture d'une opération logique? (voir paragraphe sur 0 et None)
 
-<!--
-* *Algorithme essentiel*: Ecrire le script complet du calcul de **la division euclidienne** entre 2 entiers `a` et `b`. Le programme affiche le quotient et le reste de la division de `a` par `b`. *Vous devrez initialiser les variables a et b avec des valeurs*. Vous ne pouvez utiliser que l'opérateur soustraction `-`.
--->
+
 
 # Suite
 
-Travaux pratiques: [TP conditions](../page3_D/)
-<!--
-* *Algorithme essentiel*: Ecrire le script complet du calcul de **la division euclidienne** entre 2 entiers `a` et `b`. Le programme affiche le quotient et le reste de la division de `a` par `b`. *Vous devrez initialiser les variables a et b avec des valeurs*. Vous ne pouvez utiliser que l'opérateur soustraction `-`.
--->
+##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
+#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 
-# Liens
-* [TP1 sur les opérations et types de base](../../generalites/page2_D) *(NSI_1)*
-* [TP1 sur les opérations et types de base](../../generalites/page2) *(Term NSI)*
-* [TP2 sur les variables](../../variables/page4/)
-* [cours: structures conditionnelles](../page1)
-* [TP1 sur les opérations et types de base](../../generalites/page2_D)
-* [TP2 sur les variables](../../variables/page4_D/)
-* [TP3 structures conditionnelles et fonctions](../../conditions/page3_D/)

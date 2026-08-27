@@ -13,7 +13,7 @@ Pandas va permettre de lire et de modifier des tableaux (DataFrames). Chaque col
 
 {{< img src="../images/df10.png" >}}
 
-Cette table fera l'objet d'une étude spécifique: [ici](/docs/python/pages/traitement/page3/)
+Cette table fera l'objet d'une étude spécifique: [ici](/nsi/tp/page9/)
 
 ## Présenter les résultats: CSV => Dataframe
 **Importer les données depuis un fichier csv**

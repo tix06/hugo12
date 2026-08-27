@@ -81,9 +81,9 @@ Pour les objets non mutables, c'est différents. Ce sont les types *construits*,
 
 # Fonctions
 ## Definitions
-Une fonction permet d’encapsuler un bloc d’instructions et de lui donnéer un nom:
+Une fonction permet d’encapsuler un bloc d’instructions et de lui donnéer un nom. Il existe un petit nombre d'instructions déjà présentes dans le langage python. On peut définir nos propres fonctions, avec le mot clé `def`. 
 
-[cours sur allophysique.com](/docs/python/pages/fonctions/page2/)
+Voir le chapitre [dédié](/python_bases/fonctions/page2/).
 
 
 
