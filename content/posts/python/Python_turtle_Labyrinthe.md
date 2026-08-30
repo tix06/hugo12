@@ -1,14 +1,9 @@
 ---
 author: "Eric Tixidor"
-date: 08-25-2020
-linktitle: Python turtle Labyrinthe
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+
+
 title: Python turtle Labyrinthe
-weight: 13
+weight: 53
 ---
 
 # Utiliser le module turtle

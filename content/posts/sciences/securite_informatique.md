@@ -1,14 +1,8 @@
 ---
 author: "Eric Tixidor"
-date: 01-05-2021
-linktitle: securite informatique
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+
 title: Securite informatique
-weight: 2
+weight: 57
 ---
 
 # Chiffrements symétriques

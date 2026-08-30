@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 06-28-2020
+
 linktitle: Python data_analyse
-menu:
-  main:
-    parent: 
-next: 
-prev: /Python AlgoKnn
+
 title: Python Datas analyse
-weight: 16
+weight: 46
 ---
 # Notebooks associés
 

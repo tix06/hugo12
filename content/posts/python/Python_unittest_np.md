@@ -1,14 +1,8 @@
 ---
 author: "Eric Tixidor"
-date: 13-10-2020
-linktitle: Python unittest np
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+
 title: Python unittest 
-weight: 16
+weight: 56
 ---
 
 # Utilisation du module unittest avec le calcul des nombres premiers

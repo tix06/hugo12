@@ -1,14 +1,8 @@
 ---
 author: "Eric Tixidor"
-date: 07-28-2020
-linktitle: javascript_DOM
-menu:
-  main:
-    parent: javascript
-next: 
-prev: 
+
 title: Javascript le DOM
-weight: 20
+weight: 42
 ---
 
 # Le DOM

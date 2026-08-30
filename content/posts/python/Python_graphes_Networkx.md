@@ -1,14 +1,9 @@
 ---
 author: "Eric Tixidor"
-date: 08-25-2020
-linktitle: Python graphes Networkx
-menu:
-  main:
-    parent: 
-next: Python graphe et NPI
-prev: 
+
+
 title: Python graphes Networkx
-weight: 11
+weight: 51
 ---
 
 # tracé de graphes avec Networkx

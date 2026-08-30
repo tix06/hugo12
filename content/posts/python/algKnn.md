@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 05-26-2020
+
 linktitle: Python algo KNN
-menu:
-  main:
-    parent: 
-next: donnees_analyse
-prev: pandas.md
+
 title: Python algo KNN
-weight: 15
+weight: 44
 ---
 
 # Algorithme des k plus proches voisins

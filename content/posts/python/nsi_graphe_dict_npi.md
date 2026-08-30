@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 08-26-2020
+
 linktitle: Python graphe et NPI
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+
 title: Python graphe et NPI
-weight: 10
+weight: 49
 ---
 # tracer un arbre à partir d'une expression NPI
 NPI : notation polonaise inversée

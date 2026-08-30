@@ -1,14 +1,8 @@
 ---
 author: "Eric Tixidor"
-date: 08-25-2020
-linktitle: Python Labyrinthe
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+ 
 title: Python Labyrinthe
-weight: 12
+weight: 52
 ---
 
 

@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 07-30-2020
+
 linktitle: jeu Space Invader
-menu:
-  main:
-    parent: javascript
-next: 
-prev: 
+
 title: jeu Space Invader
-weight: 21
+weight: 41
 ---
 
 Ce mini projet sera l'occasion de mettre en oeuvre les notions vues dans le cours précédent sur : 

@@ -1,14 +1,9 @@
 ---
 author: "Eric Tixidor"
-date: 08-02-2021
-linktitle: modeliser simuler
-menu:
-  main:
-    parent: 
-next: 
-prev: 
+
+
 title: Modèle prédictif
-weight: 1
+weight: 56
 ---
 
 

@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 06-28-2020
+
 linktitle: Python arbre decision
-menu:
-  main:
-    parent: 
-next: 
-prev: /Pyhton algorithme de recommandation
+
 title: Python arbre decision
-weight: 18
+weight: 48
 ---
 
 # Arbres de classification

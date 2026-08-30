@@ -1,14 +1,10 @@
 ---
 author: "Eric Tixidor"
-date: 06-26-2020
+
 linktitle: Python Pandas
-menu:
-  main:
-    parent: 
-next: /Python AlgoKnn
-prev: /python_les_bases
+
 title: Python Pandas
-weight: 10
+weight: 50
 ---
 
 # Python : la librairie pandas
