@@ -1,6 +1,7 @@
 ---
 Title: solution tp chiffrement
 hidden: true
+weight: 13
 ---
 
 *Solution pour le [TP chiffrement](../page54)*

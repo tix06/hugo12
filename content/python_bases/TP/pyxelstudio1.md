@@ -1,5 +1,6 @@
 ---
 Title: pyxelstudio les bases
+weight: 27
 ---
 
 # Pyxel studio

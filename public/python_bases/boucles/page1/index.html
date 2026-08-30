@@ -21,28 +21,28 @@
     <meta itemprop="name" content="boucles :: allopizza">
     <meta itemprop="description" content="boucle for, indices, somme, comprehension de liste, dictionnaire">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="734">
+    <meta itemprop="wordCount" content="615">
     <title>boucles :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787759232" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787759232" defer></script>
-    <script src="/js/search-lunr.js?1787759232" defer></script>
-    <script src="/js/search.js?1787759232" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788110487" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788110487" defer></script>
+    <script src="/js/search-lunr.js?1788110487" defer></script>
+    <script src="/js/search.js?1788110487" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787759232";
+      window.relearn.index_js_url="/searchindex.en.js?1788110487";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787759232" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1787759232" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788110487" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787759232" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787759232" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787759232" rel="stylesheet">
-    <link href="/css/theme.css?1787759232" rel="stylesheet">
-    <link href="/css/format-html.css?1787759232" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788110487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788110487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788110487" rel="stylesheet">
+    <link href="/css/theme.css?1788110487" rel="stylesheet">
+    <link href="/css/format-html.css?1788110487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -274,28 +274,6 @@
 </span></span><span class="line"><span class="cl"><span class="n">cle1</span>
 </span></span><span class="line"><span class="cl"><span class="n">cle2</span>
 </span></span><span class="line"><span class="cl"><span class="n">cle3</span></span></span></code></pre></div>
-<h1 id="boucle-while">Boucle <code>while</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Un boucle <code>while</code> (tant que) s&rsquo;éxecute tant qu&rsquo;une condition est <code>True</code> :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
-</span></span><span class="line"><span class="cl"><span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="mi">1</span> 
-</span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
-<p>Elle est aussi appelée <em>boucle non bornée</em>.
-Il faudra veiller à ce que la boucle finisse à un moment donné. Par exemple, dans le script suivant, on met l&rsquo;instruction <code>break</code> qui a pour effet d&rsquo;interrompre la boucle lorsque <code>break</code> est executée :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span> <span class="p">:</span> <span class="c1"># boucle qui à priori ne finit jamais</span>
-</span></span><span class="line"><span class="cl">  <span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Quel est votre nom ?&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="n">nom</span> <span class="o">==</span> <span class="s1">&#39;quitter&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">break</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bonjour, </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sortie de la boucle&#39;</span><span class="p">)</span></span></span></code></pre></div>
-<p>Quel est votre nom ? <strong>John</strong> <!-- raw HTML omitted -->
-Bonjour, John!<!-- raw HTML omitted -->
-Quel est votre nom ? <strong>quitter</strong> <!-- raw HTML omitted -->
-sortie de la boucle<!-- raw HTML omitted --></p>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li>comprehension de listes : <a href="https://docs.python.org/fr/2/tutorial/datastructures.html" rel="external">voir complement de cours sur python.org</a></li>
@@ -648,9 +626,9 @@ sortie de la boucle<!-- raw HTML omitted --></p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787759232"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787759232" defer></script>
-    <script src="/js/theme.js?1787759232" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788110487"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788110487" defer></script>
+    <script src="/js/theme.js?1788110487" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

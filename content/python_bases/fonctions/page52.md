@@ -1,7 +1,8 @@
 ---
-Title: fonctions pour calculer
+Title: TP5b fonctions pour calculer
 description: fonctions avec valeur de retour, pour calculer et repeter des calculs
 hidden: true
+weight: 11
 ---
 
 # Fonctions utiles pour calculer
@@ -133,3 +134,9 @@ On pourra ajouter un compteur et permettre au joueur de jouer plusieurs parties 
 * Au fur et à mesure de votre avancée dans le projet, vous devrez tenir à jour un fichier `readme.txt` expliquant les tâches effectuées.
 
 -->
+
+# Liens
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP5a{{% /button %}} Fonctions, applications
+##### {{% button href="../page52" icon="palette" style="tip" %}}TP5b{{% /button %}} fonctions utiles pour calculer
+##### {{% button href="../page51" icon="palette" style="tip" %}}TP5c{{% /button %}} boucles et fonctions, traitements automatisés

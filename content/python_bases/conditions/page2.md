@@ -28,7 +28,7 @@ Mettre `#%%` avant chaque script pour créer une *cellule*. Executer la cellule 
 {{< img src="../images/cell.png" >}}
   
 
-# Branchements et conditions simples
+## Branchements et conditions simples
 1. Un robot est en mouvement lorsque son état `avancer` est mis à `True`. Sinon, il reste au repos. Compléter le programme suivant pour mettre en mouvement le robot s'il n'y a pas d'obstacle devant lui.
 
 ```python
@@ -68,7 +68,9 @@ if ... and ...:
 
 Dans les autres cas, le robot n'avance pas. Ecrire ce nouveau programme.
 
-# Condition sur une valeur entrée (`INPUT`)
+**Question a:** Quelles sont toutes les possibilités d'écriture de cette structure conditionnelle?
+
+## Condition sur une valeur entrée (`INPUT`)
 La fonction `input` permet d'ouvrir une boite de dialogue, d'attendre la saisie, et de récupérer une information donnée par l'utilisateur.
 
 On utilisera une variable pour stocker l'information saisie:
@@ -106,7 +108,7 @@ prix = nombre * 1.1
 print("Vous avez à payer",prix,"euros.")
 ```
 
-> **Question a**: Testez ce programme. Quel message d'erreur obtenez-vous ?
+> **Question b**: Testez ce programme. Quel message d'erreur obtenez-vous ?
 
 
 
@@ -118,71 +120,40 @@ prix = nombre * 1.1
 print("Vous avez à payer",prix,"euros.")
 ```
 
-> **Question b**: Quelle est la différence avec le code précédent de cet exemple ?
+> **Question c**: Quelle est la différence avec le code précédent de cet exemple ?
 
 # Boucles non bornées: `while`
-**1. Definition:** Une *boucle non bornée* permet de répéter un élément de code un nombre à priori inconnu de fois.
-
-On écrit l'instruction:  `while <condition d execution>:`
-
-Le bloc de code est *indenté* sous cette première ligne:
+## Réaliser un compteur
+Le programme suivant (à compléter) compte jusqu'à 4. 
 
 ```python
-while <condition d execution>:
-  instruction 1
-  instruction 2
-instruction suivante # suite du programme
-``` 
-
-Cette boucle repète l'execution d'un bloc de code (*instruction 1, instruction 2*), *tant que* la `<condition>` est evaluée à `True`. Le test sur la `<condition>` est réalisé à chaque *itération*.
-
-Lorsque cette `<condition>` n'est plus réalisée, le programme passe à l'*instruction suivante*.
-
-Souvent, il sera nécessaire de démarrer le programme par initier une variable *(celle utile pour la condition d'execution)*. De sorte que cette condition d'execution soit évaluée à `True`, et que le bloc de cette boucel s'execute au moins une fois.
-
-*Exemple 1: Réaliser un compteur*
-
-```python
-print("Donner les prénoms des 3 neveux de Donald Duck")
 i = 1
-while i <= 3:
-  nom = input("neveu n°"+str(i)+": ")
-  i = i + 1
-print("c'est fini")
+print("Début")
+while ... :
+  print(...)
+  i = i + ...
+print("Fin")
 ```
 
-* à la première itération, i vaut 0, donc la condition `i <= 3` est évaluée à `True` et le bloc est executé. l'utilisateur est invité à entrer le premier nom, (*il va certainement entrer Riri*), et i finit avec la valeur 1 (`i = i + 1`)
-* La boucle se poursuit jusqu'à ce que i soit égal à 4. Alors `i <= 3` est évaluée à `False` et le programme poursuit APRES la boucle, avec la dernière instruction: affiche `"c'est fini"`
+1. Compléter le programme pour qu'il affiche les valeurs du compteur, et termine lorsque `i` depasse 4.
+2. Ajouter des instructions pour qu'il n'affiche les valeurs du compteur que si celles-ci sont PAIRES (divisibles par 2).
 
-*Exemple 2: reste de la division euclidienne de 40 par 3* 
+
+
+## Soustractions multiples
+Le programme suivant va **soustraire 3** à la valeur saisie par l'utilisateur. Le programmeur ne connait pas cette valeur, aussi utilise t-il une boucle non bornée, `while`, qui s'execute tant que la valeur est supérieure à 3. On affiche à la fin le nombre de soustractions réalisées.
 
 ```python
-r = 40
-while r >= 3:
-  r = r - 3
-print('à la fin du programme, r vaut ' + str(r))
+valeur = int(input("entrer une valeur entière: "))
+i = 0
+while valeur ...:
+  valeur = ...
+  i = ...
+print("il a fallu {i} soustractions")
 ```
-* A la première itération, `r` vaut 40 donc la `<condition>` r > 3 est `True`. r est diminué de 3 et prend la valeur 37.
-* A la dernière itération, `4 >= 3` est evalué à `True`. `r` est diminué de 3 et prend la valeur 1
-* Puis `r >= 3` est evalué à `False`. Le bloc n'est pas executé et le programme s'arrête s'il n'y a pas d'autres instructions (ou poursuit le script sinon).
-
-**2. Le problème de l'arrêt**
-Pour le script précédent, si l'on avait remplacé la condition `r >= 3` par `r == 3` le programme aurait pu executer le bloc `r = r - 3` indefiniment. `r` aurait pris successivement les valeurs 40, 37, ... 4, 1, -2, -5, ... etc, sans jamais prendre la valeur 0.
-
-C'est le problème avec les boucles non bornées. Celles-ci peuvent ne pas finir, ce qui peut bloquer la machine.
-
-Cet effet de boucle *infini* peut être recherché, par exemple en robotique, où l'on veut que le programme se poursuive indéfiniment. Ainsi, la structure d'un programme *python* sur carte microbit commence par la structure suivante:
-
-```python
-from microbit import *
-
-while True:
-  # instructions
-  # ...
-``` 
 
 
-**3. Le jeu de devinette**
+## Le jeu de devinette
 On veut créer un jeu qui questionne le joueur jusqu'à ce que celui-ci trouve le nombre choisi au hasard par l'ordinateur.
 
 ```python
@@ -202,9 +173,9 @@ A chaque fois que la condition `choix_joueur != N_aleatoire` est `True`, c'est �
 
 Lorsque les valeurs `choix_joueur` et `N_aleatoire` sont identiques, le programme passe à la ligne `print('Bravo vous avez gagné')` 
 
-> **Question c:** 
+> **Question d:** 
 
-> c1. A votre avis: 
+> d1. A votre avis: 
 * à quoi sert ce jeu?
   * à compter le nombre de fois où l'ordinateur tire aléatoirement le nombre 100?
   * à compter le nombre de fois où l'ordinateur tire aléatoirement le nombre 10?  
@@ -212,9 +183,24 @@ Lorsque les valeurs `choix_joueur` et `N_aleatoire` sont identiques, le programm
   * à deviner le nombre tiré aléatoirement par l'ordinateur (1 à 10), avec un nombre d'essais à priori infini, jusqu'à ce que l'on trouve.
 * à quoi sert la 3e ligne `choix_joueur = 100`?
 
-> c2. Testez ce programme. Modifiez la condition d'arrêt de la boucle pour que l'on puisse sortir du jeu lorsque l'on saisit la valeur 0. Cela doit arrêter la partie.
+> d2. Testez ce programme. Modifiez la condition d'arrêt de la boucle pour que l'on puisse sortir du jeu lorsque l'on saisit la valeur 0. Cela doit arrêter la partie.
 
-> c3. Ajouter un compteur du nombre d'essais. Afficher ce nombre à la fin du jeu.
+> d3. Ajouter un compteur du nombre d'essais. Afficher ce nombre à la fin du jeu.
+
+> d4. Ecrire un programme qui aide à mémoriser les tables de multiplication. Ce programme propose 2 entiers à multiplier. Le joueur doit donner le resultat de leur multiplication. Le jeu s'arrête lorsque le joueur commet une erreur. On affiche alors le nombre de reussites. Il faudra utiliser une boucle `while` et s'inspirer du programme précédent.
+
+*Aide* Tirage aleatoire. Débuter le programme par l'import de la fonction `randint` de la librairie `random`. Puis utiliser la fonction `randint` avec 2 arguments qui limitent la plage de choix aleatoire entre ces deux bornes.
+
+*Exemple:*
+
+```python
+from random import randint
+x = randint(0,10)
+print(x)
+# Affiche une valeur aléatoire entre 0 et 10
+```
+
+
 
 # Fiche de synthèse
 ## structure conditionnelle

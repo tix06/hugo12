@@ -1,5 +1,6 @@
 ---
 Title: pygame les bases
+weight: 23
 ---
 
 # Pygame

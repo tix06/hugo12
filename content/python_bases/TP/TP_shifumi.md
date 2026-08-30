@@ -1,5 +1,6 @@
 ---
 Title: shifumi
+weight: 31
 ---
 
 # Jeu du Shifumi

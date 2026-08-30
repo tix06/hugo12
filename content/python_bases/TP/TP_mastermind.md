@@ -1,5 +1,6 @@
 ---
 Title: mastermind
+weight: 29
 ---
 
 # Jeu du mastermind - 1ere NSI

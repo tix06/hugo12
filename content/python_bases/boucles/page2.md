@@ -93,7 +93,7 @@ IndexError: list assignment index out of range
 
 > Mais alors, quelle est la bonne méthode pour ajouter un élément à une liste?
 
-**Il faut utiliser une méthode de liste: la méthode** `append`
+**Pour ajouter un élément à une liste, il faut utiliser une méthode de liste: la méthode** `append`
 
 ```python
 voyelles = ['e','i','o']
@@ -103,6 +103,18 @@ voyelles
 ```
 
 L'écriture de la méthode `append` se fait avec une notation pointée: `liste.append(x)`, où `x` est la valeur à ajouter à la fin de `liste`.
+
+**On peut aussi utiliser l'opérateur `+`, mais il doit être suivi d'une autre Liste:
+
+```python
+L = ['a','b','c']
+L = L + ['d']
+print(L)
+# affiche ['a','b','c','d']
+T = ['a','b','c']
+T = T + 'd'
+# affiche TypeError: can only concatenate list (not "str") to list
+```
 
 **3. Une fonction utile aux listes: `len`**
 La fonction `len` va retourner la longueur de la liste.
@@ -298,11 +310,8 @@ plt.show()
 {{< img src="../images/graphique.png" >}}
 
 
-# Travaux pratiques
-<!--
-* Lien vers l'énoncé du {{< a link="../page5" caption="TP4: Tableaux Excel et tableaux Python" >}}
--->
+# Liens
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP4{{% /button %}} Listes
 
-* Lien vers l'énoncé du {{< a link="../page3" caption="TP5: Listes" >}}
 
-* Lien vers l'énoncé du {{< a link="../../../python_avance/pages/boucles/page4" caption="TP6: boucles et parcours de listes" >}}

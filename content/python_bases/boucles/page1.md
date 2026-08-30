@@ -161,36 +161,8 @@ cle3
 
 
 
-# Boucle `while`
-Un boucle `while` (tant que) s'éxecute tant qu'une condition est `True` : 
 
-```python
-num = 0
-while num < 3:
-  print(num)
-  num += 1
-# affiche
-0
-1 
-2
-```
 
-Elle est aussi appelée *boucle non bornée*.
-Il faudra veiller à ce que la boucle finisse à un moment donné. Par exemple, dans le script suivant, on met l'instruction `break` qui a pour effet d'interrompre la boucle lorsque `break` est executée : 
-
-```python
-while True : # boucle qui à priori ne finit jamais
-  nom = input('Quel est votre nom ?')
-  if nom == 'quitter':
-    break
-  print('Bonjour, {}'.format(nom))
-print('sortie de la boucle')
-```
-
-Quel est votre nom ? **John** <br>
-Bonjour, John!<br>
-Quel est votre nom ? **quitter** <br>
-sortie de la boucle<br>
 
 
 # Liens

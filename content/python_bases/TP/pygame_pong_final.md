@@ -1,6 +1,7 @@
 ---
 Title: PONG final
 hidden: true
+weight: 25
 ---
 
 # Programme final

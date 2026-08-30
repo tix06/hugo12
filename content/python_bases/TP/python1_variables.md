@@ -1,5 +1,6 @@
 ---
 Title : jeu de rôle en console
+weight: 26
 ---
 
 # TP python: Jeu de Rôle

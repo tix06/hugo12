@@ -1,5 +1,6 @@
 ---
 Title: reseaux sociaux
+description: identité numérique, modélisation des liens d'amitié, aspects economiques et sociaux
 ---
 
 {{< img src="../images/BlackMirror.png" link="https://youtu.be/NQHhPfpoLL0?feature=shared&t=390" caption="Black Mirror - Chute Libre S03EP01 commenté" >}}

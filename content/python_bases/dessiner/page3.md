@@ -1,7 +1,7 @@
 ---
 Title: fonctions et Turtle
 linkTitle: dessiner avec Turtle
-weight: 12
+weight: 15
 ---
 
 Le module Turtle ![](../images/t1.png) permet d’avoir un environnement simple muni d’une interface graphique. 

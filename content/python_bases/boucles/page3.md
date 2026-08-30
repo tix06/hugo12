@@ -1,15 +1,11 @@
 ---
-Title: TP1 listes
+Title: TP3 listes
 description: TP, liste, dictionnaire, indices, modifier supprimer et ajouter des éléments, liste de listes, matrices, tracé graphique
 weight: 9
 hidden: true
 ---
 
 
-**Rappels de cours sur les listes**
-
-* [page 1: listes et boucles bornées](/docs/python/pages/boucles/page2/)
-* [page 2: types construits: list, tuple, dict](/docs/python/pages/variables/page2/)
 
 **Editeur Python**
 
@@ -17,7 +13,7 @@ hidden: true
 
 
 
-# TP5 Listes
+
 ## Ex 1: Elements d'une liste
 ### Utiliser un indice
 Dans une cellule, saisir la ligne suivante:
@@ -429,6 +425,6 @@ Comment atteindre la valeur d'un dictionnaire `D`, associé à la clé `7`?
 * Quelle instruction permet de tracer un nuage de point avec la liste X en abscisses et Y en ordonnée?
 
 # Liens
-* TP5 [listes, indices, méthodes](../page3/)
-* TP6 [boucles et parcours de liste](../../../python_avance/boucles/page4)
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP4{{% /button %}} Listes
 

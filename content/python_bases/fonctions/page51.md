@@ -1,8 +1,8 @@
 ---
-Title: TP fonctions python
+Title: TP5c fonctions python
 description: TP sur les fonctions python, et les boucles
 hidden: true
-weight: 10
+weight: 11
 ---
 
 # Fonctions programmées
@@ -351,10 +351,15 @@ for l in M:
 
 
 # Liens et sources
+
+##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP5a{{% /button %}} Fonctions, applications
+##### {{% button href="../page52" icon="palette" style="tip" %}}TP5b{{% /button %}} fonctions utiles pour calculer
+##### {{% button href="../page51" icon="palette" style="tip" %}}TP5c{{% /button %}} boucles et fonctions, traitements automatisés
+
 * notebook du site [clogique](https://clogique.fr/nsi/notebook/?from=/nsi/premiere/td_tp/TP_Art_Ascii.ipynb#Exercice-7)
 
-# Suite
-### Lecture - eciture dans un fichier: [Lien](../page54)
-### Projet transformer image -> ASCII: [Lien](../page53)
-### Utiliser des fonctions pour calculer: [Lien](../page52)
+
+
+
 

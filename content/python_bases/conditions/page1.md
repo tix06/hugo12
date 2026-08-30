@@ -193,6 +193,90 @@ if n:
   print('n est different de 0')
 ```
 
+
+# Boucles non bornées: `while`
+**1. Definition:** Une *boucle non bornée* permet de répéter un élément de code un nombre à priori inconnu de fois.
+
+On écrit l'instruction:  `while <condition d execution>:`
+
+Le bloc de code est *indenté* sous cette première ligne:
+
+```python
+while <condition d execution>:
+  instruction 1
+  instruction 2
+instruction suivante # suite du programme
+``` 
+
+Cette boucle repète l'execution d'un bloc de code (*instruction 1, instruction 2*), *tant que* la `<condition>` est evaluée à `True`. Le test sur la `<condition>` est réalisé à chaque *itération*.
+
+Lorsque cette `<condition>` n'est plus réalisée, le programme passe à l'*instruction suivante*.
+
+Souvent, il sera nécessaire de démarrer le programme par initier une variable *(celle utile pour la condition d'execution)*. De sorte que cette condition d'execution soit évaluée à `True`, et que le bloc de cette boucel s'execute au moins une fois.
+
+*Exemple 1: Réaliser un compteur*
+
+```python
+print("Jeu du cache-cache: compte jusqu'à 10")
+i = 1
+while i <= 10:
+  print(i)
+  i = i + 1
+print("c'est fini, j'arrive")
+```
+
+* à la première itération, i vaut 0, donc la condition `i <= 10` est évaluée à `True` et le bloc est executé. Le programme affiche **1** et i finit avec la valeur 2 (`i = i + 1`)
+* La boucle se poursuit jusqu'à ce que i soit égal à 11. Alors `i <= 10` est évaluée à `False` et le programme poursuit APRES la boucle, avec la dernière instruction: affiche `"c'est fini"`
+
+*Exemple 2: reste de la division euclidienne de 40 par 3* 
+
+```python
+r = 40
+while r >= 3:
+  r = r - 3
+print('à la fin du programme, r vaut ' + str(r))
+```
+* A la première itération, `r` vaut 40 donc la `<condition>` r > 3 est `True`. r est diminué de 3 et prend la valeur 37.
+* A la dernière itération, `4 >= 3` est evalué à `True`. `r` est diminué de 3 et prend la valeur 1
+* Puis `r >= 3` est evalué à `False`. Le bloc n'est pas executé et le programme s'arrête s'il n'y a pas d'autres instructions (ou poursuit le script sinon).
+
+**2. Le problème de l'arrêt**
+Pour le script précédent, si l'on avait remplacé la condition `r >= 3` par `r == 3` le programme aurait pu executer le bloc `r = r - 3` indefiniment. `r` aurait pris successivement les valeurs 40, 37, ... 4, 1, -2, -5, ... etc, sans jamais prendre la valeur 0.
+
+C'est le problème avec les boucles non bornées. Celles-ci peuvent ne pas finir, ce qui peut bloquer la machine.
+
+Cet effet de boucle *infini* peut être recherché, par exemple en robotique, où l'on veut que le programme se poursuive indéfiniment. Ainsi, la structure d'un programme *python* sur carte microbit commence par la structure suivante:
+
+```python
+from microbit import *
+
+while True:
+  # instructions
+  # ...
+``` 
+
+Mais dans le cas général, il faudra veiller à ce que la boucle finisse à un moment donné. Par exemple, dans le script suivant, on met l'instruction `break` qui a pour effet d'interrompre la boucle lorsque `break` est executée : 
+
+```python
+while True : # boucle qui à priori ne finit jamais
+  nom = input('Quel est votre nom ?')
+  if nom == 'quitter':
+    break
+  print('Bonjour, {}'.format(nom))
+print('sortie de la boucle')
+```
+
+**Exemple**:
+
+```
+Quel est votre nom ? John
+Bonjour, John!
+Quel est votre nom ? quitter
+sortie de la boucle
+```
+
+
+
 # Suite
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 

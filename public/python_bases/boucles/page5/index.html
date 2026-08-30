@@ -21,28 +21,28 @@
     <meta itemprop="name" content="boucles :: allopizza">
     <meta itemprop="description" content="cours sur les boucles, bornées et non bornées, notion d&#39;itérable, fonctions natives">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="1213">
+    <meta itemprop="wordCount" content="710">
     <title>boucles :: allopizza</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1787850663" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1787850663" defer></script>
-    <script src="/js/search-lunr.js?1787850663" defer></script>
-    <script src="/js/search.js?1787850663" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788110487" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788110487" defer></script>
+    <script src="/js/search-lunr.js?1788110487" defer></script>
+    <script src="/js/search.js?1788110487" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1787850663";
+      window.relearn.index_js_url="/searchindex.en.js?1788110487";
     </script>
-    <script src="/js/lunr/lunr.min.js?1787850663" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1787850663" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1787850663" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1787850663" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788110487" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788110487" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1787850663" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1787850663" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1787850663" rel="stylesheet">
-    <link href="/css/theme.css?1787850663" rel="stylesheet">
-    <link href="/css/format-html.css?1787850663" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788110487" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788110487" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788110487" rel="stylesheet">
+    <link href="/css/theme.css?1788110487" rel="stylesheet">
+    <link href="/css/format-html.css?1788110487" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -120,11 +120,18 @@
 
   <ul>
     <li><a href="#exemples">Exemples</a></li>
-    <li><a href="#exercices">Exercices:</a></li>
   </ul>
 
   <ul>
-    <li><a href="#exercices-1">Exercices</a></li>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -236,19 +243,18 @@
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">variant</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># bloc de code à repeter</span></span></span></code></pre></div>
 <p>Ce que l&rsquo;on appelle <em>iterable</em>, c&rsquo;est un ensemble de valeurs que prend successivement le <em>variant</em>.</p>
-<blockquote>
-<p>A tester vous-même (python): Exemple 1: utiliser la fonction <code>range</code></p>
-</blockquote>
 <p><strong>iterable = <code>range(5)</code></strong></p>
 <p>Dans ce premier cas, le variant prend successivement le valeurs de l&rsquo;ensemble <code>{0,1,2,3,4}</code>. Le variant vaut 0 lors le premiere itération, puis 1 à la deuxieme, etc &hellip;</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
 </span></span><span class="line"><span class="cl"><span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span></span></span></code></pre></div>
 <blockquote>
-<p>A tester vous-même (python): Exemple 2: utiliser une séquence de type str</p>
+<p>A tester vous-même (python): Exemple 1: utiliser la fonction <code>range</code></p>
 </blockquote>
 <p><strong>iterable = <code>&quot;abc&quot;</code></strong></p>
 <p>Dans ce deuxieme cas, le variant <code>i</code> prend successivement le valeurs de l&rsquo;ensemble <code>{&quot;a&quot;,&quot;b&quot;,&quot;c&quot;}</code>. Le variant vaut &ldquo;a&rdquo; lors le premiere itération, puis &ldquo;b&rdquo; à la deuxieme, etc &hellip;</p>
@@ -259,7 +265,7 @@
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;b&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="s2">&#34;c&#34;</span></span></span></code></pre></div>
 <blockquote>
-<p>A tester vous-même (python): Exemple 3: utiliser une séquence de type list</p>
+<p>A tester vous-même (python): Exemple 2: utiliser une séquence de type str</p>
 </blockquote>
 <p><strong>iterable = <code>[1998,2018]</code></strong></p>
 <p>Les listes en python sont des sequences qui placent les valeurs entre crochets <code>[...]</code>. Les valeurs sont séparées par des virgules <code>,</code></p>
@@ -267,10 +273,13 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">annee</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La France a gagné la coupe du monde en &#39;</span><span class="p">,</span> <span class="n">annee</span><span class="p">)</span></span></span></code></pre></div>
+<blockquote>
+<p>A tester vous-même (python): Exemple 3: utiliser une séquence de type list</p>
+</blockquote>
 <p>le variant <code>annee</code> prend successivement le valeurs de l&rsquo;ensemble <code>{1998,2018}</code></p>
 <p>On peut placer autant de valeurs que l&rsquo;on souhaite dans une liste.</p>
 <h1 id="boucle-bornée-et-non-bornée">Boucle bornée et non bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Pour la boucle bornée <code>for</code>, il n&rsquo;est pas necessaire d&rsquo;ajouter une instruction dans le bloc pour que le variant change de valeur à chaque itération. Cela se fait tout seul, à chaque fois que le programme revient sur l&rsquo;instruction <code>for</code>.</p>
+<p>Pour la boucle bornée <code>for</code>, il n&rsquo;est pas necessaire d&rsquo;ajouter une instruction dans le bloc pour que le <em>variant</em> change de valeur à chaque itération. Cela se fait <em>tout seul</em>, à chaque fois que le programme revient sur l&rsquo;instruction <code>for</code>.</p>
 
 <figure >
     
@@ -295,163 +304,59 @@
 <ul>
 <li><em>Exemple 1</em>: afficher le variant de boucle <code>i</code></li>
 </ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Boucle bornée</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
 </span></span><span class="line"><span class="cl"><span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="mi">1</span>
 </span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
 <p><em>Remarque: la fonction <code>range(3)</code> va créer une liste itérable constituée des valeurs 0, 1, 2. Ce sont les valeurs prises successivement par le variant <code>i</code> dans <code>for i in range(3)</code></em></p>
-<ul>
-<li><em>Exemple 2</em>: Ce variant peut être utilisé pour une formule arithmétique, à l&rsquo;intérieur de la boucle:</li>
-</ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Boucle non bornée</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span>
 </span></span><span class="line"><span class="cl"><span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="mi">5</span></span></span></code></pre></div>
-<h2 id="exercices">Exercices:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Pour chaque exercice <strong>résolu</strong>, <strong>recopier</strong> le script dans votre cahier.</p>
-<ol>
-<li><strong>Sélection des valeurs paires</strong></li>
-</ol>
-<p>Placer les 5 instructions suivantes, dans le bon ordre, et avec la bonne indentation pour afficher tous les nombres pairs entre 0 et 100:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> 
-</span></span><span class="line"><span class="cl"><span class="ow">in</span> 
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></span></span></code></pre></div>
-<p>Le programme devra afficher les valeurs:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0
-</span></span><span class="line"><span class="cl">2
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">100</span></span></code></pre></div>
-<ol start="2">
-<li><strong>Table de 7</strong></li>
-</ol>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
+<p><em>Remarque: Avec une boucle non bornée, il faut:</em></p>
 <ul>
 <li>
-<p>version a: Réaliser un programme utilisant une boucel bornée <code>for</code>, qui affiche (fonction <code>print</code>) les 10 premières valeurs de la table de 7</p>
+<p><em>déclarer la valeur initiale du variant</em>: <code>i = 0</code></p>
 </li>
 <li>
-<p>version b: Ecrire un nouveau programme, utilisant cette fois une boucle non bornée <code>while</code> pour afficher  les 10 premières valeurs de la table de 7:</p>
+<p><em>écrire la condition d&rsquo;execution après le <code>while</code>, <code>i&lt;3</code></em></p>
+</li>
+<li>
+<p><em>faire varier le variant dans la boucle <code>while</code></em>, <code>i = i+1</code></p>
+</li>
+<li>
+<p><em>Exemple 2</em>: Ce variant peut être utilisé pour une formule arithmétique, à l&rsquo;intérieur de la boucle:</p>
 </li>
 </ul>
-<p><em>Rappel:</em></p>
-<blockquote>
-<p>La construction en bloc vous est déjà familière si vous avez utilisé un langage de blocs comme scratch ou blocky.  L’instruction while montre cette même disposition avec l&rsquo;indentation.</p>
-</blockquote>
-
-<figure >
-    
-        <img src="../images/bloc4.png"
-        
-        alt="blocs python à compléter" />
-    
-    
-    <figcaption>
-        
-        <p>
-            blocs python à compléter
-            
-                
-            
-        </p>
-    </figcaption>
-    
-</figure>
-
-<blockquote>
-<p>Pensez à &hellip;:</p>
-</blockquote>
-<ul>
-<li>Utiliser un variant <code>i</code>, et une condition d&rsquo;execution <code>while i&lt;11:</code></li>
-<li>Dans la boucle, augmenter la valeur du variant <code>i</code>, avec <code>i = i+1</code></li>
-</ul>
-<ol start="3">
-<li><strong>Parcourir des éléments de liste</strong></li>
-</ol>
-<p>L&rsquo;équipe de France a remporté aussi les trophées suivants: Coupe des Confédérations (2001, 2003), Jeux olympiques (1984), son championnat continental (1984, 2000)</p>
-<p>Ecrire un script python qui utilise des listes et des boucles bornées pour afficher tous les trophées remportés par l&rsquo;équipe de France:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">l&#39;equipe de France a remporté la Coupe de Confédérations en 2001
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">l&#39;equipe de France a remporté le championnat continental en 2000</span></span></code></pre></div>
-<ol start="4">
-<li><strong>Division euclidienne</strong></li>
-</ol>
-<p><em>On rappelle que l&rsquo;utilisation d&rsquo;une boucle bornée <code>for</code> nécessite de connaitre le nombre d&rsquo;itérations (<code>for .. in range(n)</code>). Si ce nombre d&rsquo;itérations n&rsquo;est pas connu, il faudra utiliser une boucle <code>while</code></em>.</p>
-<p>Le quotient de la division de a par b est égal au nombre de fois N qu&rsquo;il faut soustraire b à a jusqu&rsquo;à ce que l&rsquo;on ait a &lt; b.</p>
-<p>a. D&rsquo;après cet énoncé, va t-on utiliser une boucle bornée, ou bien un boucle non bornée?</p>
-<p>b. Compléter le script de la division euclidienne de a par b</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;entrer la valeur de a :&#39;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;entrer la valeur de b :&#39;</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span><span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></span></span></code></pre></div>
-<p>c. Quel est le quotient entier de la division de 2024 par 7?</p>
-<h1 id="les-fonctions-natives-du-langage-python">Les fonctions natives du langage python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Tous les langages de programmation fournissent un large ensemble de fonctions prêtes à être utilisées. Nous avons déjà rencontré diverses fonctions prédéfinies, de la librairie standart : <code>print</code>, <code>input</code>, <code>range</code>.</p>
-<blockquote>
-<p>Tester dans un notebook, ou en console les fonctions natives suivantes:</p>
-</blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="o">..</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;0b10000001&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="o">..</span></span></span></code></pre></div>
-<p>Dans ces 2 exemples, on a utilisé un ou plusieurs arguments, positionnés entre les parenthèses.</p>
-<ul>
-<li>pour <code>bin(129)</code>, c&rsquo;est l&rsquo;argument 129 qui est passé à la fonction, afin que celle-ci réalise la conversion de 129 en binaire.</li>
-<li>pour <code>int('0b10000001',2)</code>, ce sont 2 arguments qui sont passés à la fonction <code>int</code>: Le binaire &lsquo;0b10000001&rsquo;, ainsi que l&rsquo;argument 2 précisant qu&rsquo;il s&rsquo;agit d&rsquo;un code binaire à convertir en entier.</li>
-</ul>
-<p><em>Remarquer que ces arguments sont séparés par une virgule.</em></p>
-<h2 id="exercices-1">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<ol>
-<li><strong>Convertir en binaire</strong></li>
-</ol>
-<p>Utiliser la fonction <code>bin</code> pour convertir les nombres suivants: 65400, 31654, 1026</p>
-<p><em>Astuce pour <strong>automatiser</strong> le calcul</em>: On pourra placer ces valeurs dans une liste et utiliser une boucle bornée <code>for</code>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65400</span><span class="p">,</span> <span class="mi">31654</span><span class="p">,</span> <span class="mi">1026</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">..</span><span class="p">)</span></span></span></code></pre></div>
-<ol start="2">
-<li><strong>Convertir en ascii</strong></li>
-</ol>
-<p>La fonction <code>chr</code> retourne le caractère ascii correspondant à l&rsquo;entier (0..127) placé en argument:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;a&#39;</span></span></span></code></pre></div>
-<blockquote>
-<p>Utiliser cette fonction <code>chr</code> pour décoder le message, et trouver le tresor derrière l&rsquo;une de ces portes&hellip;</p>
-</blockquote>
-
-<figure >
-    <a href="/pdf/NSI_1/D1_les_3_portes_ascii.pdf">
-        <img src="../images/miniature.png"
-        
-        alt="cliquer pour agrandir" />
-    </a>
-    
-    <figcaption>
-        
-        <p>
-            cliquer pour agrandir
-            
-                
-            
-        </p>
-    </figcaption>
-    
-</figure>
-
-<p>On pourra s&rsquo;aider du script suivant:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">111</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># boucle bornée</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">7</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche la table de 7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">14</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># boucle non bornée</span>
+</span></span><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">7</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche la table de 7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">14</span></span></span></code></pre></div>
 <h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Les fonctions programmées en python: <a href="../../fonctions/page51">Lien</a></p>
+<h5 id="hahahugoshortcode459s3hbhb"><span class="btn cstyle button caution interactive"><a href="../page5"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode459s4hbhb-boucles-bornées-et-non-bornées"><span class="btn cstyle button tip interactive"><a href="../page6"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3</span></a></span> Boucles bornées et non bornées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -799,9 +704,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1787850663"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1787850663" defer></script>
-    <script src="/js/theme.js?1787850663" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788110487"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788110487" defer></script>
+    <script src="/js/theme.js?1788110487" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

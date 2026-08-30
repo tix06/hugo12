@@ -1,6 +1,7 @@
 ---
 Title: solution mastermind
 hidden: true
+weight: 30
 ---
 
 *solution*

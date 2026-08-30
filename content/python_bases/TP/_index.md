@@ -1,7 +1,7 @@
 +++
 title = "Travaux pratiques"
 type = "menu"
-weight = 12
+weight = 20
 +++
 
 # Travaux pratiques et mini-projets

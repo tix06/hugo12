@@ -1,7 +1,7 @@
 ---
 Title: lecture - ecriture fichier
 description: lire et ecrire dans un fichier python, fonctions ord et chr, boucles
-weight: 10
+weight: 12
 ---
 
 au cours de ce TP, vous allez apprendre à:
@@ -197,4 +197,3 @@ Utilisez alors votre fonction pour réaliser le chiffrement d'un texte relativem
 
 * Projet transformer image -> ASCII: [Lien](../../TP/ascii_art)
 
-* Utiliser des fonctions pour calculer: [Lien](../../TP/page52)

@@ -1,6 +1,7 @@
 ---
 Title: balle rebondissante
 hidden: true
+weight: 24
 ---
 
 # Suite du jeu PONG (pygame)

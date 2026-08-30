@@ -1,6 +1,6 @@
 ---
 Title: installation python
-weight: 11
+weight: 14
 ---
 
 # Python est-il déjà installé?
