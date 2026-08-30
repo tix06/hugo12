@@ -281,9 +281,7 @@ sortie de la boucle
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+##### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 
 
-* [cours: ](../page1) structures conditionnelles
-* [TP1](../../conditions/page2/) sur les structures conditionnelles et boucles while
-* [TP2](../../conditions/page3_D/) sur les structures conditionnelles et fonctions
+
