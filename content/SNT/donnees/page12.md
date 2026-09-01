@@ -1,8 +1,7 @@
 ---
-Title: Enquete police
+Title: TP Enquete police
 description: fichier Excel, trier, rechercher
-hidden: true
-weight: 14
+weight: 20
 ---
 
 # Enoncé du TP

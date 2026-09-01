@@ -23,26 +23,26 @@
     <meta itemprop="dateModified" content="2026-06-27T17:13:56+02:00">
     <meta itemprop="wordCount" content="2462">
     <title>IHM python Cours :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi_1/ihm/pygamecours/index.html">
     <div id="R-body" class="default-animation">
@@ -769,6 +770,89 @@ Il faut appliquer le calque sur l&rsquo;image, qui aura les mêmes dimensions qu
 </span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">key</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34;h&#34;</span><span class="p">:</span> 
 </span></span><span class="line"><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;HELP&#39;</span><span class="p">)</span></span></span></code></pre></div>
 <p><em>(à placer dans la zone de gestion des évènements)</em></p>
+<!--
+### Créer un bouton interactif
+
+```python
+# Définir le bouton
+bouton_rect = pygame.Rect(50, 50, 150, 50)  # x, y, largeur, hauteur
+bouton_texte = "Examiner"
+bouton_couleur = (100, 100, 200)
+bouton_couleur_hover = (150, 150, 255)
+
+# Dans la boucle
+# Vérifier si la souris survole le bouton
+souris_pos = pygame.mouse.get_pos()
+if bouton_rect.collidepoint(souris_pos):
+    couleur_actuelle = bouton_couleur_hover
+else:
+    couleur_actuelle = bouton_couleur
+
+# Dessiner le bouton
+pygame.draw.rect(screen, couleur_actuelle, bouton_rect)
+
+# Dessiner le texte du bouton
+font = pygame.font.Font(None, 30)
+texte_surface = font.render(bouton_texte, True, (255, 255, 255))
+# Centrer le texte dans le bouton
+texte_rect = texte_surface.get_rect(center=bouton_rect.center)
+screen.blit(texte_surface, texte_rect)
+
+# Détecter le clic
+if event.type == pygame.MOUSEBUTTONDOWN:
+    if bouton_rect.collidepoint(event.pos):
+        print("Bouton cliqué !")
+```
+
+### Exemple complet : Image avec objet cliquable
+
+```python
+import pygame
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+clock = pygame.time.Clock()
+
+# Charger l'image de fond
+fond = pygame.image.load("salle.png")
+
+# Zone cliquable pour un objet (par exemple une porte)
+porte_rect = pygame.Rect(300, 200, 150, 300)
+
+# Texte affiché
+message = "Cliquez sur la porte"
+font = pygame.font.Font(None, 32)
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if porte_rect.collidepoint(event.pos):
+                message = "La porte est verrouillée !"
+    
+    # Affichage
+    screen.blit(fond, (0, 0))
+    
+    # Dessiner un rectangle semi-transparent sur la zone cliquable (debug)
+    s = pygame.Surface((porte_rect.width, porte_rect.height))
+    s.set_alpha(50)  # Transparence
+    s.fill((255, 0, 0))
+    screen.blit(s, (porte_rect.x, porte_rect.y))
+    
+    # Afficher le message
+    texte_surface = font.render(message, True, (255, 255, 255))
+    screen.blit(texte_surface, (50, 500))
+    
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+quit() # utile sur jupyter notebook
+```
+-->
 <hr>
 <p><strong>3. Testez progressivement</strong></p>
 <ul>
@@ -1058,6 +1142,8 @@ Il faut appliquer le calque sur l&rsquo;image, qui aura les mêmes dimensions qu
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1148,21 +1234,20 @@ Il faut appliquer le calque sur l&rsquo;image, qui aura les mêmes dimensions qu
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -1219,9 +1304,9 @@ Il faut appliquer le calque sur l&rsquo;image, qui aura les mêmes dimensions qu
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

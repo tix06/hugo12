@@ -29,36 +29,36 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Posts">
-    <meta property="article:modified_time" content="2026-08-30T20:03:53+02:00">
+    <meta property="article:modified_time" content="2026-08-30T20:11:54+02:00">
     <meta itemprop="name" content="Python graphe et NPI :: allophysique">
     <meta itemprop="description" content="tracer un arbre à partir d’une expression NPI NPI : notation polonaise inversée
 En particulier : on dispose d’une expression en NPI, du type :
 L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;]
 Et on veut créer et afficher le graphe correspondant : On utilisera le script :
 L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTree(L3) G = nx.Graph() graphDict(D) Dont l’instruction suivante va générer le dictionnaire à partir de l’expression NPI (fonction npiTree recursive):">
-    <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
+    <meta itemprop="dateModified" content="2026-08-30T20:11:54+02:00">
     <meta itemprop="wordCount" content="1087">
     <title>Python graphe et NPI :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788115535" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788115535" defer></script>
-    <script src="/js/search-lunr.js?1788115535" defer></script>
-    <script src="/js/search.js?1788115535" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788115535";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788115535" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788115535" rel="stylesheet">
-    <link href="/css/theme.css?1788115535" rel="stylesheet">
-    <link href="/css/format-html.css?1788115535" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -112,6 +112,7 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/posts/python/nsi_graphe_dict_npi/index.html">
     <div id="R-body" class="default-animation">
@@ -169,8 +170,8 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
 <p>En particulier : on dispose d&rsquo;une expression en NPI, du type :</p>
 <p><code>L3 = [7,8,'-',6,'*',10,3,'+','*']</code></p>
 <p>Et on veut créer et afficher le graphe correspondant :
-<a href="#R-image-857060a21ce08994b142167f5ea6f2c4" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/output_3_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-857060a21ce08994b142167f5ea6f2c4"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_3_0.png"></a></p>
+<a href="#R-image-bc541e27b7ca4d4e170f9c019e016f23" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/output_3_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-bc541e27b7ca4d4e170f9c019e016f23"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_3_0.png"></a></p>
 <p>On utilisera le script :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;+&#39;,&#39;*&#39;]
 </span></span><span class="line"><span class="cl">
@@ -440,8 +441,8 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
 </span></span><span class="line"><span class="cl"><span class="n">D</span> <span class="o">=</span> <span class="n">makeTree</span><span class="p">(</span><span class="n">L3</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="n">graphDict</span><span class="p">(</span><span class="n">D</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-340cc85e2e5bdba99fb9c640db67e875" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/output_3_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-340cc85e2e5bdba99fb9c640db67e875"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_3_0.png"></a></p>
+<p><a href="#R-image-a7a0469aff1354e303fd357d51c7f8a5" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/output_3_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a7a0469aff1354e303fd357d51c7f8a5"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_3_0.png"></a></p>
 <pre><code>&lt;networkx.classes.graph.Graph at 0x7fc60ce94a10&gt;
 </code></pre>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">list</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">))</span></span></span></code></pre></div>
@@ -668,6 +669,8 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -828,9 +831,9 @@ L3 = [7,8,&#39;-&#39;,6,&#39;*&#39;,10,3,&#39;&#43;&#39;,&#39;*&#39;] D = makeTr
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788115535"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788115535" defer></script>
-    <script src="/js/theme.js?1788115535" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

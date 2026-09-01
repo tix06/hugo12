@@ -1,8 +1,7 @@
 ---
 Title: TP Pommes
 description: donnees structurees, table, filtrer, trier, calculer
-weight: 15
-hiddden: true
+weight: 21
 ---
 # Format des données
 Les **données structurées** sont stockées dans des **fichiers** contenant des caractères. Ces fichiers peuvent être utilisés par plusieurs logiciels (**interopérabilité**), à condition que les données y soient mises dans un le bon **format**.

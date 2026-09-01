@@ -1,26 +1,29 @@
 ---
-Title: format des donnees
+Title: Format des donnees
 description: donnees structurees, format de donnees standardisé, json, csv, donnees et informations, open datas
 weight: 13
 ---
 
 
-{{< badgerows >}}
-{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D1 Format des données: [Lien](../page4){{% /badgerow %}}
-{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D2 Collecte des données personnelles: [Lien](../page5) {{% /badgerow %}}
-{{< /badgerows >}}
-
-* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} D3 Données en table [Lien](../page8)
-* {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} D4 RGPD [Lien](page5) et [videos](page6)
-* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} TP1 Enquete de police [Lien](../page12)
-* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} TP2 Pommes [Lien](../page9)
-* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP3 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html)
 
 
-{{< badgerows >}}
-{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D1 Format des données: [Lien](../page4) {{% /badgerow %}}
-{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D2 Collecte des données personnelles: [Lien](../page5) {{% /badgerow %}}
-{{< /badgerows >}}
+
+
+
+
+
+{{% badgetable %}}
+| | |
+|---|---|
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D1 Format des données : [Lien](../page4) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D2 Collecte des données personnelles : [Lien](../page5) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D3 Données en table [Lien](../page8) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D4 RGPD [Lien](page5) et [videos](page6), recherche documentaire [Lien](../page7) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP1 Enquete de police [Lien](../page12) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP2 Pommes [Lien](../page9) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP4 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html) |
+{{% /badgetable %}}
 
 ## Introduction
 En informatique, tout est donné, depuis les 0 et les 1 qui décrivent l’état des transistors dans un circuit électronique, jusqu’à une vidéo, en passant par les photos, les adresses, un relevé de température ou l’âge d’une personne. Les données sont souvent rassemblées pour caractériser un objet comme l’adresse d’une personne (composée du numéro de rue, du nom de la rue, du code postal, de la ville et du pays par exemple). Lorsque les données sont ainsi rassemblées pour décrire quelque chose avec plusieurs informations, on parle de **données structurées** (voir plus loin).

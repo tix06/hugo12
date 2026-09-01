@@ -23,26 +23,26 @@
     <meta itemprop="dateModified" content="2026-06-23T02:07:44+02:00">
     <meta itemprop="wordCount" content="2104">
     <title>algorithmes de parcours d&#39;un graphe :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi/structure/page65/index.html">
     <div id="R-body" class="default-animation">
@@ -241,17 +242,17 @@ Pour déterminer la longueur de tous les chemins du graphe, il va falloir le par
 <ol>
 <li>Colorer en VERT le sommet <code>r</code> pour se rappeler qu&rsquo;il a déjà été partiellement traité.</li>
 <li>Parcourir le graphe depuis <code>r</code> jusqu&rsquo;à l&rsquo;un de ses voisins <code>u</code>, non coloré en vert ou rouge. Colorer <code>u</code> en VERT.</li>
-<li>Noter la distance du sommet de départ <code>r</code> vers le sommet <code>u</code> en cours d&rsquo;exploration : dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,u) = 1 si le sommet voisin <code>u</code> est adjacent.</li>
+<li>Noter la distance du sommet de départ <code>r</code> vers le sommet <code>u</code> en cours d&rsquo;exploration : dist<sub>G</sub>(r,u) = 1 si le sommet voisin <code>u</code> est adjacent.</li>
 <li>Ajouter le nom du sommet <code>u</code> à droite dans la liste <code>L</code>: <code>L = [r,u]</code></li>
 <li>Si <code>r</code> a d&rsquo;autres sommets adjacents, revenir au point 2 et explorer un autre de ces sommets (points 2, 3, 4).</li>
 <li>Si <code>r</code> n&rsquo;a plus de sommet adjacent non visité, colorer <code>r</code> en rouge. Retirer <code>r</code> de la liste (premier sommet, à gauche dans la liste L). <code>L</code> ayant une structure de FILE, on dit que l&rsquo;on <em>défile</em> <code>r</code>.</li>
 </ol>
-<p>On poursuit ensuite l&rsquo;exploration à partir du nouveau premier sommet <code>v</code> adjacent de <code>u</code>. La distance de r à v est alors : dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,v) = dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(r,u) + 1 (point 3).</p>
+<p>On poursuit ensuite l&rsquo;exploration à partir du nouveau premier sommet <code>v</code> adjacent de <code>u</code>. La distance de r à v est alors : dist<sub>G</sub>(r,v) = dist<sub>G</sub>(r,u) + 1 (point 3).</p>
 <p>Lorsque la liste L est vide, l&rsquo;exploration est terminée et toutes les distances entre r et les autres sommets est connue.</p>
 <p><strong>Exemple :</strong></p>
 <p>A partir du graphe 1 défini plus haut, on démarre l&rsquo;exploration à partir du sommet r = E.</p>
 <p>Celui ci est coloré en VERT.</p>
-<p>La méthode vue plus haut permet de rapidement établir la liste L = [E,B,F,H,I] à partir des sommets adjacents à E. Les sommets B,F,H,I sont à une distance 1 du sommet E. On a par exemple dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,B) = 1. Ces sommets sont colorés en VERT.</p>
+<p>La méthode vue plus haut permet de rapidement établir la liste L = [E,B,F,H,I] à partir des sommets adjacents à E. Les sommets B,F,H,I sont à une distance 1 du sommet E. On a par exemple dist<sub>G</sub>(E,B) = 1. Ces sommets sont colorés en VERT.</p>
 <p>Une fois cette première partie de l&rsquo;exploration terminée, on retire E de la liste L, et on colore le sommet en rouge.</p>
 <p>
 <figure >
@@ -308,7 +309,7 @@ On note la distance au sommet <code>E</code> pour chacun des sommets visités, l
 <p>L&rsquo;exploration de ses sommets adjacents continue, à conditions que ceux-ci soient blancs, sinon, on passe à un autre sommet. Ici, on fait l&rsquo;exploration des sommets A,C,D. Ceux-ci sont colorés en VERT, et ajoutés à la liste L:
 </p>
 $$L = [F,H,I,A,C,D]$$<p>Les distances de E à chacun de ces nouveaux noeuds sont enregistrées :
-dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,A) = 2, tout comme dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,C) et dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,D). Le tableau suivant donne les distances depuis le sommet <code>E</code>:</p>
+dist<sub>G</sub>(E,A) = 2, tout comme dist<sub>G</sub>(E,C) et dist<sub>G</sub>(E,D). Le tableau suivant donne les distances depuis le sommet <code>E</code>:</p>
 <table>
 	<thead>
 			<tr>
@@ -362,7 +363,7 @@ dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,A) = 2, tout comme dis
 </figure>
 
 Ensuite, depuis le sommet F: on explore le graphe jusqu&rsquo;au sommet G, seul sommet adjacent encore blanc.</p>
-<p>On a alors dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,G) = 2, puis le sommet F est mis en rouge et retiré de la liste:</p>
+<p>On a alors dist<sub>G</sub>(E,G) = 2, puis le sommet F est mis en rouge et retiré de la liste:</p>
 $$L = [H,I,A,C,D,G]$$<table>
 	<thead>
 			<tr>
@@ -393,7 +394,7 @@ $$L = [H,I,A,C,D,G]$$<table>
 			</tr>
 	</tbody>
 </table>
-<p>On poursuivra l&rsquo;exploration par le sommet H, suivant dans la liste. Ce qui permettra de définir le dernier chemin jusqu&rsquo;à J, et noter dist<!-- raw HTML omitted -->G<!-- raw HTML omitted -->(E,J) = 2:</p>
+<p>On poursuivra l&rsquo;exploration par le sommet H, suivant dans la liste. Ce qui permettra de définir le dernier chemin jusqu&rsquo;à J, et noter dist<sub>G</sub>(E,J) = 2:</p>
 <table>
 	<thead>
 			<tr>
@@ -968,6 +969,8 @@ Le schéma suivant illustre le parcours réalisé à partir des arêtes emprunt�
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1058,21 +1061,20 @@ Le schéma suivant illustre le parcours réalisé à partir des arêtes emprunt�
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -1129,9 +1131,9 @@ Le schéma suivant illustre le parcours réalisé à partir des arêtes emprunt�
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -1,0 +1,23 @@
+.badge-table table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  box-shadow: none;      /* supprime l'ombre portée */
+}
+
+.badge-table table th {
+  display: none;
+}
+
+.badge-table table td {
+  border: none;
+  padding: 0.15rem 1rem 0.15rem 0;  /* cellules moins hautes */
+  vertical-align: middle;
+  background: transparent !important; /* neutralise le zébrage */
+}
+
+/* Relearn applique souvent le zébrage via nth-child sur tr ou td */
+.badge-table table tr:nth-child(even),
+.badge-table table tr:nth-child(odd),
+.badge-table table tr {
+  background: transparent !important;
+}

@@ -23,26 +23,26 @@
     <meta itemprop="dateModified" content="2026-06-22T19:03:51+02:00">
     <meta itemprop="wordCount" content="3388">
     <title>recursivité :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi/langages/page2/index.html">
     <div id="R-body" class="default-animation">
@@ -280,6 +281,13 @@
 <ul>
 <li>enfin, les traitements ne sont pas tous identiques parce les arguments de la fonction changent à chaque nouvel appel recursif.</li>
 </ul>
+<!--
+Les questions à se poser pour élaborer l'algorithme : 
+
+- Est-ce que le problème dépend d’un (ou plusieurs) paramètre(s) ?
+- Est-il possible de résoudre le problème lorsque la (les) valeur(s) du paramètre est "petite(s)" ?
+- Est-il possible de résoudre le problème à l’aide de la résolution du problème portant sur une (des) "plus petite(s)" valeur(s) du paramètre ?
+-->
 <h2 id="analyse-dun-exemple-itératif--récursif">Analyse d&rsquo;un exemple: itératif =&gt; récursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Considérons une fonction <code>ajoute2_iter</code> qui prend N comme paramètre, et qui ajoute N fois 2.</p>
 <h3 id="algorithme-itératif">Algorithme itératif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -323,6 +331,9 @@ $$u_0 = 0$$<p>Dans la fonction, ce demarrage vient avec le système d&rsquo;inst
 <p>(b) Puis vient la <strong>relation de récurence</strong> sur les éléments de la suite $u_n$:</p>
 $$u_{n+1} = 2 + u_n$$<p>ou encore:</p>
 $$u_{n} = 2 + u_{n-1}$$<p>On va adapter cette dernière relation dans l&rsquo;appel de la fonction: <code>return 2 + ajoute2(N-1)</code></p>
+<!--
+(c) Lorsque l'on calcule le terme d'une suite, au rang n, on prévoit une **terminaison**: ce qui marquera la fin de la progression dans le calcul des termes de la suite. Pour traduire cela dans la fonction récursive, il y aura plusieurs éléments à considérer: l'énoncé du cas de base, et la convergence du paramètre dans l'appel récursif. (voir plus bas).
+-->
 <p>Le script entier est alors:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ajoute2</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;fonction qui s&#39;appelle elle-meme N fois
@@ -478,6 +489,30 @@ $$u_0 = 1$$<p>et le script de la fonction recursive:</p>
 </span></span><span class="line"><span class="cl">| Retour de la valeur 6
 </span></span><span class="line"><span class="cl">| 4*6
 </span></span><span class="line"><span class="cl">Retour de la valeur 24</span></span></code></pre></div>
+<!--
+<div class="preuve">
+  <div class="entete">
+    Prouver l'algorithme recursif
+  </div>
+  <div class="demo">
+  Dans le cas d'un algo recursif, pas de convergent ni d'invariant de boucle. On prouve par recurrence sur n.
+
+  <ol>
+    <li>Teminaison : si n=0, fact(0) fait un test et renvoie 1, sans appel recursif.</li>
+
+    Hypothèse de récurrence : fact(n) termine après n appels recursifs. Montrons que fact(n+1) termine après (n+1) appels recursifs.<br>
+
+    fact(n+1) fait un test n+1>0 donc on passe au `else` puis on appelle fact(n) par recurrence qui termine apres n appels recursifs. Finallement fact(n+1) termine après (n+1) appels recursifs.
+
+    <li>correction : par recurrence fact(n) = n ! :</li>
+
+    pour n = 0 : fact(n) = fact(0) = 1 = 0! (OK)<br>
+
+    si vrai pour n, alors fact(n+1) = (n+1)*fact(n) et par hyp H.R., fact(n) = n! donc (n+1)*n! = (n+1)! (OK)
+  </ol>
+  </div>
+</div>
+-->
 <p>Dans le cas d&rsquo;un algo recursif, pas de convergent ni d&rsquo;invariant de boucle. On prouve par recurrence sur n.</p>
 <p>a. <strong>Teminaison</strong>: si n=0, fact(0) fait un test et renvoie 1, sans appel recursif.</p>
 <p><strong>Hypothèse de récurrence</strong>: fact(n) termine après n appels recursifs. Montrons que fact(n+1) termine après (n+1) appels recursifs:</p>
@@ -715,6 +750,26 @@ $$\left\\{\begin{matrix}\begin{align}f\_0 & =0\\\f\_1 & =1\\\f\_{n+1} & =f\_{n}+
 </span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
 </span></span><span class="line"><span class="cl">        <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span></span></span></code></pre></div>
+<!--
+<div class="preuve">
+  <div class="entete">
+    Prouver l'algorithme itératif
+  </div>
+  <div class="demo">
+    <ol>
+      <li>Terminaison : on utilise une boucle non bornée avec y qui est le convergent. On affecte à y le reste de la division par y (c'est donc inferieur à y). y décroit ainsi jusqu'à 0, ce qui est la condition de fin de la boucle.</li>
+      <li>Correction : Tout diviseur commun de a et b divise aussi r = a - bq, et réciproquement tout diviseur commun de b et r divise aussi a = bq + r. Donc le calcul du PGCD de a et b se ramène à celui du PGCD de b et r. <br>l'invariant de boucle, c'est donc :<br>
+      euclide(a,b) = euclide(b, a modulo b)<br>
+      C'est ce qui est réalisé par la fonction, puisque l'on a comme valeurs pour les couples (x,y) successivement : <br>
+      (a,b)<br>
+      (b, a mod b)<br>
+      (a mod b, (a mod b) mod (a mod b))...<br>
+      (* , 0)<br>
+    </li>
+  </ol>
+</div>
+</div>
+-->
 <p><strong>Preuve de l&rsquo;algorithme itératif</strong></p>
 <p>a. Terminaison : on utilise une boucle non bornée avec y qui est le convergent. On affecte à y le reste de la division par y (c&rsquo;est donc inferieur à y). y décroit ainsi jusqu&rsquo;à 0, ce qui est la condition de fin de la boucle.</p>
 <p>b. Correction : Tout diviseur commun de a et b divise aussi r = a - bq, et réciproquement tout diviseur commun de b et r divise aussi a = bq + r. Donc le calcul du PGCD de a et b se ramène à celui du PGCD de b et r.
@@ -739,6 +794,30 @@ l&rsquo;invariant de boucle, c&rsquo;est donc : euclide(a,b) = euclide(b, a modu
 </span></span><span class="line"><span class="cl">  <span class="k">else</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">PGCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">)</span></span></span></code></pre></div>
+<!--
+<div class="preuve">
+  <div class="entete">
+    Complexité
+  </div>
+  <div class="demo">
+On prouve par récurrence que le cas le pire (c'est à dire celui où le nombre d'itérations à exécuter est le plus grand), est celui où a et b sont des termes consécutifs de la <strong>suite de Fibonacci</strong>. Cela revient à montrer que  deux termes successifs de la suite de Fibonacci sont premiers entre eux.
+(si leur plus grand diviseur commun est 1)
+
+<ul><li>La propriété est vraie pour n = 1 : f<sub>2</sub> et f<sub>1</sub> sont premiers entre eux.</li>
+<li>Supposons que f<sub>n</sub> et f<sub>n-1</sub> soient premiers entre eux :<br>
+Soit d le PGCD de fn et fn+1, alors d divise f<sub>n+1</sub>– f<sub>n</sub>.<br>
+d est à la fois diviseur de f<sub>n+1</sub> et f<sub>n</sub><br>
+Or : (suite de Fibonacci)<br>
+$$f_{n+1} = f_n + f_{n-1}$$
+Donc : 
+$$f_{n-1} = f_{n+1} - f_n$$
+Il faut alors que f<sub>n-1</sub>, f<sub>n+1</sub> et f<sub>n</sub> aient un même diviseur, d. Or le diviseur commun de f<sub>n-1</sub> et f<sub>n</sub> est 1, donc d = 1.
+</li>
+</ul>
+Dans ce <strong>pire</strong> cas, la complexité de l'algorithme est alors O(log<sub>10</sub> b). C'est proportionnel au nombre de divisions euclidiennes réalisées.
+</div>
+</div>
+-->
 <h1 id="suite-du-cours">Suite du cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Aller à la <a href="../page22/">page 2</a> du cours.</p>
 <p>La récursivité intervient aussi dans de nombreux problèmes où elle s’impose comme la méthode la plus adaptée, pour ne pas dire la seule. Un exemple historique est celui des tours de Hanoi. Un jeu inventé par Edouard Lucas, vers 1880. Son traitement sur ordinateur a fait sensation, grâce à la simplicité de son script récursif&hellip;</p>
@@ -1078,6 +1157,8 @@ Soit c = (a + b)/2, qui divise l’intervalle initial en deux parties égales. 
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1168,21 +1249,20 @@ Soit c = (a + b)/2, qui divise l’intervalle initial en deux parties égales. 
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -1239,9 +1319,9 @@ Soit c = (a + b)/2, qui divise l’intervalle initial en deux parties égales. 
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

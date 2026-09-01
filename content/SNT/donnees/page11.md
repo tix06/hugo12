@@ -1,5 +1,5 @@
 ---
-Title: traitement données data.gouv
+Title: Traitement données data.gouv
 description: open datas, data.gouv, fichier des élus
 hidden: true
 weight: 16

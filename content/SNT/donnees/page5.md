@@ -1,5 +1,5 @@
 ---
-Title: donnees personnelles
+Title: Donnees personnelles
 description: donnees personnelles, traces numeriques, RGPD, CNIL
 weight: 19
 ---
@@ -9,10 +9,18 @@ weight: 19
 
 
 
-* {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} Donnees personnelles: [Lien](../page5) 
-* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} Problemes liés à l'exploitation des données personnelles: [Lien](../page6) 
-* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP (recherche doc): Protection contre l'exploitation des données personnelles [Lien](../page7) 
-* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} Format de donnees: [Lien](../page4) 
+{{% badgetable %}}
+| | |
+|---|---|
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D1 Format des données : [Lien](../page4) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D2 Collecte des données personnelles : [Lien](../page5) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D3 Données en table [Lien](../page8) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D4 RGPD [Lien](page5) et [videos](page6), recherche documentaire [Lien](../page7) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP1 Enquete de police [Lien](../page12) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP2 Pommes [Lien](../page9) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP4 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html) |
+{{% /badgetable %}}
 
 # Données à caractère personnel
 {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}}

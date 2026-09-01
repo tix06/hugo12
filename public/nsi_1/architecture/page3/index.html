@@ -23,26 +23,26 @@
     <meta itemprop="dateModified" content="2026-06-25T15:49:56+02:00">
     <meta itemprop="wordCount" content="1821">
     <title>assembleur :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi_1/architecture/page3/index.html">
     <div id="R-body" class="default-animation">
@@ -195,6 +196,30 @@
 </ul>
 <h1 id="le-langage-assembleur">Le langage <em>assembleur</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Le langage assembleur est, en programmation informatique, le langage de plus bas niveau qui représente le langage machine sous une forme lisible par un humain. (<a href="https://fr.wikipedia.org/wiki/Assembleur" rel="external">wiki</a>)</p>
+<!--
+Le premier programme assembleur a été écrit par Nathaniel Rochester pour l'IBM 701 (le premier ordinateur commercialisé par IBM) en 1954.
+
+
+<figure >
+    <a href="https://fr.wikipedia.org/wiki/Assembleur">
+        <img src="../images/archi6.png"
+        
+        alt="exemple de programme assembleur pour  le microprocessor Motorola 6800 8-bit  - source : " />
+    </a>
+    
+    <figcaption>
+        
+        <p>
+            exemple de programme assembleur pour  le microprocessor Motorola 6800 8-bit  - source : 
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+-->
 <p>L&rsquo;assembleur oblige à programmer la <em>gestion des mémoires</em>:</p>
 <p>Pour échanger des données avec la mémoire, le processeur transfert l&rsquo;état d&rsquo;un registre dans une case mémoire (STR) ou l&rsquo;état d&rsquo;une case mémoire dans un registre (LDR). On rappelle que la mémoire contient à la fois les instructions et les données. Mais les <em>calculs</em> du processeur se font sur les <em>registres</em>. Il faut donc prévoir de charger les valeurs de la RAM vers les registres avant de faire une opération.</p>
 <p>D&rsquo;ailleurs, une instruction machine est une chaine binaire composée de 2 parties:</p>
@@ -435,6 +460,49 @@
 </span></span><span class="line"><span class="cl">BGT break</span></span></code></pre></div>
 <p>L&rsquo;étiquette <code>break</code> devra alors être placée après celle <code>B boucle</code> afin de pouvoir poursuivre le programme.</p>
 <p><strong>question b:</strong> Ré-écrire le script précédent afin de sortir de la boucle lorsque R0 stocke une valeur supérieure à 20.</p>
+<!--
+## Opérations simples
+**1.** **Prog 1**. Il s'agit d'obtenir le nombre 84 à partir des nombres 50,25,8,7,3 et 1 avec les opérations : addition et soustraction uniquement.
+
+Copier-coller le script dans le simulateur:
+
+```
+MOV R0,#50
+ADD R0,R0,#25
+ADD R0,R0,#8
+ADD R0,R0,#1
+HALT
+```
+
+Cliquer sur le bouton **ASSEMBLE**. Le simulateur va alors charger toutes les valeurs numériques dans la RAM. Choisir la représentation des nombres en hexadécimal avec le bouton **OPTION** > hex.
+
+
+<figure >
+    
+        <img src="../images/STO.png"
+        
+        alt="chargement des valeurs en hexadecimal" />
+    
+    
+    <figcaption>
+        
+        <p>
+            chargement des valeurs en hexadecimal
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+Tester le programme en le déroulant pas à pas (appuis successifs sur le bouton **STEP**)
+
+**2.** **Prog 2**. Obtenir 84 à partir de 90,25,8,7,3 et 1 avec les opérations : addition et soustraction uniquement.
+
+**3.** **Prog 3**. Obtenir 128, en partant de la valeur 1 stockée dans R0. Utilisez les  instructions de multiplication par 2 du langage.
+-->
 <h2 id="programmer-avec-des-boucles">Programmer avec des boucles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="prog-1-calculer-123n-où-n-est-entré-au-clavier">Prog 1: Calculer 1+2+3&hellip;+n où n est entré au clavier:<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Compléter le programme en assembleur ci-dessous pour résoudre le problème puis essayer avec n = 3 en mode pas à pas.</p>
@@ -486,6 +554,72 @@
 <ul>
 <li>Ecrire dans votre cahier le script complet en assembleur.</li>
 </ul>
+<!--
+# Compléments et corrections
+
+* Exemple de programme qui affiche toutes les puissances de 2 jusqu'à 128:*
+
+
+```
+  0       MOV R0, #1
+  1       MOV R1, #0
+    multiplie:
+  2       LSL R0, R0, #1
+  3       OUT R0,4
+  4       ADD R1,R1,#1
+  5       CMP R1, #7
+  6       BLT multiplie
+  7       HALT
+  ```
+
+* Correction de l'exercice somme 1..N
+
+```
+      INP R0,2 // demander n
+      MOV R1, #0 // somme attention inversion / enonce
+      MOV R2, #1 // compteur
+boucle:
+      ADD R1, R1, R2 // somme
+      ADD R2, R2, #1 // compteur incrementer de R1
+      CMP R2, R0
+      BLT boucle
+      OUT R1,4
+      HALT
+```
+
+* Assembleur pour  le microprocessor Motorola 6800 8-bit (voir image plus haut):
+
+Supposons qu'il existe 2 registres, A et B: Les deux opérations qui s'appellent le stockage (**STA**) et le chargement (**LDA**) du contenu d'une case mémoire dans le registre A (ST pour STore, LD pour LoaD). Il y a bien entendu des opérations similaires pour le registre B (**STB** et **LDB**).
+
+Une autre opération que peut exécuter le processeur est l'addition du contenu du registre A et du contenu du registre B. Et le résultat de l'opération peut être stocké dans le registre A (**ADD A**) ou dans le registre B (**ADD B**). De même, **DEC A** décrémente la valeur contenue dans le registre A, c'est-à-dire soustrait 1 à la valeur contenue dans le registre A et stocke la valeur ainsi obtenue dans le registre A et DEC B réalise le même calcul sur la valeur contenue dans le registre B.
+
+*Exemple:* 
+
+* LDA 7 <=> charger dans la registre A le contenu de la case mémoire n°7.
+* LDB 8
+* ADD A <=> ajouter le contenu des registres A et B et mettre le résultat dans le registre A
+* STA 11 <=> mettre le contenu du registre A dans la case 11.
+
+on pourrait exprimer le programme ci-dessus en binaire en décidant par exemple que l'instruction LDA s'écrit 0, l'instruction LDB s'écrit 1, l'instruction STA s'écrit 2, l'instruction STB s'écrit 3 et l'instruction ADD s'écrit 4, DEC s'écrit 5. A s'écrit 0 et B s'écrit 1. 
+
+Supposons que l'adresse de la première donnée de ce programme en mémoire soit le n°100, on a la suite d'instructions entre les cases mémoires 100 et 107: 0,7,1,8,4,0,2,11
+
+Le processeur doit donc disposer d'un registre appelé *compteur de programme*, PC, qui débute à 100, et qui est incrémenté de 2 après chaque instruction.
+
+A chaque nouvelle instruction, l'**UC** du processeur charge le contenu des cases mémoires d'adresses PC et PC + 1 dans des registres. Son **UAL** décode (operation + argument) et execute:
+
+Par exemple, pour la séquence précédente, les codes **0 et 7** correspondent à l'opération et la donnée pour la première instruction. (LDA 7). Puis viennent **1 et 8**, correspondant à LDB 8, ...etc.
+
+*Tests et branchements:*  Deux instructions supplémentaires seront nécessaires:
+
+**JMP** (jump) suivi de l'argument n charge le nombre n dans le registre PC : sert à détourner le programme de sa route et le forcer à continuer son exécution à l'adresse n. 
+
+**JMZ** (jump if zero): effectue un saut si le contenu du registre A est 0, permet de faire des tests. On ajoute enfin l'instruction END, qui termine le programme. En langage machine, on suppose que JMP s'écrit 6. JMPZ s'écrit 7. END s'écrit 8 avec un argument puisqu'il en faut un : 0.
+
+**JMN** et **JMP** suivi de l'argument n, effectuent un saut si le contenu du registre A est négatif (JMN) ou positif (JMP).
+
+Pour construire une boucle ou un test avec ces nouvelles instructions, il faut tout d'abord trouver une façon de traduire la condition du test ou la condition d'arrêt de la boucle par un test d'égalité à zéro.
+-->
 <h1 id="tuto-simulateur">Tuto: simulateur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li>Explications en video
@@ -723,6 +857,8 @@
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -813,21 +949,20 @@
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -884,9 +1019,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

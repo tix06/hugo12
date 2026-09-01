@@ -4,6 +4,19 @@ description: donnees structurees, table, filtrer, trier, calculer
 weight: 14
 ---
 
+{{% badgetable %}}
+| | |
+|---|---|
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D1 Format des données : [Lien](../page4) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D2 Collecte des données personnelles : [Lien](../page5) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D3 Données en table [Lien](../page8) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D4 RGPD [Lien](page5) et [videos](page6), recherche documentaire [Lien](../page7) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP1 Enquete de police [Lien](../page12) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP2 Pommes [Lien](../page9) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP4 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html) |
+{{% /badgetable %}}
+
 ## Activité 1: Trouver une information
 Lea, une jeune mère de famille a accepté l’enregistrement de ses données de géolocalisation par le service Google.
 

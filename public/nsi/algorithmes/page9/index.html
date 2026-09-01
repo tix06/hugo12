@@ -23,26 +23,26 @@
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
     <meta itemprop="wordCount" content="835">
     <title>rotation quart de tour :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi/algorithmes/page9/index.html">
     <div id="R-body" class="default-animation">
@@ -219,6 +220,37 @@ TP_rotation_image.zip</a></strong></p>
 <li><code>#7C5A78</code>?</li>
 </ul>
 </blockquote>
+<!--
+On souhaite maintenant diminuer le contraste, en divisant par 2 chacune de composantes RGB de chacun des pixels de l'image. L'image sera egalement plus sombre. On va créer cette fois une nouvelle instance, `planPixels`, de la classe `Image`, de la même dimension que celle d'origine, pour y copier les pixels un-à-un:
+
+`planPixels=Image.new("RGB",(largeur,hauteur))`
+
+On va placer les pixels de *imageSource* (lecture) dans la nouvelle image *planPixels* (écriture).
+
+*Debut du 2e programme:*
+
+```python
+from PIL import Image
+imageSource=Image.open("crabePortrait.bmp")
+largeur,hauteur=imageSource.size
+planPixels=Image.new("RGB",(largeur,hauteur))
+
+for x ...
+  for y ...
+  # traitement pixel (x,y)
+  # a completer ...
+
+planPixels.save("crabe2.jpg")
+planPixels.show()
+```
+
+On remplira cette image avec les pixels de l'image d'origine de la manière suivante:
+
+> *A vous de jouer:* Compléter le script pour...
+> 1. parcourir tous les pixels de l'image, largeur * hauteur.
+> 2. lire la valeur RGB de chaque pixel (`getpixel`) et modifier cette valeur, en diminuant le contraste de couleur: $p = (p[0]//2,\ p[1]//2,\ p[2]//2)$
+> 3. placer ce pixel sur la nouvelle image en construction planPixels. Utiliser pour cela la methode putpixel((x,y),p) de l'objet `planPixels` où x et y sont les nouvelles coordonnées du pixel p que l'on veut dessiner: `planPixels.putpixel((x,y),p)`
+-->
 <h1 id="rotation-dune-image-permutation-de-pixels">Rotation d&rsquo;une image: permutation de pixels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p><strong>Défi n°2: Coordonnées pour une rotation droite</strong></p>
 
@@ -250,6 +282,10 @@ TP_rotation_image.zip</a></strong></p>
 <li>Quelles sont les nouvelles positions des points A&rsquo; et B&rsquo; après transformation: Pour un pixel situé initialement en (x,y), quelles sont ses coodonnées (x&rsquo;,y&rsquo;) après transformation?</li>
 </ol>
 </blockquote>
+<!--
+> 5. Donner la complexité de cet algorithme.
+*Réponse à la question 3: $x'=-y+hauteur-1$, $y'=x$.* 
+-->
 <p><strong>Défi n°3: Rotation droite d&rsquo;une image</strong></p>
 <p>En vous inspirant de la fonction <code>copie_image</code>, écrire une fonction <code>rotation_droite</code> qui réalise la rotation d&rsquo;un quart de tour dans le sens horaire, comme sur l&rsquo;image ci-dessus.</p>
 <h1 id="permuter-les-zones-dune-image">Permuter les zones d&rsquo;une image<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
@@ -346,6 +382,82 @@ TP_rotation_image.zip</a></strong></p>
 <li>Ecrire les fonctions <code>permutation_blocs_B_D</code> et <code>permutation_blocs_C_D</code>. Appliquer les transformations pour obtenir une rotation droite des blocs de l&rsquo;image <code>woody.jpg</code>.</li>
 </ol>
 </blockquote>
+<!--
+## Compléter la fonction `echange_pix` suivante
+
+```python
+def echange_pix(image,x0,y0,x1,y1):
+    """procedure qui echange les pixels d'une image entre une position 
+    de depart start et d'arrivée end
+    Params:
+    ------
+    image : objet de la classe Image
+    x0,y0: int, int: coordonnées du pixel de depart
+    x1,y1: int, int: coordonnées du pixel d'arrivée
+    
+    Exemple: echange du pixel (0,0) avec celui (120,120)
+    --------
+    >>> echange_pix(imageSource,0,0,120,120)
+    """
+    start = image.getpixel((x0,y0))
+    end = image.getpixel((x1,y1))
+    image.putpixel((x0,y0),end)
+    image.putpixel((x1,y1),...)
+```
+
+
+## Compléter la fonction `echange_quadrant` suivante
+Cette fonction permet d'echanger les pixels de 2 zones carrées de même dimensions.
+
+
+<figure >
+    
+        <img src="../images/deplaceBloc.png"
+        
+        alt="exemple: echange des blocs A et B" />
+    
+    
+    <figcaption>
+        
+        <p>
+            exemple: echange des blocs A et B
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+```python
+def echange_quadrant(image,x0,y0,x1,y1,n):
+    """procedure qui echange tous les pixels du bloc de pixels A
+    avec ceux du bloc B, de même dimension n*n.
+    L'image doit être carrée, de largeur et hauteur égaux à n
+    A et B occupent une position quelconque parmi les 4 quarts de l'image
+    Params:
+    -------
+    image : objet de la classe Image
+    x0,y0: int, int: coordonnées du pixel du coin superieur gauche de A
+    x1,y1: int, int: coordonnées du pixel du coin superieur gauche de B
+    n : int : largeur ou hauteur de l'image, en nombre de pixels
+    Example: echange du quart d'image en haut à gauche (A) avec celui 
+    ------------ en haut à droite (B) sur une image de largeur 120
+     
+   
+    >>> echange_quadrant(imageSource,0,0,120,0,120)
+    """
+    for x in range(n):
+        for y in range(n):
+            echange_pix(image, x0+x,...# à compléter
+
+```
+
+> **Questions:**
+
+> * On veut echanger les blocs A et D, qui font chacun 120*120 pixels. Quelle instruction faut-il écrire, utilisant la procedure `echange_quadrant`.
+* Même question pour echanger les blocs A et C.
+-->
 <h1 id="rotation-par-la-méthode-diviser-pour-régner">Rotation par la méthode Diviser pour Régner<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>La fonction <code>rotate</code> permet de faire tourner l&rsquo;image d&rsquo;un quart de tour par une méthode de type <em>diviser pour régner</em>:</p>
 <p><em>Tourner l&rsquo;image d&rsquo;un quart de tour, c&rsquo;est permuter les 4 parties d&rsquo;une image dont on a permuté l&rsquo;interieur de ses 4 parties&hellip;</em></p>
@@ -399,6 +511,139 @@ TP_rotation_image.zip</a></strong></p>
 <li>Expliquer pourquoi cette méthode s&rsquo;apparente à la famille <em>Diviser pour régner</em>. (On pourra s&rsquo;aider des schémas ci-dessous, et les remettre dans l&rsquo;ordre pour repondre).</li>
 </ol>
 </blockquote>
+<!--
+```python
+def rotate(image,x0,y0,n):
+    """procedure recursive qui tourne d'un quart de tour un carré
+    de l'image de dimension n.
+    à chaque appel recursif, la taille de l'image est divisée par 2.
+    Si l'image fait plus d'un seul pixel, la rotation se fait par 
+    permutation des (zones de) pixels A<=>B, B<=>D, D<=>C
+    Params:
+    -------
+    image
+    x0,y0: int, int: coordonnées du pixel du coin superieur gauche du carré
+    n: dimansion du carré
+    Example:
+    --------
+    rotate(imageSource,0,0,420)
+    """
+    if n>=2:
+        m = n//2
+        rotate(image,x0,y0,m)
+        rotate(image,x0,y0+m,m)
+        rotate(image,x0+m,y0,m)
+        rotate(image,x0+m,y0+m,m)
+        echange_quadrant(image,x0,y0,x0+m,y0,m)
+        echange_quadrant(image,x0,y0,x0+m,y0+m,m)
+        echange_quadrant(image,x0,y0,x0,y0+m,m)
+```
+
+*Analysez la procedure:* On considère l'image de *woody*, quadrillée de la manière suivante. Cette image fait $512 \times 512$ pixels
+
+
+<figure >
+    
+        <img src="../images/woody0.png"
+        
+        alt="image d&#39;origine" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image d&#39;origine
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+> 1. Lors du premier appel de la fonction: que vaut m?
+
+A la fin de la remontée, lorsque m vaut 256, l'image, si on l'affiche est celle-ci:
+
+
+<figure >
+    
+        <img src="../images/woody6.png"
+        
+        alt="image finale" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image finale
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+> 2. Compléter la grille avec les lettres A, B, C, D pour montrer la permutation des blocs sur le dessin.
+
+On peut suivre la construction de l'image à différents niveaux de la pile d'appels recursifs, lors de la remontée. Pour faire ceci, ajouter les instructions suivantes en fin de la fonction `rotate`:
+
+```python
+        if m > 100:
+            image.show()
+```
+
+Puis ajouter et executer les lignes suivantes:
+
+```python
+from PIL import Image
+
+def quart_tour(image):
+    largeur,hauteur=image.size
+    assert largeur == hauteur
+    rotate(image,0,0,largeur)
+    
+    
+img = Image.open("woody.jpg")
+quart_tour(img)
+img.save("woody_endroit.jpg")
+img.show()
+```
+
+Pour suivre la construction de l'image, nous allons placer les repères suivants sur l'image d'origine:
+
+
+<figure >
+    
+        <img src="../images/woody1.jpg"
+        
+        alt="image quadrillée" />
+    
+    
+    <figcaption>
+        
+        <p>
+            image quadrillée
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+> 3. Pour chacune des images suivantes:
+
+> * quel est la valeur de m lorsque l'image est affichée?
+
+> * compléter les quadrants montrant la permutation dans chaque sous-partie
+
+> * dans quel ordre ces images sont elles affichées?
+-->
 
 <figure >
     
@@ -698,6 +943,8 @@ TP_rotation_image.zip</a></strong></p>
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -788,21 +1035,20 @@ TP_rotation_image.zip</a></strong></p>
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -859,9 +1105,9 @@ TP_rotation_image.zip</a></strong></p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

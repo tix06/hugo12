@@ -23,34 +23,34 @@ Il s’agit d’un cas très classique d’algorithme utilisé dans le web marke
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Posts">
-    <meta property="article:modified_time" content="2026-08-30T20:03:53+02:00">
+    <meta property="article:modified_time" content="2026-08-30T20:11:54+02:00">
     <meta itemprop="name" content="Python algo de recommandation :: allophysique">
     <meta itemprop="description" content="Algorithmes de recommandation Lien vers le notebook en ligne : https://mybinder.org/v2/gh/tix06/notebooks_classif/master
 Choisir alors le fichier : algorithme de recommandation.ipynb
 Il s’agit d’un cas très classique d’algorithme utilisé dans le web marketing. Un client choisit et met dans ses favoris un article, ou dans son panier. Le site lui propose des articles compatibles, ou similaires. La recommandation peut être basée sur la description de ces articles. L’algorithme va alors chercher les articles qui ont le plus de points communs dans leur description; c’est à dire le plus de mots communs dans leur description.">
-    <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="1892">
+    <meta itemprop="dateModified" content="2026-08-30T20:11:54+02:00">
+    <meta itemprop="wordCount" content="1919">
     <title>Python algo de recommandation :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788115535" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788115535" defer></script>
-    <script src="/js/search-lunr.js?1788115535" defer></script>
-    <script src="/js/search.js?1788115535" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788115535";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788115535" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788115535" rel="stylesheet">
-    <link href="/css/theme.css?1788115535" rel="stylesheet">
-    <link href="/css/format-html.css?1788115535" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -104,6 +104,7 @@ Il s’agit d’un cas très classique d’algorithme utilisé dans le web marke
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/posts/python/algorithme_recommandation/index.html">
     <div id="R-body" class="default-animation">
@@ -181,8 +182,8 @@ Il s’agit d’un cas très classique d’algorithme utilisé dans le web marke
 <p>Choisir alors le fichier : <code>algorithme de recommandation.ipynb</code></p>
 </blockquote>
 <p>Il s&rsquo;agit d&rsquo;un cas très classique d&rsquo;algorithme utilisé dans le web marketing. Un client choisit et met dans ses favoris un article, ou dans son panier. Le site lui propose des articles compatibles, ou similaires. La recommandation peut être basée sur la description de ces articles. L&rsquo;algorithme va alors chercher les articles qui ont le plus de points communs dans leur description; c&rsquo;est à dire le plus de mots communs dans leur description.</p>
-<p><a href="#R-image-0c1b0cc231a9d575133a1153c6b68c99" class="lightbox-link"><img alt="articlesCompatibles.png" class="border lazy lightbox figure-image" loading="lazy" src="../images/articlesCompatibles.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-0c1b0cc231a9d575133a1153c6b68c99"><img alt="articlesCompatibles.png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/articlesCompatibles.png"></a></p>
+<p><a href="#R-image-4d2bf1874157c2229310082fef5fc631" class="lightbox-link"><img alt="articlesCompatibles.png" class="border lazy lightbox figure-image" loading="lazy" src="../images/articlesCompatibles.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-4d2bf1874157c2229310082fef5fc631"><img alt="articlesCompatibles.png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/articlesCompatibles.png"></a></p>
 <p>La première étape pour calculer les similarités consiste à découper les descriptions en listes de mots (c&rsquo;est la tokenisation) puis à prendre les racines des mots, les stems.</p>
 <h2 id="extraire-les-mots-dun-texte">Extraire les mots d&rsquo;un texte<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Prenons un exemple avec le texte suivant :</p>
@@ -239,7 +240,11 @@ Il s’agit d’un cas très classique d’algorithme utilisé dans le web marke
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;datas/descriptif.csv&#34;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;;&#34;</span><span class="p">)</span></span></span></code></pre></div>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">df</span></span></span></code></pre></div>
-<!-- raw HTML omitted -->
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 <pre><code>.dataframe tbody tr th {
     vertical-align: top;
 }
@@ -248,8 +253,28 @@ Il s’agit d’un cas très classique d’algorithme utilisé dans le web marke
     text-align: right;
 }
 </code></pre>
-<p><!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bande dessinee</th>
+      <th>roman</th>
+      <th>ordinateur</th>
+      <th>console de jeux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>une bande dessinee est un ouvrage illustre rac...</td>
+      <td>un roman est un ouvrage avec du texte  raconte...</td>
+      <td>un ordinateur est un dispositif pour produire ...</td>
+      <td>une console de jeu est un dispositif pour joue...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># on créé une liste contenant les articles : </span>
 </span></span><span class="line"><span class="cl"><span class="n">col</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># on créé une liste (descriptif) contenant, pour chaque article, une liste avec TOUS les mots retenus dans la description</span>
@@ -371,6 +396,150 @@ $$f(mot) = \tfrac{nb\quad occurences}{nb\quad mots}$$<div class="highlight actio
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># visualisation</span>
 </span></span><span class="line"><span class="cl"><span class="n">df2</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">col</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">mots</span><span class="p">(</span><span class="n">descriptif</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="n">df2</span></span></span></code></pre></div>
+<!--
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bande</th>
+      <th>dessinee</th>
+      <th>ouvrage</th>
+      <th>illustre</th>
+      <th>racontant</th>
+      <th>histoire</th>
+      <th>images</th>
+      <th>aventure</th>
+      <th>fantaisie</th>
+      <th>lire</th>
+      <th>...</th>
+      <th>produire</th>
+      <th>consulter</th>
+      <th>objets</th>
+      <th>numeriques</th>
+      <th>communiquer</th>
+      <th>calculer</th>
+      <th>jouer</th>
+      <th>videos</th>
+      <th>console</th>
+      <th>jeux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bande dessinee</th>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.100000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>roman</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.0</td>
+      <td>0.100000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>ordinateur</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.083333</td>
+      <td>...</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.083333</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>console de jeux</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.1</td>
+      <td>0.1</td>
+      <td>0.100000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.100000</td>
+      <td>0.200000</td>
+      <td>0.1</td>
+      <td>0.1</td>
+    </tr>
+  </tbody>
+</table>
+<p>4 rows × 29 columns</p>
+</div>
+-->
 <table>
 	<thead>
 			<tr>
@@ -544,6 +713,65 @@ $$s_{ij}=\tfrac{u_i\cdot u_j}{||ui||\cdot||uj||}$$<p>On cherche alors une règle
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># visualisation du tableau grace à son DataFrame</span>
 </span></span><span class="line"><span class="cl"><span class="n">df3</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">col</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">col</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">df3</span></span></span></code></pre></div>
+<!--
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>bande dessinee</th>
+      <th>roman</th>
+      <th>ordinateur</th>
+      <th>console de jeux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bande dessinee</th>
+      <td>1.000000</td>
+      <td>0.400000</td>
+      <td>0.091287</td>
+      <td>0.273861</td>
+    </tr>
+    <tr>
+      <th>roman</th>
+      <td>0.400000</td>
+      <td>1.000000</td>
+      <td>0.091287</td>
+      <td>0.182574</td>
+    </tr>
+    <tr>
+      <th>ordinateur</th>
+      <td>0.091287</td>
+      <td>0.091287</td>
+      <td>1.000000</td>
+      <td>0.500000</td>
+    </tr>
+    <tr>
+      <th>console de jeux</th>
+      <td>0.273861</td>
+      <td>0.182574</td>
+      <td>0.500000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+-->
 <table>
 	<thead>
 			<tr>
@@ -594,12 +822,12 @@ $$s_{ij}=\tfrac{u_i\cdot u_j}{||ui||\cdot||uj||}$$<p>On cherche alors une règle
 </span></span><span class="line"><span class="cl">            <span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">col</span><span class="p">))</span></span></span></code></pre></div>
 <pre><code>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1a17767250&gt;
 </code></pre>
-<p><a href="#R-image-7022d105fc494b9457ff371716cdaf07" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_15_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-7022d105fc494b9457ff371716cdaf07"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_15_0.png"></a></p>
+<p><a href="#R-image-9b00ba4e677a2cded6922dcdd9cd90c0" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_15_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9b00ba4e677a2cded6922dcdd9cd90c0"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_15_0.png"></a></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># visualisation avec matplotlib (un peu moins lisible)</span>
 </span></span><span class="line"><span class="cl"><span class="n">plt</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;rainbow&#39;</span><span class="p">);</span></span></span></code></pre></div>
-<p><a href="#R-image-a9d7994970acc962f647a8c9b1d16759" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_16_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a9d7994970acc962f647a8c9b1d16759"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_16_0.png"></a></p>
+<p><a href="#R-image-8270975a06e18ab3e55138fd36d32568" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_16_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8270975a06e18ab3e55138fd36d32568"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_16_0.png"></a></p>
 <h2 id="interpretation">Interpretation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>On voit assez facilement que :</p>
 <ul>
@@ -679,8 +907,8 @@ l'article  console de jeux  est similaire à ordinateur      voire peut êtr
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl"><span class="n">G</span> <span class="o">=</span> <span class="n">makeG</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span><span class="n">col</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">drawG</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="mf">0.3</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-cbddcf477fcc9483acbb043b19b03c14" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_20_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cbddcf477fcc9483acbb043b19b03c14"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_20_0.png"></a></p>
+<p><a href="#R-image-fdb7fa2079e198a9a7a1f2a2ceb38508" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_20_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fdb7fa2079e198a9a7a1f2a2ceb38508"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_20_0.png"></a></p>
 <h2 id="interprétation">Interprétation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Il apparait ici clairement 2 classes en choisissant seuil = 0.3 :</p>
 <ul>
@@ -908,6 +1136,8 @@ L’apprentissage par arbre de décision désigne une méthode basée sur l&rsqu
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1068,9 +1298,9 @@ L’apprentissage par arbre de décision désigne une méthode basée sur l&rsqu
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788115535"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788115535" defer></script>
-    <script src="/js/theme.js?1788115535" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

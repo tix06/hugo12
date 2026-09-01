@@ -20,33 +20,33 @@ Définitions des classes class Pile: def __init__(self): self.lst = [] def empty
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Posts">
-    <meta property="article:modified_time" content="2026-08-30T20:03:53+02:00">
+    <meta property="article:modified_time" content="2026-08-30T20:11:54+02:00">
     <meta itemprop="name" content="Python Labyrinthe :: allophysique">
     <meta itemprop="description" content="Créer et resoudre un labyrinthe Les scripts suivants permettent de créer un labyrinthe de manière aléatoire, et d’exploiter la structure de données de ce labyrinthe. On pourra ainsi tester quelques algorithmes relatifs au parcours de ce labyrinthe. Les scripts en permettent une visualisation.
 Définitions des classes class Pile: def __init__(self): self.lst = [] def empty(self): return self.lst == [] def push(self, x): self.lst.append(x) def pop(self): if self.empty(): raise ValueError(&#34;pile vide&#34;) return self.lst.pop() def explorer(laby): pile = Pile() pile.push((0, laby.q - 1)) laby.tab[0][laby.q - 1].etat = False while True: i, j = pile.pop() if i == laby.p - 1 and j == 0: break if j &gt; 0 and laby.tab[i][j].S and laby.tab[i][j-1].etat: pile.push((i, j)) pile.push((i, j-1)) laby.tab[i][j-1].etat = False elif i &lt; laby.p-1 and laby.tab[i][j].E and laby.tab[i&#43;1][j].etat: pile.push((i, j)) pile.push((i&#43;1, j)) laby.tab[i&#43;1][j].etat = False elif j &lt; laby.q-1 and laby.tab[i][j].N and laby.tab[i][j&#43;1].etat: pile.push((i, j)) pile.push((i, j&#43;1)) laby.tab[i][j&#43;1].etat = False elif i &gt; 0 and laby.tab[i][j].W and laby.tab[i-1][j].etat: pile.push((i, j)) pile.push((i-1, j)) laby.tab[i-1][j].etat = False return pile.lst class Case: def __init__(self): self.N = False self.W = False self.S = False self.E = False self.etat = False class Labyrinthe: def __init__(self, p, q): self.p = p self.q = q self.tab = [[Case() for j in range(q)] for i in range(p)] def show(self): plt.plot([0, 0, self.p, self.p, 0], [0, self.q, self.q, 0, 0], linewidth=2) for i in range(self.p-1): for j in range(self.q): if not self.tab[i][j].E: plt.plot([i&#43;1, i&#43;1], [j, j&#43;1], &#39;b&#39;) for j in range(self.q-1): for i in range(self.p): if not self.tab[i][j].N: plt.plot([i, i&#43;1], [j&#43;1, j&#43;1], &#39;b&#39;) plt.axis([-1, self.p&#43;1, -1, self.q&#43;1]) plt.show() def solution(self): sol = explorer(self) X, Y = [], [] for (i, j) in sol: X.append(i&#43;.5) Y.append(j&#43;.5) X.append(self.p-.5) Y.append(.5) plt.plot(X, Y, &#39;r&#39;, linewidth=2) self.show() def creation(p, q): laby = Labyrinthe(p, q) pile = Pile() i, j = randint(p), randint(q) pile.push((i, j)) laby.tab[i][j].etat = True while not pile.empty(): i, j = pile.pop() v = [] if j &lt; q-1 and not laby.tab[i][j&#43;1].etat: v.append(&#39;N&#39;) if i &gt; 0 and not laby.tab[i-1][j].etat: v.append(&#39;W&#39;) if j &gt; 0 and not laby.tab[i][j-1].etat: v.append(&#39;S&#39;) if i &lt; p-1 and not laby.tab[i&#43;1][j].etat: v.append(&#39;E&#39;) if len(v) &gt; 1: pile.push((i, j)) if len(v) &gt; 0: c = v[randint(len(v))] if c == &#39;N&#39;: laby.tab[i][j].N = True laby.tab[i][j&#43;1].S = True laby.tab[i][j&#43;1].etat = True pile.push((i, j&#43;1)) elif c == &#39;W&#39;: laby.tab[i][j].W = True laby.tab[i-1][j].E = True laby.tab[i-1][j].etat = True pile.push((i-1, j)) elif c == &#39;S&#39;: laby.tab[i][j].S = True laby.tab[i][j-1].N = True laby.tab[i][j-1].etat = True pile.push((i, j-1)) else: laby.tab[i][j].E = True laby.tab[i&#43;1][j].W = True laby.tab[i&#43;1][j].etat = True pile.push((i&#43;1, j)) return laby Librairies from numpy.random import randint import matplotlib.pyplot as plt Un premier exemple laby = creation(6, 5) laby.solution()">
-    <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
+    <meta itemprop="dateModified" content="2026-08-30T20:11:54+02:00">
     <meta itemprop="wordCount" content="2064">
     <title>Python Labyrinthe :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788115535" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788115535" defer></script>
-    <script src="/js/search-lunr.js?1788115535" defer></script>
-    <script src="/js/search.js?1788115535" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788115535";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788115535" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788115535" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788115535" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788115535" rel="stylesheet">
-    <link href="/css/theme.css?1788115535" rel="stylesheet">
-    <link href="/css/format-html.css?1788115535" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -100,6 +100,7 @@ Définitions des classes class Pile: def __init__(self): self.lst = [] def empty
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/posts/python/python-labyrinthe/index.html">
     <div id="R-body" class="default-animation">
@@ -302,8 +303,8 @@ Les scripts en permettent une visualisation.</p>
 <h2 id="un-premier-exemple">Un premier exemple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">laby</span> <span class="o">=</span> <span class="n">creation</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
 </span></span><span class="line"><span class="cl"><span class="n">laby</span><span class="o">.</span><span class="n">solution</span><span class="p">()</span></span></span></code></pre></div>
-<p><a href="#R-image-cadcd528512517b505934cdf912dadd0" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_5_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cadcd528512517b505934cdf912dadd0"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_5_0.png"></a></p>
+<p><a href="#R-image-47e767c1037f37eaa5115bf9f7c12d5f" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_5_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-47e767c1037f37eaa5115bf9f7c12d5f"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_5_0.png"></a></p>
 <h2 id="exploration-de-la-structure-de-données">Exploration de la structure de données<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">directions</span><span class="p">(</span><span class="n">laby</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;les directions possibles pour la case courante
@@ -355,8 +356,8 @@ Les scripts en permettent une visualisation.</p>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">tab2</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">tab</span><span class="o">=</span><span class="n">labyrinthe</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-6c237635c290508d0bbd422cf465e492" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_9_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-6c237635c290508d0bbd422cf465e492"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_9_0.png"></a></p>
+<p><a href="#R-image-ce2d4b23b93004485e56d03b4fda5d78" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_9_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ce2d4b23b93004485e56d03b4fda5d78"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_9_0.png"></a></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tab</span></span></span></code></pre></div>
 <pre><code>[[('N',), ('N', 'E'), ('E', 'W'), ('E', 'W'), ('E', 'W'), ('N', 'W')],
  [('N', 'S'), ('S', 'E'), ('N', 'W'), ('N', 'E'), ('W',), ('N', 'S')],
@@ -384,8 +385,8 @@ Les scripts en permettent une visualisation.</p>
 </span></span><span class="line"><span class="cl">    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;labyrinthe.png&#39;</span><span class="p">)</span></span></span></code></pre></div>
 <p>On peut faire l&rsquo;économie du tracé eventuel côté S et côté W grace au tracé des cases adjacentes.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">murs</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-1521a97152450faffe3775e68975e37d" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_15_1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1521a97152450faffe3775e68975e37d"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_15_1.png"></a></p>
+<p><a href="#R-image-624919dcf9b5ab190565727ff36e55c9" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_15_1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-624919dcf9b5ab190565727ff36e55c9"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_15_1.png"></a></p>
 <h2 id="parcours-du-labyrinthe">Parcours du labyrinthe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="fonctions-utiles">fonctions utiles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">nexto</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">direc</span><span class="p">):</span>
@@ -642,8 +643,8 @@ Les scripts en permettent une visualisation.</p>
  (0, 5)]
 </code></pre>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">murSolution</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">L</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-fdf128f79e7d6b35b99029dfb4fdc465" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_25_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-fdf128f79e7d6b35b99029dfb4fdc465"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_25_0.png"></a></p>
+<p><a href="#R-image-cc9ea3afb3a23d1e5c368972a2452bce" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_25_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc9ea3afb3a23d1e5c368972a2452bce"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_25_0.png"></a></p>
 <h3 id="mémoriser-toutes-les-étapes-du-parcours">mémoriser TOUTES les étapes du parcours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parcours</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">end</span><span class="p">,</span><span class="n">tab</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;trouve la solution au labyrinthe et trace ce chemin
@@ -737,8 +738,8 @@ Les scripts en permettent une visualisation.</p>
  (0, 5)]
 </code></pre>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">murSolution</span><span class="p">(</span><span class="n">tab</span><span class="p">,</span><span class="n">L</span><span class="p">)</span></span></span></code></pre></div>
-<p><a href="#R-image-26d75a67d3ab279476ef787effc8aa5b" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_28_0.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-26d75a67d3ab279476ef787effc8aa5b"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_28_0.png"></a></p>
+<p><a href="#R-image-e992dff067bb3b1d0fea25d5ac5a7533" class="lightbox-link"><img alt="png" class="border lazy lightbox figure-image" loading="lazy" src="../images/output_28_0.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-e992dff067bb3b1d0fea25d5ac5a7533"><img alt="png" class="border lazy lightbox lightbox-image" loading="lazy" src="../images/output_28_0.png"></a></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 
   <footer class="footline">
@@ -942,6 +943,8 @@ Les scripts en permettent une visualisation.</p>
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1102,9 +1105,9 @@ Les scripts en permettent une visualisation.</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788115535"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788115535" defer></script>
-    <script src="/js/theme.js?1788115535" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

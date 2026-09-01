@@ -21,28 +21,28 @@
     <meta itemprop="name" content="Complexité :: allophysique">
     <meta itemprop="description" content="Complexité, notation de landau, algorithmes de recherche et de tri">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="3819">
+    <meta itemprop="wordCount" content="4108">
     <title>Complexité :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788113091" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788113091" defer></script>
-    <script src="/js/search-lunr.js?1788113091" defer></script>
-    <script src="/js/search.js?1788113091" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788271885" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788271885" defer></script>
+    <script src="/js/search-lunr.js?1788271885" defer></script>
+    <script src="/js/search.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788113091";
+      window.relearn.index_js_url="/searchindex.en.js?1788271885";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788113091" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788113091" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788271885" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788271885" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788113091" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788113091" rel="stylesheet">
-    <link href="/css/theme.css?1788113091" rel="stylesheet">
-    <link href="/css/format-html.css?1788113091" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788271885" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788271885" rel="stylesheet">
+    <link href="/css/theme.css?1788271885" rel="stylesheet">
+    <link href="/css/format-html.css?1788271885" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -96,6 +96,7 @@
     --LOGO-LINK-HOVER-color: #ff9933;
 }
 </style>
+<link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
   <body class="mobile-support html" data-origin="/nsi/algorithmes/page1/index.html">
     <div id="R-body" class="default-animation">
@@ -271,7 +272,7 @@ C&rsquo;est la complexité spatiale.</p>
 </span></span><span class="line"><span class="cl">  I2
 </span></span><span class="line"><span class="cl">  I3
 </span></span><span class="line"><span class="cl">  ...</span></span></code></pre></div>
-$$T(n) = T(I_1) + T(I_2) + T(I_3) + ...$$<p>il y a 3 séquences I<!-- raw HTML omitted -->1<!-- raw HTML omitted -->, I<!-- raw HTML omitted -->2<!-- raw HTML omitted -->, I<!-- raw HTML omitted -->3<!-- raw HTML omitted --> :</p>
+$$T(n) = T(I_1) + T(I_2) + T(I_3) + ...$$<p>il y a 3 séquences I<sub>1</sub>, I<sub>2</sub>, I<sub>3</sub> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I1</span>
 </span></span><span class="line"><span class="cl">  <span class="n">L</span><span class="o">=</span><span class="p">[]</span></span></span></code></pre></div>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I2</span>
@@ -280,7 +281,7 @@ $$T(n) = T(I_1) + T(I_2) + T(I_3) + ...$$<p>il y a 3 séquences I<!-- raw HTML o
 </span></span><span class="line"><span class="cl">    <span class="n">L</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sequence I3</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">L</span></span></span></code></pre></div>
-<p>La séquence I<!-- raw HTML omitted -->1<!-- raw HTML omitted --> contient une seule instruction élémentaires (affectation = ). I<!-- raw HTML omitted -->3<!-- raw HTML omitted --> ne contient pas d&rsquo;instruction significative. I<!-- raw HTML omitted -->2<!-- raw HTML omitted --> est une séquence comprenant 3 operations :</p>
+<p>La séquence I<sub>1</sub> contient une seule instruction élémentaires (affectation = ). I<sub>3</sub> ne contient pas d&rsquo;instruction significative. I<sub>2</sub> est une séquence comprenant 3 operations :</p>
 <ul>
 <li>opération * pour b * i</li>
 <li>affectation =</li>
@@ -319,7 +320,7 @@ $$T(n) = 2 \times n$$<div class="highlight actionbar-wrapper wrap-code" dir="aut
 <h2 id="règles">Règles<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <ul>
 <li>Poser n = “la taille des paramètres”.</li>
-<li>Enoncer les instructions que vous compterez comme significatives<!-- raw HTML omitted --></li>
+<li>Enoncer les instructions que vous compterez comme significatives</li></li>
 <li>définir des blocs d&rsquo;instructions dans le script</li>
 <li>Ne compter que les instructions essentielles, à partir d&rsquo;une unité de mesure: noter la somme des instructions élémentaires T(n).</li>
 <li>Pour chacune des boucles du programme, repérer le <strong>variant de boucle</strong> et calculer le nombre d’itérations : combien de fois on passe dans la boucle.</li>
@@ -348,7 +349,7 @@ $$T(n) = 2 \times n$$<div class="highlight actionbar-wrapper wrap-code" dir="aut
 			</tr>
 			<tr>
 					<td>Θ(log n)</td>
-					<td>logarithmique en base 2 : log<!-- raw HTML omitted -->2<!-- raw HTML omitted -->(n)</td>
+					<td>logarithmique en base 2 : log<sub>2</sub>(n)</td>
 			</tr>
 			<tr>
 					<td>Θ(n)</td>
@@ -722,20 +723,76 @@ $$T(n/2) = 1 + T(n/4)$$<p>Et ainsi de suite jusqu&rsquo;à ce que n//2, et le va
 <p>Le nombre d&rsquo;itérations de la boucle interne vaut <code>n-1</code>. On a alors <code>n-1</code> termes pour le calcul de T(n), dont les valeurs iront de <code>n-1</code> à 1:</p>
 $$T(n) = (n-1) + (n-2) + ... + 1$$<p>Il s&rsquo;agit d&rsquo;une somme de <code>n-1</code> termes d&rsquo;une suite arithmétique, tels que $u_0 = 1$ et $u_{n-1} = n-1$</p>
 <p>La complexité, exprimée en notation de Landau est donc $O(n^2)$. La classe de complexité est donc quadratique.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div class="essentiel">
+ <div class="entete">
+  L'essentiel à retenir
+ </div>
+ <div class="resume">
+ </div>
+ <h2>Complexité temporelle</h2>
+<h3>Definition</h3>
+<p>C&#8217;est une estimation du temps d&#8217;execution d&#8217;un programme, independamment de la machine, et des details d'implementation.
+En pratique, cela correspond au nombre d&#8217;opérations effectuées par le programme. Ce nombre d&#8217;opérations dépendant de la taille n des données en entrée, on évalue d'abord une fonction <strong>T(n)</strong>. </p>
+<p>Ensuite, on fera une simplification de T(n) que l'on note g(n)<br>g(n) peut être égal à 1, log(n), n, n.log(n), n<sup>2</sup>, ... 2<sup>n</sup></p>
+<h3>Notation de Landau</h3>
+<p>Le plus souvent, il s&#8217;agira d&#8217;estimer la complexité dans le pire des cas, exprimée sous la forme : <em>O</em>(<em>g</em>(<em>n</em>)).</p>
+<p>Pour l&#8217;exemple sur la fonction <code>multiplie</code>, la complexité est notée <strong>O(n)</strong> en notation de Landau.</p>
+<p>Lorsqu&#8217;il est possible de déterminer une valeur exacte de la complexité, la notation devient &Theta;(g).</p>
+<h2>Règles pour estimer la complexité O(g(n))</h2>
+<ul>
+<li>Poser n = &#8220;la taille des paramètres&#8221;.</li>
+<li>Ne compter que les instructions essentielles, à partir d'une unité de mesure: noter la somme T(n)
+</li>
+<li>Pour chacune des boucles du programme, repérer le <strong>variant de boucle</strong> et calculer le nombre d&#8217;itérations : combien de fois on passe dans la boucle.</li>
+<li>Si T(n) contient une somme de termes, conserver uniquement le plus divergent.</li>
+<li>Prendre pour g(n) une fonction approchée de T(n). Ne pas considérer les multiplicateurs C : si T(n) = C.f(n), alors g(n) = f(n). Par exemple, si T(n) = 3*n, prendre g(n) = n.</li>
+<li>Sauf précision contraire, la complexité demandée est la complexité au pire en temps.</li>
+</ul>
+<h2>Principales classes de complexité</h2>
+<p>Ces complexités sont classées par temps d&#8217;execution croissant de l&#8217;agorithme correspondant.</p>
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr>
+  <th>complexité</th>
+  <th>classe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>&Theta;(1)</td>
+  <td>temps constant</td>
+</tr>
+<tr>
+  <td>&Theta;(log n)</td>
+  <td>logarithmique en base 2 : log<sub>2</sub>(n)</td>
+</tr>
+<tr>
+  <td>&Theta;(n)</td>
+  <td>linéaire</td>
+</tr>
+<tr>
+  <td>&Theta;(n*log n)</td>
+  <td>quasi linéaire</td>
+</tr>
+<tr>
+  <td>&Theta;(n<sup>2</sup>)</td>
+  <td>quadratique, polynômial</td>
+</tr>
+<tr>
+  <td>&Theta;(n<sup>3</sup>)</td>
+  <td>cubique, polynômial</td>
+</tr>
+<tr>
+  <td>&Theta;(2<sup>n</sup>)</td>
+  <td>exponentiel (problème très difficiles)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <h1 id="exercices">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Feuille d&rsquo;exercices en version <a href="http://localhost:1313/pdf/NSI/algo1_complex_cours.pdf" rel="external">pdf</a></p>
 <h2 id="exercice-1">Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -782,8 +839,89 @@ $$T(n) = (n-1) + (n-2) + ... + 1$$<p>Il s&rsquo;agit d&rsquo;une somme de <code>
 <ul>
 <li>Donnée: on suppose k &gt; n</li>
 </ul>
+<!--
+
+# Corrections
+## Exercice 2 : polynôme de Horner
+Soit x ∈ R. On souhaite calculer 3x<sup>2</sup> + 2x + 1. 
+
+On propose dans un un premier temps, un algorithme *naîf*, qui calcule les puissances au fur et à mesure des itérations dans la boucle : 
+```python
+def poly(a,x):
+    """
+    fonction qui calcule la valeur d'un polynôme en x
+    a : liste des coefficients du polynôme de dimension quelconque
+    x : valeur à renseigner
+    """
+    c=0
+    p=1
+    for i in range(len(a)):
+        c += a[i] * p
+        p *= x
+    return c
+```
+
+1. Déterminer la liste des coefficients `a` qu'il faudra renseigner avant d'appeller la fonction `poly`.
+
+2. Calculer le nombre d'additions et de multiplications qui sont réalisées par cette fonction, lorsque le polynôme est 3x<sup>2</sup> + 2x + 1. 
+3. Généraliser ce calcul pour un polynôme de degré n, où n serait la longueur de la liste a.
+4. Deuxième exemple : pour  3x<sup>3</sup> + 2x<sup>2</sup> − x + 7 : Vérifier que l'expression de la fonction peut se mettre sous une forme nécessitant trois multiplications : 
+`7 + x * (-1 + x * (2 + x * 3))` 
+5. Soit x ∈ R, soit P un polynôme, soit n son degré, a<sub>0</sub>, ..., a<sub>n</sub> ses coefficients. On écrit P (x) sous la forme :
+$$P(x) = a_0 + x\times(a_1+x\times(a_2+x\times(a_3+...x\times(a_n)...)))$$
+Écrire un algorithme pour calculer P(x) selon cette méthode. (méthode de Horner)<br>
+Combien de multiplications sont effectuées pour calculer P(x) avec cet algorithme ?
+
+## correction de l'ex 2
+```python
+def PHorner(taba,x):
+    """
+    calcul de la valeur de l'expression polynome avec la methode 
+    de Horner
+    taba : tableau des coefficient a_i
+    x : valeur de x
+    sortie : P(X)=a0.1 + a1.X + a2.X^2 + ... an.X^n
+    sans utiliser ** pour la puissance
+    """
+    v = 0 # variable accumulateur
+    n = len(taba) # longueur tableau
+    for i in range(0,n-1):
+        v = v * x + taba[n-i-1]
+    return v
+```
+On peut alors tester le programme (jupyter notebook):
+
+<table>
+    <tr>
+        <th scope="row">IN</th>
+        <td>tab = [0,1,2]<br>
+        PHorner(tab,3)
+        </td>
+    </tr>
+   
+    <tr>
+        <th scope="row">OUT</th>
+        <td>
+         7
+        </td>
+    </tr>
+</table>
+
+## Exercice 3 : enigme mathematique
+Vous êtes face à un mur qui s’étend à l’infini dans les deux directions. Il y a une porte dans ce mur, mais vous ne connaissez ni la distance, ni la direction dans laquelle elle se trouve. Par ailleurs, l’obscurité vous empêche de voir la porte à moins d’être juste devant elle.
+
+Vous avez l'idée, naïve, d'explorer petit à petit dans les 2 directions du mur, en revenant en arrière à chaque nouveau mètre exploré.
+
+1. Faites un schéma de la situation.
+2. Etablir, à l'aide d'un tableau, le nombre de pas effectués en fonction de la distance explorée dans les 2 directions.
+3. Montrer que l'algorithme naïf utilisé est de complexité quadratique en L, la distance à la porte.
+4. Existe t-il une méthode plus efficace, permettant de trouver cette porte en un temps linéaire O(L), ou `O(L*log(L))` vis-à-vis de la distance L qui vous sépare de celle-ci?
+
+
+
+-->
 <h1 id="compléments-sur-le-calcul-de-tn">Compléments sur le Calcul de T(n)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Pour calculer la complexité d’une boucle bornée. Soit (deb,fin) ∈ Z<!-- raw HTML omitted -->2<!-- raw HTML omitted -->, considérons une boucle de type <code>for i in range(deb, fin):</code></p>
+<p>Pour calculer la complexité d’une boucle bornée. Soit (deb,fin) ∈ Z<sup>2</sup>, considérons une boucle de type <code>for i in range(deb, fin):</code></p>
 <p>Alors la complexité de cette boucle est :
 </p>
 $$\sum_{i=deb}^{fin-1} C_i$$<p>
@@ -804,7 +942,7 @@ où C représente la complexité de l’itération<sup id="fnref:4"><a href="#
 $$T (n) = Tcondition (n) + T_I (n)$$<ul>
 <li>T(n) représente le nombre total d’instructions</li>
 <li>Tcondition(n) représente le nombre d’instructions nécessaire pour tester la condition (qui peut-être 1 s’il s’agit par exemple d’une simple comparaison entre deux expressions arithmétiques).</li>
-<li>T<!-- raw HTML omitted -->I<!-- raw HTML omitted --> représente le nombre d’instructions dans I.</li>
+<li>T<sub>I</sub> représente le nombre d’instructions dans I.</li>
 </ul>
 <h3 id="conditionnel-avec-alternative">Conditionnel avec alternative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Si Condition Alors :
@@ -815,7 +953,7 @@ $$T (n) = Tcondition (n) + T_I (n)$$<ul>
 $$T (n) = Tcondition (n) + max (T_{I_1} (n), T_{I_2} (n))$$<h1 id="compléments-sur-la-notations-de-landau">Compléments sur la notations de <strong>Landau</strong><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li><strong>Notation O : la borne superieure :</strong> g domine f
-on note f = O(g) s&rsquo;il existe un nombre réel positif a et un rang n de f<!-- raw HTML omitted -->n<!-- raw HTML omitted --> tels que f(n) ≤ a.g(n) :</li>
+on note f = O(g) s&rsquo;il existe un nombre réel positif a et un rang n de f<sub>n</sub> tels que f(n) ≤ a.g(n) :</li>
 </ul>
 $$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N},  |f(n_o)|\leq c.|g(n)| $$<p>En pratique, la recherche de la complexité revient à déterminer cette fonction (ou cette suite) g. On note la complexité <strong>O(g)</strong>. On ignore l&rsquo;eventuel coefficient multiplicateur c et on ne conserve que le terme le plus divergent dans le cas où g contienne plusieurs termes. <strong>T(n) = O(g(n))</strong>.</p>
 <p>Pour l&rsquo;exemple précédent, la complexité est notée <strong>O(n)</strong> en notation de Landau.</p>
@@ -827,9 +965,77 @@ $$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N}, 
 <p><strong>Complexité en moyenne Θ(g(n)):</strong></p>
 </li>
 </ul>
-<!-- raw HTML omitted -->
+<p>$$Moy_A(n) = \sum_{d \in D_n} p(d).coût_A(d)$$</p>
 <p>où p(d) est la probabilité que l&rsquo;on ait la donnée d en entrée de l&rsquo;algorithme.</p>
 <p>et coût_A(d) représente la complexité en temps de l&rsquo;algorithme A sur la donnée d.</p>
+<!--
+# Exemple 2 : multiplication de matrices carrées
+## Enoncé du problème
+soit A = (a<sub>ij</sub>) et B = (b<sub>ij</sub>) deux matrices n*n à coefficients dans **R**.
+
+i = numero de ligne et j = colonne
+
+L'algorithme suivant devra calculer les coefficients (c i j) de la matrice C = A*B selon la formule : 
+
+<p>$$c_{ij} = \sum_{k=1}^n a_{ik}.b_{kj}$$</p>
+
+## Algorithme
+```python
+import numpy as np
+def matrice(a,b):
+    """
+    calcule et retourne la matrice c produit des matrices a*b
+    a et b sont supposées être des matrices carrées, de même dimension
+    """
+    nblignes = a.shape[0]
+    nbcolonnes = b.shape[1]
+    if nblignes != nbcolonnes:
+        raise "value error !"
+    c = np.zeros(nblignes*nbcolonnes).reshape(nblignes,nbcolonnes)
+    for i in range(nblignes):
+        for j in range(nbcolonnes):
+            for k in range(nbcolonnes):
+                c[i,j] += a[i,k]*b[k,j]
+    return c
+```
+
+Voici un exemple d'utilisation de ce programme (avec jupyter notebook) : 
+
+<table>
+    <tr>
+        <th scope="row">IN</th>
+        <td>M1 = np.matrix((1,2,3,4,5,6,7,8,9)).reshape(3,3)<br>
+          M2 = np.matrix((2,4,6,8,10,12,14,16,18)).reshape(3,3)<br>
+        matrice(M1,M2)
+        </td>
+    </tr>
+   
+    <tr>
+        <th scope="row">OUT</th>
+        <td>
+          $$\begin{align}
+        array([&[60.&, 72.&, 84.],\\
+       &[132.&, 162.&, 192.],\\
+       &[204.&, 252.&, 300.]])\\
+       \end{align}$$
+
+        </td>
+    </tr>
+</table>
+
+## Complexité
+La complexité de l'algorithme matrice, comptée en nombre de multiplications de réels ne dépend que de la taille des matrices :  
+
+* Le nombre de multiplication est :
+$$\sum_{i=1}^n \sum_j \sum_k 1 = n^3 $$
+
+* Le nombre d'additions est :
+$$n^2(n-1)$$
+
+* La complexité asymptotique est alors : 
+$$Min(n) = Max(n) = Moy(n) = n^3 $$
+
+-->
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <div class="footnotes" role="doc-endnotes">
 <hr>
@@ -1050,6 +1256,8 @@ $$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N}, 
             <li class="" data-nav-id="/snt/donnees/page2/index.html"><a class="padding" href="/snt/donnees/page2/index.html">memoire des machines<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page3/index.html"><a class="padding" href="/snt/donnees/page3/index.html">numeration binaire<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page4/index.html"><a class="padding" href="/snt/donnees/page4/index.html">format des donnees<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page8/index.html"><a class="padding" href="/snt/donnees/page8/index.html">Traitement des données en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/snt/donnees/page9/index.html"><a class="padding" href="/snt/donnees/page9/index.html">TP Pommes<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/snt/donnees/page5/index.html"><a class="padding" href="/snt/donnees/page5/index.html">donnees personnelles<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/snt/rs/index.html"><input type="checkbox" id="R-section-dd6e5db6222ec2d91755be5ceabcc987" aria-controls="R-subsections-dd6e5db6222ec2d91755be5ceabcc987"><label for="R-section-dd6e5db6222ec2d91755be5ceabcc987"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu reseaux sociaux</span></label><a class="padding default-animation" href="/snt/rs/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-dd6e5db6222ec2d91755be5ceabcc987" class="collapsible-menu">
             <li class="" data-nav-id="/snt/rs/page1/index.html"><a class="padding" href="/snt/rs/page1/index.html">reseaux sociaux<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
@@ -1140,21 +1348,20 @@ $$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N}, 
             <li class="" data-nav-id="/techno/robot/index.html"><input type="checkbox" id="R-section-d2ef1aa7fcd337a0434724f36f4f96f9" aria-controls="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9"><label for="R-section-d2ef1aa7fcd337a0434724f36f4f96f9"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Robotique</span></label><a class="padding default-animation" href="/techno/robot/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-d2ef1aa7fcd337a0434724f36f4f96f9" class="collapsible-menu">
             <li class="" data-nav-id="/techno/robot/page1/index.html"><a class="padding" href="/techno/robot/page1/index.html">Robotique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li></ul></li>
             <li class="" data-nav-id="/posts/index.html"><input type="checkbox" id="R-section-b4e55eb7e39db1aee6d02808a2267090" aria-controls="R-subsections-b4e55eb7e39db1aee6d02808a2267090"><label for="R-section-b4e55eb7e39db1aee6d02808a2267090"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Posts</span></label><a class="padding default-animation" href="/posts/index.html">Posts<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-b4e55eb7e39db1aee6d02808a2267090" class="collapsible-menu">
-            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">modeliser simuler<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_les_bases/index.html"><a class="padding" href="/posts/python/python_les_bases/index.html">Python les bases<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">Javascript le DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/nsi_graphe_dict_npi/index.html"><a class="padding" href="/posts/python/nsi_graphe_dict_npi/index.html">Python graphe et NPI<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/pandas/index.html"><a class="padding" href="/posts/python/pandas/index.html">Python Pandas<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_graphes_networkx/index.html"><a class="padding" href="/posts/python/python_graphes_networkx/index.html">Python graphes Networkx<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python-labyrinthe/index.html"><a class="padding" href="/posts/python/python-labyrinthe/index.html">Python Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/posts/python/python_turtle_labyrinthe/index.html"><a class="padding" href="/posts/python/python_turtle_labyrinthe/index.html">Python turtle Labyrinthe<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algknn/index.html"><a class="padding" href="/posts/python/algknn/index.html">Python algo KNN<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/data_analyse/index.html"><a class="padding" href="/posts/python/data_analyse/index.html">Python data_analyse<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest np<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/algorithme_recommandation/index.html"><a class="padding" href="/posts/python/algorithme_recommandation/index.html">Python algo de recommandation<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/python/graphes_mini_prog/index.html"><a class="padding" href="/posts/python/graphes_mini_prog/index.html">Python arbre decision<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/javascript_dom/index.html"><a class="padding" href="/posts/javascript/javascript_dom/index.html">javascript_DOM<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/posts/javascript/mini_projet_spaceinvader/page1/index.html"><a class="padding" href="/posts/javascript/mini_projet_spaceinvader/page1/index.html">jeu Space Invader<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/posts/sciences/modeliser/index.html"><a class="padding" href="/posts/sciences/modeliser/index.html">Modèle prédictif<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/python/python_unittest_np/index.html"><a class="padding" href="/posts/python/python_unittest_np/index.html">Python unittest<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/posts/sciences/securite_informatique/index.html"><a class="padding" href="/posts/sciences/securite_informatique/index.html">Securite informatique<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
           </ul>
         </div>
         <div class="R-sidebarmenu R-shortcutmenu-shortcuts default-animation">
@@ -1211,9 +1418,9 @@ $$\exists c \in \mathbb{R}^+, tels \quad que\quad   \forall n_o \in \mathbb{N}, 
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788113091"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788113091" defer></script>
-    <script src="/js/theme.js?1788113091" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788271885"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788271885" defer></script>
+    <script src="/js/theme.js?1788271885" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

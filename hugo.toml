@@ -41,7 +41,7 @@ favicon = false
     style                = 'monokai'       # Thème de coloration
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = false                       # Interdit le HTML brut (sécurité XSS)
+      unsafe = true                       # autorise le HTML brut (sinon sécurité XSS)
     [markup.goldmark.extensions.extras.delete]
       enable = true                        # ~~texte barré~~
     [markup.goldmark.extensions.extras.insert]
