@@ -4,7 +4,50 @@ description: donnees structurees, format de donnees standardisé, json, csv, don
 weight: 13
 ---
 
-# Open datas
+
+{{< badgerows >}}
+{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D1 Format des données: [Lien](../page4){{% /badgerow %}}
+{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D2 Collecte des données personnelles: [Lien](../page5) {{% /badgerow %}}
+{{< /badgerows >}}
+
+* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} D3 Données en table [Lien](../page8)
+* {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} D4 RGPD [Lien](page5) et [videos](page6)
+* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} TP1 Enquete de police [Lien](../page12)
+* {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} TP2 Pommes [Lien](../page9)
+* {{% badge color="orange" icon="star" %}}competences{{% /badge %}} TP3 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html)
+
+
+{{< badgerows >}}
+{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D1 Format des données: [Lien](../page4) {{% /badgerow %}}
+{{% badgerow %}}{{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} ||| D2 Collecte des données personnelles: [Lien](../page5) {{% /badgerow %}}
+{{< /badgerows >}}
+
+## Introduction
+En informatique, tout est donné, depuis les 0 et les 1 qui décrivent l’état des transistors dans un circuit électronique, jusqu’à une vidéo, en passant par les photos, les adresses, un relevé de température ou l’âge d’une personne. Les données sont souvent rassemblées pour caractériser un objet comme l’adresse d’une personne (composée du numéro de rue, du nom de la rue, du code postal, de la ville et du pays par exemple). Lorsque les données sont ainsi rassemblées pour décrire quelque chose avec plusieurs informations, on parle de **données structurées** (voir plus loin).
+
+
+{{< img src="../images/activitePostIt.png" link="/pdf/SNT/page12.html" caption="activité sur le traitement des données" >}}
+
+1. A partir de l’image projetée, choisir une méthode pour placer les informations dans un même tableau. Quelles seront les étiquettes de colonne?
+2. Lorsque l’on place ses données sur une page internet, les champs du formulaire demandent un format particulier pour les données. Etes vous capables de retrouver rapidement l’information suivante: quel évènement a pour plaignant Me Dubois? => besoin de ranger les informations dans une table pour effectuer la recherche avec une clé (étiquette de colonne)
+3. Ouvrir la page de l'activité. Recopier le tableau et le compléter avec 3 étiquettes post-it ou plus. (consigne précise: Votre mission est d'extraire les informations importantes et de les organiser dans le tableau fourni ci-dessous.)
+
+## Type de variable, cellule d’un tableur
+Selon la mise en forme, le format associé est soit du texte (entre guillemets, soit un nombre (virgule pour décimal), mais cela peut être aussi une date (15/09/2023), une heure (8:30) ou une coordonnée GPS exprimée en degré minute d’arc seconde (45°30’45’’).
+
+Dans un fichier .xls, ou csv, les données sont structurées. Dans une même colonne, les données sont dans le même format (sont du même type)
+
+## Présentation des données
+Un fichier Excel regroupe une ou plusieurs table(s)
+Dans une table, les données sont mises dans des colonnes, où elles ont le meme type.
+Chaque donnée est dans une cellule, référencée par ses coordonnées.
+
+Chaque TABLE représente une COLLECTION. C’est à dire un ensemble d’objets (des lignes) qui partagent les mêmes DESCRIPTEURS. Les valeurs de ces objets ont un certain type. Chaque colonne contient des valeurs du même type.
+
+Chaque ligne contient une *information*.
+
+
+# Open datas et données structurées
 
 {{< img src="../images/sitecookie.png" link="https://youtu.be/pnrc6ZaYrwg" caption="video du site cookie-connecté" >}}
 > L'open data (ou données ouvertes) est l'ouverture via le Web de données collectées par des organismes publics (ou entreprises), et dont la diffusion est considerée comme d'interêt général.
@@ -104,3 +147,5 @@ En [bas de page](https://www.data.gouv.fr/fr/datasets/repertoire-national-des-el
 On voit ici comment des *données numériques* sont transformées en *informations*.
 
 > Ouvrir les données jugées d'intérêt public, c'est encourager leur réutilisation par tout un chacun. Cela permet d'encourager la transparence démocratique, de bénéficier de services au quotidien ou de prendre des décisions plus éclairées.
+
+[Lien vers le TP](../page11/)

@@ -1,6 +1,7 @@
 ---
 Title: TP protection des données
 hidden: true
+weight: 20
 ---
 
 {{% badge icon="star" %}}6.6.6{{% /badge %}}

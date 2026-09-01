@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incidents de Police - Post-it</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .instructions {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        .postit-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .postit {
+            background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            transform: rotate(-1deg);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            min-height: 180px;
+        }
+        .postit:nth-child(even) {
+            transform: rotate(1deg);
+            background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+        }
+        .postit:nth-child(3n) {
+            background: linear-gradient(135deg, #fda4af 0%, #fb7185 100%);
+        }
+        .postit:nth-child(4n) {
+            background: linear-gradient(135deg, #d9f99d 0%, #bef264 100%);
+        }
+        .postit:nth-child(5n) {
+            background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+        }
+        .postit:hover {
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+        .postit-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1f2937;
+        }
+        .postit-number {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: rgba(0,0,0,0.3);
+        }
+        .table-template {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px dashed #667eea;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+        }
+        th, td {
+            border: 2px solid #667eea;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        td {
+            background: #f9fafb;
+        }
+        .print-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .print-button {
+                display: none;
+            }
+            .postit {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Commissariat de Police - Main Courante</h1>
+        <p class="subtitle">Activité de structuration des données</p>
+        
+        <div class="instructions">
+            <strong>Consigne :</strong> Lisez attentivement chaque post-it contenant un incident rapporté au commissariat. 
+            Votre mission est d'extraire les informations importantes et de les organiser dans le tableau fourni ci-dessous.
+            <br><br>
+            <strong>Colonnes à remplir :</strong> Date, Heure, Lieu, Type d'incident, Témoin/Plaignant, Description courte, Priorité d'intervention.
+        </div>
+
+        <div class="postit-container">
+            <div class="postit">
+                <div class="postit-number">#1</div>
+                <div class="postit-content">
+                    <strong>Appel reçu le 15/10/2024</strong><br>
+                    Madame Dupont, habitant au 12 rue des Lilas, se plaint de nuisances sonores importantes provenant de l'appartement voisin. Musique très forte depuis 23h15. Elle demande une intervention.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#2</div>
+                <div class="postit-content">
+                    <strong>Signalement du 16/10/2024 à 14h30</strong><br>
+                    Un chien errant de race labrador a été repéré près du parc municipal avenue Jean Jaurès. L'animal semble perdu. Signalé par M. Bernard qui promenait son propre chien.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#3</div>
+                <div class="postit-content">
+                    <strong>Dépôt de plainte - 17/10/2024</strong><br>
+                    Mme Sophie Martin dépose plainte pour dégradations répétées sur sa voiture garée devant son domicile, 45 boulevard Victor Hugo. Rayures constatées ce matin à 8h00. Troisième fois ce mois-ci.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#4</div>
+                <div class="postit-content">
+                    <strong>Urgence - 18/10/2024 - 9h45</strong><br>
+                    Accident de la circulation place de la République. Un piéton a été renversé par un véhicule. Témoin : M. Lucas Petit qui se trouvait à l'arrêt de bus. Ambulance appelée immédiatement.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#5</div>
+                <div class="postit-content">
+                    <strong>Appel urgent - 18/10/2024 vers 22h00</strong><br>
+                    Plusieurs riverains de la rue du Commerce signalent avoir entendu un coup de feu. Mme Leroy (n°34) a appelé en première. Patrouille envoyée sur place immédiatement.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#6</div>
+                <div class="postit-content">
+                    <strong>Constatation du 19/10/2024 - 7h20</strong><br>
+                    Vitrine brisée au 78 rue Nationale, commerce de vêtements "La Mode". Propriétaire M. Ahmed Saidi a découvert les dégâts en ouvrant. Vol apparent de plusieurs articles.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#7</div>
+                <div class="postit-content">
+                    <strong>Signalement - 19/10/2024 à 16h00</strong><br>
+                    Un sac à main a été trouvé sur un banc du jardin public près de la fontaine. Contient papiers d'identité au nom de Mlle Emma Rousseau. Déposé par une joggeuse anonyme.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#8</div>
+                <div class="postit-content">
+                    <strong>Plainte déposée le 20/10/2024</strong><br>
+                    M. Pierre Blanc, résidant 23 allée des Roses, signale la disparition de son vélo électrique volé dans la nuit du 19 au 20 octobre. Le vélo était attaché devant son immeuble.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#9</div>
+                <div class="postit-content">
+                    <strong>Intervention - 20/10/2024 - 11h30</strong><br>
+                    Bagarre signalée au lycée Pasteur, cour de récréation. Deux élèves impliqués. Surveillante Mme Dubois a séparé les protagonistes et demandé une présence policière pour constater.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#10</div>
+                <div class="postit-content">
+                    <strong>Appel du 21/10/2024 à 6h15</strong><br>
+                    Présence suspecte signalée parking de la gare. Un individu dort dans un véhicule depuis plusieurs jours selon M. Thomas, agent SNCF. Demande de vérification.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#11</div>
+                <div class="postit-content">
+                    <strong>Constat - 21/10/2024 à 19h00</strong><br>
+                    Feu de poubelle rue Gambetta, devant le numéro 56. Éteint par les pompiers. Origine suspecte selon témoin Mme Caroline Mercier qui a vu des jeunes traîner avant l'incident.
+                </div>
+            </div>
+
+            <div class="postit">
+                <div class="postit-number">#12</div>
+                <div class="postit-content">
+                    <strong>Signalement du 22/10/2024 - 13h45</strong><br>
+                    Distributeur automatique de billets vandalisé place du Marché. Clavier endommagé, appareil hors service. Découvert par employé de banque lors de sa tournée de maintenance.
+                </div>
+            </div>
+        </div>
+
+        <div class="print-button">
+            <button onclick="window.print()">🖨️ Imprimer cette page</button>
+        </div>
+
+        <div class="table-template">
+            <h2>📊 Tableau de structuration des données</h2>
+            <p><em>À compléter par les élèves en analysant les post-it ci-dessus</em></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Heure</th>
+                        <th>Lieu</th>
+                        <th>Type d'incident</th>
+                        <th>Témoin/Plaignant</th>
+                        <th>Description courte</th>
+                        <th>Priorité d'intervention</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

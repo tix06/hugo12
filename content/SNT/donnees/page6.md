@@ -1,6 +1,7 @@
 ---
 Title: Se proteger contre la collecte des DCP
 hidden: true
+weight: 21
 ---
 
 # Se proteger contre la collecte des données

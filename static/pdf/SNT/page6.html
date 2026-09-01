@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifeste SNT - L'Informatique et les Données</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .poster {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .poster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .title {
+            font-size: 2.8em;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 0;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 1.4em;
+            color: #667eea;
+            font-weight: 600;
+            margin: 10px 0 0 0;
+        }
+        
+        .main-message {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+        
+        .usages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .usage-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .usage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .usage-card:nth-child(1) { border-color: #ff6b6b; }
+        .usage-card:nth-child(2) { border-color: #4ecdc4; }
+        .usage-card:nth-child(3) { border-color: #45b7d1; }
+        .usage-card:nth-child(4) { border-color: #96ceb4; }
+        .usage-card:nth-child(5) { border-color: #feca57; }
+        .usage-card:nth-child(6) { border-color: #ff9ff3; }
+        .usage-card:nth-child(7) { border-color: #54a0ff; }
+        .usage-card:nth-child(8) { border-color: #5f27cd; }
+        .usage-card:nth-child(9) { border-color: #00d2d3; }
+        .usage-card:nth-child(10) { border-color: #ff9f43; }
+        
+        .usage-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .usage-desc {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            line-height: 1.4;
+        }
+        
+        .mission-section {
+            background: #ecf0f1;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .mission-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .mission-text {
+            color: #34495e;
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        .final-message {
+            text-align: center;
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+        
+        .final-message .big-text {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .final-message .small-text {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .data-emphasis {
+            color: #667eea;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <div class="header">
+            <h1 class="title">L'INFORMATIQUE</h1>
+            <p class="subtitle">Votre Superpouvoir pour Résoudre les Problèmes</p>
+        </div>
+        
+        <div class="main-message">
+            L'informatique est partout autour de vous !<br>
+            Chaque jour, des <span style="text-decoration: underline;">DONNÉES</span> travaillent pour vous.
+        </div>
+        
+        <div class="usages-grid">
+            <div class="usage-card">
+                <div class="usage-title">CALCULER</div>
+                <div class="usage-desc">Résoudre des équations en millisecondes</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">AUTOMATISER</div>
+                <div class="usage-desc">Libérer du temps pour l'essentiel</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">ANALYSER</div>
+                <div class="usage-desc">Découvrir des patterns cachés</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">INTERFACER</div>
+                <div class="usage-desc">Simplifier la saisie d'informations</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">CONNECTER</div>
+                <div class="usage-desc">Partager l'intelligence en réseau</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">INDEXER</div>
+                <div class="usage-desc">Retrouver instantanément l'information</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">CRÉER</div>
+                <div class="usage-desc">Construire textes et images</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">PILOTER</div>
+                <div class="usage-desc">Contrôler des systèmes à distance</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">ACQUÉRIR</div>
+                <div class="usage-desc">Capturer le monde en données</div>
+            </div>
+            <div class="usage-card">
+                <div class="usage-title">PRÉDIRE</div>
+                <div class="usage-desc">Anticiper grâce aux données</div>
+            </div>
+        </div>
+        
+        <div class="mission-section">
+            <div class="mission-title">VOTRE MISSION : Chapitre <span class="data-emphasis">DONNÉES</span></div>
+            <div class="mission-text">
+                Les <span class="data-emphasis">données</span> ne sont pas que des chiffres.<br>
+                Elles sont la matière première de notre époque !<br>
+                <strong>Vous allez apprendre à les organiser, les questionner, les transformer.</strong>
+            </div>
+        </div>
+        
+        <div class="final-message">
+            <div class="big-text">L'informatique n'est pas magique. C'est logique.</div>
+            <div class="small-text">Et cette logique, vous allez la maîtriser !</div>
+        </div>
+    </div>
+</body>
+</html>
