@@ -21,28 +21,28 @@
     <meta itemprop="name" content="tuto requests :: allophysique">
     <meta itemprop="description" content="application des connaissances sur le protocole HTTP, données open source, creer une app en python utilisant des requetes en temps reel">
     <meta itemprop="dateModified" content="2026-06-30T16:02:19+02:00">
-    <meta itemprop="wordCount" content="424">
+    <meta itemprop="wordCount" content="278">
     <title>tuto requests :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788354484" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788354484" defer></script>
-    <script src="/js/search-lunr.js?1788354484" defer></script>
-    <script src="/js/search.js?1788354484" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788448950" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788448950" defer></script>
+    <script src="/js/search-lunr.js?1788448950" defer></script>
+    <script src="/js/search.js?1788448950" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788354484";
+      window.relearn.index_js_url="/searchindex.en.js?1788448950";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788354484" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788448950" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788448950" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788448950" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788448950" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788354484" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788354484" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788354484" rel="stylesheet">
-    <link href="/css/theme.css?1788354484" rel="stylesheet">
-    <link href="/css/format-html.css?1788354484" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788448950" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788448950" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788448950" rel="stylesheet">
+    <link href="/css/theme.css?1788448950" rel="stylesheet">
+    <link href="/css/format-html.css?1788448950" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -224,67 +224,72 @@
 	</tbody>
 </table>
 <p>Voici adaptation du script que l&rsquo;on peut alors utiliser depuis le lycée.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span><span class="o">,</span><span class="nn">json</span><span class="o">,</span><span class="nn">sys</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 1. Définir les en-têtes pour imiter Chrome (Windows 10/11)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">headers</span><span class="o">=</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;accept&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;accept-encoding&#39;</span><span class="p">:</span><span class="s1">&#39;gzip, deflate, br, zstd&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;accept-language&#39;</span><span class="p">:</span><span class="s1">&#39;fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;connection&#39;</span><span class="p">:</span><span class="s1">&#39;keep-alive&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;host&#39;</span><span class="p">:</span><span class="s1">&#39;api.openweathermap.org&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-ch-ua&#39;</span><span class="p">:</span><span class="s1">&#39;&#34;Chromium&#34;;v=&#34;148&#34;, &#34;Microsoft Edge&#34;;v=&#34;148&#34;, &#34;Not/A)Brand&#34;;v=&#34;99&#34;&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-ch-ua-mobile&#39;</span><span class="p">:</span><span class="s1">&#39;?0&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-ch-ua-platform&#39;</span><span class="p">:</span><span class="s1">&#39;&#34;Windows&#34;&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-fetch-dest&#39;</span><span class="p">:</span><span class="s1">&#39;document&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-fetch-mode&#39;</span><span class="p">:</span><span class="s1">&#39;navigate&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-fetch-site&#39;</span><span class="p">:</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;sec-fetch-user&#39;</span><span class="p">:</span><span class="s1">&#39;?1&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;upgrade-insecure-requests&#39;</span><span class="p">:</span><span class="s1">&#39;1&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;user-agent&#39;</span><span class="p">:</span><span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 2. Ajouter les adresses de connexion au proxies (completer les champs)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># id = votre identifiant IACA</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># password = votre password IACA</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;http&#34;</span><span class="p">:</span> <span class="s2">&#34;http://id:password@ip_proxy:port&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="s2">&#34;https&#34;</span><span class="p">:</span> <span class="s2">&#34;http://id:password@ip_proxy:port&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 3. Envoyer la requête avec les en-têtes &#34;masqués&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">APPID</span> <span class="o">=</span><span class="s1">&#39;02cbe3cb547ddf63a866b3b9679daffe&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">#location = &#39;London,GB&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">location</span> <span class="o">=</span> <span class="s1">&#39;Nice,FR&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">#Download the JSON data from OpenWeatherMap.org&#39;s API.</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.openweathermap.org/data/2.5/weather?q=</span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s1">&amp;appid=</span><span class="si">{</span><span class="n">APPID</span><span class="si">}</span><span class="s1">&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">#Uncomment to see the raw JSON text:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">#print(response.text)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">#Load JSON data into a Python variable.</span>
-</span></span><span class="line"><span class="cl">    <span class="n">weatherData</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">#Print weather descriptions</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="n">w</span> <span class="o">=</span> <span class="n">weatherData</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Current weather in </span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;main&#39;</span><span class="p">],</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">w</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;description&#39;</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Erreur : </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p><em>Contenu masqué&hellip;</em></p>
+<!--
+```python
+import requests,json,sys
+
+# 1. Définir les en-têtes pour imiter Chrome (Windows 10/11)
+
+headers={
+'accept':
+'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+'accept-encoding':'gzip, deflate, br, zstd',
+'accept-language':'fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
+'connection':'keep-alive',
+'host':'api.openweathermap.org',
+'sec-ch-ua':'"Chromium";v="148", "Microsoft Edge";v="148", "Not/A)Brand";v="99"',
+'sec-ch-ua-mobile':'?0',
+'sec-ch-ua-platform':'"Windows"',
+'sec-fetch-dest':'document',
+'sec-fetch-mode':'navigate',
+'sec-fetch-site':'none',
+'sec-fetch-user':'?1',
+'upgrade-insecure-requests':'1',
+'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36 Edg/148.0.0.0'
+}
+
+# 2. Ajouter les adresses de connexion au proxies (completer les champs)
+# id = votre identifiant IACA
+# password = votre password IACA
+
+proxies = {
+    "http": "http://id:password@ip_proxy:port",
+    "https": "http://id:password@ip_proxy:port",
+}
+
+try:
+    # 3. Envoyer la requête avec les en-têtes "masqués"
+    APPID ='02cbe3cb547ddf63a866b3b9679daffe'
+    #location = 'London,GB'
+    location = 'Nice,FR'
+
+    #Download the JSON data from OpenWeatherMap.org's API.
+
+    url = f'https://api.openweathermap.org/data/2.5/weather?q={location}&appid={APPID}'
+    response = requests.get(url,headers=headers,proxies=proxies,timeout=10)
+    response.raise_for_status()
+
+
+
+    #Uncomment to see the raw JSON text:
+    #print(response.text)
+
+    #Load JSON data into a Python variable.
+    weatherData = json.loads(response.text)
+
+    #Print weather descriptions
+
+    w = weatherData
+    print(f'Current weather in {location}')
+    print(w['weather'][0]['main'],'-',w['weather'][0]['description'])
+    print()
+
+
+except Exception as e:
+    print(f"Erreur : {e}")
+```
+-->
 <!--
 Un exemple de clé APPID que vous pouvez utiliser *provisoirement*, avant de créer la votre: `02cbe3cb547ddf63a866b3b9679daffe`
 et d'adresse proxy:
@@ -452,7 +457,7 @@ et d'adresse proxy:
             <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">Donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -650,9 +655,9 @@ et d'adresse proxy:
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788354484"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788354484" defer></script>
-    <script src="/js/theme.js?1788354484" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788448950"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788448950" defer></script>
+    <script src="/js/theme.js?1788448950" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

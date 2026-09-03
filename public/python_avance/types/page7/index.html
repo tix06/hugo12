@@ -21,28 +21,28 @@
     <meta itemprop="name" content="TD - types simples (corrigé) :: allophysique">
     <meta itemprop="description" content="corrigé du TD sur int, float, str, bool">
     <meta itemprop="dateModified" content="2026-08-17T19:41:54+02:00">
-    <meta itemprop="wordCount" content="521">
+    <meta itemprop="wordCount" content="488">
     <title>TD - types simples (corrigé) :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788354484" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788354484" defer></script>
-    <script src="/js/search-lunr.js?1788354484" defer></script>
-    <script src="/js/search.js?1788354484" defer></script>
+    <link href="/css/auto-complete/auto-complete.min.css?1788450171" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788450171" defer></script>
+    <script src="/js/search-lunr.js?1788450171" defer></script>
+    <script src="/js/search.js?1788450171" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788354484";
+      window.relearn.index_js_url="/searchindex.en.js?1788450171";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788354484" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788354484" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788450171" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788450171" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788450171" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788450171" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788354484" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788354484" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788354484" rel="stylesheet">
-    <link href="/css/theme.css?1788354484" rel="stylesheet">
-    <link href="/css/format-html.css?1788354484" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788450171" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788450171" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788450171" rel="stylesheet">
+    <link href="/css/theme.css?1788450171" rel="stylesheet">
+    <link href="/css/format-html.css?1788450171" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -158,7 +158,6 @@
 <h1 id="td---types-simples-corrigé">TD - types simples (corrigé)</h1>
 
 <h1 id="corrigé--td--types-simples-en-python">Corrigé — TD : Types simples en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p><em>Ce corrigé est destiné à l&rsquo;enseignant. Il détaille la réponse attendue et le raisonnement à valoriser pour chaque question.</em></p>
 <hr>
 <h2 id="script-1--conversions-de-types">Script 1 — Conversions de types<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong> Le script lève une erreur :</p>
@@ -172,7 +171,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">preparer_etiquette</span><span class="p">(</span><span class="mf">19.90</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Prix à afficher : 20 euros</span></span></span></code></pre></div>
-<p>Point clé à valoriser : utilisation de <code>round()</code> directement sur le float, sans passer par <code>str</code>. Une réponse utilisant <code>int(prix + 0.5)</code> peut être acceptée si l&rsquo;élève explique la limite (ne fonctionne pas pour les négatifs) ; c&rsquo;est l&rsquo;occasion de rappeler que <code>round()</code> est la fonction adaptée pour arrondir.</p>
+<p>Point clé à observer : utilisation de <code>round()</code> directement sur le float, sans passer par <code>str</code>. Une réponse utilisant <code>int(prix + 0.5)</code> peut être acceptée (mais ne fonctionne pas pour les négatifs) ; c&rsquo;est l&rsquo;occasion de rappeler que <code>round()</code> est la fonction adaptée pour arrondir.</p>
 <hr>
 <h2 id="script-2--chaînes-de-caractères">Script 2 — Chaînes de caractères<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong> Le script lève une erreur :</p>
@@ -188,7 +187,7 @@
 <ul>
 <li>usage du slicing <code>nom[-2:]</code> (index négatif vu dans le cours) pour récupérer les deux derniers caractères ;</li>
 <li>construction d&rsquo;une nouvelle chaîne avec <code>*</code> (répétition) et <code>+</code> (concaténation), sans tentative de modification en place ;</li>
-<li>une solution utilisant <code>nom[:-2]</code> remplacé caractère par caractère dans une boucle est correcte mais moins élégante — à signaler sans pénaliser si le résultat est juste.</li>
+<li>une solution utilisant <code>nom[:-2]</code> remplacé caractère par caractère dans une boucle est correcte mais moins élégante.</li>
 </ul>
 <hr>
 <h2 id="script-3--booléens-et-nombres-flottants">Script 3 — Booléens et nombres flottants<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -394,7 +393,7 @@
             <li class="" data-nav-id="/nsi_1/architecture/page1/index.html"><a class="padding" href="/nsi_1/architecture/page1/index.html">architecture 1<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/architecture/page2/index.html"><a class="padding" href="/nsi_1/architecture/page2/index.html">architecture 2<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
+            <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">Donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -592,9 +591,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788354484"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788354484" defer></script>
-    <script src="/js/theme.js?1788354484" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788450171"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788450171" defer></script>
+    <script src="/js/theme.js?1788450171" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

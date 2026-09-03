@@ -77,6 +77,5 @@ print(type(compte == 0.3))
 # Suite
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page6" icon="palette" style="tip" %}}TP1{{% /button %}} Types simples
-{{% button href="../page7" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
 ##### {{% button href="../page8" icon="palette" style="important" %}}TD1{{% /button %}} Variables et types natifs
 

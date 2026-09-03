@@ -93,7 +93,7 @@ int("3.5")
 ```
 
 # Opérations sur les types numériques
-Les opérateurs sur les nombres ont été vus dans le cours [Python les bases](http://localhost:1313/docs/python/index_python_D/).
+Les opérateurs sur les nombres ont été vus dans le cours *Python les bases*.
 
 * Certaines fonctions natives vont enrichir les possibilités de calcul:
 
@@ -255,7 +255,7 @@ Et à l'inverse :
 # affiche abc=:=def=:=ghi=:=jkl
 ```
 
-*Remarque:* Si le séparateur est un terminateur, comme par exemple ';', ou`"\n"`, il conviendra d'utiliser d'abord la méthode `strip`. Voir *[compléments](http://localhost:1313/docs/python/pages/variables/page2/#compl%C3%A9ments-sur-les-strings)* en bas de page.
+*Remarque:* Si le séparateur est un terminateur, comme par exemple `;,` ou`\n`, il conviendra d'utiliser d'abord la méthode `strip`. Voir *Compléments* en bas de page.
 
 
 ### Remplacement: `replace`
@@ -363,7 +363,7 @@ b
 
 # Compléments sur les strings
 ## `strip` ou `split` 
-Si le séparateur est un terminateur, comme par exemple ';', ou`\n`, la liste résultat contient alors une dernière chaîne vide. En pratique, on utilisera la méthode `strip`, que nous allons voir ci-dessous, avant la méthode `split` pour éviter ce problème.
+Si le séparateur est un terminateur, comme par exemple `;,` ou`\n`, la liste résultat contient alors une dernière chaîne vide. En pratique, on utilisera la méthode `strip`, que nous allons voir ci-dessous, avant la méthode `split` pour éviter ce problème.
 
 
 ```python

@@ -67,6 +67,9 @@ On peut vouloir modifier l'en-tête HTTP pour imiter le comportement d'un naviga
 
 Voici adaptation du script que l'on peut alors utiliser depuis le lycée.
 
+*Contenu masqué...*
+
+<!--
 ```python
 import requests,json,sys
 
@@ -130,6 +133,7 @@ try:
 except Exception as e:
     print(f"Erreur : {e}")
 ```
+-->
 
 <!--
 Un exemple de clé APPID que vous pouvez utiliser *provisoirement*, avant de créer la votre: `02cbe3cb547ddf63a866b3b9679daffe`

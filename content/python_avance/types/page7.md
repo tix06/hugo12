@@ -7,7 +7,7 @@ weight: 6
 
 # Corrigé — TD : Types simples en Python
 
-*Ce corrigé est destiné à l'enseignant. Il détaille la réponse attendue et le raisonnement à valoriser pour chaque question.*
+
 
 ---
 
@@ -30,7 +30,7 @@ def preparer_etiquette(prix):
 preparer_etiquette(19.90)
 # Prix à afficher : 20 euros
 ```
-Point clé à valoriser : utilisation de `round()` directement sur le float, sans passer par `str`. Une réponse utilisant `int(prix + 0.5)` peut être acceptée si l'élève explique la limite (ne fonctionne pas pour les négatifs) ; c'est l'occasion de rappeler que `round()` est la fonction adaptée pour arrondir.
+Point clé à observer : utilisation de `round()` directement sur le float, sans passer par `str`. Une réponse utilisant `int(prix + 0.5)` peut être acceptée (mais ne fonctionne pas pour les négatifs) ; c'est l'occasion de rappeler que `round()` est la fonction adaptée pour arrondir.
 
 ---
 
@@ -54,7 +54,7 @@ print(anonymiser('Dupont'))
 Points clés à valoriser :
 - usage du slicing `nom[-2:]` (index négatif vu dans le cours) pour récupérer les deux derniers caractères ;
 - construction d'une nouvelle chaîne avec `*` (répétition) et `+` (concaténation), sans tentative de modification en place ;
-- une solution utilisant `nom[:-2]` remplacé caractère par caractère dans une boucle est correcte mais moins élégante — à signaler sans pénaliser si le résultat est juste.
+- une solution utilisant `nom[:-2]` remplacé caractère par caractère dans une boucle est correcte mais moins élégante.
 
 ---
 

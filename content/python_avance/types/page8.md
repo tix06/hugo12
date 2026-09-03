@@ -8,7 +8,7 @@ weight: 6
 
 # Fiche d'exercices : variables et types natifs
 
-*Cette fiche complète le [TD types simples](../TD_types_simples/). Elle s'appuie sur le [cours](../page1/). Chaque exercice est court et peut se faire au stylo (en prédisant le résultat) avant vérification à l'IDE.*
+*Cette fiche s'appuie sur le [cours avancé](../page1/) ainsi que certaines notions du cours [python débutant](/python_bases/). Chaque exercice est court et peut se faire au stylo (en prédisant le résultat) avant vérification à l'IDE.*
 
 ---
 
@@ -122,7 +122,7 @@ Pour la chaîne `phrase = "  Les Chaines De Caracteres En Python  "`, écris (au
 
 ## Exercice 8 — f-strings
 
-Réécris chacune des lignes suivantes en utilisant une f-string :
+Réécris chacun des `print` suivants en utilisant une f-string :
 
 ```python
 nom = "Turing"
@@ -141,11 +141,12 @@ On dispose de la chaîne suivante, représentant une date au format ISO :
 d = "2024-09-02"
 ```
 
-1. En utilisant le **slicing**, extrais séparément l'année, le mois et le jour dans trois variables `annee`, `mois`, `jour`.
+1. En utilisant le **slicing** `d[a:b]`, extrais séparément l'année, le mois et le jour dans trois variables `annee`, `mois`, `jour`.
 2. Propose une seconde solution utilisant la méthode `split`.
 3. Laquelle des deux méthodes te semble la plus robuste si le format de date changeait (par exemple un jour à un seul chiffre) ? Justifie.
 
 # Suite
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page6" icon="palette" style="tip" %}}TP1{{% /button %}} Types simples
+{{% button href="../page7" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
 ##### {{% button href="../page8" icon="palette" style="important" %}}TD1{{% /button %}} Variables et types natifs
