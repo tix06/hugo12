@@ -7,7 +7,7 @@ weight: 7
   
 
 
-Cette page aborde les notions avancées sur les types construits (listes, tuples, dictionnaires). Il peut être nécessaire de consulter les *notions de base* sur les : [listes](/python_bases/boucles/page2/).
+Cette page aborde les notions avancées sur les types construits (listes, tuples, dictionnaires). Il peut être nécessaire de consulter les *notions de base* sur les : [boucles](/python_bases/boucles/page5/) et [listes](/python_bases/boucles/page2/).
 
 
 Après la lecture, on traitera le [TP sur les variables](../page3/) utilisant *Pythontutor*.
@@ -110,6 +110,17 @@ M
 # affiche [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 ``` 
 
+## Appartenance
+On utilise le mot-clé `in`. Le test retourne `True` ou `False`
+
+```python
+aeroports = ['CDG','ORY','LIS']
+'ORY' in aeroports
+# retourne True
+'NY' in aeroports
+# retourne False
+```
+
 ## Méthodes de listes
 
 
@@ -204,10 +215,12 @@ etats[:2] # sans specifier le premier indice
 etats[3:] # sans specifier l'indice de fin
 # affiche ['PL', 'RO', 'SK'] # jusqu'à la fin
 ```
-### copie d'une liste
+### Copie d'une liste
 Une *copie* d'une liste permet d'utiliser le contenu de la liste copiée sans affecter la liste d'origine (voir [TP sur les variables](../page3/)). C'est une copie par *valeurs*.
 
-Pour copier une liste, on peut : 
+*Attention:* L'instruction $L1 = L2$ est à eviter lorsque l'on veut copier une liste.
+
+A la place, on peut : 
 
 * la découper sans mentionner les 2 indices:
 
@@ -215,12 +228,20 @@ Pour copier une liste, on peut :
 etats = ['CH','GB','NL','PL']
 mes_etats = etats[:] # liste copiée par valeur dans mes_etats
 ``` 
-* ou bien utiliser la fonction `list`: 
+* utiliser la fonction `list`: 
 
 ```python
 etats = ['CH','GB','NL','PL']
 mes_etats = list(etats) # liste copiée par valeur dans mes_etats
 ```
+
+* utiliser la fonction `copy`:
+
+```python
+etats = ['CH','GB','NL','PL']
+mes_etats = etats.copy()
+```
+
 On peut alors vérifier qu'il s'agit maintenant d'une copie par valeurs :
 
 ```python
@@ -248,7 +269,7 @@ Puis:
 
 ```python
 L
-# affiche [9, 5, 1, 3, 4]
+# affiche toujours [9, 5, 1, 3, 4]
 ```
 
 * La méthode **sort** permet de trier la liste en place.
@@ -273,6 +294,16 @@ print(choice(L))
 
 Affiche un élément au hasard: 1, 10, 100 ou 1000.
 
+### Vider une liste
+
+On utilise la méthode `clear()`
+
+```python
+L = [9, 5, 1, 3, 4]
+L.clear()
+print(L)
+# Affiche []
+```
 
 # Tuples
 Un *tuple* est entouré de **parenthèses** `( )`
@@ -449,9 +480,8 @@ Sans cette *astuce*, la copie se ferait par **référence** (Dictionnaire = muta
 
 
 
-
-
-
+### Vider un dictionnaire
+On peut aussi aussi utiliser la méthode `clear()`
 
 
 # Objets mutables et non mutables

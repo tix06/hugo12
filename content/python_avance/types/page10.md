@@ -193,4 +193,5 @@ with open('datas/classe.csv', newline='') as csvfile:
 ```
 
 # Suite
-* Exercice d'application : [manipuler la table des pays](../page5/) (copie, recherche, tri, dictionnaires).
+##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux

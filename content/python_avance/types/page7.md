@@ -1,6 +1,6 @@
 ---
-Title : TD - types simples (corrigé)
-description: corrigé du TD sur int, float, str, bool
+Title : TP1 - types simples (corrigé)
+description: corrigé des scripts du TP1
 hidden: true
 weight: 6
 ---

@@ -14,7 +14,7 @@ weight: 6
 
 ## Exercice 1 — `None`
 
-```python
+```python{title="ex1.py", lineNos=true}
 def verifier_age(age):
     if age >= 18:
         return "majeur"
@@ -74,7 +74,7 @@ round(3.14159, 3)
 
 ## Exercice 5 — typage dynamique et affectation multiple
 
-```python
+```python{title="ex5.py", lineNos=true}
 a = 5
 print(type(a))
 a = "cinq"
@@ -92,7 +92,7 @@ print(x, y)
 
 ## Exercice 6 — références, `id`, `is` et `==`
 
-```python
+```python{title="ex6.py", lineNos=true}
 a = "bonjour"
 b = "bonjour"
 c = a
@@ -124,7 +124,7 @@ Pour la chaîne `phrase = "  Les Chaines De Caracteres En Python  "`, écris (au
 
 Réécris chacun des `print` suivants en utilisant une f-string :
 
-```python
+```python{title="ex8.py", lineNos=true}
 nom = "Turing"
 annee = 1912
 print("Nom : " + nom + ", né en " + str(annee))
@@ -150,3 +150,6 @@ d = "2024-09-02"
 ##### {{% button href="../page6" icon="palette" style="tip" %}}TP1{{% /button %}} Types simples
 {{% button href="../page7" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
 ##### {{% button href="../page8" icon="palette" style="important" %}}TD1{{% /button %}} Variables et types natifs
+{{% button href="../page13" icon="lightbulb" style="tip" %}}Corrigé du TD1{{% /button %}}
+
+

@@ -9,7 +9,7 @@ weight: 10
 
 
 
-
+*Certains exercices abordent des notions du cours [python - les bases](/python_bases/boucles/page2/)*
 
 
 
@@ -66,7 +66,7 @@ for  i in  range(11):
 
 * **Question a2:** Comment avez vous complété les `...`? Comment feriez-vous pour compléter les valeurs de la table de 7?
 
-> Ecrire l'instruction en compréhension de liste qui construit la liste L. (voir cours sur les types sequentiels > listes > [comprehension de liste](/docs/python/pages/variables/page2/))
+> Ecrire l'instruction en compréhension de liste qui construit la liste L. (voir cours python avancé)
 
 ## Ex 2: Energie en sciences physiques
 On donne les listes de relevés du temps et de la vitesse pour un mobile. 
@@ -94,12 +94,12 @@ for v in vitesse:
   E.append(...)
 ```
 
-> Ecrire l'instruction en compréhension de liste qui construit la liste E. (voir cours sur les types sequentiels > listes > [comprehension de liste](/docs/python/pages/variables/page2/))
+> Ecrire l'instruction en compréhension de liste qui construit la liste E. 
 
 * **Question b:** Recopier le script sur votre feuille.
 
 
-* **Question c:** Afficher le graphique de l'Energie cinétique E au cours du temps. (abscisses: t, ordonnées: E). Recopier le script entier dans votre cahier. Identifier dans le script les parties qui servent à:
+* **Question c:** Afficher le [graphique](/python_bases/boucles/page2/#tracer-un-graphique-y--fx) de l'Energie cinétique E au cours du temps. (abscisses: t, ordonnées: E). Recopier le script entier dans votre cahier. Identifier dans le script les parties qui servent à:
   * déclarer des variables et des listes
   * calculer les termes d'une liste avec une boucle bornée
   * importer un module
@@ -281,6 +281,14 @@ capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
 # Suite
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
+{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
+<!--
+{{% button href="../page14" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
+-->
 ##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
 ##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
+{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}
+<!--
+{{% button href="../page11" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}
+-->
 ##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux

@@ -17,32 +17,33 @@
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
-    <meta property="article:modified_time" content="2026-08-24T19:43:32+02:00">
+    <meta property="article:modified_time" content="2026-09-03T17:50:28+02:00">
     <meta itemprop="name" content="Fiche d&#39;exercices - variables et types :: allophysique">
     <meta itemprop="description" content="exercices courts sur None, bool, math, references, methodes de chaines">
-    <meta itemprop="dateModified" content="2026-08-24T19:43:32+02:00">
-    <meta itemprop="wordCount" content="545">
+    <meta itemprop="dateModified" content="2026-09-03T17:50:28+02:00">
+    <meta itemprop="wordCount" content="562">
     <title>Fiche d&#39;exercices - variables et types :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788450171" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788450171" defer></script>
-    <script src="/js/search-lunr.js?1788450171" defer></script>
-    <script src="/js/search.js?1788450171" defer></script>
+    <link href="/images/logo.png?1788775191" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1788775191" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788775191" defer></script>
+    <script src="/js/search-lunr.js?1788775191" defer></script>
+    <script src="/js/search.js?1788775191" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788450171";
+      window.relearn.index_js_url="/searchindex.en.js?1788775191";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788450171" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788450171" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788450171" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788450171" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788775191" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788775191" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788775191" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788775191" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788450171" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788450171" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788450171" rel="stylesheet">
-    <link href="/css/theme.css?1788450171" rel="stylesheet">
-    <link href="/css/format-html.css?1788450171" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788775191" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788775191" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788775191" rel="stylesheet">
+    <link href="/css/theme.css?1788775191" rel="stylesheet">
+    <link href="/css/format-html.css?1788775191" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -177,15 +178,36 @@
 <p><em>Cette fiche s&rsquo;appuie sur le <a href="../page1/">cours avancé</a> ainsi que certaines notions du cours <a href="/python_bases/index.html">python débutant</a>. Chaque exercice est court et peut se faire au stylo (en prédisant le résultat) avant vérification à l&rsquo;IDE.</em></p>
 <hr>
 <h2 id="exercice-1--none">Exercice 1 — <code>None</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">verifier_age</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;majeur&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># pas d&#39;instruction return si age &lt; 18</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">resultat</span> <span class="o">=</span> <span class="n">verifier_age</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span></span></span></code></pre></div>
-<p>Sans exécuter : que vont afficher les deux <code>print</code> ? Justifie en une phrase.</p>
+<div class="tab-panel" data-tab-group="R-tabs-cc030e707dd7d8a288963837bd4eb39d">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      aria-controls="R-tab-id-dffbd0eedacb7eb4ba9c5f66f25e452d" aria-expanded="true"
+      data-tab-item="R-tab-2fd05825bb5a840d886af7e2400dfdb5"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('R-tabs-cc030e707dd7d8a288963837bd4eb39d','R-tab-2fd05825bb5a840d886af7e2400dfdb5')"
+    >
+      <span class="tab-nav-text">ex1.py</span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      id="R-tab-id-dffbd0eedacb7eb4ba9c5f66f25e452d"
+      data-tab-item="R-tab-2fd05825bb5a840d886af7e2400dfdb5"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">def</span> <span class="nf">verifier_age</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">        <span class="k">return</span> <span class="s2">&#34;majeur&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">    <span class="c1"># pas d&#39;instruction return si age &lt; 18</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">resultat</span> <span class="o">=</span> <span class="n">verifier_age</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">resultat</span><span class="p">))</span></span></span></code></pre></div>
+      </div>
+    </div>
+  </div>
+</div><p>Sans exécuter : que vont afficher les deux <code>print</code> ? Justifie en une phrase.</p>
 <hr>
 <h2 id="exercice-2--bool-un-sous-type-de-int">Exercice 2 — <code>bool</code>, un sous-type de <code>int</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Sans exécuter, donne la valeur de chacune des expressions suivantes :</p>
@@ -211,27 +233,69 @@
 <p><em>Remarque : <code>round(2.5)</code> te surprendra peut-être — Python utilise l&rsquo;arrondi &ldquo;au pair le plus proche&rdquo;, pas l&rsquo;arrondi classique. Cherche pourquoi si le résultat ne correspond pas à ton intuition.</em></p>
 <hr>
 <h2 id="exercice-5--typage-dynamique-et-affectation-multiple">Exercice 5 — typage dynamique et affectation multiple<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;cinq&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
-<ol>
+<div class="tab-panel" data-tab-group="R-tabs-bfeea9d586df2d10b7b87ab61b316f53">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      aria-controls="R-tab-id-489df8434fbc73bb642a2ed7ef743fb4" aria-expanded="true"
+      data-tab-item="R-tab-591a5a14cda76068edace73b8752d86b"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('R-tabs-bfeea9d586df2d10b7b87ab61b316f53','R-tab-591a5a14cda76068edace73b8752d86b')"
+    >
+      <span class="tab-nav-text">ex5.py</span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      id="R-tab-id-489df8434fbc73bb642a2ed7ef743fb4"
+      data-tab-item="R-tab-591a5a14cda76068edace73b8752d86b"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;cinq&#34;</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span></span></span></code></pre></div>
+      </div>
+    </div>
+  </div>
+</div><ol>
 <li>Que produisent les deux premiers <code>print</code> ? Quelle notion du cours cela illustre-t-il ?</li>
 <li>La ligne <code>x, y = y, x = 1, 2</code> est syntaxiquement valide : il s&rsquo;agit d&rsquo;une <strong>affectation chaînée</strong> (<code>cible1 = cible2 = expression</code>), combinée à l&rsquo;affectation multiple vue dans le cours. Sans exécuter, prédis ce qu&rsquo;affiche <code>print(x, y)</code>. <em>Indice : l&rsquo;expression <code>1, 2</code> n&rsquo;est évaluée qu&rsquo;une seule fois, puis affectée à chaque cible.</em></li>
 <li>Ecris cette expression de manière plus conventionnelle, en 2 lignes.</li>
 </ol>
 <hr>
 <h2 id="exercice-6--références-id-is-et-">Exercice 6 — références, <code>id</code>, <code>is</code> et <code>==</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;bonjour&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="s2">&#34;bonjour&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span></span></span></code></pre></div>
-<ol>
+<div class="tab-panel" data-tab-group="R-tabs-c0489e778e1c22a7c3afb581940a1655">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      aria-controls="R-tab-id-ecdde7d98bd16669b731db2fb2204037" aria-expanded="true"
+      data-tab-item="R-tab-313b7addda782f6b00bed94b38fb555e"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('R-tabs-c0489e778e1c22a7c3afb581940a1655','R-tab-313b7addda782f6b00bed94b38fb555e')"
+    >
+      <span class="tab-nav-text">ex6.py</span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      id="R-tab-id-ecdde7d98bd16669b731db2fb2204037"
+      data-tab-item="R-tab-313b7addda782f6b00bed94b38fb555e"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="s2">&#34;bonjour&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="s2">&#34;bonjour&#34;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span></span></span></code></pre></div>
+      </div>
+    </div>
+  </div>
+</div><ol>
 <li>Prédis le résultat des deux <code>print</code>.</li>
 <li>Explique avec tes mots la différence entre <code>==</code> et <code>is</code>.</li>
 <li>Que donnent les tests <code>id(a) == id(b)</code>, et <code>id(a) == id(c)</code> ? Expliquer.</li>
@@ -249,11 +313,32 @@
 <hr>
 <h2 id="exercice-8--f-strings">Exercice 8 — f-strings<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Réécris chacun des <code>print</code> suivants en utilisant une f-string :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s2">&#34;Turing&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="mi">1912</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nom : &#34;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&#34;, né en &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">annee</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">annee</span><span class="p">))</span></span></span></code></pre></div>
-<hr>
+<div class="tab-panel" data-tab-group="R-tabs-5fd483ba912ebb9f83d670d8bb584342">
+  <div class="tab-nav">
+    <div class="tab-nav-title">&#8203;</div>
+    <button
+      aria-controls="R-tab-id-fa07fed5c23a23e9abf60673ddd6f732" aria-expanded="true"
+      data-tab-item="R-tab-733ce4d0ba96f62ffb870b1bde1bef08"
+      class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
+      onclick="switchTab('R-tabs-5fd483ba912ebb9f83d670d8bb584342','R-tab-733ce4d0ba96f62ffb870b1bde1bef08')"
+    >
+      <span class="tab-nav-text">ex8.py</span>
+    </button>
+  </div>
+  <div class="tab-content-container">
+    <div
+      id="R-tab-id-fa07fed5c23a23e9abf60673ddd6f732"
+      data-tab-item="R-tab-733ce4d0ba96f62ffb870b1bde1bef08"
+      class="tab-content tab-panel-style cstyle initial active">
+      <div class="tab-content-text">
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">nom</span> <span class="o">=</span> <span class="s2">&#34;Turing&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="mi">1912</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nom : &#34;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s2">&#34;, né en &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">annee</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> a </span><span class="si">{}</span><span class="s2"> ans&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="mi">2024</span> <span class="o">-</span> <span class="n">annee</span><span class="p">))</span></span></span></code></pre></div>
+      </div>
+    </div>
+  </div>
+</div><hr>
 <h2 id="exercice-9--parser-une-chaîne">Exercice 9 — parser une chaîne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>On dispose de la chaîne suivante, représentant une date au format ISO :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="s2">&#34;2024-09-02&#34;</span></span></span></code></pre></div>
@@ -263,14 +348,15 @@
 <li>Laquelle des deux méthodes te semble la plus robuste si le format de date changeait (par exemple un jour à un seul chiffre) ? Justifie.</li>
 </ol>
 <h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode388s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page1"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode388s1hbhb-types-simples"><span class="btn cstyle button tip interactive"><a href="../page6"><i class="fa-fw fas fa-palette"></i> <span class="title">TP1</span></a></span> Types simples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode407s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page1"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode407s1hbhb-types-simples"><span class="btn cstyle button tip interactive"><a href="../page6"><i class="fa-fw fas fa-palette"></i> <span class="title">TP1</span></a></span> Types simples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 <span class="btn cstyle button tip interactive"><a href="../page7"><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TP1</span></a></span>
-<h5 id="hahahugoshortcode388s3hbhb-variables-et-types-natifs"><span class="btn cstyle button important interactive"><a href="../page8"><i class="fa-fw fas fa-palette"></i> <span class="title">TD1</span></a></span> Variables et types natifs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode407s3hbhb-variables-et-types-natifs"><span class="btn cstyle button important interactive"><a href="../page8"><i class="fa-fw fas fa-palette"></i> <span class="title">TD1</span></a></span> Variables et types natifs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<span class="btn cstyle button tip interactive"><a href="../page13"><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TD1</span></a></span>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
-              <i class='fa-fw fas fa-calendar'></i> 24 août 2026
+              <i class='fa-fw fas fa-calendar'></i> 3 sept. 2026
   </footer>
 </article>
         </div>
@@ -281,7 +367,7 @@
       <div id="R-header-wrapper" class="default-animation">
         <a id="R-logo" class="R-default direction-row" href="/index.html">
           <span class="logo-image default-animation" data-r-logo-variant="relearn-dark relearn-light zen-dark zen-light">
-<img class="border lazy figure-image" loading="lazy" src="/images/_logo_anime.gif" style="height: auto;width: auto;">
+<img class="border lazy figure-image" loading="lazy" src="/images/logo.png" style="height: auto;width: auto;">
           </span>
           <span class="logo-title default-animation">allophysique</span>
         </a>
@@ -628,9 +714,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788450171"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788450171" defer></script>
-    <script src="/js/theme.js?1788450171" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788775191"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788775191" defer></script>
+    <script src="/js/theme.js?1788775191" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

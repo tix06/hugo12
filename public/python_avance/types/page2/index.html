@@ -21,28 +21,29 @@
     <meta itemprop="name" content="types construits :: allophysique">
     <meta itemprop="description" content="listes, tuples, dictionnaires, méthodes">
     <meta itemprop="dateModified" content="2026-08-24T19:43:32+02:00">
-    <meta itemprop="wordCount" content="2008">
+    <meta itemprop="wordCount" content="2090">
     <title>types construits :: allophysique</title>
-    <link href="/css/auto-complete/auto-complete.min.css?1788465871" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788465871" defer></script>
-    <script src="/js/search-lunr.js?1788465871" defer></script>
-    <script src="/js/search.js?1788465871" defer></script>
+    <link href="/images/logo.png?1788775613" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1788775613" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1788775613" defer></script>
+    <script src="/js/search-lunr.js?1788775613" defer></script>
+    <script src="/js/search.js?1788775613" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788465871";
+      window.relearn.index_js_url="/searchindex.en.js?1788775613";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788465871" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788465871" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788465871" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788465871" defer></script>
+    <script src="/js/lunr/lunr.min.js?1788775613" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1788775613" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1788775613" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1788775613" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788465871" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788465871" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788465871" rel="stylesheet">
-    <link href="/css/theme.css?1788465871" rel="stylesheet">
-    <link href="/css/format-html.css?1788465871" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1788775613" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788775613" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788775613" rel="stylesheet">
+    <link href="/css/theme.css?1788775613" rel="stylesheet">
+    <link href="/css/format-html.css?1788775613" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -121,6 +122,7 @@
         <li><a href="#construire-une-liste-par-compréhension">Construire une liste par compréhension</a></li>
       </ul>
     </li>
+    <li><a href="#appartenance">Appartenance</a></li>
     <li><a href="#méthodes-de-listes">Méthodes de listes</a>
       <ul>
         <li><a href="#append">append</a></li>
@@ -135,9 +137,10 @@
     <li><a href="#autres-manipulations-de-listes">Autres manipulations de listes</a>
       <ul>
         <li><a href="#découpe-dune-liste">découpe d&rsquo;une liste</a></li>
-        <li><a href="#copie-dune-liste">copie d&rsquo;une liste</a></li>
+        <li><a href="#copie-dune-liste">Copie d&rsquo;une liste</a></li>
         <li><a href="#trier-une-liste">Trier une liste</a></li>
         <li><a href="#choix-dun-élément-aléatoire-dans-une-liste">Choix d&rsquo;un élément aléatoire dans une liste.</a></li>
+        <li><a href="#vider-une-liste">Vider une liste</a></li>
       </ul>
     </li>
   </ul>
@@ -151,10 +154,14 @@
         <li><a href="#toutes-les-valeurs">Toutes les valeurs</a></li>
         <li><a href="#tous-les-items-clévaleur">Tous les items clé:valeur</a></li>
         <li><a href="#modifier-le-contenu">Modifier le contenu</a></li>
-        <li><a href="#appartenance">Appartenance</a></li>
+        <li><a href="#appartenance-1">Appartenance</a></li>
       </ul>
     </li>
-    <li><a href="#copier-un-dictionnaire">Copier un dictionnaire</a></li>
+    <li><a href="#copier-un-dictionnaire">Copier un dictionnaire</a>
+      <ul>
+        <li><a href="#vider-un-dictionnaire">Vider un dictionnaire</a></li>
+      </ul>
+    </li>
   </ul>
 
   <ul>
@@ -214,7 +221,7 @@
 
 <h1 id="types-construits">types construits</h1>
 
-<p>Cette page aborde les notions avancées sur les types construits (listes, tuples, dictionnaires). Il peut être nécessaire de consulter les <em>notions de base</em> sur les : <a href="/python_bases/boucles/page2/index.html">listes</a>.</p>
+<p>Cette page aborde les notions avancées sur les types construits (listes, tuples, dictionnaires). Il peut être nécessaire de consulter les <em>notions de base</em> sur les : <a href="/python_bases/boucles/page5/index.html">boucles</a> et <a href="/python_bases/boucles/page2/index.html">listes</a>.</p>
 <p>Après la lecture, on traitera le <a href="../page3/">TP sur les variables</a> utilisant <em>Pythontutor</em>.</p>
 <h1 id="les-structures-de-données-et-les-types-construits">Les structures de données et les types construits<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Les <em>structures de données</em> définissent la manière avec laquelle sont stockées les données dans un langage.</p>
@@ -292,6 +299,13 @@
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">M</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
 </span></span><span class="line"><span class="cl"><span class="n">M</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche [[0, 0, 0], [0, 0, 0], [0, 0, 0]]</span></span></span></code></pre></div>
+<h2 id="appartenance">Appartenance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On utilise le mot-clé <code>in</code>. Le test retourne <code>True</code> ou <code>False</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">aeroports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CDG&#39;</span><span class="p">,</span><span class="s1">&#39;ORY&#39;</span><span class="p">,</span><span class="s1">&#39;LIS&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;ORY&#39;</span> <span class="ow">in</span> <span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne True</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;NY&#39;</span> <span class="ow">in</span> <span class="n">aeroports</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne False</span></span></span></code></pre></div>
 <h2 id="méthodes-de-listes">Méthodes de listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Pour commencer, rappelons comment retrouver la liste des méthodes définies sur le type <code>list</code> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span></span></span></code></pre></div>
@@ -351,19 +365,25 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;CH&#39;, &#39;GB&#39;] # commence au début</span>
 </span></span><span class="line"><span class="cl"><span class="n">etats</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span> <span class="c1"># sans specifier l&#39;indice de fin</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche [&#39;PL&#39;, &#39;RO&#39;, &#39;SK&#39;] # jusqu&#39;à la fin</span></span></span></code></pre></div>
-<h3 id="copie-dune-liste">copie d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="copie-dune-liste">Copie d&rsquo;une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Une <em>copie</em> d&rsquo;une liste permet d&rsquo;utiliser le contenu de la liste copiée sans affecter la liste d&rsquo;origine (voir <a href="../page3/">TP sur les variables</a>). C&rsquo;est une copie par <em>valeurs</em>.</p>
-<p>Pour copier une liste, on peut :</p>
+<p><em>Attention:</em> L&rsquo;instruction $L1 = L2$ est à eviter lorsque l&rsquo;on veut copier une liste.</p>
+<p>A la place, on peut :</p>
 <ul>
 <li>la découper sans mentionner les 2 indices:</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="n">etats</span><span class="p">[:]</span> <span class="c1"># liste copiée par valeur dans mes_etats</span></span></span></code></pre></div>
 <ul>
-<li>ou bien utiliser la fonction <code>list</code>:</li>
+<li>utiliser la fonction <code>list</code>:</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">etats</span><span class="p">)</span> <span class="c1"># liste copiée par valeur dans mes_etats</span></span></span></code></pre></div>
+<ul>
+<li>utiliser la fonction <code>copy</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">etats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CH&#39;</span><span class="p">,</span><span class="s1">&#39;GB&#39;</span><span class="p">,</span><span class="s1">&#39;NL&#39;</span><span class="p">,</span><span class="s1">&#39;PL&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">mes_etats</span> <span class="o">=</span> <span class="n">etats</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></span></span></code></pre></div>
 <p>On peut alors vérifier qu&rsquo;il s&rsquo;agit maintenant d&rsquo;une copie par valeurs :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mes_etats</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;DK&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">mes_etats</span>
@@ -381,7 +401,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche [1, 3, 4, 5, 9]</span></span></span></code></pre></div>
 <p>Puis:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche [9, 5, 1, 3, 4]</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche toujours [9, 5, 1, 3, 4]</span></span></span></code></pre></div>
 <ul>
 <li>La méthode <strong>sort</strong> permet de trier la liste en place.</li>
 </ul>
@@ -395,6 +415,12 @@
 </span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">L</span><span class="p">))</span></span></span></code></pre></div>
 <p>Affiche un élément au hasard: 1, 10, 100 ou 1000.</p>
+<h3 id="vider-une-liste">Vider une liste<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On utilise la méthode <code>clear()</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Affiche []</span></span></span></code></pre></div>
 <h1 id="tuples">Tuples<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Un <em>tuple</em> est entouré de <strong>parenthèses</strong> <code>( )</code></p>
 <p>On accède à l&rsquo;un des éléments à l&rsquo;aide de son indice, comme pour les listes.</p>
@@ -493,13 +519,15 @@ référencés sont eux-mêmes figés.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span> <span class="n">capitales</span><span class="p">[</span><span class="s1">&#39;Egypte&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">capitales</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche {&#39;France&#39;: &#39;Paris&#39;, &#39;Italie&#39;: &#39;Rome&#39;}</span></span></span></code></pre></div>
-<h3 id="appartenance">Appartenance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="appartenance-1">Appartenance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">key</span> <span class="ow">in</span> <span class="n">dic</span> <span class="c1"># Renvoie True ou False, selon que key est ou non une cle</span>
 </span></span><span class="line"><span class="cl"><span class="n">val</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="c1"># Renvoie True ou False, selon que val est ou non une valeur</span></span></span></code></pre></div>
 <h2 id="copier-un-dictionnaire">Copier un dictionnaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>On peut utiliser la fonction <code>dict</code> pour faire une copie par <em>valeur</em> d&rsquo;un dictionnaire :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mes_capitales</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">capitales</span><span class="p">)</span></span></span></code></pre></div>
 <p>Sans cette <em>astuce</em>, la copie se ferait par <strong>référence</strong> (Dictionnaire = mutable)</p>
+<h3 id="vider-un-dictionnaire">Vider un dictionnaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On peut aussi aussi utiliser la méthode <code>clear()</code></p>
 <h1 id="objets-mutables-et-non-mutables">Objets mutables et non mutables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>En Python, il existe deux types d’objets: les <strong>mutables</strong> (listes, dictionnaires, sets, objets customisés) et les <strong>non mutables</strong> (string, int, float, bool, tuple, None).</p>
 <p>Les <strong>mutables</strong> sont ceux qu’on peut modifier après leur création. Les non mutables sont ceux qu’on ne peut pas modifier après création.</p>
@@ -545,11 +573,11 @@ référencés sont eux-mêmes figés.</p>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">modifier</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="mi">2</span></span></span></code></pre></div>
 <h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode201s1hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode201s2hbhb-decouverte-du-cours"><span class="btn cstyle button tip interactive"><a href="../page9"><i class="fa-fw fas fa-palette"></i> <span class="title">TP2</span></a></span> decouverte du cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode201s3hbhb-les-types-construits-les-copies-par-valeur-et-reference-sur-pythontutor"><span class="btn cstyle button important interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TD2a</span></a></span> les types construits, les copies par valeur et reference sur Pythontutor<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode201s4hbhb-le-parcours-de-liste-compréhension-de-liste-et-tracé-graphique"><span class="btn cstyle button important interactive"><a href="../page4"><i class="fa-fw fas fa-palette"></i> <span class="title">TD2b</span></a></span> le parcours de liste, compréhension de liste et tracé graphique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode201s5hbhb-les-tableaux"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3</span></a></span> les tableaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode415s1hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode415s2hbhb-decouverte-du-cours"><span class="btn cstyle button tip interactive"><a href="../page9"><i class="fa-fw fas fa-palette"></i> <span class="title">TP2</span></a></span> decouverte du cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode415s3hbhb-les-types-construits-les-copies-par-valeur-et-reference-sur-pythontutor"><span class="btn cstyle button important interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TD2a</span></a></span> les types construits, les copies par valeur et reference sur Pythontutor<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode415s4hbhb-le-parcours-de-liste-compréhension-de-liste-et-tracé-graphique"><span class="btn cstyle button important interactive"><a href="../page4"><i class="fa-fw fas fa-palette"></i> <span class="title">TD2b</span></a></span> le parcours de liste, compréhension de liste et tracé graphique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode415s5hbhb-les-tableaux"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3</span></a></span> les tableaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -564,7 +592,7 @@ référencés sont eux-mêmes figés.</p>
       <div id="R-header-wrapper" class="default-animation">
         <a id="R-logo" class="R-default direction-row" href="/index.html">
           <span class="logo-image default-animation" data-r-logo-variant="relearn-dark relearn-light zen-dark zen-light">
-<img class="border lazy figure-image" loading="lazy" src="/images/_logo_anime.gif" style="height: auto;width: auto;">
+<img class="border lazy figure-image" loading="lazy" src="/images/logo.png" style="height: auto;width: auto;">
           </span>
           <span class="logo-title default-animation">allophysique</span>
         </a>
@@ -910,9 +938,9 @@ référencés sont eux-mêmes figés.</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788465871"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788465871" defer></script>
-    <script src="/js/theme.js?1788465871" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788775613"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788775613" defer></script>
+    <script src="/js/theme.js?1788775613" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

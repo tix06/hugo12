@@ -275,3 +275,7 @@ Le script de la question 4 doit être réécrit à la main pour chaque pays : ce
 
 *Pour aller plus loin :* la fonction native `zip` permet d'associer deux listes élément par élément et simplifie beaucoup ce genre de construction (`dict(zip(etiquettes[1:], ligne[1:]))`). Si le temps le permet, cherchez sa documentation et proposez une version de `pays_dict` qui l'utilise.
 
+# Suite
+##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux
+

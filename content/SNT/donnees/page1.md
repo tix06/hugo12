@@ -13,7 +13,7 @@ L'apparition des grandes civilisations commence alors que le néolithique prend 
 
 
 
-{{< img src="../images/carte.png" alt="IREM Lille" caption="Carte du monde. IREM Lille" >}}
+{{< img src="../images/carte.png" alt="IREM Lille" caption="Carte perforée. IREM Lille" >}}
 # La naissance de l'écriture... et du nombre
 
 Dans les temps préhistoriques, les hommes ont eu besoin de recourir à une numération. Ils ont naturellement utilisé des artefacs pour compter (des objets, des os...). L'écriture n'existait pas. 

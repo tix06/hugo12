@@ -226,11 +226,13 @@ class str(object)
  | ...
 ``` 
 
-*Remarque:* pour construire une chaine à partir de valeurs de variables, la syntaxe moderne et recommandée est la **f-string**, plus lisible que `format` ou la concaténation avec `+` :
+### construire une chaine avec une f-string
+pour construire une chaine à partir de valeurs de variables, la syntaxe moderne et recommandée est la **f-string**, plus lisible que `format` ou la concaténation avec `+` :
 
 ```python
 nom, age = 'Ada', 36
-f"{nom} a {age} ans"
+chaine = f"{nom} a {age} ans"
+print(chaine)
 # affiche 'Ada a 36 ans'
 ```
 
@@ -287,7 +289,7 @@ Les méthodes `lstrip()` (à gauche), `rstrip()` (droite), et `strip()` (à droi
 > à tester vous-même : 
 
 ```python
-nom = 'charles babbage'
+nom = ' charles babbage '
 nom.strip()
 ```
 
