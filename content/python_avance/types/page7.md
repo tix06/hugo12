@@ -70,7 +70,7 @@ Erreur de caisse
 
 **Q3.** Version attendue :
 ```python
-if round(compte, 2) == 0.3:
+if round(compte, 1) == 0.3:
     print("Le compte est bon")
 else:
     print("Erreur de caisse")

@@ -551,4 +551,3 @@ def modifier():
 ##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
 ##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
 ##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
-##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux

@@ -10,27 +10,27 @@ Vous traiterez chacun des exemples suivants en utilisant l'editeur de  [pythontu
 
 > Saisir les 2 lignes de code suivantes : 
 
-{{< img src="../images/pythontutor1.png" >}}
+{{< img src="../images/pythontutor1.png" width="400" >}}
 > Cliquer sur **Visualize execution**.
 
-{{< img src="../images/pythontutor2.png" >}}
+{{< img src="../images/pythontutor2.png" width="400" >}}
 > Dérouler alors le script ligne par ligne avec **next**.
 
 ## créer des tests sur l'identité des variables
 
 > Revenir à la page d'edition et ajouter à la suite du script les 3 tests suivants : 
 
-{{< img src="../images/pythontutor3.png" >}}
+{{< img src="../images/pythontutor3.png" width="400" >}}
 > Executer le programme
 
 Chaque test ajouté est une assertion, qui arrête le programme lorsque l'un des tests retourne `False`. Sinon, le programme poursuit normalement, sans rien signaler.
 
 L'interêt est plus grand si on ajoute un commentaire explicite. C'est le message qui serait normalement affiché dans le `Traceback` de la console. (trace d'erreur).
 
-{{< img src="../images/pythontutor4.png" >}}
+{{< img src="../images/pythontutor4.png" width="400" >}}
 Si le programme s'arrête sur un test renvoyant `False`, mais que l'on veut poursuivre les autres tests, il faudra mettre la ligne du test en commentaire:
 
-{{< img src="../images/pythontutor5.png" >}}
+{{< img src="../images/pythontutor5.png" width="400" >}}
 
 
 **Question a:** Quelles expressions donnent `True`.
@@ -81,7 +81,7 @@ print(resultat)
 
 > Tester ce script avec l'editeur de Pythontutor.
 
-**Question e:** `x` et `z`, sont-ils 2 objets identiques?
+**Question e:** `x` et `z`, sont-ils 2 objets identiques? Montrez le.
 
 
 ## Objets mutables : copie par référence
@@ -244,6 +244,6 @@ Reproduire sommairement le schéma de la structure de données telle qu'elle ser
 ##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
 ##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
 ##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
-##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux
+
 
 

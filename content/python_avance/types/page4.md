@@ -183,7 +183,17 @@ Les caractères seront les clés du dictionnaire, et les entiers, les valeurs co
 
 On souhaite que `D` soit constitué de: `{"A":1,"B":2,"C":3}`
 
-> Adapter le script précédent pour construire `D` à partir des éléments de `T`.
+> 1. Adapter le script précédent pour construire `D` à partir des éléments de `T`:
+
+```python
+T = (("A",1),("B",2),("C",3))
+D = {}
+for elem in T:
+  D[..] = 
+print(D)
+# affiche {"A": 1,"B": 2,"C": 3}
+```
+
 
 On peut aussi construire un dictionnaire par compréhension, en une seule ligne.
 
@@ -196,7 +206,7 @@ On peut aussi construire un dictionnaire par compréhension, en une seule ligne.
 {0: 'a', 1: 'b', 2: 'c'}
 ```
 
-> Construire le dictionnaire `D` par compréhension de dictionnaire.
+> 2. Construire le dictionnaire `D` par compréhension de dictionnaire.
 
 
 ## Ex 5: Méthodes de listes — gérer un plan de vols
@@ -208,7 +218,7 @@ aeroports = ['CDG', 'ORY', 'LIS']
 
 * **Question a:** Un nouveau vol dessert New-York. Ajouter `'JFK'` **en fin** de liste, avec la méthode adéquate.
 
-* **Question b:** Un vol vers Londres-City doit être inséré **juste après** `'ORY'` (en 3e position), sans reconstruire toute la liste. Quelle méthode utiliser ? Écrire l'instruction.
+* **Question b:** Un vol vers Londres-City `'LCY'` doit être inséré **juste après** `'ORY'` (en 3e position), sans reconstruire toute la liste. Quelle méthode utiliser ? Écrire l'instruction.
 
 * **Question c:** Le vol vers `'LIS'` est annulé : supprimer cet aéroport de la liste (méthode `remove`).
 
@@ -281,7 +291,7 @@ capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
 # Suite
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
+{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP2{{% /button %}}
 <!--
 {{% button href="../page14" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
 -->
@@ -291,4 +301,4 @@ capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
 <!--
 {{% button href="../page11" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}
 -->
-##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux
+

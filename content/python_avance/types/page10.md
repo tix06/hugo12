@@ -63,9 +63,12 @@ Pour une liste « plate », on évite ce piège avec `original[:]` ou `list(orig
 
 ```python
 donnees = table[1:]           # copie de la liste externe
-donnees[0][1] = 0
+# donnees vaut [['France', 5660000, 112, 7],... ['Grèce', 700000, 119, 6]]
+donnees[1][1] = 0
 table[1][1]
-# affiche 0  !! table a été modifiée alors qu'on n'a modifié que "donnees"
+# affiche 0 !! table a été modifiée alors qu'on n'a modifié que "donnees"
+table
+# [['Pays',  'Nb élèves secondaire',...], ['France', 0, 112, 7],... ['Grèce', 700000, 119, 6]]
 ```
 
 `table[1:]` crée bien une **nouvelle liste externe**, mais ses éléments — les lignes — restent les **mêmes objets** que dans `table`. C'est une copie dite *de surface* (*shallow copy*) : seul le premier niveau est dupliqué.
@@ -86,7 +89,10 @@ Rechercher, par exemple, le pays ayant le plus grand nombre d'élèves (colonne 
 
 ```python
 meilleure_ligne = table[1]
+# meilleure_ligne vaut ["France", 5660000, 112, 7]
 for ligne in table[2:]:
+    # a la premiere iteration
+    # ligne[1] vaut 55660000
     if ligne[1] > meilleure_ligne[1]:
         meilleure_ligne = ligne
 
@@ -194,4 +200,6 @@ with open('datas/classe.csv', newline='') as csvfile:
 
 # Suite
 ##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
-##### {{% button href="../page5" icon="palette" style="tip" %}}TP3{{% /button %}} les tableaux
+##### {{% button href="../page5" icon="palette" style="tip" %}}TP3a{{% /button %}} Tableur
+##### {{% button href="../page51" icon="palette" style="tip" %}}TP3b{{% /button %}} Tableau de notes et algorithmes (Visualisation)
+##### {{% button href="../page52" icon="palette" style="tip" %}}TP3c{{% /button %}} Systemes scolaires européens
