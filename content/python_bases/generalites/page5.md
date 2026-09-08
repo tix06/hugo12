@@ -9,7 +9,7 @@ Au choix:
 
 * Ouvrir une console python dans *winpython > python QTConsole*
 
-{{< img src="/images/qtconsole.png" >}}
+{{< img src="/images/qtconsole.png" width="400" >}}
 
 * Ouvrir un shell python: dans *Pyzo* ou *Spyder* par exemple.
 

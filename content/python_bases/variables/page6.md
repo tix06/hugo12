@@ -8,7 +8,7 @@ weight: 4
 Ouvrir dans *winpython > python QTConsole*
 
 
-{{< img src="/images/qtconsole.png" >}}
+{{< img src="/images/qtconsole.png" width="400" >}}
 
 
 

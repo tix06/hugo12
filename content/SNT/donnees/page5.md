@@ -53,7 +53,7 @@ Ce sont:
 
 Même des données supposées *anonymes* peuvent nous identifier car il existe souvent une *clé de correspondance* qui peut nous identifier.
 
-{{< img src="../images/video_DCP.png" link="https://youtu.be/6t9Lds5zxZk?si=MBQ7gT8JPrOcnG8r" width="300" >}}
+{{< img src="../images/video_DCP.png" link="https://youtu.be/6t9Lds5zxZk?si=MBQ7gT8JPrOcnG8r" width="300" caption="Cash Investigation, le mythe de l'anonymisation" >}}
 
 # Identité numérique
 L'identité est construite à partir de *données à caractère personnel.*
