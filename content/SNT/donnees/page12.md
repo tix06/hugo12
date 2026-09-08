@@ -18,6 +18,27 @@ Vous enquêtez sur cet accident. Vous diposez d'une base de données comprenant:
 Tous ces fichiers sont mis dans le même{{< a link="../datas/enquete.xls" caption="classeur à télécharger ici" >}}
 {{< img src="../images/classeur.png" caption="extrait du classeur" >}}
 
+## Tuto Excel
+### Rechercher une information
+Vous recherchez un procès verbal qui contient le mot *voiture*, ou *accident*, ou encore *pieton*.
+
+Le fichier peut être long à lire, alors utilisez les fonctions de recherche du logiciel:
+
+1. Cliquer sur le repère de la colonne
+2. Dans les fonctions du logiciel, choisir *Rechercher et remplacer > Rechercher* (on peut s'aider du menu *Aide*). Placer alors votre mot-clé *voiture* dans les paramètres de recherche
+3. Sélectionner une à une toute les lignes qui contiennent *voiture* en appuyant sur *Suivant*
+
+{{< img src="../images/police1.png" >}}
+
+### Placer des informations dans une feuille Excel
+Au cours de l'enquête, vous aurez besoin de mémoriser des informations. Utiliser une nouvelle page du fichier en appuyant sur `+` en bas de page.
+
+{{< img src="../images/police2.png" width="600" >}}
+
+Puis remplir vos informations dans la feuille:
+
+{{< img src="../images/police3.png" width="400" >}}
+
 # Travail (à rendre sur feuille)
 ## A. Questions sur l'enquête
 1. Quels renseignements relevez-vous dans la page témoignages du fichier? 

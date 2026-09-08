@@ -53,12 +53,14 @@ Ce sont:
 
 Même des données supposées *anonymes* peuvent nous identifier car il existe souvent une *clé de correspondance* qui peut nous identifier.
 
+{{< img src="../images/video_DCP.png" link="https://youtu.be/6t9Lds5zxZk?si=MBQ7gT8JPrOcnG8r" width="300" >}}
+
 # Identité numérique
 L'identité est construite à partir de *données à caractère personnel.*
 
 * L'exercice du droit d'une personne passe par la justification de l'*identité administrative* de la personne (nom, prenom, date de naissance, etc...).
 
-{{< img src="../images/rgpd1.png" link="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on" caption="Infographie du RGPD - site de la CNIL" >}}
+{{< img src="../images/rgpd1.png" link="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on" caption="Infographie du RGPD - site de la CNIL" width="400" >}}
 * *Identité sur le net*: Sur internet, la majorité des utilisateurs ne communiquent pas leur identité administrative. Ils donnent un *pseudo*, un mot de passe, un email. Le site associe souvent leur adresse IP à ces données. Ce qui constitue aussi une identité numérique.
 
 # Comment sont collectées nos données personnelles
@@ -73,11 +75,11 @@ Pour utiliser des services sur le net, on doit en contrepartie donner son accord
 
 Lorsque l'on installe une application, un logiciel, un driver pour un objet connecté, on est souvent obligé d'accepter le contrat sur les Conditions Générales d'Utilisation (CGU).
 
-{{< img src="../images/cgu1.png" >}}
+{{< img src="../images/cgu1.png" width="300" >}}
 
 De même, pour accéder à la plupart des sites d'information, on est obligé d'accepter en grande partie les cookies du site, qui vont enregistrer et partager certaines de nos données.
 
-{{< img src="../images/cgu2.png" >}}
+{{< img src="../images/cgu2.png" width="400" >}}
 
 Les données nous concernant peuvent aussi être cédées de manière: 
 
@@ -85,7 +87,7 @@ Les données nous concernant peuvent aussi être cédées de manière:
 
 Pour résumer:
 
-{{< img src="../images/CNIL0.png" caption="extrait d'une affiche sur le site de la CNIL" >}}
+{{< img src="../images/CNIL0.png" caption="extrait d'une affiche sur le site de la CNIL" width="600" >}}
 
 <!--
 # La CNIL
@@ -110,7 +112,7 @@ Par recoupement de plusieurs informations (publications, enregistrement par des 
 
 Un ordinateur, ou bien une personne qui a accès à certaines données *indirectes* qui me concernent, peut retrouver mon identité.
 
-{{< img src="../images/vecna.png" link="https://youtu.be/k74OrOTkCuQ" caption="extrait de l'Ep2 S04, recherche dans la base de données d'une boutique de location de films" >}}
+{{< img src="../images/vecna.png" link="https://youtu.be/k74OrOTkCuQ" caption="extrait de l'Ep2 S04, recherche dans la base de données d'une boutique de location de films" width="400" >}}
 
 ## Enjeux pour l'usager
 Aujourd'hui, l'aspiration des individus, en termes de protection de leur vie privée est de pouvoir utiliser les services technologiques d'internet, de s'exposer personnellement (reseaux sociaux), tout en cédant une partie acceptable de leurs données personnelles. Cette part cédée doit rester raisonnable et être négociée par contrat avec les opérateurs économiques.
@@ -188,7 +190,7 @@ C'est la convergence technologique et la traçabilité qui permet d'intensifier 
 
 C'est un document qui donne un cadre légal à l'utilisation des données dans l'UE et contraint les organismes publics ou privés à certaines obligations. C'est un texte plus général que celui sur la loi *informatique et libertés*.
 
-{{< img src="../images/rgpd3.png" link="https://www.cnil.fr/fr/rgpd-par-ou-commencer" caption="Le RGPD - affiche de la CNIL" >}}
+{{< img src="../images/rgpd3.png" link="https://www.cnil.fr/fr/rgpd-par-ou-commencer" caption="Le RGPD - affiche de la CNIL" width="400" >}}
 Il s'agit d'un texte long (plusieurs centaines de pages), fruit de la concertation de 28 états membres de l'Europe. Ce texte est complexe à dechiffrer. Un des rôles de la CNIL est de produire des{{< a link="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on" caption="documents et textes" >}}
 *Extraits:*
 
@@ -206,7 +208,7 @@ Mais, encore plus préoccupant, ce sont les données rendues publiques par les i
 
 Les reseaux sociaux et les clouds gratuits exploitent grandement ces données, qu'ils collectent massivement.
 
-{{< img src="../images/donnees_perso1.png" link="https://youtu.be/ULEIqIsTpmc?si=jwVqkmSIMd3crRvi" caption="paramétrer son smartphone pour éviter la fuite de ses données" >}}
+{{< img src="../images/donnees_perso1.png" link="https://youtu.be/ULEIqIsTpmc?si=jwVqkmSIMd3crRvi" caption="paramétrer son smartphone pour éviter la fuite de ses données" width="400" >}}
 
 Il est essentiel de connaitre les risques et d'adopter une attitude modérée lorsque l'on utilise ces outils.
 <!--
@@ -234,12 +236,12 @@ Les personnes que vous suivez, les pages que vous *likez*, ... sont autant d'inf
 ## Données de Géolocalisation
 Il s'agit d'un exemple de données personnelles indirectement nominatives. Celles-ci contribuent aussi à fournir une information sur la personne (habitude, travail, consultation de médecin)...
 
-{{< img src="/images/video.png" link="https://youtu.be/fTXvU1aBhSw?si=ncgEK1OqL-Jk8y7I" caption="Données personnelles, Google vous suit à la trace - FranceTV info" >}}
+{{< img src="/images/video.png" link="https://youtu.be/fTXvU1aBhSw?si=ncgEK1OqL-Jk8y7I" caption="Données personnelles, Google vous suit à la trace - FranceTV info" width="400" >}}
 
 *Il existe cependant quelques gestes et attitudes qui peuvent limiter nos traces numériques, ainsi que la confidentialité des données que l'on échange.*
 
 # Questions-reponses
-{{< img src="../images/pizza.png" caption="une entreprise peut-elle être tenue responsable du vol des données de ses clients?" >}}
+{{< img src="../images/pizza.png" caption="une entreprise peut-elle être tenue responsable du vol des données de ses clients?" width="400" >}}
 
 
 Q/R issu du site [europe-consommateurs.eu](https://www.europe-consommateurs.eu/achats-internet/protection-des-donnees-personnelles.html)
