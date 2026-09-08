@@ -26,7 +26,7 @@ print(m)
 
 Lien: [pythontutor](https://pythontutor.com/render.html#code=list1%20%3D%20%5B%22%22,12.0,14.5,10.0,18.5%5D%0A%0Adef%20moyenne%28L%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20x%20in%20L%3A%0A%20%20%20%20%20%20%20%20s%2B%3Dx%0A%20%20%20%20return%20s/len%28L%29%0A%20%20%20%20%0Am%20%3D%20moyenne%28list1%5B1%3A%5D%29%0Aprint%28m%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
 
-{{< img src="../images/pythontutor_list.png" caption="nom et valeur des variables dans pythontutor - liste" >}}
+{{< img src="../images/pythontutor_list.png" caption="nom et valeur des variables dans pythontutor - liste" width="400" >}}
 
 > 1a. Commenter le schéma ci-dessus: que signifient les flèches? Que signifient les cases bleues et jaunes?
 
@@ -81,7 +81,7 @@ m = round(moyenne(eleve[2:]),2)
 print(m)
 ```
 
-{{< img src="../images/pythontutor_notes.png" caption="nom et valeur des variables dans pythontutor - tableau" >}}
+{{< img src="../images/pythontutor_notes.png" caption="nom et valeur des variables dans pythontutor - tableau" width="600" >}}
 
 > 3a. Commenter le schéma ci-dessus: que signifient les flèches? Que signifient les cases bleues et jaunes?
 
@@ -126,7 +126,7 @@ Deux options sont possibles pour organiser votre dossier et vos fichiers:
 * Vous pouvez placer *classe.csv* dans le même dossier que le fichier python: Depuis le script python, ouvrez le alors avec l'instruction `with open('classe.csv', newline='') as csvfile:`
 * ou bien dans un sous dossier `datas`. Il faudra adapter le script pour préciser le schemin.
 
-{{< img src="../images/exc16.png" >}}
+{{< img src="../images/exc16.png" width="400" >}}
 
 
 Ajouter le script suivant:

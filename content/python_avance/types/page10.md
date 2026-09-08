@@ -10,7 +10,7 @@ weight: 12
 
 Une grande partie des données que l'on manipule en informatique se présentent sous forme de **tables** : un ensemble d'enregistrements (une ligne par individu, par mesure, par pays...), chacun décrit par les mêmes attributs (les colonnes). C'est le cas d'une feuille de tableur, d'une table de base de données, ou d'un fichier `.csv`.
 
-# Modéliser une table avec des listes
+## Modéliser une table avec des listes
 La structure la plus simple pour représenter une table en Python est une **liste de listes** : chaque ligne de la table est elle-même une liste.
 
 Par convention, on place souvent en première ligne les **étiquettes de colonnes** (le nom de chaque attribut), puis une ligne par individu :
@@ -54,6 +54,43 @@ for ligne in table[1:]:
     for j in range(len(ligne)):
         print(table[0][j], ":", ligne[j])
     print("---")
+```
+
+## Traitement des données en ligne
+Pour les exemples qui suivent, le traitement des données d'une table porte sur ses valeurs numériques. Par exemple, avec la somme des données de chaque ligne et leur affichage:
+
+Le parcours de la table entière nécéssite d'utiliser deux boucles imbriquées, afin de parcourir toutes les lignes (indice `i`), et toutes les colonnes de chaque ligne (indice `j`).
+
+```python
+datas = [[5660000, 112, 7],
+    [6900000, 65, 9],
+    [3500000, 105, 6],
+    [700000, 119, 6]]
+
+for i in range(len(datas)):
+    # on initialise s à chaque nouvelle ligne
+    s = 0
+    for j in range(len(datas[0])):
+        s = s + datas[i][j]
+    # on affiche s a la fin de chaque ligne
+    print(s)
+```
+
+## Traitement de données en colonne
+
+```python
+datas = [[5660000, 112, 7],
+    [6900000, 65, 9],
+    [3500000, 105, 6],
+    [700000, 119, 6]]
+
+for j in range(len(datas[0])):
+    # on initialise s à chaque nouvelle colonne
+    s = 0
+    for i in range(len(datas)):
+        s = s + datas[i][j]
+    # on affiche s a la fin de chaque colonne
+    print(s)
 ```
 
 # Copier une table

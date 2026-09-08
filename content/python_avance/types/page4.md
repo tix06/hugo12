@@ -291,10 +291,9 @@ capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
 # Suite
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page9" icon="palette" style="tip" %}}TP2{{% /button %}} decouverte du cours
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP2{{% /button %}}
-<!--
-{{% button href="../page14" icon="lightbulb" style="tip" %}}Corrigé du TP1{{% /button %}}
--->
+
+{{% button href="../page14" icon="lightbulb" style="tip" %}}Corrigé du TP2{{% /button %}}
+
 ##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
 ##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
 {{% button href="" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}

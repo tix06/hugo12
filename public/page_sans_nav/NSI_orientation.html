@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcours Post-Bac NSI — Nice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface2: #1c2330;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent2: #3fb950;
+      --accent3: #f78166;
+      --accent4: #d2a8ff;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --parcoursup: #1f6feb;
+      --horsParcours: #388bfd;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1f38 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 24px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(88,166,255,.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(88,166,255,.12);
+      border: 1px solid rgba(88,166,255,.3);
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 30px;
+      font-size: 1.05rem;
+    }
+    .badges {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+    }
+    .dot-blue  { background: var(--accent); }
+    .dot-green { background: var(--accent2); }
+    .dot-red   { background: var(--accent3); }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      margin-top: 52px;
+    }
+    .section-header:first-child { margin-top: 0; }
+    .section-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .section-subtitle {
+      font-size: .88rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .parcoursup-badge {
+      margin-left: auto;
+      background: rgba(31,111,235,.15);
+      border: 1px solid rgba(31,111,235,.35);
+      color: #79c0ff;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .hors-badge {
+      margin-left: auto;
+      background: rgba(248,81,73,.12);
+      border: 1px solid rgba(248,81,73,.3);
+      color: #ffa198;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      transition: border-color .2s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--card-accent, var(--accent));
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .card:hover::before { opacity: 1; }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .card-options {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .opt-tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      font-size: .75rem;
+      padding: 2px 9px;
+      border-radius: 6px;
+      color: var(--muted);
+    }
+
+    /* ── SINGLE-COLUMN LIST ── */
+    .cards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color .2s;
+    }
+    .card-row:hover { border-color: var(--accent); }
+    .card-row-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .card-row-body { flex: 1; }
+    .card-row-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .card-row-desc { font-size: .88rem; color: var(--muted); }
+    .card-row-meta {
+      margin-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+    .meta-tag {
+      font-size: .75rem;
+      padding: 2px 9px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--muted);
+    }
+    .meta-tag.green  { border-color: rgba(63,185,80,.35); color: #7ee787; background: rgba(63,185,80,.08); }
+    .meta-tag.blue   { border-color: rgba(88,166,255,.35); color: #79c0ff; background: rgba(88,166,255,.08); }
+    .meta-tag.orange { border-color: rgba(247,129,102,.35); color: #ffa657; background: rgba(247,129,102,.08); }
+    .meta-tag.purple { border-color: rgba(210,168,255,.35); color: #d2a8ff; background: rgba(210,168,255,.08); }
+    .meta-tag.red    { border-color: rgba(248,81,73,.35); color: #ffa198; background: rgba(248,81,73,.08); }
+
+    /* ── ALERT ── */
+    .alert {
+      background: rgba(88,166,255,.07);
+      border: 1px solid rgba(88,166,255,.25);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 16px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .alert strong { color: var(--accent); }
+
+    /* ── SEPARATOR ── */
+    .sep {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── LINKS ── */
+    /* Technique : lien positionné en absolu sur toute la carte */
+    .card, .card-row {
+      position: relative;
+    }
+    .card-link-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      z-index: 1;
+      cursor: pointer;
+    }
+    /* Indicateur ↗ sur le titre */
+    .card-link-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+    }
+    .card-link-title::after {
+      content: "↗";
+      font-size: .72em;
+      opacity: 0;
+      transition: opacity .2s, color .2s;
+      color: var(--accent);
+    }
+    .card:hover .card-link-title::after,
+    .card-row:hover .card-link-title::after {
+      opacity: 1;
+    }
+    .card:hover .card-link-title,
+    .card-row:hover .card-link-title {
+      color: var(--accent);
+    }
+
+    @media (max-width: 600px) {
+      .section-header { flex-wrap: wrap; }
+      .parcoursup-badge, .hors-badge { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-tag">Orientation post-bac · Terminale NSI</div>
+  <h1>Tes parcours après le <span>Bac NSI</span></h1>
+  <p>Licences, BUT, BTS, prépas, écoles spécialisées… un tour d'horizon complet des formations en lien avec l'informatique et le numérique.</p>
+  <div class="badges">
+    <div class="badge"><span class="dot dot-blue"></span> Sur Parcoursup</div>
+    <div class="badge"><span class="dot dot-red"></span> Hors Parcoursup</div>
+    <div class="badge"><span class="dot dot-green"></span> Présent à Nice / Côte d'Azur</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ─── LICENCES ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(88,166,255,.12); color:var(--accent);">🎓</div>
+    <div>
+      <h2>Licences (Bac+3)</h2>
+      <div class="section-subtitle">Université Nice Côte d'Azur et autres établissements publics</div>
+    </div>
+    <div class="parcoursup-badge">Parcoursup ✓</div>
+  </div>
+
+  <div class="cards">
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://upinfo.univ-cotedazur.fr/licence/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence Informatique</div>
+      <div class="card-desc">Formation généraliste et solide en algorithmique, programmation, systèmes, réseaux et mathématiques. Débouche sur Master ou école d'ingénieurs.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod=18405" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence Mathématiques-Informatique</div>
+      <div class="card-desc">Double compétence mathématiques et informatique. Idéal si tu aimes la rigueur formelle et l'algorithmique avancée.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://upinfo.univ-cotedazur.fr/licence/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence MIASHS</div>
+      <div class="card-desc">Mathématiques et Informatique Appliquées aux Sciences Humaines et Sociales. Stats, data, programmation, sciences sociales.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://univ-cotedazur.fr/formation/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence Mathématiques</div>
+      <div class="card-desc">Recommandée si tu envisages une prépa ou un master très mathématisé (cryptographie, IA formelle…). Forte composante algo.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://univ-cotedazur.fr/formation/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence Électronique, Énergie Électrique, Automatique (EEA)</div>
+      <div class="card-desc">Pour les profils attirés par l'embarqué, la robotique ou les systèmes matériels. Forte connexion avec l'informatique industrielle.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent)">
+      <a class="card-link-overlay" href="https://univ-cotedazur.fr/formation/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">Licence Sciences pour l'Ingénieur</div>
+      <div class="card-desc">Pluridisciplinaire (mécanique, électronique, info). Bonne passerelle vers les écoles d'ingénieurs.</div>
+    </div>
+  </div>
+
+  <div class="alert">
+    <span class="alert-icon">💡</span>
+    <span>L'Université Nice Côte d'Azur propose la <strong>Licence Informatique</strong> et la <strong>Licence MIASHS</strong> directement sur le campus de Nice. Vérifie les intitulés exacts dans ton espace Parcoursup.</span>
+  </div>
+
+
+  <!-- ─── BUT ─── -->
+  <hr class="sep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(63,185,80,.12); color:var(--accent2);">🏫</div>
+    <div>
+      <h2>BUT à l'IUT (Bac+3 en 3 ans)</h2>
+      <div class="section-subtitle">Institut Universitaire de Technologie — IUT Nice Côte d'Azur</div>
+    </div>
+    <div class="parcoursup-badge">Parcoursup ✓</div>
+  </div>
+
+  <div class="cards">
+    <div class="card" style="--card-accent:var(--accent2)">
+      <a class="card-link-overlay" href="https://butinfo.univ-cotedazur.fr/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">BUT Informatique</div>
+      <div class="card-desc">Le parcours phare pour les NSI. Très professionnel, avec 5 parcours de spécialisation.</div>
+      <div class="card-options">
+        <span class="opt-tag">Réalisation d'applications</span>
+        <span class="opt-tag">Déploiement d'applications</span>
+        <span class="opt-tag">Administration des systèmes et réseaux</span>
+        <span class="opt-tag">Gestion des données</span>
+        <span class="opt-tag">Intégration des SI</span>
+      </div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent2)">
+      <a class="card-link-overlay" href="https://iut.univ-cotedazur.fr/departements-et-formations/reseaux-et-telecommunications/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">BUT Réseaux et Télécommunications</div>
+      <div class="card-desc">Infrastructure réseau, cybersécurité, IoT, communications. Débouchés forts dans les entreprises numériques.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent2)">
+      <a class="card-link-overlay" href="https://iut.univ-cotedazur.fr/departements-et-formations/statistique-et-informatique-decisionnelle/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">BUT Science des Données</div>
+      <div class="card-desc">Data science, statistiques, machine learning, visualisation. Très porteur sur le marché de l'emploi.</div>
+    </div>
+    <div class="card" style="--card-accent:var(--accent2)">
+      <a class="card-link-overlay" href="https://iut.univ-cotedazur.fr/departements-et-formations/genie-electrique-et-informatique-industrielle/" target="_blank" rel="noopener"></a>
+      <div class="card-title card-link-title">BUT Génie Électrique et Informatique Industrielle (GEII)</div>
+      <div class="card-desc">Systèmes embarqués, automatisme, électronique et info industrielle. Pour les profils hardware + software.</div>
+    </div>
+  </div>
+
+
+  <!-- ─── BTS ─── -->
+  <hr class="sep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(210,168,255,.12); color:var(--accent4);">📋</div>
+    <div>
+      <h2>BTS (Bac+2)</h2>
+      <div class="section-subtitle">Lycées publics et privés, dont lycées niçois</div>
+    </div>
+    <div class="parcoursup-badge">Parcoursup ✓</div>
+  </div>
+
+  <div class="cards-list">
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-services-informatiques-aux-organisations-option-b-solutions-logicielles-et-applications-metiers" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">💻</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">BTS Services Informatiques aux Organisations (SIO)</div>
+        <div class="card-row-desc">Deux spécialités au choix selon ton profil : développement logiciel ou infrastructure réseau.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag purple">Option SLAM — Solutions Logicielles et Applications Métiers</span>
+          <span class="meta-tag blue">Option SISR — Solutions d'Infrastructure, Systèmes et Réseaux</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-cybersecurite-informatique-et-reseaux-electronique-option-a-informatique-et-reseaux" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">⚡</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">BTS Systèmes Numériques</div>
+        <div class="card-row-desc">Systèmes embarqués, électronique et informatique industrielle.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag blue">Option A — Informatique et Réseaux</span>
+          <span class="meta-tag orange">Option B — Électronique et Communication</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-cybersecurite-informatique-et-reseaux-electronique-option-a-informatique-et-reseaux" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🔒</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">BTS Cybersécurité, Informatique et Réseaux, Électronique (CIREN)</div>
+        <div class="card-row-desc">Nouveau BTS créé pour répondre aux besoins croissants en cybersécurité. Systèmes, réseaux et sécurité informatique.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">Nouveau BTS</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/bts-conception-et-realisation-de-systemes-automatiques" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🤖</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">BTS Conception et Réalisation de Systèmes Automatiques (CRSA)</div>
+        <div class="card-row-desc">Systèmes automatisés, robotique, programmation de systèmes de contrôle-commande.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── PRÉPAS ─── -->
+  <hr class="sep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(247,129,102,.12); color:var(--accent3);">📐</div>
+    <div>
+      <h2>Classes Préparatoires aux Grandes Écoles (CPGE)</h2>
+      <div class="section-subtitle">Lycées publics niçois et régionaux</div>
+    </div>
+    <div class="parcoursup-badge">Parcoursup ✓</div>
+  </div>
+
+  <div class="cards-list">
+    <div class="card-row" style="border-color:rgba(247,129,102,.25)">
+      <a class="card-link-overlay" href="https://prepas.org/?article=42" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">⭐</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">MP2I — Mathématiques, Physique, Informatique et Sciences de l'Ingénieur</div>
+        <div class="card-row-desc">La prépa <strong>idéale pour les NSI</strong>. Créée en 2021, elle consacre une vraie place à l'informatique dès la 1re année. Débouche sur la MPI (Mathématiques, Physique, Informatique) en 2e année, puis les grandes écoles d'informatique et d'ingénieurs.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">⭐ Recommandée NSI</span>
+          <span class="meta-tag orange">Bac+2 → grandes écoles</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://prepas.org/?article=99" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">📊</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">MPSI — Mathématiques, Physique et Sciences de l'Ingénieur</div>
+        <div class="card-row-desc">Prépa classique très exigeante. L'option informatique (ISN/NSI) est valorisée. Débouche sur MP (avec forte option info) ou PSI.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag blue">Exigeante en maths</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://prepas.org/?article=99" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🔧</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">PTSI — Physique, Technologie et Sciences de l'Ingénieur</div>
+        <div class="card-row-desc">Profil plus technologique, adapté aux élèves à l'aise avec la physique appliquée et les systèmes. Informatique présente dans le cursus.</div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://prepas.org/?article=99" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">📈</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">ECG — Économie et Gestion (option Mathématiques)</div>
+        <div class="card-row-desc">Pour les profils souhaitant combiner management et numérique. Accès aux grandes écoles de commerce avec spécialisation data/digital.</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── ÉCOLES SPÉCIALISÉES PARCOURSUP ─── -->
+  <hr class="sep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(88,166,255,.12); color:var(--accent);">🏢</div>
+    <div>
+      <h2>Écoles spécialisées — présentes sur Parcoursup</h2>
+      <div class="section-subtitle">Accessible depuis Nice ou en région</div>
+    </div>
+    <div class="parcoursup-badge">Parcoursup ✓</div>
+  </div>
+
+  <div class="cards-list">
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://www.epitech.eu/ecole-informatique-nice/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🖥️</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">Epitech — Programme Grande École (5 ans)</div>
+        <div class="card-row-desc">Grande école d'informatique, campus à Nice (quartier des Arénas). Pédagogie par projets, forte insertion pro. Programme en 5 ans avec visa ministériel.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag green">Campus Nice</span>
+          <span class="meta-tag blue">Bac+5 — visa MESRI</span>
+          <span class="meta-tag orange">Sur concours</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://esra.edu/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🎬</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">ESRA Côte d'Azur — Études Supérieures en Réalisation Audiovisuelle</div>
+        <div class="card-row-desc">École privée de cinéma et audiovisuel. Formations en réalisation, son, animation 3D. Site à Nice + Cannes. Diplômes visés Bac+3 (DESRA). À noter : lien avec l'informatique graphique, effets spéciaux et sound design.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag green">Campus Nice / Cannes</span>
+          <span class="meta-tag purple">Réalisation · Son · Animation 3D</span>
+          <span class="meta-tag blue">Diplôme visé Bac+3</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row">
+      <a class="card-link-overlay" href="https://ecole-ipssi.com/ecole-informatique-nice/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🌐</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">IRIS Nice — BTS SIO et Formations Bachelor/Mastère</div>
+        <div class="card-row-desc">École d'informatique privée à Nice. BTS SIO accessible via Parcoursup, mais candidatures directes acceptées toute l'année. Formations en alternance disponibles du BTS au Mastère.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag green">Campus Nice</span>
+          <span class="meta-tag blue">BTS SIO · Bachelor · Mastère</span>
+          <span class="meta-tag orange">Alternance possible</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── HORS PARCOURSUP ─── -->
+  <hr class="sep">
+  <div class="section-header">
+    <div class="section-icon" style="background:rgba(248,81,73,.1); color:var(--accent3);">🔓</div>
+    <div>
+      <h2>Écoles hors Parcoursup à Nice et en région</h2>
+      <div class="section-subtitle">Candidature directe auprès de l'établissement</div>
+    </div>
+    <div class="hors-badge">Hors Parcoursup !</div>
+  </div>
+
+  <div class="alert" style="margin-bottom: 20px;">
+    <span class="alert-icon">⚠️</span>
+    <span>Ces formations recrutent en dehors de Parcoursup. Cela signifie que tu peux candidater <strong>en parallèle</strong> de Parcoursup, ou comme solution complémentaire. Renseigne-toi directement auprès de chaque école. Les frais de scolarité sont généralement élevés (privé).</span>
+  </div>
+
+  <div class="cards-list">
+    <div class="card-row" style="border-color:rgba(248,81,73,.25)">
+      <a class="card-link-overlay" href="https://www.epitech.eu/ecole-informatique-nice/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🖥️</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">Epitech Nice — Programme Bachelor (3 ans)</div>
+        <div class="card-row-desc">Programme court en informatique, hors Parcoursup. Même campus que le Grande École à l'Arénas. Pédagogie par projets, alternance en 3e année. Admission sur dossier + tests de logique + entretien.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">Hors Parcoursup</span>
+          <span class="meta-tag green">Campus Nice</span>
+          <span class="meta-tag blue">Bac+3 · Alternance en 3e année</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row" style="border-color:rgba(248,81,73,.25)">
+      <a class="card-link-overlay" href="https://ecole-ipssi.com/ecole-informatique-nice/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🔐</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">IPSSI Nice — Bachelor Informatique & Cybersécurité</div>
+        <div class="card-row-desc">École privée spécialisée en informatique, IA et cybersécurité. Accessible dès le bac, hors Parcoursup. Formations reconnues par l'État (BTS SIO, Bachelor, Mastère). Pédagogie hybride (50% présentiel / 50% distanciel). Rentrée décalée possible.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">Hors Parcoursup</span>
+          <span class="meta-tag green">Campus Nice</span>
+          <span class="meta-tag orange">IA · Cybersécurité · Cloud</span>
+          <span class="meta-tag blue">Du BTS au Bac+5</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row" style="border-color:rgba(248,81,73,.25)">
+      <a class="card-link-overlay" href="https://esra.edu/" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🎥</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">ESRA Côte d'Azur — Animation 3D / VFX / Sound Design</div>
+        <div class="card-row-desc">Certaines formations de l'ESRA (notamment en animation 3D et son) peuvent être accessibles hors Parcoursup selon les années. La dimension numérique est forte : compositing, VFX, design sonore pour jeux vidéo et cinéma. À vérifier directement auprès de l'école.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">Vérifier selon l'année</span>
+          <span class="meta-tag green">Campus Nice / Cannes</span>
+          <span class="meta-tag purple">Animation 3D · VFX · Sound Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-row" style="border-color:rgba(248,81,73,.25)">
+      <a class="card-link-overlay" href="https://42.fr" target="_blank" rel="noopener"></a>
+      <div class="card-row-icon">🎮</div>
+      <div class="card-row-body">
+        <div class="card-row-title card-link-title">Autres écoles du numérique en France (non présentes à Nice)</div>
+        <div class="card-row-desc">42 (Paris, gratuit, sélection par Piscine), ESGI, HETIC, WIS, Supinfo, EEMI... Ces écoles recrutent hors Parcoursup. Certaines sont accessibles à distance ou proposent des campus à Lyon, Marseille, Paris.</div>
+        <div class="card-row-meta">
+          <span class="meta-tag red">Hors Parcoursup</span>
+          <span class="meta-tag orange">Non présentes à Nice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ─── CONSEIL FINAL ─── -->
+  <hr class="sep" style="margin-bottom:32px">
+
+  <div class="alert" style="background:rgba(63,185,80,.07); border-color:rgba(63,185,80,.25);">
+    <span class="alert-icon">🧭</span>
+    <div>
+      <strong style="color:#7ee787">Conseils pour choisir</strong><br>
+      <span style="color:var(--muted)">
+        Si tu veux des maths et de l'informatique de haut niveau → <strong style="color:var(--text)">MP2I ou Licence Informatique</strong>.<br>
+        Si tu préfères un parcours pro et concret → <strong style="color:var(--text)">BUT Informatique ou BTS SIO</strong>.<br>
+        Si tu es passionné(e) par le code et l'entrepreneuriat → <strong style="color:var(--text)">Epitech</strong>.<br>
+        Si le numérique créatif t'attire (jeux vidéo, effets spéciaux) → <strong style="color:var(--text)">ESRA Animation 3D ou IPSSI</strong>.
+      </span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Document réalisé pour les élèves de Terminale NSI · Informations à vérifier sur <a href="https://www.parcoursup.fr" target="_blank">parcoursup.fr</a> et auprès de chaque établissement · Mise à jour 2025–2026
+</footer>
+
+</body>
+</html>
