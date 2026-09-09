@@ -31,11 +31,11 @@ Le fichier peut être long à lire, alors utilisez les fonctions de recherche du
 {{< img src="../images/police1.png" >}}
 
 ### Placer des informations dans une feuille Excel
-Au cours de l'enquête, vous aurez besoin de mémoriser des informations. Utiliser une nouvelle page du fichier en appuyant sur `+` en bas de page.
+Au cours de l'enquête, vous aurez **besoin** de mémoriser des informations, et de les **placer dans un tableau**. Utiliser une nouvelle page du fichier en appuyant sur `+` en bas de page.
 
 {{< img src="../images/police2.png" width="600" >}}
 
-Puis remplir vos informations dans la feuille:
+Puis **remplir** vos informations dans la feuille:
 
 {{< img src="../images/police3.png" width="400" >}}
 
@@ -43,7 +43,7 @@ Puis remplir vos informations dans la feuille:
 ## A. Questions sur l'enquête
 1. Quels renseignements relevez-vous dans la page témoignages du fichier? 
 2. Comment utilisez-vous les renseignements donnés par les différentes pages du fichier pour identifier le-s suspect-s? Préciser le lien existant  entre chaque page du fichier?
-3. Quels sont les suspects identifiés? (remplir un tableau)
+3. Quels sont les suspects identifiés? *(remplir un tableau sur Excel et le montrer au professeur).*
 4. Quel est alors le PRINCIPAL suspect? Pourquoi?
 5. L'enquête à partir de ces fichiers va-t-elle, à coup sûr, permettre de désigner le coupable? Expliquez
 
