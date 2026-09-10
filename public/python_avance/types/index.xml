@@ -119,5 +119,19 @@
       <guid>//localhost:1313/python_avance/types/page52/index.html</guid>
       <description>tableau python, recherche du maximum, tri avec une clé (sort et sorted), passer d&#39;une liste à un dictionnaire</description>
     </item>
+    <item>
+      <title>TP3b correction</title>
+      <link>//localhost:1313/python_avance/types/page53/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_avance/types/page53/index.html</guid>
+      <description>Ex 1.3 3a. Les flèches représentent les références vers les valeurs des objets dans la mémoire. En bleu, les varaibles globales et en jaune les valeurs placées dans les espaces mémoire.&#xA;3c. Les données sont mises dans les colonnes 2 et plus. On récupère ces données avec eleve[2:]&#xA;3d. eleve[1] = m&#xA;3e.&#xA;def ajoute_colonne_moyenne(classe,c): for eleve in classe[1:]: m = round(moyenne(eleve[2:]),2) eleve[c] = m # appel de la fonction ajoute_colonne_moyenne(classe,1) Ex 2 &#39;12,5&#39;.replace(&#39;,&#39;,&#39;.&#39;) script complet: import csv with open(&#39;classe.csv&#39;, newline=&#39;&#39;) as csvfile: tab = csv.reader(csvfile, delimiter = &#34;;&#34;) classe = [] for row in tab: classe.append(row) def somme(tab): &#34;&#34;&#34;calcule la somme de la liste tab &#34;&#34;&#34; s = 0 for x in tab: s += x return s def moyenne(tab): &#34;&#34;&#34;calcule la moyenne des valeurs de la liste tab &#34;&#34;&#34; return somme(tab)/len(tab) def remplacer(tab): for i in range(1,len(tab)): for j in range(2,len(tab[i])): note = tab[i][j] tab[i][j] = float((note.replace(&#39;,&#39;,&#39;.&#39;))) remplacer(classe) for i in range(1,len(classe)): eleve = classe[i] # calcul de la moyenne des notes m = moyenne(eleve[2:]) # arrondir avec 2 decimales m = round(m,2) # placer m dans la colonne moyenne eleve[1] = m print(classe)</description>
+    </item>
+    <item>
+      <title>TP3c correction</title>
+      <link>//localhost:1313/python_avance/types/page54/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/python_avance/types/page54/index.html</guid>
+      <description>Question 1 donnees = table[1:] donnees.append([&#34;Pays-Bas&#34;, 919813,77,6]) print(donnees) print(table) Question 2 meilleure_ligne = donnees[0] # meilleure_ligne vaut [&#34;France&#34;, 5660000, 112, 7] for ligne in donnees: if ligne[1] &gt; meilleure_ligne[1]: meilleure_ligne = ligne print(meilleure_ligne[0], meilleure_ligne[1]) # affiche Allemagne 6900000 Question 3 tri_par_effectif = sorted(donnees, key=lambda ligne: ligne[1], reverse=True) print(tri_par_effectif) Question 4 # Question 4 etiquettes = table[0] ligne_france = table[1] France = { etiquettes[0]: ligne_france[0], etiquettes[1]: ligne_france[1], etiquettes[2]: ligne_france[2], etiquettes[3]: ligne_france[3], } ligne_allemagne = table[2] Allemagne = { etiquettes[0]: ligne_allemagne[0], etiquettes[1]: ligne_allemagne[1], etiquettes[2]: ligne_allemagne[2], etiquettes[3]: ligne_allemagne[3], } print(Allemagne) Question 5 # Question 5 pays_dict = {} etiquettes = table[0] for ligne in donnees: nom_pays = ligne[0] pays_dict[nom_pays] = {} &#34;&#34;&#34; for j in range(1, len(etiquettes)): pays_dict[nom_pays][etiquettes[j]] = ligne[j] &#34;&#34;&#34; print(pays_dict) # Affiche # {&#39;France&#39;: {}, &#39;Allemagne&#39;: {}, &#39;Espagne&#39;: {}, &#39;Grèce&#39;: {}, &#39;Pays-Bas&#39;: {}}</description>
+    </item>
   </channel>
 </rss>

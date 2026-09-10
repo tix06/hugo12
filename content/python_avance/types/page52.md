@@ -29,6 +29,11 @@ La première ligne contient les **étiquettes de colonnes**, les lignes suivante
 On souhaite travailler uniquement sur les données (sans la ligne d'étiquettes), dans une nouvelle variable `donnees`, tout en conservant `table` intacte.
 
 * Écrire une instruction qui construit `donnees` par une **copie par valeur** de `table`, en excluant la première ligne.
+* Ajouter dans les données des Pays-Bas dans `donnees`:
+    * Pays : Pays-Bas
+    * Nb élèves secondaire : 919 813 élèves (dans la filière générale HAVO / VWO)
+    * Jours de vacances/an : Environ 77 jours (soit 11 semaines de congés au total)
+    * Durée secondaire (ans) : 6 ans 
 * Vérifier que modifier `donnees` (par exemple en ajoutant une ligne avec `append`) ne modifie pas `table`.
 
 *Remarque à garder en tête pour la suite du cours :* cette copie protège la liste `table` elle-même, mais les lignes qu'elle contient (par exemple `donnees[0]`) restent les **mêmes objets** que ceux de `table`. Modifier un élément d'une ligne de `donnees` (comme `donnees[0][1] = 0`) modifierait donc bien la ligne correspondante dans `table`. On appelle cela une copie *de surface* (shallow copy).
@@ -88,7 +93,15 @@ France = {
 
 ## 5. Construire un dictionnaire de dictionnaires, automatiquement
 
-Le script de la question 4 doit être réécrit à la main pour chaque pays : ce n'est pas satisfaisant si la table contient un jour 50 pays. On souhaite maintenant construire, **à partir de la liste `table` d'origine et à l'aide d'une boucle**, un dictionnaire unique `pays_dict` qui rassemble tous les pays, de la forme :
+Le script de la question 4 doit être réécrit à la main pour chaque pays : ce n'est pas satisfaisant si la table contient un jour 50 pays. 
+
+* Parcourir `donnees` et construire un dictionnaire avec pour clé, le nom de chaque pays, et pour valeur, un dictionnaire vide `{}`:
+
+```python
+{'France': {}, 'Allemagne': {}, 'Espagne': {}, 'Grèce': {}, 'Pays-Bas': {}}
+```
+
+* On souhaite maintenant construire, **à partir de la liste `table` d'origine et à l'aide d'une boucle**, un dictionnaire unique `pays_dict` qui rassemble tous les pays, de la forme :
 
 ```python
 {
@@ -107,4 +120,13 @@ Le script de la question 4 doit être réécrit à la main pour chaque pays : ce
 ##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page5" icon="palette" style="tip" %}}TP3a{{% /button %}} Tableur
 ##### {{% button href="../page51" icon="palette" style="tip" %}}TP3b{{% /button %}} Tableau de notes et algorithmes (Visualisation)
+{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP3b{{% /button %}}
+<!--
+{{% button href="../page53" icon="lightbulb" style="tip" %}}Corrigé du TP3b{{% /button %}}
+-->
 ##### {{% button href="../page52" icon="palette" style="tip" %}}TP3c{{% /button %}} Systemes scolaires européens
+{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP3c{{% /button %}}
+<!--
+{{% button href="../page54" icon="lightbulb" style="tip" %}}Corrigé du TP3c{{% /button %}}
+-->
+

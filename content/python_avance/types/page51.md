@@ -5,8 +5,8 @@ hidden: true
 weight: 14
 ---
 
-## Visualiser les algorithmes
-### Moyenne
+## Ex1: Visualiser les algorithmes
+### 1. Moyenne
 Le script suivant calcule la moyenne sur une liste de notes. La première valeur de la liste est reservée pour y placer une valeur, à la fin du programme. Les notes commencent donc à partir de l'indice 1 de cette liste:
 
 ```python{title="fonction moyenne", lineNos=true}
@@ -22,7 +22,7 @@ m = moyenne(list1[1:])
 print(m)
 ```
 
-> 1. Voir l'animation sur Pythontutor: visualiser le parcours et traitement sur une liste de notes `list1`:
+> Voir l'animation sur Pythontutor: visualiser le parcours et traitement sur une liste de notes `list1`:
 
 Lien: [pythontutor](https://pythontutor.com/render.html#code=list1%20%3D%20%5B%22%22,12.0,14.5,10.0,18.5%5D%0A%0Adef%20moyenne%28L%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20x%20in%20L%3A%0A%20%20%20%20%20%20%20%20s%2B%3Dx%0A%20%20%20%20return%20s/len%28L%29%0A%20%20%20%20%0Am%20%3D%20moyenne%28list1%5B1%3A%5D%29%0Aprint%28m%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
 
@@ -35,7 +35,7 @@ Lien: [pythontutor](https://pythontutor.com/render.html#code=list1%20%3D%20%5B%2
 > 1c Modifier le script (faire *edit* dans pythontutor) pour que le programme place la 
 valeur `m` dans la case `list1[0]`. Noter ici l'instruction utilisée. Comment voit-on la modification dans pythontutor?
 
-### Recherche du maximum
+### 2. Recherche du maximum
 
 ```python{title="fonction maximum", lineNos=true}
 list1 = ["",12.0,14.5,10.0,18.5]
@@ -59,7 +59,7 @@ Lien: [Pythontutor](https://pythontutor.com/visualize.html#code=list1%20%3D%20%5
 
 > 2.b. Dans l'animation, lorsque la boucle `for` est executée, à quel(s) moment(s) la valeur de `maxi` est elle corrigée?
 
-### Traitement sur une table (liste de listes)  et effet de bord
+### 3. Traitement sur une table (liste de listes)  et effet de bord
 > 3. Animation sur Pythontutor: visualiser le parcours et traitement sur une liste
 
 Execution du script suivant sur [Pythontutor](https://pythontutor.com/render.html#code=classe%20%3D%20%5B%5B'%5Cufeff','moyenne','note1','note2','note3','note4','note5',%0A%20%20'note6','note7','note8','note9'%5D,%0A%20%5B'eleve1',%20'12,5',%2010.0,%208.9,%209.9,%2012.3,%2011.1,%2012.3,%2013.1,%2014.5,%2020.0%5D,%0A%20%5B'eleve2',%20'',%204.2,%202.1,%2016.5,%2015.0,%2019.6,%207.5,%2010.3,%2018.8,%2017.4%5D%5D%0A%0Adef%20moyenne%28tab%29%3A%0A%20%20%20%20s%20%3D%200%0A%20%20%20%20for%20note%20in%20tab%3A%0A%20%20%20%20%20%20%20%20s%20%2B%3D%20note%0A%20%20%20%20return%20s%20/%20len%28tab%29%0A%0Aeleve%20%3D%20classe%5B2%5D%0Am%20%3D%20round%28moyenne%28eleve%5B2%3A%5D%29,2%29%0Aprint%28%22nom%20eleve%3A%20%7B%7D%20moyenne%3A%20%7B%7D%22.format%28eleve%5B0%5D,m%29%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=311&rawInputLstJSON=%5B%5D&textReferences=false)
@@ -96,7 +96,7 @@ print(m)
 > 3f. Ecrire une fonction `ajoute_colonne_moyenne` qui prend en paramètre une table `classe` et un numero de colonne `c`. Le fonction devra ajouter la moyenne pour chaque élève, dans la colonne `c`. La table `classe` aura le format proposé dans l'énoncé vu plus haut.
 
 
-## Fichier de notes en csv
+## Ex 2: Fichier de notes en csv
 *But*: programmer un logiciel de traitement des notes des élèves, à la manière de *Pronotes*.
 
 Dans votre IDE (Pyzo, IDLE), ouvrir un nouveau fichier python, et placer les 2 fonctions:
@@ -143,7 +143,7 @@ print(classe[:2])
 
 1. Dans cet exemple, quelle option a été choisie pour placer le fichier *classe.csv*?
 2. Que remarque t-on à propos du séparateur des valeurs décimales? 
-3. Quelle instruction python va transformer `'12,5' en un *float* égal à `12.5`?
+3. Quelle instruction python va transformer `'12,5'` en un *float* égal à `12.5`?
 
 La fonction `remplacer` va traiter chaque note du tableau pour qu'elle soit dans le bon format (float).
 

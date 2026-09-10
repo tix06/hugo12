@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP3c Systemes scolaires en Europe :: allophysique">
     <meta itemprop="description" content="tableau python, recherche du maximum, tri avec une clé (sort et sorted), passer d&#39;une liste à un dictionnaire">
     <meta itemprop="dateModified" content="2026-09-07T19:27:19+02:00">
-    <meta itemprop="wordCount" content="708">
+    <meta itemprop="wordCount" content="790">
     <title>TP3c Systemes scolaires en Europe :: allophysique</title>
-    <link href="/images/logo.png?1788855496" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1788855496" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788855496" defer></script>
-    <script src="/js/search-lunr.js?1788855496" defer></script>
-    <script src="/js/search.js?1788855496" defer></script>
+    <link href="/images/logo.png?1789061626" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789061626" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789061626" defer></script>
+    <script src="/js/search-lunr.js?1789061626" defer></script>
+    <script src="/js/search.js?1789061626" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788855496";
+      window.relearn.index_js_url="/searchindex.en.js?1789061626";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788855496" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789061626" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789061626" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789061626" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789061626" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788855496" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788855496" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788855496" rel="stylesheet">
-    <link href="/css/theme.css?1788855496" rel="stylesheet">
-    <link href="/css/format-html.css?1788855496" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789061626" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789061626" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789061626" rel="stylesheet">
+    <link href="/css/theme.css?1789061626" rel="stylesheet">
+    <link href="/css/format-html.css?1789061626" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -186,6 +186,14 @@
 <p>On souhaite travailler uniquement sur les données (sans la ligne d&rsquo;étiquettes), dans une nouvelle variable <code>donnees</code>, tout en conservant <code>table</code> intacte.</p>
 <ul>
 <li>Écrire une instruction qui construit <code>donnees</code> par une <strong>copie par valeur</strong> de <code>table</code>, en excluant la première ligne.</li>
+<li>Ajouter dans les données des Pays-Bas dans <code>donnees</code>:
+<ul>
+<li>Pays : Pays-Bas</li>
+<li>Nb élèves secondaire : 919 813 élèves (dans la filière générale HAVO / VWO)</li>
+<li>Jours de vacances/an : Environ 77 jours (soit 11 semaines de congés au total)</li>
+<li>Durée secondaire (ans) : 6 ans</li>
+</ul>
+</li>
 <li>Vérifier que modifier <code>donnees</code> (par exemple en ajoutant une ligne avec <code>append</code>) ne modifie pas <code>table</code>.</li>
 </ul>
 <p><em>Remarque à garder en tête pour la suite du cours :</em> cette copie protège la liste <code>table</code> elle-même, mais les lignes qu&rsquo;elle contient (par exemple <code>donnees[0]</code>) restent les <strong>mêmes objets</strong> que ceux de <code>table</code>. Modifier un élément d&rsquo;une ligne de <code>donnees</code> (comme <code>donnees[0][1] = 0</code>) modifierait donc bien la ligne correspondante dans <code>table</code>. On appelle cela une copie <em>de surface</em> (shallow copy).</p>
@@ -224,7 +232,14 @@
 </ul>
 <hr>
 <h2 id="5-construire-un-dictionnaire-de-dictionnaires-automatiquement">5. Construire un dictionnaire de dictionnaires, automatiquement<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le script de la question 4 doit être réécrit à la main pour chaque pays : ce n&rsquo;est pas satisfaisant si la table contient un jour 50 pays. On souhaite maintenant construire, <strong>à partir de la liste <code>table</code> d&rsquo;origine et à l&rsquo;aide d&rsquo;une boucle</strong>, un dictionnaire unique <code>pays_dict</code> qui rassemble tous les pays, de la forme :</p>
+<p>Le script de la question 4 doit être réécrit à la main pour chaque pays : ce n&rsquo;est pas satisfaisant si la table contient un jour 50 pays.</p>
+<ul>
+<li>Parcourir <code>donnees</code> et construire un dictionnaire avec pour clé, le nom de chaque pays, et pour valeur, un dictionnaire vide <code>{}</code>:</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;Espagne&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;Grèce&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;Pays-Bas&#39;</span><span class="p">:</span> <span class="p">{}}</span></span></span></code></pre></div>
+<ul>
+<li>On souhaite maintenant construire, <strong>à partir de la liste <code>table</code> d&rsquo;origine et à l&rsquo;aide d&rsquo;une boucle</strong>, un dictionnaire unique <code>pays_dict</code> qui rassemble tous les pays, de la forme :</li>
+</ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;Nb élèves secondaire&#39;</span><span class="p">:</span> <span class="mi">5660000</span><span class="p">,</span> <span class="s1">&#39;Jours de vacances/an&#39;</span><span class="p">:</span> <span class="mi">112</span><span class="p">,</span> <span class="s1">&#39;Durée secondaire (ans)&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">},</span>
 </span></span><span class="line"><span class="cl">    <span class="s1">&#39;Allemagne&#39;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span>
@@ -236,10 +251,18 @@
 </ul>
 <p><em>Pour aller plus loin :</em> la fonction native <code>zip</code> permet d&rsquo;associer deux listes élément par élément et simplifie beaucoup ce genre de construction (<code>dict(zip(etiquettes[1:], ligne[1:]))</code>). Si le temps le permet, cherchez sa documentation et proposez une version de <code>pays_dict</code> qui l&rsquo;utilise.</p>
 <h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode339s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page10"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode339s1hbhb-tableur"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3a</span></a></span> Tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode339s2hbhb-tableau-de-notes-et-algorithmes-visualisation"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3b</span></a></span> Tableau de notes et algorithmes (Visualisation)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode339s3hbhb-systemes-scolaires-européens"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3c</span></a></span> Systemes scolaires européens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode430s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page10"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode430s1hbhb-tableur"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3a</span></a></span> Tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode430s2hbhb-tableau-de-notes-et-algorithmes-visualisation"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3b</span></a></span> Tableau de notes et algorithmes (Visualisation)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<span class="btn cstyle button tip"><span><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TP3b</span></span></span>
+<!--
+<span class="btn cstyle button tip interactive"><a href="../page53"><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TP3b</span></a></span>
+-->
+<h5 id="hahahugoshortcode430s5hbhb-systemes-scolaires-européens"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3c</span></a></span> Systemes scolaires européens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<span class="btn cstyle button tip"><span><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TP3c</span></span></span>
+<!--
+<span class="btn cstyle button tip interactive"><a href="../page54"><i class="fa-fw fas fa-lightbulb"></i> <span class="title">Corrigé du TP3c</span></a></span>
+-->
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -601,9 +624,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788855496"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788855496" defer></script>
-    <script src="/js/theme.js?1788855496" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789061626"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789061626" defer></script>
+    <script src="/js/theme.js?1789061626" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

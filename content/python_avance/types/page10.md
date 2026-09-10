@@ -51,9 +51,35 @@ Pour parcourir aussi les **colonnes** d'une ligne, on imbrique une seconde boucl
 
 ```python
 for ligne in table[1:]:
+    # pour chaque ligne de datas
     for j in range(len(ligne)):
+        # j est le numero de colonne
         print(table[0][j], ":", ligne[j])
     print("---")
+```
+
+*... Affiche ...*
+```
+Pays : France
+Nb élèves secondaire : 5660000
+Jours de vacances/an : 112
+Durée secondaire (ans) : 7
+---
+Pays : Allemagne
+Nb élèves secondaire : 6900000
+Jours de vacances/an : 65
+Durée secondaire (ans) : 9
+---
+Pays : Espagne
+Nb élèves secondaire : 3500000
+Jours de vacances/an : 105
+Durée secondaire (ans) : 6
+---
+Pays : Grèce
+Nb élèves secondaire : 700000
+Jours de vacances/an : 119
+Durée secondaire (ans) : 6
+---
 ```
 
 ## Traitement des données en ligne
@@ -102,9 +128,9 @@ Pour une liste « plate », on évite ce piège avec `original[:]` ou `list(orig
 donnees = table[1:]           # copie de la liste externe
 # donnees vaut [['France', 5660000, 112, 7],... ['Grèce', 700000, 119, 6]]
 donnees[1][1] = 0
-table[1][1]
+print(table[1][1])
 # affiche 0 !! table a été modifiée alors qu'on n'a modifié que "donnees"
-table
+print(table)
 # [['Pays',  'Nb élèves secondaire',...], ['France', 0, 112, 7],... ['Grèce', 700000, 119, 6]]
 ```
 
@@ -129,7 +155,7 @@ meilleure_ligne = table[1]
 # meilleure_ligne vaut ["France", 5660000, 112, 7]
 for ligne in table[2:]:
     # a la premiere iteration
-    # ligne[1] vaut 55660000
+    # ligne[1] vaut 6900000
     if ligne[1] > meilleure_ligne[1]:
         meilleure_ligne = ligne
 

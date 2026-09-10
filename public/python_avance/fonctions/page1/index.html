@@ -5,45 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="arguments, valeur par defaut d&#39;un argument, modules, docstring, lambda fonction">
+    <meta name="description" content="arguments, valeur par defaut d&#39;un argument, annotations de type, modules, docstring, lambda fonction">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Fonctions :: allophysique">
-    <meta name="twitter:description" content="arguments, valeur par defaut d&#39;un argument, modules, docstring, lambda fonction">
+    <meta name="twitter:description" content="arguments, valeur par defaut d&#39;un argument, annotations de type, modules, docstring, lambda fonction">
     <meta property="og:url" content="//localhost:1313/python_avance/fonctions/page1/index.html">
     <meta property="og:site_name" content="allophysique">
     <meta property="og:title" content="Fonctions :: allophysique">
-    <meta property="og:description" content="arguments, valeur par defaut d&#39;un argument, modules, docstring, lambda fonction">
+    <meta property="og:description" content="arguments, valeur par defaut d&#39;un argument, annotations de type, modules, docstring, lambda fonction">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
     <meta property="article:modified_time" content="2026-06-22T18:53:05+02:00">
     <meta itemprop="name" content="Fonctions :: allophysique">
-    <meta itemprop="description" content="arguments, valeur par defaut d&#39;un argument, modules, docstring, lambda fonction">
+    <meta itemprop="description" content="arguments, valeur par defaut d&#39;un argument, annotations de type, modules, docstring, lambda fonction">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="1131">
+    <meta itemprop="wordCount" content="1844">
     <title>Fonctions :: allophysique</title>
-    <link href="/images/logo.png?1788855496" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1788855496" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1788855496" defer></script>
-    <script src="/js/search-lunr.js?1788855496" defer></script>
-    <script src="/js/search.js?1788855496" defer></script>
+    <link href="/images/logo.png?1789061743" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789061743" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789061743" defer></script>
+    <script src="/js/search-lunr.js?1789061743" defer></script>
+    <script src="/js/search.js?1789061743" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1788855496";
+      window.relearn.index_js_url="/searchindex.en.js?1789061743";
     </script>
-    <script src="/js/lunr/lunr.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1788855496" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1788855496" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789061743" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789061743" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789061743" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789061743" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1788855496" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1788855496" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1788855496" rel="stylesheet">
-    <link href="/css/theme.css?1788855496" rel="stylesheet">
-    <link href="/css/format-html.css?1788855496" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789061743" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789061743" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789061743" rel="stylesheet">
+    <link href="/css/theme.css?1789061743" rel="stylesheet">
+    <link href="/css/format-html.css?1789061743" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -131,10 +131,26 @@
     </li>
     <li><a href="#arguments-positionnés">Arguments positionnés</a></li>
     <li><a href="#valeur-par-défaut">Valeur par défaut</a></li>
+    <li><a href="#annotations-de-type-paramètres-et-valeur-de-retour">Annotations de type (paramètres et valeur de retour)</a></li>
+    <li><a href="#vérifier-réellement-les-préconditions--assert-et-raise">Vérifier réellement les préconditions : <code>assert</code> et <code>raise</code></a></li>
   </ul>
 
   <ul>
-    <li><a href="#portée-des-fonctions">Portée des fonctions</a></li>
+    <li><a href="#modules--fonctions-dans-un-fichier-séparé">Modules : fonctions dans un fichier séparé</a></li>
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="#if-__name__--__main__"><code>if __name__ == &#34;__main__&#34;</code></a></li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -172,45 +188,44 @@
   <header class="headline">
   </header>
 
-<h1 id="fonctions">Fonctions</h1>
 
 <ul>
-<li>Un cours de niveau debutant sur les fonctions se trouve à la page suivante: <a href="../page2/">Lien</a></li>
+<li>Un cours de niveau débutant sur les fonctions se trouve à la page suivante: <a href="/python_bases/fonctions/page2/index.html">Lien</a></li>
 </ul>
 <h1 id="fonctions">Fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du <em>remaniement</em> de son code : C&rsquo;est à dire ré-écrire les parties du programme qui <em>fonctionnent</em> et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
+<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Une bonne pratique est de faire régulièrement du <em>remaniement</em> de son code : c&rsquo;est-à-dire ré-écrire les parties du programme qui <em>fonctionnent</em> et les mettre dans une fonction ou un module. Cela évite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
 <h2 id="généralités">Généralités<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Tous les langages de programmation fournissent un large ensemble de fonctions prêtes à être utilisées. Nous avons déjà rencontré diverses fonctions prédéfinies, de la librairie standart : <code>print</code>, <code>input</code>, <code>range</code>, <code>len</code>.</p>
+<p>Tous les langages de programmation fournissent un large ensemble de fonctions prêtes à être utilisées. Nous avons déjà rencontré diverses fonctions prédéfinies, de la librairie standard : <code>print</code>, <code>input</code>, <code>range</code>, <code>len</code>.</p>
 <blockquote>
-<p><em>Définition :</em> Une fonction est un bloc de code auquel on donne un nom en vue de le reutiliser. L&rsquo;appel de son nom exécute tout le bloc de code que cette fonction contient.</p>
+<p><em>Définition :</em> Une fonction est un bloc de code auquel on donne un nom en vue de le réutiliser. L&rsquo;appel de son nom exécute tout le bloc de code que cette fonction contient.</p>
 </blockquote>
-<p>Pour créer une fonction, il faut la definir avec le mot clé <code>def</code>, suivi du nom de la fonction, d&rsquo;une paire de parenthèses suivies de <code>:</code>.</p>
+<p>Pour créer une fonction, il faut la définir avec le mot clé <code>def</code>, suivi du nom de la fonction, d&rsquo;une paire de parenthèses suivies de <code>:</code>.</p>
 <h2 id="return">Return<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>La fonction peut retourner une valeur. Celle-ci est alors mise après le mot clé <code>return</code>.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Acueillir tout le monde&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir tout le monde&#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
 <p>On appelle cette fonction à l&rsquo;aide de son nom, suivi des parenthèses :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne (et affiche) &#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
 <h2 id="fonction-python-et-fonction-mathématique">Fonction python et fonction mathématique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>On peut programmer une fonction pour qu’elle retourne la valeur y = f(x)
-Exemple: soit la fonction mathématique f : x -&gt; $3\times 2+2$</p>
+<p>On peut programmer une fonction pour qu’elle retourne la valeur y = f(x).</p>
+<p>Exemple: soit la fonction mathématique $f : x \mapsto 3x^2+2$</p>
 <p>Le script python correspondant sera:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span></span></span></code></pre></div>
-<p>Pour exécuter la fonction avec x=5, on fait: f(5)</p>
-<p>Et cela retourne … $3\times25+2$, soit 77</p>
-<p>Le <em>return</em> a le statut de signe <code>=</code></p>
+<p>Pour exécuter la fonction avec x=5, on fait: <code>f(5)</code></p>
+<p>Et cela retourne … $3\times 5^2+2$, soit 77.</p>
+<p>Le mot-clé <code>return</code> joue, dans le script, un rôle analogue à celui du signe <code>=</code> dans l&rsquo;écriture mathématique $y = f(x)$.</p>
 <h2 id="docstring">Docstring<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Il est d&rsquo;usage dans les <em>bonnes</em> pratiques d&rsquo;ajouter une chaine de documentation, à la première ligne de la fonction : le <em>Docstring</em>.</p>
+<p>Il est d&rsquo;usage, dans les <em>bonnes</em> pratiques, d&rsquo;ajouter une chaîne de documentation, à la première ligne de la fonction : le <em>Docstring</em>.</p>
 <p>Le <em>Docstring</em> est accessible à l&rsquo;aide de la fonction <code>help</code> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">salut</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche</span>
 </span></span><span class="line"><span class="cl"><span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">salut</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">salut</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Acueillir</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">    <span class="n">Accueillir</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span></span></span></code></pre></div>
 <p>Pour plus d&rsquo;informations sur le <em>Docstring</em>, et principalement le <em>Prototypage</em>, consulter la page <a href="/docs/NSI/langages/page5/#prototypage-d-une-fonction">mise au point</a></p>
 <h1 id="passage-dargument">Passage d&rsquo;argument<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="définitions">Définitions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -220,51 +235,102 @@ Un <strong>argument</strong> est une valeur transmise à une fonction.</p>
 </blockquote>
 <p>Les paramètres sont placés à l&rsquo;intérieur des parenthèses dans la définition de la fonction.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Acueillir tout le monde par son nom&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">)</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir tout le monde par son nom&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;bonjour </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s1">&#39;</span></span></span></code></pre></div>
 <p>Lors de l&rsquo;appel de la fonction, on place l&rsquo;argument entre parenthèses :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">(</span><span class="s1">&#39;Brendon&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># retourne (affiche) &#39;Salut Brendon&#39;</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne (affiche) &#39;bonjour Brendon&#39;</span></span></span></code></pre></div>
 <h2 id="portée-des-variables">Portée des variables<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="internes">internes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Lors de l&rsquo;exécution de la fonction, la valeur <code>Brendon</code> est affectée à la variable <code>nom</code> : <code>nom = 'Brendon'</code>.</p>
+<p>Lors de l&rsquo;exécution de la fonction, la valeur <code>'Brendon'</code> est affectée à la variable <code>nom</code> : <code>nom = 'Brendon'</code>.</p>
 <p>Seulement, la variable <code>nom</code> est une <strong>variable interne</strong> à la fonction, et n&rsquo;existe que dans celle-ci. Elle n&rsquo;est pas définie en dehors.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">salut</span><span class="p">(</span><span class="s1">&#39;Brendon&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;Salut Brendon&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour Brendon&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nom</span>
 </span></span><span class="line"><span class="cl"><span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;nom&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span></span></span></code></pre></div>
 <p>La portée des paramètres et des variables déclarées dans la fonction est limitée à la fonction elle-même. Ce sont des variables <strong>locales</strong>.</p>
 <h3 id="externes">externes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>les variables déclarées dans le <em>main</em> sont accessibles à l&rsquo;interieur d&rsquo;une fonction.</p>
-<p>Mais celles-ci ne sont modifiable (dans la fonction) que s&rsquo;il s&rsquo;agit d&rsquo;un type <em>mutable</em>, comme une liste par exemple. La liste peut alors être modifiée par un <em>effet de bord</em>.</p>
-<p>Par contre, les variables du main <em>non mutables</em> ne sont pas modifiables dans la fonction.</p>
+<p>Les variables déclarées dans le <em>main</em> sont accessibles à l&rsquo;intérieur d&rsquo;une fonction, en lecture.</p>
+<p>Pour les modifier depuis l&rsquo;intérieur de la fonction, deux cas se distinguent :</p>
+<ul>
+<li>si la variable désigne un objet <strong>mutable</strong> (une liste, un dictionnaire&hellip;), on peut modifier son <em>contenu</em> par un <em>effet de bord</em>, sans rien déclarer de particulier ;</li>
+<li>pour <strong>réaffecter</strong> la variable elle-même — qu&rsquo;elle soit mutable ou non — il faut la déclarer explicitement avec le mot-clé <code>global</code> à l&rsquo;intérieur de la fonction (voir le cours sur les <a href="../../variables/page2/#port%C3%A9e-des-variables">types construits</a>, qui détaille ce mécanisme).</li>
+</ul>
+<p><strong>Exemple</strong>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">9</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ajouter_un</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="k">global</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ajouter_un</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 10</span></span></span></code></pre></div>
 <h2 id="arguments-positionnés">Arguments positionnés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
 <p>Lorsqu&rsquo;une fonction a besoin de plusieurs valeurs, ces dernières doivent correspondre aux paramètres qu&rsquo;elle attend. Les arguments doivent être placés dans l&rsquo;ordre des valeurs reçues.</p>
 </blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">publier_msg</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="n">user</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;publier le message de l&#39;utilisateur&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">message</span><span class="p">)</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s1">&#39;</span></span></span></code></pre></div>
 <p>Que l&rsquo;on appelle en renseignant les 2 arguments :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">publier_msg</span><span class="p">(</span><span class="s1">&#39;Ok pour moi&#39;</span><span class="p">,</span><span class="s1">&#39;Branda&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne (affiche) &#39;Branda : Ok pour moi&#39;</span></span></span></code></pre></div>
-<p><em>Rq : il existe aussi la possibilité d&rsquo;utiliser des arguments non positionnés, et nommés. Un petite recherche sur le net devrait vous permettre d&rsquo;en prendre connaissance si besoin.</em></p>
+<p><em>Rq : il existe aussi la possibilité d&rsquo;utiliser des arguments non positionnés, et nommés. Une petite recherche sur le net devrait vous permettre d&rsquo;en prendre connaissance si besoin.</em></p>
 <h2 id="valeur-par-défaut">Valeur par défaut<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
 <p>Définir la <em>valeur par défaut</em> d&rsquo;un paramètre dans une fonction permet à l&rsquo;appel de la fonction d&rsquo;utiliser cette valeur, sauf si une autre valeur est spécifiée à l&rsquo;appel.</p>
 </blockquote>
 <p>Lorsqu&rsquo;il y a plusieurs arguments, il faudra mettre les paramètres avec valeur par défaut à la fin :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">servir_cafe</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="n">nombre</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;servir le nombre de café voulus au client&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> commande </span><span class="si">{}</span><span class="s1"> café(s)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="n">nombre</span><span class="p">)</span></span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;servir le nombre de cafés voulus au client&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">client</span><span class="si">}</span><span class="s1"> commande </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1"> café(s)&#39;</span></span></span></code></pre></div>
 <p><em>Exemple d&rsquo;utilisation :</em></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">servir_cafe</span><span class="p">(</span><span class="s1">&#39;George&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne &#39;George commande 1 café(s)&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">servir_cafe</span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne &#39;Jean commande 2 café(s)&#39;</span></span></span></code></pre></div>
+<h2 id="annotations-de-type-paramètres-et-valeur-de-retour">Annotations de type (paramètres et valeur de retour)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Depuis Python 3.5, on peut préciser, dans la définition d&rsquo;une fonction, le type attendu pour chaque paramètre ainsi que le type de la valeur renvoyée. On parle d&rsquo;<strong>annotations de type</strong> (<em>type hints</em>).</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">nom_fonction</span><span class="p">(</span><span class="n">parametre</span><span class="p">:</span> <span class="n">type_attendu</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">type_de_retour</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<p><em>Exemple :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span></span></span></code></pre></div>
+<p>Ces annotations rendent la fonction plus facile à comprendre et à utiliser correctement (on sait, sans lire le corps de la fonction, ce qu&rsquo;elle attend et ce qu&rsquo;elle renvoie). Elles sont également exploitées par des outils externes (éditeurs de code, vérificateurs de type comme <code>mypy</code>) pour détecter des erreurs avant l&rsquo;exécution.</p>
+<p><strong>Attention, piège classique :</strong> ces annotations sont purement indicatives. Python ne les <strong>vérifie pas</strong> et ne convertit <strong>pas</strong> automatiquement les arguments reçus vers le type annoncé.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche 77   (un int, pas un float !)</span></span></span></code></pre></div>
+<p>Rien n&rsquo;empêche d&rsquo;appeler <code>f</code> avec un entier alors que <code>x</code> est annoté <code>float</code> : aucune erreur, aucune conversion, le calcul se fait simplement avec la valeur reçue. L&rsquo;annotation est une indication à l&rsquo;intention du programmeur (et des outils d&rsquo;analyse), pas une contrainte imposée par l&rsquo;interpréteur.</p>
+<p>On peut combiner une annotation de type avec une valeur par défaut :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">servir_cafe</span><span class="p">(</span><span class="n">client</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">nombre</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;servir le nombre de cafés voulus au client&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">client</span><span class="si">}</span><span class="s1"> commande </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1"> café(s)&#39;</span></span></span></code></pre></div>
+<p><em>Pour aller plus loin :</em> les annotations d&rsquo;une fonction sont accessibles via son attribut <code>__annotations__</code>, un peu comme le Docstring est accessible via <code>help</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="vm">__annotations__</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche {&#39;x&#39;: &lt;class &#39;float&#39;&gt;, &#39;return&#39;: &lt;class &#39;float&#39;&gt;}</span></span></span></code></pre></div>
+<h2 id="vérifier-réellement-les-préconditions--assert-et-raise">Vérifier réellement les préconditions : <code>assert</code> et <code>raise</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Puisque les annotations de type ne sont pas contrôlées par Python, il faut, si l&rsquo;on veut réellement <strong>garantir</strong> qu&rsquo;une fonction reçoit des arguments valides, écrire ce contrôle soi-même. Deux outils permettent de le faire, avec un usage différent.</p>
+<p><strong><code>assert</code></strong> vérifie qu&rsquo;une condition est vraie, et interrompt le programme avec une <code>AssertionError</code> si ce n&rsquo;est pas le cas :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&#34;x doit être un entier&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">double</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># AssertionError: x doit être un entier</span></span></span></code></pre></div>
+<p><code>assert</code> est surtout destiné à vérifier des conditions qui <strong>ne devraient jamais être fausses si le programme est correct</strong> — des invariants internes, utiles pendant le développement et les tests. Un détail important : les instructions <code>assert</code> peuvent être <strong>désactivées globalement</strong> au lancement de Python (option <code>-O</code>), auquel cas elles ne sont plus exécutées du tout. Il ne faut donc jamais s&rsquo;appuyer sur <code>assert</code> pour une vérification qui doit rester active en toutes circonstances, en particulier pour valider une donnée saisie par un utilisateur.</p>
+<p><strong><code>raise</code></strong> lève explicitement une exception, d&rsquo;un type que l&rsquo;on choisit, et reste <strong>toujours actif</strong>, quelles que soient les options de lancement :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&#34;x doit être un entier&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">double</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TypeError: x doit être un entier</span></span></span></code></pre></div>
+<p><strong>En résumé :</strong> on préfère <code>assert</code> pour des vérifications de mise au point (aides au débogage, à retirer mentalement de la logique du programme), et <code>raise</code> pour valider de façon fiable les entrées d&rsquo;une fonction destinée à être réellement utilisée — par exemple par d&rsquo;autres personnes, ou dans un programme final. La fonction <code>isinstance(objet, type)</code>, qui renvoie <code>True</code> si <code>objet</code> est bien une instance de <code>type</code>, est l&rsquo;outil le plus courant pour ce genre de vérification.</p>
 <h1 id="importer-des-fonctions">Importer des fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="portée-des-fonctions">Portée des fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p><em>Placer ses fonctions dans un fichier séparé:</em></p>
+<h2 id="modules--fonctions-dans-un-fichier-séparé">Modules : fonctions dans un fichier séparé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Une fonction peut être placée dans un autre fichier. On a alors:</p>
 <ul>
 <li>un fichier principal (le programme main)</li>
@@ -300,7 +366,7 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
 			<tr>
 					<td>from puissance import carre, cube</td>
 					<td>u = carre(a)</td>
-					<td>on importe que les fonctions necessaire</td>
+					<td>on importe uniquement les fonctions nécessaires</td>
 			</tr>
 			<tr>
 					<td>from puissance import *</td>
@@ -324,9 +390,17 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
 			</tr>
 	</tbody>
 </table>
-<h1 id="conclusion">Conclusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Une fonction est un morceau de code qui porte un nom et qui s’exécute lorsqu’on l’appelle. L’avantage est d’avoir un code plus court, lisible, mais aussi d’encapsuler les variables et de limiter leur portée à celle de la fonction.</p>
-<p>Dans un projet plus grand, les fonctions peuvent être mises dans des modules (des fichiers séparés). On doit alors les importer pour avoir une extension du langage. Certains modules très utiles: math, turtle, random, …</p>
+<h2 id="modules">Modules<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans un projet plus grand, les fonctions peuvent être mises dans des <strong>modules</strong> (des fichiers séparés). On doit alors les importer pour bénéficier d&rsquo;une extension du langage. Certains modules très utiles: <code>math</code>, <code>turtle</code>, <code>random</code>, …</p>
+<p>Tout fichier Python peut être importé. C&rsquo;est particulièrement facile lorsque les fichiers sont dans le même répertoire. Supposons que <code>A.py</code> et <code>B.py</code> le soient, on peut mettre dans <code>B.py</code> l&rsquo;instruction <code>from A import *</code> : toute fonction (ou variable) déclarée dans <code>A.py</code> sera alors utilisable dans <code>B.py</code>.</p>
+<h2 id="if-__name__--__main__"><code>if __name__ == &quot;__main__&quot;</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Cette syntaxe idiomatique de Python permet de n&rsquo;exécuter du code présent dans un fichier/module que si ce fichier/module est directement exécuté. Ce code N&rsquo;est PAS exécuté lorsque ce fichier/module est importé. Cette approche est généralement utilisée pour inclure du code de test dans un module.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Ce bloc n&#39;est exécuté que si on lance ce fichier, pas s&#39;il est importé depuis un autre module</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ma_fonction</span><span class="p">()</span></span></span></code></pre></div>
 <h1 id="lambda-fonction-fonctions-anonymes">Lambda fonction: fonctions anonymes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>On peut avoir recours aux fonctions anonymes pour des tâches ponctuelles qui ne nécessitent pas la création d&rsquo;une fonction complète.</p>
 <p>La syntaxe est la suivante:</p>
@@ -343,6 +417,9 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
 </span></span><span class="line"><span class="cl"><span class="n">nodes</span></span></span></code></pre></div>
 <p>résultat:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)]</span></span></span></code></pre></div>
+<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h5 id="hahahugoshortcode448s0hbhb-les-fonctions"><span class="btn cstyle button caution interactive"><a href="../page1"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span> les fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode448s1hbhb"><span class="btn cstyle button tip interactive"><a href="../page2"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -703,9 +780,9 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1788855496"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1788855496" defer></script>
-    <script src="/js/theme.js?1788855496" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789061743"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789061743" defer></script>
+    <script src="/js/theme.js?1789061743" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
