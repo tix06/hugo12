@@ -4,7 +4,11 @@ description: listes, tuples, dictionnaires, méthodes
 weight: 7
 ---
 
-  
+Ce chapitre comprend 4 pages:
+* [Cours](../page2)
+* TP decouverte: [TP2](../page9)
+* TP copie par valeur et reference, visualisation: [TP2a](../page3)
+* TP application du cours: [TP2b](../page4)
 
 
 Cette page aborde les notions avancées sur les types construits (listes, tuples, dictionnaires). Il peut être nécessaire de consulter les *notions de base* sur les : [boucles](/python_bases/boucles/page5/) et [listes](/python_bases/boucles/page2/).

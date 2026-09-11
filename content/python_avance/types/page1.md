@@ -11,7 +11,7 @@ weight: 4
 
 *Cette page apporte des informations sur les types de base, sur les fonctions de la librairie `math`, sur les références, et les méthodes de chaines.*
 
-Cette rubrique contient 4 pages : 
+Cette rubrique contient 3 pages : 
 
 * page 1 : [Cours](../page1/)
 * page 2 : [TP1](../page6/)

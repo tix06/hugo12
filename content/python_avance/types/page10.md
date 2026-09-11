@@ -4,6 +4,12 @@ description: listes de listes, tri avec clé (lambda), conversion en dictionnair
 weight: 12
 ---
 
+Ce chapitre contient 4 pages:
+* [cours](../page10) 
+* TP tableur: [TP3a](../page5)
+* TP avec visualisation, tableau de notes: [TP3b](../page51)
+* TP sur les sustemes scolaires européens: [TP3c](../page52)
+
 # Les tables de données en Python
 
 *Ce cours s'appuie sur les notions déjà vues sur les [types simples](../page1/) et les [types construits](../page2/) (listes, dictionnaires, mutabilité). Il prépare l'[exercice sur la table des pays](../page5/).*
@@ -103,6 +109,7 @@ for i in range(len(datas)):
 ```
 
 ## Traitement de données en colonne
+On souhaite faire la somme des valeurs dans la colonne `c`. On propose cette fois un parcours de la table `datas` par élément, avec `for ligne in datas:`
 
 ```python
 datas = [[5660000, 112, 7],
@@ -110,13 +117,11 @@ datas = [[5660000, 112, 7],
     [3500000, 105, 6],
     [700000, 119, 6]]
 
-for j in range(len(datas[0])):
-    # on initialise s à chaque nouvelle colonne
-    s = 0
-    for i in range(len(datas)):
-        s = s + datas[i][j]
-    # on affiche s a la fin de chaque colonne
-    print(s)
+c = 1
+s = 0
+for ligne in datas:
+    s += ligne[c]
+print(s)
 ```
 
 # Copier une table
@@ -260,6 +265,112 @@ with open('datas/classe.csv', newline='') as csvfile:
 # chaque "ligne" est un dictionnaire, par exemple :
 # {'Pays': 'France', 'Nb élèves secondaire': '5660000', ...}
 ```
+
+# Complexité d'accès : dictionnaires imbriqués vs listes de listes
+
+## 1. Le paragraphe de cours
+
+Un dictionnaire Python est implémenté à l'aide d'une **table de hachage** : chaque clé est transformée par une fonction de hachage en un indice qui pointe directement vers l'emplacement mémoire où se trouve la valeur associée. Ainsi, accéder à `dico[cle]` ne nécessite pas de parcourir le dictionnaire élément par élément : on calcule l'emplacement directement, ce qui donne une complexité **en moyenne constante, $O(1)$**, quel que soit le nombre $n$ de couples clé/valeur stockés. Cette propriété se conserve pour les dictionnaires imbriqués : accéder à `dico[cle1][cle2]` revient à effectuer deux accès en $O(1)$ successifs (un par niveau d'imbrication), donc une complexité globale en $O(1)$ elle aussi, indépendante de la taille du dictionnaire à chaque niveau.
+
+Il en va tout autrement pour une **liste de listes**. Une liste ne connaît que des positions numériques (des indices `0, 1, 2, ...`) : elle ne peut pas retrouver un élément à partir d'une « clé » sans le comparer un par un aux éléments qu'elle contient. Rechercher une valeur associée à un identifiant dans une liste de listes impose donc un **parcours linéaire**, de complexité $O(n)$ dans le pire des cas (et $O(n \times m)$ si l'on doit chercher dans des sous-listes de taille $m$), $n$ étant le nombre d'éléments parcourus avant de trouver (ou non) celui qui est cherché.
+
+La différence essentielle est donc la suivante : le temps d'accès à une donnée dans un dictionnaire ne dépend (en moyenne) pas du nombre d'éléments qu'il contient, alors que dans une liste, ce temps croît avec le nombre d'éléments à parcourir. C'est ce qui justifie l'usage des dictionnaires — y compris imbriqués — dès qu'une structure de données doit permettre des recherches fréquentes par identifiant plutôt que par position.
+
+---
+
+## 2. Schéma
+
+### a. Dictionnaire — accès direct par hachage
+
+```mermaid
+flowchart LR
+    K["Clé cherchée<br/>'Chloé'"] --> H["Fonction de hachage<br/>hash('Chloé')"]
+    H --> I["Indice calculé<br/>ex : 5"]
+    I --> B["Case n°5 de la table<br/>→ valeur associée"]
+
+    style K fill:#e8f4ff,stroke:#3b82f6
+    style H fill:#fff7e6,stroke:#f59e0b
+    style I fill:#fff7e6,stroke:#f59e0b
+    style B fill:#e7f9ed,stroke:#22c55e
+```
+
+Un seul calcul (le hachage de la clé) suffit à localiser la donnée : le nombre d'étapes **ne dépend pas** du nombre d'éléments stockés.
+
+### b. Liste de listes — parcours séquentiel
+
+```mermaid
+flowchart LR
+    D["Élément cherché<br/>'Chloé'"] --> C0["case 0<br/>'Alice' ≠ 'Chloé' ?"]
+    C0 -->|non| C1["case 1<br/>'Bilal' ≠ 'Chloé' ?"]
+    C1 -->|non| C2["case 2<br/>'Chloé' = 'Chloé' ?"]
+    C2 -->|oui, trouvé !| R["valeur associée"]
+
+    style D fill:#e8f4ff,stroke:#3b82f6
+    style C0 fill:#fdeaea,stroke:#ef4444
+    style C1 fill:#fdeaea,stroke:#ef4444
+    style C2 fill:#e7f9ed,stroke:#22c55e
+    style R fill:#e7f9ed,stroke:#22c55e
+```
+
+Ici, il faut comparer la clé cherchée à chaque élément, un par un, jusqu'à la trouver (ou parcourir toute la liste si elle est absente) : le nombre d'étapes **croît avec le nombre d'éléments** stockés.
+
+
+
+## 3. Exemple chiffré : mesure du temps d'exécution
+
+Le code ci-dessous compare, pour des tailles croissantes de données, le temps nécessaire pour rechercher un élément :
+- dans un **dictionnaire** (recherche par clé) ;
+- dans une **liste de listes** de la forme `[[identifiant, valeur], [identifiant, valeur], ...]` (recherche par parcours).
+
+```python
+import time
+
+def construire_dictionnaire(n):
+    return {f'id_{i}': i for i in range(n)}
+
+def construire_liste_de_listes(n):
+    return [[f'id_{i}', i] for i in range(n)]
+
+def recherche_dictionnaire(dico, cle):
+    return dico[cle]
+
+def recherche_liste(liste, cle):
+    for identifiant, valeur in liste:
+        if identifiant == cle:
+            return valeur
+    return None
+
+tailles = [1000, 10000, 100000, 1000000]
+
+print(f"{'taille':>10} | {'temps dict (s)':>15} | {'temps liste (s)':>16}")
+for n in tailles:
+    dico = construire_dictionnaire(n)
+    liste = construire_liste_de_listes(n)
+    cle_cherchee = f'id_{n - 1}'  # dernier élément : pire cas pour la liste
+
+    debut = time.perf_counter()
+    recherche_dictionnaire(dico, cle_cherchee)
+    temps_dict = time.perf_counter() - debut
+
+    debut = time.perf_counter()
+    recherche_liste(liste, cle_cherchee)
+    temps_liste = time.perf_counter() - debut
+
+    print(f"{n:>10} | {temps_dict:>15.8f} | {temps_liste:>16.8f}")
+```
+
+**Résultat attendu (ordre de grandeur, les valeurs exactes dépendent de la machine) :**
+
+```
+    taille |  temps dict (s) |  temps liste (s)
+      1000 |      0.00000030 |       0.00003500
+     10000 |      0.00000030 |       0.00035000
+    100000 |      0.00000030 |       0.00350000
+   1000000 |      0.00000030 |       0.03500000
+```
+
+**Interprétation** : le temps de recherche dans le dictionnaire reste (à peu près) constant quelle que soit la taille `n`, conformément à la complexité $O(1)$. Le temps de recherche dans la liste de listes, lui, est multiplié par 10 à chaque fois que `n` est multiplié par 10 : il **croît linéairement** avec `n`, conformément à la complexité $O(n)$.
+
 
 # Suite
 ##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 

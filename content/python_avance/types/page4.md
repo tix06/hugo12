@@ -296,8 +296,7 @@ capitales = {'France': 'Paris', 'Italie': 'Rome', 'Allemagne': 'Berlin'}
 
 ##### {{% button href="../page3" icon="palette" style="important" %}}TD2a{{% /button %}} les types construits, les copies par valeur et reference sur Pythontutor
 ##### {{% button href="../page4" icon="palette" style="important" %}}TD2b{{% /button %}} le parcours de liste, compréhension de liste et tracé graphique
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}
-<!--
+
 {{% button href="../page11" icon="lightbulb" style="tip" %}}Corrigé du T2b{{% /button %}}
--->
+
 

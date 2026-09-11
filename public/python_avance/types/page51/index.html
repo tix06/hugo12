@@ -17,33 +17,33 @@
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
-    <meta property="article:modified_time" content="2026-09-07T19:27:19+02:00">
+    <meta property="article:modified_time" content="2026-09-10T19:40:39+02:00">
     <meta itemprop="name" content="TP3b tableaux python, visualisation et fichier csv :: allophysique">
     <meta itemprop="description" content="tableau python, effet de bord, import csv, algorithmes de moyenne, max et min">
-    <meta itemprop="dateModified" content="2026-09-07T19:27:19+02:00">
+    <meta itemprop="dateModified" content="2026-09-10T19:40:39+02:00">
     <meta itemprop="wordCount" content="812">
     <title>TP3b tableaux python, visualisation et fichier csv :: allophysique</title>
-    <link href="/images/logo.png?1789061413" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789061413" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789061413" defer></script>
-    <script src="/js/search-lunr.js?1789061413" defer></script>
-    <script src="/js/search.js?1789061413" defer></script>
+    <link href="/images/logo.png?1789144187" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789144187" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789144187" defer></script>
+    <script src="/js/search-lunr.js?1789144187" defer></script>
+    <script src="/js/search.js?1789144187" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789061413";
+      window.relearn.index_js_url="/searchindex.en.js?1789144187";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789061413" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789061413" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789061413" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789061413" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789144187" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789061413" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789061413" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789061413" rel="stylesheet">
-    <link href="/css/theme.css?1789061413" rel="stylesheet">
-    <link href="/css/format-html.css?1789061413" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789144187" rel="stylesheet">
+    <link href="/css/theme.css?1789144187" rel="stylesheet">
+    <link href="/css/format-html.css?1789144187" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -177,21 +177,21 @@
 <h2 id="ex1-visualiser-les-algorithmes">Ex1: Visualiser les algorithmes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="1-moyenne">1. Moyenne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Le script suivant calcule la moyenne sur une liste de notes. La première valeur de la liste est reservée pour y placer une valeur, à la fin du programme. Les notes commencent donc à partir de l&rsquo;indice 1 de cette liste:</p>
-<div class="tab-panel" data-tab-group="R-tabs-9f4588c93d4c122e00d456c2a19ae39c">
+<div class="tab-panel" data-tab-group="R-tabs-3d1409b317eb74267aed5c92e4129d45">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
-      aria-controls="R-tab-id-651715a37ef792d8603495250c6063e8" aria-expanded="true"
+      aria-controls="R-tab-id-46c4deea6b717a9ec0e9c8b78dc686d4" aria-expanded="true"
       data-tab-item="R-tab-a69c9eb97437146974cf6700bbf57bca"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('R-tabs-9f4588c93d4c122e00d456c2a19ae39c','R-tab-a69c9eb97437146974cf6700bbf57bca')"
+      onclick="switchTab('R-tabs-3d1409b317eb74267aed5c92e4129d45','R-tab-a69c9eb97437146974cf6700bbf57bca')"
     >
       <span class="tab-nav-text">fonction moyenne</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      id="R-tab-id-651715a37ef792d8603495250c6063e8"
+      id="R-tab-id-46c4deea6b717a9ec0e9c8b78dc686d4"
       data-tab-item="R-tab-a69c9eb97437146974cf6700bbf57bca"
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
@@ -246,21 +246,21 @@
 valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;instruction utilisée. Comment voit-on la modification dans pythontutor?</p>
 </blockquote>
 <h3 id="2-recherche-du-maximum">2. Recherche du maximum<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<div class="tab-panel" data-tab-group="R-tabs-c333e5d90e18db7d841692bb3084a83b">
+<div class="tab-panel" data-tab-group="R-tabs-192a40a0845450835e3a21b8a9ff63b2">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
-      aria-controls="R-tab-id-e14cea1759a7b32103008881d3e76af9" aria-expanded="true"
+      aria-controls="R-tab-id-f5831945f8ea1887a429e17a78804bb7" aria-expanded="true"
       data-tab-item="R-tab-c830eb15528b3a34baf9984efbda1e44"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('R-tabs-c333e5d90e18db7d841692bb3084a83b','R-tab-c830eb15528b3a34baf9984efbda1e44')"
+      onclick="switchTab('R-tabs-192a40a0845450835e3a21b8a9ff63b2','R-tab-c830eb15528b3a34baf9984efbda1e44')"
     >
       <span class="tab-nav-text">fonction maximum</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      id="R-tab-id-e14cea1759a7b32103008881d3e76af9"
+      id="R-tab-id-f5831945f8ea1887a429e17a78804bb7"
       data-tab-item="R-tab-c830eb15528b3a34baf9984efbda1e44"
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
@@ -385,21 +385,21 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
 </figure>
 
 <p>Ajouter le script suivant:</p>
-<div class="tab-panel" data-tab-group="R-tabs-cf55fd98f79d72689ac314188f33133f">
+<div class="tab-panel" data-tab-group="R-tabs-cc5af103983633a06545af3b9e16bce2">
   <div class="tab-nav">
     <div class="tab-nav-title">&#8203;</div>
     <button
-      aria-controls="R-tab-id-53860060b79c52baf2cf10a0871bde1d" aria-expanded="true"
+      aria-controls="R-tab-id-644c08a0123e637bf869a4aa5a959ae0" aria-expanded="true"
       data-tab-item="R-tab-fecddc673414fa8a3fd2f6df8191fd57"
       class="tab-nav-button tab-panel-style cstyle initial active" tabindex="-1"
-      onclick="switchTab('R-tabs-cf55fd98f79d72689ac314188f33133f','R-tab-fecddc673414fa8a3fd2f6df8191fd57')"
+      onclick="switchTab('R-tabs-cc5af103983633a06545af3b9e16bce2','R-tab-fecddc673414fa8a3fd2f6df8191fd57')"
     >
       <span class="tab-nav-text">import fichier csv</span>
     </button>
   </div>
   <div class="tab-content-container">
     <div
-      id="R-tab-id-53860060b79c52baf2cf10a0871bde1d"
+      id="R-tab-id-644c08a0123e637bf869a4aa5a959ae0"
       data-tab-item="R-tab-fecddc673414fa8a3fd2f6df8191fd57"
       class="tab-content tab-panel-style cstyle initial active">
       <div class="tab-content-text">
@@ -445,14 +445,14 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
 > 3. Traiter la feuille d'exercices sur les tableaux en python: [lien vers le pdf](/pdf/NSI_1/TP_excel_vers_python.pdf)
 -->
 <h1 id="suite">Suite<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode417s3hbhb"><span class="btn cstyle button caution interactive"><a href="../page10"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode417s4hbhb-tableur"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3a</span></a></span> Tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode417s5hbhb-tableau-de-notes-et-algorithmes-visualisation"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3b</span></a></span> Tableau de notes et algorithmes (Visualisation)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode417s6hbhb-systemes-scolaires-européens"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3c</span></a></span> Systemes scolaires européens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode248s3hbhb"><span class="btn cstyle button caution interactive"><a href="../page10"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode248s4hbhb-tableur"><span class="btn cstyle button tip interactive"><a href="../page5"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3a</span></a></span> Tableur<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode248s5hbhb-tableau-de-notes-et-algorithmes-visualisation"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3b</span></a></span> Tableau de notes et algorithmes (Visualisation)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode248s6hbhb-systemes-scolaires-européens"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3c</span></a></span> Systemes scolaires européens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
-              <i class='fa-fw fas fa-calendar'></i> 7 sept. 2026
+              <i class='fa-fw fas fa-calendar'></i> 10 sept. 2026
   </footer>
 </article>
         </div>
@@ -529,8 +529,6 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
             <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="" data-nav-id="/python_avance/fonctions/page2/index.html"><a class="padding" href="/python_avance/fonctions/page2/index.html">TD - fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/fonctions/page3/index.html"><a class="padding" href="/python_avance/fonctions/page3/index.html">TD - fonctions (corrigé)<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -812,9 +810,9 @@ valeur <code>m</code> dans la case <code>list1[0]</code>. Noter ici l&rsquo;inst
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789061413"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789061413" defer></script>
-    <script src="/js/theme.js?1789061413" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789144187"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789144187" defer></script>
+    <script src="/js/theme.js?1789144187" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

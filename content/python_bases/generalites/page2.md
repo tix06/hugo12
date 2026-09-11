@@ -319,7 +319,7 @@ True
 # Calcul sur des valeur entières
 Les programmes informatiques préfèrent utiliser des valeurs entières pour les calculs, même si les calculs avec nombres à virgules sont possibles. Pour cette raison, les opérateurs `//` et `%` sont souvent utilisés en combinaison.
 
-* *Rappel:* **La division euclidienne** de `a` par `b` est définie comme ceci: le dividende de `a` est égal au quotient de `a//b` multiplié par le diviseur `b`, augmenté du reste `a%b`:
+* *Rappel:* **La division euclidienne** de `a` par `b` est définie comme ceci: `a` est égal au quotient de `a//b` multiplié par le diviseur `b`, augmenté du reste `a%b`:
 
 $$a = (a//b)*b + a%b$$
 

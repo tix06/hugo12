@@ -17,31 +17,33 @@
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
+    <meta property="article:modified_time" content="2026-09-10T19:40:39+02:00">
     <meta itemprop="name" content="TP3c correction :: allophysique">
     <meta itemprop="description" content="Question 1 donnees = table[1:] donnees.append([&#34;Pays-Bas&#34;, 919813,77,6]) print(donnees) print(table) Question 2 meilleure_ligne = donnees[0] # meilleure_ligne vaut [&#34;France&#34;, 5660000, 112, 7] for ligne in donnees: if ligne[1] &gt; meilleure_ligne[1]: meilleure_ligne = ligne print(meilleure_ligne[0], meilleure_ligne[1]) # affiche Allemagne 6900000 Question 3 tri_par_effectif = sorted(donnees, key=lambda ligne: ligne[1], reverse=True) print(tri_par_effectif) Question 4 # Question 4 etiquettes = table[0] ligne_france = table[1] France = { etiquettes[0]: ligne_france[0], etiquettes[1]: ligne_france[1], etiquettes[2]: ligne_france[2], etiquettes[3]: ligne_france[3], } ligne_allemagne = table[2] Allemagne = { etiquettes[0]: ligne_allemagne[0], etiquettes[1]: ligne_allemagne[1], etiquettes[2]: ligne_allemagne[2], etiquettes[3]: ligne_allemagne[3], } print(Allemagne) Question 5 # Question 5 pays_dict = {} etiquettes = table[0] for ligne in donnees: nom_pays = ligne[0] pays_dict[nom_pays] = {} &#34;&#34;&#34; for j in range(1, len(etiquettes)): pays_dict[nom_pays][etiquettes[j]] = ligne[j] &#34;&#34;&#34; print(pays_dict) # Affiche # {&#39;France&#39;: {}, &#39;Allemagne&#39;: {}, &#39;Espagne&#39;: {}, &#39;Grèce&#39;: {}, &#39;Pays-Bas&#39;: {}}">
+    <meta itemprop="dateModified" content="2026-09-10T19:40:39+02:00">
     <meta itemprop="wordCount" content="132">
     <title>TP3c correction :: allophysique</title>
-    <link href="/images/logo.png?1789061743" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789061743" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789061743" defer></script>
-    <script src="/js/search-lunr.js?1789061743" defer></script>
-    <script src="/js/search.js?1789061743" defer></script>
+    <link href="/images/logo.png?1789144187" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789144187" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789144187" defer></script>
+    <script src="/js/search-lunr.js?1789144187" defer></script>
+    <script src="/js/search.js?1789144187" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789061743";
+      window.relearn.index_js_url="/searchindex.en.js?1789144187";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789061743" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789061743" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789061743" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789061743" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789144187" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789061743" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789061743" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789061743" rel="stylesheet">
-    <link href="/css/theme.css?1789061743" rel="stylesheet">
-    <link href="/css/format-html.css?1789061743" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789144187" rel="stylesheet">
+    <link href="/css/theme.css?1789144187" rel="stylesheet">
+    <link href="/css/format-html.css?1789144187" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -212,6 +214,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># {&#39;France&#39;: {}, &#39;Allemagne&#39;: {}, &#39;Espagne&#39;: {}, &#39;Grèce&#39;: {}, &#39;Pays-Bas&#39;: {}}</span></span></span></code></pre></div>
 
   <footer class="footline">
+              <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
+              <i class='fa-fw fas fa-calendar'></i> 10 sept. 2026
   </footer>
 </article>
         </div>
@@ -569,9 +573,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789061743"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789061743" defer></script>
-    <script src="/js/theme.js?1789061743" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789144187"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789144187" defer></script>
+    <script src="/js/theme.js?1789144187" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
