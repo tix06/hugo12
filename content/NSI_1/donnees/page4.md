@@ -1,8 +1,44 @@
 ---
-Title: entiers relatifs et decimaux
-description: codage binaire des nombres entiers relatifs, decimaux, en virgule flottante
+Title: entiers naturels, relatifs et decimaux
+description: codage binaire des nombres entiers naturels, relatifs, decimaux, en virgule flottante
 weight: 7
 ---
+
+
+
+# Entiers naturels
+
+Un entier naturel (positif ou nul) se code en base 2 : chaque bit représente une puissance de 2, exactement comme chaque chiffre décimal représente une puissance de 10 en base 10.
+
+*Exemple:* sur 8 bits, le nombre `0000 1011` vaut :
+
+$$0{\times}2^7+0{\times}2^6+0{\times}2^5+0{\times}2^4+1{\times}2^3+0{\times}2^2+1{\times}2^1+1{\times}2^0 = 8+2+1 = 11$$
+
+## Capacité de codage
+
+Avec $n$ bits, on peut coder $2^n$ valeurs différentes, comprises entre $0$ et $2^n - 1$ (car il faut compter la valeur 0).
+
+| nombre de bits ($n$) | nombre de valeurs codables ($2^n$) | intervalle des entiers représentables |
+| --- | --- | --- |
+| 4 | 16 | [0 ; 15] |
+| 8 | 256 | [0 ; 255] |
+| 16 | 65 536 | [0 ; 65 535] |
+| 32 | 4 294 967 296 | [0 ; 4 294 967 295] |
+
+Plus on dispose de bits, plus l'intervalle des valeurs représentables est grand, mais il reste toujours *fini* : il faut choisir à l'avance le nombre de bits utilisés pour coder un entier.
+
+## Dépassement de capacité (overflow)
+
+Si le résultat d'un calcul dépasse la plus grande valeur codable sur le nombre de bits alloué, on parle de **dépassement de capacité** (ou *overflow*). La retenue supplémentaire ne peut pas être stockée : elle est perdue, et le résultat obtenu est alors complètement faux.
+
+*Exemple:* sur 8 bits, `1111 1111` (soit 255) additionné à `0000 0001` (soit 1) devrait donner 256. Mais 256 nécessite 9 bits pour être codé : le 9ᵉ bit est perdu et il ne reste que `0000 0000`, soit... 0 !
+
+C'est ce type d'erreur qui est à l'origine de la destruction de la fusée Ariane 5, 37 secondes après son décollage en 1996 : une valeur de vitesse, trop grande pour le nombre de bits alloué à son codage, a provoqué un dépassement de capacité et un plantage du logiciel de guidage (ce bug, plus précisément, concerne la conversion d'un nombre à virgule flottante, notion que nous verrons plus loin dans ce cours).
+
+{{< img src="../images/ariane51.png" width="200" link="https://www.youtube.com/shorts/G9yXBPFwal0" caption="Short YouTube de L'aventure Ariane 5" >}}
+
+{{< img src="../images/ariane52.png" width="200" link="https://www.youtube.com/shorts/jgMr9joliME" caption="$370 Million Software Bug" >}}
+
 
 # Entiers relatifs
 
@@ -102,12 +138,12 @@ Cette forme rappelle ainsi l'écriture en notation scientifique.
 
 **M** s’appelle la **mantisse** du nombre et **E** l’**exposant**. Comme la mantisse commence toujours par une partie entière égale à 1, on ne l’écrit pas et on n’exprime que la partie fractionnaire, M
 
-Selon la précision, dite *simple* ou *double*, le nombre M est constitué de 23 bits ou bien de 55 bits. 
+Selon la précision, dite *simple* ou *double*, le nombre M est constitué de 23 bits ou bien de 52 bits. 
 
 | precision | bit de signe | E | M |
 | --- | --- | --- | --- |
 | simple | 1 | 8 | 23 |
-| double | 1 | 8 | 55 |
+| double | 1 | 11 | 52 |
 
 
 Selon cette norme IEEE 754, en 32 bits (simple precision):
@@ -135,9 +171,9 @@ On a un bit de signe égal à 0, un exposant égal à 8 + 127 et les premier
 Pour représenter des constantes physiques:
 
 * Vers l'infiniment grand, le nombre d'Avogadro vaut $6,0221.10^{23}$. Celui-ci, exprimé avec 5 chiffres significatifs, suffit à la plupart des calculs scientifiques.
-* Vers l'infiniment petit, la masse du proton est $9,1094.10-{31}$. Avec 5 chiffres significatifs.
+* Vers l'infiniment petit, la masse du proton est $9,1094.10^{-31}$. Avec 5 chiffres significatifs.
 
-Avec la norme IEE754 sur 32 bits, les exposant de 2 varient de -127 à 128. Ce qui correspond à peu près à $\pm 10{38}$. Et le nombre de chiffres significatifs est sur 23 bits, ce qui signifie que la partie décimale est représentée avec 7 chiffres significatifs.
+Avec la norme IEE754 sur 32 bits, les exposants de 2 varient de -126 à 127. Ce qui correspond à peu près à $\pm 10^{38}$. Et le nombre de chiffres significatifs est sur 23 bits, ce qui signifie que la partie décimale est représentée avec 7 chiffres significatifs.
 
 ## La multiplication et division par 2 d'un nombre binaire
 La *multiplication* par 10 d'un nombre exprimé en base 10 va décaler la virgule vers la *droite*. Par exemple:
@@ -229,37 +265,10 @@ Rappelez vous que le nombre s'écrit sous la forme:
 
 $$+/-1,M.2^E$$
 
-<!--
-<br>
 
-<div><h1>
-    <label for="bloc1">Correction</label><span class="derouler"> <i>(cliquer pour derouler)</i></span></h1>
-    
-    <input type="checkbox" id="bloc1" class="visually-hidden">
 
-    <div class="control-me">
 
-<table>
-  <tr><td>binaire</td><td>e</td><td>E</td><td>M = m</td><td>flottant représenté: 1,b<sub>1</sub>b<sub>0</sub>.2<sup>E</sup><sub>(2)</sub></td></tr>
-  <tr><td>0 00 00 </td>
-      <td>00</td>
-      <td>-1</td>
-      <td>00</td>
-      <td>1,0.2<sup>-1</sup> = 0,1<sub>2</sub> = 0,5</td></tr>
-    <tr><td>0 00 01 </td>
-      <td>00</td>
-      <td>-1</td>
-      <td>01</td>
-      <td>1,01.2<sup>-1</sup> = 0,101<sub>2</sub> = 1/2 + 1/8 = 0,625</td></tr>
 
-    <tr><td>...</td></tr>
-</table>
-
-</div>
-</div>
-
-<br>
--->
 
 
 

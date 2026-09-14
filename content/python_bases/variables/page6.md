@@ -165,19 +165,26 @@ m = str(a)
 type(m)
 ```
 
-* **Question j:** Compléter le tableau
+* **Question j:** valeur et type
 
-| x= | valeur |  type(x) |
+Commencer par saisir:
+
+```python
+x = 45
+y = "45"
+```
+
+Puis tester les opérations et compléter le tableau
+
+| opération | valeur |  type(x) |
 | --- | --- | --- |
-| 45 |  |  |
-| "45" + "45" |   |   |
-| "45" * 3 |   |   |
-| 45%26 | |   |
-| 45/26 |  |   |
-| 45//26 |  |   |
-| 45 // 6 |  |
-| 45 % 6 |  |
-| str(45) |  |  |
+| x + 1 |  |  |
+| y + y |   |   |
+| y * 3 |   |   |
+| x // 6 |  | |
+| x % 6 |  | |
+| x / 6 |  | |
+| str(x) |  |  |
 | 2**8 |   |  |
 | 6.02e-3 |   |   |
 
@@ -211,18 +218,30 @@ def calcule_somme_carres(a,b):
 25
 ```
 
-* **Question l:** créer une fonction `Ec` qui prend pour paramètres `m` et `v` et retourne le resultat de $Ec = \tfrac{1}{2}m.v^2$. Appeler cette fonction avec les valeurs 100kg et $20m.s^{-1}$
+* **Question l:** Energie cinétique
+> compléter la fonction `Ec` qui prend pour paramètres `m` et `v` et retourne le resultat de $Ec = \tfrac{1}{2}m.v^2$. 
+
+```python
+def Ec(m,v):
+  return 1/2 * m * ...
+```
+
+> Puis appeler cette fonction avec les valeurs 100kg et $20m.s^{-1}$ depuis le shell:
+
+```python
+> Ec(100, 20)
+# Affiche ...? 
+```
+
+> Et compléter le tableau en utilisant votre fonction:
+
+| objet| m | v | Ec |
+|--- |--- |--- |--- |
+| balle de fusil | 10e-3 | 1000 |    |
+| sprinteur | 70 | 10 |
+| fusée Ariane 4 | 3e5 | 1e4 |    |
 
 # Fiche de synthèse
-<!--
-* Comment se nomment *en python* les 4 types primitifs que l'on a vus lors de ces premieres séances?
-* Le changement de type entre variables se fait grace aux fonctions `str`, 'float', `int`, et `bool`
-  * Comment transformer la chaine "12" en une valeur entière égale à 12? "12" => 12
-  * Comment réaliser l'opération inverse? 12 => "12"
-  * Comment transformer la chaine "12" en un nombre flottant? "12" => 12.0
-  * Comment transformer l'information 1 en un booléen `True`?
-  * Comment réaliser l'opération inverse?
--->
 
 * Définir ce qu'est une variable.
 * Comment le site Pythontutor illustre t-il la création de variables suivante? Faire un schéma

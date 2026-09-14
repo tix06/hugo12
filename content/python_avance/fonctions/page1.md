@@ -129,7 +129,7 @@ print(x)
 
 ## Arguments positionnés
 
-> Lorsqu'une fonction a besoin de plusieurs valeurs, ces dernières doivent correspondre aux paramètres qu'elle attend. Les arguments doivent être placés dans l'ordre des valeurs reçues.
+> Lorsqu'une fonction a besoin de plusieurs valeurs, ces dernières doivent correspondre aux paramètres qu'elle attend. Les arguments doivent être placés **dans l'ordre** des valeurs reçues.
 
 ```python
 def publier_msg(message,user):
@@ -146,10 +146,19 @@ publier_msg('Ok pour moi','Branda')
 
 *Rq : il existe aussi la possibilité d'utiliser des arguments non positionnés, et nommés. Une petite recherche sur le net devrait vous permettre d'en prendre connaissance si besoin.*
 
+## Arguments non positionnés
+On peut appeler la fonction avec des arguments non positionnés, mais, alors, il faudra **nommer les paramètres**. Par exemple, ici, on inverse la position des arguments, mais comme ceux-ci sont nommés, l'affectation aux paramètres est bien respectée:
+
+
+```python
+> servir_cafe(nombre=10,client="Fred")
+'Fred commande 10 café(s)'
+```
+
 ## Valeur par défaut
 > Définir la *valeur par défaut* d'un paramètre dans une fonction permet à l'appel de la fonction d'utiliser cette valeur, sauf si une autre valeur est spécifiée à l'appel. 
 
-Lorsqu'il y a plusieurs arguments, il faudra mettre les paramètres avec valeur par défaut à la fin : 
+Lorsqu'il y a plusieurs arguments, il faudra mettre le-s paramètre-s avec valeur-s par défaut à la fin : 
 
 ```python
 def servir_cafe(client,nombre=1):
@@ -161,8 +170,10 @@ def servir_cafe(client,nombre=1):
 
 ```python
 servir_cafe('George')
+# on utilise la valeur du paramètre par defaut
 # retourne 'George commande 1 café(s)'
 servir_cafe('Jean',2)
+# cette fois, on précise la valeur 2
 # retourne 'Jean commande 2 café(s)'
 ```
 

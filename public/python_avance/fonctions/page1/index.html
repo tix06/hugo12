@@ -21,29 +21,29 @@
     <meta itemprop="name" content="Fonctions :: allophysique">
     <meta itemprop="description" content="arguments, valeur par defaut d&#39;un argument, annotations de type, modules, docstring, lambda fonction">
     <meta itemprop="dateModified" content="2026-09-10T19:40:39+02:00">
-    <meta itemprop="wordCount" content="1844">
+    <meta itemprop="wordCount" content="1907">
     <title>Fonctions :: allophysique</title>
-    <link href="/images/logo.png?1789144187" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789144187" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789144187" defer></script>
-    <script src="/js/search-lunr.js?1789144187" defer></script>
-    <script src="/js/search.js?1789144187" defer></script>
+    <link href="/images/logo.png?1789390564" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789390564" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789390564" defer></script>
+    <script src="/js/search-lunr.js?1789390564" defer></script>
+    <script src="/js/search.js?1789390564" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789144187";
+      window.relearn.index_js_url="/searchindex.en.js?1789390564";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789390564" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789390564" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789390564" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789390564" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789144187" rel="stylesheet">
-    <link href="/css/theme.css?1789144187" rel="stylesheet">
-    <link href="/css/format-html.css?1789144187" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789390564" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789390564" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789390564" rel="stylesheet">
+    <link href="/css/theme.css?1789390564" rel="stylesheet">
+    <link href="/css/format-html.css?1789390564" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -130,6 +130,7 @@
       </ul>
     </li>
     <li><a href="#arguments-positionnés">Arguments positionnés</a></li>
+    <li><a href="#arguments-non-positionnés">Arguments non positionnés</a></li>
     <li><a href="#valeur-par-défaut">Valeur par défaut</a></li>
     <li><a href="#annotations-de-type-paramètres-et-valeur-de-retour">Annotations de type (paramètres et valeur de retour)</a></li>
     <li><a href="#vérifier-réellement-les-préconditions--assert-et-raise">Vérifier réellement les préconditions : <code>assert</code> et <code>raise</code></a></li>
@@ -269,7 +270,7 @@ Un <strong>argument</strong> est une valeur transmise à une fonction.</p>
 </span></span><span class="line"><span class="cl"><span class="c1"># affiche 10</span></span></span></code></pre></div>
 <h2 id="arguments-positionnés">Arguments positionnés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
-<p>Lorsqu&rsquo;une fonction a besoin de plusieurs valeurs, ces dernières doivent correspondre aux paramètres qu&rsquo;elle attend. Les arguments doivent être placés dans l&rsquo;ordre des valeurs reçues.</p>
+<p>Lorsqu&rsquo;une fonction a besoin de plusieurs valeurs, ces dernières doivent correspondre aux paramètres qu&rsquo;elle attend. Les arguments doivent être placés <strong>dans l&rsquo;ordre</strong> des valeurs reçues.</p>
 </blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">publier_msg</span><span class="p">(</span><span class="n">message</span><span class="p">,</span><span class="n">user</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;publier le message de l&#39;utilisateur&#34;&#34;&#34;</span>
@@ -278,18 +279,24 @@ Un <strong>argument</strong> est une valeur transmise à une fonction.</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">publier_msg</span><span class="p">(</span><span class="s1">&#39;Ok pour moi&#39;</span><span class="p">,</span><span class="s1">&#39;Branda&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne (affiche) &#39;Branda : Ok pour moi&#39;</span></span></span></code></pre></div>
 <p><em>Rq : il existe aussi la possibilité d&rsquo;utiliser des arguments non positionnés, et nommés. Une petite recherche sur le net devrait vous permettre d&rsquo;en prendre connaissance si besoin.</em></p>
+<h2 id="arguments-non-positionnés">Arguments non positionnés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>On peut appeler la fonction avec des arguments non positionnés, mais, alors, il faudra <strong>nommer les paramètres</strong>. Par exemple, ici, on inverse la position des arguments, mais comme ceux-ci sont nommés, l&rsquo;affectation aux paramètres est bien respectée:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">servir_cafe</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">client</span><span class="o">=</span><span class="s2">&#34;Fred&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;Fred commande 10 café(s)&#39;</span></span></span></code></pre></div>
 <h2 id="valeur-par-défaut">Valeur par défaut<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <blockquote>
 <p>Définir la <em>valeur par défaut</em> d&rsquo;un paramètre dans une fonction permet à l&rsquo;appel de la fonction d&rsquo;utiliser cette valeur, sauf si une autre valeur est spécifiée à l&rsquo;appel.</p>
 </blockquote>
-<p>Lorsqu&rsquo;il y a plusieurs arguments, il faudra mettre les paramètres avec valeur par défaut à la fin :</p>
+<p>Lorsqu&rsquo;il y a plusieurs arguments, il faudra mettre le-s paramètre-s avec valeur-s par défaut à la fin :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">servir_cafe</span><span class="p">(</span><span class="n">client</span><span class="p">,</span><span class="n">nombre</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;servir le nombre de cafés voulus au client&#34;&#34;&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">client</span><span class="si">}</span><span class="s1"> commande </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s1"> café(s)&#39;</span></span></span></code></pre></div>
 <p><em>Exemple d&rsquo;utilisation :</em></p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">servir_cafe</span><span class="p">(</span><span class="s1">&#39;George&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># on utilise la valeur du paramètre par defaut</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne &#39;George commande 1 café(s)&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">servir_cafe</span><span class="p">(</span><span class="s1">&#39;Jean&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># cette fois, on précise la valeur 2</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># retourne &#39;Jean commande 2 café(s)&#39;</span></span></span></code></pre></div>
 <h2 id="annotations-de-type-paramètres-et-valeur-de-retour">Annotations de type (paramètres et valeur de retour)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Depuis Python 3.5, on peut préciser, dans la définition d&rsquo;une fonction, le type attendu pour chaque paramètre ainsi que le type de la valeur renvoyée. On parle d&rsquo;<strong>annotations de type</strong> (<em>type hints</em>).</p>
@@ -418,8 +425,8 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
 <p>résultat:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)]</span></span></span></code></pre></div>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode117s0hbhb-les-fonctions"><span class="btn cstyle button caution interactive"><a href="../page1"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span> les fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode117s1hbhb"><span class="btn cstyle button tip interactive"><a href="../page2"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode394s0hbhb-les-fonctions"><span class="btn cstyle button caution interactive"><a href="../page1"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span> les fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode394s1hbhb"><span class="btn cstyle button tip interactive"><a href="../page2"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -780,9 +787,9 @@ On utilise l’une des 3 manières proposées ci-dessous:</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789144187"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789144187" defer></script>
-    <script src="/js/theme.js?1789144187" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789390564"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789390564" defer></script>
+    <script src="/js/theme.js?1789390564" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

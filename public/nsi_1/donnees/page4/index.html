@@ -5,45 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="codage binaire des nombres entiers relatifs, decimaux, en virgule flottante">
+    <meta name="description" content="codage binaire des nombres entiers naturels, relatifs, decimaux, en virgule flottante">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="entiers relatifs et decimaux :: allophysique">
-    <meta name="twitter:description" content="codage binaire des nombres entiers relatifs, decimaux, en virgule flottante">
+    <meta name="twitter:title" content="entiers naturels, relatifs et decimaux :: allophysique">
+    <meta name="twitter:description" content="codage binaire des nombres entiers naturels, relatifs, decimaux, en virgule flottante">
     <meta property="og:url" content="//localhost:1313/nsi_1/donnees/page4/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="entiers relatifs et decimaux :: allophysique">
-    <meta property="og:description" content="codage binaire des nombres entiers relatifs, decimaux, en virgule flottante">
+    <meta property="og:title" content="entiers naturels, relatifs et decimaux :: allophysique">
+    <meta property="og:description" content="codage binaire des nombres entiers naturels, relatifs, decimaux, en virgule flottante">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI prem">
     <meta property="article:modified_time" content="2026-06-25T15:49:56+02:00">
-    <meta itemprop="name" content="entiers relatifs et decimaux :: allophysique">
-    <meta itemprop="description" content="codage binaire des nombres entiers relatifs, decimaux, en virgule flottante">
+    <meta itemprop="name" content="entiers naturels, relatifs et decimaux :: allophysique">
+    <meta itemprop="description" content="codage binaire des nombres entiers naturels, relatifs, decimaux, en virgule flottante">
     <meta itemprop="dateModified" content="2026-06-25T15:49:56+02:00">
-    <meta itemprop="wordCount" content="1449">
-    <title>entiers relatifs et decimaux :: allophysique</title>
-    <link href="/images/logo.png?1789144187" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789144187" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789144187" defer></script>
-    <script src="/js/search-lunr.js?1789144187" defer></script>
-    <script src="/js/search.js?1789144187" defer></script>
+    <meta itemprop="wordCount" content="1768">
+    <title>entiers naturels, relatifs et decimaux :: allophysique</title>
+    <link href="/images/logo.png?1789404406" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789404406" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789404406" defer></script>
+    <script src="/js/search-lunr.js?1789404406" defer></script>
+    <script src="/js/search.js?1789404406" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789144187";
+      window.relearn.index_js_url="/searchindex.en.js?1789404406";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789404406" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789404406" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789404406" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789404406" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789144187" rel="stylesheet">
-    <link href="/css/theme.css?1789144187" rel="stylesheet">
-    <link href="/css/format-html.css?1789144187" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789404406" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789404406" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789404406" rel="stylesheet">
+    <link href="/css/theme.css?1789404406" rel="stylesheet">
+    <link href="/css/format-html.css?1789404406" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -115,6 +115,11 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#capacité-de-codage">Capacité de codage</a></li>
+    <li><a href="#dépassement-de-capacité-overflow">Dépassement de capacité (overflow)</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#nombres-signés">nombres signés</a></li>
     <li><a href="#representation-en-complement-a-2">Représentation en complément à 2</a></li>
   </ul>
@@ -142,7 +147,7 @@
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/donnees/index.html"><span itemprop="name">Donnees</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">entiers relatifs et decimaux</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/index.html"><span itemprop="name">NSI prem</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi_1/donnees/index.html"><span itemprop="name">Donnees</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">entiers naturels, relatifs et decimaux</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
@@ -173,7 +178,94 @@
   <header class="headline">
   </header>
 
-<h1 id="entiers-relatifs-et-decimaux">entiers relatifs et decimaux</h1>
+<h1 id="entiers-naturels-relatifs-et-decimaux">entiers naturels, relatifs et decimaux</h1>
+
+<h1 id="entiers-naturels">Entiers naturels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Un entier naturel (positif ou nul) se code en base 2 : chaque bit représente une puissance de 2, exactement comme chaque chiffre décimal représente une puissance de 10 en base 10.</p>
+<p><em>Exemple:</em> sur 8 bits, le nombre <code>0000 1011</code> vaut :</p>
+$$0{\times}2^7+0{\times}2^6+0{\times}2^5+0{\times}2^4+1{\times}2^3+0{\times}2^2+1{\times}2^1+1{\times}2^0 = 8+2+1 = 11$$<h2 id="capacité-de-codage">Capacité de codage<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Avec $n$ bits, on peut coder $2^n$ valeurs différentes, comprises entre $0$ et $2^n - 1$ (car il faut compter la valeur 0).</p>
+<table>
+	<thead>
+			<tr>
+					<th>nombre de bits ($n$)</th>
+					<th>nombre de valeurs codables ($2^n$)</th>
+					<th>intervalle des entiers représentables</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>4</td>
+					<td>16</td>
+					<td>[0 ; 15]</td>
+			</tr>
+			<tr>
+					<td>8</td>
+					<td>256</td>
+					<td>[0 ; 255]</td>
+			</tr>
+			<tr>
+					<td>16</td>
+					<td>65 536</td>
+					<td>[0 ; 65 535]</td>
+			</tr>
+			<tr>
+					<td>32</td>
+					<td>4 294 967 296</td>
+					<td>[0 ; 4 294 967 295]</td>
+			</tr>
+	</tbody>
+</table>
+<p>Plus on dispose de bits, plus l&rsquo;intervalle des valeurs représentables est grand, mais il reste toujours <em>fini</em> : il faut choisir à l&rsquo;avance le nombre de bits utilisés pour coder un entier.</p>
+<h2 id="dépassement-de-capacité-overflow">Dépassement de capacité (overflow)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Si le résultat d&rsquo;un calcul dépasse la plus grande valeur codable sur le nombre de bits alloué, on parle de <strong>dépassement de capacité</strong> (ou <em>overflow</em>). La retenue supplémentaire ne peut pas être stockée : elle est perdue, et le résultat obtenu est alors complètement faux.</p>
+<p><em>Exemple:</em> sur 8 bits, <code>1111 1111</code> (soit 255) additionné à <code>0000 0001</code> (soit 1) devrait donner 256. Mais 256 nécessite 9 bits pour être codé : le 9ᵉ bit est perdu et il ne reste que <code>0000 0000</code>, soit&hellip; 0 !</p>
+<p>C&rsquo;est ce type d&rsquo;erreur qui est à l&rsquo;origine de la destruction de la fusée Ariane 5, 37 secondes après son décollage en 1996 : une valeur de vitesse, trop grande pour le nombre de bits alloué à son codage, a provoqué un dépassement de capacité et un plantage du logiciel de guidage (ce bug, plus précisément, concerne la conversion d&rsquo;un nombre à virgule flottante, notion que nous verrons plus loin dans ce cours).</p>
+
+<figure >
+    <a href="https://www.youtube.com/shorts/G9yXBPFwal0">
+        <img src="../images/ariane51.png"
+        
+            width="200"
+            
+        
+        alt="Short YouTube de L&#39;aventure Ariane 5" />
+    </a>
+    
+    <figcaption>
+        
+        <p>
+            Short YouTube de L&#39;aventure Ariane 5
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
+
+
+<figure >
+    <a href="https://www.youtube.com/shorts/jgMr9joliME">
+        <img src="../images/ariane52.png"
+        
+            width="200"
+            
+        
+        alt="$370 Million Software Bug" />
+    </a>
+    
+    <figcaption>
+        
+        <p>
+            $370 Million Software Bug
+            
+                
+            
+        </p>
+    </figcaption>
+    
+</figure>
 
 <h1 id="entiers-relatifs">Entiers relatifs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="nombres-signés">nombres signés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -403,7 +495,7 @@ $$\tfrac{1}{16} + \tfrac{1}{32} + \tfrac{1}{256} = 0.09765625$$<p>Ce qui est tr�
 <p>Ce codage revient à représenter le nombre sous la forme:</p>
 $$+/-1,M.2^E$$<p>Cette forme rappelle ainsi l&rsquo;écriture en notation scientifique.</p>
 <p><strong>M</strong> s’appelle la <strong>mantisse</strong> du nombre et <strong>E</strong> l’<strong>exposant</strong>. Comme la mantisse commence toujours par une partie entière égale à 1, on ne l’écrit pas et on n’exprime que la partie fractionnaire, M</p>
-<p>Selon la précision, dite <em>simple</em> ou <em>double</em>, le nombre M est constitué de 23 bits ou bien de 55 bits.</p>
+<p>Selon la précision, dite <em>simple</em> ou <em>double</em>, le nombre M est constitué de 23 bits ou bien de 52 bits.</p>
 <table>
 	<thead>
 			<tr>
@@ -423,8 +515,8 @@ $$+/-1,M.2^E$$<p>Cette forme rappelle ainsi l&rsquo;écriture en notation scient
 			<tr>
 					<td>double</td>
 					<td>1</td>
-					<td>8</td>
-					<td>55</td>
+					<td>11</td>
+					<td>52</td>
 			</tr>
 	</tbody>
 </table>
@@ -452,9 +544,9 @@ $$0~10000111~11110100000000000000000$$<p>On a un bit de signe égal à 0, un e
 <p>Pour représenter des constantes physiques:</p>
 <ul>
 <li>Vers l&rsquo;infiniment grand, le nombre d&rsquo;Avogadro vaut $6,0221.10^{23}$. Celui-ci, exprimé avec 5 chiffres significatifs, suffit à la plupart des calculs scientifiques.</li>
-<li>Vers l&rsquo;infiniment petit, la masse du proton est $9,1094.10-{31}$. Avec 5 chiffres significatifs.</li>
+<li>Vers l&rsquo;infiniment petit, la masse du proton est $9,1094.10^{-31}$. Avec 5 chiffres significatifs.</li>
 </ul>
-<p>Avec la norme IEE754 sur 32 bits, les exposant de 2 varient de -127 à 128. Ce qui correspond à peu près à $\pm 10{38}$. Et le nombre de chiffres significatifs est sur 23 bits, ce qui signifie que la partie décimale est représentée avec 7 chiffres significatifs.</p>
+<p>Avec la norme IEE754 sur 32 bits, les exposants de 2 varient de -126 à 127. Ce qui correspond à peu près à $\pm 10^{38}$. Et le nombre de chiffres significatifs est sur 23 bits, ce qui signifie que la partie décimale est représentée avec 7 chiffres significatifs.</p>
 <h2 id="la-multiplication-et-division-par-2-dun-nombre-binaire">La multiplication et division par 2 d&rsquo;un nombre binaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>La <em>multiplication</em> par 10 d&rsquo;un nombre exprimé en base 10 va décaler la virgule vers la <em>droite</em>. Par exemple:</p>
 $$8,314 \times 10 = 83,14$$<p>De la même manière, pour un nombre binaire:</p>
@@ -547,38 +639,7 @@ $$E = e - 1$$<blockquote>
 </blockquote>
 <br>
 Rappelez vous que le nombre s'écrit sous la forme:
-$$+/-1,M.2^E$$<!--
-<br>
-
-<div><h1>
-    <label for="bloc1">Correction</label><span class="derouler"> <i>(cliquer pour derouler)</i></span></h1>
-    
-    <input type="checkbox" id="bloc1" class="visually-hidden">
-
-    <div class="control-me">
-
-<table>
-  <tr><td>binaire</td><td>e</td><td>E</td><td>M = m</td><td>flottant représenté: 1,b<sub>1</sub>b<sub>0</sub>.2<sup>E</sup><sub>(2)</sub></td></tr>
-  <tr><td>0 00 00 </td>
-      <td>00</td>
-      <td>-1</td>
-      <td>00</td>
-      <td>1,0.2<sup>-1</sup> = 0,1<sub>2</sub> = 0,5</td></tr>
-    <tr><td>0 00 01 </td>
-      <td>00</td>
-      <td>-1</td>
-      <td>01</td>
-      <td>1,01.2<sup>-1</sup> = 0,101<sub>2</sub> = 1/2 + 1/8 = 0,625</td></tr>
-
-    <tr><td>...</td></tr>
-</table>
-
-</div>
-</div>
-
-<br>
--->
-<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+$$+/-1,M.2^E$$<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li><a href="http://mpechaud.fr/scripts/representationnombres/rep.html" rel="external">http://mpechaud.fr/scripts/representationnombres/rep.html</a></li>
 <li><a href="https://irem.univ-reunion.fr/spip.php?article692" rel="external">https://irem.univ-reunion.fr/spip.php?article692</a></li>
@@ -749,7 +810,7 @@ $$+/-1,M.2^E$$<!--
             <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="parent " data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" checked><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">Donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active " data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers naturels, relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -945,9 +1006,9 @@ $$+/-1,M.2^E$$<!--
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789144187"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789144187" defer></script>
-    <script src="/js/theme.js?1789144187" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789404406"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789404406" defer></script>
+    <script src="/js/theme.js?1789404406" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
