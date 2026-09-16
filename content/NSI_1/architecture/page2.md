@@ -32,7 +32,7 @@ Dans l'architecture Von Neumann:
 
 # Description d'un ordinateur avec microprocesseur
 ## En video
-{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=5hF4ziHwJBQ" caption="Fonctionnement d'un ordinateur - Mooc Architecture" >}}
+{{< img src="/images/video.png" link="https://www.youtube.com/watch?v=5hF4ziHwJBQ" caption="Fonctionnement d'un ordinateur - Mooc Architecture" width="300" >}}
 
 ## à l'echelle de la carte mère
 La carte mère d'un ordinateur comprend:
@@ -78,15 +78,15 @@ Les constituants de l'ordinateur sont composés de circuits intégrés. On trouv
 # Le fonctionnement du processeur
 ## Généralités
 ### Videos sur le fonctionnement du processeur
-{{< img src="../images/hervediscours.png" link="https://youtu.be/hJnEnrOqHzM?si=VvWwweDQNsbL6CGC&t=295" caption="Hervé Discours - architecture Von Neumann - illustration avec une cuisine (min 5 - 10)" >}}
+{{< img src="../images/hervediscours.png" link="https://youtu.be/hJnEnrOqHzM?si=VvWwweDQNsbL6CGC&t=295" width="300" caption="Hervé Discours - architecture Von Neumann - illustration avec une cuisine (min 5 - 10)" >}}
 
-{{< img src="/images/video.png" link="https://youtu.be/hJnEnrOqHzM?si=m93F0xs8KLClVrNG&t=903" caption="Hervé Discours - architecture Von Neumann - déroulé d'un programme (min 15 - 20), archi X2, memoire cache (min 20-25)" >}}
+{{< img src="/images/video.png" link="https://youtu.be/hJnEnrOqHzM?si=m93F0xs8KLClVrNG&t=903" width="300" caption="Hervé Discours - architecture Von Neumann - déroulé d'un programme (min 15 - 20), archi X2, memoire cache (min 20-25)" >}}
 
-{{< img src="/images/video.png" link="https://youtu.be/hJnEnrOqHzM?si=jxuQmhHcsPg7C3Vc&t=1788" caption="Hervé Discours - architecture Von Neumann - langage assembleur (min 29 - 35)" >}}
+{{< img src="/images/video.png" link="https://youtu.be/hJnEnrOqHzM?si=jxuQmhHcsPg7C3Vc&t=1788" width="300" caption="Hervé Discours - architecture Von Neumann - langage assembleur (min 29 - 35)" >}}
 
 
 ### Les 2 sous parties du processeur
-{{< img src="../images/architectureN2.png" caption="Architecture de Von-Neumann - processeur" >}}
+{{< img src="../images/architectureN2.png" width="300" caption="Architecture de Von-Neumann - processeur" >}}
 L'architecture d'un **processeur** (CPU) comporte 2 parties: 
 
 * L'**UC**: C'est l’*unité de commande*, **UC**, qui traduit chacune des instructions successives du programme en opérations élémentaires. C'est cette partie du processeur  qui est chargée d'obtenir les instructions successives du programme et de les executer. L'**UC** contient:
@@ -125,7 +125,7 @@ La figure ci-contre représente un schéma classique d'UAL. Celle-ci possède de
 
 Enfin, l'UAL possède deux sorties, R qui est le résultat de l'opération, et D les éventuels drapeaux. (information d'erreur ou de dépassement)
 
-{{< img src="../images/ALU.png" caption="UAL - Unité Arithmétique et Logique" >}}
+{{< img src="../images/ALU.png" width="300" caption="UAL - Unité Arithmétique et Logique" >}}
 
 ### Utilisation en écriture
 * registre d'adresse: envoie à la mémoire l'adresse pour l'écriture

@@ -176,7 +176,7 @@ y = "45"
 
 Puis tester les opérations et compléter le tableau
 
-| opération | valeur |  type(x) |
+| opération | valeur calculée |  type(valeur) |
 | --- | --- | --- |
 | x + 1 |  |  |
 | y + y |   |   |

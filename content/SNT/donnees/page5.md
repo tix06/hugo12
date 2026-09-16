@@ -53,7 +53,11 @@ Ce sont:
 
 Même des données supposées *anonymes* peuvent nous identifier car il existe souvent une *clé de correspondance* qui peut nous identifier.
 
-{{< img src="../images/video_DCP.png" link="https://youtu.be/6t9Lds5zxZk?si=MBQ7gT8JPrOcnG8r" width="300" caption="Cash Investigation, le mythe de l'anonymisation" >}}
+{{< img src="../images/video_DCP.png" link="https://youtu.be/6t9Lds5zxZk?si=MBQ7gT8JPrOcnG8r" width="300" caption="VIDEO Cash Investigation, le mythe de l'anonymisation" >}}
+
+> Mais alors, à qui servent ces données?
+
+{{< img src="../images/collecte_DCP.png" width="300" link="https://youtu.be/10rTah7w8u4?si=2LY1nDxvPhG72FPy" caption="VIDEO Qui collecte nos données personnelles? - Le Tatoo (0-3min)" >}}
 
 # Identité numérique
 L'identité est construite à partir de *données à caractère personnel.*
@@ -61,6 +65,7 @@ L'identité est construite à partir de *données à caractère personnel.*
 * L'exercice du droit d'une personne passe par la justification de l'*identité administrative* de la personne (nom, prenom, date de naissance, etc...).
 
 {{< img src="../images/rgpd1.png" link="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on" caption="Infographie du RGPD - site de la CNIL" width="400" >}}
+
 * *Identité sur le net*: Sur internet, la majorité des utilisateurs ne communiquent pas leur identité administrative. Ils donnent un *pseudo*, un mot de passe, un email. Le site associe souvent leur adresse IP à ces données. Ce qui constitue aussi une identité numérique.
 
 # Comment sont collectées nos données personnelles
