@@ -53,7 +53,7 @@ for ligne in table[1:]:
     print(ligne)
 ```
 
-Pour parcourir aussi les **colonnes** d'une ligne, on imbrique une seconde boucle, en s'appuyant sur `range(len(ligne))` :
+Pour parcourir les **lignes** et **colonnes**, on imbrique une seconde boucle, en s'appuyant sur `range(len(table[0]))` :
 
 ```python
 for ligne in table[1:]:
