@@ -120,13 +120,9 @@ Le script de la question 4 doit être réécrit à la main pour chaque pays : ce
 ##### {{% button href="../page10" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page5" icon="palette" style="tip" %}}TP3a{{% /button %}} Tableur
 ##### {{% button href="../page51" icon="palette" style="tip" %}}TP3b{{% /button %}} Tableau de notes et algorithmes (Visualisation)
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP3b{{% /button %}}
-<!--
 {{% button href="../page53" icon="lightbulb" style="tip" %}}Corrigé du TP3b{{% /button %}}
--->
+
 ##### {{% button href="../page52" icon="palette" style="tip" %}}TP3c{{% /button %}} Systemes scolaires européens
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP3c{{% /button %}}
-<!--
 {{% button href="../page54" icon="lightbulb" style="tip" %}}Corrigé du TP3c{{% /button %}}
--->
+
 

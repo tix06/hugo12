@@ -1,13 +1,18 @@
 ---
 Title : Fonctions
-titleHidden: true
 description: arguments, valeur par defaut d'un argument, annotations de type, modules, docstring, lambda fonction
 weight: 9
 ---
 
-* Un cours de niveau débutant sur les fonctions se trouve à la page suivante: [Lien](/python_bases/fonctions/page2/)
 
-# Fonctions
+Ce cours comprend 2 pages:
+
+* Cours sur les fonctions: [Lien]()
+* TP4: [Lien](../page2)
+
+
+Un cours de niveau débutant sur les fonctions se trouve à la page suivante: [Lien](/python_bases/fonctions/page2/)
+
 Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Une bonne pratique est de faire régulièrement du *remaniement* de son code : c'est-à-dire ré-écrire les parties du programme qui *fonctionnent* et les mettre dans une fonction ou un module. Cela évite aussi les répétitions. On remplace alors le code par un appel à une fonction.
 
 ## Généralités

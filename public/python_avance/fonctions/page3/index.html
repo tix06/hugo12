@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP4 - fonctions (corrigé) :: allophysique">
     <meta itemprop="description" content="corrigé du TD sur la valeur par défaut, les annotations de type, les arguments positionnés">
     <meta itemprop="dateModified" content="2026-09-10T19:40:39+02:00">
-    <meta itemprop="wordCount" content="697">
+    <meta itemprop="wordCount" content="962">
     <title>TP4 - fonctions (corrigé) :: allophysique</title>
-    <link href="/images/logo.png?1789144187" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789144187" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789144187" defer></script>
-    <script src="/js/search-lunr.js?1789144187" defer></script>
-    <script src="/js/search.js?1789144187" defer></script>
+    <link href="/images/logo.png?1789742711" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1789742711" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1789742711" defer></script>
+    <script src="/js/search-lunr.js?1789742711" defer></script>
+    <script src="/js/search.js?1789742711" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789144187";
+      window.relearn.index_js_url="/searchindex.en.js?1789742711";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789144187" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789144187" defer></script>
+    <script src="/js/lunr/lunr.min.js?1789742711" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1789742711" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1789742711" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1789742711" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789144187" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789144187" rel="stylesheet">
-    <link href="/css/theme.css?1789144187" rel="stylesheet">
-    <link href="/css/format-html.css?1789144187" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1789742711" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789742711" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789742711" rel="stylesheet">
+    <link href="/css/theme.css?1789742711" rel="stylesheet">
+    <link href="/css/format-html.css?1789742711" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -118,6 +118,7 @@
     <li><a href="#script-1--valeur-par-défaut">Script 1 — Valeur par défaut</a></li>
     <li><a href="#script-2--annotations-de-type">Script 2 — Annotations de type</a></li>
     <li><a href="#script-3--arguments-positionnés">Script 3 — Arguments positionnés</a></li>
+    <li><a href="#script-4--chaînage-de-fonctions">Script 4 — Chaînage de fonctions</a></li>
     <li><a href="#grille-de-correction-indicative">Grille de correction indicative</a></li>
   </ul>
 </nav>
@@ -179,7 +180,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">classe_A</span><span class="p">)</span>  <span class="c1"># [&#39;Alice&#39;]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">classe_B</span><span class="p">)</span>  <span class="c1"># [&#39;Bob&#39;]</span></span></span></code></pre></div>
-<p>Point clé à valoriser : on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif <code>liste=None</code> puis <code>if liste is None: liste = []</code> est la solution standard, qui force la création d&rsquo;une nouvelle liste à <strong>chaque appel</strong>.</p>
+<p>Point clé: on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif <code>liste=None</code> puis <code>if liste is None: liste = []</code> est la solution standard, qui force la création d&rsquo;une nouvelle liste à <strong>chaque appel</strong>.</p>
 <hr>
 <h2 id="script-2--annotations-de-type">Script 2 — Annotations de type<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong></p>
@@ -201,7 +202,7 @@
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">),</span> <span class="s2">&#34;x doit être un entier&#34;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span></span></span></code></pre></div>
-<p>Point clé à valoriser dans la justification : <code>double</code> est une fonction destinée à être <strong>appelée avec des données externes</strong> (par un autre programme, un autre élève, un utilisateur&hellip;), donc <code>raise</code> est le choix le plus fiable, car une instruction <code>assert</code> peut être désactivée globalement (option <code>-O</code> de Python) et ne serait alors plus jamais exécutée. <code>assert</code> reste pertinent pour des vérifications internes de mise au point, mais pas pour garantir durablement le contrat d&rsquo;une fonction. Une solution qui se contente de convertir avec <code>int(x * 2)</code> doit être écartée : elle masque l&rsquo;erreur au lieu de la signaler (<code>int(2.5 * 2)</code> donnerait silencieusement <code>5</code>).</p>
+<p>Point clé: <code>double</code> est une fonction destinée à être <strong>appelée avec des données externes</strong> (par un autre programme, un autre élève, un utilisateur&hellip;), donc <code>raise</code> est le choix le plus fiable, car une instruction <code>assert</code> peut être désactivée globalement (option <code>-O</code> de Python) et ne serait alors plus jamais exécutée. <code>assert</code> reste pertinent pour des vérifications internes de mise au point, mais pas pour garantir durablement le contrat d&rsquo;une fonction. Une solution qui se contente de convertir avec <code>int(x * 2)</code> doit être écartée : elle masque l&rsquo;erreur au lieu de la signaler (<code>int(2.5 * 2)</code> donnerait silencieusement <code>5</code>).</p>
 <hr>
 <h2 id="script-3--arguments-positionnés">Script 3 — Arguments positionnés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong></p>
@@ -213,7 +214,35 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Solution 2 : utiliser des arguments nommés, indépendants de l&#39;ordre</span>
 </span></span><span class="line"><span class="cl"><span class="n">annonce</span> <span class="o">=</span> <span class="n">publier_msg</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="s1">&#39;Le Directeur&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s1">&#39;Les cours reprennent lundi&#39;</span><span class="p">)</span></span></span></code></pre></div>
-<p>Point clé à valoriser : la solution 2 est plus robuste — elle reste correcte même si l&rsquo;ordre des paramètres dans la définition de <code>publier_msg</code> changeait un jour, contrairement à la solution 1 qui redevient fausse si l&rsquo;ordre change. C&rsquo;est l&rsquo;occasion de relier ce script à la remarque du cours sur les arguments nommés.</p>
+<p>Point clé: la solution 2 est plus robuste — elle reste correcte même si l&rsquo;ordre des paramètres dans la définition de <code>publier_msg</code> changeait un jour, contrairement à la solution 1 qui redevient fausse si l&rsquo;ordre change. C&rsquo;est l&rsquo;occasion de relier ce script à la remarque du cours sur les arguments nommés.</p>
+<hr>
+<h2 id="script-4--chaînage-de-fonctions">Script 4 — Chaînage de fonctions<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p><strong>Q1.</strong></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">TypeError: can&#39;t multiply sequence by non-int of type &#39;float&#39;</span></span></code></pre></div>
+<p>L&rsquo;exécution s&rsquo;arrête sur une erreur au moment de l&rsquo;appel à <code>appliquer_remise</code>.</p>
+<p><strong>Q2.</strong> <code>ligne.split(';')</code> renvoie deux chaînes de caractères (<code>str</code>) ; <code>extraire_prix</code> renvoie donc <code>prix</code> sous forme de <strong>chaîne</strong> (<code>'12.50'</code>), et non de nombre. Or ce retour devient directement l&rsquo;argument reçu par <code>appliquer_remise</code>, qui essaie de calculer <code>prix * taux</code>, c&rsquo;est-à-dire une multiplication entre un <code>str</code> et un <code>float</code>. Python autorise <code>str * int</code> (répétition de la chaîne) mais pas <code>str * float</code>, d&rsquo;où l&rsquo;erreur. C&rsquo;est le piège central du <strong>chaînage de fonctions</strong> : le type de la valeur renvoyée par une fonction doit être compatible avec le type attendu par les paramètres de la fonction suivante — ici, une conversion de type a été oubliée entre les deux étapes.</p>
+<p><strong>Q3.</strong> Version attendue :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">extraire_prix</span><span class="p">(</span><span class="n">ligne</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;extrait le prix d&#39;une ligne du type &#39;Livre;12.50&#39;&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_</span><span class="p">,</span> <span class="n">prix</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">appliquer_remise</span><span class="p">(</span><span class="n">prix</span><span class="p">,</span> <span class="n">taux</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;applique un taux de remise (10 % par défaut)&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">prix</span> <span class="o">*</span> <span class="n">taux</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">afficher_ticket</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">prix_final</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;affiche la ligne de ticket de caisse&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">article</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">prix_final</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> €&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ligne</span> <span class="o">=</span> <span class="s2">&#34;Livre;12.50&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">article</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">prix</span> <span class="o">=</span> <span class="n">extraire_prix</span><span class="p">(</span><span class="n">ligne</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">prix_remise</span> <span class="o">=</span> <span class="n">appliquer_remise</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">afficher_ticket</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">prix_remise</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Livre : 11.25 €</span></span></span></code></pre></div>
+<p>Point clé: il suffit de convertir <code>prix</code> en <code>float</code> <strong>dès sa sortie</strong> de <code>extraire_prix</code>, avant qu&rsquo;il ne soit transmis à la fonction suivante. C&rsquo;est l&rsquo;occasion d&rsquo;insister sur le fait que dans une chaîne <code>f1 → f2 → f3</code>, chaque maillon doit renvoyer une valeur du type que le maillon suivant sait exploiter : <code>split</code> renvoie toujours des <code>str</code>, jamais des nombres, même si la chaîne « ressemble » à un nombre.</p>
 <hr>
 <h2 id="grille-de-correction-indicative">Grille de correction indicative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <table>
@@ -226,23 +255,23 @@
 	</thead>
 	<tbody>
 			<tr>
-					<td>Q1 (×3)</td>
+					<td>Q1 (×4)</td>
 					<td>Lire du code et prédire un résultat / une erreur sans exécuter</td>
 					<td>1 pt chacune</td>
 			</tr>
 			<tr>
-					<td>Q2 (×3)</td>
+					<td>Q2 (×4)</td>
 					<td>Mobiliser la notion exacte du cours pour expliquer</td>
 					<td>2 pts chacune</td>
 			</tr>
 			<tr>
-					<td>Q3 (×3)</td>
+					<td>Q3 (×4)</td>
 					<td>Modifier le code en respectant une contrainte précise</td>
 					<td>3 pts chacune</td>
 			</tr>
 	</tbody>
 </table>
-<p>Total : 18 points.</p>
+<p>Total : 24 points.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -408,7 +437,7 @@
             <li class="" data-nav-id="/nsi_1/architecture/page3/index.html"><a class="padding" href="/nsi_1/architecture/page3/index.html">assembleur<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/nsi_1/donnees/index.html"><input type="checkbox" id="R-section-42a1f4b6191042ac55bf5b6b115b370c" aria-controls="R-subsections-42a1f4b6191042ac55bf5b6b115b370c"><label for="R-section-42a1f4b6191042ac55bf5b6b115b370c"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Donnees</span></label><a class="padding default-animation" href="/nsi_1/donnees/index.html">Donnees<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-42a1f4b6191042ac55bf5b6b115b370c" class="collapsible-menu">
             <li class="" data-nav-id="/nsi_1/donnees/page1/index.html"><a class="padding" href="/nsi_1/donnees/page1/index.html">Denombrer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/nsi_1/donnees/page4/index.html"><a class="padding" href="/nsi_1/donnees/page4/index.html">entiers naturels, relatifs et decimaux<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page7/index.html"><a class="padding" href="/nsi_1/donnees/page7/index.html">coder les caracteres et couleurs<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page8/index.html"><a class="padding" href="/nsi_1/donnees/page8/index.html">codage d&#39;une image<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi_1/donnees/page11/index.html"><a class="padding" href="/nsi_1/donnees/page11/index.html">TP simulation portes logiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -604,9 +633,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789144187"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789144187" defer></script>
-    <script src="/js/theme.js?1789144187" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789742711"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789742711" defer></script>
+    <script src="/js/theme.js?1789742711" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

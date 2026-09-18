@@ -36,7 +36,7 @@ classe_B = ajouter_eleve('Bob')
 print(classe_A)  # ['Alice']
 print(classe_B)  # ['Bob']
 ```
-Point clé à valoriser : on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif `liste=None` puis `if liste is None: liste = []` est la solution standard, qui force la création d'une nouvelle liste à **chaque appel**.
+Point clé: on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif `liste=None` puis `if liste is None: liste = []` est la solution standard, qui force la création d'une nouvelle liste à **chaque appel**.
 
 ---
 
@@ -69,7 +69,7 @@ def double(x: int) -> int:
     assert isinstance(x, int), "x doit être un entier"
     return x * 2
 ```
-Point clé à valoriser dans la justification : `double` est une fonction destinée à être **appelée avec des données externes** (par un autre programme, un autre élève, un utilisateur...), donc `raise` est le choix le plus fiable, car une instruction `assert` peut être désactivée globalement (option `-O` de Python) et ne serait alors plus jamais exécutée. `assert` reste pertinent pour des vérifications internes de mise au point, mais pas pour garantir durablement le contrat d'une fonction. Une solution qui se contente de convertir avec `int(x * 2)` doit être écartée : elle masque l'erreur au lieu de la signaler (`int(2.5 * 2)` donnerait silencieusement `5`).
+Point clé: `double` est une fonction destinée à être **appelée avec des données externes** (par un autre programme, un autre élève, un utilisateur...), donc `raise` est le choix le plus fiable, car une instruction `assert` peut être désactivée globalement (option `-O` de Python) et ne serait alors plus jamais exécutée. `assert` reste pertinent pour des vérifications internes de mise au point, mais pas pour garantir durablement le contrat d'une fonction. Une solution qui se contente de convertir avec `int(x * 2)` doit être écartée : elle masque l'erreur au lieu de la signaler (`int(2.5 * 2)` donnerait silencieusement `5`).
 
 ---
 
@@ -90,7 +90,44 @@ annonce = publier_msg('Les cours reprennent lundi', 'Le Directeur')
 # Solution 2 : utiliser des arguments nommés, indépendants de l'ordre
 annonce = publier_msg(user='Le Directeur', message='Les cours reprennent lundi')
 ```
-Point clé à valoriser : la solution 2 est plus robuste — elle reste correcte même si l'ordre des paramètres dans la définition de `publier_msg` changeait un jour, contrairement à la solution 1 qui redevient fausse si l'ordre change. C'est l'occasion de relier ce script à la remarque du cours sur les arguments nommés.
+Point clé: la solution 2 est plus robuste — elle reste correcte même si l'ordre des paramètres dans la définition de `publier_msg` changeait un jour, contrairement à la solution 1 qui redevient fausse si l'ordre change. C'est l'occasion de relier ce script à la remarque du cours sur les arguments nommés.
+
+---
+
+## Script 4 — Chaînage de fonctions
+
+**Q1.**
+```
+TypeError: can't multiply sequence by non-int of type 'float'
+```
+L'exécution s'arrête sur une erreur au moment de l'appel à `appliquer_remise`.
+
+**Q2.** `ligne.split(';')` renvoie deux chaînes de caractères (`str`) ; `extraire_prix` renvoie donc `prix` sous forme de **chaîne** (`'12.50'`), et non de nombre. Or ce retour devient directement l'argument reçu par `appliquer_remise`, qui essaie de calculer `prix * taux`, c'est-à-dire une multiplication entre un `str` et un `float`. Python autorise `str * int` (répétition de la chaîne) mais pas `str * float`, d'où l'erreur. C'est le piège central du **chaînage de fonctions** : le type de la valeur renvoyée par une fonction doit être compatible avec le type attendu par les paramètres de la fonction suivante — ici, une conversion de type a été oubliée entre les deux étapes.
+
+**Q3.** Version attendue :
+```python
+def extraire_prix(ligne):
+    """extrait le prix d'une ligne du type 'Livre;12.50'"""
+    _, prix = ligne.split(';')
+    return float(prix)
+
+def appliquer_remise(prix, taux=0.9):
+    """applique un taux de remise (10 % par défaut)"""
+    return prix * taux
+
+def afficher_ticket(article, prix_final):
+    """affiche la ligne de ticket de caisse"""
+    return f"{article} : {prix_final:.2f} €"
+
+ligne = "Livre;12.50"
+article, _ = ligne.split(';')
+
+prix = extraire_prix(ligne)
+prix_remise = appliquer_remise(prix)
+print(afficher_ticket(article, prix_remise))
+# Livre : 11.25 €
+```
+Point clé: il suffit de convertir `prix` en `float` **dès sa sortie** de `extraire_prix`, avant qu'il ne soit transmis à la fonction suivante. C'est l'occasion d'insister sur le fait que dans une chaîne `f1 → f2 → f3`, chaque maillon doit renvoyer une valeur du type que le maillon suivant sait exploiter : `split` renvoie toujours des `str`, jamais des nombres, même si la chaîne « ressemble » à un nombre.
 
 ---
 
@@ -98,8 +135,8 @@ Point clé à valoriser : la solution 2 est plus robuste — elle reste correcte
 
 | Question | Compétence évaluée | Barème indicatif |
 |---|---|---|
-| Q1 (×3) | Lire du code et prédire un résultat / une erreur sans exécuter | 1 pt chacune |
-| Q2 (×3) | Mobiliser la notion exacte du cours pour expliquer | 2 pts chacune |
-| Q3 (×3) | Modifier le code en respectant une contrainte précise | 3 pts chacune |
+| Q1 (×4) | Lire du code et prédire un résultat / une erreur sans exécuter | 1 pt chacune |
+| Q2 (×4) | Mobiliser la notion exacte du cours pour expliquer | 2 pts chacune |
+| Q3 (×4) | Modifier le code en respectant une contrainte précise | 3 pts chacune |
 
-Total : 18 points.
+Total : 24 points.
