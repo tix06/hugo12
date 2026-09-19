@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exercice : accéder à une valeur dans un dictionnaire imbriqué</title>
+<style>
+  :root{
+    --bg:#f4f6f8; --card:#ffffff; --text:#2c3e50; --accent:#3498db;
+    --accent-dark:#2980b9; --ok:#27ae60; --ko:#c0392b; --muted:#7f8c8d;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Segoe UI', Roboto, Arial, sans-serif;
+    background:var(--bg); margin:0; padding:2rem; color:var(--text);
+  }
+  .container{max-width:820px;margin:0 auto;background:var(--card);
+    border-radius:14px;padding:2rem 2.2rem;box-shadow:0 6px 24px rgba(0,0,0,.08);}
+  h1{font-size:1.4rem;margin-top:0;}
+  p.intro{color:var(--muted);margin-top:-.5rem;}
+
+  #dropzone{border:2px dashed #b0b8bf;border-radius:10px;padding:2rem;
+    text-align:center;color:var(--muted);cursor:pointer;transition:.15s;background:#fafbfc;}
+  #dropzone:hover, #dropzone.hover{background:#eaf4fd;border-color:var(--accent);color:var(--accent-dark);}
+  .sample-row{text-align:center;margin-top:.6rem;}
+  .sample-row label{color:var(--muted);font-size:.95rem;margin-right:.5rem;}
+  #sampleSelect{font-size:.95rem;padding:.35rem .6rem;border-radius:8px;border:1px solid #ccd3d8;
+    background:#fff;color:var(--accent-dark);}
+
+  pre#dictDisplay{background:#1e1e1e;color:#d4d4d4;padding:1.2rem 1.4rem;
+    border-radius:10px;overflow-x:auto;font-size:1rem;line-height:1.55;
+    font-family:'Consolas','Monaco',monospace; white-space:pre;}
+  .highlight{background:#ffd23f;color:#1e1e1e;padding:1px 5px;border-radius:4px;font-weight:700;}
+
+  .question{font-size:1.1rem;margin:1.4rem 0 1rem;}
+  .access-row{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;
+    font-family:'Consolas','Monaco',monospace;font-size:1.25rem;margin-bottom:1.2rem;}
+  select{font-size:1.05rem;padding:.35rem .5rem;border-radius:8px;border:2px solid #ccd3d8;
+    background:#fff;font-family:inherit;color:var(--text);}
+  select.correct{border-color:var(--ok);background:#eafaf1;}
+  select.wrong{border-color:var(--ko);background:#fdecea;}
+
+  .buttons{display:flex;gap:.6rem;flex-wrap:wrap;}
+  button.action{background:var(--accent);color:#fff;border:none;padding:.65rem 1.3rem;
+    border-radius:9px;font-size:1rem;cursor:pointer;transition:.15s;}
+  button.action:hover{background:var(--accent-dark);}
+  #newQuestionBtn{display:none;background:var(--muted);}
+  #newQuestionBtn:hover{background:#5f6a6f;}
+
+  #feedback{margin-top:1rem;font-weight:600;min-height:1.4em;}
+  .ok{color:var(--ok);}
+  .ko{color:var(--ko);}
+  #exercise{display:none;margin-top:1.5rem;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🐍 Accéder à une valeur dans un dictionnaire imbriqué</h1>
+  <p class="intro">Charge un fichier JSON (ou utilise l'exemple) pour générer un dictionnaire Python à deux niveaux et t'entraîner à accéder à ses valeurs.</p>
+
+  <div id="dropzone">📂 Clique ici ou dépose un fichier .json</div>
+  <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
+  <div class="sample-row">
+    <label for="sampleSelect">…ou charger un exemple :</label>
+    <select id="sampleSelect">
+      <option value="">-- choisir --</option>
+      <option value="inline">Exemple simple (clé1 / clé2)</option>
+      <option value="bibliotheque.json">📚 Bibliothèque (bibliotheque.json)</option>
+      <option value="efoot_stats.json">⚽ E-Foot / Ballon d'Or (efoot_stats.json)</option>
+    </select>
+  </div>
+
+  <div id="exercise">
+    <h3>Dictionnaire Python <code>D</code> :</h3>
+    <pre id="dictDisplay"></pre>
+
+    <div class="question" id="questionText"></div>
+    <div class="access-row">
+      <span>D[</span><select id="menu1"></select><span>][</span><select id="menu2"></select><span>]</span>
+    </div>
+    <div class="buttons">
+      <button class="action" id="checkBtn" type="button">Vérifier</button>
+      <button class="action" id="newQuestionBtn" type="button">Nouvelle question</button>
+    </div>
+    <div id="feedback"></div>
+  </div>
+</div>
+
+<script>
+let currentData = null;
+let targetPath = [];
+let targetValue = null;
+
+/* ---------- Représentation "à la Python" ---------- */
+function pyReprLeaf(v){
+  if (v === null) return 'None';
+  if (typeof v === 'boolean') return v ? 'True' : 'False';
+  if (typeof v === 'number') return String(v);
+  if (typeof v === 'string') return "'" + v.replace(/'/g, "\\'") + "'";
+  return JSON.stringify(v);
+}
+function escapeHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+/* Construit le texte HTML du dictionnaire, en surlignant la valeur cible */
+function buildDictHtml(obj, targetPath, currentPath, indentLevel){
+  currentPath = currentPath || [];
+  indentLevel = indentLevel || 0;
+  const ind = '    '.repeat(indentLevel);
+  const indInner = '    '.repeat(indentLevel + 1);
+  const entries = Object.entries(obj);
+  const lines = entries.map(([k, v], idx) => {
+    const isLast = idx === entries.length - 1;
+    const thisPath = currentPath.concat([k]);
+    const isTargetPath = targetPath.length === thisPath.length &&
+      thisPath.every((p, i) => p === targetPath[i]);
+    let valueHtml;
+    if (v !== null && typeof v === 'object' && !Array.isArray(v)) {
+      valueHtml = buildDictHtml(v, targetPath, thisPath, indentLevel + 1);
+    } else {
+      const repr = escapeHtml(pyReprLeaf(v));
+      valueHtml = isTargetPath ? '<span class="highlight" id="target-span">' + repr + '</span>' : repr;
+    }
+    return indInner + "'" + escapeHtml(k) + "': " + valueHtml + (isLast ? '' : ',');
+  });
+  return '{\n' + lines.join('\n') + '\n' + ind + '}';
+}
+
+/* ---------- Chargement / validation du JSON ---------- */
+function loadJsonFile(file){
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try {
+      const data = JSON.parse(e.target.result);
+      validateAndInit(data);
+    } catch(err){
+      alert("Erreur : le fichier n'est pas un JSON valide.\n" + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+function validateAndInit(data){
+  if (typeof data !== 'object' || data === null || Array.isArray(data)) {
+    alert("Le JSON doit être un objet (dictionnaire) au premier niveau.");
+    return;
+  }
+  const topKeys = Object.keys(data);
+  if (topKeys.length === 0){ alert("Le dictionnaire est vide."); return; }
+  for (const k of topKeys){
+    const v = data[k];
+    if (typeof v !== 'object' || v === null || Array.isArray(v)) {
+      alert('La clé "' + k + '" doit contenir un dictionnaire (2ᵉ niveau).');
+      return;
+    }
+    for (const k2 in v){
+      if (typeof v[k2] === 'object' && v[k2] !== null){
+        alert('Seuls 2 niveaux de dictionnaires sont supportés (problème avec "' + k + '.' + k2 + '").');
+        return;
+      }
+    }
+  }
+  currentData = data;
+  document.getElementById('exercise').style.display = 'block';
+  newQuestion();
+}
+
+/* ---------- Question aléatoire ---------- */
+function pickRandomTarget(data){
+  const topKeys = Object.keys(data);
+  const k1 = topKeys[Math.floor(Math.random() * topKeys.length)];
+  const subKeys = Object.keys(data[k1]);
+  const k2 = subKeys[Math.floor(Math.random() * subKeys.length)];
+  return [k1, k2];
+}
+
+function newQuestion(){
+  targetPath = pickRandomTarget(currentData);
+  targetValue = currentData[targetPath[0]][targetPath[1]];
+
+  document.getElementById('dictDisplay').innerHTML = 'D = ' + buildDictHtml(currentData, targetPath);
+  document.getElementById('questionText').innerHTML =
+    'Comment accéder, dans <code>D</code>, à la valeur surlignée : <strong>' +
+    escapeHtml(pyReprLeaf(targetValue)) + '</strong> ?';
+
+  const menu1 = document.getElementById('menu1');
+  const menu2 = document.getElementById('menu2');
+
+  menu1.innerHTML = '<option value="">-- clé --</option>' +
+    Object.keys(currentData).map(k => '<option value="' + escapeHtml(k) + '">\'' + escapeHtml(k) + '\'</option>').join('');
+
+  let allSubKeys = [];
+  for (const k of Object.keys(currentData)){
+    for (const k2 of Object.keys(currentData[k])){
+      if (allSubKeys.indexOf(k2) === -1) allSubKeys.push(k2);
+    }
+  }
+  menu2.innerHTML = '<option value="">-- clé --</option>' +
+    allSubKeys.map(k => '<option value="' + escapeHtml(k) + '">\'' + escapeHtml(k) + '\'</option>').join('');
+
+  menu1.classList.remove('correct', 'wrong');
+  menu2.classList.remove('correct', 'wrong');
+  document.getElementById('feedback').innerHTML = '';
+  document.getElementById('newQuestionBtn').style.display = 'none';
+}
+
+/* ---------- Vérification ---------- */
+document.getElementById('checkBtn').addEventListener('click', function(){
+  const menu1 = document.getElementById('menu1');
+  const menu2 = document.getElementById('menu2');
+  const v1 = menu1.value, v2 = menu2.value;
+  const feedback = document.getElementById('feedback');
+
+  if (!v1 || !v2){
+    feedback.innerHTML = '<span class="ko">Choisis une valeur dans chaque menu.</span>';
+    return;
+  }
+
+  const ok1 = v1 === targetPath[0];
+  const ok2 = v2 === targetPath[1];
+
+  menu1.classList.toggle('correct', ok1);
+  menu1.classList.toggle('wrong', !ok1);
+  menu2.classList.toggle('correct', ok2);
+  menu2.classList.toggle('wrong', !ok2);
+
+  if (ok1 && ok2){
+    feedback.innerHTML = '<span class="ok">✅ Bravo ! D[\'' + escapeHtml(v1) + '\'][\'' + escapeHtml(v2) + '\'] = ' +
+      escapeHtml(pyReprLeaf(targetValue)) + '</span>';
+    document.getElementById('newQuestionBtn').style.display = 'inline-block';
+  } else {
+    let msg = "❌ Ce n'est pas ça. ";
+    if (!ok1) msg += 'Tu as choisi \'' + escapeHtml(v1) + '\' au premier niveau, ce n\'est pas la bonne clé. ';
+    if (!ok2) msg += 'Tu as choisi \'' + escapeHtml(v2) + '\' au deuxième niveau, ce n\'est pas la bonne clé.';
+    feedback.innerHTML = '<span class="ko">' + msg + '</span>';
+  }
+});
+
+document.getElementById('newQuestionBtn').addEventListener('click', newQuestion);
+
+/* ---------- Zone de dépôt / sélection de fichier ---------- */
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+dropzone.addEventListener('click', function(){ fileInput.click(); });
+fileInput.addEventListener('change', function(e){ if (e.target.files[0]) loadJsonFile(e.target.files[0]); });
+dropzone.addEventListener('dragover', function(e){ e.preventDefault(); dropzone.classList.add('hover'); });
+dropzone.addEventListener('dragleave', function(){ dropzone.classList.remove('hover'); });
+dropzone.addEventListener('drop', function(e){
+  e.preventDefault();
+  dropzone.classList.remove('hover');
+  if (e.dataTransfer.files[0]) loadJsonFile(e.dataTransfer.files[0]);
+});
+
+/* ---------- Exemples : inline, ou fichiers JSON du même dossier ---------- */
+document.getElementById('sampleSelect').addEventListener('change', function(e){
+  const val = e.target.value;
+  if (!val) return;
+
+  if (val === 'inline'){
+    const sample = {
+      "clé1": { "a": 1, "b": 2, "c": 3 },
+      "clé2": { "d": 4, "e": 5, "f": 6 }
+    };
+    validateAndInit(sample);
+  } else {
+    fetch(val)
+      .then(function(r){
+        if (!r.ok) throw new Error('Réponse HTTP ' + r.status);
+        return r.json();
+      })
+      .then(validateAndInit)
+      .catch(function(err){
+        alert(
+          "Impossible de charger '" + val + "'.\n\n" +
+          "Vérifie que ce fichier se trouve bien dans le même dossier que cette page HTML.\n" +
+          "Si tu as ouvert la page directement depuis ton disque (file://...), certains navigateurs " +
+          "(Chrome notamment) bloquent ce type de chargement : utilise plutôt le bouton ci-dessus pour " +
+          "déposer le fichier .json manuellement, ou ouvre la page via un petit serveur local.\n\n" +
+          "Détail technique : " + err.message
+        );
+      });
+  }
+  e.target.value = '';
+});
+</script>
+</body>
+</html>

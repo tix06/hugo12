@@ -198,7 +198,21 @@ sorted(iterable, key=None, reverse=False)
     - reverse=True : tri décroissant plutôt que croissant
 ```
 
-# Passer d'une table à des dictionnaires
+# Tables et dictionnaires
+## Se repérer dans un dictionnaire
+Les tables peuvent être représentées par des dictionnaires imbriqués.
+
+On doit alors accéder à un élément avec un **accès profond**:
+
+```python
+eleves = {'Chloé': {'maths': 12, 'nsi': 18}}
+eleves['Chloé']['nsi']    # 18
+```
+Deux accès successifs : `eleves['Chloé']` renvoie un dictionnaire, sur lequel on applique un second accès `['nsi']`.
+
+> Entrainez vous avec cette [application](/scripts/json_dict/exercice_dictionnaire.html)
+
+## Passer d'une table à des dictionnaires
 Accéder à une valeur par sa position (`ligne[1]`) est efficace mais peu lisible : rien n'indique, à la lecture du code, que l'indice `1` correspond au nombre d'élèves. Une alternative consiste à représenter chaque ligne par un **dictionnaire**, où les clés sont les étiquettes de colonnes.
 
 ```python
