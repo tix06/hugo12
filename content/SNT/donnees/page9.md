@@ -40,9 +40,8 @@ Nord;Jérome;Raisins;7580;;
 Les guillemets vous permettent de choisir l'extension du fichier et de remplacer celle par defaut choisie par le bloc note (`.txt`)
 -->
 
-**Question a:** A partir de vos connaissances, ou bien après une petite recherche sur le *net* que contient un fichier `.txt`? Les données y-sont-elles mises dans un format special (structuré)? 
+**Question a:** A partir de vos connaissances, ou bien après une petite recherche sur le *net* quelle différence y-a-t-il entre un fichier à l'extension `.txt` et un fichier `.csv`? Les données y-sont-elles mises dans un format special (structuré) pour l'un de ces 2 types de fichiers? 
 
-**Question b:** Même question, mais cette fois pour les fichiers `.csv`. 
 
 # Présenter les données à l'aide d'un tableur
 > Démarrer le logiciel Excel (un tableur de la suite bureautique microsoft).
@@ -59,11 +58,11 @@ A l'ouverture, il vous sera demandé de préciser le séparateur des données (`
 
 Selon la version du logiciel Excel, la boite de dialogue peut différer:
 
-{{< img src="../images/excel_import1.png" caption="le format n'a pas été correctement renseigné" >}}
+{{< img src="../images/excel_import1.png" width="500" caption="le format n'a pas été correctement renseigné" >}}
 
 Le paramètre *semicolon* (point virgule) précise le caractère séparateur.
 
-{{< img src="../images/excel_import2.png" caption="le format a été correctement renseigné" >}}
+{{< img src="../images/excel_import2.png" width="500" caption="le format a été correctement renseigné" >}}
 
 Dans une version plus recente, la boite de dialogue peut ressembler à celle-ci:
 
@@ -78,9 +77,9 @@ Le logiciel Excel sert à PRESENTER les données. C'est à dire à reconstruire 
 
 
 
-{{< img src="../images/tableau_orig_2.png" caption="exemple de présentation structurée des données en tableau" >}}
+{{< img src="../images/tableau_orig_2.png" width="400" caption="exemple de présentation structurée des données en tableau" >}}
 
-**Question c:** Comment le logiciel a-t-il analysé le contenu du fichier pour obtenir cet affichage, en lignes et en colonnes?
+**Question b:** Comment le logiciel a-t-il analysé le contenu du fichier pour obtenir cet affichage, en lignes et en colonnes?
 
 Maintenant que la présentation est satisfaisante:
 
@@ -88,7 +87,7 @@ Maintenant que la présentation est satisfaisante:
 
 > *le commercial **Sébastien** a vendu **9814 Pommes** dans la région **Sud***
 
-**Question d:** Quelles sont les réferences (coordonnées) des cases dans laquelle vous avez renseigné *Sébastien*, *Pommes*, région *Sud*, *9814*? Comment avez-vous choisi ces différentes colonnes?
+**Question c:** Quelles sont les réferences (coordonnées) des cases dans laquelle vous avez renseigné *Sébastien*, *Pommes*, région *Sud*, *9814*? Justifier.
 
 # Rechercher et Filtrer 
 ## Rechercher
@@ -96,7 +95,7 @@ Souvent, les tables contiennent de très nombreuses lignes, et ne peuvent pas to
 
 > Utiliser le bouton pour *rechercher* le nom **Alain**. Cliquer sur *Suivant*. 
 
-**Question e:** Quelles sont les réferences des cases qui sont sélectionnés lorsque l'on clique plusieurs fois sur *Suivant*?
+**Question d:** Quelles sont les réferences des cases qui sont sélectionnés lorsque l'on clique plusieurs fois sur *Suivant*?
 
 ## Filtrer par critère simple
 Le fichier, lorsqu'il est importé depuis le bandeau *Données*, s'ouvre dans un classeur avec *filtres*.
@@ -107,27 +106,27 @@ Si la feuille de calcul ne présente pas de filtres en tête de colonnes:
 
 * Commencer par selectionner toutes les colonnes A, B, C, D, E dans laquelles se trouvent les données du tableau.
 
-{{< img src="../images/excel1.png" >}}
+{{< img src="../images/excel1.png" width="400" >}}
 
 * Dans le bandeau *Données*, choisir Filtrer (entonoir).
 
-{{< img src="../images/filter.png" >}}
+{{< img src="../images/filter.png" width="300" >}}
 
 Il apparait alors des listes de choix au dessus des descripteurs du tableau. Pour filtrer selon l'un des descripteurs, cliquer sur l'une de ces listes de choix:
 
-{{< img src="../images/excel2.png" >}}
+{{< img src="../images/excel2.png" width="400" >}}
 * Sur le filtre appliqué à la première colonne (étiquette: Région), choisir **Est**.
 
-{{< img src="../images/filtrer.png" caption="menu permettant la sélection par Région" >}}
+{{< img src="../images/filtrer.png" width="300" caption="menu permettant la sélection par Région" >}}
 
 ## Filtrer selon un 2e critère
 * Sur le filtre appliqué à la troisième colonne (étiquette: Produits), choisir **Pommes**.
 
 Vous devriez obtenir un tableau ressemblant à celui-ci, mais avec plus de lignes:
 
-{{< img src="../images/tableau_tri_2.png" caption="exemple de tableau filtré par Région ET par Produit (n'affiche que la 1ere ligne)" >}}
+{{< img src="../images/tableau_tri_2.png" width="400" caption="exemple de tableau filtré par Région ET par Produit (n'affiche que la 1ere ligne)" >}}
 
-**Question f:** Combien de lignes sont affichées dans ce tableau filtré? Qu'ont-elles en commun?
+**Question e:** Combien de lignes sont affichées dans ce tableau filtré? Qu'ont-elles en commun?
 
 # Les fonctions de calcul
 
@@ -147,9 +146,9 @@ Voici un lien vers le [tuto de microsoft office.](https://support.microsoft.com/
 * puis faire une **sélection étendue** de toutes les valeurs de la colonne. 
 * Valider avec la touche *Entrer*
 
-**Question g:** Quel est le resultat du calcul? *Si le resultat est égal à zero, veuillez modifier le format comme expliqué en bas de page (Compléments), puis recommencer.*
+**Question f:** Quel est le resultat du calcul? *Si le resultat est égal à zero, veuillez modifier le format comme expliqué en bas de page (Compléments), puis recommencer.*
 
-**Question h:** Cliquer dans la case. Recopier la formule du calcul généré par le logiciel.
+**Question g:** Cliquer dans la case. Recopier la formule du calcul généré par le logiciel.
 
 ## Somme conditionnelle: SOMME.SI
 La fonction SOMME.SI permet de sélectionner certaines cellules d'une selection étendue.
@@ -157,22 +156,29 @@ La fonction SOMME.SI permet de sélectionner certaines cellules d'une selection 
 > On va s'aider du *concepteur de formule*: Cliquer dans la cellule dans laquelle vous souhaitez rentrer la formule, sous le tableau, puis:
 > * écrire `= SOMME.SI(`
 
-{{< img src="../images/cadre_tab.png" caption="somme conditionnelle " >}}
+{{< img src="../images/cadre_tab.png" width="600" caption="somme conditionnelle " >}}
 > * cliquer sur le bouton *fx* de la barre de saisie.
 > * Aidez vous des champs suivants pour remplir les plages pour cette formule:
-	* Plage: faire une selection étendue des valeurs de la colonne *Produits*
-	* Critères: écrire "Pommes", ou bien cliquer sur le mot "Pommes" dans l'une des cellules du tableau (la *C24* dans cet exemple.
-	* Somme_plage: selectionner toutes les valeurs numériques de la colonne *Unités*:
 
-{{< img src="../images/sommesi.png" caption="concepteur de formule pour SOMME.SI" >}}
+>	* **Plage**: faire une selection étendue des valeurs de la colonne *Produits*
+>	* **Critères**: écrire "Pommes", ou bien cliquer sur le mot "Pommes" dans l'une des cellules du tableau (la *C24* dans cet exemple.
+>	* **Somme_plage**: selectionner toutes les valeurs numériques de la colonne *Unités*:
+
+{{< img src="../images/sommesi.png" width="300" caption="concepteur de formule pour SOMME.SI" >}}
 On a alors le nombre de Pommes vendues dans toute la France.
 
-**Question i:** Quel est le résultat? Recopier aussi la formule qui a été générée.
+**Question h:** Quel est le résultat? Recopier aussi la formule qui a été générée.
 
 # Conclusion
 Un logiciel tableur (Excel, Calc, Number) permet de présenter les données à l'utilisateur en tableau, mais apporte aussi des **fonctions de traitement**. Ce sont les mêmes fonctions que l'on peut programmer avec un langage de traitement sur une Base de Données (SQL).
 
-**Question j:** Quelles sont les *fonctions de traitement*que vous avez utilisées lors de ce TP? Donner leur nom.
+**Question i:** Quelles sont les *fonctions de traitement* que vous avez utilisées lors de ce TP? Donner leur nom.
+
+> Quel est le meilleur commercial? 
+
+Dans cette entreprise, les pretendants au titre de meilleur commercial sont Maurice, Jérome et Sébastien.
+
+**Question j:** Utilisez la somme conditionnelle pour calculer le nombre de fruits total vendu par chacun des ces 3 commerciaux. Placez les résultats dans un nouveau tableau, sur la même page. Recopier ce tableau sur votre feuille. Décidez enfin: Qui remporte le titre de meilleur commercial?
 
 # Compléments
 ## Format numérique

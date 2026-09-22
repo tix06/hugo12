@@ -5,53 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="TP4: algorithmes essentiels Editeur Python Au choix, utilisez:
-un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
-l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta name="description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="TP boucles non bornées :: allophysique">
-    <meta name="twitter:description" content="TP4: algorithmes essentiels Editeur Python Au choix, utilisez:
-un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
-l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta name="twitter:title" content="algorithmes avancés :: allophysique">
+    <meta name="twitter:description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta property="og:url" content="//localhost:1313/python_avance/algos/page4/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="TP boucles non bornées :: allophysique">
-    <meta property="og:description" content="TP4: algorithmes essentiels Editeur Python Au choix, utilisez:
-un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
-l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta property="og:title" content="algorithmes avancés :: allophysique">
+    <meta property="og:description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
     <meta property="article:modified_time" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="name" content="TP boucles non bornées :: allophysique">
-    <meta itemprop="description" content="TP4: algorithmes essentiels Editeur Python Au choix, utilisez:
-un notebook. Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur Majuscule(Shift) &#43; Entrée pour executer le code.
-l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Executer la cellule et passer à la suivante avec MAJ&#43;CTRL&#43;ENTREE.">
+    <meta itemprop="name" content="algorithmes avancés :: allophysique">
+    <meta itemprop="description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="778">
-    <title>TP boucles non bornées :: allophysique</title>
-    <link href="/images/logo.png?1789832312" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789832312" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789832312" defer></script>
-    <script src="/js/search-lunr.js?1789832312" defer></script>
-    <script src="/js/search.js?1789832312" defer></script>
+    <meta itemprop="wordCount" content="262">
+    <title>algorithmes avancés :: allophysique</title>
+    <link href="/images/logo.png?1790009370" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790009370" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790009370" defer></script>
+    <script src="/js/search-lunr.js?1790009370" defer></script>
+    <script src="/js/search.js?1790009370" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789832312";
+      window.relearn.index_js_url="/searchindex.en.js?1790009370";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789832312" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790009370" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789832312" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789832312" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789832312" rel="stylesheet">
-    <link href="/css/theme.css?1789832312" rel="stylesheet">
-    <link href="/css/format-html.css?1789832312" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790009370" rel="stylesheet">
+    <link href="/css/theme.css?1790009370" rel="stylesheet">
+    <link href="/css/format-html.css?1790009370" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -123,24 +115,15 @@ l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Execute
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#editeur-python">Editeur Python</a></li>
-    <li><a href="#ex-1-diviser-sans-lopérateur-">Ex 1: Diviser sans l’opérateur <code>/</code></a></li>
-    <li><a href="#ex-2-fonction-division_euclidienne">Ex 2: fonction division_euclidienne</a></li>
-    <li><a href="#ex-3-compte-epargne">Ex 3: compte epargne</a></li>
-    <li><a href="#ex-4-tirage-aleatoire">Ex 4: tirage aleatoire</a></li>
-    <li><a href="#ex-5-pgcd">Ex 5: PGCD</a>
-      <ul>
-        <li><a href="#principe">Principe</a></li>
-        <li><a href="#exercice">Exercice</a></li>
-      </ul>
-    </li>
+    <li><a href="#algorithme-glouton">Algorithme glouton</a></li>
+    <li><a href="#recherche-des-k-plus-proches-voisins">Recherche des K plus proches voisins</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP boucles non bornées</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">algorithmes avancés</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
@@ -171,196 +154,40 @@ l’editeur Pyzo: Mettre ## avant chaque script pour créer une cellule. Execute
   <header class="headline">
   </header>
 
-<h1 id="tp-boucles-non-bornées">TP boucles non bornées</h1>
 
-<h1 id="tp4-algorithmes-essentiels">TP4: algorithmes essentiels<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="editeur-python">Editeur Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Au choix, utilisez:</p>
-<ul>
-<li>un <strong>notebook</strong>.</li>
-</ul>
-
-<figure >
-    
-        <img src="/images/notebook.png"
-        
-         />
-    
-    
-</figure>
-
-<p>Dans une même <strong>cellule</strong>: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur <em>Majuscule(Shift)</em> + <em>Entrée</em> pour <strong>executer le code</strong>.</p>
-<ul>
-<li>l&rsquo;editeur <strong>Pyzo</strong>:</li>
-</ul>
-<p>Mettre <strong><code>##</code></strong> avant chaque script pour créer une <em>cellule</em>. Executer la cellule et passer à la suivante avec <em>MAJ+CTRL+ENTREE</em>.</p>
-<ul>
-<li>l&rsquo;editeur <strong>Spyder</strong>:</li>
-</ul>
-<p>Mettre <strong><code>#%%</code></strong> avant chaque script pour créer une <em>cellule</em>. Executer la cellule et passer à la suivante avec <em>MAJ+ENTREE</em>.</p>
-
-<figure >
-    
-        <img src="../images/cell.png"
-        
-         />
-    
-    
-</figure>
-
-<h2 id="ex-1-diviser-sans-lopérateur-">Ex 1: Diviser sans l&rsquo;opérateur <code>/</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>La division entière de <code>a</code>par <code>b</code> revient à soustraire <code>N</code> fois <code>b</code> à la valeur <code>a</code>. Ce nombre <code>N</code> est le résultat de ce que l&rsquo;on appelle, la division entière de <code>a</code> par <code>b</code>.</p>
-<p>Il s&rsquo;agit de la DIVISION EUCLIDIENNE.</p>
-<p>Le script contient une boucle non bornée. La <em>condition d&rsquo;éxecution</em> est que le nombre <strong>a</strong> doit rester supérieur à <strong>b</strong> lorsqu&rsquo;on lui soustrait <strong>b</strong></p>
-<p><em>script</em></p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">20</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
-</span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-</span></span><span class="line"><span class="cl">  <span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span></span></span></code></pre></div>
-<p>Vous pouvez visualiser les étapes de mise en oeuvre de ce programme en utilisant le lien suivant: <a href="https://pythontutor.com/render.html#code=a%20%3D%2020%0Ab%20%3D%206%0AN%20%3D%200%0Awhile%20a%20%3E%3D%20b%3A%0A%20%20a%20%3D%20a%20-%20b%0A%20%20N%20%3D%20N%20%2B%201&amp;cumulative=false&amp;curInstr=13&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"> 
-            pythontutor.com
-        </a> </p>
-<ul>
-<li><strong>Question a:</strong> Que vaut la variable <code>a</code> à la fin du script? Quelle variable stocke le reste de la division? Quelle variable stocke le quotient de la division entière?</li>
-</ul>
-<blockquote>
-<p>Adapter maintenant le programme pour afficher le <em>quotient</em> de la division euclidienne, mais aussi le <em>reste</em>. Utiliser une expression formatée avec la fonction <code>print</code>: <code>print(&quot;quotient: {}, reste: {}&quot;.format(...,...))</code></p>
-</blockquote>
-<ul>
-<li><strong>Question b:</strong> Recopier le script de cette expression formatée sur votre feuille.</li>
-</ul>
-<h2 id="ex-2-fonction-division_euclidienne">Ex 2: fonction division_euclidienne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Créer une fonction <code>division_euclidienne</code> à partir de l&rsquo;exercice 1. Cette fonction devra retourner l&rsquo;expression formatée.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">division_euclidienne</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="n">a</span> <span class="o">..</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;quotient: </span><span class="si">{}</span><span class="s1">, reste: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">...</span><span class="p">,</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
-<ul>
-<li><strong>Question c:</strong> Recopier le script sur votre feuille.</li>
-</ul>
-<!--
-## Ex 2: Racine carrée
-On va adapter le script suivant pour déterminer la racine carrée de 13. La méthode va permettre d'évaluer à $10^-{2}$ près la valeur de $\sqrt {13}$.
-
-```python
-# initialisation de la variable x
-x = ...
-while <condition d execution>:
-  instruction
-```
-
-* Au début: à l'**étape d'initialisation** de la variable: On part d'une variable x que l'on initialise à 3, puisque $3^2 = 9$, donc inférieur à 13.
-
-* La **condition d'execution** de la boucle non bornée sera `x**2 < 13`.
-
-
-* Dans le bloc de la boucle `while`: On va **incrémenter** `x` de 0.01 à chaque itération, dans le bloc de la boucle bornée.
-
-* **Question c:** Recopiez le script sur votre feuille de réponse. Quelle est la valeur approchée de $\sqrt {13}$?
--->
-<h2 id="ex-3-compte-epargne">Ex 3: compte epargne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Un étudiant ouvre un compte epargne et dépose la somme de 10 euros. Ce compte est remunéré à hauteur de 2% par an. Il oublie complètement l&rsquo;existance de ce compte. Au bout de combien d&rsquo;années aura t-il doublé la somme?</p>
-<blockquote>
-<p>Resoudre le problème en completant et en testant le script suivant dans une cellule Python</p>
-</blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">somme</span> <span class="o">=</span> <span class="mi">10</span>
-</span></span><span class="line"><span class="cl"><span class="n">somme_arrivee</span> <span class="o">=</span> <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="n">annee</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">somme</span> <span class="o">&lt;=</span> <span class="o">...</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="o">...</span></span></span></code></pre></div>
-<ul>
-<li>
-<p><strong>Question d:</strong> Quel nombre <strong>x</strong> d&rsquo;années se sont écoulées? La somme a t-elle exactement doublé au bout de ces <strong>x</strong> années?</p>
-</li>
-<li>
-<p><strong>Question e:</strong> Créer une fonction <code>compte_epargne</code> à partir de ce script. Cette fonction prendra pour unique paramètre: <code>somme</code>, la somme de départ.</p>
-</li>
-</ul>
-<h2 id="ex-4-tirage-aleatoire">Ex 4: tirage aleatoire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le programme suivant utilise la fonction <code>randint</code>, qui effectue le tirage aleatoire d&rsquo;une valeur comprise entre 2 bornes:</p>
-<p><code>randint(1,6)</code> permet d&rsquo;effectuer un tirage aleatoire d&rsquo;une valeur entiere entre 1 et 6.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
-</span></span><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="n">nombre</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">nombre</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">  <span class="n">nombre</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></span></span></code></pre></div>
-<blockquote>
-<p>Visualiser les étapes de mise en oeuvre de ce programme en utilisant le lien suivant: <a href="https://pythontutor.com/render.html#code=from%20random%20import%20randint%0An%20%3D%201%0Anombre%20%3D%20randint%281,6%29%0Awhile%20nombre%20!%3D%201%3A%0A%20%20n%20%3D%20n%20%2B%201%0A%20%20nombre%20%3D%20randint%281,6%29%0Aprint%28n%29&amp;cumulative=false&amp;curInstr=11&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"> 
-            pythontutor.com
-        </a> </p>
-</blockquote>
-<ul>
-<li>
-<p><strong>Question f:</strong> A quoi sert ce programme: <em>(choisir et justifier)</em></p>
-<ul>
-<li>à compter le nombre d&rsquo;apparition du nombre 1?</li>
-<li>ou à calculer le nombre de lancers jusqu’à l’apparition du premier 1?</li>
-</ul>
-</li>
-<li>
-<p><strong>Question g:</strong> Supposons que le tirage aléatoire <code>randint(1,6)</code> donne successivement les valeurs: 2, 4, 3, 5, 5, 1. Quelle valeur pour <code>n</code> est affichée à la fin du programme? Faire un suivi des variables avec un <strong>tableau</strong>.</p>
-</li>
-</ul>
-<!--
-Ajouter une condition supplémentaire dans l'instruction `while randint(1,6) != 1 and ... :` pour résoudre ce problème de l'arrêt.
--->
-<h2 id="ex-5-pgcd">Ex 5: PGCD<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<h3 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p><em>PGCD: Plus grand commun diviseur.</em></p>
-<p><strong>algorithme d&rsquo;Euclide</strong></p>
-<p>Euclide propose l’algorithme suivant:</p>
-<ol>
-<li>Calculez le reste r dans la division de a par b</li>
-<li>Si r est nul alors le pgcd est b</li>
-<li>Sinon recommencer l’étape 1 avec a = b et b = r</li>
-</ol>
-<p><em>Exemple d’exécution : a = 32, b = 12 :</em></p>
-<p>– 32 = (2 x 12) + 8</p>
-<p>– 12 = (1 x 8) + 4</p>
-<p>– 8 = (2 x 4) + 0</p>
-<p>On a donc pgcd(32, 12) = 4</p>
-<h3 id="exercice">Exercice<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Programmer la fonction <code>PGCD</code> qui prend 2 paramètres, <code>a</code> et <code>b</code>, et qui retourne le <em>PGCD</em> de <code>a</code> et <code>b</code>. Utiliser une boucle non bornée <code>while</code>.</p>
-<h1 id="portfolio">Portfolio<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Lorsque l&rsquo;on écrit une boucle bornée, le programme comporte 3 phases:</p>
-<ul>
-<li>une première phase d&rsquo;<em>initialisation de la variable</em></li>
-<li>une instruction <em><code>while &lt;condition d execution&gt;</code></em></li>
-<li>un <em>bloc</em> qui sera répété dans la boucle tant que la condition est Vraie. Le bloc doit contenir une instruction qui modifie la valeur de la variable, et la rapproche de la <em>condition d&rsquo;arrêt</em>.</li>
-</ul>
-<blockquote>
-<p>Définir chacun de ces termes à l&rsquo;aide d&rsquo;un des exemples precedents:</p>
-</blockquote>
-<ul>
-<li>
-<p><em>initialisation de la variable</em></p>
-</li>
-<li>
-<p><em>condition d&rsquo;execution</em></p>
-</li>
-<li>
-<p><em>bloc d&rsquo;instructions</em></p>
-</li>
-<li>
-<p><em>condition d&rsquo;arrêt</em></p>
-</li>
-<li>
-<p>Quelle est la condition d&rsquo;arrêt pour les exemples suivants:</p>
-</li>
-</ul>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ex 1</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ex 2</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># ex 3</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span></span></span></code></pre></div>
+<h1 id="algorithmes-avancés">Algorithmes avancés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<hr>
+<h2 id="algorithme-glouton">Algorithme glouton<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A chaque étape, on fait le choix qui semble le meilleur <em>sur le moment</em>, sans revenir en arrière. Ne donne pas toujours la solution optimale, mais est simple et rapide.</p>
+<p><em>Exemple classique : le rendu de monnaie.</em> On utilise toujours la plus grande pièce/billet possible.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rendu_monnaie</span><span class="p">(</span><span class="n">a_rendre</span><span class="p">,</span> <span class="n">pieces</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pieces</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># du plus grand au plus petit</span>
+</span></span><span class="line"><span class="cl">    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pieces</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">a_rendre</span> <span class="o">&gt;=</span> <span class="n">p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a_rendre</span> <span class="o">-=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">resultat</span></span></span></code></pre></div>
+<p><em>Exemple :</em> <code>rendu_monnaie(78, [50, 20, 10, 5, 2, 1])</code> → <code>[50, 20, 5, 2, 1]</code></p>
+<p><em>Limite :</em> avec un système de pièces mal choisi, le glouton peut ne pas être optimal (ex. rendre <code>6</code> avec <code>[4, 3, 1]</code> donne <code>4+1+1</code> au lieu de <code>3+3</code>).</p>
+<h2 id="recherche-des-k-plus-proches-voisins">Recherche des K plus proches voisins<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour classer une nouvelle donnée, on calcule sa distance à toutes les données connues, puis on regarde les <code>k</code> voisins les plus proches : la classe majoritaire parmi eux devient la prédiction.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">k_plus_proches_voisins</span><span class="p">(</span><span class="n">donnees</span><span class="p">,</span> <span class="n">nouveau_point</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># donnees : liste de (point, classe)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">point</span><span class="p">,</span> <span class="n">classe</span> <span class="ow">in</span> <span class="n">donnees</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">distance</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">nouveau_point</span><span class="p">),</span> <span class="n">classe</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k_voisins</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">classe</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">classe</span> <span class="ow">in</span> <span class="n">k_voisins</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">classes</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>  <span class="c1"># classe majoritaire</span></span></span></code></pre></div>
+<p><em>Exemple :</em> <code>donnees = [((1,1), &quot;A&quot;), ((2,1), &quot;A&quot;), ((5,5), &quot;B&quot;)]</code> puis <code>k_plus_proches_voisins(donnees, (1,2), 2)</code> → <code>&quot;A&quot;</code> (les 2 voisins les plus proches sont de classe A)</p>
+<p><em>A retenir :</em> le choix de <code>k</code> est important — trop petit, sensible au bruit ; trop grand, mélange des classes éloignées.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -438,9 +265,9 @@ Ajouter une condition supplémentaire dans l'instruction `while randint(1,6) != 
             <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="parent " data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2" checked><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active hidden " data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">TP boucles non bornées<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -723,9 +550,9 @@ Ajouter une condition supplémentaire dans l'instruction `while randint(1,6) != 
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789832312"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789832312" defer></script>
-    <script src="/js/theme.js?1789832312" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790009370"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790009370" defer></script>
+    <script src="/js/theme.js?1790009370" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

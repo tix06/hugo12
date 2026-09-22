@@ -32,7 +32,7 @@ def salut():
   return 'bonjour tout le monde'
 ```
 
-On appelle cette fonction à l'aide de son nom, suivi des parenthèses : 
+On **appelle cette fonction** à l'aide de son nom, suivi des parenthèses : 
 
 ```python
 salut()
@@ -64,7 +64,11 @@ Il est d'usage, dans les *bonnes* pratiques, d'ajouter une chaîne de documentat
 Le *Docstring* est accessible à l'aide de la fonction `help` : 
 
 ```python
-help(salut)
+def salut():
+  """Accueillir tout le monde"""
+  return 'bonjour tout le monde'
+
+> help(salut)
 # affiche
 Help on function salut in module __main__:
 
@@ -156,12 +160,16 @@ On peut appeler la fonction avec des arguments non positionnés, mais, alors, il
 
 
 ```python
+def servir_cafe(client,nombre):
+  """servir le nombre de cafés voulus au client"""
+  return f'{client} commande {nombre} café(s)'
+
 > servir_cafe(nombre=10,client="Fred")
 'Fred commande 10 café(s)'
 ```
 
 ## Valeur par défaut
-> Définir la *valeur par défaut* d'un paramètre dans une fonction permet à l'appel de la fonction d'utiliser cette valeur, sauf si une autre valeur est spécifiée à l'appel. 
+> Définir la **valeur par défaut** d'un paramètre dans une fonction permet à l'appel de la fonction d'utiliser cette valeur, **sauf** si une autre valeur est spécifiée à l'appel. 
 
 Lorsqu'il y a plusieurs arguments, il faudra mettre le-s paramètre-s avec valeur-s par défaut à la fin : 
 
@@ -175,15 +183,26 @@ def servir_cafe(client,nombre=1):
 
 ```python
 servir_cafe('George')
-# on utilise la valeur du paramètre par defaut
+# on utilise la valeur du paramètre par defaut = 1
 # retourne 'George commande 1 café(s)'
 servir_cafe('Jean',2)
 # cette fois, on précise la valeur 2
 # retourne 'Jean commande 2 café(s)'
 ```
 
-## Annotations de type (paramètres et valeur de retour)
-Depuis Python 3.5, on peut préciser, dans la définition d'une fonction, le type attendu pour chaque paramètre ainsi que le type de la valeur renvoyée. On parle d'**annotations de type** (*type hints*).
+## Spécifier une fonction
+On a vu que pour déclarer et construire une fonction, il faut:
+
+* déclarer le nom de la fonction et ses eventuels paramètres après la commande `def`
+* placer les paramètres entre `()`, dans un ordre précis
+* terminer la première ligne, `def ...:` par 2 points `:`
+* indenter le bloc de code de la fonction
+* placer eventuellement un commentaire, à partir de la première ligne du bloc de la fonction, sur une ou plusieurs lignes, afin de préciser son comportement: `"""commentaire sur plusieurs lignes"""`
+* finir par une eventuelle valeur de retour, après le `return`
+
+On peut aller plus loin dans ce que l'on appelle la **spécification** de la fonction, en utilisant des **annotations de type**:
+
+Depuis Python 3.5, on peut préciser, dans la définition d'une fonction, le **type** attendu pour chaque *paramètre* ainsi que le type de la *valeur renvoyée*. On parle d'*annotations de type* (*type hints*).
 
 ```python
 def nom_fonction(parametre: type_attendu) -> type_de_retour:
@@ -239,7 +258,9 @@ double(2.5)
 
 `assert` est surtout destiné à vérifier des conditions qui **ne devraient jamais être fausses si le programme est correct** — des invariants internes, utiles pendant le développement et les tests. Un détail important : les instructions `assert` peuvent être **désactivées globalement** au lancement de Python (option `-O`), auquel cas elles ne sont plus exécutées du tout. Il ne faut donc jamais s'appuyer sur `assert` pour une vérification qui doit rester active en toutes circonstances, en particulier pour valider une donnée saisie par un utilisateur.
 
-**`raise`** lève explicitement une exception, d'un type que l'on choisit, et reste **toujours actif**, quelles que soient les options de lancement :
+**`raise`** lève explicitement une exception, d'un type que l'on choisit, et reste **toujours actif**, quelles que soient les options de lancement.
+
+Dans l'exemple suivant, j'utilise la fonction `isinstance` pour verifier si `x` (le premier argument de la fonction) est de type `int`, (le 2e argument):
 
 ```python
 def double(x: int) -> int:
@@ -337,15 +358,21 @@ Exemple:
 Les fonctions *lambda* peuvent être utilisées pour trier une liste selon une clé spécifique: [doc officielle](https://docs.python.org/3/howto/sorting.html)
 
 ```python
-nodes = [('A', 20), ('B', 15), ('C', 12), ('D', 10), ('E', 8), ('F', 5), ('G', 2)]
-nodes.sort(key= lambda x: x[1])
-nodes
+>>> nodes = [('A', 20), ('B', 15), ('C', 12), ('D', 10), ('E', 8), ('F', 5), ('G', 2)]
+>>> nodes.sort(key= lambda x: x[1])
+>>> nodes
+[('G', 2), ('F', 5), ('E', 8), ('D', 10), ('C', 12), ('B', 15), ('A', 20)]
 ```
 
-résultat:
+
+
+Alors que le tri sur la même liste, sans clé de tri, va donner:
 
 ```python
-[('G', 2), ('F', 5), ('E', 8), ('D', 10), ('C', 12), ('B', 15), ('A', 20)]
+>>> nodes = [('A', 20), ('B', 15), ('C', 12), ('D', 10), ('E', 8), ('F', 5), ('G', 2)]
+>>> nodes.sort()
+>>> nodes
+[('A', 20), ('B', 15), ('C', 12), ('D', 10), ('E', 8), ('F', 5), ('G', 2)]
 ```
 
 # Liens

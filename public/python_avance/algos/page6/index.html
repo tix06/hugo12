@@ -5,24 +5,30 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="algorithmes de parcours séquentiel et dichotomique">
+    <meta name="description" content="Revision d’algorithmes fondamentaux Nous allons revoir les algorithmes classiques suivants:
+Recherche du maximum Recherche du minimum Calculer la moyenne d’un tableau La recherche en table On va commencer par créer une liste de nombre aléatoires pour y appliquer nos algorithmes.
+# ceci est une cellule de code # Rappel: appuyez sur CTRL&#43;ENTER pour l&#39;éxecuter import random # On crée une liste de 51 entiers entre 0 et 50 ma_liste = [i for i in range(51)] # On la mélange random.shuffle(ma_liste) ma_liste Vous allez maintenant implémenter les algorithmes suivants. Utilisez les spécifications de ces algorithmes lorsqu’elles sont indiquées.">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="rechercher :: allophysique">
-    <meta name="twitter:description" content="algorithmes de parcours séquentiel et dichotomique">
-    <meta property="og:url" content="//localhost:1313/python_avance/algos/page2/index.html">
+    <meta name="twitter:title" content="TP6 algorithmes séquentiels :: allophysique">
+    <meta name="twitter:description" content="Revision d’algorithmes fondamentaux Nous allons revoir les algorithmes classiques suivants:
+Recherche du maximum Recherche du minimum Calculer la moyenne d’un tableau La recherche en table On va commencer par créer une liste de nombre aléatoires pour y appliquer nos algorithmes.
+# ceci est une cellule de code # Rappel: appuyez sur CTRL&#43;ENTER pour l&#39;éxecuter import random # On crée une liste de 51 entiers entre 0 et 50 ma_liste = [i for i in range(51)] # On la mélange random.shuffle(ma_liste) ma_liste Vous allez maintenant implémenter les algorithmes suivants. Utilisez les spécifications de ces algorithmes lorsqu’elles sont indiquées.">
+    <meta property="og:url" content="//localhost:1313/python_avance/algos/page6/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="rechercher :: allophysique">
-    <meta property="og:description" content="algorithmes de parcours séquentiel et dichotomique">
+    <meta property="og:title" content="TP6 algorithmes séquentiels :: allophysique">
+    <meta property="og:description" content="Revision d’algorithmes fondamentaux Nous allons revoir les algorithmes classiques suivants:
+Recherche du maximum Recherche du minimum Calculer la moyenne d’un tableau La recherche en table On va commencer par créer une liste de nombre aléatoires pour y appliquer nos algorithmes.
+# ceci est une cellule de code # Rappel: appuyez sur CTRL&#43;ENTER pour l&#39;éxecuter import random # On crée une liste de 51 entiers entre 0 et 50 ma_liste = [i for i in range(51)] # On la mélange random.shuffle(ma_liste) ma_liste Vous allez maintenant implémenter les algorithmes suivants. Utilisez les spécifications de ces algorithmes lorsqu’elles sont indiquées.">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
-    <meta property="article:modified_time" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="name" content="rechercher :: allophysique">
-    <meta itemprop="description" content="algorithmes de parcours séquentiel et dichotomique">
-    <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="267">
-    <title>rechercher :: allophysique</title>
+    <meta itemprop="name" content="TP6 algorithmes séquentiels :: allophysique">
+    <meta itemprop="description" content="Revision d’algorithmes fondamentaux Nous allons revoir les algorithmes classiques suivants:
+Recherche du maximum Recherche du minimum Calculer la moyenne d’un tableau La recherche en table On va commencer par créer une liste de nombre aléatoires pour y appliquer nos algorithmes.
+# ceci est une cellule de code # Rappel: appuyez sur CTRL&#43;ENTER pour l&#39;éxecuter import random # On crée une liste de 51 entiers entre 0 et 50 ma_liste = [i for i in range(51)] # On la mélange random.shuffle(ma_liste) ma_liste Vous allez maintenant implémenter les algorithmes suivants. Utilisez les spécifications de ces algorithmes lorsqu’elles sont indiquées.">
+    <meta itemprop="wordCount" content="570">
+    <title>TP6 algorithmes séquentiels :: allophysique</title>
     <link href="/images/logo.png?1790009370" rel="icon" type="image/png">
     <link href="/css/auto-complete/auto-complete.min.css?1790009370" rel="stylesheet">
     <script src="/js/auto-complete/auto-complete.min.js?1790009370" defer></script>
@@ -48,7 +54,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/python_avance\/algos\/page2\/index.html';
+      window.relearn.path='\/python_avance\/algos\/page6\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/\/localhost:1313';
@@ -99,7 +105,7 @@
 </style>
 <link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
-  <body class="mobile-support html" data-origin="/python_avance/algos/page2/index.html">
+  <body class="mobile-support html" data-origin="/python_avance/algos/page6/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar" class="default-animation">
@@ -115,27 +121,25 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#algorithmes-de-recherche">algorithmes de recherche</a></li>
-    <li><a href="#recherche-doccurences">recherche d&rsquo;occurences</a></li>
-    <li><a href="#calcul-dune-somme-ou-moyenne">calcul d&rsquo;une somme ou moyenne</a></li>
-    <li><a href="#recherche-dun-extremum-min-max">recherche d&rsquo;un extremum (min, max)</a></li>
+    <li><a href="#revision-dalgorithmes-fondamentaux">Revision d&rsquo;algorithmes fondamentaux</a></li>
+    <li><a href="#recherche-dans-une-liste-de-mots">Recherche dans une liste de mots</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">rechercher</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">TP6 algorithmes séquentiels</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/algos/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/algos/page6.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page1/index.html" title="calculer (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page4/index.html" title="algorithmes avancés (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page3/index.html" title="trier (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/es/page1/index.html" title="fichiers Entrees/Sorties (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -156,71 +160,113 @@
   <header class="headline">
   </header>
 
-<h1 id="rechercher">rechercher</h1>
+<h1 id="tp6-algorithmes-séquentiels">TP6 algorithmes séquentiels</h1>
 
-<p>La connaissance des algorithmes suivants est exigée pour les étudiants en NSI. Le langage python propose des fonctions pour chacun d&rsquo;eux. Mais, parfois, il est demandé à l&rsquo;étudiant d&rsquo;écrire ou compléter le script pour ces fonctions.</p>
-<h1 id="parcours-séquentiel">Parcours séquentiel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>On parcourt la structure élément par élément, du début à la fin.</p>
-<h2 id="algorithmes-de-recherche">algorithmes de recherche<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Exemple avec une liste, avec un dictionnaire</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># liste : renvoie l&#39;indice de la valeur, ou -1 si absente</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># dictionnaire : renvoie la clé associée à la valeur</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cle</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div>
-<h2 id="recherche-doccurences">recherche d&rsquo;occurences<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">compter_occurrences</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">compteur</span></span></span></code></pre></div>
-<h2 id="calcul-dune-somme-ou-moyenne">calcul d&rsquo;une somme ou moyenne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">+=</span> <span class="n">element</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">total</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">somme</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span></span></span></code></pre></div>
-<h2 id="recherche-dun-extremum-min-max">recherche d&rsquo;un extremum (min, max)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">element</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">m</span> <span class="o">=</span> <span class="n">element</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">m</span></span></span></code></pre></div>
-<h1 id="recherche-dichotomique">Recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>S&rsquo;applique uniquement sur une liste <strong>triée</strong>. On compare la valeur cherchée à l&rsquo;élément central puis on réduit la zone de recherche de moitié à chaque étape.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dichotomie</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gauche</span><span class="p">,</span> <span class="n">droite</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;=</span> <span class="n">droite</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span> <span class="o">+</span> <span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">milieu</span>
-</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">gauche</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></span></span></code></pre></div>
-<p><em>A retenir :</em> recherche séquentielle en O(n), recherche dichotomique en O(log n).</p>
-<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="revision-dalgorithmes-fondamentaux">Revision d&rsquo;algorithmes fondamentaux<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Nous allons revoir les algorithmes classiques suivants:</p>
 <ul>
-<li><a href="../page6/">TP</a></li>
+<li>Recherche du maximum</li>
+<li>Recherche du minimum</li>
+<li>Calculer la moyenne d&rsquo;un tableau</li>
+<li>La recherche en table</li>
 </ul>
+<p>On va commencer par créer une liste de nombre aléatoires pour y appliquer nos algorithmes.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># ceci est une cellule de code</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Rappel: appuyez sur CTRL+ENTER pour l&#39;éxecuter</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># On crée une liste de 51 entiers entre 0 et 50</span>
+</span></span><span class="line"><span class="cl"><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># On la mélange</span>
+</span></span><span class="line"><span class="cl"><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">ma_liste</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">ma_liste</span></span></span></code></pre></div>
+<p>Vous allez maintenant implémenter les algorithmes suivants. Utilisez les spécifications de ces algorithmes lorsqu&rsquo;elles sont indiquées.</p>
+<p>Si la spécification de l&rsquo;algorithme n&rsquo;est pas donnée, vous la complèterez vous-même.</p>
+<p>Aide :</p>
+<ul>
+<li><a href="https://numerix.netlify.app/docs/python/pages/boucles/page1/index.html" rel="external">page python sur les boucles</a></li>
+<li><a href="https://numerix.netlify.app/docs/python/pages/conditions/page1/index.html" rel="external">page python sur les structures conditionnelles</a></li>
+<li><a href="https://numerix.netlify.app/docs/nsi/langages/page5/index.html" rel="external">page python sur la mise au point d&rsquo;un script et les specifications</a></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># script get_maximum</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">L&#39;algorithme recherche la valeur maximale dans la liste.
+</span></span></span><span class="line"><span class="cl"><span class="s2">variables en entrée : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">------------------
+</span></span></span><span class="line"><span class="cl"><span class="s2">ma_liste : list, une liste de valeurs entieres, uniques, mises dans un ordre aléatoires.
+</span></span></span><span class="line"><span class="cl"><span class="s2">max : int, stocke la valeur maximale actuelle. Initialisé à 0.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Sortie :
+</span></span></span><span class="line"><span class="cl"><span class="s2">------
+</span></span></span><span class="line"><span class="cl"><span class="s2">max : int, prend la valeur de l&#39;élément le plus grand de la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">Principe : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">on parcourt la liste avec une boucle bornée.
+</span></span></span><span class="line"><span class="cl"><span class="s2">si la valeur la valeur de max est inferieure à la valeur courante, max est actualisée avec cette valeur courante
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># programme à écrire ici</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># script get_minimum</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">L&#39;algorithme recherche la valeur minimale dans la liste.
+</span></span></span><span class="line"><span class="cl"><span class="s2">variables en entrée : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">------------------
+</span></span></span><span class="line"><span class="cl"><span class="s2">ma_liste : list, une liste de valeurs entieres, uniques, mises dans un ordre aléatoires.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">** à compléter **
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># script moyenne</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">L&#39;algorithme calcule la moyenne des valeurs d&#39;une liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">variables en entrée : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">somme : int, initialisé à 0, stocke la somme des élements de la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">ma_liste : list, une liste de valeurs entieres, uniques, mises dans un ordre aléatoires.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Sortie :
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">moyenne : float, moyenne des valeurs de la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">Principe : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">on parcourt la liste avec une boucle bornée
+</span></span></span><span class="line"><span class="cl"><span class="s2">on ajoute la valeur de l&#39;element de la liste à somme. 
+</span></span></span><span class="line"><span class="cl"><span class="s2">Une fois la liste parcourue, on affecte à moyenne : somme/len(ma_liste) 
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># script recherche</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">l&#39;algorithme recherche une valeur dans une liste et renvoie l&#39;indice
+</span></span></span><span class="line"><span class="cl"><span class="s2">Variables en entrée :
+</span></span></span><span class="line"><span class="cl"><span class="s2">-------------------
+</span></span></span><span class="line"><span class="cl"><span class="s2">val : int, valeur à trouver
+</span></span></span><span class="line"><span class="cl"><span class="s2">ma_liste : list, une liste de valeurs entieres, uniques, mises dans un ordre aléatoires.
+</span></span></span><span class="line"><span class="cl"><span class="s2">Sortie : 
+</span></span></span><span class="line"><span class="cl"><span class="s2">------
+</span></span></span><span class="line"><span class="cl"><span class="s2">i : int, indice de la position de la valeur dans la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">Principe :
+</span></span></span><span class="line"><span class="cl"><span class="s2">--------
+</span></span></span><span class="line"><span class="cl"><span class="s2">on parcourt la liste avec une boucle non bornée, tant que val n&#39;est pas trouvé dans la liste
+</span></span></span><span class="line"><span class="cl"><span class="s2">on augmente la valeur de i à chaque nouvelle itération
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span></span></span></code></pre></div>
+<h2 id="recherche-dans-une-liste-de-mots">Recherche dans une liste de mots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Télécharger la liste de mots <code>liste_francais.txt</code> à partir du dépôt suivant: <a href="https://github.com/Sicilat/dictionnary-f" rel="external">https://github.com/Sicilat/dictionnary-f</a> <em>(ou utilisez la liste fournie si présente dans votre dossier)</em>.</p>
+<p><strong>Importer</strong> la liste de mots sous forme de liste et afficher les 13 premiers éléments de la liste (executer la cellule suivante)</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># initialisation de la liste vide</span>
+</span></span><span class="line"><span class="cl"><span class="n">mots</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lecture du fichier txt et remplissage de la liste</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;liste_francais.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">mot</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mot</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="c1"># Affichage des 13 premiers mots</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mots</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">mots</span><span class="p">[:</span><span class="mi">13</span><span class="p">]</span></span></span></code></pre></div>
+<p><strong>Afficher</strong> la longueur de la liste (le nombre d&rsquo;éléments) :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
+<p>Sur votre <strong>cahier de labo</strong>, rédiger la spécification de l&rsquo;algorithme séquentiel d&rsquo;un mot dans la liste. Puis vous réaliserez l&rsquo;implementation de cet algorithme. Recherchez le mot <em>&rsquo;tracts&rsquo;</em> par exemple.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
 
   <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
-              <i class='fa-fw fas fa-calendar'></i> 22 juin 2026
   </footer>
 </article>
         </div>
@@ -294,9 +340,10 @@
             <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="parent " data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2" checked><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="" data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_avance/algos/page6/index.html"><a class="padding" href="/python_avance/algos/page6/index.html">TP6 algorithmes séquentiels<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>

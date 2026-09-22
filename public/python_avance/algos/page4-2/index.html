@@ -5,50 +5,48 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="algorithmes de parcours séquentiel et dichotomique">
+    <meta name="description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="rechercher :: allophysique">
-    <meta name="twitter:description" content="algorithmes de parcours séquentiel et dichotomique">
-    <meta property="og:url" content="//localhost:1313/python_avance/algos/page2/index.html">
+    <meta name="twitter:title" content="trier :: allophysique">
+    <meta name="twitter:description" content="algorithme glouton et de recherche des K plus proches voisins">
+    <meta property="og:url" content="//localhost:1313/python_avance/algos/page4-2/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="rechercher :: allophysique">
-    <meta property="og:description" content="algorithmes de parcours séquentiel et dichotomique">
+    <meta property="og:title" content="trier :: allophysique">
+    <meta property="og:description" content="algorithme glouton et de recherche des K plus proches voisins">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Python avancé">
-    <meta property="article:modified_time" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="name" content="rechercher :: allophysique">
-    <meta itemprop="description" content="algorithmes de parcours séquentiel et dichotomique">
-    <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="267">
-    <title>rechercher :: allophysique</title>
-    <link href="/images/logo.png?1790009370" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1790009370" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1790009370" defer></script>
-    <script src="/js/search-lunr.js?1790009370" defer></script>
-    <script src="/js/search.js?1790009370" defer></script>
+    <meta itemprop="name" content="trier :: allophysique">
+    <meta itemprop="description" content="algorithme glouton et de recherche des K plus proches voisins">
+    <meta itemprop="wordCount" content="262">
+    <title>trier :: allophysique</title>
+    <link href="/images/logo.png?1790001307" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790001307" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790001307" defer></script>
+    <script src="/js/search-lunr.js?1790001307" defer></script>
+    <script src="/js/search.js?1790001307" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1790009370";
+      window.relearn.index_js_url="/searchindex.en.js?1790001307";
     </script>
-    <script src="/js/lunr/lunr.min.js?1790009370" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1790009370" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1790009370" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790001307" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790001307" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790001307" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790001307" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790009370" rel="stylesheet">
-    <link href="/css/theme.css?1790009370" rel="stylesheet">
-    <link href="/css/format-html.css?1790009370" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790001307" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790001307" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790001307" rel="stylesheet">
+    <link href="/css/theme.css?1790001307" rel="stylesheet">
+    <link href="/css/format-html.css?1790001307" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/python_avance\/algos\/page2\/index.html';
+      window.relearn.path='\/python_avance\/algos\/page4-2\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/\/localhost:1313';
@@ -99,7 +97,7 @@
 </style>
 <link rel="stylesheet" href="//localhost:1313/css/custom.css">
   </head>
-  <body class="mobile-support html" data-origin="/python_avance/algos/page2/index.html">
+  <body class="mobile-support html" data-origin="/python_avance/algos/page4-2/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar" class="default-animation">
@@ -115,27 +113,25 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#algorithmes-de-recherche">algorithmes de recherche</a></li>
-    <li><a href="#recherche-doccurences">recherche d&rsquo;occurences</a></li>
-    <li><a href="#calcul-dune-somme-ou-moyenne">calcul d&rsquo;une somme ou moyenne</a></li>
-    <li><a href="#recherche-dun-extremum-min-max">recherche d&rsquo;un extremum (min, max)</a></li>
+    <li><a href="#algorithme-glouton">Algorithme glouton</a></li>
+    <li><a href="#recherche-des-k-plus-proches-voisins">Recherche des K plus proches voisins</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">rechercher</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/index.html"><span itemprop="name">Python avancé</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/python_avance/algos/index.html"><span itemprop="name">algorithmes essentiels</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">trier</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/algos/page2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/algos/page4-2.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page1/index.html" title="calculer (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page3/index.html" title="trier (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page3/index.html" title="trier (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/es/page1/index.html" title="fichiers Entrees/Sorties (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -156,71 +152,43 @@
   <header class="headline">
   </header>
 
-<h1 id="rechercher">rechercher</h1>
+<h1 id="trier">trier</h1>
 
-<p>La connaissance des algorithmes suivants est exigée pour les étudiants en NSI. Le langage python propose des fonctions pour chacun d&rsquo;eux. Mais, parfois, il est demandé à l&rsquo;étudiant d&rsquo;écrire ou compléter le script pour ces fonctions.</p>
-<h1 id="parcours-séquentiel">Parcours séquentiel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>On parcourt la structure élément par élément, du début à la fin.</p>
-<h2 id="algorithmes-de-recherche">algorithmes de recherche<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Exemple avec une liste, avec un dictionnaire</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># liste : renvoie l&#39;indice de la valeur, ou -1 si absente</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_liste</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">i</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<h1 id="algorithmes-avancés">Algorithmes avancés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<hr>
+<h2 id="algorithme-glouton">Algorithme glouton<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>A chaque étape, on fait le choix qui semble le meilleur <em>sur le moment</em>, sans revenir en arrière. Ne donne pas toujours la solution optimale, mais est simple et rapide.</p>
+<p><em>Exemple classique : le rendu de monnaie.</em> On utilise toujours la plus grande pièce/billet possible.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rendu_monnaie</span><span class="p">(</span><span class="n">a_rendre</span><span class="p">,</span> <span class="n">pieces</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pieces</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># du plus grand au plus petit</span>
+</span></span><span class="line"><span class="cl">    <span class="n">resultat</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pieces</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">a_rendre</span> <span class="o">&gt;=</span> <span class="n">p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">resultat</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a_rendre</span> <span class="o">-=</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">resultat</span></span></span></code></pre></div>
+<p><em>Exemple :</em> <code>rendu_monnaie(78, [50, 20, 10, 5, 2, 1])</code> → <code>[50, 20, 5, 2, 1]</code></p>
+<p><em>Limite :</em> avec un système de pièces mal choisi, le glouton peut ne pas être optimal (ex. rendre <code>6</code> avec <code>[4, 3, 1]</code> donne <code>4+1+1</code> au lieu de <code>3+3</code>).</p>
+<h2 id="recherche-des-k-plus-proches-voisins">Recherche des K plus proches voisins<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour classer une nouvelle donnée, on calcule sa distance à toutes les données connues, puis on regarde les <code>k</code> voisins les plus proches : la classe majoritaire parmi eux devient la prédiction.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># dictionnaire : renvoie la clé associée à la valeur</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recherche_dict</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="n">cle</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">cle</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">None</span></span></span></code></pre></div>
-<h2 id="recherche-doccurences">recherche d&rsquo;occurences<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">compter_occurrences</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">compteur</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">compteur</span></span></span></code></pre></div>
-<h2 id="calcul-dune-somme-ou-moyenne">calcul d&rsquo;une somme ou moyenne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">total</span> <span class="o">+=</span> <span class="n">element</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">total</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">moyenne</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">somme</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span></span></span></code></pre></div>
-<h2 id="recherche-dun-extremum-min-max">recherche d&rsquo;un extremum (min, max)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">element</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">m</span> <span class="o">=</span> <span class="n">element</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">m</span></span></span></code></pre></div>
-<h1 id="recherche-dichotomique">Recherche dichotomique<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>S&rsquo;applique uniquement sur une liste <strong>triée</strong>. On compare la valeur cherchée à l&rsquo;élément central puis on réduit la zone de recherche de moitié à chaque étape.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dichotomie</span><span class="p">(</span><span class="n">liste</span><span class="p">,</span> <span class="n">valeur</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">gauche</span><span class="p">,</span> <span class="n">droite</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;=</span> <span class="n">droite</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span> <span class="o">+</span> <span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">milieu</span>
-</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">liste</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">valeur</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">gauche</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">+</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></span></span></code></pre></div>
-<p><em>A retenir :</em> recherche séquentielle en O(n), recherche dichotomique en O(log n).</p>
-<h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<ul>
-<li><a href="../page6/">TP</a></li>
-</ul>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">k_plus_proches_voisins</span><span class="p">(</span><span class="n">donnees</span><span class="p">,</span> <span class="n">nouveau_point</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># donnees : liste de (point, classe)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">point</span><span class="p">,</span> <span class="n">classe</span> <span class="ow">in</span> <span class="n">donnees</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">distances</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">distance</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="n">nouveau_point</span><span class="p">),</span> <span class="n">classe</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distances</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">k_voisins</span> <span class="o">=</span> <span class="n">distances</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">classes</span> <span class="o">=</span> <span class="p">[</span><span class="n">classe</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">classe</span> <span class="ow">in</span> <span class="n">k_voisins</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">classes</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">classes</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>  <span class="c1"># classe majoritaire</span></span></span></code></pre></div>
+<p><em>Exemple :</em> <code>donnees = [((1,1), &quot;A&quot;), ((2,1), &quot;A&quot;), ((5,5), &quot;B&quot;)]</code> puis <code>k_plus_proches_voisins(donnees, (1,2), 2)</code> → <code>&quot;A&quot;</code> (les 2 voisins les plus proches sont de classe A)</p>
+<p><em>A retenir :</em> le choix de <code>k</code> est important — trop petit, sensible au bruit ; trop grand, mélange des classes éloignées.</p>
 
   <footer class="footline">
-              <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
-              <i class='fa-fw fas fa-calendar'></i> 22 juin 2026
   </footer>
 </article>
         </div>
@@ -294,9 +262,9 @@
             <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="parent " data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2" checked><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/python_avance/algos/page4-2/index.html"><a class="padding" href="/python_avance/algos/page4-2/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -579,9 +547,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790009370"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790009370" defer></script>
-    <script src="/js/theme.js?1790009370" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790001307"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790001307" defer></script>
+    <script src="/js/theme.js?1790001307" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

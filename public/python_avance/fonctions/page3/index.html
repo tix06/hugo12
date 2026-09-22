@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP4 - fonctions (corrigé) :: allophysique">
     <meta itemprop="description" content="corrigé du TD sur la valeur par défaut, les annotations de type, les arguments positionnés">
     <meta itemprop="dateModified" content="2026-09-18T16:52:56+02:00">
-    <meta itemprop="wordCount" content="962">
+    <meta itemprop="wordCount" content="1067">
     <title>TP4 - fonctions (corrigé) :: allophysique</title>
-    <link href="/images/logo.png?1789832312" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1789832312" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1789832312" defer></script>
-    <script src="/js/search-lunr.js?1789832312" defer></script>
-    <script src="/js/search.js?1789832312" defer></script>
+    <link href="/images/logo.png?1790009370" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790009370" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790009370" defer></script>
+    <script src="/js/search-lunr.js?1790009370" defer></script>
+    <script src="/js/search.js?1790009370" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1789832312";
+      window.relearn.index_js_url="/searchindex.en.js?1790009370";
     </script>
-    <script src="/js/lunr/lunr.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1789832312" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1789832312" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790009370" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790009370" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1789832312" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1789832312" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1789832312" rel="stylesheet">
-    <link href="/css/theme.css?1789832312" rel="stylesheet">
-    <link href="/css/format-html.css?1789832312" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790009370" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790009370" rel="stylesheet">
+    <link href="/css/theme.css?1790009370" rel="stylesheet">
+    <link href="/css/format-html.css?1790009370" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -119,7 +119,6 @@
     <li><a href="#script-2--annotations-de-type">Script 2 — Annotations de type</a></li>
     <li><a href="#script-3--arguments-positionnés">Script 3 — Arguments positionnés</a></li>
     <li><a href="#script-4--chaînage-de-fonctions">Script 4 — Chaînage de fonctions</a></li>
-    <li><a href="#grille-de-correction-indicative">Grille de correction indicative</a></li>
   </ul>
 </nav>
                 </div>
@@ -133,10 +132,10 @@
 <span class="btn cstyle button link noborder notitle interactive"><a href="https://github.com/mon-org/docs/edit/main/content/python_avance/fonctions/page3.md" rel="external" title="Éditer (CTRL+ALT+w)"><i class="fa-fw fas fa-pen"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-prev default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/page3/index.html" title="trier (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/fonctions/page1/index.html" title="Fonctions (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-next default-animation" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show">
-<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/es/page1/index.html" title="fichiers Entrees/Sorties (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
+<span class="btn cstyle button link noborder notitle interactive"><a href="/python_avance/algos/index.html" title="algorithmes essentiels (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a></span>
             </div>
             <div class="topbar-button topbar-button-more default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Aller plus loin"><i class="fa-fw fas fa-ellipsis-v"></i></button></span>
@@ -157,10 +156,8 @@
   <header class="headline">
   </header>
 
-<h1 id="tp4---fonctions-corrigé">TP4 - fonctions (corrigé)</h1>
 
-<h1 id="corrigé--td--fonctions-en-python">Corrigé — TD : Fonctions en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p><em>Ce corrigé est destiné à l&rsquo;enseignant.</em></p>
+<h1 id="corrigé--tp4--fonctions-en-python">Corrigé — TP4 : Fonctions en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <hr>
 <h2 id="script-1--valeur-par-défaut">Script 1 — Valeur par défaut<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong></p>
@@ -180,7 +177,11 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">classe_A</span><span class="p">)</span>  <span class="c1"># [&#39;Alice&#39;]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">classe_B</span><span class="p">)</span>  <span class="c1"># [&#39;Bob&#39;]</span></span></span></code></pre></div>
-<p>Point clé: on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif <code>liste=None</code> puis <code>if liste is None: liste = []</code> est la solution standard, qui force la création d&rsquo;une nouvelle liste à <strong>chaque appel</strong>.</p>
+<p><strong>Point clé:</strong> on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; Pour que chaque appel de fonction utilise une nouvelle liste vide indépendante, on utilise la valeur spéciale <code>None</code> comme balise, puis on crée la liste à l&rsquo;intérieur de la fonction:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">liste</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">liste</span> <span class="o">=</span> <span class="p">[]</span></span></span></code></pre></div>
+<p>C&rsquo;est la solution standard, qui force la création d&rsquo;une nouvelle liste à <strong>chaque appel</strong>.</p>
+<p><em><strong>A retenir:</strong> Ne mets jamais d&rsquo;objet modifiable (mutable) comme une liste <code>[]</code> ou un dictionnaire <code>{}</code> en valeur par défaut d&rsquo;une fonction. Utilise toujours <code>None</code>.</em></p>
 <hr>
 <h2 id="script-2--annotations-de-type">Script 2 — Annotations de type<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><strong>Q1.</strong></p>
@@ -243,35 +244,22 @@
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">afficher_ticket</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">prix_remise</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Livre : 11.25 €</span></span></span></code></pre></div>
 <p>Point clé: il suffit de convertir <code>prix</code> en <code>float</code> <strong>dès sa sortie</strong> de <code>extraire_prix</code>, avant qu&rsquo;il ne soit transmis à la fonction suivante. C&rsquo;est l&rsquo;occasion d&rsquo;insister sur le fait que dans une chaîne <code>f1 → f2 → f3</code>, chaque maillon doit renvoyer une valeur du type que le maillon suivant sait exploiter : <code>split</code> renvoie toujours des <code>str</code>, jamais des nombres, même si la chaîne « ressemble » à un nombre.</p>
+<p><strong>Q4.</strong> On peut placer des tests de <em>précondition</em> sur la nature de l&rsquo;argument <code>ligne</code> avec <code>assert</code> ainsi qu&rsquo;un test de postcondition sur les caractères de <code>prix</code>. La variable <code>prix</code> ne peut être convertie en un <em>float</em> qu&rsquo;à la condition qu&rsquo;il ne contienne que des chiffres ou eventuellement un point <code>.</code></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">extraire_prix</span><span class="p">(</span><span class="n">ligne</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;extrait le prix d&#39;une ligne du type &#39;Livre;12.50&#39;&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ligne</span><span class="p">,</span><span class="nb">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="n">ligne</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&#34;la chaine de caracteres ligne doit contenir 1 seul symbole ;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_</span><span class="p">,</span> <span class="n">prix</span> <span class="o">=</span> <span class="n">ligne</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">caract</span> <span class="ow">in</span> <span class="n">prix</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">caract</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> <span class="ow">and</span> <span class="n">caract</span> <span class="o">!=</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">raise</span> <span class="ne">TypeError</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">prix</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">appliquer_remise</span><span class="p">(</span><span class="n">prix</span><span class="p">,</span> <span class="n">taux</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;applique un taux de remise (10 % par défaut)&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prix</span><span class="p">,</span><span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">prix</span><span class="p">,</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">prix</span> <span class="o">*</span> <span class="n">taux</span></span></span></code></pre></div>
 <hr>
-<h2 id="grille-de-correction-indicative">Grille de correction indicative<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<table>
-	<thead>
-			<tr>
-					<th>Question</th>
-					<th>Compétence évaluée</th>
-					<th>Barème indicatif</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>Q1 (×4)</td>
-					<td>Lire du code et prédire un résultat / une erreur sans exécuter</td>
-					<td>1 pt chacune</td>
-			</tr>
-			<tr>
-					<td>Q2 (×4)</td>
-					<td>Mobiliser la notion exacte du cours pour expliquer</td>
-					<td>2 pts chacune</td>
-			</tr>
-			<tr>
-					<td>Q3 (×4)</td>
-					<td>Modifier le code en respectant une contrainte précise</td>
-					<td>3 pts chacune</td>
-			</tr>
-	</tbody>
-</table>
-<p>Total : 24 points.</p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -347,11 +335,12 @@
             <li class="" data-nav-id="/python_avance/types/page10/index.html"><a class="padding" href="/python_avance/types/page10/index.html">tables de données<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/types/page12/index.html"><a class="padding" href="/python_avance/types/page12/index.html">dataframe<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/fonctions/page1/index.html"><a class="padding" href="/python_avance/fonctions/page1/index.html">Fonctions<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/python_avance/fonctions/page3/index.html"><a class="padding" href="/python_avance/fonctions/page3/index.html">TP4 - fonctions (corrigé)<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/algos/index.html"><input type="checkbox" id="R-section-ac459d2536e23f544ed3921d2c47daf2" aria-controls="R-subsections-ac459d2536e23f544ed3921d2c47daf2"><label for="R-section-ac459d2536e23f544ed3921d2c47daf2"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes essentiels</span></label><a class="padding default-animation" href="/python_avance/algos/index.html">algorithmes essentiels<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-ac459d2536e23f544ed3921d2c47daf2" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/algos/page1/index.html"><a class="padding" href="/python_avance/algos/page1/index.html">calculer<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">recherche<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
-            <li class="active hidden " data-nav-id="/python_avance/fonctions/page3/index.html"><a class="padding" href="/python_avance/fonctions/page3/index.html">TP4 - fonctions (corrigé)<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page2/index.html"><a class="padding" href="/python_avance/algos/page2/index.html">rechercher<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page3/index.html"><a class="padding" href="/python_avance/algos/page3/index.html">trier<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="" data-nav-id="/python_avance/algos/page4/index.html"><a class="padding" href="/python_avance/algos/page4/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/python_avance/es/page1/index.html"><a class="padding" href="/python_avance/es/page1/index.html">fichiers Entrees/Sorties<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/python_avance/traitement/index.html"><input type="checkbox" id="R-section-131a035323a9daa59818921bc3a856bc" aria-controls="R-subsections-131a035323a9daa59818921bc3a856bc"><label for="R-section-131a035323a9daa59818921bc3a856bc"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu traitement</span></label><a class="padding default-animation" href="/python_avance/traitement/index.html">traitement<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-131a035323a9daa59818921bc3a856bc" class="collapsible-menu">
             <li class="" data-nav-id="/python_avance/traitement/page13/index.html"><a class="padding" href="/python_avance/traitement/page13/index.html">traitement des donnees en table<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -634,9 +623,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1789832312"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1789832312" defer></script>
-    <script src="/js/theme.js?1789832312" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790009370"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790009370" defer></script>
+    <script src="/js/theme.js?1790009370" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

@@ -1,13 +1,14 @@
 ---
 Title : TP4 - fonctions (corrigé)
+titleHidden: true
 hidden: true
 description: corrigé du TD sur la valeur par défaut, les annotations de type, les arguments positionnés
 weight: 11
 ---
 
-# Corrigé — TD : Fonctions en Python
+# Corrigé — TP4 : Fonctions en Python
 
-*Ce corrigé est destiné à l'enseignant.*
+
 
 ---
 
@@ -36,7 +37,16 @@ classe_B = ajouter_eleve('Bob')
 print(classe_A)  # ['Alice']
 print(classe_B)  # ['Bob']
 ```
-Point clé: on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; le motif `liste=None` puis `if liste is None: liste = []` est la solution standard, qui force la création d'une nouvelle liste à **chaque appel**.
+**Point clé:** on ne met jamais un objet mutable comme valeur par défaut si on veut un comportement indépendant à chaque appel ; Pour que chaque appel de fonction utilise une nouvelle liste vide indépendante, on utilise la valeur spéciale `None` comme balise, puis on crée la liste à l'intérieur de la fonction:
+
+```python
+if liste is None: 
+    liste = []
+```
+
+C'est la solution standard, qui force la création d'une nouvelle liste à **chaque appel**.
+
+***A retenir:** Ne mets jamais d'objet modifiable (mutable) comme une liste `[]` ou un dictionnaire `{}` en valeur par défaut d'une fonction. Utilise toujours `None`.*
 
 ---
 
@@ -129,14 +139,24 @@ print(afficher_ticket(article, prix_remise))
 ```
 Point clé: il suffit de convertir `prix` en `float` **dès sa sortie** de `extraire_prix`, avant qu'il ne soit transmis à la fonction suivante. C'est l'occasion d'insister sur le fait que dans une chaîne `f1 → f2 → f3`, chaque maillon doit renvoyer une valeur du type que le maillon suivant sait exploiter : `split` renvoie toujours des `str`, jamais des nombres, même si la chaîne « ressemble » à un nombre.
 
+**Q4.** On peut placer des tests de *précondition* sur la nature de l'argument `ligne` avec `assert` ainsi qu'un test de postcondition sur les caractères de `prix`. La variable `prix` ne peut être convertie en un *float* qu'à la condition qu'il ne contienne que des chiffres ou eventuellement un point `.`
+
+```python
+def extraire_prix(ligne):
+    """extrait le prix d'une ligne du type 'Livre;12.50'"""
+    assert isinstance(ligne,str)
+    assert ligne.count(';') == 1, "la chaine de caracteres ligne doit contenir 1 seul symbole ;"
+    _, prix = ligne.split(';')
+    for caract in prix:
+        if not caract.isnumeric() and caract != '.':
+            raise TypeError
+    return float(prix)
+
+def appliquer_remise(prix, taux=0.9):
+    """applique un taux de remise (10 % par défaut)"""
+    assert isinstance(prix,float) or isinstance(prix,int)
+    return prix * taux
+```
+
 ---
 
-## Grille de correction indicative
-
-| Question | Compétence évaluée | Barème indicatif |
-|---|---|---|
-| Q1 (×4) | Lire du code et prédire un résultat / une erreur sans exécuter | 1 pt chacune |
-| Q2 (×4) | Mobiliser la notion exacte du cours pour expliquer | 2 pts chacune |
-| Q3 (×4) | Modifier le code en respectant une contrainte précise | 3 pts chacune |
-
-Total : 24 points.

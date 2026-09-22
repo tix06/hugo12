@@ -143,6 +143,15 @@ print(classe[:2])
 
 1. Dans cet exemple, quelle option a été choisie pour placer le fichier *classe.csv*?
 2. Que remarque t-on à propos du séparateur des valeurs décimales? 
+
+Pour remplacer le caractère `,` par `.` dans une chaine de caractères, on peut utiliser la méthode de chaine `replace`:
+
+```python
+"Hell@ W@rld".replace('@','o')
+# retourne
+"Hello World"
+```
+
 3. Quelle instruction python va transformer `'12,5'` en un *float* égal à `12.5`?
 
 La fonction `remplacer` va traiter chaque note du tableau pour qu'elle soit dans le bon format (float).
