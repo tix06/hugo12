@@ -14,8 +14,8 @@ weight: 19
 |---|---|
 | {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D1 Format des données : [Lien](../page4) |
 | {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D2 Collecte des données personnelles : [Lien](../page5) |
-| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D3 Données en table [Lien](../page8) |
-| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D4 RGPD [Lien](page5) et [videos](page6), recherche documentaire [Lien](../page7) |
+| {{% badge color="green" icon="heart" %}}culture numer{{% /badge %}} | D3 RGPD [Lien](page5) et [videos](page6), recherche documentaire [Lien](../page7) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D4 Traitement des données en table [Lien](../page8) |
 | {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP1 Enquete de police [Lien](../page12) |
 | {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP2 Pommes [Lien](../page9) |
 | {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
@@ -57,7 +57,7 @@ Même des données supposées *anonymes* peuvent nous identifier car il existe s
 
 > Mais alors, à qui servent ces données?
 
-{{< img src="../images/collecte_DCP.png" width="300" link="https://youtu.be/10rTah7w8u4?si=2LY1nDxvPhG72FPy" caption="VIDEO Qui collecte nos données personnelles? - Le Tatoo (0-3min)" >}}
+{{< img src="../images/collecte_DCP.png" width="300" link="https://youtu.be/10rTah7w8u4?si=2LY1nDxvPhG72FPy" caption="VIDEO Qui collecte nos données personnelles? - Le Tatoo (0-3min) puis Comment limiter la collecte de nos DCP (6min->fin)" >}}
 
 # Identité numérique
 L'identité est construite à partir de *données à caractère personnel.*
@@ -74,9 +74,9 @@ L'identité est construite à partir de *données à caractère personnel.*
 Les données nous concernant peuvent être cédées de manière: 
 
 * **volontaires**, directement: à partir d'un formulaire à remplir
-* **involontaires**, indirectement: dans les metadonnées des photos de ma galerie, à partir du gps de mon tel, de mon activité sur le net, de mes amis sur le net, de mon profil social sur les reseaux, ...
+* **involontaires**, indirectement: dans les metadonnées des photos de ma galerie, à partir du gps de mon telephone, de mon activité sur le net, de mes amis sur le net, de mon profil social sur les reseaux, ...
 
-Pour utiliser des services sur le net, on doit en contrepartie donner son accord pour partager certaines de nos données.
+Pour utiliser les services du net, on doit en contrepartie donner son accord pour partager certaines de nos données.
 
 Lorsque l'on installe une application, un logiciel, un driver pour un objet connecté, on est souvent obligé d'accepter le contrat sur les Conditions Générales d'Utilisation (CGU).
 
@@ -88,22 +88,22 @@ De même, pour accéder à la plupart des sites d'information, on est obligé d'
 
 Les données nous concernant peuvent aussi être cédées de manière: 
 
-* **héritée**: c'est lorsque ce sont d'autres personnes qui parlent de nous, ou publient des photos de nous, sur le net.
+* **héritée**: c'est lorsque ce sont d'autres personnes qui parlent de nous, ou publient des photos de nous, sur le net. (voir le chapitre sur les *réseaux sociaux*)
 
 Pour résumer:
 
 {{< img src="../images/CNIL0.png" caption="extrait d'une affiche sur le site de la CNIL" width="600" >}}
 
-<!--
-# La CNIL
-La CNIL est avant tout chargée de veiller à la protection des données personnelles.
 
-{{< img src="../images/cnil1.webp" caption="La CNIL: un rôle de gendarme pour la protection des données personnelles" >}}
-Cette protection s’étend aussi bien dans le privé que dans le public et concerne les contenus inclus dans les fichiers et les traitements papiers et informatiques.
+## Traces numériques et marketing ciblé
+Après 1978, c'est la valeur commerciale des données personnelles qui va commencer à aiguiser l'appetit d'opérateurs économiques: l'émergence d'une économie fondée sur la connaissance du client. Ce qui va intensifier la collecte de données à caractère personnel et amener à un *marketing ciblé*.
 
-{{< img src="../images/cnil2.webp" caption="La CNIL peut sanctionner" >}}
-Le but de cette commission est avant tout de veiller au bon usage et à la protection des données personnelles mais aussi de faire en sorte que l’usage qui en soit fait ne porte pas atteinte à la liberté des individus.
--->
+C'est la convergence technologique et la traçabilité qui permet d'intensifier cette collecte indirecte de nos données: des cartes à puces, cartes de fidélité client, videosurveillance, données de connexion aux réseaux numériques, moyens de paiement (cartes bancaires ou autre types de paiement numériques). On est passé d'une **problématique de fichier** à une **problématique de traces numériques**.
+## Comment peut-on limiter nos traces numériques?
+- Tous les cookies ne se valent pas : cookies « nécessaires » ≠ cookies « publicité / partage à des tiers ».
+- Cliquer sur « Tout accepter » maximise la collecte de vos DCP ; paramétrer réduit votre exposition.
+- Les CGU renseignent sur les données collectées et sur qui les reçoit : les consulter (même en diagonale) est un outil de choix.
+- Réduire sa collecte de DCP est possible par 2 leviers : le paramétrage des cookies **ET** le choix d'un service moins coûteux en données.
 
 # Traitement des données
 ## Definition
@@ -121,6 +121,38 @@ Un ordinateur, ou bien une personne qui a accès à certaines données *indirect
 
 ## Enjeux pour l'usager
 Aujourd'hui, l'aspiration des individus, en termes de protection de leur vie privée est de pouvoir utiliser les services technologiques d'internet, de s'exposer personnellement (reseaux sociaux), tout en cédant une partie acceptable de leurs données personnelles. Cette part cédée doit rester raisonnable et être négociée par contrat avec les opérateurs économiques.
+
+## A quoi (à qui) sert cette collecte des données?
+Imaginez un stade de football. Les panneaux publicitaires autour de la pelouse n'appartiennent pas au club qui joue le match : ils sont vendus par une agence intermédiaire à des annonceurs, qui paient pour être vus par les spectateurs présents et par ceux qui suivent le match à la télévision. Le club ne vend pas un morceau de terrain : il vend l'attention de son public.
+
+Une page de site de presse fonctionne sur le même principe. L'espace publicitaire affiché n'appartient pas au site lui-même : il est vendu par une régie publicitaire à des annonceurs. Mais il existe une différence essentielle.
+
+Au stade, tous les spectateurs voient le même panneau publicitaire au même moment. Sur le web, chaque lecteur peut voir une publicité différente, choisie spécifiquement pour lui à partir de son profil. 
+
+
+Une expérience similaire a été constatée pour l’Euro 2020: en Allemagne ou en France, les bandeaux publicitaires qui encadrent le terrain ne vont pas vous vendre la même chose. 
+
+{{< img src="../images/adiTV.jpg" width="400" link="https://www.numerama.com/pop-culture/723896-au-foot-tout-le-monde-ne-voit-pas-les-memes-pubs-au-bord-du-terrain.html" caption="numerama - Au foot tout le monde ne voit pas les memes pubs au bord du terrain" >}}
+
+La société distributrice des panneaux d'affichage, Adi.tv s'est spécialisée dans le traitement des images, avant leur diffusion. Ces technologies numériques sont utilisées aujourd'hui pour la plupart des grands evenements sportifs, pour améliorer l'experience des telespectateurs, ou pour leur proposer des publicités plus ciblées.
+
+{{< img src="../images/NFL.png" link="https://youtu.be/1Oqm6eO6deU?si=VbX-NlwKGIgic6N5&t=115" caption="Vox - How the NFL's magic yellow line works (start 1:55" width="400" >}}
+
+**Un triangle à quatre acteurs**:
+
+Quand un internaute consulte un site de presse gratuit, trois-quatre acteurs interviennent, même si un seul est visible.
+
+
+* **L'éditeur**: Le site de presse. Produit le contenu, mais a besoin de revenus pour exister sans faire payer le lecteur.
+* La **régie publicitaire**: Intermédiaire qui vend les espaces publicitaires du site à des annonceurs, souvent via une plateforme automatisée.
+* **Les entreprises de l’adtech**: plateformes technologiques. C’est l'ensemble des technologies, des logiciels et des algorithmes utilisés pour concevoir, cibler, diffuser et mesurer ces publicités de manière automatisée.
+* **Les partenaires**: Annonceurs, courtiers de données : ceux qui achètent l'accès à l'attention et aux données du lecteur.
+
+> l'éditeur ne vend pas seulement un espace sur sa page, il vend surtout l'accès à un lecteur profilé — et plus ce profil est précis, plus il se vend cher.
+
+* Le service est « gratuit » pour le lecteur, mais pas sans contrepartie : le financement du site repose en partie sur la vente de l'accès à son profil.
+* Le cookie n'est pas qu'un outil technique de confort (retenir un panier, une connexion) : il peut être la clé qui relie la navigation à ce marché publicitaire.
+* Paramétrer ses cookies plutôt que tout accepter limite concrètement le nombre de partenaires qui reçoivent des informations sur le lecteur — un des deux leviers vus dans ce cours pour réduire la collecte de DCP.
 
 
 # Le RGPD (Réglement Général pour la Protection de Données)
@@ -185,10 +217,7 @@ Lors d'un manquement avéré, la CNIL peut:
 * prendre des sanctions d'image: publication sur le site de la CNIL et dans le *Journal Officiel*. Les répercussions peuvent être importantes (risque réputationnel)
 
 
-# Traces numériques et marketing ciblé
-Après 1978, c'est la valeur commerciale des données personnelles qui va commencer à aiguiser l'appetit d'opérateurs économiques: l'émergence d'une économie fondée sur la connaissance du client. Ce qui va intensifier la collecte de données à caractère personnel et amener à un *marketing ciblé*.
 
-C'est la convergence technologique et la traçabilité qui permet d'intensifier cette collecte indirecte de nos données: des cartes à puces, cartes de fidélité client, videosurveillance, données de connexion aux réseaux numériques, moyens de paiement (cartes bancaires ou autre types de paiement numériques). On est passé d'une **problématique de fichier** à une **problématiques de traces numériques**.
 
 # Le RGPD (Le règlement général sur la protection des données)
 **mai 2018**
@@ -216,15 +245,7 @@ Les reseaux sociaux et les clouds gratuits exploitent grandement ces données, q
 {{< img src="../images/donnees_perso1.png" link="https://youtu.be/ULEIqIsTpmc?si=jwVqkmSIMd3crRvi" caption="paramétrer son smartphone pour éviter la fuite de ses données" width="400" >}}
 
 Il est essentiel de connaitre les risques et d'adopter une attitude modérée lorsque l'on utilise ces outils.
-<!--
-# Croiser les données pour obtenir des informations
-{{< img src="../images/TED.png" link="https://www.ted.com/talks/alessandro_acquisti_what_will_a_future_without_secrets_look_like/transcript?language=fr" caption="Pourquoi le respect de la vie privée est important- Allessandro Acquisti - TED video" >}}
-[lien alternatif](https://www.youtube.com/watch?v=U6OMZQ5h-xk) sur Youtube
 
-*La distinction entre public et privé s'est estompée dans la dernière décennie, à la fois en ligne et dans la vraie vie. Alessandro Acquisti est là pour nous expliquer ce que cela signifie, et pourquoi c'est important. Dans cet exposé qui donne à réfléchir et donne parfois le frisson, il nous fait partager les détails de recherches récentes et en cours - y compris un projet qui montre combien il est facile de faire correspondre la photographie d'un étranger avec ses informations personnelles sensibles.*
-
-Alessandro Acquisti is a Professor of Information Technology and Public Policy at the Heinz College, Carnegie Mellon University. His research combines economics, decision research, and data mining to investigate the role of privacy in a digital society. His studies have spearheaded the economic analysis of privacy, the application of behavioral economics to the understanding of consumer privacy valuations and decision-making, and the investigation of privacy and personal disclosures in online social networks.
--->
 
 # Vie privée et traces numériques, persistance sur le net
 Comme vos données sont personnelles, elles vous concernent et vous devez en avoir la maitrise.
