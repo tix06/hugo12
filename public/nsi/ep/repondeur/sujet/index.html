@@ -21,29 +21,28 @@
     <meta itemprop="name" content="repondeur telephonique :: allophysique">
     <meta itemprop="description" content="generer un dictionnaire de contacts et mesurer les performances de recherche">
     <meta itemprop="dateModified" content="2026-09-19T17:44:32+02:00">
-    <meta itemprop="wordCount" content="940">
     <title>repondeur telephonique :: allophysique</title>
-    <link href="/images/logo.png?1790174406" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1790174406" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1790174406" defer></script>
-    <script src="/js/search-lunr.js?1790174406" defer></script>
-    <script src="/js/search.js?1790174406" defer></script>
+    <link href="/images/logo.png?1790271633" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790271633" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790271633" defer></script>
+    <script src="/js/search-lunr.js?1790271633" defer></script>
+    <script src="/js/search.js?1790271633" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1790174406";
+      window.relearn.index_js_url="/searchindex.en.js?1790271633";
     </script>
-    <script src="/js/lunr/lunr.min.js?1790174406" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1790174406" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1790174406" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1790174406" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790271633" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790271633" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790271633" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790271633" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1790174406" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790174406" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790174406" rel="stylesheet">
-    <link href="/css/theme.css?1790174406" rel="stylesheet">
-    <link href="/css/format-html.css?1790174406" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790271633" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790271633" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790271633" rel="stylesheet">
+    <link href="/css/theme.css?1790271633" rel="stylesheet">
+    <link href="/css/format-html.css?1790271633" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -112,39 +111,7 @@
             <div class="topbar-button topbar-button-toc default-animation" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show">
 <span class="btn cstyle button link noborder notitle interactive"><button onclick="toggleTopbarFlyout(this)" type="button" title="Table des matières (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-table-list"></i></button></span>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper">
-<nav class="TableOfContents">
-  <ul>
-    <li><a href="#fichiers-fournis">Fichiers fournis</a></li>
-    <li><a href="#consignes-de-travail">Consignes de travail</a></li>
-    <li><a href="#1-fabrication-dun-contact">1. Fabrication d&rsquo;un contact</a>
-      <ul>
-        <li><a href="#exercice-1">Exercice 1</a></li>
-        <li><a href="#exercice-2">Exercice 2</a></li>
-      </ul>
-    </li>
-    <li><a href="#2-génération-automatique-dun-contact">2. Génération automatique d&rsquo;un contact</a>
-      <ul>
-        <li><a href="#exercice-3">Exercice 3</a></li>
-      </ul>
-    </li>
-    <li><a href="#3-première-implémentation-du-carnet-dadresses-liste">3. Première implémentation du carnet d&rsquo;adresses (liste)</a>
-      <ul>
-        <li><a href="#exercice-4">Exercice 4</a></li>
-        <li><a href="#exercice-5">Exercice 5</a></li>
-      </ul>
-    </li>
-    <li><a href="#4-mesure-de-performance-de-la-recherche-liste">4. Mesure de performance de la recherche (liste)</a></li>
-    <li><a href="#5-seconde-implémentation-du-carnet-dadresses-dictionnaire">5. Seconde implémentation du carnet d&rsquo;adresses (dictionnaire)</a>
-      <ul>
-        <li><a href="#exercice-6">Exercice 6</a></li>
-      </ul>
-    </li>
-    <li><a href="#6-mesure-de-performance-de-la-recherche-dictionnaire">6. Mesure de performance de la recherche (dictionnaire)</a></li>
-    <li><a href="#conclusion-attendue">Conclusion attendue</a></li>
-    <li><a href="#licence">Licence</a></li>
-  </ul>
-</nav>
+                <div class="topbar-content-wrapper"> 
                 </div>
               </div>
             </div>
@@ -182,130 +149,136 @@
 
 <h1 id="repondeur-telephonique">repondeur telephonique</h1>
 
-<h1 id="tp--carnet-dadresses-dictionnaires-et-performances">TP – Carnet d&rsquo;adresses (dictionnaires et performances)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="fichiers-fournis">Fichiers fournis<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<ul>
-<li><a href="/scripts/EP/repondeur/script.py">script.py</a> : le fichier à compléter. Chaque endroit à modifier est signalé par le commentaire <code># A COMPLETER</code>.</li>
-<li><a href="/scripts/EP/repondeur/donnees_contacts.py">donnees_contacts.py</a> : listes de prénoms, noms, rues et villes utilisées pour générer des contacts aléatoires. <strong>Vous n&rsquo;avez pas besoin de le modifier.</strong></li>
-</ul>
-<h2 id="consignes-de-travail">Consignes de travail<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<ul>
-<li>Telechargez et ouvrez <a href="/scripts/EP/repondeur/script.py">script.py</a> dans Pyzo (ou votre éditeur habituel) en gardant <a href="/scripts/EP/repondeur/donnees_contacts.py">donnees_contacts.py</a> dans le <strong>même dossier</strong>.</li>
-<li>Complétez le fichier <strong>dans l&rsquo;ordre</strong>, section par section.</li>
-<li>Après chaque section, <strong>exécutez le fichier entier</strong> (F5 dans Pyzo, ou le bouton d&rsquo;exécution). Des instructions <code>assert</code> vérifient automatiquement votre travail :
-<ul>
-<li>si rien ne s&rsquo;affiche d&rsquo;anormal et que vous voyez le message <code>Exercice N : OK</code>, c&rsquo;est correct ;</li>
-<li>si une erreur <code>AssertionError</code> apparaît, relisez l&rsquo;exercice concerné et corrigez votre code.</li>
-</ul>
-</li>
-<li>Ne modifiez pas les fonctions situées dans la partie <em>« FONCTIONS FOURNIES »</em> du script : elles remplacent le module <code>faker</code> (qui nécessite une connexion Internet et une installation, pas toujours possibles en salle).</li>
-</ul>
-<hr>
-<h2 id="1-fabrication-dun-contact">1. Fabrication d&rsquo;un contact<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Chaque contact est un dictionnaire dont les clés seront :</p>
-<table>
-	<thead>
-			<tr>
-					<th>Clé</th>
-					<th>Signification</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>nom</code></td>
-					<td>Nom et prénom du contact</td>
-			</tr>
-			<tr>
-					<td><code>tel</code></td>
-					<td>N° de téléphone</td>
-			</tr>
-			<tr>
-					<td><code>rue</code></td>
-					<td>Adresse complète</td>
-			</tr>
-			<tr>
-					<td><code>code</code></td>
-					<td>Code postal</td>
-			</tr>
-			<tr>
-					<td><code>ville</code></td>
-					<td>Ville</td>
-			</tr>
-			<tr>
-					<td><code>naissance</code></td>
-					<td>Date de naissance</td>
-			</tr>
-	</tbody>
-</table>
-<h3 id="exercice-1">Exercice 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Dans <code>script.py</code>, complétez le dictionnaire <code>contact</code> pour qu&rsquo;il corresponde au contact suivant :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Margaret Costa-Royer
-</span></span><span class="line"><span class="cl">08 06 18 37 28
-</span></span><span class="line"><span class="cl">93, avenue Bruneau
-</span></span><span class="line"><span class="cl">13749 Perrot</span></span></code></pre></div>
-<h3 id="exercice-2">Exercice 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Ajoutez une nouvelle entrée <code>&quot;passwd&quot;</code> dans le dictionnaire <code>contact</code>, ayant pour valeur <code>'s75JWikE&amp;o'</code>.</p>
-<hr>
-<h2 id="2-génération-automatique-dun-contact">2. Génération automatique d&rsquo;un contact<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le fichier <code>script.py</code> fournit déjà quatre fonctions toutes prêtes, qui piochent des informations aléatoires dans <code>donnees_contacts.py</code> :</p>
-<ul>
-<li><code>importer_contact()</code> renvoie un tuple <code>(nom, rue, ville, code_postal)</code> ;</li>
-<li><code>genere_telephone()</code> renvoie un numéro de téléphone factice ;</li>
-<li><code>genere_date_naissance()</code> renvoie une date de naissance factice ;</li>
-<li><code>genere_mot_de_passe()</code> renvoie un mot de passe factice.</li>
-</ul>
-<blockquote>
-<p><strong>Remarque :</strong> pour multiplier le nombre de noms de famille possibles, <code>importer_contact()</code> forme parfois un nom composé en accolant deux noms au hasard (comme <em>« Costa-Royer »</em> dans l&rsquo;exercice 1). Cela permet de générer plusieurs dizaines de milliers de noms différents à partir d&rsquo;une liste de prénoms et de noms de taille raisonnable.</p>
-</blockquote>
-<h3 id="exercice-3">Exercice 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Écrivez la fonction <code>genere_contact()</code> :</p>
-<ul>
-<li>elle ne prend aucun paramètre ;</li>
-<li>elle renvoie un dictionnaire possédant les mêmes clés que le contact de l&rsquo;exercice 1, y compris <code>&quot;passwd&quot;</code> ;</li>
-<li>elle doit utiliser les quatre fonctions fournies ci-dessus pour construire ce dictionnaire.</li>
-</ul>
-<hr>
-<h2 id="3-première-implémentation-du-carnet-dadresses-liste">3. Première implémentation du carnet d&rsquo;adresses (liste)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Dans une première approche, le carnet d&rsquo;adresses sera une <strong>liste</strong> de contacts, chaque contact étant un dictionnaire dont la structure a été définie précédemment.</p>
-<h3 id="exercice-4">Exercice 4<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Écrivez une fonction <code>genere_carnet1(n)</code> :</p>
-<ul>
-<li>prenant en paramètre le nombre <code>n</code> de contacts à générer ;</li>
-<li>renvoyant une liste de <code>n</code> contacts générés aléatoirement (utilisez <code>genere_contact()</code>) ;</li>
-<li><strong>tous les contacts du carnet doivent avoir des noms différents</strong> (sinon la recherche par nom n&rsquo;a plus de sens). Une solution simple : tant que le carnet ne contient pas encore <code>n</code> contacts, générer un nouveau contact et ne l&rsquo;ajouter que si son nom n&rsquo;est pas déjà présent dans le carnet.</li>
-</ul>
-<h3 id="exercice-5">Exercice 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Écrivez une fonction <code>est_present(nom, carnet)</code> :</p>
-<ul>
-<li>prenant 2 paramètres : un nom et un carnet d&rsquo;adresses (liste) ;</li>
-<li>renvoyant <code>True</code> si le nom figure dans le carnet d&rsquo;adresses, <code>False</code> sinon.</li>
-</ul>
-<hr>
-<h2 id="4-mesure-de-performance-de-la-recherche-liste">4. Mesure de performance de la recherche (liste)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Cette partie du script est <strong>déjà écrite</strong>, contentez-vous de l&rsquo;exécuter et d&rsquo;observer les temps affichés. Le module <code>timeit</code> mesure ici le temps nécessaire pour effectuer 1000 recherches, d&rsquo;abord dans un carnet de 100 contacts, puis dans un carnet de 1000 contacts.</p>
-<p><strong>Question 1 :</strong> dans <code>script.py</code>, répondez par un commentaire à la question posée : comment le temps de recherche évolue-t-il quand la taille du carnet est multipliée par 10 ?</p>
-<hr>
-<h2 id="5-seconde-implémentation-du-carnet-dadresses-dictionnaire">5. Seconde implémentation du carnet d&rsquo;adresses (dictionnaire)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le temps de recherche dans une liste est proportionnel à sa taille : si le carnet contient 10 fois plus de contacts, la recherche peut être jusqu&rsquo;à 10 fois plus longue.</p>
-<p>Nous allons changer d&rsquo;approche et représenter le carnet d&rsquo;adresses par un <strong>dictionnaire</strong> dont les clés sont les noms et les valeurs sont les fiches contacts (elles-mêmes des dictionnaires).</p>
-<h3 id="exercice-6">Exercice 6<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<p>Écrivez une fonction <code>genere_carnet2(n)</code> :</p>
-<ul>
-<li>prenant en paramètre le nombre <code>n</code> de contacts à générer ;</li>
-<li>renvoyant un dictionnaire de <code>n</code> contacts générés aléatoirement.</li>
-<li><strong>veillez à ce qu&rsquo;aucun nom ne soit généré deux fois</strong> : si un même nom apparaissait deux fois, le second contact écraserait le premier dans le dictionnaire et vous obtiendriez un carnet de moins de <code>n</code> contacts.</li>
-</ul>
-<hr>
-<h2 id="6-mesure-de-performance-de-la-recherche-dictionnaire">6. Mesure de performance de la recherche (dictionnaire)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Cette partie du script est également déjà écrite. Elle mesure le temps de 1000 recherches, d&rsquo;abord dans un carnet de 100 contacts, puis dans un carnet de 10 000 contacts (100 fois plus grand).</p>
-<p><strong>Question 2 :</strong> dans <code>script.py</code>, répondez par un commentaire : comparez l&rsquo;évolution du temps de recherche dans le dictionnaire à celle observée dans la liste. Quelle structure de données est la mieux adaptée à la recherche sur les clés, et pourquoi ?</p>
-<hr>
-<h2 id="conclusion-attendue">Conclusion attendue<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Le temps de recherche dans un dictionnaire est pratiquement indépendant du nombre d&rsquo;entrées : en multipliant le nombre de contacts par 100, le temps reste quasiment identique, alors que pour une liste, ce temps est proportionnel au nombre d&rsquo;éléments.</p>
-<p><strong>Le dictionnaire est donc une structure de données optimisée pour la recherche sur les clés.</strong></p>
-<hr>
-<h2 id="licence">Licence<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Ce document est adapté du TP <em>« Carnet d&rsquo;adresses »</em> publié sur <a href="https://levasseur.xyz" rel="external">levasseur.xyz</a>, sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr" rel="external">CC BY-NC-SA 4.0</a>. Cette adaptation (sujet reformulé pour un fichier script à compléter, génération de contacts sans le module <code>faker</code>) est distribuée sous la même licence <strong>CC BY-NC-SA 4.0</strong> (Attribution – Pas d&rsquo;utilisation commerciale – Partage dans les mêmes conditions).</p>
+<!--
+# TP – Carnet d'adresses (dictionnaires et performances)
+
+## Fichiers fournis
+
+- [script.py](/scripts/EP/repondeur/script.py) : le fichier à compléter. Chaque endroit à modifier est signalé par le commentaire `# A COMPLETER`.
+- [donnees_contacts.py](/scripts/EP/repondeur/donnees_contacts.py) : listes de prénoms, noms, rues et villes utilisées pour générer des contacts aléatoires. **Vous n'avez pas besoin de le modifier.**
+
+## Consignes de travail
+
+- Telechargez et ouvrez [script.py](/scripts/EP/repondeur/script.py) dans Pyzo (ou votre éditeur habituel) en gardant [donnees_contacts.py](/scripts/EP/repondeur/donnees_contacts.py) dans le **même dossier**.
+- Complétez le fichier **dans l'ordre**, section par section.
+- Après chaque section, **exécutez le fichier entier** (F5 dans Pyzo, ou le bouton d'exécution). Des instructions `assert` vérifient automatiquement votre travail :
+  - si rien ne s'affiche d'anormal et que vous voyez le message `Exercice N : OK`, c'est correct ;
+  - si une erreur `AssertionError` apparaît, relisez l'exercice concerné et corrigez votre code.
+- Ne modifiez pas les fonctions situées dans la partie *« FONCTIONS FOURNIES »* du script : elles remplacent le module `faker` (qui nécessite une connexion Internet et une installation, pas toujours possibles en salle).
+
+---
+
+## 1. Fabrication d'un contact
+
+Chaque contact est un dictionnaire dont les clés seront :
+
+| Clé | Signification |
+|---|---|
+| `nom` | Nom et prénom du contact |
+| `tel` | N° de téléphone |
+| `rue` | Adresse complète |
+| `code` | Code postal |
+| `ville` | Ville |
+| `naissance` | Date de naissance |
+
+### Exercice 1
+
+Dans `script.py`, complétez le dictionnaire `contact` pour qu'il corresponde au contact suivant :
+
+```
+Margaret Costa-Royer
+08 06 18 37 28
+93, avenue Bruneau
+13749 Perrot
+```
+
+### Exercice 2
+
+Ajoutez une nouvelle entrée `"passwd"` dans le dictionnaire `contact`, ayant pour valeur `'s75JWikE&o'`.
+
+---
+
+## 2. Génération automatique d'un contact
+
+Le fichier `script.py` fournit déjà quatre fonctions toutes prêtes, qui piochent des informations aléatoires dans `donnees_contacts.py` :
+
+- `importer_contact()` renvoie un tuple `(nom, rue, ville, code_postal)` ;
+- `genere_telephone()` renvoie un numéro de téléphone factice ;
+- `genere_date_naissance()` renvoie une date de naissance factice ;
+- `genere_mot_de_passe()` renvoie un mot de passe factice.
+
+> **Remarque :** pour multiplier le nombre de noms de famille possibles, `importer_contact()` forme parfois un nom composé en accolant deux noms au hasard (comme *« Costa-Royer »* dans l'exercice 1). Cela permet de générer plusieurs dizaines de milliers de noms différents à partir d'une liste de prénoms et de noms de taille raisonnable.
+
+### Exercice 3
+
+Écrivez la fonction `genere_contact()` :
+- elle ne prend aucun paramètre ;
+- elle renvoie un dictionnaire possédant les mêmes clés que le contact de l'exercice 1, y compris `"passwd"` ;
+- elle doit utiliser les quatre fonctions fournies ci-dessus pour construire ce dictionnaire.
+
+---
+
+## 3. Première implémentation du carnet d'adresses (liste)
+
+Dans une première approche, le carnet d'adresses sera une **liste** de contacts, chaque contact étant un dictionnaire dont la structure a été définie précédemment.
+
+### Exercice 4
+
+Écrivez une fonction `genere_carnet1(n)` :
+- prenant en paramètre le nombre `n` de contacts à générer ;
+- renvoyant une liste de `n` contacts générés aléatoirement (utilisez `genere_contact()`) ;
+- **tous les contacts du carnet doivent avoir des noms différents** (sinon la recherche par nom n'a plus de sens). Une solution simple : tant que le carnet ne contient pas encore `n` contacts, générer un nouveau contact et ne l'ajouter que si son nom n'est pas déjà présent dans le carnet.
+
+### Exercice 5
+
+Écrivez une fonction `est_present(nom, carnet)` :
+- prenant 2 paramètres : un nom et un carnet d'adresses (liste) ;
+- renvoyant `True` si le nom figure dans le carnet d'adresses, `False` sinon.
+
+---
+
+## 4. Mesure de performance de la recherche (liste)
+
+Cette partie du script est **déjà écrite**, contentez-vous de l'exécuter et d'observer les temps affichés. Le module `timeit` mesure ici le temps nécessaire pour effectuer 1000 recherches, d'abord dans un carnet de 100 contacts, puis dans un carnet de 1000 contacts.
+
+**Question 1 :** dans `script.py`, répondez par un commentaire à la question posée : comment le temps de recherche évolue-t-il quand la taille du carnet est multipliée par 10 ?
+
+---
+
+## 5. Seconde implémentation du carnet d'adresses (dictionnaire)
+
+Le temps de recherche dans une liste est proportionnel à sa taille : si le carnet contient 10 fois plus de contacts, la recherche peut être jusqu'à 10 fois plus longue.
+
+Nous allons changer d'approche et représenter le carnet d'adresses par un **dictionnaire** dont les clés sont les noms et les valeurs sont les fiches contacts (elles-mêmes des dictionnaires).
+
+### Exercice 6
+
+Écrivez une fonction `genere_carnet2(n)` :
+- prenant en paramètre le nombre `n` de contacts à générer ;
+- renvoyant un dictionnaire de `n` contacts générés aléatoirement.
+- **veillez à ce qu'aucun nom ne soit généré deux fois** : si un même nom apparaissait deux fois, le second contact écraserait le premier dans le dictionnaire et vous obtiendriez un carnet de moins de `n` contacts.
+
+---
+
+## 6. Mesure de performance de la recherche (dictionnaire)
+
+Cette partie du script est également déjà écrite. Elle mesure le temps de 1000 recherches, d'abord dans un carnet de 100 contacts, puis dans un carnet de 10 000 contacts (100 fois plus grand).
+
+**Question 2 :** dans `script.py`, répondez par un commentaire : comparez l'évolution du temps de recherche dans le dictionnaire à celle observée dans la liste. Quelle structure de données est la mieux adaptée à la recherche sur les clés, et pourquoi ?
+
+---
+
+## Conclusion attendue
+
+Le temps de recherche dans un dictionnaire est pratiquement indépendant du nombre d'entrées : en multipliant le nombre de contacts par 100, le temps reste quasiment identique, alors que pour une liste, ce temps est proportionnel au nombre d'éléments.
+
+**Le dictionnaire est donc une structure de données optimisée pour la recherche sur les clés.**
+
+---
+
+## Licence
+
+Ce document est adapté du TP *« Carnet d'adresses »* publié sur [levasseur.xyz](https://levasseur.xyz), sous licence [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr). Cette adaptation (sujet reformulé pour un fichier script à compléter, génération de contacts sans le module `faker`) est distribuée sous la même licence **CC BY-NC-SA 4.0** (Attribution – Pas d'utilisation commerciale – Partage dans les mêmes conditions).
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -668,9 +641,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790174406"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790174406" defer></script>
-    <script src="/js/theme.js?1790174406" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790271633"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790271633" defer></script>
+    <script src="/js/theme.js?1790271633" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

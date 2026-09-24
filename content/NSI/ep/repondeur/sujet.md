@@ -3,7 +3,7 @@ Title: repondeur telephonique
 description: generer un dictionnaire de contacts et mesurer les performances de recherche
 weight: 72
 ---
-
+<!--
 # TP – Carnet d'adresses (dictionnaires et performances)
 
 ## Fichiers fournis
