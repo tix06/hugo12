@@ -13,7 +13,7 @@ Pour tester les scripts python, vous pouvez:
 
 * Soit utiliser un **notebook**. (*Atrium>Capytale*)
 
-{{< img src="/images/notebook.png" >}}
+{{< img src="/images/notebook.png" width="400" >}}
 
 Dans une même cellule: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur *Majuscule(Shift)* + *Entrée* pour **executer le code**.
 
@@ -25,7 +25,7 @@ Mettre `##` avant chaque script pour créer une *cellule*. Executer la cellule e
 
 Mettre `#%%` avant chaque script pour créer une *cellule*. Executer la cellule et passer à la suivante avec *MAJ+ENTREE*.
 
-{{< img src="../images/cell.png" >}}
+{{< img src="../images/cell.png" width="600" >}}
   
 
 ## Branchements et conditions simples
@@ -63,7 +63,7 @@ if ... and ...:
 
 4. Le comportement du robot depend maintenant de la jauge de la batterie. La variable `batterie` prend une valeur entre 0 (vide) et 100 (max). Le robot avance dans le cas où:
 
-* le niveau de batterie est supérieur à 80 (même s'il y a un obstacle)
+* le niveau de batterie est supérieur à 80 (même s'il y a un obstacle, il a la puissance pour le franchir)
 * il n'y a pas d'obstacle, et la batterie a un niveau supérieur à 40.
 
 Dans les autres cas, le robot n'avance pas. Ecrire ce nouveau programme.
@@ -80,11 +80,11 @@ prenom = input('Comment vous appelez-vous? ')
 print('Bonjour ' + prenom)
 ```
 
-{{< img src="../images/input1.png" alt="boite dialogue input" caption="demarrage du programme" >}}
+{{< img src="../images/input1.png" width="600" alt="boite dialogue input" caption="demarrage du programme" >}}
 
-{{< img src="../images/input2.png" alt="boite dialogue input" caption="saisie dans la boite de dialogue" >}}
+{{< img src="../images/input2.png" width="600" alt="boite dialogue input" caption="saisie dans la boite de dialogue" >}}
 
-{{< img src="../images/input3.png" alt="boite dialogue input" caption="utilisation de la variable prenom" >}}
+{{< img src="../images/input3.png" width="600" alt="boite dialogue input" caption="utilisation de la variable prenom" >}}
 
 *Remarquer* que le type retourné par la fonction `input` est toujours de format `str`. Pour modifier en un format numérique, et réaliser des opérations, il faudra utiliser l'une des fonctions `int` (pour obtenir un entier) ou `float` (pour un décimal):
 
@@ -94,7 +94,7 @@ kelvin = float(celcius) + 273
 print('En degrés absolus T = ' + str(kelvin))
 ```
 
-{{< img src="../images/input4.png" alt="boite dialogue input" caption="conversion de 23°C en °K" >}}
+{{< img src="../images/input4.png" width="600" alt="boite dialogue input" caption="conversion de 23°C en °K" >}}
 
 **Autre exemple**:
 
@@ -141,7 +141,9 @@ print("Fin")
 
 
 ## Soustractions multiples
-Le programme suivant va **soustraire 3** à la valeur saisie par l'utilisateur. Le programmeur ne connait pas cette valeur, aussi utilise t-il une boucle non bornée, `while`, qui s'execute tant que la valeur est supérieure à 3. On affiche à la fin le nombre de soustractions réalisées.
+Le programme suivant va **soustraire 3**, plusieurs fois, à la valeur saisie par l'utilisateur, juesqu'à ce que la valeur soit `< 3`. 
+
+Le programmeur ne connait pas , à priori, le nombre de soustractions qui seront nécéssaires, aussi utilise t-il une boucle non bornée, `while`. Il execute la boucle tant que la valeur est supérieure à 3. On affiche à la fin le nombre de soustractions réalisées.
 
 ```python
 valeur = int(input("entrer une valeur entière: "))
@@ -167,7 +169,7 @@ while choix_joueur != N_aleatoire:
 print('Bravo vous avez gagné')
 ``` 
 
-{{< img src="../images/input5.png" alt="boite dialogue input et jeu de hasard" caption="Trouve au bout de 3 essais" >}}
+{{< img src="../images/input5.png" width="400" alt="boite dialogue input et jeu de hasard" caption="Trouve au bout de 3 essais" >}}
 
 A chaque fois que la condition `choix_joueur != N_aleatoire` est `True`, c'est à dire que le nombre `choix_joueur` est différent de `N_aleatoire`, alors le bloc de la boucle `while` est exécutée. 
 
