@@ -36,7 +36,8 @@ obstacle = False
 batterie = True
 avancer = False
 if not obstacle:
-  ...
+  avancer = ...
+  print('le robot avance')
 ```
 
 2. Ajouter une deuxième condition sur l'état de la batterie: le robot n'avance que s'il n'y a pas d'obstacle ET que la batterie n'est pas vide:
@@ -48,7 +49,8 @@ batterie = True
 avancer = False
 if not obstacle:
   if ... : 
-    ...
+    avancer = ...
+    print('le robot avance')
 ```
 
 3. Ecrire à nouveau le programme, mais avec une combinaison d'opération, et un seul `if`
@@ -58,7 +60,8 @@ obstacle = False
 batterie = True
 avancer = False
 if ... and ...:
-  ...
+  avancer = ...
+  print('le robot avance')
 ```
 
 4. Le comportement du robot depend maintenant de la jauge de la batterie. La variable `batterie` prend une valeur entre 0 (vide) et 100 (max). Le robot avance dans le cas où:
@@ -67,6 +70,21 @@ if ... and ...:
 * il n'y a pas d'obstacle, et la batterie a un niveau supérieur à 40.
 
 Dans les autres cas, le robot n'avance pas. Ecrire ce nouveau programme.
+
+```python
+obstacle = False
+batterie = 50
+avancer = False
+if ... :
+  avancer = ...
+  print('le robot avance')
+elif ... and ...:
+  ...
+  print('le robot avance')
+else: 
+  ...
+  print("le robot refuse d'avancer")
+```
 
 **Question a:** Quelles sont toutes les possibilités d'écriture de cette structure conditionnelle?
 
@@ -151,7 +169,7 @@ i = 0
 while valeur ...:
   valeur = ...
   i = ...
-print("il a fallu {i} soustractions")
+print(f"il a fallu {i} soustractions")
 ```
 
 
@@ -226,5 +244,5 @@ print(x)
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+#### {{% button href="../page3" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 

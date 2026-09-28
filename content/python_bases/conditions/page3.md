@@ -14,7 +14,7 @@ Au choix, utilisez:
 
 * un **notebook**. 
 
-{{< img src="/images/notebook.png" >}}
+{{< img src="/images/notebook.png" width="400" >}}
 
 Dans une même **cellule**: Saisir une ou plusieurs lignes de code Python, puis appuyer simultanement sur *Majuscule(Shift)* + *Entrée* pour **executer le code**.
 
@@ -26,7 +26,7 @@ Mettre **`##`** avant chaque script pour créer une *cellule*. Executer la cellu
 
 Mettre **`#%%`** avant chaque script pour créer une *cellule*. Executer la cellule et passer à la suivante avec *MAJ+ENTREE*.
 
-{{< img src="../images/cell.png" >}}
+{{< img src="../images/cell.png" width="500" >}}
 
 ## Exemple
 Le programme suivant demande de renseigner votre age (à la premiere ligne), et vous laisse entrer en discothèque, seulement si vous avez plus de 18 ans. La fonction `input` est ce que l'on appelle une **entrée**. Elle permet se saisir une valeur qui sera *utilisée par le programme*. La valeur saisie par l'utilisateur sera TOUJOURS de type **str**.
@@ -56,15 +56,26 @@ else:
   print("n est impair")
 ```
 
-> Tester puis adapter ce script, pour demander à l’utilisateur un entier, puis afficher si cet entier pair.
+> Tester ce script avec d'autres valeurs (il faut modifier `n`)
 
-*Aide:* Vous devrez utiliser la fonction de conversion `int` pour transformer la valeur saisie par l'utilisateur en un entier: `n = int(input(' ... '))` 
 
-* **Question a1:** Recopier ce nouveau programme.
+> Adapter ce script, pour demander à l’utilisateur un entier, puis afficher si cet entier pair:
+
+```python
+n = ...(input("Entrer une valeur entiere n= "))
+if n%2 == 0:
+  print("n est pair")
+else: 
+  print("n est impair")
+```
+
+*Aide:* Vous devrez utiliser la fonction de conversion `int` pour transformer la valeur saisie par l'utilisateur en un entier.
+
+* **Question a1:** Recopier la première ligne de ce nouveau programme.
 
 > Tester puis adapter ce script, pour demander à l’utilisateur un entier, puis afficher si cet entier est divisible par 11.
 
-* **Question a2:** Recopier ce nouveau programme.
+* **Question a2:** Recopier les modifications apportées à ce nouveau programme.
 
 ## Ex 2: Comparer 2 nombres
 > Completer (et tester avec plusieurs valeurs de a et de b) le programme suivant qui compare a et b et retourne un message selon leur ordre ou leur egalité.
@@ -100,8 +111,6 @@ elif ...
 * **Question c:** Combien de `elif` faut-il utiliser au minimum?
 
 ### version 2
-> Completer (et tester avec plusieurs valeurs de a de b et de c) le programme suivant (version 2) qui compare a et b et retourne un message selon leur ordre.
-
 Cette fois, on **n'utilisera pas** l'opérateur `and`, ce qui oblige à utiliser 2 structures conditionnelles imbriquées.
 
 ```python
@@ -124,24 +133,23 @@ $$IMC = \tfrac{masse}{taille^2}$$
 
 où la masse est en **kg** et la taille en **mètres**.
 
-Proposez un algorithme qui demande à l'utilisateur sa taille et sa masse puis qui affiche l'IMC de la personne.
+Proposez un algorithme qui demande (`input`) à l'utilisateur sa taille et sa masse puis qui affiche (`print`) l'IMC de la personne.
 
 *Pensez à écrire un texte clair à destination de l'utilisateur pour qu'il sache quoi saisir.*
 
-Utilisez le tableau suivant pour fournir une information à la personne en fonction de son IMC:
+Utiliser et adpater le tableau suivant pour fournir une information à la personne en fonction de son IMC:
 
-{{< img src="../images/imc.png" alt="classification de l'IMC" caption="classification de l'IMC - source: has-sante.fr" >}}
+{{< img src="../images/imc.png" width="400" alt="classification de l'IMC" caption="classification de l'IMC - source: has-sante.fr" >}}
 
 * **Question e:** Recopier la série d'instructions conditionnelles qui affichent une information sur l'IMC.
 
 
-* **Question f:** *(après avoir lu le cours sur les fonctions). IMC à l'aide d'une fonction: 
-Créer une fonction que vous nommerez `IMC` à partir de votre script. Testez la dans le shell de votre editeur.
+* **Question f:** Lire le [cours sur les fonctions](../../fonctions/page2). Créer une fonction que vous nommerez `IMC` à partir de votre script. Testez la dans le shell de votre editeur.
 
 ## Ex 4: Compter les ballons 
 On utilise un programme pour compter le nombre de ballons touchés lors d'un jeu de fête foraine.
 
-{{< img src="../images/ballons.jpg" caption="tir aux ballons" >}}
+{{< img src="../images/foire.png" width="300" caption="tir aux ballons" >}}
 
 source image: {{< a link="https://fr.vecteezy.com/membres/stockgiu" caption="vecteezy - Giuseppe Ramos" >}}
 
@@ -160,11 +168,14 @@ Les variables utilisées seront:
 n = 0
 touches = 0
 manques = 0
-while ...:
+while n ...:
   choix = input("X pour manqué ou O pour touché: ")
-  ...
-  if ...
-...
+  n = ...
+  if ...:
+    ...
+  else:
+    ...
+print(f"...")
 ```
 
 * **Question f**: Dans votre programme, quel est le variant de boucle? 
@@ -173,7 +184,14 @@ while ...:
 
 | `n` *avant itération* | `touches` *avant iteration* | `manques` *avant iteration* | condition d'execution `True/False` | `choix` |
 | --- | --- | --- | --- | --- |
-|   |   |   |   |   |
+| 0  |  0 |  0 | `True`  | `"X"`  |
+| 1  |  0 |  1 | `True`  | `"O"`  |
+| 2  |  1 |  1 | `True`  | `"O"`  |
+| 3  |   |   |   |   |
+| 4  |   |   |   |   |
+| 5  |   |   |  |   |
+| 6  |   |   |  |   |
+
 
 * **Question h**: Etes-vous sûr que le programme finira, quelles que soient les entrées saisies par l'utilisateur?
 
@@ -192,30 +210,37 @@ Compléter le programme afin de réaliser le produit de `x` par `a`, sans utilis
 x = int(input('entrer la valeur de x: '))
 a = int(input('entrer la valeur de a: '))
 produit = 0
-while ...:
-  ...
-  ...
-print('le produit x * a vaut: ' + ...)
+while a > ...:
+  x = ...
+  a = ...
+print(f'le produit {..} * {..} vaut: {..}')
 ```
 
-* **Question i:** Précisez combien d'itérations ont lieu, en fonction de la valeur de `a`.
+* **Question i:** Recopier et compléter le tableau de suivi pour multiplier 25 par 4:
+
+| `a` avant itération | `x` avant itération | condition d'execution `True/False` |
+| --- | --- | --- |
+| .. |  |  |
+| .. |  |  |
+| .. |  |  |
+| .. |  |  |
+| .. |  |  |
+
+
+Précisez combien d'itérations ont lieu, en fonction de la valeur de `a`.
 
 
 
-
-
-
-
-
-# Portfolio
+# Fiche de synthèse
 ## structure conditionnelle
-* A quoi sert l'indentation en python sous une instruction conditionnelle?
+* Rappeler comment s'écrit une structure conditionnelle avec alternative (`if condition1 print(c1) elif condition2 print(c2) else print(c3)`). Placer les indentations, et les `:`
+* Dans une structure conditionnelle avec alternative, tous les cas sont-ils toujours examinés par le programme? Expliquez.
 * Que faut-il contrôler dans une boucle non bornée (`while`) pour s'assurer que celle-ci finira toujours?
 * Montrer qu'il est possible de déterminer le nombre d'itérations du bloc conditionnel en fonction du variant. Prenez un exemple.
 
-* Rappeler comment s'écrit une structure conditionnelle avec alternative (if ... elif ... else). Placer les conditions, indentations, et les `:`
-* Dans une structure conditionnelle avec alternative, tous les cas sont-ils toujours examinés par le programme? Expliquez.
 
+
+<!--
 ## fonctions 
 * Expliquer la différence entre une variable (déclarée dans le *main*), et un paramètre (déclaré avec une fonction). Définir leur *portée*
 * Dans une fonction, quel est le rôle du mot-clé `return`?
@@ -226,13 +251,13 @@ print('le produit x * a vaut: ' + ...)
 |--- |--- |--- |
 | `parite`  | `N`  |   |
 |  ... |   |   |
-
+-->
 
 # Suite
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-#### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+#### {{% button href="../page3" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 
 
 

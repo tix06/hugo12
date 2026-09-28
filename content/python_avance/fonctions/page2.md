@@ -115,12 +115,10 @@ print(afficher_ticket(article, prix_remise))
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} les fonctions
 ##### {{% button href="../page2" icon="palette" style="tip" %}}TP4{{% /button %}} 
 
-{{% button href="" icon="lightbulb" style="tip" %}}Corrigé du TP4{{% /button %}}
 
 
-<!--
 {{% button href="../page3" icon="lightbulb" style="tip" %}}Corrigé du TP4{{% /button %}}
--->
+
 
 ---
 

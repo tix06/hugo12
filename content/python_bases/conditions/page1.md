@@ -5,6 +5,12 @@ description: cours sur les structures conditionnelles
 weight: 5
 ---
 
+Ce chapitre comporte 3 pages:
+
+* Cours sur les structures conditionnelles: [Lien](../page1)
+* TP2a, conditions, boucle while: [Lien](../page2)
+* TP2b, algorithmes utilisant boucle while et structures conditionnelles: [Lien](../page3)
+
 # Structures conditionnelles simples et avec alternative
 ## Conditions
 **1. Définition :** Une *instruction conditionnelle* vérifie si une certaine condition est vraie avant d'executer son code : 
@@ -281,7 +287,7 @@ sortie de la boucle
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-##### {{% button href="../page3_D" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
 
 
 
