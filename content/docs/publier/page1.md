@@ -17,9 +17,14 @@ Lors de la confection du questionnaire, posez-vous au minimum les questions suiv
 * la collecte des informations, est-elle simple?
 
 ## Questionnaire à destination des parents
-Nous prendrons comme exemple le [questionnaire](/pdf/competences/CEE-1D-Questionnaire-a-destination-des-parents.docx) en format *.docx* (Microsoft Word) du 3 juin 2022, sur le [site de l'académie de Lille](https://ien-ronchin.etab.ac-lille.fr/?attachment_id=3126) (Auteur: Nicolas Delattre).
+Nous prendrons comme exemple le Questionnaire suivant, dont le but est d'établir un profil de la famille et des enfants scolarisés dans une école élémentaire. Ce questionnaire est adressé aux parents:
 
-> Vous allez adapter le questionnaire pour le **publier en ligne**.
+* Combien d'enfants avez vous?
+* L'enfant scolarisé dans notre école, s'agit-il d'une fille/d'un garçon?
+* Bénéficie t-il (elle) d'un dispositif particulier (PAP, PAI, ...)?
+* Fréquente t-il (elle) l'accueil périscolaire du matin?
+
+> Vous allez adapter ce questionnaire pour le **publier en ligne**.
 
 Ce questionnaire est anonyme; la plupart des questions sont de type *Question à Choix Multiple*, n'autorisant qu'une seule réponse.
 
@@ -35,11 +40,24 @@ Un tutoriel pour comprendre: [docs.framasoft.org](https://docs.framasoft.org/fr/
 ## Conception du formulaire
 Une fois le compte créé, aller dans l'editeur et commencer à concevoir le formulaire. 
 
-* Mettre un titre et un commentaire à partir du [document source](/pdf/competences/CEE-1D-Questionnaire-a-destination-des-parents.docx).
+* Mettre un titre et un commentaire à partir des informations suivantes:
+
+**Titre du formulaire:** *Questionnaire à destination des parents*
+
+**Description:** *Madame, Monsieur, chers parents,
+Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une enquête afin d'établir un profil et de répondre à vos besoins.*
+
+*Votre participation à l’enquête est essentielle. Elle est libre et anonyme. Il vous suffit d’indiquer ce que vous pensez des propositions qui suivent.*
+
+*Nous vous remercions à l’avance de votre participation.*
+
+*L’équipe pédagogique* 
+
+{{< img src="../images/form1.png" width="400" >}}
 
 * Accès public aux résultats: Choisir *Non*.
 
-{{< img src="../images/Q1.png" >}}
+{{< img src="../images/Q1.png" width="400" >}}
 
 * En bas de page: Cliquer sur **Enregistrer**
 
@@ -57,8 +75,8 @@ Une fois le compte créé, aller dans l'editeur et commencer à concevoir le for
 
 * La question suivante pose un problème pour l'analyse des résultats: *Votre enfant bénéficie-t-il d'un dispositif?*. Le choix *Non* n'apparait pas. 
   * Il faudra d'abord placer une 1ere question: *Votre enfant bénéficie-t-il d'un dispositif d'accompagnement?: OUI / NON*
-  * Puis la question demandant le *type de dispositif*
-  * Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu'à condition que la réponse précédente est OUI. Cela demande d'ajouter un *champ conditionnel*
+  * Puis la question demandant le *type de dispositif*: (PAI, PAP, UPE2A, ULIS)?
+  * Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu'à *condition* que la réponse précédente est *OUI*. Cela demande d'ajouter un *champ conditionnel*
 
 {{< img src="../images/Q9.png" >}}
 

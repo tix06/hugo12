@@ -21,29 +21,29 @@
     <meta itemprop="name" content="questionnaire :: allophysique">
     <meta itemprop="description" content="creer un questionnaire en ligne à destination des parents d&#39;eleves dans une ecole elementaire. Version difficile, Framasoft">
     <meta itemprop="dateModified" content="2026-06-30T16:02:19+02:00">
-    <meta itemprop="wordCount" content="486">
+    <meta itemprop="wordCount" content="594">
     <title>questionnaire :: allophysique</title>
-    <link href="/images/logo.png?1790602827" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1790602827" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1790602827" defer></script>
-    <script src="/js/search-lunr.js?1790602827" defer></script>
-    <script src="/js/search.js?1790602827" defer></script>
+    <link href="/images/logo.png?1790613827" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790613827" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790613827" defer></script>
+    <script src="/js/search-lunr.js?1790613827" defer></script>
+    <script src="/js/search.js?1790613827" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1790602827";
+      window.relearn.index_js_url="/searchindex.en.js?1790613827";
     </script>
-    <script src="/js/lunr/lunr.min.js?1790602827" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1790602827" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1790602827" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1790602827" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790613827" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790613827" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790613827" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790613827" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1790602827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790602827" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790602827" rel="stylesheet">
-    <link href="/css/theme.css?1790602827" rel="stylesheet">
-    <link href="/css/format-html.css?1790602827" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790613827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790613827" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790613827" rel="stylesheet">
+    <link href="/css/theme.css?1790613827" rel="stylesheet">
+    <link href="/css/format-html.css?1790613827" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -170,9 +170,15 @@
 <li>la collecte des informations, est-elle simple?</li>
 </ul>
 <h2 id="questionnaire-à-destination-des-parents">Questionnaire à destination des parents<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Nous prendrons comme exemple le <a href="/pdf/competences/CEE-1D-Questionnaire-a-destination-des-parents.docx">questionnaire</a> en format <em>.docx</em> (Microsoft Word) du 3 juin 2022, sur le <a href="https://ien-ronchin.etab.ac-lille.fr/?attachment_id=3126" rel="external">site de l&rsquo;académie de Lille</a> (Auteur: Nicolas Delattre).</p>
+<p>Nous prendrons comme exemple le Questionnaire suivant, dont le but est d&rsquo;établir un profil de la famille et des enfants scolarisés dans une école élémentaire. Ce questionnaire est adressé aux parents:</p>
+<ul>
+<li>Combien d&rsquo;enfants avez vous?</li>
+<li>L&rsquo;enfant scolarisé dans notre école, s&rsquo;agit-il d&rsquo;une fille/d&rsquo;un garçon?</li>
+<li>Bénéficie t-il (elle) d&rsquo;un dispositif particulier (PAP, PAI, &hellip;)?</li>
+<li>Fréquente t-il (elle) l&rsquo;accueil périscolaire du matin?</li>
+</ul>
 <blockquote>
-<p>Vous allez adapter le questionnaire pour le <strong>publier en ligne</strong>.</p>
+<p>Vous allez adapter ce questionnaire pour le <strong>publier en ligne</strong>.</p>
 </blockquote>
 <p>Ce questionnaire est anonyme; la plupart des questions sont de type <em>Question à Choix Multiple</em>, n&rsquo;autorisant qu&rsquo;une seule réponse.</p>
 <p>Ce type de questions est à privilégier pour en faciliter l&rsquo;analyse.</p>
@@ -183,17 +189,37 @@
 <h2 id="conception-du-formulaire">Conception du formulaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Une fois le compte créé, aller dans l&rsquo;editeur et commencer à concevoir le formulaire.</p>
 <ul>
-<li>
-<p>Mettre un titre et un commentaire à partir du <a href="/pdf/competences/CEE-1D-Questionnaire-a-destination-des-parents.docx">document source</a>.</p>
-</li>
-<li>
-<p>Accès public aux résultats: Choisir <em>Non</em>.</p>
-</li>
+<li>Mettre un titre et un commentaire à partir des informations suivantes:</li>
+</ul>
+<p><strong>Titre du formulaire:</strong> <em>Questionnaire à destination des parents</em></p>
+<p><strong>Description:</strong> <em>Madame, Monsieur, chers parents,
+Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une enquête afin d&rsquo;établir un profil et de répondre à vos besoins.</em></p>
+<p><em>Votre participation à l’enquête est essentielle. Elle est libre et anonyme. Il vous suffit d’indiquer ce que vous pensez des propositions qui suivent.</em></p>
+<p><em>Nous vous remercions à l’avance de votre participation.</em></p>
+<p><em>L’équipe pédagogique</em></p>
+
+<figure >
+    
+        <img src="../images/form1.png"
+        
+            width="400"
+            
+        
+         />
+    
+    
+</figure>
+
+<ul>
+<li>Accès public aux résultats: Choisir <em>Non</em>.</li>
 </ul>
 
 <figure >
     
         <img src="../images/Q1.png"
+        
+            width="400"
+            
         
          />
     
@@ -248,8 +274,8 @@
 <li>La question suivante pose un problème pour l&rsquo;analyse des résultats: <em>Votre enfant bénéficie-t-il d&rsquo;un dispositif?</em>. Le choix <em>Non</em> n&rsquo;apparait pas.
 <ul>
 <li>Il faudra d&rsquo;abord placer une 1ere question: <em>Votre enfant bénéficie-t-il d&rsquo;un dispositif d&rsquo;accompagnement?: OUI / NON</em></li>
-<li>Puis la question demandant le <em>type de dispositif</em></li>
-<li>Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu&rsquo;à condition que la réponse précédente est OUI. Cela demande d&rsquo;ajouter un <em>champ conditionnel</em></li>
+<li>Puis la question demandant le <em>type de dispositif</em>: (PAI, PAP, UPE2A, ULIS)?</li>
+<li>Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu&rsquo;à <em>condition</em> que la réponse précédente est <em>OUI</em>. Cela demande d&rsquo;ajouter un <em>champ conditionnel</em></li>
 </ul>
 </li>
 </ul>
@@ -716,9 +742,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790602827"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790602827" defer></script>
-    <script src="/js/theme.js?1790602827" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790613827"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790613827" defer></script>
+    <script src="/js/theme.js?1790613827" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

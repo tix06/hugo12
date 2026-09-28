@@ -1,5 +1,5 @@
 ---
-Title: TP2b conditions et algorithmes
+Title: TP3b conditions et algorithmes
 titleHidden: true
 description: prevoir l'arrêt, realiser un compteur, multiplier sans le signe produit, fonctions
 weight: 5
@@ -256,8 +256,8 @@ Précisez combien d'itérations ont lieu, en fonction de la valeur de `a`.
 # Suite
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
-##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-#### {{% button href="../page3" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+##### {{% button href="../page2" icon="palette" style="tip" %}}TP3a{{% /button %}} conditions
+#### {{% button href="../page3" icon="palette" style="tip" %}}TP3b{{% /button %}} conditions et algorithmes
 
 
 

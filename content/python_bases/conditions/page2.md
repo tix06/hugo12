@@ -1,5 +1,5 @@
 ---
-Title: TP2a conditions
+Title: TP3a conditions
 Description: TP conditions, boucles non bornées, compteur, jeu de devinettes
 titleHidden: true
 hidden: true
@@ -243,6 +243,6 @@ print(x)
 # Suite
 
 ##### {{% button href="../page1" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
-##### {{% button href="../page2" icon="palette" style="tip" %}}TP2a{{% /button %}} conditions
-#### {{% button href="../page3" icon="palette" style="tip" %}}TP2b{{% /button %}} conditions et algorithmes
+##### {{% button href="../page2" icon="palette" style="tip" %}}TP3a{{% /button %}} conditions
+#### {{% button href="../page3" icon="palette" style="tip" %}}TP3b{{% /button %}} conditions et algorithmes
 
