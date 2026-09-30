@@ -8,7 +8,7 @@ hidden : true
 
 
 
-# TP2b: Structures conditionnelles
+# TP3b: Structures conditionnelles
 ## Editeur Python
 Au choix, utilisez:
 
