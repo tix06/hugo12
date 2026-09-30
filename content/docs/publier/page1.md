@@ -1,6 +1,6 @@
 ---
 Title: questionnaire
-description: creer un questionnaire en ligne à destination des parents d'eleves dans une ecole elementaire. Version difficile, Framasoft
+description: creer un questionnaire en ligne à destination des parents d'eleves dans une ecole elementaire. Framasoft
 weight: 20
 ---
 
@@ -63,35 +63,35 @@ Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une e
 
 * Ajouter votre première liste à puces: haut de page: *Formulaire*
 
-{{< img src="../images/Q2.png" >}}
+{{< img src="../images/Q2.png" width="400" >}}
 
 * Dans l'onglet *Options*, modifier les valeurs des boutons.
 
-{{< img src="../images/Q3.png" >}}
+{{< img src="../images/Q3.png" width="400">}}
 
 * Pour être plus lisible, le champs de réponses peut être placé sur la même ligne que la question.
 
-{{< img src="../images/Q4.png" >}}
+{{< img src="../images/Q4.png" width="400" >}}
 
 * La question suivante pose un problème pour l'analyse des résultats: *Votre enfant bénéficie-t-il d'un dispositif?*. Le choix *Non* n'apparait pas. 
   * Il faudra d'abord placer une 1ere question: *Votre enfant bénéficie-t-il d'un dispositif d'accompagnement?: OUI / NON*
   * Puis la question demandant le *type de dispositif*: (PAI, PAP, UPE2A, ULIS)?
   * Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu'à *condition* que la réponse précédente est *OUI*. Cela demande d'ajouter un *champ conditionnel*
 
-{{< img src="../images/Q9.png" >}}
+{{< img src="../images/Q9.png" width="400" >}}
 
 * La reponse OUI à la première question entraine l'affichage de la 2e:
 
-{{< img src="../images/Q5.png" caption="choix de la question 1" >}}
+{{< img src="../images/Q5.png" caption="choix de la question 1" width="400" >}}
 
-{{< img src="../images/Q6.png" caption="choix de la question 2" >}}
+{{< img src="../images/Q6.png" caption="choix de la question 2" width="400" >}}
 
 * Les questions suivantes sont regroupées dans un même tableau. Pour chaque tableau, on les regoupe dans le même paragraphe du formulaire.
-{{< img src="../images/Q7.png" caption="Choisir: groupe de champs" >}}
+{{< img src="../images/Q7.png" caption="Choisir: groupe de champs" width="400" >}}
 
 * Puis ajouter les questions dans ce groupe de champs.
 
-{{< img src="../images/Q8.png" >}}
+{{< img src="../images/Q8.png" width="400" >}}
 
 * Vous pouvez alors partager ce formulaire grâce à son adresse. Voir le bouton partager depuis le tableau de bord.
 
