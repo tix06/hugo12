@@ -153,7 +153,7 @@ publier_msg('Ok pour moi','Branda')
 # retourne (affiche) 'Branda : Ok pour moi'
 ```
 
-*Rq : il existe aussi la possibilité d'utiliser des arguments non positionnés, et nommés. Une petite recherche sur le net devrait vous permettre d'en prendre connaissance si besoin.*
+*Rq : il existe aussi la possibilité d'utiliser des arguments non positionnés, et nommés: voir ci-dessous.*
 
 ## Arguments non positionnés
 On peut appeler la fonction avec des arguments non positionnés, mais, alors, il faudra **nommer les paramètres**. Par exemple, ici, on inverse la position des arguments, mais comme ceux-ci sont nommés, l'affectation aux paramètres est bien respectée:

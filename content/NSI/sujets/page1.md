@@ -4,7 +4,7 @@ description: listes et tuple, dictionnaires, tableaux, bases en python
 weight: 61
 ---
 
-# Bac 2021 Amerique Nord: Exercice 3 
+## Bac 2021 Amerique Nord: Exercice 3 
 *Cet exercice porte sur les tableaux et sur la programmation de base en Python.*
 
 {{% badge icon="star" %}}tableau{{% /badge %}} {{% badge icon="star" %}}python bases{{% /badge %}}
@@ -29,7 +29,7 @@ Par exemple, si un client veut acheter un pantalon à 30,50 euros, un tee-shirt 
 
 `tab = [30.5, 15.0, 6.0, 20.0, 5.0, 35.0, 10.5]``
 `
-## Question 1
+### Question 1
 A.  Écrire une fonction Python `total_hors_reduction` ayant pour argument le tableau des prix des articles du panier d’un client et renvoyant le total des prix de ces articles.
 
 B.  Le site de vente propose la promotion suivante comme offre de bienvenue : 20% de réduction sur le premier article de la liste, 30% de réduction sur le deuxième article de la liste (s’il y a au moins deux articles) et aucune réduction sur le reste des articles (s’il y en a). 
@@ -53,7 +53,7 @@ def offre_bienvenue ( tab ):
 
 Pour toute la suite de l’exercice, on pourra utiliser la fonction total_hors_reduction même si la question 1 n’a pas été traitée.
 
-## Question 2
+### Question 2
 Lors de la période des soldes, le site de vente propose les réductions suivantes :
 
 * si le panier contient 5 articles ou plus, une réduction globale de 50%,
@@ -64,14 +64,14 @@ Lors de la période des soldes, le site de vente propose les réductions suivant
 
 Proposer une fonction Python `prix_solde` ayant pour argument le tableau tab des prix des articles du panier d’un client et renvoyant le total des prix de ces articles lorsqu’on leur applique la réduction des soldes.
 
-## Question 3
+### Question 3
 A.  Écrire une fonction `minimum` qui prend en paramètre un tableau tab de nombres et renvoie la valeur minimum présente dans le tableau.
 
 B.  Pour ses bons clients, le site de vente propose une offre promotionnelle, à partir de 2 articles achetés, l’article le moins cher des articles commandés est offert.
 
 Écrire une fonction Python `offre_bon_client` ayant pour paramètre le tableau des prix des articles du panier d’un client et renvoyant le total à payer lorsqu’on leur applique l’offre bon client.
 
-## Question 4
+### Question 4
 Afin de diminuer le stock de ses articles dans ses entrepôts, l’entreprise imagine faire l’offre suivante à ses clients : en suivant l’ordre des articles dans le panier du client, elle considère les 3 premiers articles et offre le moins cher, puis les 3 suivants et offre le moins cher et ainsi de suite jusqu’à ce qu’il reste au plus 2 articles qui n’ont alors droit à aucune réduction.
 
 **Exemple :** Si le panier du client contient un pantalon à 30,50 euros, un tee-shirt à 15 euros, une paire de chaussettes à 6 euros, une jupe à 20 euros, une paire de collants à 5 euros, une robe à 35 euros et un short à 10,50 euros, ce panier est représenté par le tableau suivant :
@@ -90,7 +90,7 @@ B.  Proposer un panier contenant les mêmes articles mais ayant le prix après p
 
 C.  Une fois ses articles choisis, quel algorithme le client peut-il utiliser pour modifier son panier afin de s’assurer qu’il obtiendra le prix après promotion de déstockage le plus bas possible ? On ne demande pas d’écrire cet algorithme.
 
-# Bac 2021 Metropole Sept: Exercice 2
+## Bac 2021 Metropole Sept: Exercice 2
 *Principaux thèmes abordés : structure de données (tableaux, dictionnaires) et langages et programmation (spécification).*
 {{% badge icon="star" %}}tableaux{{% /badge %}} {{% badge icon="star" %}}dictionnaire{{% /badge %}} {{% badge icon="star" %}}python bases{{% /badge %}}
 
@@ -131,14 +131,14 @@ DictJoueur1 = {
               "Pamiers":["Muret"]}
 ``` 
 
-## Question 1
+### Question 1
 Expliquer pourquoi la liste des liaisons suivante n'est pas valide :
 
 `tableauliaisons = [["Toulouse","Auch"], ["Luchon","Muret"],
 ["Quillan","Limoux"] ]`
 
 
-## Question 2
+### Question 2
 Cette question concerne le joueur n°2 (Rappel : les liaisons possédées par le joueur n°2 sont représentées par un rectangle blanc dans l’annexe 2 de l’exercice 2).
 
 A.  Donner le tableau `liaisonsJoueur2`, des liaisons possédées par le joueur n°2.
@@ -152,7 +152,7 @@ DictJoueur2 = {
               }
 ``` 
 
-## Question 3
+### Question 3
 À partir du tableau de tableaux contenant les liaisons d'un joueur, on souhaite
 construire le dictionnaire correspondant au joueur. Une première proposition a
 abouti à la fonction construireDict ci-dessous
@@ -188,7 +188,7 @@ inexacte. Compléter la fonction construireDict pour qu’elle génère bien l�
 {{< img src="../images/page1_1.png" caption="1282 × 862" >}}
 {{< img src="../images/page1_2.png" caption="1318 × 878" >}}
 
-# Bac 2021 Metropole Sept: Exercice 5
+## Bac 2021 Metropole Sept: Exercice 5
 *Principaux thèmes abordés : Traitement de données en tables (CSV) et langages et programmation (spécification).*
 
 {{% badge icon="star" %}}tableau{{% /badge %}} {{% badge icon="star" %}}python bases{{% /badge %}} {{% badge icon="star" %}}csv{{% /badge %}}
@@ -217,12 +217,12 @@ liste_F = ['e', 'a', 'ä', 'ü', 'y', 'ë']
 # Pour rappel, C.lower() convertit le caractère C en minuscule.
 ```
 
-## 1. Appropriation
+### 1. Appropriation
 A.  Expliquer ce qu’est un fichier CSV.
 
 B.  Donner le type de l’argument prenom de la fonction `genre`, et le type de la réponse renvoyée.
 
-## 2. Développement
+### 2. Développement
 Pour effectuer son étude sur les prénoms à partir du fichier CSV, le programmeur souhaite utiliser la bibliothèque csv.
 
 A.  La bibliothèque csv est un module natif du moteur python.
@@ -237,11 +237,11 @@ Pour cela il veut remplacer l’assertion proposée dans la question **2.B)** pa
 gestion de l’argument pour éviter toutes erreurs empêchant la poursuite du programme.
 Proposer alors une ou plusieurs instructions en Python utilisant l’argument afin de s’assurer que la fonction se termine quel que soit le type de l’argument.
 
-## 3. Améliorations
+### 3. Améliorations
 En prenant en compte les deux dernières lettres du prénom, il parvient à augmenter son taux de réussite à 74,4%. Pour cela, son étude du fichier CSV lui permet de créer deux listes : `liste_M2` pour les terminaisons de deux lettres associées aux prénoms masculins et `liste_F2` pour les prénoms féminins.
 Sur votre copie, recopier et modifier la structure conditionnelle (lignes 8 à 13) de la fonction genre afin de prendre en compte les terminaisons de deux lettres des listes `liste_M2` et `liste_F2`.
 
-# Bac 2021 Etranger1: Exercice 2
+## Bac 2021 Etranger1: Exercice 2
 *Notion abordée : structures de données (dictionnaires)*
 
 {{% badge icon="star" %}}dictionnaires{{% /badge %}} {{% badge icon="star" %}}python bases{{% /badge %}} {{% badge icon="star" %}}tuple{{% /badge %}}
@@ -278,12 +278,12 @@ flotte = {
 
 Toutes les questions de cet exercice se réfèrent à l'extrait de la table flotte fourni cidessus. L'annexe 1 présente un rappel sur les dictionnaires en langage Python.
 
-## Question 1
+### Question 1
 * 1.a. Que renvoie l'instruction `flotte[26]` ?
 * 1.b. Que renvoie l'instruction `flotte[80]["etat"]` ?
 * 1.c. Que renvoie l'instruction `flotte[99]["etat"]` ?
 
-## Question 2
+### Question 2
 Voici le script d'une fonction :
 
 ```python
@@ -296,12 +296,12 @@ def proposition(choix):
 * 2.a. **Quelles sont** les valeurs possibles de la variable `choix` ?
 * 2.b. **Expliquer** ce que renvoie la fonction lorsque l'on choisit comme paramètre l'une des valeurs possibles de la variable `choix`.
 
-## Question 3
+### Question 3
 * 3.a. Écrire un script en langage Python qui affiche les identifiants `(id_velo)` de tous les vélos disponibles à la station `"Citadelle"`.
 * 3.b. Écrire un script en langage Python qui permet d'afficher l'identifiant
 `(id_velo)` et la station de tous les vélos électriques qui ne sont pas en panne. 
 
-## Question 4
+### Question 4
 On dispose d'une table de données des positions GPS de toutes les stations,
 dont un extrait est donné ci-dessous. Cette table est stockée sous forme d’un
 dictionnaire.
@@ -337,5 +337,102 @@ mètres de l'utilisateur :
 * les identifiants des vélos disponibles dans cette station.
 Une station où aucun vélo n’est disponible ne doit pas être affichée. 
 
+{{% notice expanded="false" groupid="notice-toggle" style="orange" title="Corrigé" %}}
+### Question 1
 
+**1.a.** `flotte[26]` renvoie le dictionnaire associé à la clé `26` :
+
+```python
+{"type" : "classique", "etat" : 1, "station" : "Coliseum"}
+```
+
+**1.b.** `flotte[80]` vaut `{"type" : "classique", "etat" : 0, "station" : "Saint-Leu"}`, donc `flotte[80]["etat"]` renvoie **`0`** (le vélo est en déplacement).
+
+**1.c.** La clé `99` n'existe pas dans le dictionnaire `flotte`. L'instruction provoque une erreur : **`KeyError: 99`**.
+
+### Question 2
+
+**2.a.** La fonction compare `choix` à `flotte[v]["type"]`. Les valeurs possibles sont donc les deux types de vélo : **`"electrique"`** ou **`"classique"`**.
+
+**2.b.** La fonction parcourt les vélos de la flotte dans l'ordre. Elle renvoie **le nom de la station du premier vélo trouvé** qui est du type demandé et disponible (`etat == 1`). Le `return` interrompt la boucle dès le premier vélo trouvé.
+
+Avec l'extrait fourni :
+
+- `proposition("electrique")` renvoie `"Prefecture"` (vélo 12) ;
+- `proposition("classique")` renvoie `"Baraban"` (vélo 45, car le vélo 80 est en déplacement).
+
+Si aucun vélo ne correspond, la boucle se termine sans rencontrer de `return`, et la fonction renvoie `None`.
+
+### Question 3
+
+**3.a.**
+
+```python
+for id_velo in flotte:
+    if flotte[id_velo]["station"] == "Citadelle" and flotte[id_velo]["etat"] == 1:
+        print(id_velo)
+```
+
+Remarque : avec l'extrait fourni, ce script n'affiche rien. Le vélo 41 est en panne et le vélo 13 est en déplacement.
+
+**3.b.** Un vélo n'est pas en panne si son état est différent de `-1`. Il peut donc être disponible ou en déplacement.
+
+```python
+for id_velo in flotte:
+    if flotte[id_velo]["type"] == "electrique" and flotte[id_velo]["etat"] != -1:
+        print(id_velo, flotte[id_velo]["station"])
+```
+
+Affichage obtenu :
+
+```
+12 Prefecture
+28 Coliseum
+74 Jacobins
+```
+
+### Question 4
+
+```python
+def stations_proches(position):
+    """
+    position : tuple (latitude, longitude) de l'utilisateur
+    renvoie une liste de tuples (nom_station, distance, liste_velos_disponibles)
+    pour les stations à moins de 800 m ayant au moins un vélo disponible
+    """
+    resultat = []
+    for nom in stations:
+        d = distance(position, stations[nom])
+        if d < 800:
+            # recherche des vélos disponibles dans cette station
+            velos_dispo = []
+            for id_velo in flotte:
+                if flotte[id_velo]["station"] == nom and flotte[id_velo]["etat"] == 1:
+                    velos_dispo.append(id_velo)
+            # on ne garde la station que si au moins un vélo est disponible
+            if len(velos_dispo) > 0:
+                resultat.append((nom, d, velos_dispo))
+    return resultat
+```
+
+Exemple d'utilisation :
+
+```python
+for nom, d, velos in stations_proches((49.8930, 2.2950)):
+    print(nom, d, "m - vélos disponibles :", velos)
+```
+
+Affichage obtenu :
+
+```
+Prefecture 303 m - vélos disponibles : [12]
+Coliseum 560 m - vélos disponibles : [26]
+Jacobins 513 m - vélos disponibles : [74]
+```
+
+La station Saint-Leu est à environ 751 m, donc à moins de 800 m, mais elle n'est pas affichée : aucun vélo n'y est disponible (le vélo 80 est en déplacement et le vélo 83 est en panne).
+
+Le principe est le suivant. Pour chaque station, on calcule sa distance à l'utilisateur. Si cette distance est inférieure à 800 m, on construit la liste des identifiants des vélos disponibles (`etat == 1`) garés dans cette station. On n'ajoute la station au résultat que si cette liste n'est pas vide.
+
+{{% /notice %}}
 
