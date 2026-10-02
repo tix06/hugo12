@@ -173,7 +173,7 @@ def construireDict(listeLiaisons):
       destinationsA = Dict[villeA]
       if not villeB in destinationsA :
         destinationsA.append(villeB)
-    return Dict 
+  return Dict 
 ```
 
 A.  Écrire sur votre copie un assert dans la fonction construireDict qui permet
