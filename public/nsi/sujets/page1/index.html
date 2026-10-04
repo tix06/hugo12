@@ -21,29 +21,29 @@
     <meta itemprop="name" content="tableaux et bases en python :: allophysique">
     <meta itemprop="description" content="listes et tuple, dictionnaires, tableaux, bases en python">
     <meta itemprop="dateModified" content="2026-06-23T19:46:22+02:00">
-    <meta itemprop="wordCount" content="3058">
+    <meta itemprop="wordCount" content="3478">
     <title>tableaux et bases en python :: allophysique</title>
-    <link href="/images/logo.png?1790931780" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1790931780" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1790931780" defer></script>
-    <script src="/js/search-lunr.js?1790931780" defer></script>
-    <script src="/js/search.js?1790931780" defer></script>
+    <link href="/images/logo.png?1790932085" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1790932085" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1790932085" defer></script>
+    <script src="/js/search-lunr.js?1790932085" defer></script>
+    <script src="/js/search.js?1790932085" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1790931780";
+      window.relearn.index_js_url="/searchindex.en.js?1790932085";
     </script>
-    <script src="/js/lunr/lunr.min.js?1790931780" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1790931780" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1790931780" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1790931780" defer></script>
+    <script src="/js/lunr/lunr.min.js?1790932085" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1790932085" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1790932085" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1790932085" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1790931780" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790931780" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790931780" rel="stylesheet">
-    <link href="/css/theme.css?1790931780" rel="stylesheet">
-    <link href="/css/format-html.css?1790931780" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1790932085" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1790932085" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1790932085" rel="stylesheet">
+    <link href="/css/theme.css?1790932085" rel="stylesheet">
+    <link href="/css/format-html.css?1790932085" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -352,6 +352,78 @@ inexacte. Compléter la fonction construireDict pour qu’elle génère bien l�
     
 </figure>
 </p>
+
+<details class="box cstyle notices orange expand" name="notice-toggle">
+  <summary class="box-label">
+    <i class="expander-icon fa-fw fas fa-chevron-right"></i> 
+    Corrigé
+  </summary>
+  <div class="box-content">
+<h3 id="question-1">Question 1<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Cette liste n&rsquo;est pas valide à cause de la liaison <code>[&quot;Luchon&quot;,&quot;Muret&quot;]</code>. Il n&rsquo;existe pas de liaison directe entre Luchon et Muret : la ligne passe par St Gaudens. Il faudrait donc deux liaisons, <code>[&quot;Luchon&quot;,&quot;St Gaudens&quot;]</code> et <code>[&quot;St Gaudens&quot;,&quot;Muret&quot;]</code>.</p>
+<p>Les deux autres liaisons, Toulouse-Auch et Quillan-Limoux, sont bien des liaisons directes.</p>
+<h3 id="question-2">Question 2<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p><strong>A.</strong> D&rsquo;après l&rsquo;annexe 2, le joueur 2 possède cinq liaisons (en blanc) :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">liaisonsJoueur2</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&#34;Toulouse&#34;</span><span class="p">,</span><span class="s2">&#34;Castres&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">[</span><span class="s2">&#34;Castres&#34;</span><span class="p">,</span><span class="s2">&#34;Mazamet&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">[</span><span class="s2">&#34;Toulouse&#34;</span><span class="p">,</span><span class="s2">&#34;Castelnaudary&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">[</span><span class="s2">&#34;Castelnaudary&#34;</span><span class="p">,</span><span class="s2">&#34;Carcassonne&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">[</span><span class="s2">&#34;Tarbes&#34;</span><span class="p">,</span><span class="s2">&#34;St Gaudens&#34;</span><span class="p">]]</span></span></span></code></pre></div>
+<p><strong>B.</strong> Chaque liaison peut être parcourue dans les deux sens. Chaque ville apparaît donc comme clé, avec toutes les villes auxquelles elle est reliée :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">DictJoueur2</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Toulouse&#34;</span><span class="p">:[</span><span class="s2">&#34;Castres&#34;</span><span class="p">,</span><span class="s2">&#34;Castelnaudary&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Castres&#34;</span><span class="p">:[</span><span class="s2">&#34;Toulouse&#34;</span><span class="p">,</span><span class="s2">&#34;Mazamet&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Mazamet&#34;</span><span class="p">:[</span><span class="s2">&#34;Castres&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Castelnaudary&#34;</span><span class="p">:[</span><span class="s2">&#34;Toulouse&#34;</span><span class="p">,</span><span class="s2">&#34;Carcassonne&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Carcassonne&#34;</span><span class="p">:[</span><span class="s2">&#34;Castelnaudary&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;Tarbes&#34;</span><span class="p">:[</span><span class="s2">&#34;St Gaudens&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;St Gaudens&#34;</span><span class="p">:[</span><span class="s2">&#34;Tarbes&#34;</span><span class="p">]}</span></span></span></code></pre></div>
+<h3 id="question-3">Question 3<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Pour les références, on numérote les lignes de la fonction de 1 (<code>def construireDict...</code>) à 16 (<code>return Dict</code>). Les lignes 2 à 5 correspondent à la docstring, et la ligne 6 est <code>Dict={}</code>.</p>
+<p><strong>A.</strong> On insère l&rsquo;assertion après la docstring, entre les lignes 5 et 6 :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">listeLiaisons</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;la liste des liaisons est vide&#34;</span></span></span></code></pre></div>
+<p>On peut aussi écrire <code>assert listeLiaisons != []</code>.</p>
+<p><strong>B.</strong> Avec <code>liaisonsJoueur1</code> en argument, la fonction renvoie :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="s2">&#34;Toulouse&#34;</span><span class="p">:[</span><span class="s2">&#34;Muret&#34;</span><span class="p">,</span><span class="s2">&#34;Montauban&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="s2">&#34;Gaillac&#34;</span><span class="p">:[</span><span class="s2">&#34;St Sulpice&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl"> <span class="s2">&#34;Muret&#34;</span><span class="p">:[</span><span class="s2">&#34;Pamiers&#34;</span><span class="p">]}</span></span></span></code></pre></div>
+<p>La fonction ne répond que partiellement à la demande, car elle ne traite chaque liaison que dans un seul sens, de <code>villeA</code> vers <code>villeB</code>. Il manque donc les trajets retour. Par exemple, la clé <code>&quot;Montauban&quot;</code> est absente, alors que Montauban est reliée à Toulouse. De même, <code>&quot;Muret&quot;</code> devrait contenir <code>&quot;Toulouse&quot;</code> en plus de <code>&quot;Pamiers&quot;</code>.</p>
+<p><strong>C.</strong> Il faut faire le même traitement dans l&rsquo;autre sens, de <code>villeB</code> vers <code>villeA</code>. On insère le code suivant après la ligne 15, au même niveau d&rsquo;indentation que le premier <code>if</code> de la ligne 10, donc à l&rsquo;intérieur de la boucle <code>for</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">villeB</span> <span class="ow">in</span> <span class="n">Dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Dict</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">destinationsB</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="ow">not</span> <span class="n">villeA</span> <span class="ow">in</span> <span class="n">destinationsB</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">destinationsB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">villeA</span><span class="p">)</span></span></span></code></pre></div>
+<p>Fonction complète corrigée :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">construireDict</span><span class="p">(</span><span class="n">listeLiaisons</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">  listeLiaisons est un tableau de tableaux représentant la
+</span></span></span><span class="line"><span class="cl"><span class="s2">  liste des liaisons d&#39;un joueur comme décrit dans le problème
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">listeLiaisons</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&#34;la liste des liaisons est vide&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Dict</span><span class="o">=</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="n">liaison</span> <span class="ow">in</span> <span class="n">listeLiaisons</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">villeA</span> <span class="o">=</span> <span class="n">liaison</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">villeB</span> <span class="o">=</span> <span class="n">liaison</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># sens villeA -&gt; villeB</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">villeA</span> <span class="ow">in</span> <span class="n">Dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Dict</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">destinationsA</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="ow">not</span> <span class="n">villeB</span> <span class="ow">in</span> <span class="n">destinationsA</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">destinationsA</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">villeB</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># sens villeB -&gt; villeA</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">villeB</span> <span class="ow">in</span> <span class="n">Dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Dict</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span><span class="o">=</span><span class="p">[</span><span class="n">villeA</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">destinationsB</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="n">villeB</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="ow">not</span> <span class="n">villeA</span> <span class="ow">in</span> <span class="n">destinationsB</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">destinationsB</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">villeA</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">Dict</span></span></span></code></pre></div>
+<p>Appliquée à <code>liaisonsJoueur1</code>, cette fonction renvoie bien le dictionnaire <code>DictJoueur1</code> donné dans l&rsquo;énoncé.</p>
+  </div>
+</details>
 <h2 id="bac-2021-metropole-sept-exercice-5">Bac 2021 Metropole Sept: Exercice 5<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p><em>Principaux thèmes abordés : Traitement de données en tables (CSV) et langages et programmation (spécification).</em></p>
 <p><span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">tableau</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">python bases</span></span> <span class="badge cstyle default badge-with-title"><span class="badge-title"><i class="fa-fw fas fa-star"></i></span><span class="badge-content">csv</span></span></p>
@@ -895,9 +967,9 @@ Une station où aucun vélo n’est disponible ne doit pas être affichée.</li>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790931780"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790931780" defer></script>
-    <script src="/js/theme.js?1790931780" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1790932085"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1790932085" defer></script>
+    <script src="/js/theme.js?1790932085" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

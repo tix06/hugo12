@@ -188,6 +188,105 @@ inexacte. Compléter la fonction construireDict pour qu’elle génère bien l�
 {{< img src="../images/page1_1.png" caption="1282 × 862" >}}
 {{< img src="../images/page1_2.png" caption="1318 × 878" >}}
 
+{{% notice expanded="false" groupid="notice-toggle" style="orange" title="Corrigé" %}}
+### Question 1
+
+Cette liste n'est pas valide à cause de la liaison `["Luchon","Muret"]`. Il n'existe pas de liaison directe entre Luchon et Muret : la ligne passe par St Gaudens. Il faudrait donc deux liaisons, `["Luchon","St Gaudens"]` et `["St Gaudens","Muret"]`.
+
+Les deux autres liaisons, Toulouse-Auch et Quillan-Limoux, sont bien des liaisons directes.
+
+### Question 2
+
+**A.** D'après l'annexe 2, le joueur 2 possède cinq liaisons (en blanc) :
+
+```python
+liaisonsJoueur2 = [["Toulouse","Castres"],
+                   ["Castres","Mazamet"],
+                   ["Toulouse","Castelnaudary"],
+                   ["Castelnaudary","Carcassonne"],
+                   ["Tarbes","St Gaudens"]]
+```
+
+**B.** Chaque liaison peut être parcourue dans les deux sens. Chaque ville apparaît donc comme clé, avec toutes les villes auxquelles elle est reliée :
+
+```python
+DictJoueur2 = {
+              "Toulouse":["Castres","Castelnaudary"],
+              "Castres":["Toulouse","Mazamet"],
+              "Mazamet":["Castres"],
+              "Castelnaudary":["Toulouse","Carcassonne"],
+              "Carcassonne":["Castelnaudary"],
+              "Tarbes":["St Gaudens"],
+              "St Gaudens":["Tarbes"]}
+```
+
+### Question 3
+
+Pour les références, on numérote les lignes de la fonction de 1 (`def construireDict...`) à 16 (`return Dict`). Les lignes 2 à 5 correspondent à la docstring, et la ligne 6 est `Dict={}`.
+
+**A.** On insère l'assertion après la docstring, entre les lignes 5 et 6 :
+
+```python
+assert len(listeLiaisons) > 0, "la liste des liaisons est vide"
+```
+
+On peut aussi écrire `assert listeLiaisons != []`.
+
+**B.** Avec `liaisonsJoueur1` en argument, la fonction renvoie :
+
+```python
+{"Toulouse":["Muret","Montauban"],
+ "Gaillac":["St Sulpice"],
+ "Muret":["Pamiers"]}
+```
+
+La fonction ne répond que partiellement à la demande, car elle ne traite chaque liaison que dans un seul sens, de `villeA` vers `villeB`. Il manque donc les trajets retour. Par exemple, la clé `"Montauban"` est absente, alors que Montauban est reliée à Toulouse. De même, `"Muret"` devrait contenir `"Toulouse"` en plus de `"Pamiers"`.
+
+**C.** Il faut faire le même traitement dans l'autre sens, de `villeB` vers `villeA`. On insère le code suivant après la ligne 15, au même niveau d'indentation que le premier `if` de la ligne 10, donc à l'intérieur de la boucle `for` :
+
+```python
+    if not villeB in Dict.keys() :
+      Dict[villeB]=[villeA]
+    else :
+      destinationsB = Dict[villeB]
+      if not villeA in destinationsB :
+        destinationsB.append(villeA)
+```
+
+Fonction complète corrigée :
+
+```python
+def construireDict(listeLiaisons):
+  """
+  listeLiaisons est un tableau de tableaux représentant la
+  liste des liaisons d'un joueur comme décrit dans le problème
+  """
+  assert len(listeLiaisons) > 0, "la liste des liaisons est vide"
+  Dict={}
+  for liaison in listeLiaisons :
+    villeA = liaison[0]
+    villeB = liaison[1]
+    # sens villeA -> villeB
+    if not villeA in Dict.keys() :
+      Dict[villeA]=[villeB]
+    else :
+      destinationsA = Dict[villeA]
+      if not villeB in destinationsA :
+        destinationsA.append(villeB)
+    # sens villeB -> villeA
+    if not villeB in Dict.keys() :
+      Dict[villeB]=[villeA]
+    else :
+      destinationsB = Dict[villeB]
+      if not villeA in destinationsB :
+        destinationsB.append(villeA)
+  return Dict
+```
+
+Appliquée à `liaisonsJoueur1`, cette fonction renvoie bien le dictionnaire `DictJoueur1` donné dans l'énoncé.
+
+{{% /notice%}}
+
 ## Bac 2021 Metropole Sept: Exercice 5
 *Principaux thèmes abordés : Traitement de données en tables (CSV) et langages et programmation (spécification).*
 
