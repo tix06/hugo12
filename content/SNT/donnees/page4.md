@@ -21,8 +21,8 @@ weight: 13
 | {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | D4 Traitement des données en table [Lien](../page8) |
 | {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP1 Enquete de police [Lien](../page12) |
 | {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP2 Pommes [Lien](../page9) |
-| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
-| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP4 Formulaire d'[enquête](/docs/publier/page1/) et traitement [Lien](/pdf/SNT/page7.html) |
+| {{% badge color="red" icon="angle-double-up" %}}modelisation{{% /badge %}} | TP3 Traitement de données data.gouv [Lien](../page11) |
+| {{% badge color="orange" icon="star" %}}competences{{% /badge %}} | TP4 Formulaire d'[enquête](/docs/publier/page1/), conception du formulaire [pdf](/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf) et traitement [Lien](/pdf/SNT/page7.html) |
 {{% /badgetable %}}
 
 ## Introduction
