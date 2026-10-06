@@ -140,7 +140,7 @@ Demander alors à l'utilisateur s'il veut poursuivre son exploration (dossier de
 > * Conserver un script le plus lisible possible: utiliser des fonctions pour `lister_le_contenu` ou `changer_de_dossier`. 
 > * Utiliser un mécanisme `try ... except` pour eviter les saisies non conforme par l'utilisateur (`input`)
 
-*Votre programme fonctionne? Aller alors à l'étape 1 du [projet](/docs/NSI/projet/page9/) de recherche d'exoplanètes.*
+*Votre programme fonctionne? Aller alors à l'étape 1 du [projet](/NSI/tp/page9/) de recherche d'exoplanètes.*
 
 ## Programmer une fonction recursive de recherche d'un fichier
 Les instructions de recherche dans un sous-dossier sont identiques à celles de recherche dans un dossier. On doit pouvoir écrire le script sous forme *recursive*. Le debut pourrait être comme ceci:
