@@ -180,6 +180,15 @@ def inverse(L):
     return [L[i] for i in range(len(L)-1,-1,-1)]
 ```
 
+*Remarque:* La fonction `inverse` est utile pour avoir les mêmes parcours DFS, en itératif et récursif. On peut la programmer comme ci-dessus, ou bien en utilisant un *slice* de la manière suivante: `stack.extend(univisited[::-1])`
+
+```python
+L = [1,2,3,4]
+L = L[::-1] # copie par valeur de la liste inversée
+print(L)
+# affiche [4,3,2,1]
+```
+
 ## Principe
 Soit un graphe G = (V,E) et r un sommet de G, point de départ de l'exploration.
 Le parcours en profondeur du graphe va permettre de visiter tous les noeuds du graphe, mais selon un chemin où l'on plonge dans la profondeur du graphe. Le prochain sommet visité sera un sommet fils non encore visité.
