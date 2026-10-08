@@ -195,7 +195,35 @@ print(f"...")
 
 * **Question h**: Etes-vous sûr que le programme finira, quelles que soient les entrées saisies par l'utilisateur?
 
-## Ex 5: Multiplier sans utiliser `*`
+## Ex 5: Programmer la séquence de combat d'un jeu de rôle
+{{< img src="../images/dauntless.png" width="400" caption="illustration du jeu Dauntless" >}}
+
+Votre guerrier doit combattre le monstre géré par l'ordinateur.
+
+Vous démarrez la partie avec une `force` égale à 3 et un nombre de points de vie égal à 10.
+
+A chaque tour de jeu: 
+
+* vous indiquez à l'ordinateur le résultat de votre lancer de dé (1-6). *Sans tricher hein?*
+* L'ordinateur lance lui aussi un dé avec l'instruction `randint(1,6)`
+* Celui qui fait le plus gros score parvient à toucher l'adversaire et inflige un nombre de dégats égal à sa force (vous infligez 3 points à chaque toucher)
+* Le combat termine lorsque l'un des 2 adversaires n'a plus de points de vie.
+
+Votre jeu doit comporter des sorties textuelles dans la console pour expliquer le déroulement du combat.
+
+Voici le squelette du jeu:
+
+
+```python
+from random import randint
+force = 3
+...
+while ...:
+  ...
+print("la partie est finie")
+```
+
+## Ex 6: Multiplier sans utiliser `*`
 La multiplication de `x` par `a` revient à additionner `x + x + x ...` un nombre `a` de fois.
 
 Par exemple, `x + x + x` correspond à `3 * x`.
