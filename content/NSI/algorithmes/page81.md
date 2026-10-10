@@ -8,12 +8,25 @@ weight: 6
 Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
 
 ## Mélanger un liste de mots
-* (1) Reprendre pour cette première partie le dossier du TP de [recherche dans un dictionnaire de mots](/docs/NSI/algorithmes/page14_bis/). Ouvrir un nouveau fichier python dans ce même dossier. Placer l'import des librairies `random` et `time` à l'ouverture de ce fichier (premières lignes).
-* (2) Ajouter au script python les **fonctions de tri** vues dans le cours: [Lien vers le cours](/docs/NSI/algorithmes/page8/)
-* (3) importer une liste de mots d'un dictionnaire non accentué. Appeler cette liste `mots`.
-* (4) mélanger la liste de mots avec la fonction `random.shuffle` (voir exemple plus bas)
-* (5) réduire cette liste à seulement 10000 mots: `mots = mots[:10000]`
-* (6) copier cette liste de mots (faire une copie **par valeur**): `mots_melanges = mots.copy()`
+* (1)  Télécharger et placer le fichier *index de mots* français [pli07.zip](/scripts/fichiersmots/pli07.zip). Dézipper ce fichier dans un dossier que vous appelerez *recherche_et_tri*.
+* (2) Ouvrir un nouveau fichier python dans le même dossier. Placer l'import des librairies `random` et `time` à l'ouverture de ce fichier (premières lignes):
+
+```python
+import random,time
+```
+
+* (3) Ajouter au script python les **fonctions de tri** vues dans le cours: [Lien vers le cours](../page8/)
+* (4) importer une liste de mots d'un dictionnaire non accentué. Appeler cette liste `mots`.
+
+```python
+with open('pli07.txt', encoding='utf-8') as f:
+    for mot in f.read().splitlines():
+        mots.append(mot)
+```
+
+* (5) mélanger la liste de mots avec la fonction `random.shuffle` (voir exemple plus bas)
+* (6) réduire cette liste à seulement 10000 mots: `mots = mots[:10000]`
+* (7) copier cette liste de mots (faire une copie **par valeur**): `mots_melanges = mots.copy()`
 
 
 *Aide*: 
@@ -30,7 +43,7 @@ La fonction `shuffle` du module `random` permet de mélanger en place les élém
 ```
 
 ## Fonction `est_triee`
-* (7) Programmer une fonction `est_triee` qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé, sans avoir à parcourir celle-ci après traitement.
+* (8) Programmer une fonction `est_triee` qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé, sans avoir à parcourir celle-ci après traitement.
 
 Utiliser la base suivante pour la fonction: (et compléter):
 
@@ -42,7 +55,7 @@ def est_triee(L):
 	return ...
 ```
 
-* (8) Utiliser cette fonction pour vérifier que la liste `mots` est mélangée:
+* (9) Utiliser cette fonction pour vérifier que la liste `mots` est mélangée:
 
 ```python
 > est_triee(mots)
@@ -50,8 +63,9 @@ False
 ```
 
 ## Trier le dictionnaire de mots
-Votre script devrait avoir l'allure suivante: (les fonctions dont à compléter)
+Votre script devrait avoir l'allure suivante: (Voir l'aide)
 
+{{% notice expanded="false" groupid="notice-toggle" style="green" title="Aide" %}}
 ```python
 import random
 import time
@@ -75,12 +89,13 @@ mots = mots[:10000]
 random.shuffle(...)
 mots_melanges = ... .copy()
 ```
+{{% /notice %}}
 
-Vous allez tester maintenant vos fonctions de tri sur la liste [dictionnaire-de-mots](/docs/NSI/algorithmes/page14_bis/), une fois celle-ci mélangée.
+Vous allez tester maintenant vos fonctions de tri sur la liste de *mots*, une fois celle-ci mélangée et placée dans une **copie**.
 
 * **Question 1:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par insertion. (faire plusieurs essais).
 
-**Remarque**: Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra faire une copie par valeur de la liste mélangée. Le tri par insertion puis par selection doit être realisé sur la MEME liste si vous voulez comparer les durées de traitement.
+**Remarque**: Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le tri par insertion puis par selection doit être realisé sur la MEME liste si vous voulez comparer les durées de traitement.
 
 
 On *rappelle* que la mesure du temps peut être réalisée de la manière suivante:
@@ -94,7 +109,7 @@ stop_time = time.time()
 interval1 = stop_time - start_time
 ```
 
-* **Question 2:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par selection. (faire plusieurs essais). Comparer le temps mis par les 2 algorithmes de tri
+* **Question 2:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par selection. (faire plusieurs essais). **Comparer** le temps mis par les 2 algorithmes de tri. **Conclure**.
 
 
 # Partie 2: TP tri à partir d'une clé
@@ -231,7 +246,8 @@ On souhaite obtenir l'affichage suivant, avec seulement les colonnes *equipe, pa
   * afficher classement et equipe avec :  `print(t,T[t])` 
 
 
-
+# Liens
+* Cours/TD de mcoillac sur le [tri par insertion](https://mcoilhac.forge.apps.education.fr/site-nsi/tris/3_insertion/) et le [tri par selection](https://mcoilhac.forge.apps.education.fr/site-nsi/tris/2_selection/)
  
 
 

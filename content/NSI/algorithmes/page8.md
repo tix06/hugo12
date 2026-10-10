@@ -130,7 +130,7 @@ On peut compter le nombre de déplacements / affectations réalisés pour trier 
 | ... | ... |
 | n-1 | n+1 |
 
-La somme de cette série arithmétique est alors $S_n = (n+4)\times(n-1)$
+La somme de cette série arithmétique est alors $S_n = (n+4)\times(n-1)/2$
 
 Soit $O(n^2)$ pour la complexité asymptotique.
 
