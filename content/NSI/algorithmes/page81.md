@@ -1,10 +1,89 @@
 ---
-Title: tri à partir d'une cle
+Title: tris quadratiques et tri à partir d'une cle
 hidden: true
 weight: 6
 ---
 
-# Partie 1: Appliquer un algorithme de tri
+*Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents*.
+
+# Partie 1: découvrir le tri par insertion et par séléction
+## Tri par insertion
+1. Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de *tri par insertion* qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l'indentation est à adapter.
+
+```python
+def tri_insertion(liste):
+for i in range(1, len(liste)):
+for i in range(len(liste)-1):
+valeur = liste[i]
+valeur = liste[0]
+j = i
+j = i - 1
+while j >= 0 and liste[j] > valeur:
+while j > 0 and liste[j] >= valeur:
+liste[j] = liste[j-1]
+liste[j + 1] = liste[j]
+j -= 1
+j += 1
+liste[j + 1] = valeur
+liste[j] = valeur
+return liste
+return liste.copy()
+```
+
+2. Utiliser cette fonction pour trier chacune des listes suivantes:
+
+```python
+L1 = [19, 8, 10, 1, 2, 50, 3, 5]
+L2 = ['z', 'y', 'x', 'w', 'v', 'u']
+```
+
+3. Ecrire une fonction `est_triee` pour vérifier si les éléments d'une liste sont placés dans l'ordre croissant.
+
+Utiliser la base suivante pour la fonction: (et compléter):
+
+```python
+def est_triee(L):
+    for i in range(1,len(L)):
+        if ...:
+            return False
+    return ...
+```
+
+4. Ajouter un test d'assertion pour chacune de ces listes pour vérifier que la fonction a bien effectué le tri sur ces listes.
+
+## Tri par séléction
+1. Ecrire la fonction `tri_selection` à partir des lignes suivantes (*idem question 1 plus haut*)
+
+```python
+def tri_selection(liste):
+for i in range(len(liste)):
+for i in range(len(liste)-1):
+indice_min = 0
+indice_min = i
+for j in range(i, len(liste)-1):
+for j in range(i + 1, len(liste)):
+if liste[j] < liste[indice_min]:
+if liste[j] > liste[indice_min]:
+indice_min = j
+j = indice_min
+liste[i], liste[indice_min] = liste[indice_min], liste[i]
+liste[indice_min] = liste[i]
+liste[i] = liste[indice_min]
+return liste
+return liste.copy()
+```
+
+2. Utiliser cette fonction pour trier chacune des listes suivantes:
+
+```python
+L1 = [19, 8, 10, 1, 2, 50, 3, 5]
+L2 = ['z', 'y', 'x', 'w', 'v', 'u']
+```
+
+3. Ajouter les tests d'assertion pour vérifier que la fonction a bien effectué le tri sur ces listes.
+
+
+# Partie 2: Appliquer un algorithme de tri
 Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
 
 ## Mélanger un liste de mots
@@ -15,7 +94,7 @@ Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des 
 import random,time
 ```
 
-* (3) Ajouter au script python les **fonctions de tri** vues dans le cours: [Lien vers le cours](../page8/)
+* (3) Ajouter au script python les **fonctions de tri** vues dans le cours: [Lien vers le cours](/python_avance/algos/page3/)
 * (4) importer une liste de mots d'un dictionnaire non accentué. Appeler cette liste `mots`.
 
 ```python
@@ -42,18 +121,8 @@ La fonction `shuffle` du module `random` permet de mélanger en place les élém
 [6, 3, 20, 10, 8, 4]
 ```
 
-## Fonction `est_triee`
-* (8) Programmer une fonction `est_triee` qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé, sans avoir à parcourir celle-ci après traitement.
+* (8) Programmer une fonction `est_triee` qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé. *(voir partie 1)*
 
-Utiliser la base suivante pour la fonction: (et compléter):
-
-```python
-def est_triee(L):
-	for i in range(1,len(L)):
-		if ...:
-			return False
-	return ...
-```
 
 * (9) Utiliser cette fonction pour vérifier que la liste `mots` est mélangée:
 
@@ -95,7 +164,7 @@ Vous allez tester maintenant vos fonctions de tri sur la liste de *mots*, une fo
 
 * **Question 1:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par insertion. (faire plusieurs essais).
 
-**Remarque**: Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le tri par insertion puis par selection doit être realisé sur la MEME liste si vous voulez comparer les durées de traitement.
+**Remarque**: *Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le **tri par insertion** puis par **selection** doit être realisé sur la **MEME liste** si vous voulez comparer les durées de traitement.*
 
 
 On *rappelle* que la mesure du temps peut être réalisée de la manière suivante:
@@ -111,8 +180,9 @@ interval1 = stop_time - start_time
 
 * **Question 2:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par selection. (faire plusieurs essais). **Comparer** le temps mis par les 2 algorithmes de tri. **Conclure**.
 
+* **Question 3:** Evaluer la complexité algorithmique pour chacun de ces algorithmes. Les résultats mesurés sont ils conformes à ce qui est attendu?
 
-# Partie 2: TP tri à partir d'une clé
+# Partie 3: TP tri à partir d'une clé
 On peut réaliser un tri à l'aide d'une **clé**. Les objets (les lignes d'un fichier *csv*) contiennent ainsi des valeurs sur plusieurs colonnes. On peut choisir l'une de ces colonnes pour réaliser le tri.
 
 On prendra pour exemple le fichier du classement UEFA des équipes feminines sur plusieurs années. Le tableau est consultable à la page de l'[UEFA.com](https://fr.uefa.com/nationalassociations/uefarankings/womensclub/#/yr/2022)

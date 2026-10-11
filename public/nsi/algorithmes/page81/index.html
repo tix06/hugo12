@@ -5,49 +5,49 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
-Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots français pli07.zip. Dézipper ce fichier dans un dossier que vous appelerez recherche_et_tri. (2) Ouvrir un nouveau fichier python dans le même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes): import random,time (3) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (4) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. with open(&#39;pli07.txt&#39;, encoding=&#39;utf-8&#39;) as f: for mot in f.read().splitlines(): mots.append(mot) (5) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (6) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (7) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta name="description" content="Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents.
+Partie 1: découvrir le tri par insertion et par séléction Tri par insertion Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de tri par insertion qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter. def tri_insertion(liste): for i in range(1, len(liste)): for i in range(len(liste)-1): valeur = liste[i] valeur = liste[0] j = i j = i - 1 while j &gt;= 0 and liste[j] &gt; valeur: while j &gt; 0 and liste[j] &gt;= valeur: liste[j] = liste[j-1] liste[j &#43; 1] = liste[j] j -= 1 j &#43;= 1 liste[j &#43; 1] = valeur liste[j] = valeur return liste return liste.copy() Utiliser cette fonction pour trier chacune des listes suivantes: L1 = [19, 8, 10, 1, 2, 50, 3, 5] L2 = [&#39;z&#39;, &#39;y&#39;, &#39;x&#39;, &#39;w&#39;, &#39;v&#39;, &#39;u&#39;] Ecrire une fonction est_triee pour vérifier si les éléments d’une liste sont placés dans l’ordre croissant. Utiliser la base suivante pour la fonction: (et compléter):">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="tri à partir d&#39;une cle :: allophysique">
-    <meta name="twitter:description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
-Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots français pli07.zip. Dézipper ce fichier dans un dossier que vous appelerez recherche_et_tri. (2) Ouvrir un nouveau fichier python dans le même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes): import random,time (3) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (4) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. with open(&#39;pli07.txt&#39;, encoding=&#39;utf-8&#39;) as f: for mot in f.read().splitlines(): mots.append(mot) (5) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (6) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (7) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta name="twitter:title" content="tris quadratiques et tri à partir d&#39;une cle :: allophysique">
+    <meta name="twitter:description" content="Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents.
+Partie 1: découvrir le tri par insertion et par séléction Tri par insertion Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de tri par insertion qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter. def tri_insertion(liste): for i in range(1, len(liste)): for i in range(len(liste)-1): valeur = liste[i] valeur = liste[0] j = i j = i - 1 while j &gt;= 0 and liste[j] &gt; valeur: while j &gt; 0 and liste[j] &gt;= valeur: liste[j] = liste[j-1] liste[j &#43; 1] = liste[j] j -= 1 j &#43;= 1 liste[j &#43; 1] = valeur liste[j] = valeur return liste return liste.copy() Utiliser cette fonction pour trier chacune des listes suivantes: L1 = [19, 8, 10, 1, 2, 50, 3, 5] L2 = [&#39;z&#39;, &#39;y&#39;, &#39;x&#39;, &#39;w&#39;, &#39;v&#39;, &#39;u&#39;] Ecrire une fonction est_triee pour vérifier si les éléments d’une liste sont placés dans l’ordre croissant. Utiliser la base suivante pour la fonction: (et compléter):">
     <meta property="og:url" content="//localhost:1313/nsi/algorithmes/page81/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="tri à partir d&#39;une cle :: allophysique">
-    <meta property="og:description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
-Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots français pli07.zip. Dézipper ce fichier dans un dossier que vous appelerez recherche_et_tri. (2) Ouvrir un nouveau fichier python dans le même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes): import random,time (3) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (4) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. with open(&#39;pli07.txt&#39;, encoding=&#39;utf-8&#39;) as f: for mot in f.read().splitlines(): mots.append(mot) (5) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (6) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (7) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta property="og:title" content="tris quadratiques et tri à partir d&#39;une cle :: allophysique">
+    <meta property="og:description" content="Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents.
+Partie 1: découvrir le tri par insertion et par séléction Tri par insertion Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de tri par insertion qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter. def tri_insertion(liste): for i in range(1, len(liste)): for i in range(len(liste)-1): valeur = liste[i] valeur = liste[0] j = i j = i - 1 while j &gt;= 0 and liste[j] &gt; valeur: while j &gt; 0 and liste[j] &gt;= valeur: liste[j] = liste[j-1] liste[j &#43; 1] = liste[j] j -= 1 j &#43;= 1 liste[j &#43; 1] = valeur liste[j] = valeur return liste return liste.copy() Utiliser cette fonction pour trier chacune des listes suivantes: L1 = [19, 8, 10, 1, 2, 50, 3, 5] L2 = [&#39;z&#39;, &#39;y&#39;, &#39;x&#39;, &#39;w&#39;, &#39;v&#39;, &#39;u&#39;] Ecrire une fonction est_triee pour vérifier si les éléments d’une liste sont placés dans l’ordre croissant. Utiliser la base suivante pour la fonction: (et compléter):">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI term">
     <meta property="article:modified_time" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="name" content="tri à partir d&#39;une cle :: allophysique">
-    <meta itemprop="description" content="Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.
-Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots français pli07.zip. Dézipper ce fichier dans un dossier que vous appelerez recherche_et_tri. (2) Ouvrir un nouveau fichier python dans le même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes): import random,time (3) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (4) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. with open(&#39;pli07.txt&#39;, encoding=&#39;utf-8&#39;) as f: for mot in f.read().splitlines(): mots.append(mot) (5) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (6) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (7) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:">
+    <meta itemprop="name" content="tris quadratiques et tri à partir d&#39;une cle :: allophysique">
+    <meta itemprop="description" content="Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents.
+Partie 1: découvrir le tri par insertion et par séléction Tri par insertion Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de tri par insertion qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter. def tri_insertion(liste): for i in range(1, len(liste)): for i in range(len(liste)-1): valeur = liste[i] valeur = liste[0] j = i j = i - 1 while j &gt;= 0 and liste[j] &gt; valeur: while j &gt; 0 and liste[j] &gt;= valeur: liste[j] = liste[j-1] liste[j &#43; 1] = liste[j] j -= 1 j &#43;= 1 liste[j &#43; 1] = valeur liste[j] = valeur return liste return liste.copy() Utiliser cette fonction pour trier chacune des listes suivantes: L1 = [19, 8, 10, 1, 2, 50, 3, 5] L2 = [&#39;z&#39;, &#39;y&#39;, &#39;x&#39;, &#39;w&#39;, &#39;v&#39;, &#39;u&#39;] Ecrire une fonction est_triee pour vérifier si les éléments d’une liste sont placés dans l’ordre croissant. Utiliser la base suivante pour la fonction: (et compléter):">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="1155">
-    <title>tri à partir d&#39;une cle :: allophysique</title>
-    <link href="/images/logo.png?1791647948" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1791647948" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1791647948" defer></script>
-    <script src="/js/search-lunr.js?1791647948" defer></script>
-    <script src="/js/search.js?1791647948" defer></script>
+    <meta itemprop="wordCount" content="1505">
+    <title>tris quadratiques et tri à partir d&#39;une cle :: allophysique</title>
+    <link href="/images/logo.png?1791733626" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1791733626" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1791733626" defer></script>
+    <script src="/js/search-lunr.js?1791733626" defer></script>
+    <script src="/js/search.js?1791733626" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1791647948";
+      window.relearn.index_js_url="/searchindex.en.js?1791733626";
     </script>
-    <script src="/js/lunr/lunr.min.js?1791647948" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1791647948" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1791647948" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1791647948" defer></script>
+    <script src="/js/lunr/lunr.min.js?1791733626" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1791733626" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1791733626" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1791733626" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1791647948" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791647948" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791647948" rel="stylesheet">
-    <link href="/css/theme.css?1791647948" rel="stylesheet">
-    <link href="/css/format-html.css?1791647948" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1791733626" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791733626" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791733626" rel="stylesheet">
+    <link href="/css/theme.css?1791733626" rel="stylesheet">
+    <link href="/css/format-html.css?1791733626" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -119,8 +119,12 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
+    <li><a href="#tri-par-insertion">Tri par insertion</a></li>
+    <li><a href="#tri-par-séléction">Tri par séléction</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#mélanger-un-liste-de-mots">Mélanger un liste de mots</a></li>
-    <li><a href="#fonction-est_triee">Fonction <code>est_triee</code></a></li>
     <li><a href="#trier-le-dictionnaire-de-mots">Trier le dictionnaire de mots</a></li>
   </ul>
 
@@ -136,7 +140,7 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tri à partir d&#39;une cle</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/algorithmes/index.html"><span itemprop="name">algorithmes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">tris quadratiques et tri à partir d&#39;une cle</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
@@ -167,9 +171,77 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
   <header class="headline">
   </header>
 
-<h1 id="tri-à-partir-dune-cle">tri à partir d&#39;une cle</h1>
+<h1 id="tris-quadratiques-et-tri-à-partir-dune-cle">tris quadratiques et tri à partir d&#39;une cle</h1>
 
-<h1 id="partie-1-appliquer-un-algorithme-de-tri">Partie 1: Appliquer un algorithme de tri<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em>Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents</em>.</p>
+<h1 id="partie-1-découvrir-le-tri-par-insertion-et-par-séléction">Partie 1: découvrir le tri par insertion et par séléction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="tri-par-insertion">Tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ol>
+<li>Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de <em>tri par insertion</em> qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l&rsquo;indentation est à adapter.</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_insertion</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="n">valeur</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">valeur</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">valeur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">valeur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeur</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">valeur</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">liste</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">liste</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></span></span></code></pre></div>
+<ol start="2">
+<li>Utiliser cette fonction pour trier chacune des listes suivantes:</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<ol start="3">
+<li>Ecrire une fonction <code>est_triee</code> pour vérifier si les éléments d&rsquo;une liste sont placés dans l&rsquo;ordre croissant.</li>
+</ol>
+<p>Utiliser la base suivante pour la fonction: (et compléter):</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
+<ol start="4">
+<li>Ajouter un test d&rsquo;assertion pour chacune de ces listes pour vérifier que la fonction a bien effectué le tri sur ces listes.</li>
+</ol>
+<h2 id="tri-par-séléction">Tri par séléction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ol>
+<li>Ecrire la fonction <code>tri_selection</code> à partir des lignes suivantes (<em>idem question 1 plus haut</em>)</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">tri_selection</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="n">indice_min</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">indice_min</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">liste</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">liste</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl"><span class="n">indice_min</span> <span class="o">=</span> <span class="n">j</span>
+</span></span><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="n">indice_min</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">],</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">liste</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">liste</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">liste</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">liste</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></span></span></code></pre></div>
+<ol start="2">
+<li>Utiliser cette fonction pour trier chacune des listes suivantes:</li>
+</ol>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">L2</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span></span></span></code></pre></div>
+<ol start="3">
+<li>Ajouter les tests d&rsquo;assertion pour vérifier que la fonction a bien effectué le tri sur ces listes.</li>
+</ol>
+<h1 id="partie-2-appliquer-un-algorithme-de-tri">Partie 2: Appliquer un algorithme de tri<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.</p>
 <h2 id="mélanger-un-liste-de-mots">Mélanger un liste de mots<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <ul>
@@ -178,7 +250,7 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span><span class="o">,</span><span class="nn">time</span></span></span></code></pre></div>
 <ul>
-<li>(3) Ajouter au script python les <strong>fonctions de tri</strong> vues dans le cours: <a href="../page8/">Lien vers le cours</a></li>
+<li>(3) Ajouter au script python les <strong>fonctions de tri</strong> vues dans le cours: <a href="/python_avance/algos/page3/index.html">Lien vers le cours</a></li>
 <li>(4) importer une liste de mots d&rsquo;un dictionnaire non accentué. Appeler cette liste <code>mots</code>.</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;pli07.txt&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
@@ -197,18 +269,13 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
 </span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">L</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># exemple d&#39;affichage</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span></span></span></code></pre></div>
-<h2 id="fonction-est_triee">Fonction <code>est_triee</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <ul>
-<li>(8) Programmer une fonction <code>est_triee</code> qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé, sans avoir à parcourir celle-ci après traitement.</li>
-</ul>
-<p>Utiliser la base suivante pour la fonction: (et compléter):</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">est_triee</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="o">...</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="kc">False</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="o">...</span></span></span></code></pre></div>
-<ul>
-<li>(9) Utiliser cette fonction pour vérifier que la liste <code>mots</code> est mélangée:</li>
+<li>
+<p>(8) Programmer une fonction <code>est_triee</code> qui vérifie si la liste est bien triée. Cette fonction sera utile pour contrôler que la fonction  de tri effectue bien le tri demandé. <em>(voir partie 1)</em></p>
+</li>
+<li>
+<p>(9) Utiliser cette fonction pour vérifier que la liste <code>mots</code> est mélangée:</p>
+</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="n">est_triee</span><span class="p">(</span><span class="n">mots</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
@@ -248,7 +315,7 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
 <ul>
 <li><strong>Question 1:</strong> Mesurer le temps mis pour trier la liste de mots à l&rsquo;aide du tri par insertion. (faire plusieurs essais).</li>
 </ul>
-<p><strong>Remarque</strong>: Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le tri par insertion puis par selection doit être realisé sur la MEME liste si vous voulez comparer les durées de traitement.</p>
+<p><strong>Remarque</strong>: <em>Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le <strong>tri par insertion</strong> puis par <strong>selection</strong> doit être realisé sur la <strong>MEME liste</strong> si vous voulez comparer les durées de traitement.</em></p>
 <p>On <em>rappelle</em> que la mesure du temps peut être réalisée de la manière suivante:</p>
 <ul>
 <li>Pour le tri par insertion:</li>
@@ -258,9 +325,14 @@ Mélanger un liste de mots (1) Télécharger et placer le fichier index de mots 
 </span></span><span class="line"><span class="cl"><span class="n">stop_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="n">interval1</span> <span class="o">=</span> <span class="n">stop_time</span> <span class="o">-</span> <span class="n">start_time</span></span></span></code></pre></div>
 <ul>
-<li><strong>Question 2:</strong> Mesurer le temps mis pour trier la liste de mots à l&rsquo;aide du tri par selection. (faire plusieurs essais). <strong>Comparer</strong> le temps mis par les 2 algorithmes de tri. <strong>Conclure</strong>.</li>
+<li>
+<p><strong>Question 2:</strong> Mesurer le temps mis pour trier la liste de mots à l&rsquo;aide du tri par selection. (faire plusieurs essais). <strong>Comparer</strong> le temps mis par les 2 algorithmes de tri. <strong>Conclure</strong>.</p>
+</li>
+<li>
+<p><strong>Question 3:</strong> Evaluer la complexité algorithmique pour chacun de ces algorithmes. Les résultats mesurés sont ils conformes à ce qui est attendu?</p>
+</li>
 </ul>
-<h1 id="partie-2-tp-tri-à-partir-dune-clé">Partie 2: TP tri à partir d&rsquo;une clé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h1 id="partie-3-tp-tri-à-partir-dune-clé">Partie 3: TP tri à partir d&rsquo;une clé<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <p>On peut réaliser un tri à l&rsquo;aide d&rsquo;une <strong>clé</strong>. Les objets (les lignes d&rsquo;un fichier <em>csv</em>) contiennent ainsi des valeurs sur plusieurs colonnes. On peut choisir l&rsquo;une de ces colonnes pour réaliser le tri.</p>
 <p>On prendra pour exemple le fichier du classement UEFA des équipes feminines sur plusieurs années. Le tableau est consultable à la page de l&rsquo;<a href="https://fr.uefa.com/nationalassociations/uefarankings/womensclub/#/yr/2022" rel="external">UEFA.com</a></p>
 <h2 id="import-du-fichier-csv">import du fichier csv<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -481,7 +553,7 @@ print(teams[0])
             <li class="parent " data-nav-id="/nsi/algorithmes/index.html"><input type="checkbox" id="R-section-53e9621987c334bde1f997f8a208a286" aria-controls="R-subsections-53e9621987c334bde1f997f8a208a286" checked><label for="R-section-53e9621987c334bde1f997f8a208a286"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu algorithmes</span></label><a class="padding default-animation" href="/nsi/algorithmes/index.html">algorithmes<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-53e9621987c334bde1f997f8a208a286" class="collapsible-menu">
             <li class="" data-nav-id="/nsi/algorithmes/page1/index.html"><a class="padding" href="/nsi/algorithmes/page1/index.html">Complexité<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/algorithmes/page8/index.html"><a class="padding" href="/nsi/algorithmes/page8/index.html">algorithmes de tri<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active hidden " data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
+            <li class="active hidden " data-nav-id="/nsi/algorithmes/page81/index.html"><a class="padding" href="/nsi/algorithmes/page81/index.html">tris quadratiques et tri à partir d&#39;une cle<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/algorithmes/page5/index.html"><a class="padding" href="/nsi/algorithmes/page5/index.html">diviser pour regner<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/algorithmes/page9/index.html"><a class="padding" href="/nsi/algorithmes/page9/index.html">rotation quart de tour<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/algorithmes/page6/index.html"><a class="padding" href="/nsi/algorithmes/page6/index.html">algorithmes avancés<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -749,9 +821,9 @@ print(teams[0])
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791647948"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791647948" defer></script>
-    <script src="/js/theme.js?1791647948" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791733626"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791733626" defer></script>
+    <script src="/js/theme.js?1791733626" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
