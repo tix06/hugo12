@@ -40,7 +40,7 @@ Pour un algorithme de complexité O(n.log(n)), la durée de tri d'un ensemble de
 
 # Le tri par insertion
 ## Principe
-Pour cet algorithme, trier, c’est déplacer des éléments, et y insérer l’élément rangé, depuis le debut déjà trié de la liste, jusqu’à la fin. C'est un peu la manière avec laquelle on range les cartes à jouer au debut d'une partie:
+Pour cet algorithme, trier, c’est déplacer chaque élément, en suivant un ordre de la gauche vers la droite, et l'insérer dans la partie déjà triée (à sa gauche), à sa place. C'est un peu la manière avec laquelle on range les cartes à jouer au debut d'une partie:
 
 {{< img src="../images/jeu_cartes.jpeg" caption="main d'une partie de cartes" >}}
 
@@ -200,7 +200,7 @@ La liste prend successivement les valeurs:
 
 
 ## Complexité
-On voit que le nombre d'operations de comparaisons est constant quelle que soit la liste à trier. Alors que l'affectation est aleatoire, et depend de la position des elements. On decide donc de compter le nombre de comparaisons. 
+On peut compter le nombre de déplacements / affectations réalisés pour trier les valeurs de la liste, en fonction de la valeur `i`. Pour simplifier, on compte `N` = le nombre d'opérations d'affectations dans la boucle interne.
 
 Pour l'exemple ci-dessus, ce nombre T(8) = 2 + 3 +' 4 + 5 + 6 + 7 = 27
 

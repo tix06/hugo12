@@ -37,6 +37,21 @@ L1 = [19, 8, 10, 1, 2, 50, 3, 5]
 L2 = ['z', 'y', 'x', 'w', 'v', 'u']
 ```
 
+> Ajouter une instruction dans la fonction `tri_insertion` pour suivre l'évolution du tri à chaque tour de la boucle externe.
+
+> Recopier et completer le tableau de suivi (cahier):
+
+| tour | `i` |  `L1` |
+|--- | --- |--- |
+| debut du tour 1 | 1 | `[19, 8, 10, 1, 2, 50, 3, 5]` |
+| fin du tour 1 |  1 |  |
+| fin du tour 2 |  2 |  |
+| fin du tour 3 |  3 |  |
+| fin du tour 4 |  4 |  |
+| fin du tour 5 |  5 |  |
+| fin du tour 6 |  6 |  |
+| fin du tour 7 |  7 |  |
+
 3. Ecrire une fonction `est_triee` pour vérifier si les éléments d'une liste sont placés dans l'ordre croissant.
 
 Utiliser la base suivante pour la fonction: (et compléter):
@@ -79,6 +94,22 @@ return liste.copy()
 L1 = [19, 8, 10, 1, 2, 50, 3, 5]
 L2 = ['z', 'y', 'x', 'w', 'v', 'u']
 ```
+
+> Ajouter une instruction dans la fonction `tri_insertion` pour suivre l'évolution du tri à chaque tour de la boucle externe.
+
+> Recopier et completer le tableau de suivi:
+
+| tour | `i` |  `L1` |
+|--- | --- |--- |
+| debut du tour 1 | 0 | `[19, 8, 10, 1, 2, 50, 3, 5]` |
+| fin du tour 1 |  0 |  |
+| fin du tour 2 |  1 |  |
+| fin du tour 3 |  2 |  |
+| fin du tour 4 |  3 |  |
+| fin du tour 5 |  4 |  |
+| fin du tour 6 |  5 |  |
+
+**Question 1**: le tableau est-il différent de celui obtenu pour le tri par insertion? Quelles sont ces différences?
 
 3. Ajouter les tests d'assertion pour vérifier que la fonction a bien effectué le tri sur ces listes.
 
@@ -162,7 +193,7 @@ mots_melanges = ... .copy()
 
 Vous allez tester maintenant vos fonctions de tri sur la liste de *mots*, une fois celle-ci mélangée et placée dans une **copie**.
 
-* **Question 1:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par insertion. (faire plusieurs essais).
+* **Question 2:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par insertion. (faire plusieurs essais).
 
 **Remarque**: *Si vous voulez comparer 2 algorithmes de tri en place, sur la même liste, il faudra utiliser une copie par valeur de la liste mélangée. Le **tri par insertion** puis par **selection** doit être realisé sur la **MEME liste** si vous voulez comparer les durées de traitement.*
 
@@ -178,9 +209,9 @@ stop_time = time.time()
 interval1 = stop_time - start_time
 ```
 
-* **Question 2:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par selection. (faire plusieurs essais). **Comparer** le temps mis par les 2 algorithmes de tri. **Conclure**.
+* **Question 3:** Mesurer le temps mis pour trier la liste de mots à l'aide du tri par selection. (faire plusieurs essais). **Comparer** le temps mis par les 2 algorithmes de tri. **Conclure**.
 
-* **Question 3:** Evaluer la complexité algorithmique pour chacun de ces algorithmes. Les résultats mesurés sont ils conformes à ce qui est attendu?
+* **Question 4:** Evaluer la complexité algorithmique pour chacun de ces algorithmes. Les résultats mesurés sont ils conformes à ce qui est attendu?
 
 # Partie 3: TP tri à partir d'une clé
 On peut réaliser un tri à l'aide d'une **clé**. Les objets (les lignes d'un fichier *csv*) contiennent ainsi des valeurs sur plusieurs colonnes. On peut choisir l'une de ces colonnes pour réaliser le tri.
@@ -285,14 +316,14 @@ Si vous affichez cette liste, elle presente 2 inconvenients:
 
 > 5. Modifier la fonction de tri pour réaliser un tri par l'**élément le plus grand** d'abord.
 
-* **Question 1:** Quel est le classement UEFA des équipes entre la $1^{ere}$ et la $5^e$ equipe? 
+* **Question 5:** Quel est le classement UEFA des équipes entre la $1^{ere}$ et la $5^e$ equipe? 
 
 ## Classement par coefficient des associations: colonne 8
 Le classement par *coefficient des associations* ou des pays prend en compte les résultats de tous les clubs d'une association. Il est utilisé pour déterminer le nombre de clubs que pourra engager une association dans les compétitions de l'UEFA les saisons suivantes. C'est la valeur de la colonne 8.
 
 > 6. Classer les équipes par coefficient des associations.
 
-* **Question 2:** Quel est le nouveau classement des équipes entre la $1^{ere}$ et la $5^e$ equipe? 
+* **Question 6:** Quel est le nouveau classement des équipes entre la $1^{ere}$ et la $5^e$ equipe? 
 
 ## Nettoyer les résultats
 On souhaite obtenir l'affichage suivant, avec seulement les colonnes *equipe, pays, indice uefa*:

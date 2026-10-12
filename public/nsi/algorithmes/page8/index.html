@@ -21,29 +21,29 @@
     <meta itemprop="name" content="algorithmes de tri :: allophysique">
     <meta itemprop="description" content="tris quadratiques, tri fusion, complexite">
     <meta itemprop="dateModified" content="2026-06-22T18:53:05+02:00">
-    <meta itemprop="wordCount" content="1668">
+    <meta itemprop="wordCount" content="1674">
     <title>algorithmes de tri :: allophysique</title>
-    <link href="/images/logo.png?1791733626" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1791733626" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1791733626" defer></script>
-    <script src="/js/search-lunr.js?1791733626" defer></script>
-    <script src="/js/search.js?1791733626" defer></script>
+    <link href="/images/logo.png?1791825751" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1791825751" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1791825751" defer></script>
+    <script src="/js/search-lunr.js?1791825751" defer></script>
+    <script src="/js/search.js?1791825751" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1791733626";
+      window.relearn.index_js_url="/searchindex.en.js?1791825751";
     </script>
-    <script src="/js/lunr/lunr.min.js?1791733626" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1791733626" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1791733626" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1791733626" defer></script>
+    <script src="/js/lunr/lunr.min.js?1791825751" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1791825751" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1791825751" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1791825751" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1791733626" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791733626" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791733626" rel="stylesheet">
-    <link href="/css/theme.css?1791733626" rel="stylesheet">
-    <link href="/css/format-html.css?1791733626" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1791825751" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791825751" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791825751" rel="stylesheet">
+    <link href="/css/theme.css?1791825751" rel="stylesheet">
+    <link href="/css/format-html.css?1791825751" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -273,7 +273,7 @@
 <p><em>tableau issu de <a href="https://www.podcastscience.fm/dossiers/2014/09/04/les-tris/" rel="external">podcastscience.fm</a></em></p>
 <h1 id="le-tri-par-insertion">Le tri par insertion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Pour cet algorithme, trier, c’est déplacer des éléments, et y insérer l’élément rangé, depuis le debut déjà trié de la liste, jusqu’à la fin. C&rsquo;est un peu la manière avec laquelle on range les cartes à jouer au debut d&rsquo;une partie:</p>
+<p>Pour cet algorithme, trier, c’est déplacer chaque élément, en suivant un ordre de la gauche vers la droite, et l&rsquo;insérer dans la partie déjà triée (à sa gauche), à sa place. C&rsquo;est un peu la manière avec laquelle on range les cartes à jouer au debut d&rsquo;une partie:</p>
 
 <figure >
     
@@ -549,7 +549,7 @@ La liste prend successivement les valeurs:</p>
 </table>
 <h2 id="tri-à-laide-dune-clé-voir-tp">Tri à l&rsquo;aide d&rsquo;une clé: <a href="/docs/NSI/algorithmes/page81/">voir TP</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h2 id="complexité-1">Complexité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>On voit que le nombre d&rsquo;operations de comparaisons est constant quelle que soit la liste à trier. Alors que l&rsquo;affectation est aleatoire, et depend de la position des elements. On decide donc de compter le nombre de comparaisons.</p>
+<p>On peut compter le nombre de déplacements / affectations réalisés pour trier les valeurs de la liste, en fonction de la valeur <code>i</code>. Pour simplifier, on compte <code>N</code> = le nombre d&rsquo;opérations d&rsquo;affectations dans la boucle interne.</p>
 <p>Pour l&rsquo;exemple ci-dessus, ce nombre T(8) = 2 + 3 +&rsquo; 4 + 5 + 6 + 7 = 27</p>
 <p>De manière plus générale: $T(n) = \tfrac{n \times (n-1)}{2}$, ce qui fait une complexité $O(n^2)$</p>
 <h1 id="le-tri-fusion">Le tri fusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
@@ -1014,9 +1014,9 @@ La liste prend successivement les valeurs:</p>
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791733626"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791733626" defer></script>
-    <script src="/js/theme.js?1791733626" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791825751"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791825751" defer></script>
+    <script src="/js/theme.js?1791825751" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
