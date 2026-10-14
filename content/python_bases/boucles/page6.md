@@ -15,9 +15,7 @@ Placer les 5 instructions suivantes, dans le bon ordre, et avec la bonne indenta
 
 ```python
 if i % 2 == 0:
-range(100):
-for i 
-in 
+for i in range(100):
 print(i)
 ```
 
@@ -30,22 +28,24 @@ Le programme devra afficher les valeurs:
 100
 ```
 
-
+***question a:*** Recopier le script une fois que vous avez établi celui-ci.
 
 2. **Table de 7**
 
-* version a: Réaliser un programme utilisant une boucel bornée `for`, qui affiche (fonction `print`) les 10 premières valeurs de la table de 7
+* version a: Réaliser un programme utilisant une **boucle bornée** `for`, qui affiche, avec la fonction `print`, les 10 premières valeurs de la table de 7. 
+
+*Astuce:* Utiliser le variant i pour faire `7*i`
 
 * version b: Ecrire un nouveau programme, utilisant cette fois une boucle non bornée `while` pour afficher  les 10 premières valeurs de la table de 7:
 
 
-
+<!--
 *Rappel:*
 
 > La construction en bloc vous est déjà familière si vous avez utilisé un langage de blocs comme scratch ou blocky.  L’instruction while montre cette même disposition avec l'indentation.
+-->
 
-
-{{< img src="../images/bloc4.png" caption="blocs python à compléter" >}}
+{{< img src="../images/bloc4.png" width="400" caption="boucle while" >}}
 
 > Pensez à ...:
 
@@ -57,7 +57,9 @@ Le programme devra afficher les valeurs:
 
 L'équipe de France a remporté les trophées suivants: Coupe des Confédérations (2001, 2003), Jeux olympiques (1984), son championnat continental (1984, 2000)
 
-Ecrire un script python qui utilise des listes et des boucles bornées pour afficher tous les trophées remportés par l'équipe de France:
+On peut placer ces valeurs dans une liste `L = [1984,2000,...]`
+
+> Ecrire un script python qui utilise une liste et une boucle bornée pour afficher tous les trophées remportés par l'équipe de France:
 
 ```
 l'equipe de France a remporté un trophée en 1984
@@ -71,21 +73,27 @@ l'equipe de France a remporté un trophée en 2000
 
 Le quotient de la division de a par b est égal au nombre de fois N qu'il faut soustraire b à a jusqu'à ce que l'on ait a < b.
 
-a. D'après cet énoncé, va t-on utiliser une boucle bornée, ou bien un boucle non bornée?
+***question b.:*** D'après cet exercice, **la division euclidienne**, va t-on utiliser une boucle bornée, ou bien un boucle non bornée?
 
-b. Compléter le script de la division euclidienne de a par b
+
+
+> Vous devrez écrire le programme de la division euclidienne de a par b, en utilisant uniquement des lignes de code choisies parmi les lignes suivantes. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter.
 
 ```python
 a = int(input('entrer la valeur de a :'))
 b = int(input('entrer la valeur de b :'))
 N = 0
-while a >=b:
-  ...
-  ...
-print(f"a = {a}, N = {N}")
+while a >= b:
+while a > b:
+a = a - b
+b = b - a
+N = N + 1
+N = N - 1
+print(f"La division de a={a}, par b={b}: quotient={N} et reste={a}")
+print(f"La division de a={a}, par b={b}: quotient={a} et reste={N}")
 ``` 
 
-c. Quel est le quotient entier de la division de 2024 par 7? Quel est le reste?
+***question c.:*** Quel est le quotient entier de la division de 2024 par 7? Quel est le reste?
 
 5. **Compter** le nombre de **a** dans *abracadabra*:
 
@@ -104,10 +112,12 @@ print(f"...")
 
 b. Modifier le programme pour qu'il compte aussi les **A** majuscules.
 
-# Les fonctions natives du langage python
+***question d.:*** recopier le script lorsque vous l'avez obtenu.
+
+## Les fonctions natives du langage python
 Tous les langages de programmation fournissent un large ensemble de fonctions prêtes à être utilisées. Nous avons déjà rencontré diverses fonctions prédéfinies, de la librairie standart : `print`, `input`, `range`.
 
-> Tester dans un notebook, ou en console les fonctions natives suivantes:
+> Tester en console les fonctions natives suivantes:
 
 ```python
 > bin(129)
@@ -123,12 +133,14 @@ Dans ces 2 exemples, on a utilisé un ou plusieurs arguments, positionnés entre
 
 *Remarquer que ces arguments sont séparés par une virgule.*
 
-## Exercices
+
 1. **Convertir en binaire**
 
-Utiliser la fonction `bin` pour convertir les nombres suivants: 65400, 31654, 1026
+a. Dans le *shell python*: Utiliser la fonction `bin` pour convertir en binaire les nombres suivants: 65400, 31654, 1026
 
-*Astuce pour **automatiser** le calcul*: On pourra placer ces valeurs dans une liste et utiliser une boucle bornée `for`:
+***question e.:*** Quel est le resultat obtenu pour 65400?
+
+b. Automatiser le calcul: Placer ces valeurs dans une liste et utiliser une boucle bornée `for`:
 
 ```python
 L = [65400, 31654, 1026]
@@ -136,26 +148,44 @@ for nombre in L:
     print(..)
 ```
 
-2. **Convertir en ascii**
+***question f.:*** Recopier la ligne 3 que vous avez complétée.
 
-La fonction `chr` retourne le caractère ascii correspondant à l'entier (0..127) placé en argument:
+2. **Convertir en ascii**
+Le code ascii permet de représenter les caractères `"abcdef...z0123..9"` en un nombre entre 0 et 127. 
+
+La fonction `ord()` permet de définir le nombre associé au caractère. Et la fonction `chr()` retourne le caractère ascii correspondant à l'entier (0..127) placé en argument:
 
 ```python
+> ord('a')
+97
 > chr(97)
 'a'
 ```
 
-> Utiliser cette fonction `chr` pour décoder le message, et trouver le tresor derrière l'une de ces portes...
+***question g.:*** Quel sont les caractère correspondants aux rangs ascii 110, puis 39 et enfin 111?
+
+> Utiliser la fonction `chr` pour décoder le message, et trouver le tresor derrière l'une de ces portes...
 
 {{< img src="../images/miniature.png" link="/pdf/NSI_1/D1_les_3_portes_ascii.pdf" caption="cliquer pour agrandir" >}}
+
+```
+message="110 39 111 117 118 114 101 122 32 115 117 114 116 111 117
+116 32 112 97 115 32 108 97 32 112 111 114 116 101 32 100
+101 32 103 97 117 99 104 101"
+```
 
 On pourra s'aider du script suivant:
 
 ```python
-L = [110, 39, 111]
+message = "110 39 111"
+# decoupe du message pour créer une liste avec .split()
+L = message.split()
+# L = [110, 39, 111]
 for n in L:
     print(...)
 ```
+
+***question h.:*** Quel est le message?
 
 # Liens
 

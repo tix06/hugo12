@@ -1,5 +1,6 @@
 ---
 Title: boucles
+titleHidden: true
 description: cours sur les boucles, bornées et non bornées, notion d'itérable, fonctions natives
 weight: 8
 ---
@@ -32,21 +33,34 @@ for i in range(n):
 
 On peut représenter ce script avec des modules à assembler type *scratch* ou *blocky*):
 
-{{< img src="../images/bloc1.png" caption="analogie avec des briques de construction du programme" >}}
+{{< img src="../images/bloc1.png" width="400" caption="analogie avec des briques de construction du programme" >}}
 
 ## Remarque
 **Construction de la boucle bornée**
 
-  * Le bloc d'instruction sera executé n fois. Celui-ci peut contenir une ou plusieurs instructions, du moment qu'elles sont bien positionnées dans le bloc.
+  * Le bloc d'instruction sera **executé n fois**. Celui-ci peut contenir une ou plusieurs instructions, du moment qu'elles sont bien positionnées dans le bloc.
   * En *Python*, le **bloc** est identifié par une **indentation**: un retrait par rapport au bord gauche, comprenant 2 espaces (ou 4).
   * Pour sortir du bloc, on élimine l'indentation (on revient sur le bord gauche)
 
-  {{< img src="../images/bloc2.png" caption="bloc de retour à la fin de la boucle" >}}
+  {{< img src="../images/bloc2.png" width="400" caption="bloc de retour à la fin de la boucle" >}}
 
   * La fonction `range(n)` renvoie la liste des entiers de 0 à n-1. C’est un principe général en informatique, on commence toujours à compter à partir de 0, et il faut donc s’arrêter à **n-1 pour effectuer n fois** la boucle.
   * Pour chaque itération, le variant `i` prend une nouvelle valeur de l'ensemble `{0,1,2,... n-1}`, et peut être utilisé dans le bloc d'instructions. 
   * On peut choisir n'importe quel nom pour le variant, pas seulement `i`.
   * Contrairement à la boucle non bornée `while`, le programmeur ne s’occupe pas de faire varier i à chaque itération. Cela ce fait tout seul.
+
+
+*Exemple:*
+
+```python
+for i in range(2):
+    print(i)
+# affiche
+0
+1
+```
+
+La boucle est executée 2 fois, et affiche 0 puis 1. Pas 2.
 
 ## Boucle bornée et séquence
 L'instruction utilisant le mot-clé `for` suit la construction suivante:
@@ -120,10 +134,10 @@ On peut placer autant de valeurs que l'on souhaite dans une liste.
 # Boucle bornée et non bornée
 Pour la boucle bornée `for`, il n'est pas necessaire d'ajouter une instruction dans le bloc pour que le *variant* change de valeur à chaque itération. Cela se fait *tout seul*, à chaque fois que le programme revient sur l'instruction `for`.
 
-{{< img src="../images/bloc3.png" caption="modification du variant i à chaque itération" >}}
+{{< img src="../images/bloc3.png" width="500" caption="modification du variant i à chaque itération" >}}
 
 ## Exemples
-* *Exemple 1*: afficher le variant de boucle `i`
+**Exemple 1**: afficher le variant de boucle `i`
 
 ```python
 # Boucle bornée
@@ -137,6 +151,8 @@ for i in range(3):
 
 
 *Remarque: la fonction `range(3)` va créer une liste itérable constituée des valeurs 0, 1, 2. Ce sont les valeurs prises successivement par le variant `i` dans `for i in range(3)`*
+
+Voici le programme équivalent, utilisant une boucle NON BORNEE while:
 
 ```python
 # Boucle non bornée
@@ -157,7 +173,7 @@ while i<3:
 * *faire varier le variant dans la boucle `while`*, `i = i+1`
 
 
-* *Exemple 2*: Ce variant peut être utilisé pour une formule arithmétique, à l'intérieur de la boucle:
+**Exemple 2**: Ce variant peut être utilisé pour une formule mathématique, à l'intérieur de la boucle:
 
 ```python
 # boucle bornée

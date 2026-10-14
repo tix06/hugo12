@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP3 boucles :: allophysique">
     <meta itemprop="description" content="boucles bornées et non bornées, notion d&#39;itérable">
     <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="675">
+    <meta itemprop="wordCount" content="881">
     <title>TP3 boucles :: allophysique</title>
-    <link href="/images/logo.png?1791215961" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1791215961" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1791215961" defer></script>
-    <script src="/js/search-lunr.js?1791215961" defer></script>
-    <script src="/js/search.js?1791215961" defer></script>
+    <link href="/images/logo.png?1791997451" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1791997451" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1791997451" defer></script>
+    <script src="/js/search-lunr.js?1791997451" defer></script>
+    <script src="/js/search.js?1791997451" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1791215961";
+      window.relearn.index_js_url="/searchindex.en.js?1791997451";
     </script>
-    <script src="/js/lunr/lunr.min.js?1791215961" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1791215961" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1791215961" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1791215961" defer></script>
+    <script src="/js/lunr/lunr.min.js?1791997451" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1791997451" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1791997451" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1791997451" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1791215961" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791215961" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791215961" rel="stylesheet">
-    <link href="/css/theme.css?1791215961" rel="stylesheet">
-    <link href="/css/format-html.css?1791215961" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1791997451" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1791997451" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1791997451" rel="stylesheet">
+    <link href="/css/theme.css?1791997451" rel="stylesheet">
+    <link href="/css/format-html.css?1791997451" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -116,10 +116,7 @@
 <nav class="TableOfContents">
   <ul>
     <li><a href="#exercices">Exercices</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#exercices-1">Exercices</a></li>
+    <li><a href="#les-fonctions-natives-du-langage-python">Les fonctions natives du langage python</a></li>
   </ul>
 
   <ul>
@@ -178,42 +175,44 @@
 </ol>
 <p>Placer les 5 instructions suivantes, dans le bon ordre, et avec la bonne indentation pour afficher tous les nombres pairs entre 0 et 100:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl"><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> 
-</span></span><span class="line"><span class="cl"><span class="ow">in</span> 
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></span></span></code></pre></div>
 <p>Le programme devra afficher les valeurs:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">0
 </span></span><span class="line"><span class="cl">2
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">100</span></span></code></pre></div>
+<p><em><strong>question a:</strong></em> Recopier le script une fois que vous avez établi celui-ci.</p>
 <ol start="2">
 <li><strong>Table de 7</strong></li>
 </ol>
 <ul>
-<li>
-<p>version a: Réaliser un programme utilisant une boucel bornée <code>for</code>, qui affiche (fonction <code>print</code>) les 10 premières valeurs de la table de 7</p>
-</li>
-<li>
-<p>version b: Ecrire un nouveau programme, utilisant cette fois une boucle non bornée <code>while</code> pour afficher  les 10 premières valeurs de la table de 7:</p>
-</li>
+<li>version a: Réaliser un programme utilisant une <strong>boucle bornée</strong> <code>for</code>, qui affiche, avec la fonction <code>print</code>, les 10 premières valeurs de la table de 7.</li>
 </ul>
-<p><em>Rappel:</em></p>
-<blockquote>
-<p>La construction en bloc vous est déjà familière si vous avez utilisé un langage de blocs comme scratch ou blocky.  L’instruction while montre cette même disposition avec l&rsquo;indentation.</p>
-</blockquote>
+<p><em>Astuce:</em> Utiliser le variant i pour faire <code>7*i</code></p>
+<ul>
+<li>version b: Ecrire un nouveau programme, utilisant cette fois une boucle non bornée <code>while</code> pour afficher  les 10 premières valeurs de la table de 7:</li>
+</ul>
+<!--
+*Rappel:*
+
+> La construction en bloc vous est déjà familière si vous avez utilisé un langage de blocs comme scratch ou blocky.  L’instruction while montre cette même disposition avec l'indentation.
+-->
 
 <figure >
     
         <img src="../images/bloc4.png"
         
-        alt="blocs python à compléter" />
+            width="400"
+            
+        
+        alt="boucle while" />
     
     
     <figcaption>
         
         <p>
-            blocs python à compléter
+            boucle while
             
                 
             
@@ -233,7 +232,10 @@
 <li><strong>Parcourir des éléments de liste</strong></li>
 </ol>
 <p>L&rsquo;équipe de France a remporté les trophées suivants: Coupe des Confédérations (2001, 2003), Jeux olympiques (1984), son championnat continental (1984, 2000)</p>
-<p>Ecrire un script python qui utilise des listes et des boucles bornées pour afficher tous les trophées remportés par l&rsquo;équipe de France:</p>
+<p>On peut placer ces valeurs dans une liste <code>L = [1984,2000,...]</code></p>
+<blockquote>
+<p>Ecrire un script python qui utilise une liste et une boucle bornée pour afficher tous les trophées remportés par l&rsquo;équipe de France:</p>
+</blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">l&#39;equipe de France a remporté un trophée en 1984
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">l&#39;equipe de France a remporté un trophée en 2000</span></span></code></pre></div>
@@ -242,16 +244,22 @@
 </ol>
 <p><em>On rappelle que l&rsquo;utilisation d&rsquo;une boucle bornée <code>for</code> nécessite de connaitre le nombre d&rsquo;itérations (<code>for .. in range(n)</code>). Si ce nombre d&rsquo;itérations n&rsquo;est pas connu, il faudra utiliser une boucle <code>while</code></em>.</p>
 <p>Le quotient de la division de a par b est égal au nombre de fois N qu&rsquo;il faut soustraire b à a jusqu&rsquo;à ce que l&rsquo;on ait a &lt; b.</p>
-<p>a. D&rsquo;après cet énoncé, va t-on utiliser une boucle bornée, ou bien un boucle non bornée?</p>
-<p>b. Compléter le script de la division euclidienne de a par b</p>
+<p><em><strong>question b.:</strong></em> D&rsquo;après cet exercice, <strong>la division euclidienne</strong>, va t-on utiliser une boucle bornée, ou bien un boucle non bornée?</p>
+<blockquote>
+<p>Vous devrez écrire le programme de la division euclidienne de a par b, en utilisant uniquement des lignes de code choisies parmi les lignes suivantes. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter.</p>
+</blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;entrer la valeur de a :&#39;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;entrer la valeur de b :&#39;</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span><span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl">  <span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;a = </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, N = </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
-<p>c. Quel est le quotient entier de la division de 2024 par 7? Quel est le reste?</p>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">b</span> <span class="o">-</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">N</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;La division de a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, par b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">: quotient=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2"> et reste=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;La division de a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, par b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">: quotient=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> et reste=</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p><em><strong>question c.:</strong></em> Quel est le quotient entier de la division de 2024 par 7? Quel est le reste?</p>
 <ol start="5">
 <li><strong>Compter</strong> le nombre de <strong>a</strong> dans <em>abracadabra</em>:</li>
 </ol>
@@ -264,10 +272,11 @@
 </span></span><span class="line"><span class="cl">		<span class="n">i</span> <span class="o">=</span> <span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;...&#34;</span><span class="p">)</span></span></span></code></pre></div>
 <p>b. Modifier le programme pour qu&rsquo;il compte aussi les <strong>A</strong> majuscules.</p>
-<h1 id="les-fonctions-natives-du-langage-python">Les fonctions natives du langage python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p><em><strong>question d.:</strong></em> recopier le script lorsque vous l&rsquo;avez obtenu.</p>
+<h2 id="les-fonctions-natives-du-langage-python">Les fonctions natives du langage python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Tous les langages de programmation fournissent un large ensemble de fonctions prêtes à être utilisées. Nous avons déjà rencontré diverses fonctions prédéfinies, de la librairie standart : <code>print</code>, <code>input</code>, <code>range</code>.</p>
 <blockquote>
-<p>Tester dans un notebook, ou en console les fonctions natives suivantes:</p>
+<p>Tester en console les fonctions natives suivantes:</p>
 </blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">..</span>
@@ -279,23 +288,28 @@
 <li>pour <code>int('0b10000001',2)</code>, ce sont 2 arguments qui sont passés à la fonction <code>int</code>: Le binaire &lsquo;0b10000001&rsquo;, ainsi que l&rsquo;argument 2 précisant qu&rsquo;il s&rsquo;agit d&rsquo;un code binaire à convertir en entier.</li>
 </ul>
 <p><em>Remarquer que ces arguments sont séparés par une virgule.</em></p>
-<h2 id="exercices-1">Exercices<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <ol>
 <li><strong>Convertir en binaire</strong></li>
 </ol>
-<p>Utiliser la fonction <code>bin</code> pour convertir les nombres suivants: 65400, 31654, 1026</p>
-<p><em>Astuce pour <strong>automatiser</strong> le calcul</em>: On pourra placer ces valeurs dans une liste et utiliser une boucle bornée <code>for</code>:</p>
+<p>a. Dans le <em>shell python</em>: Utiliser la fonction <code>bin</code> pour convertir en binaire les nombres suivants: 65400, 31654, 1026</p>
+<p><em><strong>question e.:</strong></em> Quel est le resultat obtenu pour 65400?</p>
+<p>b. Automatiser le calcul: Placer ces valeurs dans une liste et utiliser une boucle bornée <code>for</code>:</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">65400</span><span class="p">,</span> <span class="mi">31654</span><span class="p">,</span> <span class="mi">1026</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">..</span><span class="p">)</span></span></span></code></pre></div>
+<p><em><strong>question f.:</strong></em> Recopier la ligne 3 que vous avez complétée.</p>
 <ol start="2">
-<li><strong>Convertir en ascii</strong></li>
+<li><strong>Convertir en ascii</strong>
+Le code ascii permet de représenter les caractères <code>&quot;abcdef...z0123..9&quot;</code> en un nombre entre 0 et 127.</li>
 </ol>
-<p>La fonction <code>chr</code> retourne le caractère ascii correspondant à l&rsquo;entier (0..127) placé en argument:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
+<p>La fonction <code>ord()</code> permet de définir le nombre associé au caractère. Et la fonction <code>chr()</code> retourne le caractère ascii correspondant à l&rsquo;entier (0..127) placé en argument:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">97</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="s1">&#39;a&#39;</span></span></span></code></pre></div>
+<p><em><strong>question g.:</strong></em> Quel sont les caractère correspondants aux rangs ascii 110, puis 39 et enfin 111?</p>
 <blockquote>
-<p>Utiliser cette fonction <code>chr</code> pour décoder le message, et trouver le tresor derrière l&rsquo;une de ces portes&hellip;</p>
+<p>Utiliser la fonction <code>chr</code> pour décoder le message, et trouver le tresor derrière l&rsquo;une de ces portes&hellip;</p>
 </blockquote>
 
 <figure >
@@ -317,13 +331,20 @@
     
 </figure>
 
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">message=&#34;110 39 111 117 118 114 101 122 32 115 117 114 116 111 117
+</span></span><span class="line"><span class="cl">116 32 112 97 115 32 108 97 32 112 111 114 116 101 32 100
+</span></span><span class="line"><span class="cl">101 32 103 97 117 99 104 101&#34;</span></span></code></pre></div>
 <p>On pourra s&rsquo;aider du script suivant:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">111</span><span class="p">]</span>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="s2">&#34;110 39 111&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># decoupe du message pour créer une liste avec .split()</span>
+</span></span><span class="line"><span class="cl"><span class="n">L</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># L = [110, 39, 111]</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></span></span></code></pre></div>
+<p><em><strong>question h.:</strong></em> Quel est le message?</p>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode207s2hbhb"><span class="btn cstyle button caution interactive"><a href="../page5"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode207s3hbhb-boucles-bornées-et-non-bornées"><span class="btn cstyle button tip interactive"><a href="../page6"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3</span></a></span> Boucles bornées et non bornées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode463s2hbhb"><span class="btn cstyle button caution interactive"><a href="../page5"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode463s3hbhb-boucles-bornées-et-non-bornées"><span class="btn cstyle button tip interactive"><a href="../page6"><i class="fa-fw fas fa-palette"></i> <span class="title">TP3</span></a></span> Boucles bornées et non bornées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -687,9 +708,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791215961"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791215961" defer></script>
-    <script src="/js/theme.js?1791215961" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1791997451"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1791997451" defer></script>
+    <script src="/js/theme.js?1791997451" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
