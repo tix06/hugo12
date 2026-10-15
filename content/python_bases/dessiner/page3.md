@@ -10,16 +10,43 @@ La [page suivante](https://perso.limsi.fr/pointal/_media/python:turtle:turtleref
 
 Il est conseillé d'avoir bien lu et traité les exemples des pages:
 
-* [TP boucles et fonctions](/docs/NSI_1/donnees/page5/)
-* [Cours sur les fonctions](../page2)
+* [TP boucles et fonctions](/python_bases/boucles/page5/)
+* [Cours sur les fonctions](/python_bases/fonctions/page2/)
 
 # Premiers tracés
 **Script initial**
 Ces exemples utilisent une *boucle bornée* pour *répéter* des consignes (`for .. in range`)
 
-Se rendre sur le notebook [Turtle](https://capytale2.ac-paris.fr/web/c/04df-2206914)
+> Utiliser Pyzo ou bien se rendre sur le notebook [Turtle](https://capytale2.ac-paris.fr/web/c/04df-2206914)
 
-> Dans une nouvelle cellule: *Copier-coller* le script ci-dessous. *Executer et analyser* celui-ci.
+> Dans une nouvelle cellule: *Copier-coller* le script ci-dessous. *Executer et analyser* celui-ci:
+
+```python
+import turtle
+
+t = turtle.Turtle('turtle')
+t.speed(8)
+t.width(2)
+
+largeur = 100
+
+t.pendown()
+t.color('red')
+t.forward(largeur)
+t.left(90)
+t.forward(largeur)
+t.left(90)
+t.forward(largeur)
+t.left(90)
+t.forward(largeur)
+t.left(90)
+t.penup()
+          
+turtle.done()
+```
+
+Pour éviter les répétitions inutiles de script, utiliser une fonction `carre`, qui prendra `largeur` en paramètre, et qui s'executera lorsque l'on écrira: `carre(largeur)`
+
 
 ```python
 import turtle
@@ -48,7 +75,7 @@ turtle.done()
 
 Un script Python devra suivre une certaine structure pour la position de l'import des modules, déclaration de variables, des fonctions, et enfin le programme principal:
 
-{{< img src="../images/t2.png" caption="premier script avec le module turtle" >}}
+{{< img src="../images/t2.png" width="600" caption="premier script avec le module turtle" >}}
 
 Le programme principal finira par `turtle.done()`, ce qui execute le tracé.
 
@@ -69,7 +96,7 @@ La valeur de cette variable sera introduite par une fonction `input`, comme dans
 ## Dessiner des rectangles
 > Reproduire, à l'aide de votre fonction, le dessin ci-dessous. Celui-ci forme 3 rectangles colorés de dimension $80x100$.
 
-{{< img src="../images/t6.png" caption="rectangles côte à côte" >}}
+{{< img src="../images/t6.png" width="600" caption="rectangles côte à côte" >}}
 
 **question 3:** recopier le script de votre programme (ne pas préciser les `import` et les definitions de fonctions)
 
@@ -83,7 +110,7 @@ Pour dessiner la figure suivante, on utilisera une *boucle bornée*, qui répèt
 * lever le stylo
 * avancer jusqu'à la prochaine position.
 
-{{< img src="../images/t7.png" >}}
+{{< img src="../images/t7.png" width="600" >}}
 
 La valeur du paramètre x, dans la fonction `carre(x)`, dependra du variant `i`. 
 
@@ -95,7 +122,7 @@ La valeur du paramètre x, dans la fonction `carre(x)`, dependra du variant `i`.
 ## Avec des carrés emboités
 Dans un carré de côté 100, on trace un carré dont les sommets sont situés au tiers des côtés du carré initial, et on répète *indéfiniment* l’opération.
 
-{{< img src="../images/t5.png" >}}
+{{< img src="../images/t5.png" width="400" >}}
 
 
 On utilisera une [boucle non bornée](/docs/python/pages/conditions/page2_D/) `while` avec le **variant** `largeur`. La condition d'execution pourrait être par exemple, `largeur>20`:
@@ -117,7 +144,7 @@ A chaque itération:
 ## Avec des segments
 Ecrire une fonction `spirale` qui devra reproduire une figure sur le modèle de la suivante:
 
-{{< img src="../images/t4.png" >}}
+{{< img src="../images/t4.png" width="400" >}}
 
 * La fonction utilisera un paramètres: la `longueur` du segment initial
 * le nombre d'itérations `N` voulues
