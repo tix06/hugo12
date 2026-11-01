@@ -36,11 +36,11 @@
       <description>alignement des nombres premiers sur la spirale, defauts, doctest</description>
     </item>
     <item>
-      <title>tri à partir d&#39;une cle</title>
+      <title>tris quadratiques et tri à partir d&#39;une cle</title>
       <link>//localhost:1313/nsi/algorithmes/page81/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/nsi/algorithmes/page81/index.html</guid>
-      <description>Partie 1: Appliquer un algorithme de tri Nous allons appliquer les 2 algorithmes de tri (insertion et selection) sur des listes non ordonnées.&#xA;Mélanger un liste de mots (1) Reprendre pour cette première partie le dossier du TP de recherche dans un dictionnaire de mots. Ouvrir un nouveau fichier python dans ce même dossier. Placer l’import des librairies random et time à l’ouverture de ce fichier (premières lignes). (2) Ajouter au script python les fonctions de tri vues dans le cours: Lien vers le cours (3) importer une liste de mots d’un dictionnaire non accentué. Appeler cette liste mots. (4) mélanger la liste de mots avec la fonction random.shuffle (voir exemple plus bas) (5) réduire cette liste à seulement 10000 mots: mots = mots[:10000] (6) copier cette liste de mots (faire une copie par valeur): mots_melanges = mots.copy() Aide:</description>
+      <description>Utiliser Pyzo, ou IDLE ou autre IDE Python pour ce TP. Les 3 parties sont indépendantes, et peuvent être placées dans 3 fichiers python différents.&#xA;Partie 1: découvrir le tri par insertion et par séléction Tri par insertion Ecrire en utilisant uniquement des lignes de code choisies parmi les lignes suivantes, une fonction de tri par insertion qui retourne la liste placée en argument avec ses éléments classés par ordre croissant. Les lignes ne sont pas toutes à utiliser et l’indentation est à adapter. def tri_insertion(liste): for i in range(1, len(liste)): for i in range(len(liste)-1): valeur = liste[i] valeur = liste[0] j = i j = i - 1 while j &gt;= 0 and liste[j] &gt; valeur: while j &gt; 0 and liste[j] &gt;= valeur: liste[j] = liste[j-1] liste[j + 1] = liste[j] j -= 1 j += 1 liste[j + 1] = valeur liste[j] = valeur return liste return liste.copy() Utiliser cette fonction pour trier chacune des listes suivantes: L1 = [19, 8, 10, 1, 2, 50, 3, 5] L2 = [&#39;z&#39;, &#39;y&#39;, &#39;x&#39;, &#39;w&#39;, &#39;v&#39;, &#39;u&#39;] Ajouter une instruction dans la fonction tri_insertion pour suivre l’évolution du tri à chaque tour de la boucle externe.</description>
     </item>
     <item>
       <title>recherche dichotomique</title>

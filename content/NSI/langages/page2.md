@@ -13,6 +13,9 @@ Le cours comprend:
 * Un TP2 avec le tracé de dessins recursifs (Turtle): [Lien](../page10/)
 
 # Récursivité
+## Definition
+Un algorithme est dit recursif s'il permet de resoudre un problème par reduction à une instance du même problème, mais avec de plus petites données d'entrée.
+
 ## Principe 
 Un algorithme récursif est un algorithme qui fait appel à lui-même dans le corps de sa propre définition. Ce principe est aussi appelé : *de l'autoréférence*. (traité dans la partie *autres applications* de la [page 2 du cours](../page22/)).
 
@@ -20,7 +23,7 @@ Un algorithme récursif est un algorithme qui fait appel à lui-même dans le
 
 Cependant, cette premiere definition pourrait faire penser qu'une fonction récursive va s'appeler indéfiniment, et créer sans arrêt les mêmes figures, ou les mêmes traitements. 
 
-{{< img src="../images/page2/script_recur11.png" >}}
+{{< img src="../images/page2/script_recur11.png" width="300" >}}
 
 
 
@@ -30,17 +33,17 @@ Pour une fonction récursive, il y a plus que de la simple autoréférence:
 
 * Il y a transmission de valeurs entre 2 étapes de la pile d'appels recursifs. 
 
-{{< img src="../images/page2/script_recur22.png" >}}
+{{< img src="../images/page2/script_recur22.png" width="500" >}}
 
 * Une valeur va remonter d'un niveau $n$ vers le niveau $n-1$ qui l'a appelé.
 
-{{< img src="../images/page2/script_recur44.png" >}}
+{{< img src="../images/page2/script_recur44.png" width="500" >}}
 
 
 
-* On remonte la pile d'appels parce que la fonction contient une condition de fin (appelée *condition de base*).
+* On remonte la pile d'appels parce que la fonction contient une condition de fin (appelée *condition de base*), qui est executée lors du dernier appel recursif (ici avec n==0).
 
-{{< img src="../images/page2/script_recur33.png" >}}
+{{< img src="../images/page2/script_recur33.png" width="500" >}}
 
 * enfin, les traitements ne sont pas tous identiques parce les arguments de la fonction changent à chaque nouvel appel recursif.
 
@@ -80,7 +83,7 @@ def ajoute2_iter(N):
 ### Algorithme récursif
 *Rappel de math:* Une suite est une succession ordonnée d’éléments, comme par exemple 1, 2, 4, 8, 16. On s'interesse ici à une suite en définissant un terme à l’aide du terme précédent. (suite *récurente*)
 
-{{< img src="../images/page2/suite_recur.png" caption="exemple de duite recursive, exprimée en langage mathématique" >}}
+{{< img src="../images/page2/suite_recur.png" caption="exemple de suite recursive, exprimée en langage mathématique" >}}
 
 (a) Pour calculer le terme de rang n d'une suite, on définit un cas de base, un démarrage avec le premier terme de la suite:
 
@@ -374,7 +377,12 @@ On peut compléter le tableau suivant présentant l'effectif de ces couples de l
 {{< img src="../images/page2/fibo2.png"  >}}
 
 On définit la suite ($f_n$) des nombres de Fibonacci par :
-$$\left\\{\begin{matrix}\begin{align}f\_0 & =0\\\f\_1 & =1\\\f\_{n+1} & =f\_{n}+f\_{n-1}, \forall n \in \mathbb{N}^+\end{align}\end{matrix}\right.$$
+
+$$\begin{cases}
+f_0 = 0\\
+f_1 = 1\\
+f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
+\end{cases}$$
 
 Les nombres de Fibonacci apparaissent aussi dans la croissance des plantes. Le nombre de pétales des différentes fleurs est souvent un nombre de la suite de Fibonacci. On remarque que l’ angle entre deux primordia successifs, tend vers L’ANGLE D’OR, et que plus les nombres successifs sont grands, plus le rapport s’approche du NOMBRE D’OR.
 

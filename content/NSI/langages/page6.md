@@ -1,6 +1,6 @@
 ---
-Title: exercices sur la recursivité
-description: exercices recursivite
+Title: TD sur la recursivité
+description: exercices, la recursivite en pratique
 hidden: true
 weight: 14
 ---
@@ -42,7 +42,11 @@ def impair(N):
 
 # Ex 2: Suite de Fibonacci
 On définit la suite (f<sub>n</sub>) des nombres de Fibonacci par :
-$$\left\\{\begin{matrix}\begin{align}f\_0 & =0\\\f\_1 & =1\\\f\_{n+1} & =f\_{n}+f\_{n-1}, \forall n \in \mathbb{N}^+\end{align}\end{matrix}\right.$$
+$$\begin{cases}
+f_0 = 0\\
+f_1 = 1\\
+f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
+\end{cases}$$
 
 ```python
 def fibo(n):
@@ -71,22 +75,51 @@ def fibo(n):
 > Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d'exercices.
 
 # Ex 3: Les tours de Hanoï
-Le problème des tours de Hanoi est présenté en détails dans le cours sur la recursivité [ici](/docs/NSI/langages/page22/#application-les-tours-de-hanoï)
+Le problème des tours de Hanoi est présenté en détails dans le cours sur la recursivité [ici](../page22/#application-les-tours-de-hanoï)
+
+L'algorithme récursif pour ce problème est étonnament réduit : 
+
+```python
+def hanoi(N,d,i,a):
+    """N disques doivent être déplacés de d vers a
+    Params:
+    N : int
+        nombre de disques
+    d: int
+        depart (vaut 1 au debut)
+    i: int
+        intermediaire (vaut 2 au debut)
+    a: int
+        fin (vaut 3 au debut)
+    Exemple:
+    lancer avec 
+    >>> hanoi(3,1,2,3)
+    """
+    if N==1 : 
+        print('deplacement de {} vers {}'.format(d,a))
+    else:
+        hanoi(N-1,d,a,i)
+        hanoi(1,d,i,a)
+        hanoi(N-1,i,d,a)
+```
 
 
-1. Dans l'editeur ci-dessous: Executer le script. Puis aller dans la console et tester l'exemple proposé dans le prototypage de la fonction.
+1. Executer le script. Puis aller dans la console et tester l'exemple proposé dans le prototypage de la fonction.
 
 > Représenter dans votre cahier d'exercice les différents déplacements. S'aider du schéma:
 
-{{< img src="../images/page2/hanoi_3p.png" >}}
+{{< img src="../images/page2/hanoi_3p.png" width="400" >}}
 
-2. Tester egalement avec 4 disques. Noter le nombre de deplacements effectués pour N=1 à 4.
+L'instruction  `hanoi(2,1,2,3)` signifie: *déplacer les 2 disques du piquet 1 vers le piquet 3 en utilisant le piquet 2 comme position intermédiaire*
+
+2. Que signifient chacune des instructions `hanoi(N-1,d,a,i), hanoi(1,d,i,a), hanoi(N-1,i,d,a)`?
+3. Tester egalement avec 4 disques. Noter le nombre de deplacements effectués pour N=1 à 4.
 
 
 
 
 
-*3.* Proposez une loi de recurence entre le nombre de déplacements T(N) pour N disques, et le nombre de déplacements T(N-1) pour N-1 disques. 
+3. Proposez une loi de recurence entre le nombre de déplacements T(N) pour N disques, et le nombre de déplacements T(N-1) pour N-1 disques. 
 
 > Cette loi, est-elle prévisible à partir de l'énoncé de la solution (pour déplacer N disques du piquet 1 à 3, il faut deplacer N-1 disques de 1 à 2, puis ...).
 
@@ -123,7 +156,7 @@ def nombre_r(lettre, phrase):
 {{< vitta 5f872924a7977 >}}
 -->
 
-> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d'exercices.
+> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier de labo.
 
 # Ex 5: Retournement d'une liste
 La fonction suivante realise un retournement d'une chaine de caractères. 
@@ -148,18 +181,13 @@ def reverse_iterative(seq):
 
 
 1. Programmer et tester la fonction itérative.
-2. Compléter le script de la fonction `reverse_recur`. S'aider du schéma suivant:
 
-```
-f('abc') = f('bc') + 'a'
-         = f('c') + 'b' + 'a'
-         = f('') + 'c' + 'b' + 'a'
-         = 'cba'
-```
+Le script récursif équivalent pourrait être:
 
-*Fonction recursive, script à compléter*:
+
 
 ```python
+# Fonction recursive, script à compléter
 def reverse_recur(seq):
     """
     >>> assert reverse_iterative('abacab') = 'bacaba'
@@ -169,17 +197,30 @@ def reverse_recur(seq):
     return ...
 ```
 
-> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d'exercices.
+2. Compléter le script de la fonction `reverse_recur`. S'aider du schéma suivant:
 
-# Exercice 6: algorithme d'Euclide 
-Euclide propose l’algorithme suivant:
+```
+f('abc') = f('bc') + 'a'
+         = f('c') + 'b' + 'a'
+         = f('') + 'c' + 'b' + 'a'
+         = 'cba'
+```
+
+
+
+> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier de labo.
+
+# Exercice 6: algorithme du PGCD d'Euclide 
+L'algorithme d'Euclide calcule efficacement le **p**lus **g**rand **c**ommun **d**iviseur (PGCD) de deux entiers. Le PGCD de 2 entiers `a` et `b` est le plus grand entier qui divise à la fois `a` et `b`. Les entiers `a` et `b` sont donc des multiples du PGCD.
+
+C'est un des plus anciens algorithmes connus, mais il reste toujours d'actualité. Il s'enonce comme ceci:
 
 1. Calculez le reste r dans la division de a par b
 2. Si r est nul alors le pgcd est b
 3. Sinon recommencer l’étape 1 avec a = b et b = r
 
 
-{{< img src="../images/page2/euclide.png" >}}
+{{< img src="../images/page2/euclide.png" width="300" >}}
 > Exemple d’exécution : a = 32, b = 12 :
 
 – 32 = (2 x 12) + 8
@@ -193,6 +234,8 @@ On a donc pgcd(32, 12) = 4
 La page dédiée sur [wikipedia](https://fr.wikipedia.org/wiki/Algorithme_d%27Euclide) propose une illustration géométrique de cette méthode. *Un couple d'entiers est vu comme un rectangle, dont le PGCD est la longueur du côté du plus grand carré permettant de carreler entièrement ce rectangle:*
 
 {{< img src="../images/page2/euclide2.png" caption="Explication géométrique de l'algorithme d'Euclide sur les entiers 21 et 15. - source wikipedia" >}}
+
+*S'il existe un diviseur commun pour les entiers 6 et 3, alors ce diviseur est commun à 15 (rectangle `6*15`) et à 21 (rectangle `21*15`)*
 
 ```python
 def euclide(a,b):
