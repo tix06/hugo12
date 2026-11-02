@@ -172,7 +172,7 @@ def hanoi(N,d,i,a):
     >>> hanoi(3,1,2,3)
     """
     if N==1 : 
-        print('deplacement de {} vers {}'.format(d,a))
+        print(f'deplacement de {d} vers {a}')
     else:
         hanoi(N-1,d,a,i)
         hanoi(1,d,i,a)

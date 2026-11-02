@@ -11,7 +11,7 @@ weight: 14
 
 La fonction récursive impair accepte un paramètre, N, entier positif. A chaque appel récursif, la fonction s'appelle elle-même avec l'argument N-2.
 
-1. La condition de base est que N == 1 au bout d'un certain nombre d'appels.
+1. La condition de base est que `N == 1` au bout d'un certain nombre d'appels, et retourne `True/False`
 
 > Completez le script de cette fonction. 
 
@@ -36,17 +36,31 @@ def impair(N):
     """
 ```
 
-2. Cette condition de base est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script.
+2. Cette condition de base, `N == 1` est-elle suffisante ou bien faut-il en ajouter une autre? Complétez votre script.
 
-> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d'exercices.
+> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier de labo.
+
+Dans la même cellule de votre script, ajouter les 2 lignes suivantes.
+
+```python
+import doctest
+doctest.testmod()
+```
+
+Le module [doctest](https://docs.python.org/3/library/doctest.html#) permet de lire et tester les `assert` placés dans le *docstring* de la fonction. 
+
+3. Quel est le résultat affiché par ces nouvelles instructions? Pourquoi?
 
 # Ex 2: Suite de Fibonacci
-On définit la suite (f<sub>n</sub>) des nombres de Fibonacci par :
+On définit la suite ($f_n$) des nombres de Fibonacci par :
 $$\begin{cases}
 f_0 = 0\\
 f_1 = 1\\
 f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
 \end{cases}$$
+
+
+*Pour n>1, le terme de rang `n+1` est egal à la somme des 2 termes qui le précèdent, aux rangs `n` et `n-1`.
 
 ```python
 def fibo(n):
@@ -63,19 +77,30 @@ def fibo(n):
 
 
 1. Compléter la dernière ligne de la fonction `fibo` avec les bons arguments
-2. Ajouter quelques lignes au script pour placer dans une liste `L` tous les nombres de la suite de Fibonacci, du rang 0 au rang n=10 (inclus).
+
+On peut utiliser cette fonction pour calculer et placer toutes les valeurs de la suite de Fibonacci dans une liste:
+
+```python
+L = []
+for i in range(10):
+    L.append(...)
+print(L)
+```
+
+2. Ajouter ces lignes au script pour placer dans une liste `L` tous les nombres de la suite de Fibonacci, du rang 0 au rang n=10 (inclus).
+3. Recopier et compléter alors le tableau de valeurs:
 
 
-<!--
-<iframe width='100%' height='500' allowfullscreen frameborder='0' style='border:1px #d6d6d6 solid;' src="https://fr.vittascience.com/python/?link=5f8726ff0f497&mode=code"></iframe>
 
-{{< vitta 5f8726ff0f497 >}}
--->
+| n | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10  |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| fibo(n) |  |  |  |  |  |  |  |  |  |  |  |
 
-> Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier d'exercices.
+
+> recopiez le script sur votre cahier d'exercices.
 
 # Ex 3: Les tours de Hanoï
-Le problème des tours de Hanoi est présenté en détails dans le cours sur la recursivité [ici](../page22/#application-les-tours-de-hanoï)
+Le problème des tours de Hanoi est présenté en détails dans l'article [accromath](https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/) ou la video [ici](https://www.youtube.com/watch?v=r1Ujcw0UkrI).
 
 L'algorithme récursif pour ce problème est étonnament réduit : 
 
@@ -96,7 +121,7 @@ def hanoi(N,d,i,a):
     >>> hanoi(3,1,2,3)
     """
     if N==1 : 
-        print('deplacement de {} vers {}'.format(d,a))
+        print(f'deplacement de {d} vers {a}')
     else:
         hanoi(N-1,d,a,i)
         hanoi(1,d,i,a)
@@ -106,27 +131,30 @@ def hanoi(N,d,i,a):
 
 1. Executer le script. Puis aller dans la console et tester l'exemple proposé dans le prototypage de la fonction.
 
-> Représenter dans votre cahier d'exercice les différents déplacements. S'aider du schéma:
 
-{{< img src="../images/page2/hanoi_3p.png" width="400" >}}
 
 L'instruction  `hanoi(2,1,2,3)` signifie: *déplacer les 2 disques du piquet 1 vers le piquet 3 en utilisant le piquet 2 comme position intermédiaire*
 
-2. Que signifient chacune des instructions `hanoi(N-1,d,a,i), hanoi(1,d,i,a), hanoi(N-1,i,d,a)`?
-3. Tester egalement avec 4 disques. Noter le nombre de deplacements effectués pour N=1 à 4.
+2. Que signifient chacune des instructions `hanoi(N-1,d,a,i), hanoi(1,d,i,a), hanoi(N-1,i,d,a)`? Expliquer à chaque fois avec une phrase.
+
+3. Représenter dans votre cahier de labo la position des disques après l'execution de `hanoi(2,1,3,2)`. Quel sera alors le prochain déplacement? S'aider du schéma:
+
+{{< img src="../images/page2/hanoi_3p.png" width="400" >}}
+
+4. Tester egalement avec 4 disques. Noter le nombre de deplacements effectués pour N=1 à 4.
 
 
 
 
 
-3. Proposez une loi de recurence entre le nombre de déplacements T(N) pour N disques, et le nombre de déplacements T(N-1) pour N-1 disques. 
+5. Proposez une loi de recurence entre le nombre de déplacements T(N) pour N disques, et le nombre de déplacements T(N-1) pour N-1 disques. 
 
 > Cette loi, est-elle prévisible à partir de l'énoncé de la solution (pour déplacer N disques du piquet 1 à 3, il faut deplacer N-1 disques de 1 à 2, puis ...).
 
 *Aide: on pourra consulter la page [accromath](https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/).*
 
 # Ex 4: Nombre d'occurences dans une chaine de caractères
-il s'agit d'écrire une fonction recursive nombre_r(lettre, phrase) qui renvoit le nombre de fois où la lettre apparaît dans la phrase. 
+il s'agit d'écrire une fonction recursive `nombre_r(lettre, phrase)` qui renvoit le nombre de fois où la lettre apparaît dans la phrase. 
 
 * Dans le cas de base: on retourne 0 si la phrase est vide `""`.
 * Pour l'heredité: On réduit la phrase en eliminant le premier caractère après chaque appel recursif: on met comme argument `phrase[1:]` à la place du paramètre `phrase`.
@@ -150,11 +178,7 @@ def nombre_r(lettre, phrase):
     if phrase[0]==lettre:
 ```
 
-<!--
-<iframe width='100%' height='500' allowfullscreen frameborder='0' style='border:1px #d6d6d6 solid;' src="https://fr.vittascience.com/python/?link=5f872924a7977&mode=code"></iframe>
 
-{{< vitta 5f872924a7977 >}}
--->
 
 > Une fois que vous obtenez les bons résultats aux tests, recopiez le script sur votre cahier de labo.
 
