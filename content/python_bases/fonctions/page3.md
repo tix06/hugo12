@@ -73,16 +73,37 @@ bonjour George
 * **Question b:** Citer l'un des avantages d'utiliser une fonction. (répétition)
 
 ## Ex 3: fonction pour calculer
-1. Écrire une fonction `cube` qui retourne le `cube` de son argument: `x**3`
-2. Écrire une fonction `volumeSphere` qui calcule le volume d’une sphère de rayon r fourni en argument et qui utilise la fonction cube.
+1. Écrire une fonction `cube` qui retourne le `cube` de son argument: `return x**3`
+2. Écrire une fonction `volumeSphere` qui calcule le volume d’une sphère de rayon r placé en argument et qui utilise la fonction cube.
 
 *Donnée:*
 
 $$V = \tfrac{4}{3}\times\pi\times R^3$$
 
-3. Calculer le volume en $cm^3$ d'une sphere de rayon 10cm (à l'aide de la fonction `volumeSphere`)
+3. Calculer le volume en $cm^3$ de spheres de rayon 5cm, 10cm, 50cm, 100cm (à l'aide de la fonction `volumeSphere`) et compléter le tableau:
+
+| rayon | volume sphere ($cm^3$) |
+|--- |--- |
+| 5 |   |
+| 10  |    |
+| 50 |   |
+| 100 |    |
 
 ## Ex 4: Importer des fonctions
+Pour importer certaines fonctions d'un module, on utlise la notation:
+
+```python
+from module import fonction
+```
+
+On peut alors utiliser la fonction en la nommant, et en plaçant les arguments entre parenthèse comme vu precedemment:
+
+```python
+from math import degrees
+degrees(3.14)
+# affiche 179.9087476710785
+```
+
 Importer les fonctions `degrees` et `radians` du module `math` et completer le tableau:
 
 | angle degrés | angle radians |

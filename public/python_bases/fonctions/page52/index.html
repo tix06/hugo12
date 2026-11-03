@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP5b fonctions pour calculer :: allophysique">
     <meta itemprop="description" content="fonctions avec valeur de retour, pour calculer et repeter des calculs">
     <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="321">
+    <meta itemprop="wordCount" content="401">
     <title>TP5b fonctions pour calculer :: allophysique</title>
-    <link href="/images/logo.png?1793551038" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1793551038" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1793551038" defer></script>
-    <script src="/js/search-lunr.js?1793551038" defer></script>
-    <script src="/js/search.js?1793551038" defer></script>
+    <link href="/images/logo.png?1793730997" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1793730997" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1793730997" defer></script>
+    <script src="/js/search-lunr.js?1793730997" defer></script>
+    <script src="/js/search.js?1793730997" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1793551038";
+      window.relearn.index_js_url="/searchindex.en.js?1793730997";
     </script>
-    <script src="/js/lunr/lunr.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1793551038" defer></script>
+    <script src="/js/lunr/lunr.min.js?1793730997" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1793730997" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1793730997" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1793730997" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1793551038" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793551038" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793551038" rel="stylesheet">
-    <link href="/css/theme.css?1793551038" rel="stylesheet">
-    <link href="/css/format-html.css?1793551038" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1793730997" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793730997" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793730997" rel="stylesheet">
+    <link href="/css/theme.css?1793730997" rel="stylesheet">
+    <link href="/css/format-html.css?1793730997" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -242,7 +242,63 @@ $$r = asin(\tfrac{n_1\times sin(i_1)}{n_2})$$<p>On definira une fonction appelé
 <blockquote>
 <p>Tester votre fonction: avec un angle d&rsquo;incidence de 30°, des indices de refraction n1=1 et n2=1.5, on doit avoir r = 19.47°.</p>
 </blockquote>
-<p><strong>ex 7</strong>: Recopier le script de la fonction <code>angleRefraction</code>, ainsi que l&rsquo;instruction utilisée pour résoudre l&rsquo;exercice.</p>
+<p><strong>Q.1</strong>: Recopier le script de la fonction <code>angleRefraction</code>, ainsi que l&rsquo;instruction utilisée pour résoudre l&rsquo;exercice.</p>
+<blockquote>
+<p>On va maintenant utiliser une boucle <code>for</code> pour répéter un grand nombre de fois le calcul:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">angle</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="mi">20</span>
+</span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">angleRefraction</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;incidence i = </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2"> : refraction r = </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span></span></span></code></pre></div>
+<p><strong>Q.2</strong>: Recopier et compléter le tableau donnant les angles <code>r</code> de refraction d&rsquo;un rayon incident <code>i</code> de l&rsquo;air ($n_1=1$) vers l&rsquo;eau ($n_2=1.3$)</p>
+<table>
+	<thead>
+			<tr>
+					<th>i</th>
+					<th>$n_1$</th>
+					<th>$n_2$</th>
+					<th>r</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>0</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>20</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>40</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>60</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>80</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td>90</td>
+					<td>1</td>
+					<td>1.3</td>
+					<td></td>
+			</tr>
+	</tbody>
+</table>
 <!--
 # Fonctions utiles pour la représentation des nombres en binaire
 ## Inversion de bits
@@ -293,10 +349,10 @@ On pourra ajouter un compteur et permettre au joueur de jouer plusieurs parties 
 
 -->
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode185s1hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode185s2hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode185s3hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode185s4hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5c</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode414s1hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode414s2hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode414s3hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode414s4hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5c</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -660,9 +716,9 @@ On pourra ajouter un compteur et permettre au joueur de jouer plusieurs parties 
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793551038"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793551038" defer></script>
-    <script src="/js/theme.js?1793551038" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793730997"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793730997" defer></script>
+    <script src="/js/theme.js?1793730997" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

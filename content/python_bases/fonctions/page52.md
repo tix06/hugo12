@@ -81,9 +81,28 @@ def angleRefraction(i1,n1,n2):
 
 > Tester votre fonction: avec un angle d'incidence de 30°, des indices de refraction n1=1 et n2=1.5, on doit avoir r = 19.47°.
 
-**ex 7**: Recopier le script de la fonction `angleRefraction`, ainsi que l'instruction utilisée pour résoudre l'exercice.
+**Q.1**: Recopier le script de la fonction `angleRefraction`, ainsi que l'instruction utilisée pour résoudre l'exercice.
+
+> On va maintenant utiliser une boucle `for` pour répéter un grand nombre de fois le calcul:
 
 
+```python
+for k in range(5):
+    angle = k*20
+    r = angleRefraction(angle, 1, 1.3)
+    print(f"incidence i = {angle} : refraction r = {r}")
+```
+
+**Q.2**: Recopier et compléter le tableau donnant les angles `r` de refraction d'un rayon incident `i` de l'air ($n_1=1$) vers l'eau ($n_2=1.3$)
+
+| i | $n_1$ | $n_2$ | r |
+|--- |--- |--- |--- |
+| 0 | 1 | 1.3 |   |
+| 20 |1 | 1.3 |   |
+| 40 |1 | 1.3 |   |
+| 60 |1 | 1.3 |   |
+| 80 |1 | 1.3 |   |
+| 90 |1 | 1.3 |   |
 
 <!--
 # Fonctions utiles pour la représentation des nombres en binaire
