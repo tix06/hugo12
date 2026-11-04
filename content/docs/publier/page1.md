@@ -31,15 +31,20 @@ Ce questionnaire est anonyme; la plupart des questions sont de type *Question à
 
 Ce type de questions est à privilégier pour en faciliter l'analyse.
 
-### Framaforms
+### Liberaforms
 Les données relatives aux élèves ou à leurs parents sont des données sensibles qu’il faut protéger. Même si cela peut paraitre tentant d’utiliser les outils de formulaires américains tels que Microsoft et Google, il faut les éviter d’après la [CNIL](https://www.cnil.fr/fr), car non respectueuses du RGPD en raison du «privacy shield» américain.
 
-Dans ce TP, vous allez devoir **créer un compte** sur [framaforms](https://framaforms.org/abc/fr/), une association française qui respecte le RGPD qui s’engage à ne pas vendre vos données ni celles de vos utilisateurs.
+Dans ce TP, vous allez devoir **créer un compte** sur [Liberaforms](https://my.liberaforms.org/user/new), une association française qui respecte le RGPD qui s’engage à ne pas vendre vos données ni celles de vos utilisateurs.
 
-Un tutoriel pour comprendre: [docs.framasoft.org](https://docs.framasoft.org/fr/framaforms/exemple-d-utilisation.html)
+Une fois le compte créé, et l'adresse mail validée, vous pourrez DIRECTEMENT aller à la page LOGIN:
+
+#### [Login](https://my.liberaforms.org/user/login)
+
 
 ### Conception du formulaire
-Une fois le compte créé, aller dans l'editeur et commencer à concevoir le formulaire. 
+Une fois le compte créé, aller dans l'editeur et créer un nouveau formulaire (*create new)*.
+
+Le tuto proposé ici est celui de *framaforms*, un projet en cours d'abandon. Il vous faudra adapter les screens pour réaliser votre formulaire sur [Liberaforms](https://my.liberaforms.org)
 
 * Mettre un titre et un commentaire à partir des informations suivantes:
 
@@ -101,8 +106,15 @@ Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une e
 Vous avez travaillé sur la conception d'un [questionnaire d'enquête](/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf) au cours d'une séance précédente.
 
 1. Utiliser ce travail pour créer votre propre questionnaire.
-2. Générer une adresse pour le publier à partir de votre tableau de bord.
-3. Générer un QR-code à partir de cette adresse. *(trouver une app gratuite sur le net).*
+
+2. Générer une adresse pour le publier à partir de votre tableau de bord:
+
+> Pour distribuer votre questionnaire, il faudra revenir sur votre tableau de bord, cliquer sur *my forms* (mes formulaires), choisir le formulaire dans la liste, et, parmi les *Options*, valider à la première ligne: *Public => True*. L'adresse URL (ligne suivante) est alors active, et c'est celle-ci qui permet de le publier.
+
+{{< img src="../images/option_public.png" width="400" >}}
+
+
+3. Générer un QR-code à partir de cette adresse. *Regardez plus bas dans votre fenêtre d'option: Public URL in a QR*. Vous pouvez directement télécharger votre QR-code!
 4. Placer le QR-code, le nom du sujet, celui des enquêteurs, le nombre de questions, ainsi qu'une illustration sur un document (Word) à rendre au professeur:
 
 
