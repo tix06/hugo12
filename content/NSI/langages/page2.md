@@ -12,7 +12,7 @@ Le cours comprend:
 * Un TP1 avec les exercices classiques sur la recursivité: [Lien](../page6)
 * Un TP2 avec le tracé de dessins recursifs (Turtle): [Lien](../page10/)
 
-# Récursivité
+# Cours
 ## Definition
 Un algorithme est dit recursif s'il permet de resoudre un problème par reduction à une instance du même problème, mais avec de plus petites données d'entrée.
 
@@ -224,16 +224,16 @@ def fact(n):
 
 a. terminaison : l'algorithme consiste en une boucle qui execute n itérations. 
 
-* Le *convergent* n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.
+* Le *variant* n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.
 * Chaque iteration contient un nombre fini d'opérations élémentaires : 1 mutiplication et 1 affectation. Donc il termine après 2n+1 operations.
 
 b. correction : On prouve par recurrence sur le nombre d'iterations qu'apres la ieme iteration de la boucle for : res=i! **Preuve par récurrence :**
 
-* après la 1ere itération, res = 1  ! (OK)
-* Hypothèse de récurrence : (H.R.) supposons qu'après la ieme itération, res=i ! Montrons qu'après la (i+1)ieme iteration, res=(i+1)! :
-* avant la (i+1)e iteration, res = i ! 
-* La (i+1)e iteration multiplie res par i+1, donc après la (i+1)e iteration, $res= i! \times (i+1) = (i+1)!$
-* Après n iterations, res contient n ! donc le resultat est celui attendu.
+* *initialisation*: après la 1ere itération, res = 1  ! (OK)
+* *conservation*: Hypothèse de récurrence : (H.R.) supposons qu'après la ieme itération, res=i ! Montrons qu'après la (i+1)ieme iteration, res=(i+1)! :
+  * avant la (i+1)e iteration, res = i ! 
+  * La (i+1)e iteration multiplie res par i+1, donc après la (i+1)e iteration, $res= i! \times (i+1) = (i+1)!$
+* *conclusion:* Après n iterations, res contient n ! donc le resultat est celui attendu.
 
 ### Programme recursif
 On a la **relation de récurence** suivante: 
@@ -374,7 +374,7 @@ On peut compléter le tableau suivant présentant l'effectif de ces couples de l
 | 5 | 3 | 3 + 2 = 5|
 | 6 | ... | ... |
 
-{{< img src="../images/page2/fibo2.png"  >}}
+{{< img src="../images/page2/fibo2.png" width="400" >}}
 
 On définit la suite ($f_n$) des nombres de Fibonacci par :
 
@@ -423,7 +423,7 @@ def fibo(n):
 
 Parfois, l'algorithme récursif n'est pas le plus performant: Pour l'exemple de la suite de Fibonacci, on constate que les mêmes calculs sont répétés plusieurs fois, comme fibo(2) dans le cas présent pour N = 4):
 
-{{< img src="../images/page2/fibo.png" caption="pile d'appels pour la suite de fibonacci recursive" >}}
+{{< img src="../images/page2/fibo.png" width="500" caption="pile d'appels pour la suite de fibonacci recursive" >}}
 
 
 # Application 2: recherche du PGCD
@@ -440,7 +440,7 @@ Euclide propose l’algorithme suivant:
 3. Sinon recommencer l’étape 1 avec a = b et b = r
 
 
-{{< img src="../images/page2/euclide.png" >}}
+{{< img src="../images/page2/euclide.png" width="400" >}}
 > Exemple d’exécution : a = 32, b = 12 :
 
 – 32 = (2 x 12) + 8

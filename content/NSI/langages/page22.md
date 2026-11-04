@@ -29,7 +29,8 @@ La fonction va exécuter une tâche, puis s'appeler elle-même, de façon répé
 
 La terminaison de cette série d'appels récursifs repose donc sur la convergence des paramètres de la fonction vers cette condition d'arrêt.
 
-# Partie 2: Recursivité, problèmes avec sous-problemes interdependants
+# Partie 2: 
+**Recursivité, problèmes avec sous-problemes interdependants**
 ## Définitions autour d'un algorithme récursif
 ### Base et hérédité
 L'algorithme récursif comprend 2 parties importantes: 
@@ -148,10 +149,10 @@ On considère trois tiges plantées dans une base. Au départ, sur la première 
 
 il faut à un moment ou à un autre faire la place pour pouvoir déplacer le gros disque du dessous, ce qui impose d’avoir déplacé préalablement les N–1 plus petits sur un seul et même piquet, c’est-à-dire, d’avoir résolu préalablement le problème des tours de Hanoï pour ces N–1 disques : 
 
-{{< img src="../images/page2/hanoi2.png" alt="algorithme iteratif des tours de Hanoï" link="https://www.youtube.com/watch?v=r1Ujcw0UkrI" caption="video - resolution itérative des tours de Hanoi" >}}
+{{< img src="../images/page2/hanoi2.png" alt="algorithme iteratif des tours de Hanoï" width="400" link="https://www.youtube.com/watch?v=r1Ujcw0UkrI" caption="video - resolution itérative des tours de Hanoi" >}}
 Le problème initial (déplacer N disques de A à C en utilisant B) devient donc "déplacer N-1 disques de A à B, déplacer le Nème disque de A à C, puis déplacer les N-1 disques de B à C". Dans les deux déplacements de N-1 disques, on dispose d'un troisième pilier dont on peut se servir...
 
-{{< img src="../images/page2/hanoi.png" alt="algorithme des tours de Hanoï" link="https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/" caption="image issue du site : accromath" >}}
+{{< img src="../images/page2/hanoi.png" width="600" alt="algorithme des tours de Hanoï" link="https://accromath.uqam.ca/2016/02/les-tours-de-hanoi-et-la-base-trois/" caption="image issue du site : accromath" >}}
 ## algorithme récursif
 L'algorithme récursif pour ce problème est étonnament réduit : 
 
@@ -203,26 +204,45 @@ Soit la fonction `permut` qui realise ces permutations. La partie appelée *Base
 
 ```python
 def permut(mot):
-    if len(mot) == 1: return mot
+    if len(mot) == 1: return [mot]
 
     L = []
     # partie heredite a completer
 ```
 
 ## Script de la partie héredité de la fonction `permut`
-* au 1er appel de la fonction: il faut reserver chacune des lettres du mot comme premiere lettre. On commence par la premiere, "a", correspondant au variant de boucle `i = 0`:
+* pour réaliser la permutation: il faut reserver chacune des lettres du mot comme premiere lettre. On parcours chaque lettre du mot, que l'on place en premiere position. "a", correspondant au variant de boucle `i = 0`:
 
 ```python
 for i in range(len(mot)):
 ```
 
-* Il faut ensuite associer "a" avec TOUS les mots issus de la permutation de "bcd". Cela peut être réalisé avec l'appel recursif:
+* Il faut ensuite associer "a" avec TOUS les mots issus de la permutation de "bcd". Cela peut être réalisé avec l'appel recursif: Le problème se ramène à une instance du même probleme, mais avec un argument plus petit, "bcd".
 
 ```python
-for x in permut(mot[0:1] + mot[1 + 1:])
+for x in permut(mot[0:i] + mot[i + 1:])
 ```
 
-* Puis construire les chaines avec les mots mélangés retournés.
+* Puis construire les chaines avec les mots mélangés retournés. Ceci est réalisé en retournant les morceaux de chaine, en remontant la pile d'appels.
+
+{{% notice expanded="false" groupid="notice-toggle" style="orange" title="Solution" %}}
+```python
+def permut(mot):
+    """renvoie la liste des permutations de la chaîne mot
+    >>> permut('abc')
+    ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+    """
+    if len(mot) <= 1:                    # cas de base : un seul arrangement
+        return [mot]
+    L = []
+    for i in range(len(mot)):            # on choisit la lettre de tête
+        reste = mot[:i] + mot[i + 1:]    # le mot sans cette lettre
+        for x in permut(reste):          # on fait confiance à l'appel récursif
+            L.append(mot[i] + x)
+    return L
+permut('abcd')
+```
+{{% /notice %}}
 
 ## Arbre des appels recursifs
 
@@ -248,9 +268,9 @@ La récursivité se retrouvent dans d'autres situations, où elle prend parfois 
 L'**autosimilarité** est le caractère d'un objet dans laquelle on peut trouver des similarités en l'observant à différentes échelles.
 *Exemple :* le Tapis de Sierpiński.
 
-{{< img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Sierpinski_carpet_6%2C_white_on_black.svg/440px-Sierpinski_carpet_6%2C_white_on_black.svg.png" alt="le Tapis de Sierpiński" caption="le Tapis de Sierpiński et l'autosimilarité" >}}
+{{< img src="../images/page2/sipierski.png" alt="le Tapis de Sierpiński" caption="le Tapis de Sierpiński et l'autosimilarité" >}}
 
-## Corécursivité
+## Corrécursivité
 Les **fractales** ont cette propriété d'autosimilarité, mais elles ont plutôt à voir avec un phénomène un peu différent qui s'appel la corécurisivité (ou corécursion). Le tapis de Sierpiński, du nom de Wacław Sierpiński, est une fractale obtenue à partir d'un carré. Le tapis se fabrique en découpant le carré en neuf carrés égaux avec une grille de trois par trois, et en supprimant la pièce centrale, et en appliquant cette procédure récursivement aux huit carrés restants.
 
 ## Mise en abyme

@@ -21,29 +21,29 @@
     <meta itemprop="name" content="recursivité :: allophysique">
     <meta itemprop="description" content="cours recursivite">
     <meta itemprop="dateModified" content="2026-06-22T19:03:51+02:00">
-    <meta itemprop="wordCount" content="3433">
+    <meta itemprop="wordCount" content="3436">
     <title>recursivité :: allophysique</title>
-    <link href="/images/logo.png?1793637627" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1793637627" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1793637627" defer></script>
-    <script src="/js/search-lunr.js?1793637627" defer></script>
-    <script src="/js/search.js?1793637627" defer></script>
+    <link href="/images/logo.png?1793815357" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1793815357" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1793815357" defer></script>
+    <script src="/js/search-lunr.js?1793815357" defer></script>
+    <script src="/js/search.js?1793815357" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1793637627";
+      window.relearn.index_js_url="/searchindex.en.js?1793815357";
     </script>
-    <script src="/js/lunr/lunr.min.js?1793637627" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1793637627" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1793637627" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1793637627" defer></script>
+    <script src="/js/lunr/lunr.min.js?1793815357" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1793815357" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1793815357" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1793815357" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1793637627" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793637627" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793637627" rel="stylesheet">
-    <link href="/css/theme.css?1793637627" rel="stylesheet">
-    <link href="/css/format-html.css?1793637627" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1793815357" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793815357" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793815357" rel="stylesheet">
+    <link href="/css/theme.css?1793815357" rel="stylesheet">
+    <link href="/css/format-html.css?1793815357" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -225,7 +225,7 @@
 <li>Un TP1 avec les exercices classiques sur la recursivité: <a href="../page6">Lien</a></li>
 <li>Un TP2 avec le tracé de dessins recursifs (Turtle): <a href="../page10/">Lien</a></li>
 </ul>
-<h1 id="récursivité">Récursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h1 id="cours">Cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="definition">Definition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Un algorithme est dit recursif s&rsquo;il permet de resoudre un problème par reduction à une instance du même problème, mais avec de plus petites données d&rsquo;entrée.</p>
 <h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -468,16 +468,19 @@ Il est facile de traiter des suites avec la méthode récursive:</p>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span> </span></span></code></pre></div>
 <p>a. terminaison : l&rsquo;algorithme consiste en une boucle qui execute n itérations.</p>
 <ul>
-<li>Le <em>convergent</em> n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.</li>
+<li>Le <em>variant</em> n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.</li>
 <li>Chaque iteration contient un nombre fini d&rsquo;opérations élémentaires : 1 mutiplication et 1 affectation. Donc il termine après 2n+1 operations.</li>
 </ul>
 <p>b. correction : On prouve par recurrence sur le nombre d&rsquo;iterations qu&rsquo;apres la ieme iteration de la boucle for : res=i! <strong>Preuve par récurrence :</strong></p>
 <ul>
-<li>après la 1ere itération, res = 1  ! (OK)</li>
-<li>Hypothèse de récurrence : (H.R.) supposons qu&rsquo;après la ieme itération, res=i ! Montrons qu&rsquo;après la (i+1)ieme iteration, res=(i+1)! :</li>
+<li><em>initialisation</em>: après la 1ere itération, res = 1  ! (OK)</li>
+<li><em>conservation</em>: Hypothèse de récurrence : (H.R.) supposons qu&rsquo;après la ieme itération, res=i ! Montrons qu&rsquo;après la (i+1)ieme iteration, res=(i+1)! :
+<ul>
 <li>avant la (i+1)e iteration, res = i !</li>
 <li>La (i+1)e iteration multiplie res par i+1, donc après la (i+1)e iteration, $res= i! \times (i+1) = (i+1)!$</li>
-<li>Après n iterations, res contient n ! donc le resultat est celui attendu.</li>
+</ul>
+</li>
+<li><em>conclusion:</em> Après n iterations, res contient n ! donc le resultat est celui attendu.</li>
 </ul>
 <h3 id="programme-recursif">Programme recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>On a la <strong>relation de récurence</strong> suivante:</p>
@@ -651,6 +654,9 @@ $$T_n = a \times T_{f(n)} + T$$<p>où :</p>
     
         <img src="../images/page2/fibo2.png"
         
+            width="400"
+            
+        
          />
     
     
@@ -693,6 +699,9 @@ f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
     
         <img src="../images/page2/fibo.png"
         
+            width="500"
+            
+        
         alt="pile d&#39;appels pour la suite de fibonacci recursive" />
     
     
@@ -723,6 +732,9 @@ f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
 <figure >
     
         <img src="../images/page2/euclide.png"
+        
+            width="400"
+            
         
          />
     
@@ -1336,9 +1348,9 @@ Soit c = (a + b)/2, qui divise l’intervalle initial en deux parties égales. 
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793637627"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793637627" defer></script>
-    <script src="/js/theme.js?1793637627" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793815357"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793815357" defer></script>
+    <script src="/js/theme.js?1793815357" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
