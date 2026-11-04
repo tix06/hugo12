@@ -178,7 +178,7 @@ Son execution cesse lorsqu'elle arrive à l'instruction `return`. Le programme r
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
 ##### {{% button href="../page3" icon="palette" style="tip" %}}TP5a{{% /button %}} Fonctions, applications
 ##### {{% button href="../page52" icon="palette" style="tip" %}}TP5b{{% /button %}} fonctions utiles pour calculer
-##### {{% button href="../page51" icon="palette" style="tip" %}}TP5b{{% /button %}} boucles et fonctions, traitements automatisés
+##### {{% button href="../page51" icon="palette" style="tip" %}}TP5c{{% /button %}} boucles et fonctions, traitements automatisés
 
 
 
