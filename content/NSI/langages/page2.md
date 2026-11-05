@@ -8,7 +8,7 @@ Le cours comprend:
 
 * une partie 1: Introduction à la recursivité {{< a link="../page2" caption="Recursivité et fonction récurente" >}}
 * une partie 2:{{< a link="../page22" caption="Suite du cours sur la recursivité" >}}
-* une{{< a link="/pdf/NSI/lang3_recur_exos.pdf" caption="page d'exercices. pdf." >}}
+* une{{< a link="/pdf/NSI/lang2_exos.pdf" caption="page d'exercices. pdf." >}}
 * Un TP1 avec les exercices classiques sur la recursivité: [Lien](../page6)
 * Un TP2 avec le tracé de dessins recursifs (Turtle): [Lien](../page10/)
 
