@@ -21,29 +21,29 @@
     <meta itemprop="name" content="TP5c fonctions python :: allophysique">
     <meta itemprop="description" content="TP sur les fonctions python, et les boucles">
     <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="1079">
+    <meta itemprop="wordCount" content="879">
     <title>TP5c fonctions python :: allophysique</title>
-    <link href="/images/logo.png?1793813561" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1793813561" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1793813561" defer></script>
-    <script src="/js/search-lunr.js?1793813561" defer></script>
-    <script src="/js/search.js?1793813561" defer></script>
+    <link href="/images/logo.png?1793900827" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1793900827" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1793900827" defer></script>
+    <script src="/js/search-lunr.js?1793900827" defer></script>
+    <script src="/js/search.js?1793900827" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1793813561";
+      window.relearn.index_js_url="/searchindex.en.js?1793900827";
     </script>
-    <script src="/js/lunr/lunr.min.js?1793813561" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1793813561" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1793813561" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1793813561" defer></script>
+    <script src="/js/lunr/lunr.min.js?1793900827" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1793900827" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1793900827" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1793900827" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1793813561" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793813561" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793813561" rel="stylesheet">
-    <link href="/css/theme.css?1793813561" rel="stylesheet">
-    <link href="/css/format-html.css?1793813561" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1793900827" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793900827" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793900827" rel="stylesheet">
+    <link href="/css/theme.css?1793900827" rel="stylesheet">
+    <link href="/css/format-html.css?1793900827" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -115,12 +115,6 @@
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#système-def--return">système def + return</a></li>
-    <li><a href="#appeler-la-fonction">appeler la fonction</a></li>
-    <li><a href="#placer-la-valeur-retournée-dans-une-variable">placer la valeur retournée dans une variable</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#fonction-sans-paramètre">fonction sans paramètre</a></li>
     <li><a href="#fonction-avec-paramètres">Fonction avec paramètres</a>
       <ul>
@@ -180,33 +174,8 @@
 
 <h1 id="tp5c-fonctions-python">TP5c fonctions python</h1>
 
-<h1 id="fonctions-programmées">Fonctions programmées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du <em>remaniement</em> de son code : C&rsquo;est à dire ré-écrire les parties du programme qui <em>fonctionnent</em> et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
-<blockquote>
-<p><em>Définition :</em> Une fonction est un bloc de code auquel on donne un nom en vue de le reutiliser. L&rsquo;appel de son nom exécute tout le bloc de code que cette fonction contient.</p>
-</blockquote>
-<h2 id="système-def--return">système def + return<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Pour créer une fonction, il faut la definir avec le mot clé <strong><code>def</code></strong>, suivi du nom de la fonction, d&rsquo;une paire de parenthèses suivies de <code>:</code>.</p>
-<p>La fonction peut retourner une valeur. Celle-ci est alors mise après le mot clé <code>return</code>.</p>
-<p><em>Exemple:</em></p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir tout le monde&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
-<h2 id="appeler-la-fonction">appeler la fonction<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>On appelle cette fonction à l&rsquo;aide de son nom, suivi des parenthèses :</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># retourne (et affiche) </span>
-</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
-<p>APPELLER = EXECUTER LA FONCTION</p>
-<h2 id="placer-la-valeur-retournée-dans-une-variable">placer la valeur retournée dans une variable<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Souvent, cette donnée retournée doit être <em>affectée à une variable</em>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">salut</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># affiche: </span>
-</span></span><span class="line"><span class="cl"><span class="n">bonjour</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span></span></span></code></pre></div>
-<h1 id="travaux-pratiques">Travaux pratiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="fonction-sans-paramètre">fonction sans paramètre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Un cours sur les fonctions se trouve à la page suivante: <a href="/docs/python/pages/fonctions/page2/">Lien</a></p>
+<p>Un cours sur les fonctions se trouve à la page: <a href="/docs/python/pages/fonctions/page2/">Lien</a></p>
 <ul>
 <li><em>Question a</em>: Ecrire une fonction appelée <code>etoiles</code> en python qui écrit une série de 5 symboles <code>*</code>, séparés chacun par un espace:</li>
 </ul>
@@ -237,30 +206,31 @@
 </blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">   <span class="nb">print</span><span class="p">(</span><span class="n">etoiles</span><span class="p">())</span> </span></span></code></pre></div>
+<blockquote>
+<p>Placer ce script dans une nouvelle fonction que vous nommerez <code>carre_etoiles</code>, et dont l&rsquo;appel donnera la resultat suivant:</p>
+</blockquote>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">carre_etoiles</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> 
+</span></span><span class="line"><span class="cl"><span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> <span class="o">*</span> </span></span></code></pre></div>
 <ul>
-<li><em>Question b</em>:  Recopier le script utilisé.</li>
+<li><em>Question b</em>:  Recopier le script dans votre cahier</li>
 </ul>
 <h2 id="fonction-avec-paramètres">Fonction avec paramètres<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <h3 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Souvent, la fonction traite ou calcule sur un ou plusieurs paramètres qui lui sont passés lors de l&rsquo;appel de la fonction.</p>
-<p>Pour prévoir ceci, il faudra définir un ou plusieurs paramètres lors de la constuction de la fonction.</p>
-<p>Par exemple, si l&rsquo;on souhaite améliorer la fonction <code>salut</code> et personnaliser le message:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir chacun par son nom&#34;&#34;&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span><span class="o">+</span> <span class="n">nom</span></span></span></code></pre></div>
-<blockquote>
-<p>Appeler cette fonction en plaçant le prenom &lsquo;John&rsquo; entre les parenthèses:</p>
-</blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span><span class="o">+</span> <span class="n">nom</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">salut</span><span class="p">(</span><span class="s2">&#34;John&#34;</span><span class="p">))</span></span></span></code></pre></div>
-<p>Vous devriez obtenir: <em>bonjour John</em></p>
+<p>Pour prévoir ceci, il faudra définir un ou plusieurs paramètres lors de la constuction de la fonction: voir les <a href="../page3">TP5a</a> et <a href="../page52">TP5b</a></p>
 <h3 id="traitement-automatisé-avec-une-boucle-for">traitement automatisé avec une boucle <code>for</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Dans une boucle <code>for j in L</code>, le variant <code>j</code> prend successivement chaque valeur de <code>L</code>.</p>
 <blockquote>
-<p>Utiliser cette fonction avec les prenoms de la liste <code>Beatles = ['John', 'Paul', 'Ringo', 'George']</code></p>
+<p>Utiliser la fonction  <code>salut(nom)</code> avec les prenoms de la <strong>liste</strong> <code>Beatles = ['John', 'Paul', 'Ringo', 'George']</code></p>
 </blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Beatles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">]</span> 
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span> <span class="o">+</span> <span class="n">nom</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Beatles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">]</span> 
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Beatles</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
 <p>Vous devriez obtenir l&rsquo;affichage:</p>
@@ -268,13 +238,16 @@
 </span></span><span class="line"><span class="cl">bonjour Paul
 </span></span><span class="line"><span class="cl">bonjour Ringo
 </span></span><span class="line"><span class="cl">bonjour George</span></span></code></pre></div>
-<p><em>question c.</em> Recopier le script sur votre <em>feuille réponse</em>.</p>
-<blockquote>
-<p>Solution (ne pas regarder trop vite)</p>
-</blockquote>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Beatles</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Paul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ringo&#39;</span><span class="p">,</span> <span class="s1">&#39;George&#39;</span><span class="p">]</span> 
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">Beatles</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">salut</span><span class="p">(</span><span class="n">name</span><span class="p">))</span></span></span></code></pre></div>
+<p><em>question c.</em> Recopier la ligne ajoutée au script dans votre <em>cahier de labo</em>.</p>
+<!--
+> Solution (ne pas regarder trop vite)
+
+```python
+Beatles = ['John', 'Paul', 'Ringo', 'George'] 
+for name in Beatles:
+    print(salut(name))
+```
+-->
 <h2 id="tp-ascii-art">TP: ASCII-art<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>L&rsquo;Ascii art consiste à représenter un dessin ou une image uniquement en utilisant des caractères ascii. La page suivante montre des créations artistiques par rubrique: <a href="https://www.asciiart.eu/" rel="external">asciiart.eu</a></p>
 <p>On cherche à realiser des figures à partir de caractères <code>*</code> ou <code>@</code>.</p>
@@ -407,10 +380,10 @@
 <li><em>Conversion decimal -&gt; ascii: utiliser <code>chr</code></em></li>
 </ul>
 <h1 id="liens-et-sources">Liens et sources<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode175s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode175s1hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode175s2hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode175s3hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5c</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode480s0hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode480s1hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode480s2hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode480s3hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5c</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 <ul>
 <li>notebook du site <a href="https://clogique.fr/nsi/notebook/?from=/nsi/premiere/td_tp/TP_Art_Ascii.ipynb#Exercice-7" rel="external">clogique</a></li>
 </ul>
@@ -777,9 +750,9 @@
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793813561"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793813561" defer></script>
-    <script src="/js/theme.js?1793813561" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793900827"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793900827" defer></script>
+    <script src="/js/theme.js?1793900827" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

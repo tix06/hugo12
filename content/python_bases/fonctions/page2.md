@@ -17,6 +17,8 @@ def ma_fonction():
     # bloc de code ligne 2
 ``` 
 
+DEF = DEFINIR LA FONCTION 
+
 La fonction est déclarée après le mot-clé `def`. 
 
 Choisir un nom qui n'appartient pas à Python (aucune autre fonction porte ce nom dans le langage).
@@ -26,6 +28,8 @@ Le nom est suivi de parenthèses `()` et deux points `:`
 Le bloc de code de la fonction est *indenté* sous la ligne `def ma_fonction`
 
 **Appel de fonction:** On peut ensuite exécuter ce bloc en utilsant ce *nom*. On dit qu'on **appelle** cette fonction en écrivant son nom, suivi de parenthèses `()`.
+
+APPELLER = EXECUTER LA FONCTION
 
 ```
 ma_fonction()
@@ -47,12 +51,59 @@ hello()
 # 'Hi'
 ```
 
+* *Exemple 2:* La valeur retournée peut être affectée à une variable...
+
+```python
+def salut():
+  """Accueillir tout le monde"""
+  return 'bonjour tout le monde'
+```
+
+Appel de la fonction:
+
+```python
+salut()
+# retourne (et affiche) 
+'bonjour tout le monde'
+```
+
+
+**Placer la valeur retournée dans une variable**
+
+Souvent, cette donnée retournée doit être *affectée à une variable*:
+
+```python
+message = salut()
+print(message)
+# affiche: 
+bonjour tout le monde
+```
+
 ## Fonction avec paramètre
 Une fonction peut avoir un ou plusieurs **paramètres** qui permettent de transmettre des valeurs au bloc d'instructions. A l'interieur de la fonction, ces paramètres sont traités comme des variables, mais **locales**: Elles n'existent pas à l'exterieur du bloc.
 
 Il y a alors une affectation: `paramètre = argument` 
 
-* *Exemple 2* Dans ce script, on definit une fonction qui calcule le carré d'un nombre `x`. 
+* *Exemple 3:* 
+
+```python
+def salut(nom):
+  """Accueillir la personne nommee en argument
+  nom doit etre un str
+  """
+  return 'bonjour ' + nom
+```
+
+On appelle cette fonction en plaçant cette fois un argument entre les parenthèses: 
+
+```python
+salut("John")
+# retourne (et affiche) 
+'bonjour John'
+```
+
+
+* *Exemple 4* Dans ce script, on definit une fonction qui calcule le carré d'un nombre `x`. 
 
 ```python
 # definition de la fonction
@@ -172,7 +223,8 @@ Voici un exemple d'execution d'une fonction à partir du shell.
 
 Son execution cesse lorsqu'elle arrive à l'instruction `return`. Le programme reprend alors son cours.
 
-
+# Conclusion
+Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du *remaniement* de son code : C'est à dire ré-écrire les parties du programme qui *fonctionnent* et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.
 
 # Liens
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 

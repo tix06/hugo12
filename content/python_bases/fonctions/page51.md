@@ -5,52 +5,11 @@ hidden: true
 weight: 11
 ---
 
-# Fonctions programmées
-Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du *remaniement* de son code : C'est à dire ré-écrire les parties du programme qui *fonctionnent* et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.
 
 
 
-> *Définition :* Une fonction est un bloc de code auquel on donne un nom en vue de le reutiliser. L'appel de son nom exécute tout le bloc de code que cette fonction contient.
-
-
-## système def + return
-Pour créer une fonction, il faut la definir avec le mot clé **`def`**, suivi du nom de la fonction, d'une paire de parenthèses suivies de `:`.
-
-
-La fonction peut retourner une valeur. Celle-ci est alors mise après le mot clé `return`.
-
-*Exemple:* 
-
-```python
-def salut():
-  """Accueillir tout le monde"""
-  return 'bonjour tout le monde'
-```
-
-## appeler la fonction
-On appelle cette fonction à l'aide de son nom, suivi des parenthèses : 
-
-```python
-salut()
-# retourne (et affiche) 
-'bonjour tout le monde'
-```
-
-APPELLER = EXECUTER LA FONCTION
-
-## placer la valeur retournée dans une variable
-Souvent, cette donnée retournée doit être *affectée à une variable*:
-
-```python
-message = salut()
-print(message)
-# affiche: 
-bonjour tout le monde
-```
-
-# Travaux pratiques 
 ## fonction sans paramètre
-Un cours sur les fonctions se trouve à la page suivante: [Lien](/docs/python/pages/fonctions/page2/)
+Un cours sur les fonctions se trouve à la page: [Lien](/docs/python/pages/fonctions/page2/)
 
 * *Question a*: Ecrire une fonction appelée `etoiles` en python qui écrit une série de 5 symboles `*`, séparés chacun par un espace:
 
@@ -97,37 +56,34 @@ for i in range(5):
 ```
 
 
-* *Question b*:  Recopier le script utilisé.
+> Placer ce script dans une nouvelle fonction que vous nommerez `carre_etoiles`, et dont l'appel donnera la resultat suivant:
+
+```python
+>>> carre_etoiles()
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+```
+
+* *Question b*:  Recopier le script dans votre cahier
 
 ## Fonction avec paramètres
 ### Principe
 Souvent, la fonction traite ou calcule sur un ou plusieurs paramètres qui lui sont passés lors de l'appel de la fonction.
 
-Pour prévoir ceci, il faudra définir un ou plusieurs paramètres lors de la constuction de la fonction.
-
-Par exemple, si l'on souhaite améliorer la fonction `salut` et personnaliser le message:
-
-```python
-def salut(nom):
-  """Accueillir chacun par son nom"""
-  return 'bonjour '+ nom
-```
-
-> Appeler cette fonction en plaçant le prenom 'John' entre les parenthèses: 
-
-```python
-def salut(nom):
-  return 'bonjour '+ nom
-
-print(salut("John"))
-```
-
-Vous devriez obtenir: *bonjour John*
+Pour prévoir ceci, il faudra définir un ou plusieurs paramètres lors de la constuction de la fonction: voir les [TP5a](../page3) et [TP5b](../page52)
 
 ### traitement automatisé avec une boucle `for`
-> Utiliser cette fonction avec les prenoms de la liste `Beatles = ['John', 'Paul', 'Ringo', 'George']`
+Dans une boucle `for j in L`, le variant `j` prend successivement chaque valeur de `L`. 
+
+> Utiliser la fonction  `salut(nom)` avec les prenoms de la **liste** `Beatles = ['John', 'Paul', 'Ringo', 'George']`
 
 ```python
+def salut(nom):
+    return 'bonjour ' + nom
+
 Beatles = ['John', 'Paul', 'Ringo', 'George'] 
 for name in Beatles:
     ...
@@ -142,8 +98,9 @@ bonjour Ringo
 bonjour George
 ``` 
 
-*question c.* Recopier le script sur votre *feuille réponse*. 
+*question c.* Recopier la ligne ajoutée au script dans votre *cahier de labo*. 
 
+<!--
 > Solution (ne pas regarder trop vite)
 
 ```python
@@ -151,7 +108,7 @@ Beatles = ['John', 'Paul', 'Ringo', 'George']
 for name in Beatles:
     print(salut(name))
 ```
-
+-->
 
 
 ## TP: ASCII-art
