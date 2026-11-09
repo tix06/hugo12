@@ -9,3 +9,4 @@ weight: 13
 # Liens
 * Video Tutoriel Algorithmique de Grafikart: Recherche Boyer Moore Horspool [Youtube](https://www.youtube.com/watch?v=EeHwu5kI6II&list=PLhn2vSzil-Lr4ojvjjtC1gKrk1SJvmvjm)
 * page du site : https://www.grafikart.fr/tutoriels/boyer-moore-horspool-1197
+* animation et programme: page NSI de [eskool.gitlab.io](https://eskool.gitlab.io/tnsi/algorithmique/recherche_textuelle/boyer_moore/)

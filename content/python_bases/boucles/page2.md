@@ -257,7 +257,7 @@ c
 
 *Ramarque:* Cette fois-ci, le variant `c` prend successivement toutes les valeurs de la liste `L`.
 
-### Conclusion: Itérable et variant de boucle bornée
+### Itérable et variant de boucle bornée
 Les instructions `for i in range(len(L))` et `for c in L` ont à peu près le même objectif: celui de parcourir TOUS les éléments de la liste L. 
 
 * Ce qui est COMMUN: c'est l'utilisation du mot clé `IN`, qui va créer ce que l'on appelle un *itérable*, c'est-à-dire une liste de valeurs qui seront proposées l'une après l'autre pour le variant de boucle.
@@ -281,7 +281,42 @@ for c in L:
 
 L'instruction `for c in L` va, elle, créer un itérable constitué des **valeurs** de la liste `L`
 
-Le nombre d'itération sera égal au nombre `len(L)`, soit 4. Au cours des itérations, le variant `c` va prendre successivement chaque valeur de `L`, soit `[0, 10, 20, 30]`
+Le nombre d'itération sera égal au nombre `len(L)`, soit 4. Au cours des itérations, le variant `c` va prendre successivement chaque valeur de `L`, soit l'ensemble `{0, 10, 20, 30}`
+
+## Boucles imbriquées
+Soit la liste suivante:
+
+```python
+grandes_villes = [['Paris','Lyon','Marseille'],
+          ['Berlin','Munich','Cologne']
+          ]
+```
+
+Les villes sont classées par pays. La première sous-liste contient les villes françaises et la deuxième les villes allemandes.
+
+Il y a plusieurs manières de parcourir cette liste, selon si l'on veut l'affichage des seuls villes françaises, ou allemandes, ou bien l'affichage de chaque sous-liste. 
+
+Imaginons que nous souhaitions afficher toutes les villes, de chaque sous-liste. On utilise alors des *boucles imbriquées*. La boucle *externe* aura pour variant `pays`, contenant chaque sous-liste, et fera 2 tours (un pour chaque pays). Pour la boucle *interne*, le variant prendra la valeur de chaque ville, pour chaque sous-liste:
+
+```python
+for pays in grandes_villes:
+    for ville in pays:
+        print(ville)
+``` 
+
+affiche...
+
+```
+Paris
+Lyon
+Marseille
+Berlin
+Munich
+Cologne
+```
+
+
+
 
 ## Tracer un graphique y = f(x)
 Pour tracer un graphique `y=f(x)`, il faut disposer de 2 listes de mêmes dimensions `x` et `y`. Les coordonnées des points sont alors:

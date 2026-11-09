@@ -6,7 +6,7 @@ weight: 15
 ---
 
 # Dessins récursifs avec python turtle
-Le module Turtle ![](../images/t1.png) permet d’avoir un environnement simple muni d’une interface graphique. 
+Le module Turtle permet d’avoir un environnement simple muni d’une interface graphique. 
 
 La [page suivante](https://perso.limsi.fr/pointal/_media/python:turtle:turtleref.pdf) présente un aide-mémoire avec les principales instructions.
 
@@ -46,11 +46,11 @@ carre(largeur)
 turtle.done()
 ```
 
-> Remplacer le script de la fonction par une boucle. Utiliser une boucle bornée.
+> A. Remplacer le script de la fonction par une boucle. Utiliser une boucle bornée `for` puis une boucle non bornée `while`.
 
-> Puis par un script recursif:
+> B. Remplacer maintenant le script de la fonction par un script recursif:
 
-* La fonction aura 2 paramètres: `def carre(largeur,n=0):`
+* La fonction `carre` aura 2 paramètres: `def carre(largeur,n=0):`
 * La condition de base sera `if n == 4: return` afin de couper la descente dans la pile d'appels recursifs.
 * Dans la partie hérédité: tracer un segment et pivoter. Puis appel recursif avec `carre(largeur,n+1)`
 
@@ -86,41 +86,20 @@ A chaque itération:
 **question 2.2.:** recopier le script de votre fonction
 
 
-## Des carrés
+## Des plus petits carrés
 On veut réaliser le dessin récursif dont on a mis ci-dessous les premières étapes (profondeur 0,1 et 2):
 
 {{< img src="../images/recur_carre.png" >}}
-
-
-
 
 Voici l'allure de l'arbre des appels de la fonction recursive. On y représente les traits du dessin de la figure. 
 
 {{< img src="../images/recur_directions.png" >}}
 
-**question 3.1:** Observez bien le dessin récursif. Dans quel ordre doit-on placer les instructions dans la partie hérédité?
 
-```python
-# proposition 1
-for i in range(4):
-    t.forward(largeur/n)
-    t.left(90)
-    carre(largeur,n+1)
-# proposition 2
-for i in range(4):
-	t.left(90)
-    t.forward(largeur/n)
-    carre(largeur,n+1)
-# proposition 3
-for i in range(4):
-    t.forward(largeur/n)
-    carre(largeur,n+1)
-    t.left(90)
-```
 
-**question 3.2:** Recopier la figure. Numéroter les 3 premiers segments dessinés par le programme.
+**question 3.1:** Recopier la figure. Numéroter les 3 premiers segments dessinés par le programme. (sans le programmer)
 
-> Dans l'editeur: Completer la partie heredite du script suivant pour la fonction `carre`. 
+> Programme de la fonction `carre`: 
 
 ```python
 def carre(largeur,n):
@@ -135,9 +114,33 @@ def carre(largeur,n):
   # 
 ```
 
+**question 3.2:** A partir de ces observations: Dans quel ordre doit-on placer les instructions de la partie hérédité?
+
+```python
+# proposition 1
+for i in range(4):
+    t.forward(largeur/n)
+    t.right(90)
+    carre(largeur,n+1)
+# proposition 2
+for i in range(4):
+    t.right(90)
+    t.forward(largeur/n)
+    carre(largeur,n+1)
+# proposition 3
+for i in range(4):
+    t.forward(largeur/n)
+    carre(largeur,n+1)
+    t.right(90)
+```
+
+**question 3.3:** : Quelles doivent être les instructions à placer dans la fonction pour obtenir l'image suivante:
+
+{{< img src="../images/recur_carre2.png" >}}
+
+**question 3.4:** : Calculer le nombre d'appels recursifs A(n) réalisées par la fonction. Puis estimez la complexité de cette fonction, en considérant comme instructions significatives : chaque deplacement et rotation réalisé par la tortue.
 
 
-**question 3.3:** : Calculer le nombre d'opérations réalisées par la fonction, puis estimez la complexité de cette fonction, en considérant comme instructions significatives : chaque deplacement ou rotation réalisé par la tortue.
 
 ## Des triangles
 Adapter ensuite cette fonction pour dessiner la figure:
@@ -148,6 +151,8 @@ Adapter ensuite cette fonction pour dessiner la figure:
 {{< img src="../images/recur_triangle2.png" >}}
 
 **question 4.:** à partir d'une petite recherche sur le net, retrouver le nom de chacune des figures présentée ci-dessus.
+
+*Prolongement:* Tuto pour dessiner ces figures: [TP sur eskool.gitlab.io](https://eskool.gitlab.io/tnsi/algorithmique/diviser_pour_regner/exercices/fractalesCorrige/)
 
 # Liens
 * Les dessins recursifs sont issus de la page [fourier.ujf-grenoble.fr](https://www-fourier.ujf-grenoble.fr/~parisse/giac/doc/fr/casrouge/casrouge019.html)

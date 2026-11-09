@@ -21,29 +21,29 @@
     <meta itemprop="name" content="listes :: allophysique">
     <meta itemprop="description" content="cours, parcours de liste, méthodes de liste, boucles bornées, tracé de graphique">
     <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="1324">
+    <meta itemprop="wordCount" content="1446">
     <title>listes :: allophysique</title>
-    <link href="/images/logo.png?1793704232" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1793704232" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1793704232" defer></script>
-    <script src="/js/search-lunr.js?1793704232" defer></script>
-    <script src="/js/search.js?1793704232" defer></script>
+    <link href="/images/logo.png?1794240508" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1794240508" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1794240508" defer></script>
+    <script src="/js/search-lunr.js?1794240508" defer></script>
+    <script src="/js/search.js?1794240508" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1793704232";
+      window.relearn.index_js_url="/searchindex.en.js?1794240508";
     </script>
-    <script src="/js/lunr/lunr.min.js?1793704232" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1793704232" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1793704232" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1793704232" defer></script>
+    <script src="/js/lunr/lunr.min.js?1794240508" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1794240508" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1794240508" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1794240508" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1793704232" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793704232" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793704232" rel="stylesheet">
-    <link href="/css/theme.css?1793704232" rel="stylesheet">
-    <link href="/css/format-html.css?1793704232" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1794240508" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1794240508" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1794240508" rel="stylesheet">
+    <link href="/css/theme.css?1794240508" rel="stylesheet">
+    <link href="/css/format-html.css?1794240508" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -119,9 +119,10 @@
     <li><a href="#listes">Listes</a></li>
     <li><a href="#boucles-bornées">Boucles bornées</a>
       <ul>
-        <li><a href="#conclusion-itérable-et-variant-de-boucle-bornée">Conclusion: Itérable et variant de boucle bornée</a></li>
+        <li><a href="#itérable-et-variant-de-boucle-bornée">Itérable et variant de boucle bornée</a></li>
       </ul>
     </li>
+    <li><a href="#boucles-imbriquées">Boucles imbriquées</a></li>
     <li><a href="#tracer-un-graphique-y--fx">Tracer un graphique y = f(x)</a></li>
   </ul>
 
@@ -405,7 +406,7 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </span></span><span class="line"><span class="cl"><span class="n">b</span>
 </span></span><span class="line"><span class="cl"><span class="n">c</span></span></span></code></pre></div>
 <p><em>Ramarque:</em> Cette fois-ci, le variant <code>c</code> prend successivement toutes les valeurs de la liste <code>L</code>.</p>
-<h3 id="conclusion-itérable-et-variant-de-boucle-bornée">Conclusion: Itérable et variant de boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="itérable-et-variant-de-boucle-bornée">Itérable et variant de boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Les instructions <code>for i in range(len(L))</code> et <code>for c in L</code> ont à peu près le même objectif: celui de parcourir TOUS les éléments de la liste L.</p>
 <ul>
 <li>
@@ -424,7 +425,25 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </span></span><span class="line"><span class="cl">for c in L:
 </span></span><span class="line"><span class="cl">  # instruction</span></span></code></pre></div>
 <p>L&rsquo;instruction <code>for c in L</code> va, elle, créer un itérable constitué des <strong>valeurs</strong> de la liste <code>L</code></p>
-<p>Le nombre d&rsquo;itération sera égal au nombre <code>len(L)</code>, soit 4. Au cours des itérations, le variant <code>c</code> va prendre successivement chaque valeur de <code>L</code>, soit <code>[0, 10, 20, 30]</code></p>
+<p>Le nombre d&rsquo;itération sera égal au nombre <code>len(L)</code>, soit 4. Au cours des itérations, le variant <code>c</code> va prendre successivement chaque valeur de <code>L</code>, soit l&rsquo;ensemble <code>{0, 10, 20, 30}</code></p>
+<h2 id="boucles-imbriquées">Boucles imbriquées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soit la liste suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">grandes_villes</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Lyon&#39;</span><span class="p">,</span><span class="s1">&#39;Marseille&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">          <span class="p">[</span><span class="s1">&#39;Berlin&#39;</span><span class="p">,</span><span class="s1">&#39;Munich&#39;</span><span class="p">,</span><span class="s1">&#39;Cologne&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]</span></span></span></code></pre></div>
+<p>Les villes sont classées par pays. La première sous-liste contient les villes françaises et la deuxième les villes allemandes.</p>
+<p>Il y a plusieurs manières de parcourir cette liste, selon si l&rsquo;on veut l&rsquo;affichage des seuls villes françaises, ou allemandes, ou bien l&rsquo;affichage de chaque sous-liste.</p>
+<p>Imaginons que nous souhaitions afficher toutes les villes, de chaque sous-liste. On utilise alors des <em>boucles imbriquées</em>. La boucle <em>externe</em> aura pour variant <code>pays</code>, contenant chaque sous-liste, et fera 2 tours (un pour chaque pays). Pour la boucle <em>interne</em>, le variant prendra la valeur de chaque ville, pour chaque sous-liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">pays</span> <span class="ow">in</span> <span class="n">grandes_villes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ville</span> <span class="ow">in</span> <span class="n">pays</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">ville</span><span class="p">)</span></span></span></code></pre></div>
+<p>affiche&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Paris
+</span></span><span class="line"><span class="cl">Lyon
+</span></span><span class="line"><span class="cl">Marseille
+</span></span><span class="line"><span class="cl">Berlin
+</span></span><span class="line"><span class="cl">Munich
+</span></span><span class="line"><span class="cl">Cologne</span></span></code></pre></div>
 <h2 id="tracer-un-graphique-y--fx">Tracer un graphique y = f(x)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Pour tracer un graphique <code>y=f(x)</code>, il faut disposer de 2 listes de mêmes dimensions <code>x</code> et <code>y</code>. Les coordonnées des points sont alors:</p>
 <ul>
@@ -454,8 +473,8 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </figure>
 
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode41s5hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode41s6hbhb-listes"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span> Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode483s5hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode483s6hbhb-listes"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span> Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -818,9 +837,9 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793704232"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793704232" defer></script>
-    <script src="/js/theme.js?1793704232" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1794240508"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1794240508" defer></script>
+    <script src="/js/theme.js?1794240508" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>
