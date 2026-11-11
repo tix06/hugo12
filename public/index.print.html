@@ -23,27 +23,27 @@
     <title>allophysique</title>
     <link href="//localhost:1313/index.html" rel="canonical" type="text/html" title="allophysique">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="allophysique">
-    <link href="/images/logo.png?1793551038" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1793551038" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1793551038" defer></script>
-    <script src="/js/search-lunr.js?1793551038" defer></script>
-    <script src="/js/search.js?1793551038" defer></script>
+    <link href="/images/logo.png?1794407469" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1794407469" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1794407469" defer></script>
+    <script src="/js/search-lunr.js?1794407469" defer></script>
+    <script src="/js/search.js?1794407469" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1793551038";
+      window.relearn.index_js_url="/searchindex.en.js?1794407469";
     </script>
-    <script src="/js/lunr/lunr.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1793551038" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1793551038" defer></script>
+    <script src="/js/lunr/lunr.min.js?1794407469" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1794407469" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1794407469" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1794407469" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1793551038" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1793551038" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1793551038" rel="stylesheet">
-    <link href="/css/theme.css?1793551038" rel="stylesheet">
-    <link href="/css/format-print.css?1793551038" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1794407469" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1794407469" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1794407469" rel="stylesheet">
+    <link href="/css/theme.css?1794407469" rel="stylesheet">
+    <link href="/css/format-print.css?1794407469" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -1829,7 +1829,7 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </span></span><span class="line"><span class="cl"><span class="n">b</span>
 </span></span><span class="line"><span class="cl"><span class="n">c</span></span></span></code></pre></div>
 <p><em>Ramarque:</em> Cette fois-ci, le variant <code>c</code> prend successivement toutes les valeurs de la liste <code>L</code>.</p>
-<h3 id="conclusion-itérable-et-variant-de-boucle-bornée">Conclusion: Itérable et variant de boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<h3 id="itérable-et-variant-de-boucle-bornée">Itérable et variant de boucle bornée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Les instructions <code>for i in range(len(L))</code> et <code>for c in L</code> ont à peu près le même objectif: celui de parcourir TOUS les éléments de la liste L.</p>
 <ul>
 <li>
@@ -1848,7 +1848,25 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </span></span><span class="line"><span class="cl">for c in L:
 </span></span><span class="line"><span class="cl">  # instruction</span></span></code></pre></div>
 <p>L&rsquo;instruction <code>for c in L</code> va, elle, créer un itérable constitué des <strong>valeurs</strong> de la liste <code>L</code></p>
-<p>Le nombre d&rsquo;itération sera égal au nombre <code>len(L)</code>, soit 4. Au cours des itérations, le variant <code>c</code> va prendre successivement chaque valeur de <code>L</code>, soit <code>[0, 10, 20, 30]</code></p>
+<p>Le nombre d&rsquo;itération sera égal au nombre <code>len(L)</code>, soit 4. Au cours des itérations, le variant <code>c</code> va prendre successivement chaque valeur de <code>L</code>, soit l&rsquo;ensemble <code>{0, 10, 20, 30}</code></p>
+<h2 id="boucles-imbriquées">Boucles imbriquées<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Soit la liste suivante:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">grandes_villes</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Paris&#39;</span><span class="p">,</span><span class="s1">&#39;Lyon&#39;</span><span class="p">,</span><span class="s1">&#39;Marseille&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">          <span class="p">[</span><span class="s1">&#39;Berlin&#39;</span><span class="p">,</span><span class="s1">&#39;Munich&#39;</span><span class="p">,</span><span class="s1">&#39;Cologne&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">          <span class="p">]</span></span></span></code></pre></div>
+<p>Les villes sont classées par pays. La première sous-liste contient les villes françaises et la deuxième les villes allemandes.</p>
+<p>Il y a plusieurs manières de parcourir cette liste, selon si l&rsquo;on veut l&rsquo;affichage des seuls villes françaises, ou allemandes, ou bien l&rsquo;affichage de chaque sous-liste.</p>
+<p>Imaginons que nous souhaitions afficher toutes les villes, de chaque sous-liste. On utilise alors des <em>boucles imbriquées</em>. La boucle <em>externe</em> aura pour variant <code>pays</code>, contenant chaque sous-liste, et fera 2 tours (un pour chaque pays). Pour la boucle <em>interne</em>, le variant prendra la valeur de chaque ville, pour chaque sous-liste:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">pays</span> <span class="ow">in</span> <span class="n">grandes_villes</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ville</span> <span class="ow">in</span> <span class="n">pays</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">ville</span><span class="p">)</span></span></span></code></pre></div>
+<p>affiche&hellip;</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Paris
+</span></span><span class="line"><span class="cl">Lyon
+</span></span><span class="line"><span class="cl">Marseille
+</span></span><span class="line"><span class="cl">Berlin
+</span></span><span class="line"><span class="cl">Munich
+</span></span><span class="line"><span class="cl">Cologne</span></span></code></pre></div>
 <h2 id="tracer-un-graphique-y--fx">Tracer un graphique y = f(x)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Pour tracer un graphique <code>y=f(x)</code>, il faut disposer de 2 listes de mêmes dimensions <code>x</code> et <code>y</code>. Les coordonnées des points sont alors:</p>
 <ul>
@@ -1878,8 +1896,8 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </figure>
 
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode41s5hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode41s6hbhb-listes"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span> Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode483s5hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode483s6hbhb-listes"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP4</span></a></span> Listes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -1898,11 +1916,13 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">def ma_fonction():
 </span></span><span class="line"><span class="cl">    # bloc de code ligne 1
 </span></span><span class="line"><span class="cl">    # bloc de code ligne 2</span></span></code></pre></div>
+<p>DEF = DEFINIR LA FONCTION</p>
 <p>La fonction est déclarée après le mot-clé <code>def</code>.</p>
 <p>Choisir un nom qui n&rsquo;appartient pas à Python (aucune autre fonction porte ce nom dans le langage).</p>
 <p>Le nom est suivi de parenthèses <code>()</code> et deux points <code>:</code></p>
 <p>Le bloc de code de la fonction est <em>indenté</em> sous la ligne <code>def ma_fonction</code></p>
 <p><strong>Appel de fonction:</strong> On peut ensuite exécuter ce bloc en utilsant ce <em>nom</em>. On dit qu&rsquo;on <strong>appelle</strong> cette fonction en écrivant son nom, suivi de parenthèses <code>()</code>.</p>
+<p>APPELLER = EXECUTER LA FONCTION</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ma_fonction()</span></span></code></pre></div>
 <p><strong>Valeur de retour:</strong> Une fonction retourne en général une valeur. Après le mot-clé <code>return</code></p>
 <ul>
@@ -1915,11 +1935,39 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </span></span><span class="line"><span class="cl"><span class="c1"># appel de la fonction</span>
 </span></span><span class="line"><span class="cl"><span class="n">hello</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># &#39;Hi&#39;</span></span></span></code></pre></div>
+<ul>
+<li><em>Exemple 2:</em> La valeur retournée peut être affectée à une variable&hellip;</li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir tout le monde&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
+<p>Appel de la fonction:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne (et affiche) </span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour tout le monde&#39;</span></span></span></code></pre></div>
+<p><strong>Placer la valeur retournée dans une variable</strong></p>
+<p>Souvent, cette donnée retournée doit être <em>affectée à une variable</em>:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">message</span> <span class="o">=</span> <span class="n">salut</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># affiche: </span>
+</span></span><span class="line"><span class="cl"><span class="n">bonjour</span> <span class="n">tout</span> <span class="n">le</span> <span class="n">monde</span></span></span></code></pre></div>
 <h2 id="fonction-avec-paramètre">Fonction avec paramètre<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Une fonction peut avoir un ou plusieurs <strong>paramètres</strong> qui permettent de transmettre des valeurs au bloc d&rsquo;instructions. A l&rsquo;interieur de la fonction, ces paramètres sont traités comme des variables, mais <strong>locales</strong>: Elles n&rsquo;existent pas à l&rsquo;exterieur du bloc.</p>
 <p>Il y a alors une affectation: <code>paramètre = argument</code></p>
 <ul>
-<li><em>Exemple 2</em> Dans ce script, on definit une fonction qui calcule le carré d&rsquo;un nombre <code>x</code>.</li>
+<li><em>Exemple 3:</em></li>
+</ul>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salut</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;&#34;&#34;Accueillir la personne nommee en argument
+</span></span></span><span class="line"><span class="cl"><span class="s2">  nom doit etre un str
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="s1">&#39;bonjour &#39;</span> <span class="o">+</span> <span class="n">nom</span></span></span></code></pre></div>
+<p>On appelle cette fonction en plaçant cette fois un argument entre les parenthèses:</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">salut</span><span class="p">(</span><span class="s2">&#34;John&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># retourne (et affiche) </span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;bonjour John&#39;</span></span></span></code></pre></div>
+<ul>
+<li><em>Exemple 4</em> Dans ce script, on definit une fonction qui calcule le carré d&rsquo;un nombre <code>x</code>.</li>
 </ul>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># definition de la fonction</span>
 </span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -2030,11 +2078,13 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 </figure>
 
 <p>Son execution cesse lorsqu&rsquo;elle arrive à l&rsquo;instruction <code>return</code>. Le programme reprend alors son cours.</p>
+<h1 id="conclusion">Conclusion<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Les fonctions permettent de rendre le script plus efficace, plus facile à lire et à vérifier. Un bonne pratique est de faire régulierement du <em>remaniement</em> de son code : C&rsquo;est à dire ré-écrire les parties du programme qui <em>fonctionnent</em> et les mettre dans une fonction ou un module. Cela evite aussi les répétitions. On remplace alors le code par un appel à une fonction.</p>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h5 id="hahahugoshortcode161s2hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode161s3hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode161s4hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
-<h5 id="hahahugoshortcode161s5hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode473s2hbhb"><span class="btn cstyle button caution interactive"><a href="../page2"><i class="fa-fw fas fa-bullhorn"></i> <span class="title">Cours</span></a></span><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode473s3hbhb-fonctions-applications"><span class="btn cstyle button tip interactive"><a href="../page3"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5a</span></a></span> Fonctions, applications<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode473s4hbhb-fonctions-utiles-pour-calculer"><span class="btn cstyle button tip interactive"><a href="../page52"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5b</span></a></span> fonctions utiles pour calculer<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
+<h5 id="hahahugoshortcode473s5hbhb-boucles-et-fonctions-traitements-automatisés"><span class="btn cstyle button tip interactive"><a href="../page51"><i class="fa-fw fas fa-palette"></i> <span class="title">TP5c</span></a></span> boucles et fonctions, traitements automatisés<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h5>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -2302,8 +2352,8 @@ Les 3 éléments de la liste <code>positions</code> sont <code>[0,0]</code>, <co
 
 <h1 id="fonctions-et-turtle">fonctions et Turtle</h1>
 
-<p>Le module Turtle <a href="#R-image-02c62b578ccf841047135f8795657c8a" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/t1.png" style="height: auto;width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-02c62b578ccf841047135f8795657c8a"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/t1.png"></a> permet d’avoir un environnement simple muni d’une interface graphique.</p>
+<p>Le module Turtle <a href="#R-image-6b82f87b812e9598e7f5ca20220280c4" class="lightbox-link"><img class="border lazy lightbox figure-image" loading="lazy" src="../images/t1.png" style="height: auto;width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-6b82f87b812e9598e7f5ca20220280c4"><img class="border lazy lightbox lightbox-image" loading="lazy" src="../images/t1.png"></a> permet d’avoir un environnement simple muni d’une interface graphique.</p>
 <p>La <a href="https://perso.limsi.fr/pointal/_media/python:turtle:turtleref.pdf" rel="external">page suivante</a> présente un aide-mémoire avec les principales instructions.</p>
 <p>Il est conseillé d&rsquo;avoir bien lu et traité les exemples des pages:</p>
 <ul>
@@ -8398,6 +8448,13 @@ $$v[i] = \tfrac{x[i+1] - x[i]}{t[i+1]-t[i]}$$<p>Les valeurs du temps peuvent gé
 <li>Exercices sur PROUVER un algorithme et raisonnement par recurence: <a href="/pdf/NSI/algo2_invariants.pdf">pdf</a></li>
 <li>TP algos de tri: <a href="/nsi/algorithmes/page81/index.html">Lien</a></li>
 </ul>
+<p><strong>Semaine du 02/11/2026</strong></p>
+<ul>
+<li>Cours - récursivité: <a href="/nsi/langages/page2/index.html">Lien</a> et version <a href="/pdf/NSI/lang2_cours_1.pdf">pdf</a></li>
+<li>Exercices recursivité: <a href="/pdf/NSI/lang2_exos.pdf">pdf</a></li>
+<li>TD/TP - récursivité: <a href="/nsi/langages/page6/index.html">Lien</a></li>
+<li>TP dessins recursifs: <a href="/nsi/langages/page10/index.html">Lien</a></li>
+</ul>
   </div>
 </details>
 
@@ -11946,6 +12003,7 @@ On voit que la recherche d&rsquo;une solution en comparant tous les tours qu&rsq
 <ul>
 <li>Video Tutoriel Algorithmique de Grafikart: Recherche Boyer Moore Horspool <a href="https://www.youtube.com/watch?v=EeHwu5kI6II&list=PLhn2vSzil-Lr4ojvjjtC1gKrk1SJvmvjm" rel="external">Youtube</a></li>
 <li>page du site : <a href="https://www.grafikart.fr/tutoriels/boyer-moore-horspool-1197" rel="external">https://www.grafikart.fr/tutoriels/boyer-moore-horspool-1197</a></li>
+<li>animation et programme: page NSI de <a href="https://eskool.gitlab.io/tnsi/algorithmique/recherche_textuelle/boyer_moore/" rel="external">eskool.gitlab.io</a></li>
 </ul>
 
   <footer class="footline">
@@ -12850,13 +12908,13 @@ Est-ce que leur reflet a un sens?
 <li>une partie 2:<a href="../page22"> 
             Suite du cours sur la recursivité
         </a> </li>
-<li>une<a href="/pdf/NSI/lang3_recur_exos.pdf"> 
+<li>une<a href="/pdf/NSI/lang2_exos.pdf"> 
             page d&#39;exercices. pdf.
         </a> </li>
 <li>Un TP1 avec les exercices classiques sur la recursivité: <a href="../page6">Lien</a></li>
 <li>Un TP2 avec le tracé de dessins recursifs (Turtle): <a href="../page10/">Lien</a></li>
 </ul>
-<h1 id="récursivité">Récursivité<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h1 id="cours">Cours<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="definition">Definition<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Un algorithme est dit recursif s&rsquo;il permet de resoudre un problème par reduction à une instance du même problème, mais avec de plus petites données d&rsquo;entrée.</p>
 <h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
@@ -12910,7 +12968,7 @@ Est-ce que leur reflet a un sens?
 </figure>
 
 <ul>
-<li>On remonte la pile d&rsquo;appels parce que la fonction contient une condition de fin (appelée <em>condition de base</em>).</li>
+<li>On remonte la pile d&rsquo;appels parce que la fonction contient une condition de fin (appelée <em>condition de base</em>), qui est executée lors du dernier appel recursif (ici avec n==0).</li>
 </ul>
 
 <figure >
@@ -13099,16 +13157,19 @@ Il est facile de traiter des suites avec la méthode récursive:</p>
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">res</span> </span></span></code></pre></div>
 <p>a. terminaison : l&rsquo;algorithme consiste en une boucle qui execute n itérations.</p>
 <ul>
-<li>Le <em>convergent</em> n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.</li>
+<li>Le <em>variant</em> n-i decroit strictement à chaque itération et on sort de la boucle quand il vaut 0.</li>
 <li>Chaque iteration contient un nombre fini d&rsquo;opérations élémentaires : 1 mutiplication et 1 affectation. Donc il termine après 2n+1 operations.</li>
 </ul>
 <p>b. correction : On prouve par recurrence sur le nombre d&rsquo;iterations qu&rsquo;apres la ieme iteration de la boucle for : res=i! <strong>Preuve par récurrence :</strong></p>
 <ul>
-<li>après la 1ere itération, res = 1  ! (OK)</li>
-<li>Hypothèse de récurrence : (H.R.) supposons qu&rsquo;après la ieme itération, res=i ! Montrons qu&rsquo;après la (i+1)ieme iteration, res=(i+1)! :</li>
+<li><em>initialisation</em>: après la 1ere itération, res = 1  ! (OK)</li>
+<li><em>conservation</em>: Hypothèse de récurrence : (H.R.) supposons qu&rsquo;après la ieme itération, res=i ! Montrons qu&rsquo;après la (i+1)ieme iteration, res=(i+1)! :
+<ul>
 <li>avant la (i+1)e iteration, res = i !</li>
 <li>La (i+1)e iteration multiplie res par i+1, donc après la (i+1)e iteration, $res= i! \times (i+1) = (i+1)!$</li>
-<li>Après n iterations, res contient n ! donc le resultat est celui attendu.</li>
+</ul>
+</li>
+<li><em>conclusion:</em> Après n iterations, res contient n ! donc le resultat est celui attendu.</li>
 </ul>
 <h3 id="programme-recursif">Programme recursif<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>On a la <strong>relation de récurence</strong> suivante:</p>
@@ -13282,6 +13343,9 @@ $$T_n = a \times T_{f(n)} + T$$<p>où :</p>
     
         <img src="../images/page2/fibo2.png"
         
+            width="400"
+            
+        
          />
     
     
@@ -13324,6 +13388,9 @@ f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
     
         <img src="../images/page2/fibo.png"
         
+            width="500"
+            
+        
         alt="pile d&#39;appels pour la suite de fibonacci recursive" />
     
     
@@ -13354,6 +13421,9 @@ f_{n+1} = f_n + f_{n-1}, & \forall n \in \mathbb{N}^+
 <figure >
     
         <img src="../images/page2/euclide.png"
+        
+            width="400"
+            
         
          />
     
@@ -27726,6 +27796,16 @@ Le document propose 45 questions, partagées sur ces thèmes. Cette liste n&rsqu
 <ul>
 <li>TP4 Boucles for: <a href="/python_bases/boucles/page5/index.html">Lien</a></li>
 </ul>
+<p><strong>Semaine du 02/11/26</strong></p>
+<!--
+* Cours Données numeriques - codage des caractères: [Lien](/nsi_1/donnees/page7/)
+* -->
+<ul>
+<li>Cours py 3 - les fonctions en python: <a href="/python_bases/fonctions/page2/index.html">Lien</a> et <a href="/pdf/NSI_1/cours_fonctions_boucles.pdf">pdf</a></li>
+<li>TD py 3 - fonctions et boucles: <a href="/pdf/NSI_1/py3_fiche_eleve.pdf">pdf</a></li>
+<li>TP5a - fonctions: <a href="https://capytale2.ac-paris.fr/web/c/e1d4-12541491/atr" rel="external">capytale</a></li>
+<li>TP5c - boucles et fonctions: <a href="/python_bases/fonctions/page51/index.html">Lien</a></li>
+</ul>
   </div>
 </details>
 <ul class="card-container">
@@ -41690,13 +41770,23 @@ On pourra par exemple multiplier le résultat de <code>sin(x)</code> par 30, et 
 * TP2 traitement d'un fichier (vente de fruits): [Lien](/snt/donnees/page9/)
 * -->
 <ul>
-<li>Realiser un questionnaire d&rsquo;enquête: <a href="/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf">pdf</a></li>
+<li>TP2 Realiser un questionnaire d&rsquo;enquête: <a href="/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf">pdf</a></li>
 <li>Cours sur le modèle économique: <a href="/snt/donnees/page5/index.html">Lien</a></li>
 <li>Exercices bilans sur la collecte des DCP: <a href="/pdf/SNT/C24_exercice_bilan_SNT_DCP.pdf">pdf</a></li>
 </ul>
 <p><strong>Semaine du 12/10/26</strong></p>
 <ul>
 <li>Cours sur le RGPD: <a href="/pdf/SNT/C25_donnees_personnelles_RGPD.pdf">pdf</a></li>
+</ul>
+<p><strong>Semaine du 02/11/26</strong></p>
+<ul>
+<li>TP3 concevoir un questionnaire en ligne: <a href="/docs/publier/page1/index.html">Lien</a></li>
+<li>Oral classe sur le RGPD</li>
+</ul>
+<p><strong>Semaine du 09/11/26</strong></p>
+<ul>
+<li>doc activité sur la vente aux enchères: <a href="/page_sans_nav/RS1_jeu_d_encheres.html">Lien</a></li>
+<li>Reseaux sociaux 1</li>
 </ul>
   </div>
 </details>
@@ -44422,14 +44512,14 @@ Il permet de communiquer de manière instantanée, et se substituent peu à peu 
 
 Les applications de type RS ont des fonctionnalités étendues qui sont en convergence (utilisation de hashtag, post de texte, img, video, reactions de type LIKE, interopérabilité…)</p>
 <blockquote>
-<p>Les réseaux sociaux combinent trois fonctions fondamentales :</p>
+<p>Les réseaux sociaux combinent 4 fonctions fondamentales :</p>
 </blockquote>
 <blockquote>
 <ul>
 <li>support de l&rsquo;identité numérique ;</li>
 <li>moyen de sociabilité sur la base de critères d&rsquo;affinité ;</li>
 <li>média réticulaire de communication interpersonnelle et/ou intergroupe.</li>
-<li>moyen de se distraire</li>
+<li>moyen de se distraire, recevoir de l&rsquo;information</li>
 </ul>
 </blockquote>
 <p><strong>Au démarrage</strong>: il faut <strong>créer un compte</strong>, le <strong>paramétrer</strong>. Il est conseillé de <strong>limiter la portée</strong> des données personnelles publiques lors de ce paramétrage. Par exemple, bloquer la lecture de votre liste d&rsquo;amis, ne pas rendre votre mail et numero de telephone accessible à tous.</p>
@@ -44875,28 +44965,12 @@ Dans certains cas, il rend aussi difficile l&rsquo;identification de l&rsquo;aut
 <li>Parcours sur les reseaux sociaux à base de videos: <a href="https://enseignants.lumni.fr/parcours/1225/viralite-et-information-sur-les-reseaux-sociaux-quels-mecanismes-quelles-menaces.html" rel="external">Lumni</a></li>
 <li>Kit atelier collège sur <a href="https://www.internetsanscrainte.fr/sid/kitsateliers" rel="external">internet sans craintes</a></li>
 <li>Guide de prevention des cyberviolences en milieu scolaire: <a href="https://cache.media.education.gouv.fr/file/11_-_novembre/10/2/2016_non_harcelement_guide_prevention_cyberviolence_WEB_654102.pdf" rel="external">Lien vers le pdf</a></li>
-<li>fun video:</li>
 </ul>
-
-<figure >
-    <a href="https://youtu.be/F7pYHN9iC9I">
-        <img src="../images/rs12.png"
-        
-        alt="Amazing mind reader reveals his &#39;gift&#39; - video - le mentaliste" />
-    </a>
-    
-    <figcaption>
-        
-        <p>
-            Amazing mind reader reveals his &#39;gift&#39; - video - le mentaliste
-            
-                
-            
-        </p>
-    </figcaption>
-    
-</figure>
-
+<h2 id="autres-videos">Autres videos<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<ul>
+<li>Black mirror Et si c&rsquo;etait vrai: <a href="https://www.youtube.com/watch?v=9dUQbuwGYj8" rel="external">youtube</a></li>
+<li>fun video: <a href="https://youtu.be/F7pYHN9iC9I" rel="external">youtube - Amazing mind reader reveals his gift - video - le mentaliste</a></li>
+</ul>
 
   <footer class="footline">
               <i class='fa-fw fas fa-user'></i> <a href="mailto:etixidor@hotmail.com">tix06</a>
@@ -54484,7 +54558,7 @@ Le code UNICODE permet de représenter tous les caractères spécifiques aux dif
 <h1 id="questionnaire">questionnaire</h1>
 
 <h1 id="formulaires">Formulaires<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>La réalisation d&rsquo;une enquête de terrain consiste à interroger les <em>usagers</em> au moyen d&rsquo;un questionnaire.</p>
+<p>La réalisation d&rsquo;une enquête de terrain consiste à interroger les <em>usagers</em> au moyen d&rsquo;un <a href="/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf">questionnaire</a>.</p>
 <h2 id="but-et-règlementation">But et règlementation<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Lors de la confection du questionnaire, posez-vous au minimum les questions suivantes:</p>
 <ul>
@@ -54494,25 +54568,31 @@ Le code UNICODE permet de représenter tous les caractères spécifiques aux dif
 <li>si celle-ci n&rsquo;est pas anonyme, que prevoyez-vous en regard du RGPD?</li>
 <li>la collecte des informations, est-elle simple?</li>
 </ul>
-<h2 id="questionnaire-à-destination-des-parents">Questionnaire à destination des parents<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h2 id="tuto-réaliser-un-questionnaire-en-ligne">Tuto: réaliser un questionnaire en ligne<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Nous prendrons comme exemple le Questionnaire suivant, dont le but est d&rsquo;établir un profil de la famille et des enfants scolarisés dans une école élémentaire. Ce questionnaire est adressé aux parents:</p>
 <ul>
 <li>Combien d&rsquo;enfants avez vous?</li>
 <li>L&rsquo;enfant scolarisé dans notre école, s&rsquo;agit-il d&rsquo;une fille/d&rsquo;un garçon?</li>
-<li>Bénéficie t-il (elle) d&rsquo;un dispositif particulier (PAP, PAI, &hellip;)?</li>
-<li>Fréquente t-il (elle) l&rsquo;accueil périscolaire du matin?</li>
+<li>Bénéficie t-il (elle) d&rsquo;un dispositif particulier: Oui/Non?
+<ul>
+<li>Si Oui, quel est ce dispositif (PAP, PAI, &hellip;)?</li>
+</ul>
+</li>
+<li>Fréquente t-il (elle) l&rsquo;accueil périscolaire du matin? (jamais, parfois, toujours). Fréquente t-il (elle) l&rsquo;accueil périscolaire du soir? (jamais, parfois, toujours)</li>
 </ul>
 <blockquote>
 <p>Vous allez adapter ce questionnaire pour le <strong>publier en ligne</strong>.</p>
 </blockquote>
 <p>Ce questionnaire est anonyme; la plupart des questions sont de type <em>Question à Choix Multiple</em>, n&rsquo;autorisant qu&rsquo;une seule réponse.</p>
 <p>Ce type de questions est à privilégier pour en faciliter l&rsquo;analyse.</p>
-<h2 id="framaforms">Framaforms<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="liberaforms">Liberaforms<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>Les données relatives aux élèves ou à leurs parents sont des données sensibles qu’il faut protéger. Même si cela peut paraitre tentant d’utiliser les outils de formulaires américains tels que Microsoft et Google, il faut les éviter d’après la <a href="https://www.cnil.fr/fr" rel="external">CNIL</a>, car non respectueuses du RGPD en raison du «privacy shield» américain.</p>
-<p>Dans ce TP, vous allez devoir <strong>créer un compte</strong> sur <a href="https://framaforms.org/abc/fr/" rel="external">framaforms</a>, une association française qui respecte le RGPD qui s’engage à ne pas vendre vos données ni celles de vos utilisateurs.</p>
-<p>Un tutoriel pour comprendre: <a href="https://docs.framasoft.org/fr/framaforms/exemple-d-utilisation.html" rel="external">docs.framasoft.org</a></p>
-<h2 id="conception-du-formulaire">Conception du formulaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Une fois le compte créé, aller dans l&rsquo;editeur et commencer à concevoir le formulaire.</p>
+<p>Dans ce TP, vous allez devoir <strong>créer un compte</strong> sur <a href="https://my.liberaforms.org/user/new" rel="external">Liberaforms</a>, une association française qui respecte le RGPD qui s’engage à ne pas vendre vos données ni celles de vos utilisateurs.</p>
+<p>Une fois le compte créé, et l&rsquo;adresse mail validée, vous pourrez DIRECTEMENT aller à la page LOGIN:</p>
+<h4 id="login"><a href="https://my.liberaforms.org/user/login" rel="external">Login</a><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h4>
+<h3 id="conception-du-formulaire">Conception du formulaire<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une fois le compte créé, aller dans l&rsquo;editeur et créer un nouveau formulaire (<em>create new)</em>.</p>
+<p>Le tuto proposé ici est celui de <em>framaforms</em>, un projet en cours d&rsquo;abandon. Il vous faudra adapter les screens pour réaliser votre formulaire sur <a href="https://my.liberaforms.org" rel="external">Liberaforms</a></p>
 <ul>
 <li>Mettre un titre et un commentaire à partir des informations suivantes:</li>
 </ul>
@@ -54604,14 +54684,13 @@ Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une e
     
 </figure>
 
-<ul>
-<li>La question suivante pose un problème pour l&rsquo;analyse des résultats: <em>Votre enfant bénéficie-t-il d&rsquo;un dispositif?</em>. Le choix <em>Non</em> n&rsquo;apparait pas.
+<blockquote>
+<p>Pour la question suivante: <em>Votre enfant bénéficie-t-il d&rsquo;un dispositif?</em></p>
+</blockquote>
 <ul>
 <li>Il faudra d&rsquo;abord placer une 1ere question: <em>Votre enfant bénéficie-t-il d&rsquo;un dispositif d&rsquo;accompagnement?: OUI / NON</em></li>
 <li>Puis la question demandant le <em>type de dispositif</em>: (PAI, PAP, UPE2A, ULIS)?</li>
 <li>Enfin, il faudra lier ces 2 questions: la 2e question ne sera proposée qu&rsquo;à <em>condition</em> que la réponse précédente est <em>OUI</em>. Cela demande d&rsquo;ajouter un <em>champ conditionnel</em></li>
-</ul>
-</li>
 </ul>
 
 <figure >
@@ -54722,12 +54801,54 @@ Dans le cadre de l’auto-évaluation de notre école, nous vous proposons une e
 <ul>
 <li>Vous pouvez alors partager ce formulaire grâce à son adresse. Voir le bouton partager depuis le tableau de bord.</li>
 </ul>
+<h2 id="votre-enquête">Votre enquête<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Vous avez travaillé sur la conception d&rsquo;un <a href="/pdf/SNT/C26_Enquete_questionnaire_SNT.pdf">questionnaire d&rsquo;enquête</a> au cours d&rsquo;une séance précédente.</p>
+<ol>
+<li>
+<p>Utiliser ce travail pour créer votre propre questionnaire.</p>
+</li>
+<li>
+<p>Générer une adresse pour le publier à partir de votre tableau de bord:</p>
+</li>
+</ol>
+<blockquote>
+<p>Pour distribuer votre questionnaire, il faudra revenir sur votre tableau de bord, cliquer sur <em>my forms</em> (mes formulaires), choisir le formulaire dans la liste, et, parmi les <em>Options</em>, valider à la première ligne: <em>Public =&gt; True</em>. L&rsquo;adresse URL (ligne suivante) est alors active, et c&rsquo;est celle-ci qui permet de le publier.</p>
+</blockquote>
+
+<figure >
+    
+        <img src="../images/option_public.png"
+        
+            width="400"
+            
+        
+         />
+    
+    
+</figure>
+
+<ol start="3">
+<li>Générer un QR-code à partir de cette adresse. <em>Regardez plus bas dans votre fenêtre d&rsquo;option: Public URL in a QR</em>. Vous pouvez directement télécharger votre QR-code!</li>
+<li>Placer le QR-code, le nom du sujet, celui des enquêteurs, le nombre de questions, ainsi qu&rsquo;une illustration sur un document (Word) à rendre au professeur:</li>
+</ol>
+
+<figure >
+    
+        <img src="../images/enquete.png"
+        
+            width="400"
+            
+        
+         />
+    
+    
+</figure>
+
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
 <li>Questionnaires préparatoires à l’évaluation d’école (documents nationaux) disponibles ci-dessous et sur l’ENT : <a href="https://ien-ronchin.etab.ac-lille.fr/?page_id=3121" rel="external">ac-Lille</a></li>
 <li>Concevoir un questionnaire pour une etude de marché: <a href="https://bpifrance-creation.fr/encyclopedie/letude-marche/comment-faire-son-etude-marche/realiser-questionnaire-cadre-votre-etude" rel="external">bpifrance-creation.fr</a></li>
 <li>Le RGPD appliqué aux enquêtes: <a href="https://www.plus.transformation.gouv.fr/sites/default/files/ressource/Guide%20RGPD%20appliqu%C3%A9%20aux%20enqu%C3%AAtes%20(II)_0.pdf" rel="external">guide</a></li>
-<li>Exemple de formulaire réalisé à partir des consignes: <a href="https://framaforms.org/questionnaire-a-destination-des-parents-1705153379" rel="external">exemple</a></li>
 </ul>
 
   <footer class="footline">
@@ -67402,23 +67523,23 @@ Que signifient les objectifs de confidentialité, intégrité, et authentificati
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1793551047"></script>
-    <script src="/js/js-yaml/js-yaml.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-color.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1793551047" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1793551047" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1793551047" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1794407469"></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-color.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1794407469" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1794407469" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1794407469" defer></script>
     <script>
       window.relearn.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1793551047" defer></script>
-    <script src="/js/theme.js?1793551047" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1794407469" defer></script>
+    <script src="/js/theme.js?1794407469" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

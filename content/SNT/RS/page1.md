@@ -19,12 +19,12 @@ Les applications de type RS ont des fonctionnalités étendues qui sont en conve
 
 
 
-> Les réseaux sociaux combinent trois fonctions fondamentales :
+> Les réseaux sociaux combinent 4 fonctions fondamentales :
 
 > - support de l'identité numérique ;
 > - moyen de sociabilité sur la base de critères d'affinité ; 
 > - média réticulaire de communication interpersonnelle et/ou intergroupe.
-> - moyen de se distraire
+> - moyen de se distraire, recevoir de l'information
 
 **Au démarrage**: il faut **créer un compte**, le **paramétrer**. Il est conseillé de **limiter la portée** des données personnelles publiques lors de ce paramétrage. Par exemple, bloquer la lecture de votre liste d'amis, ne pas rendre votre mail et numero de telephone accessible à tous.
 
@@ -264,6 +264,7 @@ grâce à l'arrêt de la Cour de justice de l'Union européeenne du 13 mai 2014,
 * Parcours sur les reseaux sociaux à base de videos: [Lumni](https://enseignants.lumni.fr/parcours/1225/viralite-et-information-sur-les-reseaux-sociaux-quels-mecanismes-quelles-menaces.html)
 * Kit atelier collège sur [internet sans craintes](https://www.internetsanscrainte.fr/sid/kitsateliers)
 * Guide de prevention des cyberviolences en milieu scolaire: [Lien vers le pdf](https://cache.media.education.gouv.fr/file/11_-_novembre/10/2/2016_non_harcelement_guide_prevention_cyberviolence_WEB_654102.pdf)
-* fun video:
 
-{{< img src="../images/rs12.png" link="https://youtu.be/F7pYHN9iC9I" caption="Amazing mind reader reveals his 'gift' - video - le mentaliste" >}}
+## Autres videos
+* Black mirror Et si c'etait vrai: [youtube](https://www.youtube.com/watch?v=9dUQbuwGYj8)
+* fun video: [youtube - Amazing mind reader reveals his gift - video - le mentaliste](https://youtu.be/F7pYHN9iC9I)
