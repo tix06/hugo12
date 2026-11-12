@@ -1,5 +1,5 @@
 ---
-Title: TP4 listes
+Title: TP6a listes
 description: TP, liste, dictionnaire, indices, modifier supprimer et ajouter des éléments, liste de listes, matrices, tracé graphique
 weight: 9
 hidden: true
@@ -426,5 +426,7 @@ Comment atteindre la valeur d'un dictionnaire `D`, associé à la clé `7`?
 
 # Liens
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
-##### {{% button href="../page3" icon="palette" style="tip" %}}TP4{{% /button %}} Listes
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP6a{{% /button %}} Listes
+##### {{% button href="../page7" icon="palette" style="tip" %}}TP6b{{% /button %}} Listes et codage/decodage ascii
+##### {{% button href="../../TP/TP_shifumi" icon="palette" style="tip" %}}TP6c{{% /button %}} jeu du Shifumi
 

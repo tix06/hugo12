@@ -317,6 +317,27 @@ Cologne
 
 
 
+## Tracer un histogramme
+On souhaite visualiser les données d'une liste à l'aide d'un *histogramme*. On utilise alors la fonction `hist` du module `matplotlib.pyplot` qui est importé à la premiere ligne du script de la manière suivante: `import matplotlib.pyplot as plt`.
+
+
+```python
+from random import gauss
+import matplotlib.pyplot as plt
+
+# 1000 tailles (en cm) tirées selon une loi normale : moyenne 170, écart-type 7
+L = []
+for i in range(1000):
+    L.append(gauss(170, 7))
+
+plt.hist(L, bins=20, edgecolor="black")
+plt.xlabel("taille (cm)")
+plt.ylabel("effectif")
+plt.title("Répartition de 1000 tailles (loi normale)")
+plt.show()
+```
+
+*Un histogramme est une représentation graphique de la distribution d'une variable quantitative (continue ou discrète) regroupée en classes ou intervalles.*
 
 ## Tracer un graphique y = f(x)
 Pour tracer un graphique `y=f(x)`, il faut disposer de 2 listes de mêmes dimensions `x` et `y`. Les coordonnées des points sont alors:
@@ -347,6 +368,8 @@ plt.show()
 
 # Liens
 ##### {{% button href="../page2" icon="bullhorn" style="caution" %}}Cours{{% /button %}} 
-##### {{% button href="../page3" icon="palette" style="tip" %}}TP4{{% /button %}} Listes
+##### {{% button href="../page3" icon="palette" style="tip" %}}TP6a{{% /button %}} Listes
+##### {{% button href="../page7" icon="palette" style="tip" %}}TP6b{{% /button %}} Listes et codage/decodage ascii
+##### {{% button href="../../TP/TP_shifumi" icon="palette" style="tip" %}}TP6c{{% /button %}} jeu du Shifumi
 
 
