@@ -1,344 +1,365 @@
 ---
-Title : programmation orientée objet
-description: cours POO, classe, instanciation, accesseur getter et mutateur setter
+title: Programmation orientée objet
+description: cours POO, classe, instance, attributs, méthodes, __repr__, objets qui interagissent, encapsulation
 weight: 16
 ---
 
-Cette séquence comprend:
+Cette séquence comprend :
 
-* un cours sur la POO: [Lien](../page3)
-* une fiche d'exercices: [pdf](/pdf/NSI/POO_exercices.pdf)
-* TP Jeu des 7 familles: [Lien](../page34/) *(Sans interface graphique)*
-* TP sur trajectoires de projectiles: [Lien](../page31/) 
-* TP sur la programmation d'un jeu de Dominos: [Lien](../page33/). *(Sans interface graphique)*
-* fiche *les bonnes pratiques* en POO: [Lien](../fiche_POO)
+* ce cours sur la POO ;
+* une fiche d'exercices : [pdf](/pdf/NSI/POO_exercices.pdf) ;
+* un TP de transition *Fruits et paniers* : [Lien](../page35/) ;
+* le mini-projet Jeu des 7 familles : [Lien](../page34/) *(sans interface graphique)* ;
+* un TP sur les trajectoires de projectiles : [Lien](../page31/) ;
+* un TP sur la programmation d'un jeu de dominos : [Lien](../page33/) *(sans interface graphique)* ;
+* une fiche *Les bonnes pratiques* en POO : [Lien](../fiche_POO).
 
 # Programmation objet
 
 ## Principe
-En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l'architecture *d'objets physiques*.
+Jusqu'ici, nos programmes manipulaient des données (nombres, chaînes, listes, dictionnaires) d'un côté, et des fonctions qui agissent sur ces données de l'autre.
 
-Un *objet physique*, comme par exemple, une planche de skateboard, possède des caractéristiques propres. 
+En **programmation orientée objet** (POO), on regroupe dans une même structure, appelée **objet**, des données et les fonctions qui agissent sur ces données. L'idée est de se rapprocher de la façon dont on décrit les *objets physiques*.
 
-{{< img src="https://urbanart-paris.fr/wp-content/uploads/2016/04/12963624_1877786249114590_5321151849406456199_n.jpg" alt="chalk custom board" link="https://urbanart-paris.fr/event/chalk-custom-board-lart-dhabiller-skate/" caption="image: CHALK CUSTOM BOARD : L’ART D’HABILLER UN SKATE (urban art)" >}}
-Une planche, malgré la diversité, est toujours constituée: 
+Prenons l'exemple d'une planche de skateboard : elle possède des caractéristiques qui lui sont propres.
 
-* d'un deck (court, long)
-* d'un tail (plat, relevé)
-* de trucks (hauts, bas)
-* de roues (à gommes tendres, dures)
-* d'une décoration (image sous le deck)
+{{< img src="../images/skates.png" caption="quelques exemples montrant la diversité des planches de skates" >}}
 
-C'est son **état**.
+Malgré leur diversité, toutes les planches sont constituées :
 
-Cette planche peut repondre egalement à un ensemble de messages, qui forment ce que l'on appelle l'*interface* de l'objet. C'est au travers de ces méthodes que l'on peut interagir avec l'objet, ou que les objets peuvent interagir entre eux.
+* d'un deck (court, long) ;
+* d'un tail (plat, relevé) ;
+* de trucks (hauts, bas) ;
+* de roues (à gomme tendre, dure) ;
+* d'une décoration (l'image sous le deck).
 
-On peut lui associer une méthode `skateboard_pour_parc` qui renvoie `True` si la planche est de type *street* ou `False` si la planche est de type *cruising*, ou prevue pour la decoration.
+L'ensemble de ces caractéristiques, à un instant donné, constitue l'**état** de la planche. Cet état peut évoluer : on peut changer les roues, repeindre la déco, la planche s'use…
+
+Une planche peut aussi **répondre à des demandes** (on dit aussi des *messages*). Par exemple, on peut lui demander : *« es-tu adaptée au skatepark ? »*. Elle répond `True` pour une planche de type *street* (deck court, tail relevé, roues dures), et `False` pour une planche de type *cruiser*.
+
+L'ensemble des demandes auxquelles un objet sait répondre s'appelle son **interface** : c'est par elle que l'on interagit avec l'objet, et que les objets interagissent entre eux.
 
 Un objet comprend donc :
 
-* une partie **figée** qui représente son **état**, et qui est constituée de champs ou **attributs**.
-* une partie **dynamique** qui décrit son **comportement**, à l'aide de déclarations de **méthodes**, qui doivent répondre à des **messages**. 
+* des **attributs** : les données qui décrivent son **état** ;
+* des **méthodes** : les fonctions qui décrivent son **comportement**, c'est-à-dire la façon dont il répond aux messages.
 
-## Classe et instance de classe
-La structure interne des objets et les messages auxquels ils repondent sont définis dans une **classe**. Une *classe* décrit les méthodes de création d'objets de ce type (on parle d'*instance* de classe), et les méthodes auxquelles répondront les objets de ce type dans la reception des messages.
+## Classe et instance
 
-Avec l'exemple précédent, la **class**e Skateboard pourrait contenir:
+Toutes les planches ont la même structure, seules les valeurs changent. On décrit cette structure commune une seule fois, dans une **classe**.
 
-* les méthodes de création des instances des différents skateboards. On y définit les attributs pour chaque nouvelle planche de skateboard que l'on créé. Chaque planche de skate constitue une *instance* de classe.
-* les méthodes de la classe skateboard, qui repondent aux messages du genre: `skateboard_pour_parc`? Un *message* est constitué du nom de la méthode, et permet d'interagir avec celui-ci. Ces méthodes sont accessibles à tous les skates qui sont des instances de la classe skateboard.
+* La **classe** `Skateboard` est le *plan de fabrication* (le moule) : elle indique quels attributs possède une planche, et quelles méthodes elle sait exécuter.
+* Chaque planche fabriquée à partir de ce plan est un **objet**, appelé **instance** de la classe. Créer un objet s'appelle **instancier** la classe.
 
-En **python**, la création d'une classe commence par le mot clé **class** suivi du nom de la classe, de deux points et d'une indentation. 
+On peut fabriquer autant d'instances que l'on veut avec une même classe : chacune possède ses propres valeurs d'attributs.
 
-```python
-class Skateboard:
-``` 
+## Définir une classe en Python
 
-Toute la partie indentée contient les *méthodes de création* des *instances* de cette classe et les *méthodes* de cette classe.
-
-Lors de la programmation, on devra faire référence à l'instance de l'objet sur lequel on travaille: le mot clé `self` permet ceci en python.
-
-La méthode de création d'un objet est définie par `def __init__` suivi au minimum de l'argument `self`, et eventuellement d'autres arguments.
+### Le mot-clé `class`
+La définition d'une classe commence par le mot-clé `class`, suivi du nom de la classe (par convention avec une majuscule), de deux points et d'un bloc indenté :
 
 ```python
 class Skateboard:
-    def __init__(self,deck='court',
-                tail='releve',
-                truck='bas',
-                roues='dures',
-                deco='None'):
+    ...
+```
+
+Tout le bloc indenté contient les **méthodes** de la classe.
+
+### Le constructeur `__init__` et le paramètre `self`
+La méthode `__init__`, appelée **constructeur**, est exécutée automatiquement à la création de chaque objet. Son rôle est de **créer les attributs** de l'objet et de leur donner une valeur initiale.
+
+Toute méthode reçoit comme premier paramètre **`self`**, qui désigne l'objet sur lequel elle agit. Les attributs s'écrivent `self.nom_attribut` : `self.deck` signifie « le deck de *cette* planche ».
+
+```python
+class Skateboard:
+    def __init__(self, deck='court', tail='relevé', truck='bas', roues='dures', deco=None):
         self.deck = deck
         self.tail = tail
         self.truck = truck
         self.roues = roues
         self.deco = deco
-``` 
+        self.km = 0       # attribut qui ne vient pas d'un paramètre
+```
 
-Les attributs des objets de cette classe sont définis dans cette méthode. Ils sont codés sous la forme `self.attribut`, et peuvent faire référence aux arguments passés lors de l'instanciation.
+*Remarques :*
 
-Enfin, chaque méthode de classe est définie à l'aide de: `def nom_de_la_methode`. Celle-ci prend aussi au minimum, l'argument `self`.
+* Les paramètres ont ici des **valeurs par défaut** : `Skateboard()` crée une planche street classique, sans décoration (`None`).
+* Un attribut ne vient pas forcément d'un paramètre. Ici, toute planche neuve a parcouru `0` km.
+* Ne pas confondre le **paramètre** `deck` (une variable locale à `__init__`, qui disparaît ensuite) et l'**attribut** `self.deck` (qui reste attaché à l'objet).
 
-*Script complet:*
+### Les méthodes
+Une méthode se définit comme une fonction, **à l'intérieur** de la classe, avec `self` comme premier paramètre. Une méthode peut :
+
+* **retourner** une information sur l'objet, sans le modifier ;
+* **modifier** l'état de l'objet, c'est-à-dire ses attributs.
+
+*Script complet :*
 
 ```python
 class Skateboard:
-    def __init__(self,deck='court',tail='releve',truck='bas',roues='dures',deco='None'):
+    def __init__(self, deck='court', tail='relevé', truck='bas', roues='dures', deco=None):
         self.deck = deck
         self.tail = tail
         self.truck = truck
         self.roues = roues
         self.deco = deco
-        
+        self.km = 0
+
     def skateboard_pour_parc(self):
-        if self.deck == 'court' and self.tail == 'releve' and self.roues == 'dures':
+        """retourne True si la planche est adaptée au skatepark"""
+        if self.deck == 'court' and self.tail == 'relevé' and self.roues == 'dures':
             return True
         else:
             return False
+
+    def rouler(self, distance):
+        """ajoute distance (en km) au compteur de la planche"""
+        self.km = self.km + distance
 ```
 
-On instancie alors un premier skateboard de la manière suivante:
+`skateboard_pour_parc` retourne une information, et `rouler` modifie l'état de la planche.
+
+## Créer et utiliser des objets
+
+### Instancier
+On crée un objet en appelant la classe comme une fonction, **sans** donner l'argument `self` :
 
 ```python
 >>> mon_premier_skate = Skateboard()
 ```
 
-Le programme interprete alors l'instruction: `Skateboard.__init__(mon_premier_skate)`, c'est à dire qu'il execute la méthode de classe `Skateboard.__init__`, avec le paramètre `self=mon_premier_skate`.
+{{< img src="../images/sk8_classic.jpg" width="400" alt="skateboard classic" caption="un premier skateboard bien classique" >}}
 
-{{< img src="../images/sk8_classic.jpg" alt="skateboard classic" caption="un premier skateboard bien classique" >}}
-Et on envoie le message suivant:
+Python crée un nouvel objet, puis exécute automatiquement `__init__` en donnant cet objet comme valeur à `self`. Les autres arguments sont passés aux paramètres suivants, dans l'ordre :
+
+```python
+>>> mon_sector_9 = Skateboard('long', 'plat', 'haut', 'molles', 'Marley')
+```
+
+{{< img src="../images/sk8_sector9.jpg" width="400" alt="skateboard cruiser" caption="un skateboard cruiser" >}}
+
+### Appeler une méthode : la notation pointée
+On envoie un message à un objet avec la **notation pointée** `objet.methode(arguments)` :
 
 ```python
 >>> mon_premier_skate.skateboard_pour_parc()
 True
-```
-
-Le programme interprete alors l'instruction: `Skateboard.skateboard_pour_parc(mon_premier_skate)`,
-
-Instanciation d'un second skateboard:
-
-{{< img src="../images/sk8_sector9.jpg" alt="skateboard cruiser" caption="un skateboard cruiser" >}}
-```python
->>> mon_sector_9 = Skateboard('long','plat','haut','molles','Marley')
 >>> mon_sector_9.skateboard_pour_parc()
 False
 ```
 
-## La méthode `__repr__()` 
-Cette méthode `__repr__` s'utilise pour donner une représentation plus lisible de l'objet lorsqu'on veut l'afficher avec la fonction `print`.
+Python traduit `mon_sector_9.skateboard_pour_parc()` par `Skateboard.skateboard_pour_parc(mon_sector_9)` : l'objet placé **avant le point** devient `self`. C'est pour cela qu'on n'écrit jamais `self` lors de l'appel.
 
-*Exemple 1:* On essaie d'afficher notre instance de classe `mon_sector_9` créée plus haut:
+### Accéder aux attributs
+La notation pointée permet aussi de lire un attribut :
+
+```python
+>>> mon_sector_9.deco
+'Marley'
+>>> mon_premier_skate.rouler(3)
+>>> mon_premier_skate.rouler(2)
+>>> mon_premier_skate.km
+5
+>>> mon_sector_9.km
+0
+```
+
+Chaque instance a **ses propres attributs** : faire rouler `mon_premier_skate` ne change pas le compteur de `mon_sector_9`.
+
+### Erreurs classiques
+
+| Erreur | Ce qui se passe |
+|--- |--- |
+| oublier `self` dans la définition : `def rouler(distance):` | `TypeError` à l'appel : Python transmet l'objet en plus de l'argument |
+| écrire `deck = deck` au lieu de `self.deck = deck` dans `__init__` | l'attribut n'est pas créé : `AttributeError` plus tard |
+| oublier les parenthèses : `mon_sector_9.skateboard_pour_parc` | on obtient la méthode elle-même, sans l'exécuter |
+| utiliser `print` au lieu de `return` dans une méthode qui doit renvoyer une valeur | la méthode renvoie `None` |
+
+## La méthode `__repr__`
+Essayons d'afficher une instance :
 
 ```python
 >>> print(mon_sector_9)
 <__main__.Skateboard object at 0x7fc6b0847550>
-``` 
+```
 
-Ce n'est pas très explicite pour un humain. On préfèrera souvent choisir un descriptif personnalisé. Nous allons programmer la chaine de caractères qui sera renvoyée lors du `print`.
-
-On ajoute maintenant à la classe `Skateboard` la méthode `__repr__()` qui sera appelée lorsque l'on utilise `print(objet)`: 
+Python affiche seulement la classe et l'adresse mémoire de l'objet, ce qui n'est pas très lisible. On peut choisir un affichage personnalisé en écrivant, dans la classe, la **méthode spéciale** `__repr__`. Elle doit **retourner** une chaîne de caractères :
 
 ```python
 class Skateboard:
-    def __init__(...
     ...
 
     def __repr__(self):
         if self.skateboard_pour_parc():
-            return "skateboard de type {} qui permet de rider en parc".format(self.deck)
-
+            return f"skateboard {self.deck} qui permet de rider en parc"
         else:
-            return "skateboard de type {} qui ne permet pas de rider en parc".format(self.deck)
+            return f"skateboard {self.deck} qui ne permet pas de rider en parc"
 ```
 
-On construit à nouveau l'instance de classe `mon_sector_9`, et on fait `print(mon_sector_9)`:
+Après avoir recréé l'instance :
 
 ```python
->>> mon_sector_9 = Skateboard('long','plat','haut','molles','Marley')
+>>> mon_sector_9 = Skateboard('long', 'plat', 'haut', 'molles', 'Marley')
 >>> print(mon_sector_9)
-skateboard de type long qui ne permet pas de rider en parc
-``` 
+skateboard long qui ne permet pas de rider en parc
+>>> [mon_premier_skate, mon_sector_9]
+[skateboard court qui permet de rider en parc, skateboard long qui ne permet pas de rider en parc]
+```
 
-*Remarquer* que l'appel à la méthode `skateboard_pour_parc` se fait en identifiant l'objet qui possède cette méthode: `self.skateboard_pour_parc()`. Et ici, on n'ajoutera pas de nouvel argument. (On ne met pas `self` en argument lors du *message* envoyé à cet objet).
+*Remarques :*
 
-*Surcharge d'une fonction de la librairie standard:* Ce que l'on vient de réaliser est une surcharge de la fonction `print` de la librairie standard. 
+* À l'intérieur de la classe, une méthode en appelle une autre avec `self.skateboard_pour_parc()`, sans redonner `self` entre les parenthèses.
+* `__repr__` est utilisée par `print`, par la console et pour afficher les éléments d'une liste. Python propose aussi la méthode `__str__`, utilisée en priorité par `print` si elle existe.
+* Les méthodes dont le nom est entouré de `__` sont des **méthodes spéciales** : Python les appelle automatiquement dans certaines situations (`__init__` à la création, `__repr__` à l'affichage…). Il en existe aussi pour les opérateurs, par exemple `__eq__` pour `==` ou `__lt__` pour `<` (voir les liens en bas de page).
 
-Mais il existe d'autres méthodes de surcharge, prévues pour les **opérateurs**, ainsi que pour certaines **fonctions**. On pourra se référer au [lien suivant](https://riptutorial.com/fr/python/example/7334/surcharge-de-l-operateur) pour approfondir le sujet.
+# Des objets qui interagissent
 
-# Encapsulation: *getter* et *setter* 
-## Lire un attribut: accesseur ou *getter*
+## Un objet comme attribut d'un autre objet
+Un attribut peut contenir n'importe quelle valeur : un nombre, une liste… ou **un autre objet**. Définissons une classe `Skateur`, dont l'attribut `planche` est un objet `Skateboard` :
 
-L'utilisateur du programme ne devrait pas utiliser la méthode *pointée* précédente `nom_objet.nom_attribut`, permettant d’accéder aux valeurs des attributs: on ne veut pas forcement que l’utilisateur ait accès à la représentation interne des classes. 
+```python
+class Skateur:
+    def __init__(self, nom, planche):
+        self.nom = nom
+        self.planche = planche      # un objet Skateboard
 
-Pour utiliser ou modifier les attributs, on utilisera de préférence des **méthodes dédiées** dont le rôle est de faire l’**interface** entre l’utilisateur de l’objet et la représentation interne de l’objet (ses attributs).
+    def peut_aller_au_parc(self):
+        return self.planche.skateboard_pour_parc()
 
-Les **attributs** sont alors en quelque sorte **encapsulés** dans l’objet, c’est à dire non accessibles directement. la liste des **méthodes** devient une sorte de mode d’emploi de la classe.
+    def session(self, distance):
+        self.planche.rouler(distance)
+```
 
-Pour obtenir la valeur d’un attribut nous utiliserons la méthode des accesseurs (ou "getters") dont le nom est généralement : `getNom_attribut()`.
+```python
+>>> lea = Skateur("Léa", mon_premier_skate)
+>>> lea.peut_aller_au_parc()
+True
+>>> lea.session(4)
+>>> mon_premier_skate.km
+9
+```
 
-*Exemple:*
+`self.planche.skateboard_pour_parc()` se lit de gauche à droite : « la planche de ce skateur, à qui on demande si elle est adaptée au parc ». Le skateur **délègue** la question à sa planche.
 
+On peut de même utiliser un attribut qui contient une **liste d'objets** : par exemple un magasin dont l'attribut `stock` est une liste de `Skateboard`, ou un joueur qui a une liste de cartes en main (voir le mini-projet *Jeu des 7 familles*).
+
+## Variables et objets : attention aux références
+Dans l'exemple précédent, `lea.session(4)` a modifié `mon_premier_skate.km`. En effet, `lea.planche` et `mon_premier_skate` désignent **le même objet** en mémoire, et non deux copies.
+
+```python
+>>> copie = mon_premier_skate      # pas de nouvelle planche : un second nom pour la même
+>>> copie.rouler(1)
+>>> mon_premier_skate.km
+10
+>>> copie is mon_premier_skate
+True
+>>> Skateboard() == mon_premier_skate   # même état, mais deux objets différents
+False
+```
+
+Une variable contient une **référence** vers l'objet, comme pour les listes. Seul un appel à `Skateboard(...)` fabrique un nouvel objet.
+
+# Encapsulation : *getters* et *setters*
+
+## Le principe
+Pour utiliser un objet, il suffit de connaître son **interface** (ses méthodes et ce qu'elles font), sans savoir comment il est programmé à l'intérieur. On dit que les attributs sont **encapsulés** : idéalement, on ne les manipule pas directement, mais à travers des méthodes prévues pour cela.
+
+Avantage : la méthode peut **contrôler** les modifications. Par exemple, empêcher une distance négative dans `rouler`, ou un type de roues inconnu.
+
+## Lire un attribut : accesseur ou *getter*
+Un **accesseur** (*getter*) est une méthode qui retourne la valeur d'un attribut. Son nom commence généralement par `get_` :
 
 ```python
 class Skateboard:
-    def __init__(...
     ...
-    
-    def getTail(self):
-      return self.tail
+
+    def get_tail(self):
+        return self.tail
 ```
 
-En console, une fois l'instance de classe `mon_sector_9` définie, on fait:
-
-```
->>> mon_sector_9.getTail()
-`long`
+```python
+>>> mon_sector_9.get_tail()
+'plat'
 ```
 
-## Modifier des attributs : les mutateurs ou *setters*
-De la même manière, pour modifier la valeur d'un attribut, on devrait utiliser une méthode dédiée. Le nom de cette méthode commence en principe par `set`:
-
-*Exemple:*
+## Modifier un attribut : mutateur ou *setter*
+Un **mutateur** (*setter*) est une méthode qui modifie la valeur d'un attribut. Son nom commence généralement par `set_` :
 
 ```python
 class Skateboard:
-    def __init__(...
     ...
-    
-    def setDeco(self, deco):
-      self.deco = deco
+
+    def set_deco(self, deco):
+        self.deco = deco
 ```
-
-En console:
-
-```
->>> mon_sector_9.setDeco = 'repeinte'
-
-```
-
-## Docstrings
-Chaque classe définit ses propres manières de stocker, d'acceder et de manipuler les données. C'est le Docstring qui permettra de prendre connaissance des détails, comme par exemple celui de la classe `Sept_Familles`:
 
 ```python
-class Sept_Familles:
+>>> mon_sector_9.set_deco('repeinte')
+>>> mon_sector_9.get_deco()      # si l'on a aussi écrit cet accesseur
+'repeinte'
+```
+
+*Attention :* `mon_sector_9.set_deco = 'repeinte'` ne modifie pas la déco. Cette instruction remplace la méthode `set_deco` de cet objet par une chaîne de caractères !
+
+## En pratique, en Python
+Contrairement à d'autres langages comme Java, Python n'empêche pas d'écrire `objet.attribut`. Par convention, un attribut dont le nom commence par `_` (par exemple `self._km`) signale qu'il ne doit pas être utilisé en dehors de la classe.
+
+*Au baccalauréat*, les sujets utilisent souvent directement la notation `objet.attribut` (par exemple `carte.famille`). Il faut donc savoir lire et écrire les deux formes.
+
+# Documenter une classe : le *docstring*
+Une classe se documente par une chaîne placée juste après sa première ligne : le **docstring**. Il décrit les attributs et les méthodes, c'est-à-dire l'interface de la classe :
+
+```python
+class Skateboard:
     """
     NAME
-        Sept_Familles
+        Skateboard
     DESCRIPTION
-        constructeur pour les cartes du jeu
-    PARAMETERS
-        famille (str): nom de la famille
-        qui(str): membre de la famille 
-            choix parmi ('Grand-père','Grand-mère','Pére','Mère','Fils','Fille')
-    FUNCTIONS
-        get_Attributs
+        planche de skateboard
+    ATTRIBUTES
+        deck (str) : 'court' ou 'long'
+        tail (str) : 'plat' ou 'relevé'
+        truck (str) : 'haut' ou 'bas'
+        roues (str) : 'dures' ou 'molles'
+        deco (str ou None) : décoration sous le deck
+        km (float) : distance parcourue, 0 à la création
+    METHODS
+        skateboard_pour_parc() -> bool
+        rouler(distance) -> None
+        get_tail() -> str
+        set_deco(deco) -> None
     """
 ```
 
-On peut alors prendre connaissance du docstring en faisant:
+On en prend connaissance avec :
 
 ```
->>> help(Sept_Familles)
+>>> help(Skateboard)
 ```
 
-# Interface
-L'interface d'une classe est représentée par le diagramme suivant:
+# Représenter une classe
+On représente souvent une classe par un diagramme en trois cases : le **nom** de la classe, ses **attributs**, puis ses **méthodes**.
 
 {{< img src="../images/UML.png" caption="Une représentation d'une classe" >}}
 
-<!--
+Pour la classe `Skateboard` :
+
+| `Skateboard` |
+|--- |
+| `deck`, `tail`, `truck`, `roues`, `deco`, `km` |
+| `__init__(deck, tail, truck, roues, deco)`, `skateboard_pour_parc()`, `rouler(distance)`, `get_tail()`, `set_deco(deco)`, `__repr__()` |
+
 # L'essentiel
-<h2> Classe et Objet</h2>
-Un <b>objet</b> est construit à partir d'une <b>classe</b>, et comporte des attributs (les variables) et des méthodes (fonctions).
 
-
-<ul>
-<li>Les <b>attributs</b> renvoient aux variables contenues dans l’objet : ce sont les données. Ces données peuvent varier au cours du programme. Il s'agit donc de l'état de cet objet à un instant t.</li>
-<li>Les <b>méthodes</b> sont les éléments qui permettent d’interagir avec les attributs. Les méthodes sont des fonctions internes à une classe, qui doivent répondre à des <b>messages</b>.</li>
-</ul>
-
-<em>Exemple:</em><br>
-<pre><code>
-class Sept_Familles:
-    def __init__(self,famille,qui):
-        self.famille = famille
-        self.qui = qui   
-    def get_Attributs(self):
-        return self.famille,self.qui
-
-carte1 = Sept_Familles('Jongleurs','Grand-père')
-</code></pre>
-
-<h2>Instanciation</h2>
-<p>
-<b>Un objet est une <em>instance</em> de classe.</b>
-</p>
-<p>
-On instancie un objet en appelant le nom de sa classe comme s'il s'agissait d'une fonction. Instancier, c'est définir un nouvel objet, donc définir son <b>nom</b>, et la valeur de ses attributs.
-</p>
-<p>
-Par exemple, à l'aide de l'instruction <code>carte1 = Sept_Familles('Jongleurs','Grand-père')</code> lorsque l'on veut créer un nouvel objet <code>carte1</code> à partir de la classe <code>Sept_Familles</code>.
-</p>
-<p>
-C'est alors la méthode <code>__init__(self,attribut1,...);</code> qui est automatiquement appelée pour initialiser l'objet. Cette méthode déclare les attributs associés à <code>Sept_Familles</code>.
-</p>
-<h2> Definir une méthode de classe</h2>
-Les méthodes de classe peuvent modifier l'état de l'objet (ses attributs), ou retourner une valeur.
-
-Une méthode possède au minimum, comme attribut, self. Les autres seront ajoutés après:
-
-<pre><code>
-  def age(self,an_actuelle):
-    """
-    calcule l'age en fonction de l'année de naissance
-    et de la date actuelle
-    Params:
-    self.an_de_naissance (int): attribut de l'objet
-    an_actuelle (int) : date actuelle
-    """
-    return an_actuelle - self.an_de_naissance
-</code></pre>
-<h2>Notation pointée</h2>
-<h3>Attributs</h3>
-<p>
-Les attributs sont accessibles au sein de la classe à l'aide d'une notation pointée, du type <code>self.attribut</code>. Le mot-clé <code>self</code> correspondra à l'objet instancié.
-</p>
-<p>
-<em>En dehors de la classe:</em>
-<br>
-On pourrait acceder aux attributs en faisant `objet.attribut`:
-
-<pre><code>
-carte1.famille
-</code></pre>
-</p>
-
-<p>
-En principe, il vaudra mieux éviter cette notation pointée en dehors de la classe, et éviter de faire référence aux attributs en faisant <code>objet.attribut</code>. On préfèrera utiliser un mécanisme d'<b>encapsulation</b>.
-</p>
-<h3>Méthodes</h3>
-Les méthodes de classe sont accessibles en faisant 
-
-<pre><code>
-objet.methode(arg)
-</code></pre>
-
-<h2>L'encapsulation</h2>
-<p>
-L'<b>encapsulation</b> consiste à rassembler les données et les méthodes au sein d'une structure en cachant l'implémentation de l'objet, c'est-à-dire en empêchant l'accès aux données par un autre moyen que les services proposés. (getters et setters par exemple).
-</p>
-<p>
-On peut, par exemple, accéder à la description de carte1 à l'aide de la méthode <code>get_Attributs()</code>, ce qui donne:
-
-<pre><code>
->>> carte1.get_Attributs()
-('Jongleurs', 'Grand-père')
-</code></pre>
-
-</p>
-
--->
-
-
+* Une **classe** décrit un type d'objet. Un **objet** (ou **instance**) est fabriqué à partir d'une classe : `planche = Skateboard('long')`.
+* Les **attributs** (`self.deck`) décrivent l'**état** de l'objet. Les **méthodes** décrivent son **comportement**.
+* Le **constructeur** `__init__` est appelé automatiquement à la création de l'objet : il crée les attributs.
+* **`self`** désigne l'objet sur lequel agit la méthode. Il est le premier paramètre de chaque méthode, mais on ne l'écrit pas lors de l'appel : `planche.rouler(3)`.
+* Une méthode peut **retourner** une information ou **modifier** l'état de l'objet.
+* `__repr__` **retourne** la chaîne utilisée pour afficher l'objet.
+* Un attribut peut être un autre objet, ou une liste d'objets : les objets **interagissent**.
+* Une variable contient une **référence** vers un objet : deux variables peuvent désigner le même objet.
+* Les **accesseurs** (`get_...`) et **mutateurs** (`set_...`) font l'interface entre l'utilisateur et les attributs : c'est l'**encapsulation**.
 
 <!--
 ## Exercice 3: Classe Pile créée à partir d'une liste chaînée
@@ -352,17 +373,18 @@ On rappelle qu'une liste chaînée est une structure linéaire, constituée de c
 
 -->
 
+*Pour la suite :* la POO sert aussi à programmer des **structures de données** (piles, files, listes chaînées, arbres) : l'interface (les méthodes `empiler`, `depiler`…) est séparée de l'implémentation (la manière de stocker les données). Voir le [cours sur les listes chaînées](/docs/NSI/structure/page21/#listes).
+
 **La suite en TP**
 
-* TP Jeu des 7 familles: [Lien](../page34/) *(Sans interface graphique)*
-* TP sur trajectoires de projectiles: [Lien](../page31/) 
-* TP sur la programmation d'un jeu de Dominos: [Lien](../page33/). *(Sans interface graphique)*
+* TP de transition *Fruits et paniers* : [Lien](../tp_fruits_paniers/)
+* Mini-projet Jeu des 7 familles : [Lien](../page34/) *(sans interface graphique)*
+* TP sur les trajectoires de projectiles : [Lien](../page31/)
+* TP sur la programmation d'un jeu de dominos : [Lien](../page33/) *(sans interface graphique)*
 
 # Liens
-* cours sur [python.developpez.com](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet): compléments sur les méthodes spéciales de [surcharge des opérateurs](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4), d'[héritage et polymorphisme](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5)
-* références : [Classes sur docs.python.org](https://docs.python.org/fr/3.6/tutorial/classes.html)
-* prolongement sur les heritages et polymorphismes [python doctor POO - debutants](https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants)
-* Resumé de cours : [Lyceum.fr > POO](https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet)
+* Cours sur [python.developpez.com](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet) : compléments sur les méthodes spéciales de [surcharge des opérateurs](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4), et sur l'[héritage et le polymorphisme](https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5) (hors programme).
+* Référence : [Classes sur docs.python.org](https://docs.python.org/fr/3/tutorial/classes.html)
+* Prolongement sur l'héritage et le polymorphisme (hors programme) : [Python Doctor, POO pour débutants](https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants)
+* Résumé de cours : [Lyceum.fr > POO](https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet)
 * Autres exercices : [Lyceum.fr > POO > Exercices](https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet/exo)
-
-

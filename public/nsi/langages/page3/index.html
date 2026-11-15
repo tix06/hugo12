@@ -5,45 +5,45 @@
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content="Hugo 0.163.2">
     <meta name="generator" content="Relearn 9.0.3+36307e4ed23582638ab689240ac7b427217803ee">
-    <meta name="description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
+    <meta name="description" content="cours POO, classe, instance, attributs, méthodes, __repr__, objets qui interagissent, encapsulation">
     <meta name="author" content="Etixi">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="programmation orientée objet :: allophysique">
-    <meta name="twitter:description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
+    <meta name="twitter:title" content="Programmation orientée objet :: allophysique">
+    <meta name="twitter:description" content="cours POO, classe, instance, attributs, méthodes, __repr__, objets qui interagissent, encapsulation">
     <meta property="og:url" content="//localhost:1313/nsi/langages/page3/index.html">
     <meta property="og:site_name" content="allophysique">
-    <meta property="og:title" content="programmation orientée objet :: allophysique">
-    <meta property="og:description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
+    <meta property="og:title" content="Programmation orientée objet :: allophysique">
+    <meta property="og:description" content="cours POO, classe, instance, attributs, méthodes, __repr__, objets qui interagissent, encapsulation">
     <meta property="og:locale" content="fr">
     <meta property="og:type" content="article">
     <meta property="article:section" content="NSI term">
     <meta property="article:modified_time" content="2026-06-27T17:13:56+02:00">
-    <meta itemprop="name" content="programmation orientée objet :: allophysique">
-    <meta itemprop="description" content="cours POO, classe, instanciation, accesseur getter et mutateur setter">
+    <meta itemprop="name" content="Programmation orientée objet :: allophysique">
+    <meta itemprop="description" content="cours POO, classe, instance, attributs, méthodes, __repr__, objets qui interagissent, encapsulation">
     <meta itemprop="dateModified" content="2026-06-27T17:13:56+02:00">
-    <meta itemprop="wordCount" content="1251">
-    <title>programmation orientée objet :: allophysique</title>
-    <link href="/images/logo.png?1794240508" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1794240508" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1794240508" defer></script>
-    <script src="/js/search-lunr.js?1794240508" defer></script>
-    <script src="/js/search.js?1794240508" defer></script>
+    <meta itemprop="wordCount" content="2151">
+    <title>Programmation orientée objet :: allophysique</title>
+    <link href="/images/logo.png?1794761058" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1794761058" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1794761058" defer></script>
+    <script src="/js/search-lunr.js?1794761058" defer></script>
+    <script src="/js/search.js?1794761058" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1794240508";
+      window.relearn.index_js_url="/searchindex.en.js?1794761058";
     </script>
-    <script src="/js/lunr/lunr.min.js?1794240508" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1794240508" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1794240508" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1794240508" defer></script>
+    <script src="/js/lunr/lunr.min.js?1794761058" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1794761058" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1794761058" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1794761058" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1794240508" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1794240508" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1794240508" rel="stylesheet">
-    <link href="/css/theme.css?1794240508" rel="stylesheet">
-    <link href="/css/format-html.css?1794240508" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1794761058" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1794761058" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1794761058" rel="stylesheet">
+    <link href="/css/theme.css?1794761058" rel="stylesheet">
+    <link href="/css/format-html.css?1794761058" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -116,21 +116,42 @@
 <nav class="TableOfContents">
   <ul>
     <li><a href="#principe">Principe</a></li>
-    <li><a href="#classe-et-instance-de-classe">Classe et instance de classe</a></li>
-    <li><a href="#la-méthode-__repr__">La méthode <code>__repr__()</code></a></li>
+    <li><a href="#classe-et-instance">Classe et instance</a></li>
+    <li><a href="#définir-une-classe-en-python">Définir une classe en Python</a>
+      <ul>
+        <li><a href="#le-mot-clé-class">Le mot-clé <code>class</code></a></li>
+        <li><a href="#le-constructeur-__init__-et-le-paramètre-self">Le constructeur <code>__init__</code> et le paramètre <code>self</code></a></li>
+        <li><a href="#les-méthodes">Les méthodes</a></li>
+      </ul>
+    </li>
+    <li><a href="#créer-et-utiliser-des-objets">Créer et utiliser des objets</a>
+      <ul>
+        <li><a href="#instancier">Instancier</a></li>
+        <li><a href="#appeler-une-méthode--la-notation-pointée">Appeler une méthode : la notation pointée</a></li>
+        <li><a href="#accéder-aux-attributs">Accéder aux attributs</a></li>
+        <li><a href="#erreurs-classiques">Erreurs classiques</a></li>
+      </ul>
+    </li>
+    <li><a href="#la-méthode-__repr__">La méthode <code>__repr__</code></a></li>
   </ul>
 
   <ul>
-    <li><a href="#lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em></a></li>
-    <li><a href="#modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em></a></li>
-    <li><a href="#docstrings">Docstrings</a></li>
+    <li><a href="#un-objet-comme-attribut-dun-autre-objet">Un objet comme attribut d&rsquo;un autre objet</a></li>
+    <li><a href="#variables-et-objets--attention-aux-références">Variables et objets : attention aux références</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#le-principe">Le principe</a></li>
+    <li><a href="#lire-un-attribut--accesseur-ou-getter">Lire un attribut : accesseur ou <em>getter</em></a></li>
+    <li><a href="#modifier-un-attribut--mutateur-ou-setter">Modifier un attribut : mutateur ou <em>setter</em></a></li>
+    <li><a href="#en-pratique-en-python">En pratique, en Python</a></li>
   </ul>
 </nav>
                 </div>
               </div>
             </div>
           </div>
-          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">programmation orientée objet</span><meta itemprop="position" content="4"></li>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">allophysique</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/index.html"><span itemprop="name">NSI term</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/nsi/langages/index.html"><span itemprop="name">langages</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li><li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Programmation orientée objet</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-edit default-animation" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show">
@@ -161,33 +182,35 @@
   <header class="headline">
   </header>
 
-<h1 id="programmation-orientée-objet">programmation orientée objet</h1>
+<h1 id="programmation-orientée-objet">Programmation orientée objet</h1>
 
-<p>Cette séquence comprend:</p>
+<p>Cette séquence comprend :</p>
 <ul>
-<li>un cours sur la POO: <a href="../page3">Lien</a></li>
-<li>une fiche d&rsquo;exercices: <a href="/pdf/NSI/POO_exercices.pdf">pdf</a></li>
-<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
-<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
-<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
-<li>fiche <em>les bonnes pratiques</em> en POO: <a href="../fiche_POO">Lien</a></li>
+<li>ce cours sur la POO ;</li>
+<li>une fiche d&rsquo;exercices : <a href="/pdf/NSI/POO_exercices.pdf">pdf</a> ;</li>
+<li>un TP de transition <em>Fruits et paniers</em> : <a href="../page35/">Lien</a> ;</li>
+<li>le mini-projet Jeu des 7 familles : <a href="../page34/">Lien</a> <em>(sans interface graphique)</em> ;</li>
+<li>un TP sur les trajectoires de projectiles : <a href="../page31/">Lien</a> ;</li>
+<li>un TP sur la programmation d&rsquo;un jeu de dominos : <a href="../page33/">Lien</a> <em>(sans interface graphique)</em> ;</li>
+<li>une fiche <em>Les bonnes pratiques</em> en POO : <a href="../fiche_POO">Lien</a>.</li>
 </ul>
 <h1 id="programmation-objet">Programmation objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <h2 id="principe">Principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>En programmation orientée objet, on cherche à organiser les données avec la volonté de se rapprocher de l&rsquo;architecture <em>d&rsquo;objets physiques</em>.</p>
-<p>Un <em>objet physique</em>, comme par exemple, une planche de skateboard, possède des caractéristiques propres.</p>
-<p>
+<p>Jusqu&rsquo;ici, nos programmes manipulaient des données (nombres, chaînes, listes, dictionnaires) d&rsquo;un côté, et des fonctions qui agissent sur ces données de l&rsquo;autre.</p>
+<p>En <strong>programmation orientée objet</strong> (POO), on regroupe dans une même structure, appelée <strong>objet</strong>, des données et les fonctions qui agissent sur ces données. L&rsquo;idée est de se rapprocher de la façon dont on décrit les <em>objets physiques</em>.</p>
+<p>Prenons l&rsquo;exemple d&rsquo;une planche de skateboard : elle possède des caractéristiques qui lui sont propres.</p>
+
 <figure >
-    <a href="https://urbanart-paris.fr/event/chalk-custom-board-lart-dhabiller-skate/">
-        <img src="https://urbanart-paris.fr/wp-content/uploads/2016/04/12963624_1877786249114590_5321151849406456199_n.jpg"
+    
+        <img src="../images/skates.png"
         
-        alt="chalk custom board" />
-    </a>
+        alt="quelques exemples montrant la diversité des planches de skates" />
+    
     
     <figcaption>
         
         <p>
-            image: CHALK CUSTOM BOARD : L’ART D’HABILLER UN SKATE (urban art)
+            quelques exemples montrant la diversité des planches de skates
             
                 
             
@@ -196,68 +219,90 @@
     
 </figure>
 
-Une planche, malgré la diversité, est toujours constituée:</p>
+<p>Malgré leur diversité, toutes les planches sont constituées :</p>
 <ul>
-<li>d&rsquo;un deck (court, long)</li>
-<li>d&rsquo;un tail (plat, relevé)</li>
-<li>de trucks (hauts, bas)</li>
-<li>de roues (à gommes tendres, dures)</li>
-<li>d&rsquo;une décoration (image sous le deck)</li>
+<li>d&rsquo;un deck (court, long) ;</li>
+<li>d&rsquo;un tail (plat, relevé) ;</li>
+<li>de trucks (hauts, bas) ;</li>
+<li>de roues (à gomme tendre, dure) ;</li>
+<li>d&rsquo;une décoration (l&rsquo;image sous le deck).</li>
 </ul>
-<p>C&rsquo;est son <strong>état</strong>.</p>
-<p>Cette planche peut repondre egalement à un ensemble de messages, qui forment ce que l&rsquo;on appelle l&rsquo;<em>interface</em> de l&rsquo;objet. C&rsquo;est au travers de ces méthodes que l&rsquo;on peut interagir avec l&rsquo;objet, ou que les objets peuvent interagir entre eux.</p>
-<p>On peut lui associer une méthode <code>skateboard_pour_parc</code> qui renvoie <code>True</code> si la planche est de type <em>street</em> ou <code>False</code> si la planche est de type <em>cruising</em>, ou prevue pour la decoration.</p>
+<p>L&rsquo;ensemble de ces caractéristiques, à un instant donné, constitue l&rsquo;<strong>état</strong> de la planche. Cet état peut évoluer : on peut changer les roues, repeindre la déco, la planche s&rsquo;use…</p>
+<p>Une planche peut aussi <strong>répondre à des demandes</strong> (on dit aussi des <em>messages</em>). Par exemple, on peut lui demander : <em>« es-tu adaptée au skatepark ? »</em>. Elle répond <code>True</code> pour une planche de type <em>street</em> (deck court, tail relevé, roues dures), et <code>False</code> pour une planche de type <em>cruiser</em>.</p>
+<p>L&rsquo;ensemble des demandes auxquelles un objet sait répondre s&rsquo;appelle son <strong>interface</strong> : c&rsquo;est par elle que l&rsquo;on interagit avec l&rsquo;objet, et que les objets interagissent entre eux.</p>
 <p>Un objet comprend donc :</p>
 <ul>
-<li>une partie <strong>figée</strong> qui représente son <strong>état</strong>, et qui est constituée de champs ou <strong>attributs</strong>.</li>
-<li>une partie <strong>dynamique</strong> qui décrit son <strong>comportement</strong>, à l&rsquo;aide de déclarations de <strong>méthodes</strong>, qui doivent répondre à des <strong>messages</strong>.</li>
+<li>des <strong>attributs</strong> : les données qui décrivent son <strong>état</strong> ;</li>
+<li>des <strong>méthodes</strong> : les fonctions qui décrivent son <strong>comportement</strong>, c&rsquo;est-à-dire la façon dont il répond aux messages.</li>
 </ul>
-<h2 id="classe-et-instance-de-classe">Classe et instance de classe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>La structure interne des objets et les messages auxquels ils repondent sont définis dans une <strong>classe</strong>. Une <em>classe</em> décrit les méthodes de création d&rsquo;objets de ce type (on parle d&rsquo;<em>instance</em> de classe), et les méthodes auxquelles répondront les objets de ce type dans la reception des messages.</p>
-<p>Avec l&rsquo;exemple précédent, la <strong>class</strong>e Skateboard pourrait contenir:</p>
+<h2 id="classe-et-instance">Classe et instance<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Toutes les planches ont la même structure, seules les valeurs changent. On décrit cette structure commune une seule fois, dans une <strong>classe</strong>.</p>
 <ul>
-<li>les méthodes de création des instances des différents skateboards. On y définit les attributs pour chaque nouvelle planche de skateboard que l&rsquo;on créé. Chaque planche de skate constitue une <em>instance</em> de classe.</li>
-<li>les méthodes de la classe skateboard, qui repondent aux messages du genre: <code>skateboard_pour_parc</code>? Un <em>message</em> est constitué du nom de la méthode, et permet d&rsquo;interagir avec celui-ci. Ces méthodes sont accessibles à tous les skates qui sont des instances de la classe skateboard.</li>
+<li>La <strong>classe</strong> <code>Skateboard</code> est le <em>plan de fabrication</em> (le moule) : elle indique quels attributs possède une planche, et quelles méthodes elle sait exécuter.</li>
+<li>Chaque planche fabriquée à partir de ce plan est un <strong>objet</strong>, appelé <strong>instance</strong> de la classe. Créer un objet s&rsquo;appelle <strong>instancier</strong> la classe.</li>
 </ul>
-<p>En <strong>python</strong>, la création d&rsquo;une classe commence par le mot clé <strong>class</strong> suivi du nom de la classe, de deux points et d&rsquo;une indentation.</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span></span></span></code></pre></div>
-<p>Toute la partie indentée contient les <em>méthodes de création</em> des <em>instances</em> de cette classe et les <em>méthodes</em> de cette classe.</p>
-<p>Lors de la programmation, on devra faire référence à l&rsquo;instance de l&rsquo;objet sur lequel on travaille: le mot clé <code>self</code> permet ceci en python.</p>
-<p>La méthode de création d&rsquo;un objet est définie par <code>def __init__</code> suivi au minimum de l&rsquo;argument <code>self</code>, et eventuellement d&rsquo;autres arguments.</p>
+<p>On peut fabriquer autant d&rsquo;instances que l&rsquo;on veut avec une même classe : chacune possède ses propres valeurs d&rsquo;attributs.</p>
+<h2 id="définir-une-classe-en-python">Définir une classe en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="le-mot-clé-class">Le mot-clé <code>class</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La définition d&rsquo;une classe commence par le mot-clé <code>class</code>, suivi du nom de la classe (par convention avec une majuscule), de deux points et d&rsquo;un bloc indenté :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">                <span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
-</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
-<p>Les attributs des objets de cette classe sont définis dans cette méthode. Ils sont codés sous la forme <code>self.attribut</code>, et peuvent faire référence aux arguments passés lors de l&rsquo;instanciation.</p>
-<p>Enfin, chaque méthode de classe est définie à l&rsquo;aide de: <code>def nom_de_la_methode</code>. Celle-ci prend aussi au minimum, l&rsquo;argument <code>self</code>.</p>
-<p><em>Script complet:</em></p>
+</span></span><span class="line"><span class="cl">    <span class="o">...</span></span></span></code></pre></div>
+<p>Tout le bloc indenté contient les <strong>méthodes</strong> de la classe.</p>
+<h3 id="le-constructeur-__init__-et-le-paramètre-self">Le constructeur <code>__init__</code> et le paramètre <code>self</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La méthode <code>__init__</code>, appelée <strong>constructeur</strong>, est exécutée automatiquement à la création de chaque objet. Son rôle est de <strong>créer les attributs</strong> de l&rsquo;objet et de leur donner une valeur initiale.</p>
+<p>Toute méthode reçoit comme premier paramètre <strong><code>self</code></strong>, qui désigne l&rsquo;objet sur lequel elle agit. Les attributs s&rsquo;écrivent <code>self.nom_attribut</code> : <code>self.deck</code> signifie « le deck de <em>cette</em> planche ».</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span><span class="n">tail</span><span class="o">=</span><span class="s1">&#39;releve&#39;</span><span class="p">,</span><span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span><span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span><span class="n">deco</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;relevé&#39;</span><span class="p">,</span> <span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span> <span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span> <span class="n">deco</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
 </span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span>
-</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">km</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># attribut qui ne vient pas d&#39;un paramètre</span></span></span></code></pre></div>
+<p><em>Remarques :</em></p>
+<ul>
+<li>Les paramètres ont ici des <strong>valeurs par défaut</strong> : <code>Skateboard()</code> crée une planche street classique, sans décoration (<code>None</code>).</li>
+<li>Un attribut ne vient pas forcément d&rsquo;un paramètre. Ici, toute planche neuve a parcouru <code>0</code> km.</li>
+<li>Ne pas confondre le <strong>paramètre</strong> <code>deck</code> (une variable locale à <code>__init__</code>, qui disparaît ensuite) et l&rsquo;<strong>attribut</strong> <code>self.deck</code> (qui reste attaché à l&rsquo;objet).</li>
+</ul>
+<h3 id="les-méthodes">Les méthodes<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Une méthode se définit comme une fonction, <strong>à l&rsquo;intérieur</strong> de la classe, avec <code>self</code> comme premier paramètre. Une méthode peut :</p>
+<ul>
+<li><strong>retourner</strong> une information sur l&rsquo;objet, sans le modifier ;</li>
+<li><strong>modifier</strong> l&rsquo;état de l&rsquo;objet, c&rsquo;est-à-dire ses attributs.</li>
+</ul>
+<p><em>Script complet :</em></p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deck</span><span class="o">=</span><span class="s1">&#39;court&#39;</span><span class="p">,</span> <span class="n">tail</span><span class="o">=</span><span class="s1">&#39;relevé&#39;</span><span class="p">,</span> <span class="n">truck</span><span class="o">=</span><span class="s1">&#39;bas&#39;</span><span class="p">,</span> <span class="n">roues</span><span class="o">=</span><span class="s1">&#39;dures&#39;</span><span class="p">,</span> <span class="n">deco</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">=</span> <span class="n">deck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">truck</span> <span class="o">=</span> <span class="n">truck</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">=</span> <span class="n">roues</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">km</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">skateboard_pour_parc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">==</span> <span class="s1">&#39;court&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="s1">&#39;releve&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">==</span> <span class="s1">&#39;dures&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;retourne True si la planche est adaptée au skatepark&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">deck</span> <span class="o">==</span> <span class="s1">&#39;court&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span> <span class="o">==</span> <span class="s1">&#39;relevé&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">roues</span> <span class="o">==</span> <span class="s1">&#39;dures&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span></span></span></code></pre></div>
-<p>On instancie alors un premier skateboard de la manière suivante:</p>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">rouler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;ajoute distance (en km) au compteur de la planche&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">km</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">km</span> <span class="o">+</span> <span class="n">distance</span></span></span></code></pre></div>
+<p><code>skateboard_pour_parc</code> retourne une information, et <code>rouler</code> modifie l&rsquo;état de la planche.</p>
+<h2 id="créer-et-utiliser-des-objets">Créer et utiliser des objets<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<h3 id="instancier">Instancier<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On crée un objet en appelant la classe comme une fonction, <strong>sans</strong> donner l&rsquo;argument <code>self</code> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">()</span></span></span></code></pre></div>
-<p>Le programme interprete alors l&rsquo;instruction: <code>Skateboard.__init__(mon_premier_skate)</code>, c&rsquo;est à dire qu&rsquo;il execute la méthode de classe <code>Skateboard.__init__</code>, avec le paramètre <code>self=mon_premier_skate</code>.</p>
-<p>
+
 <figure >
     
         <img src="../images/sk8_classic.jpg"
+        
+            width="400"
+            
         
         alt="skateboard classic" />
     
@@ -274,15 +319,15 @@ Une planche, malgré la diversité, est toujours constituée:</p>
     
 </figure>
 
-Et on envoie le message suivant:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="kc">True</span></span></span></code></pre></div>
-<p>Le programme interprete alors l&rsquo;instruction: <code>Skateboard.skateboard_pour_parc(mon_premier_skate)</code>,</p>
-<p>Instanciation d&rsquo;un second skateboard:</p>
+<p>Python crée un nouvel objet, puis exécute automatiquement <code>__init__</code> en donnant cet objet comme valeur à <code>self</code>. Les autres arguments sont passés aux paramètres suivants, dans l&rsquo;ordre :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="s1">&#39;plat&#39;</span><span class="p">,</span> <span class="s1">&#39;haut&#39;</span><span class="p">,</span> <span class="s1">&#39;molles&#39;</span><span class="p">,</span> <span class="s1">&#39;Marley&#39;</span><span class="p">)</span></span></span></code></pre></div>
 
 <figure >
     
         <img src="../images/sk8_sector9.jpg"
+        
+            width="400"
+            
         
         alt="skateboard cruiser" />
     
@@ -299,79 +344,160 @@ Et on envoie le message suivant:</p>
     
 </figure>
 
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+<h3 id="appeler-une-méthode--la-notation-pointée">Appeler une méthode : la notation pointée<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>On envoie un message à un objet avec la <strong>notation pointée</strong> <code>objet.methode(arguments)</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
-<h2 id="la-méthode-__repr__">La méthode <code>__repr__()</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Cette méthode <code>__repr__</code> s&rsquo;utilise pour donner une représentation plus lisible de l&rsquo;objet lorsqu&rsquo;on veut l&rsquo;afficher avec la fonction <code>print</code>.</p>
-<p><em>Exemple 1:</em> On essaie d&rsquo;afficher notre instance de classe <code>mon_sector_9</code> créée plus haut:</p>
+<p>Python traduit <code>mon_sector_9.skateboard_pour_parc()</code> par <code>Skateboard.skateboard_pour_parc(mon_sector_9)</code> : l&rsquo;objet placé <strong>avant le point</strong> devient <code>self</code>. C&rsquo;est pour cela qu&rsquo;on n&rsquo;écrit jamais <code>self</code> lors de l&rsquo;appel.</p>
+<h3 id="accéder-aux-attributs">Accéder aux attributs<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>La notation pointée permet aussi de lire un attribut :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">deco</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;Marley&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">rouler</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">rouler</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">km</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">km</span>
+</span></span><span class="line"><span class="cl"><span class="mi">0</span></span></span></code></pre></div>
+<p>Chaque instance a <strong>ses propres attributs</strong> : faire rouler <code>mon_premier_skate</code> ne change pas le compteur de <code>mon_sector_9</code>.</p>
+<h3 id="erreurs-classiques">Erreurs classiques<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<table>
+	<thead>
+			<tr>
+					<th>Erreur</th>
+					<th>Ce qui se passe</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>oublier <code>self</code> dans la définition : <code>def rouler(distance):</code></td>
+					<td><code>TypeError</code> à l&rsquo;appel : Python transmet l&rsquo;objet en plus de l&rsquo;argument</td>
+			</tr>
+			<tr>
+					<td>écrire <code>deck = deck</code> au lieu de <code>self.deck = deck</code> dans <code>__init__</code></td>
+					<td>l&rsquo;attribut n&rsquo;est pas créé : <code>AttributeError</code> plus tard</td>
+			</tr>
+			<tr>
+					<td>oublier les parenthèses : <code>mon_sector_9.skateboard_pour_parc</code></td>
+					<td>on obtient la méthode elle-même, sans l&rsquo;exécuter</td>
+			</tr>
+			<tr>
+					<td>utiliser <code>print</code> au lieu de <code>return</code> dans une méthode qui doit renvoyer une valeur</td>
+					<td>la méthode renvoie <code>None</code></td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="la-méthode-__repr__">La méthode <code>__repr__</code><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Essayons d&rsquo;afficher une instance :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Skateboard</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc6b0847550</span><span class="o">&gt;</span></span></span></code></pre></div>
-<p>Ce n&rsquo;est pas très explicite pour un humain. On préfèrera souvent choisir un descriptif personnalisé. Nous allons programmer la chaine de caractères qui sera renvoyée lors du <code>print</code>.</p>
-<p>On ajoute maintenant à la classe <code>Skateboard</code> la méthode <code>__repr__()</code> qui sera appelée lorsque l&rsquo;on utilise <code>print(objet)</code>:</p>
+<p>Python affiche seulement la classe et l&rsquo;adresse mémoire de l&rsquo;objet, ce qui n&rsquo;est pas très lisible. On peut choisir un affichage personnalisé en écrivant, dans la classe, la <strong>méthode spéciale</strong> <code>__repr__</code>. Elle doit <strong>retourner</strong> une chaîne de caractères :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui permet de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;skateboard </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="si">}</span><span class="s2"> qui permet de rider en parc&#34;</span>
 </span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;skateboard de type </span><span class="si">{}</span><span class="s2"> qui ne permet pas de rider en parc&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="p">)</span></span></span></code></pre></div>
-<p>On construit à nouveau l&rsquo;instance de classe <code>mon_sector_9</code>, et on fait <code>print(mon_sector_9)</code>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span><span class="s1">&#39;plat&#39;</span><span class="p">,</span><span class="s1">&#39;haut&#39;</span><span class="p">,</span><span class="s1">&#39;molles&#39;</span><span class="p">,</span><span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;skateboard </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">deck</span><span class="si">}</span><span class="s2"> qui ne permet pas de rider en parc&#34;</span></span></span></code></pre></div>
+<p>Après avoir recréé l&rsquo;instance :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span> <span class="o">=</span> <span class="n">Skateboard</span><span class="p">(</span><span class="s1">&#39;long&#39;</span><span class="p">,</span> <span class="s1">&#39;plat&#39;</span><span class="p">,</span> <span class="s1">&#39;haut&#39;</span><span class="p">,</span> <span class="s1">&#39;molles&#39;</span><span class="p">,</span> <span class="s1">&#39;Marley&#39;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mon_sector_9</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">skateboard</span> <span class="n">de</span> <span class="nb">type</span> <span class="n">long</span> <span class="n">qui</span> <span class="n">ne</span> <span class="n">permet</span> <span class="n">pas</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span></span></span></code></pre></div>
-<p><em>Remarquer</em> que l&rsquo;appel à la méthode <code>skateboard_pour_parc</code> se fait en identifiant l&rsquo;objet qui possède cette méthode: <code>self.skateboard_pour_parc()</code>. Et ici, on n&rsquo;ajoutera pas de nouvel argument. (On ne met pas <code>self</code> en argument lors du <em>message</em> envoyé à cet objet).</p>
-<p><em>Surcharge d&rsquo;une fonction de la librairie standard:</em> Ce que l&rsquo;on vient de réaliser est une surcharge de la fonction <code>print</code> de la librairie standard.</p>
-<p>Mais il existe d&rsquo;autres méthodes de surcharge, prévues pour les <strong>opérateurs</strong>, ainsi que pour certaines <strong>fonctions</strong>. On pourra se référer au <a href="https://riptutorial.com/fr/python/example/7334/surcharge-de-l-operateur" rel="external">lien suivant</a> pour approfondir le sujet.</p>
-<h1 id="encapsulation-getter-et-setter">Encapsulation: <em>getter</em> et <em>setter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<h2 id="lire-un-attribut-accesseur-ou-getter">Lire un attribut: accesseur ou <em>getter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>L&rsquo;utilisateur du programme ne devrait pas utiliser la méthode <em>pointée</em> précédente <code>nom_objet.nom_attribut</code>, permettant d’accéder aux valeurs des attributs: on ne veut pas forcement que l’utilisateur ait accès à la représentation interne des classes.</p>
-<p>Pour utiliser ou modifier les attributs, on utilisera de préférence des <strong>méthodes dédiées</strong> dont le rôle est de faire l’<strong>interface</strong> entre l’utilisateur de l’objet et la représentation interne de l’objet (ses attributs).</p>
-<p>Les <strong>attributs</strong> sont alors en quelque sorte <strong>encapsulés</strong> dans l’objet, c’est à dire non accessibles directement. la liste des <strong>méthodes</strong> devient une sorte de mode d’emploi de la classe.</p>
-<p>Pour obtenir la valeur d’un attribut nous utiliserons la méthode des accesseurs (ou &ldquo;getters&rdquo;) dont le nom est généralement : <code>getNom_attribut()</code>.</p>
-<p><em>Exemple:</em></p>
+</span></span><span class="line"><span class="cl"><span class="n">skateboard</span> <span class="n">long</span> <span class="n">qui</span> <span class="n">ne</span> <span class="n">permet</span> <span class="n">pas</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">mon_premier_skate</span><span class="p">,</span> <span class="n">mon_sector_9</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">skateboard</span> <span class="n">court</span> <span class="n">qui</span> <span class="n">permet</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span><span class="p">,</span> <span class="n">skateboard</span> <span class="n">long</span> <span class="n">qui</span> <span class="n">ne</span> <span class="n">permet</span> <span class="n">pas</span> <span class="n">de</span> <span class="n">rider</span> <span class="n">en</span> <span class="n">parc</span><span class="p">]</span></span></span></code></pre></div>
+<p><em>Remarques :</em></p>
+<ul>
+<li>À l&rsquo;intérieur de la classe, une méthode en appelle une autre avec <code>self.skateboard_pour_parc()</code>, sans redonner <code>self</code> entre les parenthèses.</li>
+<li><code>__repr__</code> est utilisée par <code>print</code>, par la console et pour afficher les éléments d&rsquo;une liste. Python propose aussi la méthode <code>__str__</code>, utilisée en priorité par <code>print</code> si elle existe.</li>
+<li>Les méthodes dont le nom est entouré de <code>__</code> sont des <strong>méthodes spéciales</strong> : Python les appelle automatiquement dans certaines situations (<code>__init__</code> à la création, <code>__repr__</code> à l&rsquo;affichage…). Il en existe aussi pour les opérateurs, par exemple <code>__eq__</code> pour <code>==</code> ou <code>__lt__</code> pour <code>&lt;</code> (voir les liens en bas de page).</li>
+</ul>
+<h1 id="des-objets-qui-interagissent">Des objets qui interagissent<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="un-objet-comme-attribut-dun-autre-objet">Un objet comme attribut d&rsquo;un autre objet<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un attribut peut contenir n&rsquo;importe quelle valeur : un nombre, une liste… ou <strong>un autre objet</strong>. Définissons une classe <code>Skateur</code>, dont l&rsquo;attribut <code>planche</code> est un objet <code>Skateboard</code> :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateur</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">planche</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">planche</span> <span class="o">=</span> <span class="n">planche</span>      <span class="c1"># un objet Skateboard</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">peut_aller_au_parc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">planche</span><span class="o">.</span><span class="n">skateboard_pour_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">session</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">distance</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">planche</span><span class="o">.</span><span class="n">rouler</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lea</span> <span class="o">=</span> <span class="n">Skateur</span><span class="p">(</span><span class="s2">&#34;Léa&#34;</span><span class="p">,</span> <span class="n">mon_premier_skate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lea</span><span class="o">.</span><span class="n">peut_aller_au_parc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lea</span><span class="o">.</span><span class="n">session</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">km</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span></span></span></code></pre></div>
+<p><code>self.planche.skateboard_pour_parc()</code> se lit de gauche à droite : « la planche de ce skateur, à qui on demande si elle est adaptée au parc ». Le skateur <strong>délègue</strong> la question à sa planche.</p>
+<p>On peut de même utiliser un attribut qui contient une <strong>liste d&rsquo;objets</strong> : par exemple un magasin dont l&rsquo;attribut <code>stock</code> est une liste de <code>Skateboard</code>, ou un joueur qui a une liste de cartes en main (voir le mini-projet <em>Jeu des 7 familles</em>).</p>
+<h2 id="variables-et-objets--attention-aux-références">Variables et objets : attention aux références<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Dans l&rsquo;exemple précédent, <code>lea.session(4)</code> a modifié <code>mon_premier_skate.km</code>. En effet, <code>lea.planche</code> et <code>mon_premier_skate</code> désignent <strong>le même objet</strong> en mémoire, et non deux copies.</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">copie</span> <span class="o">=</span> <span class="n">mon_premier_skate</span>      <span class="c1"># pas de nouvelle planche : un second nom pour la même</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">copie</span><span class="o">.</span><span class="n">rouler</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_premier_skate</span><span class="o">.</span><span class="n">km</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">copie</span> <span class="ow">is</span> <span class="n">mon_premier_skate</span>
+</span></span><span class="line"><span class="cl"><span class="kc">True</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">Skateboard</span><span class="p">()</span> <span class="o">==</span> <span class="n">mon_premier_skate</span>   <span class="c1"># même état, mais deux objets différents</span>
+</span></span><span class="line"><span class="cl"><span class="kc">False</span></span></span></code></pre></div>
+<p>Une variable contient une <strong>référence</strong> vers l&rsquo;objet, comme pour les listes. Seul un appel à <code>Skateboard(...)</code> fabrique un nouvel objet.</p>
+<h1 id="encapsulation--getters-et-setters">Encapsulation : <em>getters</em> et <em>setters</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<h2 id="le-principe">Le principe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Pour utiliser un objet, il suffit de connaître son <strong>interface</strong> (ses méthodes et ce qu&rsquo;elles font), sans savoir comment il est programmé à l&rsquo;intérieur. On dit que les attributs sont <strong>encapsulés</strong> : idéalement, on ne les manipule pas directement, mais à travers des méthodes prévues pour cela.</p>
+<p>Avantage : la méthode peut <strong>contrôler</strong> les modifications. Par exemple, empêcher une distance négative dans <code>rouler</code>, ou un type de roues inconnu.</p>
+<h2 id="lire-un-attribut--accesseur-ou-getter">Lire un attribut : accesseur ou <em>getter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un <strong>accesseur</strong> (<em>getter</em>) est une méthode qui retourne la valeur d&rsquo;un attribut. Son nom commence généralement par <code>get_</code> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">getTail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span></span></span></code></pre></div>
-<p>En console, une fois l&rsquo;instance de classe <code>mon_sector_9</code> définie, on fait:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">mon_sector_9</span><span class="p">.</span><span class="nf">getTail</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="o">`</span><span class="k">long</span><span class="o">`</span></span></span></code></pre></div>
-<h2 id="modifier-des-attributs--les-mutateurs-ou-setters">Modifier des attributs : les mutateurs ou <em>setters</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>De la même manière, pour modifier la valeur d&rsquo;un attribut, on devrait utiliser une méthode dédiée. Le nom de cette méthode commence en principe par <code>set</code>:</p>
-<p><em>Exemple:</em></p>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_tail</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tail</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">get_tail</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;plat&#39;</span></span></span></code></pre></div>
+<h2 id="modifier-un-attribut--mutateur-ou-setter">Modifier un attribut : mutateur ou <em>setter</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Un <strong>mutateur</strong> (<em>setter</em>) est une méthode qui modifie la valeur d&rsquo;un attribut. Son nom commence généralement par <code>set_</code> :</p>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl">    <span class="o">...</span>
-</span></span><span class="line"><span class="cl">    
-</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">setDeco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deco</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">      <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
-<p>En console:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; mon_sector_9.setDeco = &#39;repeinte&#39;</span></span></code></pre></div>
-<h2 id="docstrings">Docstrings<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
-<p>Chaque classe définit ses propres manières de stocker, d&rsquo;acceder et de manipuler les données. C&rsquo;est le Docstring qui permettra de prendre connaissance des détails, comme par exemple celui de la classe <code>Sept_Familles</code>:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Sept_Familles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">set_deco</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">deco</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">deco</span> <span class="o">=</span> <span class="n">deco</span></span></span></code></pre></div>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">set_deco</span><span class="p">(</span><span class="s1">&#39;repeinte&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_sector_9</span><span class="o">.</span><span class="n">get_deco</span><span class="p">()</span>      <span class="c1"># si l&#39;on a aussi écrit cet accesseur</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;repeinte&#39;</span></span></span></code></pre></div>
+<p><em>Attention :</em> <code>mon_sector_9.set_deco = 'repeinte'</code> ne modifie pas la déco. Cette instruction remplace la méthode <code>set_deco</code> de cet objet par une chaîne de caractères !</p>
+<h2 id="en-pratique-en-python">En pratique, en Python<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
+<p>Contrairement à d&rsquo;autres langages comme Java, Python n&rsquo;empêche pas d&rsquo;écrire <code>objet.attribut</code>. Par convention, un attribut dont le nom commence par <code>_</code> (par exemple <code>self._km</code>) signale qu&rsquo;il ne doit pas être utilisé en dehors de la classe.</p>
+<p><em>Au baccalauréat</em>, les sujets utilisent souvent directement la notation <code>objet.attribut</code> (par exemple <code>carte.famille</code>). Il faut donc savoir lire et écrire les deux formes.</p>
+<h1 id="documenter-une-classe--le-docstring">Documenter une classe : le <em>docstring</em><span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>Une classe se documente par une chaîne placée juste après sa première ligne : le <strong>docstring</strong>. Il décrit les attributs et les méthodes, c&rsquo;est-à-dire l&rsquo;interface de la classe :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Skateboard</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
 </span></span></span><span class="line"><span class="cl"><span class="s2">    NAME
-</span></span></span><span class="line"><span class="cl"><span class="s2">        Sept_Familles
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Skateboard
 </span></span></span><span class="line"><span class="cl"><span class="s2">    DESCRIPTION
-</span></span></span><span class="line"><span class="cl"><span class="s2">        constructeur pour les cartes du jeu
-</span></span></span><span class="line"><span class="cl"><span class="s2">    PARAMETERS
-</span></span></span><span class="line"><span class="cl"><span class="s2">        famille (str): nom de la famille
-</span></span></span><span class="line"><span class="cl"><span class="s2">        qui(str): membre de la famille 
-</span></span></span><span class="line"><span class="cl"><span class="s2">            choix parmi (&#39;Grand-père&#39;,&#39;Grand-mère&#39;,&#39;Pére&#39;,&#39;Mère&#39;,&#39;Fils&#39;,&#39;Fille&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="s2">    FUNCTIONS
-</span></span></span><span class="line"><span class="cl"><span class="s2">        get_Attributs
+</span></span></span><span class="line"><span class="cl"><span class="s2">        planche de skateboard
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ATTRIBUTES
+</span></span></span><span class="line"><span class="cl"><span class="s2">        deck (str) : &#39;court&#39; ou &#39;long&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        tail (str) : &#39;plat&#39; ou &#39;relevé&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        truck (str) : &#39;haut&#39; ou &#39;bas&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        roues (str) : &#39;dures&#39; ou &#39;molles&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        deco (str ou None) : décoration sous le deck
+</span></span></span><span class="line"><span class="cl"><span class="s2">        km (float) : distance parcourue, 0 à la création
+</span></span></span><span class="line"><span class="cl"><span class="s2">    METHODS
+</span></span></span><span class="line"><span class="cl"><span class="s2">        skateboard_pour_parc() -&gt; bool
+</span></span></span><span class="line"><span class="cl"><span class="s2">        rouler(distance) -&gt; None
+</span></span></span><span class="line"><span class="cl"><span class="s2">        get_tail() -&gt; str
+</span></span></span><span class="line"><span class="cl"><span class="s2">        set_deco(deco) -&gt; None
 </span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span></span></span></code></pre></div>
-<p>On peut alors prendre connaissance du docstring en faisant:</p>
-<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; help(Sept_Familles)</span></span></code></pre></div>
-<h1 id="interface">Interface<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
-<p>L&rsquo;interface d&rsquo;une classe est représentée par le diagramme suivant:</p>
+<p>On en prend connaissance avec :</p>
+<div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; help(Skateboard)</span></span></code></pre></div>
+<h1 id="représenter-une-classe">Représenter une classe<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
+<p>On représente souvent une classe par un diagramme en trois cases : le <strong>nom</strong> de la classe, ses <strong>attributs</strong>, puis ses <strong>méthodes</strong>.</p>
 
 <figure >
     
@@ -392,98 +518,34 @@ Et on envoie le message suivant:</p>
     
 </figure>
 
-<!--
-# L'essentiel
-<h2> Classe et Objet</h2>
-Un <b>objet</b> est construit à partir d'une <b>classe</b>, et comporte des attributs (les variables) et des méthodes (fonctions).
-
-
+<p>Pour la classe <code>Skateboard</code> :</p>
+<table>
+	<thead>
+			<tr>
+					<th><code>Skateboard</code></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>deck</code>, <code>tail</code>, <code>truck</code>, <code>roues</code>, <code>deco</code>, <code>km</code></td>
+			</tr>
+			<tr>
+					<td><code>__init__(deck, tail, truck, roues, deco)</code>, <code>skateboard_pour_parc()</code>, <code>rouler(distance)</code>, <code>get_tail()</code>, <code>set_deco(deco)</code>, <code>__repr__()</code></td>
+			</tr>
+	</tbody>
+</table>
+<h1 id="lessentiel">L&rsquo;essentiel<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li>Les <b>attributs</b> renvoient aux variables contenues dans l’objet : ce sont les données. Ces données peuvent varier au cours du programme. Il s'agit donc de l'état de cet objet à un instant t.</li>
-<li>Les <b>méthodes</b> sont les éléments qui permettent d’interagir avec les attributs. Les méthodes sont des fonctions internes à une classe, qui doivent répondre à des <b>messages</b>.</li>
+<li>Une <strong>classe</strong> décrit un type d&rsquo;objet. Un <strong>objet</strong> (ou <strong>instance</strong>) est fabriqué à partir d&rsquo;une classe : <code>planche = Skateboard('long')</code>.</li>
+<li>Les <strong>attributs</strong> (<code>self.deck</code>) décrivent l&rsquo;<strong>état</strong> de l&rsquo;objet. Les <strong>méthodes</strong> décrivent son <strong>comportement</strong>.</li>
+<li>Le <strong>constructeur</strong> <code>__init__</code> est appelé automatiquement à la création de l&rsquo;objet : il crée les attributs.</li>
+<li><strong><code>self</code></strong> désigne l&rsquo;objet sur lequel agit la méthode. Il est le premier paramètre de chaque méthode, mais on ne l&rsquo;écrit pas lors de l&rsquo;appel : <code>planche.rouler(3)</code>.</li>
+<li>Une méthode peut <strong>retourner</strong> une information ou <strong>modifier</strong> l&rsquo;état de l&rsquo;objet.</li>
+<li><code>__repr__</code> <strong>retourne</strong> la chaîne utilisée pour afficher l&rsquo;objet.</li>
+<li>Un attribut peut être un autre objet, ou une liste d&rsquo;objets : les objets <strong>interagissent</strong>.</li>
+<li>Une variable contient une <strong>référence</strong> vers un objet : deux variables peuvent désigner le même objet.</li>
+<li>Les <strong>accesseurs</strong> (<code>get_...</code>) et <strong>mutateurs</strong> (<code>set_...</code>) font l&rsquo;interface entre l&rsquo;utilisateur et les attributs : c&rsquo;est l&rsquo;<strong>encapsulation</strong>.</li>
 </ul>
-
-<em>Exemple:</em><br>
-<pre><code>
-class Sept_Familles:
-    def __init__(self,famille,qui):
-        self.famille = famille
-        self.qui = qui   
-    def get_Attributs(self):
-        return self.famille,self.qui
-
-carte1 = Sept_Familles('Jongleurs','Grand-père')
-</code></pre>
-
-<h2>Instanciation</h2>
-<p>
-<b>Un objet est une <em>instance</em> de classe.</b>
-</p>
-<p>
-On instancie un objet en appelant le nom de sa classe comme s'il s'agissait d'une fonction. Instancier, c'est définir un nouvel objet, donc définir son <b>nom</b>, et la valeur de ses attributs.
-</p>
-<p>
-Par exemple, à l'aide de l'instruction <code>carte1 = Sept_Familles('Jongleurs','Grand-père')</code> lorsque l'on veut créer un nouvel objet <code>carte1</code> à partir de la classe <code>Sept_Familles</code>.
-</p>
-<p>
-C'est alors la méthode <code>__init__(self,attribut1,...);</code> qui est automatiquement appelée pour initialiser l'objet. Cette méthode déclare les attributs associés à <code>Sept_Familles</code>.
-</p>
-<h2> Definir une méthode de classe</h2>
-Les méthodes de classe peuvent modifier l'état de l'objet (ses attributs), ou retourner une valeur.
-
-Une méthode possède au minimum, comme attribut, self. Les autres seront ajoutés après:
-
-<pre><code>
-  def age(self,an_actuelle):
-    """
-    calcule l'age en fonction de l'année de naissance
-    et de la date actuelle
-    Params:
-    self.an_de_naissance (int): attribut de l'objet
-    an_actuelle (int) : date actuelle
-    """
-    return an_actuelle - self.an_de_naissance
-</code></pre>
-<h2>Notation pointée</h2>
-<h3>Attributs</h3>
-<p>
-Les attributs sont accessibles au sein de la classe à l'aide d'une notation pointée, du type <code>self.attribut</code>. Le mot-clé <code>self</code> correspondra à l'objet instancié.
-</p>
-<p>
-<em>En dehors de la classe:</em>
-<br>
-On pourrait acceder aux attributs en faisant `objet.attribut`:
-
-<pre><code>
-carte1.famille
-</code></pre>
-</p>
-
-<p>
-En principe, il vaudra mieux éviter cette notation pointée en dehors de la classe, et éviter de faire référence aux attributs en faisant <code>objet.attribut</code>. On préfèrera utiliser un mécanisme d'<b>encapsulation</b>.
-</p>
-<h3>Méthodes</h3>
-Les méthodes de classe sont accessibles en faisant 
-
-<pre><code>
-objet.methode(arg)
-</code></pre>
-
-<h2>L'encapsulation</h2>
-<p>
-L'<b>encapsulation</b> consiste à rassembler les données et les méthodes au sein d'une structure en cachant l'implémentation de l'objet, c'est-à-dire en empêchant l'accès aux données par un autre moyen que les services proposés. (getters et setters par exemple).
-</p>
-<p>
-On peut, par exemple, accéder à la description de carte1 à l'aide de la méthode <code>get_Attributs()</code>, ce qui donne:
-
-<pre><code>
->>> carte1.get_Attributs()
-('Jongleurs', 'Grand-père')
-</code></pre>
-
-</p>
-
--->
 <!--
 ## Exercice 3: Classe Pile créée à partir d'une liste chaînée
 La notion de *classe* permet de créer de nouveaux types de structure. Nous allons créer à la main une structure de liste chaînée; pour ce faire, nous allons utiliser une premiere classe *Maillon*; et une deuxième classe Pile, qui se servira de cette structure. Cette nouvelle structure n'utilise pas le type *List* de python.
@@ -495,18 +557,20 @@ On rappelle qu'une liste chaînée est une structure linéaire, constituée de c
 3. Créer la méthode `__repr__(self)` qui va être appelée lors de l'affichage d'une pile `P` à l'aide de l'instruction `print(P)`.
 
 -->
+<p><em>Pour la suite :</em> la POO sert aussi à programmer des <strong>structures de données</strong> (piles, files, listes chaînées, arbres) : l&rsquo;interface (les méthodes <code>empiler</code>, <code>depiler</code>…) est séparée de l&rsquo;implémentation (la manière de stocker les données). Voir le <a href="/docs/NSI/structure/page21/#listes">cours sur les listes chaînées</a>.</p>
 <p><strong>La suite en TP</strong></p>
 <ul>
-<li>TP Jeu des 7 familles: <a href="../page34/">Lien</a> <em>(Sans interface graphique)</em></li>
-<li>TP sur trajectoires de projectiles: <a href="../page31/">Lien</a></li>
-<li>TP sur la programmation d&rsquo;un jeu de Dominos: <a href="../page33/">Lien</a>. <em>(Sans interface graphique)</em></li>
+<li>TP de transition <em>Fruits et paniers</em> : <a href="../tp_fruits_paniers/">Lien</a></li>
+<li>Mini-projet Jeu des 7 familles : <a href="../page34/">Lien</a> <em>(sans interface graphique)</em></li>
+<li>TP sur les trajectoires de projectiles : <a href="../page31/">Lien</a></li>
+<li>TP sur la programmation d&rsquo;un jeu de dominos : <a href="../page33/">Lien</a> <em>(sans interface graphique)</em></li>
 </ul>
 <h1 id="liens">Liens<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h1>
 <ul>
-<li>cours sur <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet" rel="external">python.developpez.com</a>: compléments sur les méthodes spéciales de <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4" rel="external">surcharge des opérateurs</a>, d&rsquo;<a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5" rel="external">héritage et polymorphisme</a></li>
-<li>références : <a href="https://docs.python.org/fr/3.6/tutorial/classes.html" rel="external">Classes sur docs.python.org</a></li>
-<li>prolongement sur les heritages et polymorphismes <a href="https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants" rel="external">python doctor POO - debutants</a></li>
-<li>Resumé de cours : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet" rel="external">Lyceum.fr &gt; POO</a></li>
+<li>Cours sur <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet" rel="external">python.developpez.com</a> : compléments sur les méthodes spéciales de <a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-4" rel="external">surcharge des opérateurs</a>, et sur l&rsquo;<a href="https://python.developpez.com/cours/apprendre-python-3/?page=la-programmation-orientee-objet#L7-5" rel="external">héritage et le polymorphisme</a> (hors programme).</li>
+<li>Référence : <a href="https://docs.python.org/fr/3/tutorial/classes.html" rel="external">Classes sur docs.python.org</a></li>
+<li>Prolongement sur l&rsquo;héritage et le polymorphisme (hors programme) : <a href="https://python.doctor/page-apprendre-programmation-orientee-objet-poo-classes-python-cours-debutants" rel="external">Python Doctor, POO pour débutants</a></li>
+<li>Résumé de cours : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet" rel="external">Lyceum.fr &gt; POO</a></li>
 <li>Autres exercices : <a href="https://lyceum.fr/tg/nsi/4-langages-et-programmation/6-programmation-objet/exo" rel="external">Lyceum.fr &gt; POO &gt; Exercices</a></li>
 </ul>
 
@@ -612,7 +676,7 @@ On rappelle qu'une liste chaînée est une structure linéaire, constituée de c
             <li class="parent " data-nav-id="/nsi/langages/index.html"><input type="checkbox" id="R-section-bb59362b9c69b6e952231e1574efde7f" aria-controls="R-subsections-bb59362b9c69b6e952231e1574efde7f" checked><label for="R-section-bb59362b9c69b6e952231e1574efde7f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu langages</span></label><a class="padding default-animation" href="/nsi/langages/index.html">langages<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-bb59362b9c69b6e952231e1574efde7f" class="collapsible-menu">
             <li class="" data-nav-id="/nsi/langages/page7/index.html"><a class="padding" href="/nsi/langages/page7/index.html">langages mathematiques<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/langages/page2/index.html"><a class="padding" href="/nsi/langages/page2/index.html">recursivité<i class="fa-fw fas fa-check read-icon"></i></a></li>
-            <li class="active " data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
+            <li class="active " data-nav-id="/nsi/langages/page3/index.html"><a class="padding" href="/nsi/langages/page3/index.html">Programmation orientée objet<i class="fa-fw fas fa-check read-icon"></i></a></li></ul></li>
             <li class="" data-nav-id="/nsi/structure/index.html"><input type="checkbox" id="R-section-3c3a8e86ad7c42c56e769f347d566d6f" aria-controls="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f"><label for="R-section-3c3a8e86ad7c42c56e769f347d566d6f"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Sous-menu Structures de données</span></label><a class="padding default-animation" href="/nsi/structure/index.html">Structures de données<i class="fa-fw fas fa-check read-icon"></i></a><ul id="R-subsections-3c3a8e86ad7c42c56e769f347d566d6f" class="collapsible-menu">
             <li class="" data-nav-id="/nsi/structure/page1/index.html"><a class="padding" href="/nsi/structure/page1/index.html">types abstraits<i class="fa-fw fas fa-check read-icon"></i></a></li>
             <li class="" data-nav-id="/nsi/structure/page2/index.html"><a class="padding" href="/nsi/structure/page2/index.html">Pile<i class="fa-fw fas fa-check read-icon"></i></a></li>
@@ -871,9 +935,9 @@ On rappelle qu'une liste chaînée est une structure linéaire, constituée de c
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1794240508"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1794240508" defer></script>
-    <script src="/js/theme.js?1794240508" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1794761058"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1794761058" defer></script>
+    <script src="/js/theme.js?1794761058" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

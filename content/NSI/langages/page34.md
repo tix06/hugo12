@@ -1,192 +1,218 @@
 ---
-Title: TP 7 Familles
+title: TP 7 Familles
 description: POO et jeu des 7 familles, interaction entre objets de 2 classes
 hidden: true
-weight: 18
+weight: 20
 ---
 
-# Exercice: Jeu de cartes des 7 familles
+# Mini-projet : Jeu de cartes des 7 familles
+<!--
 Lien vers le notebook: [CAPYTALE](https://capytale2.ac-paris.fr/web/c/d57c-8003286)
+-->
+
+*Prérequis : TP « Fruits et paniers » (transition).*
 
 ## Les cartes
-On donne la declaration de la classe `Sept_Familles`
+On donne la déclaration de la classe `Carte` :
 
 ```python
-class Sept_Familles:
+class Carte:
     """
     NAME
-        Sept_Familles
+        Carte
     DESCRIPTION
         constructeur pour les cartes du jeu
     PARAMETERS
-        famille (str): nom de la famille
-            choix parmi ('Jongleurs','Acrobates','Dresseurs','...')
-        membre_famille(str): membre de la famille 
-            choix parmi ('Grand-père','Grand-mère','Pére','Mère','Fils','Fille')
-    FUNCTIONS
-        get_Attributs
+        famille (str) : nom de la famille
+            choix parmi ('Jongleurs', 'Acrobates', 'Musiciens', 'Dresseurs', ...)
+        membre_famille (str) : membre de la famille
+            choix parmi ('Grand-père', 'Grand-mère', 'Père', 'Mère', 'Fils', 'Fille')
+    METHODS
+        get_attributs
     """
-    def __init__(self,famille,qui):
+    def __init__(self, famille, membre_famille):
         self.famille = famille
-        self.membre_famille = qui
+        self.membre_famille = membre_famille
+
+    def get_attributs(self):
+        pass
 ```
 
-**Question 1**: créer (instancier) l'objet `carte1` de la famille des *Jongleurs*, le *Grand-père*.
+> 1. Créer (instancier) l'objet `carte1` de la famille des *Jongleurs*, le *Grand-père*.
 
-**Question 2**: Compléter la classe Sept_Familles avec la fonction `get_Attributs`. Cette fonction ne prend pas d'autre paramètre que `self`.
-Celle-ci devra retourner un tuple constitué des 2 attributs de classe.
+> 2. Compléter la classe `Carte` avec la méthode `get_attributs`. Cette méthode ne prend qu'un seul paramètre : `self`.
+Elle doit **retourner** un tuple constitué des 2 attributs de l'objet.
 
-Exemple d'utilisation dans le programme:
-
-```
->>> carte1.get_attribut()
-('Jongleurs','Grand-père')
-```
-
-**Question 3**: Consulter le *Docstring*  de la classe:
+Exemple d'utilisation dans le programme :
 
 ```
->>> help(Sept_Familles)
+>>> carte1.get_attributs()
+('Jongleurs', 'Grand-père')
 ```
 
-**Question 4**: Définir les objets-cartes suivantes:
+**Question 1 :** (labo) recopier le script de cette méthode `get_attributs`.
+
+> 3. Consulter le *docstring* de la classe :
 
 ```
-carte1 = Sept_Familles('Jongleurs','Grand-père')
-carte2 = Sept_Familles('Jongleurs','Fille')
-carte3 = Sept_Familles('Musiciens','Père')
-carte4 = Sept_Familles('Musiciens','Fille')
+>>> help(Carte)
 ```
 
-Puis tester la méthode de classe:
+> 4. Définir les objets-cartes suivants :
+
+| nom | `famille` | `membre_famille`|
+|--- |--- |--- |
+| carte1 | 'Jongleurs' | 'Grand-père' |
+| carte2 | 'Jongleurs' | 'Fille' |
+| carte3 | 'Musiciens' | 'Père' |
+| carte4 | 'Musiciens' | 'Fille' |
+
+<!--
+```
+carte1 = Carte('Jongleurs','Grand-père')
+carte2 = Carte('Jongleurs','Fille')
+carte3 = Carte('Musiciens','Père')
+carte4 = Carte('Musiciens','Fille')
+```
+-->
+
+Puis tester la méthode :
 
 ```
->>> carte2.get_Attributs()
+>>> carte2.get_attributs()
 ```
 
-Ajouter les autres membres de l’une des familles (carte5, carte6,…). Une famille est constituée de Grand-père, Grand-mère, Père, Mère, Fils, Fille.
+**Question 2 :** Quelle instruction a permis d'instancier l'objet `carte2` ?
 
-**Question 5**: Ajouter la méthode `__repr__` qui permettra de décrire la carte:
+> 5. Ajouter les autres membres de la famille `Jongleurs` (carte5, carte6, …). Une famille est constituée de : Grand-père, Grand-mère, Père, Mère, Fils, Fille.
 
-Exemple de message attendu:
+> 6. Ajouter la méthode `__repr__` qui permettra de décrire la carte.
+
+Exemple de message attendu :
 
 ```
 >>> print(carte1)
-La carte est de la famille des Jongleurs. C'est le Grand-père.
+La carte est de la famille des Jongleurs : Grand-père.
 ```
 
-Testez votre fonction pour quelques unes des cartes.
+*Rappel : `__repr__` doit **retourner** une chaîne de caractères (`return`), et non l'afficher avec `print`.*
 
-## Classe joueur
-Le joueur est un objet qui possède, pour attributs, les cartes qu'il a en main.
+Testez votre méthode pour quelques-unes des cartes.
 
-Chaque joueur est une instance de la classe `Joueur`, et sera construit avec `joueur1 = Joueur(carte1,...)`
+**Question 3 :** recopier le script de votre méthode.
 
-*Difficulté à venir:* On ne connait pas le nombre de cartes que le joueur peut avoir en main à l'instant t. 
+## Classe Joueur
+Le joueur est un objet qui possède, pour attribut, la liste des cartes qu'il a en main.
 
-Python permet d'appeler une fonction avec un nombre inconnu d'arguments: il faut ajouter le paramètre `*args` dans la déclaration de la fonction. On parcourt alors les arguments de la manière suivante:
+Chaque joueur est une instance de la classe `Joueur`, et sera construit avec `joueur1 = Joueur(carte1, ...)`.
+
+*Difficulté :* on ne connaît pas le nombre de cartes que le joueur a en main au moment de sa création.
+
+Python permet d'appeler une fonction avec un nombre quelconque d'arguments : il faut ajouter le paramètre `*args` dans la déclaration de la fonction. On parcourt alors les arguments de la manière suivante :
 
 ```
 for i in args:
   ...
 ```
 
-La fonction `__init__` aura alors pour arguments `self` (qui est obligatoire), et `*args`. On y definit une liste vide, `self.C`, et on y ajoute des tuples constitués des attributs pour chacune des cartes du joueur. Cette fonction est donnée dans l'editeur, plus bas...
+La méthode `__init__` aura alors pour paramètres `self` (qui est obligatoire) et `*args`. On y définit une liste vide, `self.C`, à laquelle on ajoute chacune des cartes (objets de la classe `Carte`) passées en argument. Cette méthode est donnée dans l'éditeur, plus bas.
 
-**Question 1**: Dans la classe `Joueur`: Ecrire une méthode de classe `get_cartes` qui retourne la liste `self.C`, afin de pouvoir accéder à la liste des cartes du joueur.
+> 7. Dans la classe `Joueur` : écrire une méthode `get_cartes` qui retourne la liste `self.C`, afin de pouvoir accéder à la liste des cartes du joueur.
 
 ```python
 class Joueur:
-    def __init__(self,*args):
+    def __init__(self, *args):
         self.C = []
-        for i in args:
-            self.C.append(i.get_Attributs())
-    
-    # à compléter
+        for carte in args:
+            self.C.append(carte)
+
+    def get_cartes(self):
+        # à compléter
+        pass
+
+    def __repr__(self):
+        pass
 
 
-carte1 = Sept_Familles('Jongleurs','Grand-père')
-carte2 = Sept_Familles('Jongleurs','Fille')
-carte3 = Sept_Familles('Musiciens','Père')
-carte4 = Sept_Familles('Musiciens','Fille')
+carte1 = Carte('Jongleurs', 'Grand-père')
+carte2 = Carte('Jongleurs', 'Fille')
+carte3 = Carte('Musiciens', 'Père')
+carte4 = Carte('Musiciens', 'Fille')
 ```
 
-**Question 2**: Créer l’objet `joueur1`. Celui-ci devra posséder les cartes `carte1` et `carte2` définies plus haut: `joueur1 = Joueur(carte1,carte2)`
+**Question 4 :** recopier le script de votre méthode `get_cartes`.
 
-Tester alors la méthode : joueur1.get_cartes() pour afficher la liste.
+> 8. Créer l'objet `joueur1`. Celui-ci devra posséder les cartes `carte1` et `carte2` définies plus haut : `joueur1 = Joueur(carte1, carte2)`.
 
-**Question 3**: Créer une méthode de classe `__repr__` pour afficher cette liste dans un message, comme par exemple:
+Tester alors la méthode `joueur1.get_cartes()` pour afficher la liste.
+
+*Que remarquez-vous ? Pourquoi l'affichage obtenu est-il celui-ci ?*
+
+> 9. Écrire la méthode `__repr__` de la classe `Joueur` pour afficher la main du joueur dans un message, comme par exemple :
 
 ```
 >>> print(joueur1)
 le joueur possède les cartes : [('Jongleurs', 'Grand-père'), ('Jongleurs', 'Fille')]
-``` 
+```
 
-**Question 4**: On souhaite maintenant avoir une interaction plus poussée avec le `Joueur`, selon les règles du jeu. 
+*Remarque : il faudra utiliser la méthode `get_attributs` pour chaque objet de la liste `self.C`. Ce sont des objets `Carte`.*
 
-L’idée est de créer une méthode `possede` qui prend en paramètre un tupple `(famille,membre_famille)`, et qui retourne un booleen selon la main du joueur, comme par exemple:
+> 10. On souhaite maintenant avoir une interaction plus poussée avec le `Joueur`, selon les règles du jeu.
+
+L'idée est de créer une méthode `possede` qui prend en paramètre un tuple `(famille, membre_famille)`, et qui retourne un booléen selon la main du joueur, comme par exemple :
 
 ```
->>> joueur1.possede(('Jongleurs','Fils'))
+>>> joueur1.possede(('Jongleurs', 'Fils'))
 False
->>> joueur1.possede(('Jongleurs','Fille'))
+>>> joueur1.possede(('Jongleurs', 'Fille'))
 True
->>> joueur1.possede(carte1.getAttributs())
-True
-```
-
-**Question 5**: Quelles fonctionnalités du jeu reste t-il à programmer pour avoir un jeu complet?
-
-**Question 4:** On souhaite maintenant avoir une interaction plus poussée avec le `Joueur`, selon les règles du jeu. 
-
-L’idée est de créer une méthode `possede` qui prend en paramètre un tupple `(famille,membre_famille)`, et qui retourne un booleen selon la main du joueur, comme par exemple:
-
-```
->>> joueur1.possede(('Jongleurs','Fils'))
-False
->>> joueur1.possede(('Jongleurs','Fille'))
-True
->>> joueur1.possede(carte1.getAttributs())
+>>> joueur1.possede(carte1.get_attributs())
 True
 ```
 
-**Question 5:** Quelles fonctionnalités du jeu reste t-il à programmer pour avoir un jeu complet?
+*Aide : parcourir la liste `self.C` et comparer `carte.get_attributs()` au tuple reçu.*
 
-**Question 6:** **(mini projet)** Programmer tout ou partie de ces fonctionnalités.
+**Question 5 :** Quelles fonctionnalités du jeu reste-t-il à programmer pour avoir un jeu complet ?
 
-* Exemple 1: programmer une fonction `donne`, de la classe `Joueur` qui retire la carte de la liste du joeur. On pourra utiliser la méthode de liste `remove`, qui supprime un élément X de la liste:
+**Question 6 :** **(mini-projet)** Programmer tout ou partie de ces fonctionnalités.
+
+* Exemple 1 : programmer une méthode `donne` de la classe `Joueur`, qui prend en paramètre un tuple `(famille, membre_famille)`, retire la carte correspondante de la main du joueur et **retourne** cet objet `Carte`. On pourra utiliser la méthode de liste `remove`, qui supprime un élément X de la liste :
 
 ```python
->>> L = ['a','b','c']
+>>> L = ['a', 'b', 'c']
 >>> L.remove('b')
 >>> L
-['a','c']
+['a', 'c']
 ```
 
-* Exemple 2: programmer une fonction `demande` de la classe `Joueur` telle que:
+*Attention : la liste `self.C` contient des objets `Carte`, et non des tuples. L'instruction `self.C.remove(('Jongleurs', 'Fille'))` provoque donc une erreur (`ValueError`). Il faut d'abord retrouver l'objet `Carte` correspondant au tuple, puis le retirer.*
+
+* Exemple 2 : programmer une méthode `demande` de la classe `Joueur` telle que :
 
 ```
->>> joueur1 = Joueur(carte1,carte2)
+>>> joueur1 = Joueur(carte1, carte2)
+>>> joueur2 = Joueur(carte3, carte4)
 >>> print(joueur1)
 le joueur possède les cartes : [('Jongleurs', 'Grand-père'), ('Jongleurs', 'Fille')]
->>> joueur2.demande(joueur1,('Jongleurs','Grand-père'))
+>>> joueur2.demande(joueur1, ('Jongleurs', 'Grand-père'))
 le joueur a la carte
->>> joueur2.demande(joueur1,('Jongleurs','Grand-mère'))
+>>> joueur2.demande(joueur1, ('Jongleurs', 'Grand-mère'))
 pioche
->>> joueur2.demande(joueur1,carte2.get_Attributs())
+>>> joueur2.demande(joueur1, carte2.get_attributs())
 le joueur a la carte
+>>> print(joueur1)
+le joueur possède les cartes : []
 ```
 
-Lorsque le joueur a la carte, il la donne au joueur qui la lui demande. Elle est retirée de son jeu et s'ajoute au jeu de l'adversaire.
+Lorsque le joueur a la carte, il la donne au joueur qui la lui demande : elle est retirée de son jeu et s'ajoute au jeu de celui qui l'a demandée.
 
-
+*Pistes pour aller plus loin : une classe `Pioche` (ou `Paquet`) qui crée les 42 cartes et les mélange (`random.shuffle`), la distribution des cartes, la détection d'une famille complète, le tour de jeu…*
 
 # Liens
 
-**Correction de l'exercice** sur le jeu des `Sept_Familles`: [Lien](../page32)
+**Correction de l'exercice** sur le jeu des `Sept_Familles` : [Lien](../page32)
 
 **La suite en TP**
 
-* TP Jeu des 7 familles: [Lien](../page34/) *(Sans interface graphique)*
-* TP sur trajectoires de projectiles: [Lien](../page31/) 
-* TP sur la programmation d'un jeu de Dominos: [Lien](../page33/). *(Sans interface graphique)*
+* TP sur trajectoires de projectiles : [Lien](../page31/)
+* TP sur la programmation d'un jeu de Dominos : [Lien](../page33/) *(Sans interface graphique)*
