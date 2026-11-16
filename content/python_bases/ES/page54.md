@@ -1,5 +1,5 @@
 ---
-Title: lecture - ecriture fichier
+Title: TP7 lecture - ecriture fichier
 description: lire et ecrire dans un fichier python, fonctions ord et chr, boucles
 weight: 12
 ---
@@ -11,6 +11,7 @@ au cours de ce TP, vous allez apprendre à:
 * traiter les éléments un par un. Placer les éléments traités dans un fichier
 * lire/ecrire dans un fichier
 
+<!--
 # Manipuler des fichiers txt en python
 ## Parcourir des séquences
 Les séquences, comme le chaines `str` et les listes `list` python peuvent être parcourues avec une boucle `for`. On appelle *parcourir* le traitement des caractères ou des éléments l'un après l'autre. 
@@ -62,7 +63,7 @@ for l in M:
 
 * *Conversion valeur hexa -> decimal: utiliser `int(valeur,16)`*
 * *Conversion decimal -> ascii: utiliser `chr`*
-
+-->
 ## Lecture/ecriture dans un fichier
 ### Introduction au TP
 Les manipulations qui vont suivre demandent quelques pré-requis. Vous allez tester les instructions suivantes avant de réaliser le TP sur le déchiffrement.
@@ -103,8 +104,17 @@ b
 
 Il s'agit d'un décalage de type monoalphabétique, permettant de chiffrer un texte pour le rendre secret. Ici, la clé de chiffrement est égale à 1. (1 seul rang de décalage).
 
+
+> à vous de jouer: 
+
+1. Transformer la phrase: `"Ici Londres, j'appelle Paris"` en réalisant un décalage de +1 rang dans la table *ascii*. Vous utiliserez une boucle bornée `for` pour parcourir et traiter chaque caractère de la `phrase`. Vous devrez placer les nouveaux caractères dans une nouvelle chaine appelée `texte_chiffre` avec l'instruction `texte_chiffre += nouveau_caractere`
+2. Ecrire une fonction `codage(texte,cle)` qui retourne un texte codé par décalage dans l'alphabet *ascii* d'un nombre de rang `cle`.
+3. Utilisez votre fonction pour coder la `phrase` du 1., puis pour decoder celle-ci.
+
+**Question a.:** Recopier le script de votre fonction. 
+
 #### Ecrire dans un fichier txt
-* méthode 1: fonctions `open` et  `close`. On créé un objet qui sert à désigner le fichier. Choisir un nom quelconque, pour l'exemple qui suit ce sera `fileout`. On utilise la fonction `open` avec pour paramètres, le nom du fichier (son chemin), suivi du caractère 'w' (pour `write`, ouverture du fichier en *écriture*).
+* *méthode 1:* fonctions `open` et  `close`. On créé un objet qui sert à désigner le fichier. Choisir un nom quelconque, pour l'exemple qui suit ce sera `fileout`. On utilise la fonction `open` avec pour paramètres, le nom du fichier (son chemin), suivi du caractère 'w' (pour `write`, ouverture du fichier en *écriture*).
 
 On peut alors placer du texte dans le fichier à l'aide de la méthode `write`: `fileout.write("...")`
 
@@ -118,7 +128,7 @@ fileout.close()
 
 *On peut alors vérifier le fichier et son contenu en parcourant le dossier avec l'explorateur windows*.
 
-* méthode 2: système d'instructions `with` + `open`
+* *méthode 2:* système d'instructions `with` + `open`
 
 Le programme suivant est équivalent à celui de la méthode 1. Avec le mot clé `with`, les instructions de d'écriture dans le fichier sont mis dans un bloc, et donc indentées. A la sortie de ce bloc, le fichier est automatiquement *fermé*, ce qui fait l'economie de l'instruction `close`, et evite les oublis...
 
@@ -128,8 +138,10 @@ with open('exemple.txt','w') as fileout:
    
 ```
 
+**Question b.:** après avoir testé ces 2 méthodes, quelle est-sont la-les différence-s entre celles-ci (fermeture du fichier, indentation)?
+
 #### Lire le contenu d'un fichier txt
-* méthode 1: fonctions `open` et  `close`. On créé un objet qui sert à importer le fichier. Choisir un nom quelconque, pour l'exemple qui suit ce sera `file`. On utilise la fonction `open` avec pour paramètres, le nom du fichier (son chemin), suivi du caractère 'r' (pour `read`, ouverture du fichier en *lecture*).
+* *méthode 1:* fonctions `open` et  `close`. On créé un objet qui sert à importer le fichier. Choisir un nom quelconque, pour l'exemple qui suit ce sera `file`. On utilise la fonction `open` avec pour paramètres, le nom du fichier (son chemin), suivi du caractère 'r' (pour `read`, ouverture du fichier en *lecture*).
 
 On peut alors récuperer le contenu textuel du fichier à l'aide de la méthode `read`. Dans l'exemple ci-dessous, on place le texte du fichier dans la variable `texte`. 
 
@@ -144,7 +156,7 @@ file.close()
 print(texte)
 ```
 
-* méthode 2: système d'instructions `with` + `open`
+* *méthode 2:* système d'instructions `with` + `open`
 
 Le programme suivant est équivalent à celui de la méthode 1. Avec le mot clé `with`, les instructions de lecture du fichier sont mis dans un bloc, et donc indentées. A la sortie de ce bloc, le fichier est automatiquement *fermé*, ce qui fait l'economie de l'instruction `close`, et evite les oublis...
 
@@ -157,24 +169,41 @@ print(texte)
 ## TP Déchiffrement d'un texte
 * Télécharger le fichier [texte_chiffre.txt](../datas/texte_chiffre.txt) (faire un clic droit=> *sauvegarder la cible du lien sous...*)
 * le placer dans le même dossier que votre fichier *python*.
-* Dans le fichier `texte_chiffre.txt`, le texte est-il écrit en clair ou est-il chiffré?
+
+**Question c.:**  Dans le fichier `texte_chiffre.txt`, le texte est-il écrit en clair ou est-il chiffré?
 
 Les chiffrements les plus anciens reposaient sur un simple décalage des caractères, comme vu dans les informations préliminaires. Par exemple, avec une clé de décalage égale à 1, le "a" devient un "b", le "b" -> "c", etc...
 
 A partir des informations précédentes, écrire un script python qui devra:
 
-1. Ouvrir le fichier 'texte_chiffre.txt' en LECTURE 
+1. Ouvrir le fichier 'texte_chiffre.txt' en LECTURE
 2. Lire le contenu et le placer dans une variable `texte`
-3. Ouvrir un nouveau fichier en ECRITURE, que vous appelerez 'texte_dechiffre.txt'
+3. Ouvrir un nouveau fichier en ECRITURE, que vous appelerez 'texte_dechiffre.txt': `fileout = open('texte_dechiffre.txt','w')`
 4. Parcourir les caractères de `texte`, les uns après les autres: `for c in texte:`
 5. Dans la boucle  `for`: si le caractère `c` est différent de `\` c'est à dire `c != "\\"`
-  * déterminer le rang ascii de `c`
-  * definir un nouveau caractère en essayant la clé de décalage égale à -1
-  * écrire ce nouveau caractère dans le fichier 'texte_dechiffre.txt'
-6. Sinon, écrire `\n` dans le fichier 'texte_dechiffre.txt'
-7. fermer le-s fichier-s si besoin.
+  * déterminer le rang ascii de `c`: `rang = ord(c)`
+  * definir un nouveau caractère en essayant la clé de décalage égale à -1: `nouveau=chr(rang-1)`
+  * écrire ce nouveau caractère dans le fichier 'texte_dechiffre.txt' avec `fileout.write(...)`
+6. Sinon, retour à la ligne: écrire `\n` dans le fichier 'texte_dechiffre.txt'
+7. fermer le-s fichier-s si besoin: `fileout.close()`
 8. Vérifier alors le contenu de votre fichier 'texte_dechiffre.txt'. Si celui-ci est toujours chiffré, recommencer avec une nouvelle clé (-2, puis -3, ...)
 
+**Question d.:** De quoi traite ce texte?
+
+
+*Remarque:* la fonction `ord(c)` peut générer des erreurs avec certains caractères `c`. On peut ignorer ces erreurs avec un mecanisme d'echappement `try...except`:
+
+```python
+try:
+    rang = ord(c)
+    fileout.write(chr(rang-cle))
+except:
+    # on ne parvient pas a encoder c
+    # on l'ecrit sans decalage
+    fileout(c)
+```
+
+<!--
 Si vous avez terminé:
 
 * Utiliser votre script pour créer une fonction que vous appelerez `chiffre_dechiffre` et qui aura 3 paramètres:
@@ -192,8 +221,11 @@ chiffre_dechiffre('texte_chiffre.txt','texte_dechiffre.txt',2)
 
 Utilisez alors votre fonction pour réaliser le chiffrement d'un texte relativement long.
 
-# Suite
-* [Solution](../page541) du TP lecture - ecriture python
 
-* Projet transformer image -> ASCII: [Lien](../../TP/ascii_art)
+
+* [Solution](../page541) du TP lecture - ecriture python
+-->
+
+# Suite
+* Projet transformer image -> ASCII: [Lien](/python_bases/TP/ascii_art/)
 

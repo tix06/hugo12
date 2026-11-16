@@ -11,19 +11,19 @@ Une des première normes a été l'ASCII (American Standard Code for Information
 
 
 
-{{< img src="../images/ascii.png" caption="table ascii pour les nombres 0-127" >}}
+{{< img src="../images/ascii.png" width="500" caption="table ascii pour les nombres 0-127" >}}
 
 Le problème de l'encodage ASCII est qu'il ne permet pas de représenter assez de caractères pour les besoins des différentes langues. 
 
 Une autre norme, encore utilisée est l'**ASCII étendu**, dont les caractères sont encodés sur **8 bits**.
 
-{{< img src="../images/ascii_e.png" caption="table ascii-Latin1 pour les nombres 128-255" >}}
+{{< img src="../images/ascii_e.png" width="500" caption="table ascii-Latin1 pour les nombres 128-255" >}}
 
 Il existe plusieurs tables ascii-étendu, celle présentée ici est celle *Latin1*, utile pour les caractères du *français* et autres langues d'europes de l'ouest.
 
 En ASCII étendu: 1 octet par caractère. On peut évaluer la *taille d'un fichier*: C'est le *nombre N caractères*, exprimé en *octets*.
 
-{{< img src="../images/word.png" caption="informations sur un fichier textuel (Word)" >}}
+{{< img src="../images/word.png" width="300" caption="informations sur un fichier textuel (Word)" >}}
 
 La principale limitation des jeux de caractères codés sur un octet, comme l'ascii-Latin1, est la nécessité d'utiliser plusieurs jeux de caractères codés pour couvrir plusieurs alphabets.
 
@@ -35,7 +35,7 @@ Les jeux de caractères en un seul octet ne sont pas compatibles avec la norme a
 
 Le e accent aigû **é** sera représenté en utf-8 par 16 chiffres binaires, et son affichage en format ASCII donnera **Ã©**. 
 
-{{< img src="../images/martine.png" caption="ascii ou utf8" >}}
+{{< img src="../images/martine.png" width="400" caption="ascii ou utf8" >}}
 
 Dans un document HTML, on pourra tout de même afficher correctement ces caractères, mais il faudra:
 
@@ -79,6 +79,20 @@ La séquence binaire contient alors un premier code qui indique la longueur de b
 Ainsi, le caractère **é** est représenté en utf-8 par la séquence binaire 110**00011** 10**101001**. Parmi les chiffres binaires, seuls ceux en gras sont codants pour la valeur numérique associée à ce caractère. Il s'agit donc de **000 1110 1001**. C'est la valeur **E9** en hexadécimal. (233 en décimal). 
 
 Avec un encodage ASCII, le navigateur essaiera d'afficher 2 symboles. Celui de code binaire **1100 0011**, qui correspond au Ã, le A majuscule tilde. Et celui de code binaire **1010 1001** affichera le ©, symbole copyright.
+
+## Communiquer avec un QR-code
+
+{{< img src="../images/QR_code.png" width="500" link="https://youtu.be/V_DW6nMBpgw?si=HIsQMWs9ssuBeU3F" caption="Comment le jeu de Go a inspiré le QR code - Le dessous des images - ARTE" >}}
+
+Ce code 2D est devenu un standard international et comme il est dans le domaine public, il n’y pas de redevance. Pour le lire, il faut un scanner qui sait lire les codes comme certaines douchette et/ou surtout les téléphones mobiles
+ 
+{{< img src="../images/qr_code2.png" width="400" caption="QR-code et code barre" >}}
+* Le QR Code (Quick Response Code) présente l'avantage d'être libre de droit.
+* Il possède une haute capacité d’encodage des données ce qui en fait la plus grande différences avec les codes 1D ou le Datamatrix© 
+* Il a besoin d’une très petite surface d’impression. Une autre version existe appelé Micro QR Code
+* Il a la capacité d’encoder des idéogrammes. 
+* Il résiste à des rayures ou des trace sur sa surface grâce à de la redondance d’information. La redondance doit être choisi au départ via 4 niveaux (L,M,Q,H) allant de 7% à 30%
+* Il peut être lu à 360° grâce au positionnement de ses carrés que l’on retrouve sur tous les QRCode.
 
 
 # Codage des couleurs
