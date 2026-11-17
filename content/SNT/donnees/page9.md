@@ -40,8 +40,9 @@ Nord;Jérome;Raisins;7580;;
 Les guillemets vous permettent de choisir l'extension du fichier et de remplacer celle par defaut choisie par le bloc note (`.txt`)
 -->
 
-**Question a:** A partir de vos connaissances, ou bien après une petite recherche sur le *net* quelle différence y-a-t-il entre un fichier à l'extension `.txt` et un fichier `.csv`? Les données y-sont-elles mises dans un format special (structuré) pour l'un de ces 2 types de fichiers? 
+**Question a1:** A partir de vos connaissances, ou bien après une petite recherche sur le *net*, quelles sont les différentes extensions utilisées pour les fichiers texte (pas des document enrichi comme Word ou Excel)?  
 
+**Question a2:** Comment se présentent les données dans un fichier d'extension *.csv*? (la première ligne, commençant à *Région*, contient-elle le même genre d'information que les lignes suivantes...)
 
 # Présenter les données à l'aide d'un tableur
 > Démarrer le logiciel Excel (un tableur de la suite bureautique microsoft).
@@ -165,7 +166,7 @@ La fonction SOMME.SI permet de sélectionner certaines cellules d'une selection 
 >	* **Somme_plage**: selectionner toutes les valeurs numériques de la colonne *Unités*:
 
 {{< img src="../images/sommesi.png" width="300" caption="concepteur de formule pour SOMME.SI" >}}
-On a alors le nombre de Pommes vendues dans toute la France.
+On a alors le nombre de **Pommes** vendues dans toute la **France**.
 
 **Question h:** Quel est le résultat? Recopier aussi la formule qui a été générée.
 
@@ -176,9 +177,9 @@ Un logiciel tableur (Excel, Calc, Number) permet de présenter les données à l
 
 > Quel est le meilleur commercial? 
 
-Dans cette entreprise, les pretendants au titre de meilleur commercial sont Maurice, Jérome et Sébastien.
+Dans cette entreprise, les pretendants au titre de meilleur commercial sont *Maurice, Jérome et Sébastien*.
 
-**Question j:** Utilisez la somme conditionnelle pour calculer le nombre de fruits total vendu par chacun des ces 3 commerciaux. Placez les résultats dans un nouveau tableau, sur la même page. Recopier ce tableau sur votre feuille. Décidez enfin: Qui remporte le titre de meilleur commercial?
+**Question j:** Utilisez la somme conditionnelle pour calculer le nombre de fruits total vendu par *chacun des ces 3 commerciaux*. Placez les résultats dans un nouveau tableau, sur la même page. Recopier ce tableau sur votre feuille. Décidez enfin: Qui remporte le titre de meilleur commercial?
 
 # Compléments
 ## Format numérique
