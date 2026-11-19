@@ -142,7 +142,9 @@ image.save('ascii_art.png')
 
 # Liens et sources
 * notebook du site [clogique](https://clogique.fr/nsi/notebook/?from=/nsi/premiere/td_tp/TP_Art_Ascii.ipynb#Exercice-7)
-
+<!--
 * [correction](../ascii_art_p1_c) de la partie 1
+
 * [correction](../ascii_art_c) du Projet ascii-art
+* -->
 
