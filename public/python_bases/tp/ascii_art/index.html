@@ -29,29 +29,29 @@ Télécharger les documents sources et décompresser l’archive. Trouver dans c
 TP6b: Listes et symboles pour dessiner des formes: Lien TP7 Lecture/ Ecriture dans un fichier: Lien TP8 Projet ascii art: des pixels aux symboles ascii On va remplacer dans une image la couleur d’un pixel par un caractère ascii dont le remplissage permettra de faire varier la clarté d’un zone de l’image.
 Télécharger les documents sources et décompresser l’archive. Trouver dans ce dossier les fichiers Marylin-original.jpg et le module display_image Enregistrer tous vos fichiers python dans ce même dossier. Partie 1 : préparation (≈ 45 min) Avant de réaliser le projet, on manipule séparément chacun des éléments qui seront utilisés en partie 2.">
     <meta itemprop="dateModified" content="2026-08-30T20:03:53+02:00">
-    <meta itemprop="wordCount" content="921">
+    <meta itemprop="wordCount" content="896">
     <title>transformer image ascii :: allophysique</title>
-    <link href="/images/logo.png?1795456094" rel="icon" type="image/png">
-    <link href="/css/auto-complete/auto-complete.min.css?1795456094" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1795456094" defer></script>
-    <script src="/js/search-lunr.js?1795456094" defer></script>
-    <script src="/js/search.js?1795456094" defer></script>
+    <link href="/images/logo.png?1795710457" rel="icon" type="image/png">
+    <link href="/css/auto-complete/auto-complete.min.css?1795710457" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1795710457" defer></script>
+    <script src="/js/search-lunr.js?1795710457" defer></script>
+    <script src="/js/search.js?1795710457" defer></script>
     <script>
       window.relearn = window.relearn || {};
-      window.relearn.index_js_url="/searchindex.en.js?1795456094";
+      window.relearn.index_js_url="/searchindex.en.js?1795710457";
     </script>
-    <script src="/js/lunr/lunr.min.js?1795456094" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1795456094" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1795456094" defer></script>
-    <script src="/js/lunr/lunr.fr.min.js?1795456094" defer></script>
+    <script src="/js/lunr/lunr.min.js?1795710457" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1795710457" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1795710457" defer></script>
+    <script src="/js/lunr/lunr.fr.min.js?1795710457" defer></script>
     <script>
       window.relearn = window.relearn || {};
       window.relearn.contentLangs=['fr'];
     </script>
-    <link href="/fonts/fontawesome/css/all.min.css?1795456094" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1795456094" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1795456094" rel="stylesheet">
-    <link href="/css/theme.css?1795456094" rel="stylesheet">
-    <link href="/css/format-html.css?1795456094" rel="stylesheet" id="R-format-style">
+    <link href="/fonts/fontawesome/css/all.min.css?1795710457" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/all.min.css?1795710457" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1795710457" rel="stylesheet">
+    <link href="/css/theme.css?1795710457" rel="stylesheet">
+    <link href="/css/format-html.css?1795710457" rel="stylesheet" id="R-format-style">
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -196,7 +196,13 @@ Télécharger les documents sources et décompresser l’archive. Trouver dans c
 <p><em>Comme dans le TP sur le code César, on utilise la position d&rsquo;un caractère dans une chaîne pour faire correspondre une valeur à un symbole.</em></p>
 <h3 id="bloc-2--du-pixel-rgb-au-niveau-de-gris--10-min">Bloc 2 – Du pixel RGB au niveau de gris (≈ 10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
 <p>La couleur d&rsquo;un pixel est donnée par un tuple <code>(R, G, B)</code> : trois entiers entre 0 et 255.</p>
-<p>Compléter le tableau à la main (puis vérifier avec Python) :</p>
+<ol start="5">
+<li>Écrire une fonction <code>grey(rgb)</code> qui reçoit un tuple <code>(R, G, B)</code> et renvoie son niveau de gris: $(R+V+B)//3$</li>
+</ol>
+<p><em>cahier labo</em>:</p>
+<ol start="6">
+<li>Compléter ensuite le tableau :</li>
+</ol>
 <table>
 	<thead>
 			<tr>
@@ -233,17 +239,21 @@ Télécharger les documents sources et décompresser l’archive. Trouver dans c
 			</tr>
 	</tbody>
 </table>
-<ol start="5">
-<li>Écrire une fonction <code>gris(rgb)</code> qui reçoit un tuple <code>(R, G, B)</code> et renvoie son niveau de gris.</li>
+<ol start="7">
 <li>Pourquoi utilise-t-on la division entière <code>//</code> et pas <code>/</code> ? (Essayer <code>ascii_char[2.7]</code>.)</li>
 <li>Pourquoi multiplie-t-on par <strong>9</strong> et pas par 10 ? Comment écrire ce nombre pour que la formule fonctionne avec une palette de n&rsquo;importe quelle longueur ?</li>
 <li>D&rsquo;après le tableau, quel caractère obtient-on pour un pixel <strong>blanc</strong> ? Est-ce cohérent avec la question 4 ? Modifier le calcul de <code>index</code> pour qu&rsquo;un pixel blanc donne un espace et un pixel noir donne <code>'@'</code>.</li>
 </ol>
 <h3 id="bloc-3--boucles-imbriquées--10-min">Bloc 3 – Boucles imbriquées (≈ 10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
-<ol start="9">
+<ol start="10">
 <li>À l&rsquo;aide de deux boucles <code>for</code>, afficher un rectangle de 4 lignes et 10 colonnes de <code>#</code>.</li>
 <li>Afficher un dégradé de 10 lignes et 20 colonnes : la ligne numéro <code>y</code> est remplie avec le caractère <code>ascii_char[y]</code>.</li>
-<li>Dans le programme de la partie 2, la boucle sur <code>y</code> (lignes) est <strong>à l&rsquo;extérieur</strong> et la boucle sur <code>x</code> (colonnes) <strong>à l&rsquo;intérieur</strong>. Que se passerait-il si on inversait les deux boucles ?</li>
+</ol>
+<!--
+12. Dans le programme de la partie 2, la boucle sur `y` (lignes) est **à l'extérieur** et la boucle sur `x` (colonnes) **à l'intérieur**. Que se passerait-il si on inversait les deux boucles ?
+
+-->
+<ol start="12">
 <li>Dans la partie 2, on ajoute un espace <code>' '</code> après chaque caractère. Pourquoi ? (Comparer la hauteur et la largeur d&rsquo;un caractère à l&rsquo;écran.)</li>
 </ol>
 <h3 id="bloc-4--une-mini-image--à-la-main---10-min">Bloc 4 – Une mini-image « à la main » (≈ 10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
@@ -257,16 +267,20 @@ Télécharger les documents sources et décompresser l’archive. Trouver dans c
 <ol start="13">
 <li>Que vaut <code>image[2][0]</code> ? Lequel des deux indices correspond à la ligne (<code>y</code>), lequel à la colonne (<code>x</code>) ?</li>
 <li>Parcourir l&rsquo;image avec deux boucles et afficher le dessin en caractères ascii (utiliser le calcul de <code>index</code> corrigé à la question 8). Que représente l&rsquo;image ?</li>
-<li>Au lieu d&rsquo;afficher le dessin, l&rsquo;écrire dans un fichier <code>mini.txt</code> : ouvrir le fichier en écriture (<code>&quot;w&quot;</code>), écrire chaque ligne terminée par <code>'\n'</code>, puis fermer le fichier. Ouvrir <code>mini.txt</code> avec un éditeur de texte pour vérifier.</li>
+<li>Au lieu d&rsquo;afficher le dessin, l&rsquo;écrire dans un fichier <code>mini.txt</code> : <a href="/python_bases/es/page54/index.html">ouvrir le fichier en écriture</a> (<code>&quot;w&quot;</code>), écrire chaque ligne terminée par <code>'\n'</code>, puis fermer le fichier. Ouvrir <code>mini.txt</code> avec un éditeur de texte pour vérifier.</li>
 <li>Combien de caractères contient chaque ligne du fichier <code>mini.txt</code> (en comptant le <code>'\n'</code>) ? Combien en contiendra chaque ligne pour l&rsquo;image de 500 × 500 pixels de la partie 2 ?</li>
 </ol>
 <h3 id="bloc-5--premier-contact-avec-pil--10-min">Bloc 5 – Premier contact avec PIL (≈ 10 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h3>
+<p>Vous avez téléchargé les <a href="/scripts/PIL/src.zip">documents sources</a>.</p>
+<blockquote>
+<p>Executez le programme suivant:</p>
+</blockquote>
 <div class="highlight actionbar-wrapper wrap-code" dir="auto"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 </span></span><span class="line"><span class="cl"><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&#34;Marylin-original.jpg&#34;</span><span class="p">)</span></span></span></code></pre></div>
 <ol start="17">
 <li>Afficher <code>image.size</code> et <code>image.mode</code>. Que représentent ces valeurs ?</li>
 <li>Afficher <code>image.getpixel((0, 0))</code>. De quel type est le résultat ? Que représentent ses valeurs ?</li>
-<li>Redimensionner l&rsquo;image avec <code>image = image.resize((50, 50))</code>. Que vaut maintenant <code>image.size</code> ? Afficher la couleur du pixel situé au centre de l&rsquo;image.</li>
+<li>Redimensionner l&rsquo;image avec l&rsquo;instruction <code>image = image.resize((50, 50))</code>. Que vaut maintenant <code>image.size</code> ? Afficher la couleur du pixel situé au centre de l&rsquo;image.</li>
 </ol>
 <h2 id="partie-2--le-projet-ascii-art--40-min">Partie 2 : le projet ascii art (≈ 40 min)<span class="btn cstyle anchor copyanchor scrollanchor link noborder notitle interactive"><button type="button" title="Copier le lien dans le presse-papiers"><i class="fa-fw fas fa-link fa-lg"></i></button></span></h2>
 <p>Video explicative:</p>
@@ -714,9 +728,9 @@ Télécharger les documents sources et décompresser l’archive. Trouver dans c
         }
       }, JSON.parse("{}") );
     </script>
-    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1795456094"></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1795456094" defer></script>
-    <script src="/js/theme.js?1795456094" defer></script>
+    <script id="MathJax-script" async src="/js/mathjax/tex-mml-chtml.js?1795710457"></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1795710457" defer></script>
+    <script src="/js/theme.js?1795710457" defer></script>
     <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
   </body>
 </html>

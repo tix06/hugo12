@@ -1,5 +1,6 @@
 ---
 Title : Pile
+titleHidden: true
 description: pile, structures lineaires, expression correctement parenthesee
 weight: 35
 ---
@@ -17,7 +18,7 @@ weight: 35
 
 
 
-# Structure linéaire : La Pile
+# Structure linéaire : La Pile 
 ## Les structures de données
 *Definition:* Une *structure de données* est une manière de stocker, d’accéder à, et de manipuler des données (comme les types list ou dict de Python).
 

@@ -1,5 +1,5 @@
 ---
-Title: TD reduction chaine
+Title: TD Piles
 hidden: true
 weight: 37
 ---
@@ -28,7 +28,7 @@ def sommet(pile):
 
 ```
 
-> Utilisez les fonctions de cette interface pour resoudre l'exercice suivant: 
+> 1. Utilisez les fonctions de cette interface pour resoudre l'exercice suivant: 
 
     * Soit une liste L = ["a",1,"b",2,"c",3,"d",4]
     * Parcourir les éléments de la liste L avec une boucle bornée
@@ -39,24 +39,19 @@ def sommet(pile):
 L = ['a',1,'b',2,'c',3,'d',4]
 ```
 
-On pourra utiliser la fonction `isinstance(a,int)` qui retourne `True` si `a` est de type `int`.
+*On pourra utiliser la fonction `isinstance(a,int)` qui retourne `True` si `a` est de type `int`.*
 
-<!--<iframe width='100%' height='500' allowfullscreen frameborder='0' style='border:1px #d6d6d6 solid;' src="https://fr.vittascience.com/python/?link=5f9d36caf37c6&mode=code"></iframe>-->
 
-<!--
-{{< vitta 5f9d36caf37c >}} 
--->
 
-# Exercice 2 : lever des exceptions
 Certaines des fonctions que vous avez écrites vont générer des erreurs dans le cas où la pile est vide.
 
-1. Pour les fonctions `est_vide` et `depile`, ajouter un test d'assertion pour lever les exceptions dans le cas où la pile est vide.
-2. Tester ces fonctions avec une pile vide.
+2. Pour les fonctions `est_vide` et `depile`, ajouter un test d'assertion pour lever les exceptions dans le cas où la pile est vide.
+3. Tester ces fonctions avec une pile vide.
 
 
-# Exercice 3 : déverser une pile
+# Exercice 2 : déverser une pile
 ## Déverser une pile
-Ecrire une fonction `deversepile` qui déverse une pile `p1` dans une pile `p2`.
+> 1. Ecrire une fonction `deversepile` qui déverse une pile `p1` dans une pile `p2`.
 
 Pour que `p2` soit identique à `p1`, il faudra utiliser une pile intermédaire `p3` de la manière suivante: 
 
@@ -68,12 +63,15 @@ deversepile(p3,p2)
 
 *Les fonctions que vous pourrez utiliser pour les piles seront celles définies dans l'exercice 1 : `Pile,est_vide,empile,depile,sommet`.*
 
-## Visualiser sur Pythontutor
+
+**question a:** Recopier le script de votre fonction
+
+2. Visualiser sur Pythontutor
 Ouvrir l'editeur pythontutor et executer le script pas à pas. 
 
-{{< img src="../images/pythontutor2.png" link="https://pythontutor.com/render.html#code=def%20deverse%28p_1,p_2%29%3A%0A%20%20%20%20while%20p_1%20!%3D%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20p_2.append%28p_1.pop%28%29%29%0A%0Ap1,p2%20%3D%20%5B%5D,%5B%5D%0Ap1%20%3D%20%5B1,2,3,4%5D%0Adeverse%28p1,p2%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" caption="cliquer pour ouvrir sur pythontutor" >}}
+{{< img src="../images/pythontutor2.png" width="300" link="https://pythontutor.com/render.html#code=def%20deverse%28p_1,p_2%29%3A%0A%20%20%20%20while%20p_1%20!%3D%20%5B%5D%3A%0A%20%20%20%20%20%20%20%20p_2.append%28p_1.pop%28%29%29%0A%0Ap1,p2%20%3D%20%5B%5D,%5B%5D%0Ap1%20%3D%20%5B1,2,3,4%5D%0Adeverse%28p1,p2%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false" caption="cliquer pour ouvrir sur pythontutor" >}}
 
-*Remarquez-vous?*
+**questions b:**
 
 * La pile `p1` est-elle vide à la fin du *dépilement*?
 * Les listes `p1` et `p2` sont-elles modifiées par effet de bord, dans la fonction?
@@ -81,7 +79,7 @@ Ouvrir l'editeur pythontutor et executer le script pas à pas.
 
 
 
-# Exercice 4 : Evaluation d'une opération en notation polonaise inversée
+# Exercice 3 : Evaluation d'une opération en notation polonaise inversée
 ## Principe 
 la notation polonaise inversée permet d'écrire une opération sans utiliser de parenthèses. Il faut alors écrire les 2 opérandes avant l'opérateur. L'opérateur se trouve à droite des 2 opérandes.
 
@@ -100,7 +98,7 @@ Exemple : `1 2 + 4 * 3 +`
 
 {{< img src="../images/npi.png" >}}
 
-{{< img src="../images/video_NPI.png" alt="video notation polonaise inversée" link="https://www.youtube.com/watch?v=Ak8I7o-rXKg" caption="Arnaud Bodin : Calculatrice polonaise - les piles" >}}
+{{< img src="../images/video_NPI.png" width="300" alt="video notation polonaise inversée" link="https://www.youtube.com/watch?v=Ak8I7o-rXKg" caption="Arnaud Bodin : Calculatrice polonaise - les piles" >}}
 La liste L contient les caractères de l'expression POSTFIXE à calculer.
 
 ## Problème simplifié: Opérations d'addition seulement
@@ -147,6 +145,11 @@ def evalNPI(L):
     # à completer #
     return p[0]
 ```
+
+1. Compléter le programme
+2. Executer avec l'exemple du docstring
+3. écrire un test d'assertion à partir de ce test.
+
 ## Calculatrice complète
 On donne le script python à compléter:
 
@@ -216,13 +219,9 @@ def evalNPI(L):
     * empiler la valeur calculée dans la pile `p`
 * retourner la valeur finale stockée dans `p`
 
-<!--
-<iframe width='100%' height='500' allowfullscreen frameborder='0' style='border:1px #d6d6d6 solid;' src="https://fr.vittascience.com/python/?link=5f9d305edd765&mode=code"></iframe>
 
-{{< vitta 5f9d305edd765 >}}
--->
 
-## Variante utilisant les fonctions lambda
+## Facultatif: Variante utilisant les fonctions lambda
 On peut racourcir l'écriture du script en utilisant des fonctions lambda. Elles utilisent des paramètres pour calculer une valeur de retour, comme une fonction. Elles ne peuvent contenir qu'une expression.
 
 On les déclare de la manière suivante:
@@ -261,7 +260,7 @@ if a == '+':
 
 L'interêt des fonctions *lambda* est surtout de **rendre le script plus lisible**. Cela donne une autre option d'écriture.
 
-# Exercice 5 (Projet): Reduction d'une chaine de caractères
+# Exercice 4 (Projet): Reduction d'une chaine de caractères
 On utilisera pour cet exercice l'implementation d'un pile avec les definitions suivantes:
 
 ```python
